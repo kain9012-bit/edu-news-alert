@@ -13,7 +13,28 @@ const DEFAULT_KEYWORDS = [
   "교육행정",
   "데이터 기반"
 ];
-const DEFAULT_SOURCE_IDS = ["moe", "jbe", "sen", "goe", "pen"];
+const DEFAULT_SOURCE_IDS = [
+  "moe",
+  "jeonbuk",
+  "jeonbuk_institute",
+  "jeonbuk_support",
+  "seoul",
+  "gyeonggi",
+  "busan",
+  "daegu",
+  "incheon",
+  "gwangju",
+  "daejeon",
+  "ulsan",
+  "sejong",
+  "gangwon",
+  "chungbuk",
+  "chungnam",
+  "jeonnam",
+  "gyeongbuk",
+  "gyeongnam",
+  "jeju"
+];
 const ALARM_NAME = "check-news";
 
 async function getOptions() {
@@ -111,7 +132,7 @@ async function checkNews({ notify = true } = {}) {
       type: "basic",
       iconUrl: "icon.svg",
       title: `새 관심 보도자료 ${newMatches.length}건`,
-      message: `${first.sourceName || "교육청"} - ${first.title || "제목 없음"}`,
+      message: `${first.sourceName || first.source || "교육청"} - ${first.title || "제목 없음"}`,
       priority: 2
     });
   }
