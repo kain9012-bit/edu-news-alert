@@ -3,7 +3,10 @@ name: Collect education press releases
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 * * * *"
+    # KST 08:17 = UTC 23:17 on the previous day
+    - cron: "17 23 * * *"
+    # KST 09:17-18:17 = UTC 00:17-09:17
+    - cron: "17 0-9 * * *"
 
 permissions:
   contents: write
