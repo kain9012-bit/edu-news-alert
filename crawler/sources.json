@@ -1,0 +1,53 @@
+[
+  {
+    "id": "moe",
+    "name": "교육부",
+    "baseUrl": "https://www.moe.go.kr",
+    "listUrl": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=294&m=020402&s=moe",
+    "include": ["viewRenew.do", "boardSeq="],
+    "exclude": ["fileDown", "fileDownload", ".jpg", ".png"],
+    "detailPath": "/boardCnts/viewRenew.do",
+    "seqParam": "boardSeq",
+    "enabled": true
+  },
+  {
+    "id": "jbe",
+    "name": "전북특별자치도교육청",
+    "baseUrl": "https://news.jbe.go.kr",
+    "listUrl": "https://news.jbe.go.kr/board/list.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&contentsSid=2105&cpath=&startPage=1",
+    "include": ["/board/view.jbe", "dataSid="],
+    "exclude": ["download", "file"],
+    "enabled": true
+  },
+  {
+    "id": "sen",
+    "name": "서울특별시교육청",
+    "baseUrl": "https://enews.sen.go.kr",
+    "listUrl": "https://enews.sen.go.kr/news/list.do?step1=3&step2=1&pageIndex=1",
+    "include": ["/news/view.do", "bbsSn="],
+    "exclude": ["q_bbsSn=", "www.sen.go.kr", "/user/bbs/"],
+    "enabled": true
+  },
+  {
+    "id": "goe",
+    "name": "경기도교육청",
+    "baseUrl": "https://www.goe.go.kr",
+    "listUrl": "https://www.goe.go.kr/goe/na/ntt/selectNttList.do?bbsId=1922&mi=10102&currPage=1",
+    "include": ["selectNttInfo.do", "nttSn="],
+    "exclude": ["fileDownload", "resource", ".jpg", ".png"],
+    "detailPath": "/goe/na/ntt/selectNttInfo.do",
+    "seqParam": "nttSn",
+    "enabled": true
+  },
+  {
+    "id": "pen",
+    "name": "부산광역시교육청",
+    "baseUrl": "https://www.pen.go.kr",
+    "listUrl": "https://www.pen.go.kr/main/na/ntt/selectNttList.do?bbsId=2286&mi=30397&currPage=1",
+    "include": ["selectNttInfo.do", "nttSn="],
+    "exclude": ["fileDownload", "resource", ".jpg", ".png"],
+    "detailPath": "/main/na/ntt/selectNttInfo.do",
+    "seqParam": "nttSn",
+    "enabled": true
+  }
+]
