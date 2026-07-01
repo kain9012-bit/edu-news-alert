@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "교육청 보도자료 키워드 알리미",
+  "description": "교육부와 시도교육청 보도자료에서 관심 키워드를 찾아 알려줍니다.",
+  "version": "0.1.0",
+  "permissions": ["alarms", "notifications", "storage", "tabs"],
+  "host_permissions": ["https://kain9012-bit.github.io/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "보도자료 알리미",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html"
+}
