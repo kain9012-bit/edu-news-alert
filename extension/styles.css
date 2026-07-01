@@ -101,7 +101,7 @@ button:disabled {
 
 .actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 8px;
   margin-top: 16px;
 }
@@ -226,4 +226,120 @@ legend {
   min-height: 20px;
   color: var(--accent-dark);
   font-weight: 700;
+}
+
+.dashboard {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.dashboardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.dashboardHeader button {
+  min-height: 38px;
+  padding: 0 14px;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: minmax(260px, 2fr) minmax(180px, 1fr) minmax(180px, 1fr);
+  gap: 12px;
+  padding: 14px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.field select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: white;
+  font: inherit;
+  font-weight: 400;
+}
+
+.dashboardMeta {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 16px 0 10px;
+}
+
+.dashboardMeta span {
+  color: var(--muted);
+}
+
+.dashboardList {
+  display: grid;
+  gap: 10px;
+}
+
+.newsRow {
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.newsHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.newsHead time {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.newsRow > a {
+  border: 0;
+  padding: 0;
+  color: var(--text);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.newsRow p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-height: 1.55;
+}
+
+.keywordLine {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.keywordLine span {
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .filters {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboardHeader {
+    display: grid;
+  }
 }
