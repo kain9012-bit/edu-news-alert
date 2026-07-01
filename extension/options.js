@@ -15,10 +15,25 @@ const DEFAULT_KEYWORDS = [
 ];
 const SOURCES = [
   { id: "moe", name: "교육부" },
-  { id: "jbe", name: "전북특별자치도교육청" },
-  { id: "sen", name: "서울특별시교육청" },
-  { id: "goe", name: "경기도교육청" },
-  { id: "pen", name: "부산광역시교육청" }
+  { id: "jeonbuk", name: "전북특별자치도교육청 본청" },
+  { id: "jeonbuk_institute", name: "전북특별자치도교육청 직속기관" },
+  { id: "jeonbuk_support", name: "전북특별자치도교육청 교육지원청" },
+  { id: "seoul", name: "서울특별시교육청" },
+  { id: "gyeonggi", name: "경기도교육청" },
+  { id: "busan", name: "부산광역시교육청" },
+  { id: "daegu", name: "대구광역시교육청" },
+  { id: "incheon", name: "인천광역시교육청" },
+  { id: "gwangju", name: "광주광역시교육청" },
+  { id: "daejeon", name: "대전광역시교육청" },
+  { id: "ulsan", name: "울산광역시교육청" },
+  { id: "sejong", name: "세종특별자치시교육청" },
+  { id: "gangwon", name: "강원특별자치도교육청" },
+  { id: "chungbuk", name: "충청북도교육청" },
+  { id: "chungnam", name: "충청남도교육청" },
+  { id: "jeonnam", name: "전라남도교육청" },
+  { id: "gyeongbuk", name: "경상북도교육청" },
+  { id: "gyeongnam", name: "경상남도교육청" },
+  { id: "jeju", name: "제주특별자치도교육청" }
 ];
 
 const form = document.querySelector("#optionsForm");
