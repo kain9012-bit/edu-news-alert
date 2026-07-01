@@ -133,6 +133,7 @@ async function checkNews({ notify = true } = {}) {
       iconUrl: "icon.svg",
       title: `새 관심 보도자료 ${newMatches.length}건`,
       message: `${first.sourceName || first.source || "교육청"} - ${first.title || "제목 없음"}`,
+      buttons: [{ title: "최근 보도자료 보기" }],
       priority: 2
     });
   }
@@ -162,7 +163,7 @@ chrome.runtime.onInstalled.addListener(async () => {
 chrome.alarms.onAlarm.addListener((alarm) => {
   if (alarm.name === ALARM_NAME) {
     checkNews().catch(async (error) => {
-      await chrome.storage.local.set({ lastError: error.message, lastCheckedAt: new Date().toISOString() });
+      chrome.storage.local.set({ lastError: error.message, lastCheckedAt: new Date().toISOString() });
     });
   }
 });
@@ -171,6 +172,12 @@ chrome.notifications.onClicked.addListener(async () => {
   const { lastNotificationUrl } = await chrome.storage.local.get("lastNotificationUrl");
   if (lastNotificationUrl) {
     await chrome.tabs.create({ url: lastNotificationUrl });
+  }
+});
+
+chrome.notifications.onButtonClicked.addListener(async (notificationId, buttonIndex) => {
+  if (notificationId === "news-keyword-match" && buttonIndex === 0) {
+    await chrome.tabs.create({ url: chrome.runtime.getURL("dashboard.html") });
   }
 });
 
