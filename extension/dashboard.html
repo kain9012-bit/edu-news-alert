@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>최근 보도자료</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="dashboard">
+    <header class="dashboardHeader">
+      <div>
+        <h1>최근 보도자료</h1>
+        <p id="dashboardStatus">저장된 보도자료를 불러오는 중입니다.</p>
+      </div>
+      <button id="refreshDashboard" type="button">새로고침</button>
+    </header>
+
+    <section class="filters">
+      <label class="field">
+        <span>검색어</span>
+        <input id="searchInput" type="search" placeholder="제목, 내용 일부, 기관명 검색">
+      </label>
+      <label class="field">
+        <span>기관</span>
+        <select id="sourceFilter">
+          <option value="">전체 기관</option>
+        </select>
+      </label>
+      <label class="field">
+        <span>관심 키워드</span>
+        <select id="keywordFilter">
+          <option value="">전체 키워드</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="dashboardMeta">
+      <strong id="resultCount">0건</strong>
+      <span>현재 저장된 자료 기준</span>
+    </section>
+
+    <section id="dashboardList" class="dashboardList empty">표시할 보도자료가 없습니다.</section>
+  </main>
+  <script src="dashboard.js"></script>
+</body>
+</html>
