@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>보도자료 알리미 설정</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="options">
+    <header>
+      <h1>설정</h1>
+      <p>관심 키워드와 확인할 기관을 고릅니다.</p>
+    </header>
+
+    <form id="optionsForm">
+      <label class="field">
+        <span>데이터 주소</span>
+        <input id="dataUrl" type="url" required>
+      </label>
+
+      <label class="field">
+        <span>관심 키워드</span>
+        <textarea id="keywords" rows="8" placeholder="키워드를 한 줄에 하나씩 입력"></textarea>
+      </label>
+
+      <fieldset>
+        <legend>검색 범위</legend>
+        <label><input type="radio" name="searchMode" value="title_summary"> 제목과 요약</label>
+        <label><input type="radio" name="searchMode" value="title_only"> 제목만</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>확인할 기관</legend>
+        <div id="sources" class="checks"></div>
+      </fieldset>
+
+      <label class="field compact">
+        <span>확인 주기(분)</span>
+        <input id="intervalMinutes" type="number" min="15" step="5">
+      </label>
+
+      <div class="footerActions">
+        <button type="submit">저장</button>
+        <button id="resetSeen" type="button" class="secondary">알림 기록 초기화</button>
+      </div>
+      <p id="savedText" class="saved" aria-live="polite"></p>
+    </form>
+  </main>
+  <script src="options.js"></script>
+</body>
+</html>
