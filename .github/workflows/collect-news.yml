@@ -41,6 +41,7 @@ jobs:
       - name: Collect press releases
         env:
           RETENTION_DAYS: "7"
+          COLLECTION_WINDOW_HOURS: "24"
           MAX_ITEMS_TOTAL: "1000"
           MAX_ITEMS_PER_SOURCE: "20"
         run: python crawler/collect.py
