@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>보도자료 알리미</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="popup">
+  <main>
+    <header class="topbar">
+      <div>
+        <h1>보도자료 알리미</h1>
+        <p id="statusText">상태를 확인하는 중입니다.</p>
+      </div>
+      <button id="openOptions" type="button" title="설정">설정</button>
+    </header>
+
+    <section class="actions">
+      <button id="checkNow" type="button">지금 확인</button>
+      <a id="openData" href="https://kain9012-bit.github.io/edu-news-alert/news.json" target="_blank" rel="noreferrer">데이터 열기</a>
+    </section>
+
+    <section>
+      <h2>최근 알림</h2>
+      <div id="matches" class="list empty">아직 표시할 알림이 없습니다.</div>
+    </section>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
