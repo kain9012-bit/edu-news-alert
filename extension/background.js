@@ -109,7 +109,7 @@ async function checkNews({ notify = true } = {}) {
     await chrome.storage.local.set({ lastNotificationUrl: first.url || null });
     await chrome.notifications.create("news-keyword-match", {
       type: "basic",
-      iconUrl: "icon-128.png",
+      iconUrl: "icon.svg",
       title: `새 관심 보도자료 ${newMatches.length}건`,
       message: `${first.sourceName || "교육청"} - ${first.title || "제목 없음"}`,
       priority: 2
