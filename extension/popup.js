@@ -2,6 +2,7 @@ const statusText = document.querySelector("#statusText");
 const matchesEl = document.querySelector("#matches");
 const checkNowButton = document.querySelector("#checkNow");
 const openOptionsButton = document.querySelector("#openOptions");
+const openDashboardButton = document.querySelector("#openDashboard");
 
 function escapeHtml(value) {
   return String(value || "")
@@ -70,6 +71,10 @@ checkNowButton.addEventListener("click", async () => {
 
 openOptionsButton.addEventListener("click", () => {
   chrome.runtime.openOptionsPage();
+});
+
+openDashboardButton.addEventListener("click", () => {
+  chrome.tabs.create({ url: chrome.runtime.getURL("dashboard.html") });
 });
 
 refresh();
