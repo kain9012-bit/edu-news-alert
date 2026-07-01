@@ -14,26 +14,24 @@ const DEFAULT_KEYWORDS = [
   "데이터 기반"
 ];
 const SOURCES = [
-  { id: "moe", name: "교육부" },
-  { id: "jeonbuk", name: "전북특별자치도교육청 본청" },
-  { id: "jeonbuk_institute", name: "전북특별자치도교육청 직속기관" },
-  { id: "jeonbuk_support", name: "전북특별자치도교육청 교육지원청" },
-  { id: "seoul", name: "서울특별시교육청" },
-  { id: "gyeonggi", name: "경기도교육청" },
-  { id: "busan", name: "부산광역시교육청" },
-  { id: "daegu", name: "대구광역시교육청" },
-  { id: "incheon", name: "인천광역시교육청" },
-  { id: "gwangju", name: "광주광역시교육청" },
-  { id: "daejeon", name: "대전광역시교육청" },
-  { id: "ulsan", name: "울산광역시교육청" },
-  { id: "sejong", name: "세종특별자치시교육청" },
-  { id: "gangwon", name: "강원특별자치도교육청" },
-  { id: "chungbuk", name: "충청북도교육청" },
-  { id: "chungnam", name: "충청남도교육청" },
-  { id: "jeonnam", name: "전라남도교육청" },
-  { id: "gyeongbuk", name: "경상북도교육청" },
-  { id: "gyeongnam", name: "경상남도교육청" },
-  { id: "jeju", name: "제주특별자치도교육청" }
+  { id: "moe", name: "교육부", sourceIds: ["moe"] },
+  { id: "jeonbuk_group", name: "전북특별자치도교육청", sourceIds: ["jeonbuk", "jeonbuk_institute", "jeonbuk_support"] },
+  { id: "seoul", name: "서울특별시교육청", sourceIds: ["seoul"] },
+  { id: "gyeonggi", name: "경기도교육청", sourceIds: ["gyeonggi"] },
+  { id: "busan", name: "부산광역시교육청", sourceIds: ["busan"] },
+  { id: "daegu", name: "대구광역시교육청", sourceIds: ["daegu"] },
+  { id: "incheon", name: "인천광역시교육청", sourceIds: ["incheon"] },
+  { id: "gwangju", name: "광주광역시교육청", sourceIds: ["gwangju"] },
+  { id: "daejeon", name: "대전광역시교육청", sourceIds: ["daejeon"] },
+  { id: "ulsan", name: "울산광역시교육청", sourceIds: ["ulsan"] },
+  { id: "sejong", name: "세종특별자치시교육청", sourceIds: ["sejong"] },
+  { id: "gangwon", name: "강원특별자치도교육청", sourceIds: ["gangwon"] },
+  { id: "chungbuk", name: "충청북도교육청", sourceIds: ["chungbuk"] },
+  { id: "chungnam", name: "충청남도교육청", sourceIds: ["chungnam"] },
+  { id: "jeonnam", name: "전라남도교육청", sourceIds: ["jeonnam"] },
+  { id: "gyeongbuk", name: "경상북도교육청", sourceIds: ["gyeongbuk"] },
+  { id: "gyeongnam", name: "경상남도교육청", sourceIds: ["gyeongnam"] },
+  { id: "jeju", name: "제주특별자치도교육청", sourceIds: ["jeju"] }
 ];
 
 const form = document.querySelector("#optionsForm");
@@ -45,23 +43,31 @@ const savedText = document.querySelector("#savedText");
 const resetSeen = document.querySelector("#resetSeen");
 
 function renderSources(enabledSourceIds) {
+  const enabled = new Set(enabledSourceIds);
   sources.innerHTML = SOURCES.map((source) => `
     <label>
-      <input type="checkbox" value="${source.id}" ${enabledSourceIds.includes(source.id) ? "checked" : ""}>
+      <input type="checkbox" value="${source.id}" ${source.sourceIds.some((id) => enabled.has(id)) ? "checked" : ""}>
       ${source.name}
     </label>
   `).join("");
 }
 
 function selectedSources() {
-  return Array.from(sources.querySelectorAll("input:checked")).map((input) => input.value);
+  const selectedGroupIds = new Set(Array.from(sources.querySelectorAll("input:checked")).map((input) => input.value));
+  return SOURCES
+    .filter((source) => selectedGroupIds.has(source.id))
+    .flatMap((source) => source.sourceIds);
+}
+
+function allSourceIds() {
+  return SOURCES.flatMap((source) => source.sourceIds);
 }
 
 async function loadOptions() {
   const state = await chrome.storage.local.get({
     dataUrl: DEFAULT_DATA_URL,
     keywords: DEFAULT_KEYWORDS,
-    enabledSourceIds: SOURCES.map((source) => source.id),
+    enabledSourceIds: allSourceIds(),
     searchMode: "title_summary",
     intervalMinutes: 60
   });
@@ -81,7 +87,7 @@ form.addEventListener("submit", async (event) => {
   await chrome.storage.local.set({
     dataUrl: dataUrl.value.trim(),
     keywords: nextKeywords,
-    enabledSourceIds: nextSources.length > 0 ? nextSources : SOURCES.map((source) => source.id),
+    enabledSourceIds: nextSources.length > 0 ? nextSources : allSourceIds(),
     searchMode: form.searchMode.value,
     intervalMinutes: Math.max(15, Number(intervalMinutes.value) || 60)
   });
