@@ -3,6 +3,14 @@ const matchesEl = document.querySelector("#matches");
 const checkNowButton = document.querySelector("#checkNow");
 const openOptionsButton = document.querySelector("#openOptions");
 
+function escapeHtml(value) {
+  return String(value || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
+}
+
 function formatDate(value) {
   if (!value) return "아직 확인 전";
   return new Intl.DateTimeFormat("ko-KR", {
@@ -20,11 +28,12 @@ function renderMatches(items) {
 
   matchesEl.className = "list";
   matchesEl.innerHTML = items.slice(0, 8).map((item) => {
-    const keywords = (item.matchedKeywords || []).join(", ");
+    const keywords = (item.matchedKeywords || []).map(escapeHtml).join(", ");
+    const url = escapeHtml(item.url || "#");
     return `
-      <a class="item" href="${item.url || "#"}" target="_blank" rel="noreferrer">
-        <span class="source">${item.sourceName || item.sourceId || "교육청"}</span>
-        <strong>${item.title || "제목 없음"}</strong>
+      <a class="item" href="${url}" target="_blank" rel="noreferrer">
+        <span class="source">${escapeHtml(item.sourceName || item.source || item.sourceId || "교육청")}</span>
+        <strong>${escapeHtml(item.title || "제목 없음")}</strong>
         <small>${keywords}</small>
       </a>
     `;
@@ -36,8 +45,7 @@ async function refresh() {
     recentMatches: [],
     lastCheckedAt: null,
     lastError: null,
-    lastMatchCount: 0,
-    lastNewMatchCount: 0
+    lastMatchCount: 0
   });
 
   if (state.lastError) {
