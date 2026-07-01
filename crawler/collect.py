@@ -22,6 +22,7 @@ PUBLIC_SOURCES_PATH = PUBLIC_DIR / "sources.json"
 
 KST = timezone(timedelta(hours=9))
 RETENTION_DAYS = int(__import__("os").environ.get("RETENTION_DAYS", "7"))
+COLLECTION_WINDOW_HOURS = int(__import__("os").environ.get("COLLECTION_WINDOW_HOURS", "24"))
 MAX_ITEMS_TOTAL = int(__import__("os").environ.get("MAX_ITEMS_TOTAL", "1000"))
 MAX_ITEMS_PER_SOURCE = int(__import__("os").environ.get("MAX_ITEMS_PER_SOURCE", "20"))
 TIMEOUT_SECONDS = int(__import__("os").environ.get("REQUEST_TIMEOUT_SECONDS", "20"))
@@ -163,6 +164,28 @@ def parse_date(text: str) -> str:
         return now_kst().date().isoformat()
 
 
+def item_datetime(value: str | None) -> datetime | None:
+    if not value:
+        return None
+    try:
+        dt = date_parser.parse(value)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=KST)
+        return dt
+    except Exception:
+        return None
+
+
+def within_collection_window(item: dict[str, Any], cutoff: datetime) -> bool:
+    value = item.get("date") or item.get("publishedAt") or item.get("collectedAt")
+    dt = item_datetime(value)
+    if not dt:
+        return True
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(value)):
+        return dt.date() >= cutoff.date()
+    return dt >= cutoff
+
+
 def extract_title(soup: BeautifulSoup, fallback: str) -> str:
     for selector in ["h1", "h2", "h3", "h4", ".title", ".view_title", ".view-title", ".tit"]:
         found = soup.select_one(selector)
@@ -210,22 +233,38 @@ def collect_detail(source: dict[str, Any], link: dict[str, str]) -> dict[str, An
     }
 
 
-def collect_source(source: dict[str, Any]) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+def collect_source(source: dict[str, Any], existing_ids: set[str], cutoff: datetime) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     started = now_kst().isoformat(timespec="seconds")
+    skipped_existing = 0
+    skipped_old = 0
+    detail_failures = 0
     try:
         html = fetch_text(source["listUrl"])
         links = collect_links(source, html)
         items = []
         for link in links:
+            item_id = stable_id(source["id"], link["url"])
+            if item_id in existing_ids:
+                skipped_existing += 1
+                continue
             try:
-                items.append(collect_detail(source, link))
+                item = collect_detail(source, link)
+                if within_collection_window(item, cutoff):
+                    items.append(item)
+                else:
+                    skipped_old += 1
             except Exception as exc:
+                detail_failures += 1
                 print(f"detail failed {source['id']} {link['url']}: {exc}")
         return items, {
             "sourceId": source["id"],
             "source": source["name"],
             "status": "success",
+            "foundLinks": len(links),
             "fetched": len(items),
+            "skippedExisting": skipped_existing,
+            "skippedOutsideWindow": skipped_old,
+            "detailFailures": detail_failures,
             "startedAt": started,
             "finishedAt": now_kst().isoformat(timespec="seconds"),
         }
@@ -234,7 +273,11 @@ def collect_source(source: dict[str, Any]) -> tuple[list[dict[str, Any]], dict[s
             "sourceId": source["id"],
             "source": source["name"],
             "status": "failed",
+            "foundLinks": 0,
             "fetched": 0,
+            "skippedExisting": skipped_existing,
+            "skippedOutsideWindow": skipped_old,
+            "detailFailures": detail_failures,
             "error": str(exc)[:500],
             "startedAt": started,
             "finishedAt": now_kst().isoformat(timespec="seconds"),
@@ -243,31 +286,38 @@ def collect_source(source: dict[str, Any]) -> tuple[list[dict[str, Any]], dict[s
 
 def within_retention(item: dict[str, Any], cutoff: datetime) -> bool:
     for key in ["date", "collectedAt"]:
-        value = item.get(key)
-        if not value:
-            continue
-        try:
-            dt = date_parser.parse(value)
-            if dt.tzinfo is None:
-                dt = dt.replace(tzinfo=KST)
-            if dt >= cutoff:
-                return True
-        except Exception:
-            pass
+        dt = item_datetime(item.get(key))
+        if dt and dt >= cutoff:
+            return True
     return False
+
+
+def public_sources(sources: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    seen_names: set[str] = set()
+    output = []
+    for source in sources:
+        name = source["name"]
+        if name in seen_names:
+            continue
+        seen_names.add(name)
+        output.append({"id": source["id"], "name": name, "enabled": source.get("enabled", True)})
+    return output
 
 
 def main() -> None:
     PUBLIC_DIR.mkdir(parents=True, exist_ok=True)
     sources = [s for s in read_json(SOURCES_PATH, []) if s.get("enabled", True)]
     old_items = read_json(NEWS_PATH, [])
+    existing_ids = {item.get("id", "") for item in old_items if item.get("id")}
+    collection_cutoff = now_kst() - timedelta(hours=COLLECTION_WINDOW_HOURS)
 
     all_new: list[dict[str, Any]] = []
     runs: list[dict[str, Any]] = []
     for source in sources:
         print(f"collect {source['id']} {source['name']}")
-        items, run = collect_source(source)
+        items, run = collect_source(source, existing_ids, collection_cutoff)
         all_new.extend(items)
+        existing_ids.update(item["id"] for item in items)
         runs.append(run)
 
     merged: dict[str, dict[str, Any]] = {item.get("id", ""): item for item in old_items if item.get("id")}
@@ -282,6 +332,7 @@ def main() -> None:
     status = {
         "ok": all(run["status"] == "success" for run in runs),
         "retentionDays": RETENTION_DAYS,
+        "collectionWindowHours": COLLECTION_WINDOW_HOURS,
         "total": len(kept),
         "newlyCollected": len(all_new),
         "collectedAt": now_kst().isoformat(timespec="seconds"),
@@ -296,7 +347,7 @@ def main() -> None:
     write_json(NEWS_PATH, kept)
     write_json(LATEST_PATH, latest)
     write_json(STATUS_PATH, status)
-    write_json(PUBLIC_SOURCES_PATH, [{"id": s["id"], "name": s["name"], "enabled": s.get("enabled", True)} for s in sources])
+    write_json(PUBLIC_SOURCES_PATH, public_sources(sources))
 
     print(json.dumps(status, ensure_ascii=False, indent=2))
 
