@@ -4,8 +4,16 @@
     "name": "교육부",
     "baseUrl": "https://www.moe.go.kr",
     "listUrl": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=294&m=020402&s=moe",
-    "include": ["viewRenew.do", "boardSeq="],
-    "exclude": ["fileDown", "fileDownload", ".jpg", ".png"],
+    "include": [
+      "viewRenew.do",
+      "boardSeq="
+    ],
+    "exclude": [
+      "fileDown",
+      "fileDownload",
+      ".jpg",
+      ".png"
+    ],
     "detailPath": "/boardCnts/viewRenew.do",
     "seqParam": "boardSeq",
     "enabled": true
@@ -15,8 +23,14 @@
     "name": "전북특별자치도교육청",
     "baseUrl": "https://news.jbe.go.kr",
     "listUrl": "https://news.jbe.go.kr/board/list.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&contentsSid=2105&cpath=&startPage=1",
-    "include": ["/board/view.jbe", "dataSid="],
-    "exclude": ["download", "file"],
+    "include": [
+      "/board/view.jbe",
+      "dataSid="
+    ],
+    "exclude": [
+      "download",
+      "file"
+    ],
     "enabled": true
   },
   {
@@ -24,8 +38,14 @@
     "name": "전북특별자치도교육청",
     "baseUrl": "https://news.jbe.go.kr",
     "listUrl": "https://news.jbe.go.kr/board/list.jbe?boardId=BBS_0000223&menuCd=DOM_000001201002000000&contentsSid=2106&cpath=&startPage=1",
-    "include": ["/board/view.jbe", "dataSid="],
-    "exclude": ["download", "file"],
+    "include": [
+      "/board/view.jbe",
+      "dataSid="
+    ],
+    "exclude": [
+      "download",
+      "file"
+    ],
     "enabled": true
   },
   {
@@ -33,8 +53,14 @@
     "name": "전북특별자치도교육청",
     "baseUrl": "https://news.jbe.go.kr",
     "listUrl": "https://news.jbe.go.kr/board/list.jbe?boardId=BBS_0000224&menuCd=DOM_000001201003000000&contentsSid=2107&cpath=&startPage=1",
-    "include": ["/board/view.jbe", "dataSid="],
-    "exclude": ["download", "file"],
+    "include": [
+      "/board/view.jbe",
+      "dataSid="
+    ],
+    "exclude": [
+      "download",
+      "file"
+    ],
     "enabled": true
   },
   {
@@ -42,8 +68,15 @@
     "name": "서울특별시교육청",
     "baseUrl": "https://enews.sen.go.kr",
     "listUrl": "https://enews.sen.go.kr/news/list.do?step1=3&step2=1&pageIndex=1",
-    "include": ["/news/view.do", "bbsSn="],
-    "exclude": ["q_bbsSn=", "www.sen.go.kr", "/user/bbs/"],
+    "include": [
+      "/news/view.do",
+      "bbsSn="
+    ],
+    "exclude": [
+      "q_bbsSn=",
+      "www.sen.go.kr",
+      "/user/bbs/"
+    ],
     "enabled": true
   },
   {
@@ -51,8 +84,16 @@
     "name": "경기도교육청",
     "baseUrl": "https://www.goe.go.kr",
     "listUrl": "https://www.goe.go.kr/goe/na/ntt/selectNttList.do?bbsId=1922&mi=10102&currPage=1",
-    "include": ["selectNttInfo.do", "nttSn="],
-    "exclude": ["fileDownload", "resource", ".jpg", ".png"],
+    "include": [
+      "selectNttInfo.do",
+      "nttSn="
+    ],
+    "exclude": [
+      "fileDownload",
+      "resource",
+      ".jpg",
+      ".png"
+    ],
     "detailPath": "/goe/na/ntt/selectNttInfo.do",
     "seqParam": "nttSn",
     "enabled": true
@@ -62,8 +103,16 @@
     "name": "부산광역시교육청",
     "baseUrl": "https://www.pen.go.kr",
     "listUrl": "https://www.pen.go.kr/main/na/ntt/selectNttList.do?bbsId=2286&mi=30397&currPage=1",
-    "include": ["selectNttInfo.do", "nttSn="],
-    "exclude": ["fileDownload", "resource", ".jpg", ".png"],
+    "include": [
+      "selectNttInfo.do",
+      "nttSn="
+    ],
+    "exclude": [
+      "fileDownload",
+      "resource",
+      ".jpg",
+      ".png"
+    ],
     "detailPath": "/main/na/ntt/selectNttInfo.do",
     "seqParam": "nttSn",
     "enabled": true
@@ -73,8 +122,16 @@
     "name": "대구광역시교육청",
     "baseUrl": "https://www.dge.go.kr",
     "listUrl": "https://www.dge.go.kr/pr/main.do",
-    "include": ["selectNttInfo.do", "nttSn="],
-    "exclude": ["fileDownload", "resource", ".jpg", ".png"],
+    "include": [
+      "selectNttInfo.do",
+      "nttSn="
+    ],
+    "exclude": [
+      "fileDownload",
+      "resource",
+      ".jpg",
+      ".png"
+    ],
     "detailPath": "/pr/na/ntt/selectNttInfo.do",
     "seqParam": "nttSn",
     "enabled": true
@@ -84,19 +141,72 @@
     "name": "인천광역시교육청",
     "baseUrl": "https://www.ice.go.kr",
     "listUrl": "https://www.ice.go.kr/ice/na/ntt/selectNttList.do?bbsId=1519&mi=11620&currPage=1",
-    "include": ["selectNttInfo.do", "nttSn="],
-    "exclude": ["fileDownload", "resource", ".jpg", ".png"],
+    "include": [
+      "selectNttInfo.do",
+      "nttSn="
+    ],
+    "exclude": [
+      "fileDownload",
+      "resource",
+      ".jpg",
+      ".png"
+    ],
     "detailPath": "/ice/na/ntt/selectNttInfo.do",
     "seqParam": "nttSn",
     "enabled": true
   },
   {
-    "id": "gwangju",
-    "name": "광주광역시교육청",
-    "baseUrl": "https://enews.gen.go.kr",
-    "listUrl": "https://enews.gen.go.kr/v5/?sid=25&page=1",
-    "include": ["wbb=md:view", "uid:"],
-    "exclude": ["download.php", "view_image.php", ".jpg", ".png"],
+    "id": "jngj_s1n1",
+    "name": "전남광주통합특별시교육청",
+    "baseUrl": "https://www.jngjedu.kr",
+    "listUrl": "https://www.jngjedu.kr/news/articleList.html?sc_section_code=S1N1&view_type=sm&page=1",
+    "include": [
+      "articleView.html",
+      "idxno="
+    ],
+    "exclude": [
+      "articleViewAmp.html",
+      "download.php",
+      "photo",
+      ".jpg",
+      ".png"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "jngj_s1n2",
+    "name": "전남광주통합특별시교육청",
+    "baseUrl": "https://www.jngjedu.kr",
+    "listUrl": "https://www.jngjedu.kr/news/articleList.html?sc_section_code=S1N2&view_type=sm&page=1",
+    "include": [
+      "articleView.html",
+      "idxno="
+    ],
+    "exclude": [
+      "articleViewAmp.html",
+      "download.php",
+      "photo",
+      ".jpg",
+      ".png"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "jngj_s1n3",
+    "name": "전남광주통합특별시교육청",
+    "baseUrl": "https://www.jngjedu.kr",
+    "listUrl": "https://www.jngjedu.kr/news/articleList.html?sc_section_code=S1N3&view_type=sm&page=1",
+    "include": [
+      "articleView.html",
+      "idxno="
+    ],
+    "exclude": [
+      "articleViewAmp.html",
+      "download.php",
+      "photo",
+      ".jpg",
+      ".png"
+    ],
     "enabled": true
   },
   {
@@ -104,8 +214,16 @@
     "name": "대전광역시교육청",
     "baseUrl": "https://www.dje.go.kr",
     "listUrl": "https://www.dje.go.kr/boardCnts/list.do?boardID=8&menuID=040201&m=040201&s=dje&page=1",
-    "include": ["boardCnts/view.do", "boardSeq="],
-    "exclude": ["fileDown.do", "synapView", ".jpg", ".png"],
+    "include": [
+      "boardCnts/view.do",
+      "boardSeq="
+    ],
+    "exclude": [
+      "fileDown.do",
+      "synapView",
+      ".jpg",
+      ".png"
+    ],
     "detailPath": "/boardCnts/view.do",
     "seqParam": "boardSeq",
     "enabled": true
@@ -115,8 +233,17 @@
     "name": "울산광역시교육청",
     "baseUrl": "https://use.go.kr",
     "listUrl": "https://use.go.kr/news/user/bbs/BD_selectBbsList.do?q_bbsSn=1005",
-    "include": ["BD_selectBbs.do", "q_bbsDocNo="],
-    "exclude": ["ND_fileDownload", "ND_loadImage", "component/file", ".jpg", ".png"],
+    "include": [
+      "BD_selectBbs.do",
+      "q_bbsDocNo="
+    ],
+    "exclude": [
+      "ND_fileDownload",
+      "ND_loadImage",
+      "component/file",
+      ".jpg",
+      ".png"
+    ],
     "verifySsl": false,
     "enabled": true
   },
@@ -125,8 +252,16 @@
     "name": "세종특별자치시교육청",
     "baseUrl": "https://www.sje.go.kr",
     "listUrl": "https://www.sje.go.kr/sje/na/ntt/selectNttList.do?bbsId=1039263&mi=52234&currPage=1",
-    "include": ["selectNttInfo.do", "nttSn="],
-    "exclude": ["fileDownload", "resource", ".jpg", ".png"],
+    "include": [
+      "selectNttInfo.do",
+      "nttSn="
+    ],
+    "exclude": [
+      "fileDownload",
+      "resource",
+      ".jpg",
+      ".png"
+    ],
     "detailPath": "/sje/na/ntt/selectNttInfo.do",
     "seqParam": "nttSn",
     "enabled": true
@@ -136,8 +271,16 @@
     "name": "강원특별자치도교육청",
     "baseUrl": "https://gwe.go.kr",
     "listUrl": "https://gwe.go.kr/promotion/bbs/list.do?key=m2411225294640",
-    "include": ["/promotion/bbs/view.do", "bbsSn="],
-    "exclude": ["fileDown.do", "preview.do", ".jpg", ".png"],
+    "include": [
+      "/promotion/bbs/view.do",
+      "bbsSn="
+    ],
+    "exclude": [
+      "fileDown.do",
+      "preview.do",
+      ".jpg",
+      ".png"
+    ],
     "enabled": true
   },
   {
@@ -145,8 +288,17 @@
     "name": "충청북도교육청",
     "baseUrl": "https://www.cbe.go.kr",
     "listUrl": "https://www.cbe.go.kr/news/na/ntt/selectNttList.do?bbsId=1158&mi=10301",
-    "include": ["selectNttInfo.do", "nttSn="],
-    "exclude": ["nttFileDownload", "comm/nttFileDownload", "upload/news", ".jpg", ".png"],
+    "include": [
+      "selectNttInfo.do",
+      "nttSn="
+    ],
+    "exclude": [
+      "nttFileDownload",
+      "comm/nttFileDownload",
+      "upload/news",
+      ".jpg",
+      ".png"
+    ],
     "detailPath": "/news/na/ntt/selectNttInfo.do",
     "seqParam": "nttSn",
     "enabled": true
@@ -156,19 +308,18 @@
     "name": "충청남도교육청",
     "baseUrl": "http://news.cne.go.kr",
     "listUrl": "http://news.cne.go.kr/boardCnts/list.do?boardID=1003&m=0401&s=news&page=1",
-    "include": ["boardCnts/view.do", "boardSeq="],
-    "exclude": ["fileDown.do", "upload/mobileBoard", ".jpg", ".png"],
+    "include": [
+      "boardCnts/view.do",
+      "boardSeq="
+    ],
+    "exclude": [
+      "fileDown.do",
+      "upload/mobileBoard",
+      ".jpg",
+      ".png"
+    ],
     "detailPath": "/boardCnts/view.do",
     "seqParam": "boardSeq",
-    "enabled": true
-  },
-  {
-    "id": "jeonnam",
-    "name": "전라남도교육청",
-    "baseUrl": "https://www.jnedu.kr",
-    "listUrl": "https://www.jnedu.kr/news/articleList.html?sc_section_code=S1N1&view_type=sm&page=1",
-    "include": ["articleView.html", "idxno="],
-    "exclude": ["articleViewAmp.html", "download.php", "photo", ".jpg", ".png"],
     "enabled": true
   },
   {
@@ -176,8 +327,17 @@
     "name": "경상북도교육청",
     "baseUrl": "https://www.gbe.kr",
     "listUrl": "https://www.gbe.kr/news/na/ntt/selectNttList.do?bbsId=4744&mi=17643&searchCate=761&currPage=1",
-    "include": ["selectNttInfo.do", "nttSn="],
-    "exclude": ["nttGetFilePath.do", "nttFileDownload", "upload/news", ".jpg", ".png"],
+    "include": [
+      "selectNttInfo.do",
+      "nttSn="
+    ],
+    "exclude": [
+      "nttGetFilePath.do",
+      "nttFileDownload",
+      "upload/news",
+      ".jpg",
+      ".png"
+    ],
     "detailPath": "/news/na/ntt/selectNttInfo.do",
     "seqParam": "nttSn",
     "enabled": true
@@ -187,8 +347,17 @@
     "name": "경상남도교육청",
     "baseUrl": "https://www.gne.go.kr",
     "listUrl": "https://www.gne.go.kr/pr/user/bbs/BD_selectBbsList.do?q_bbsSn=1350",
-    "include": ["BD_selectBbs.do", "q_bbsDocNo="],
-    "exclude": ["ND_fileDownload", "ND_loadImage", "component/file", ".jpg", ".png"],
+    "include": [
+      "BD_selectBbs.do",
+      "q_bbsDocNo="
+    ],
+    "exclude": [
+      "ND_fileDownload",
+      "ND_loadImage",
+      "component/file",
+      ".jpg",
+      ".png"
+    ],
     "enabled": true
   },
   {
@@ -196,8 +365,16 @@
     "name": "제주특별자치도교육청",
     "baseUrl": "https://www.jje.go.kr",
     "listUrl": "https://www.jje.go.kr/pro/board/list.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&startPage=1",
-    "include": ["/pro/board/view.jje", "dataSid="],
-    "exclude": ["download.jje", "SynapViewer.jje", ".jpg", ".png"],
+    "include": [
+      "/pro/board/view.jje",
+      "dataSid="
+    ],
+    "exclude": [
+      "download.jje",
+      "SynapViewer.jje",
+      ".jpg",
+      ".png"
+    ],
     "enabled": true
   }
 ]
