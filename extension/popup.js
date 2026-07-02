@@ -46,13 +46,14 @@ async function refresh() {
     recentMatches: [],
     lastCheckedAt: null,
     lastError: null,
-    lastMatchCount: 0
+    lastMatchCount: 0,
+    lastNewMatchCount: 0
   });
 
   if (state.lastError) {
     statusText.textContent = `마지막 확인 실패: ${state.lastError}`;
   } else {
-    statusText.textContent = `${formatDate(state.lastCheckedAt)} 확인, 관심 자료 ${state.lastMatchCount || 0}건`;
+    statusText.textContent = `${formatDate(state.lastCheckedAt)} 확인, 관심 자료 ${state.lastMatchCount || 0}건, 새 알림 ${state.lastNewMatchCount || 0}건`;
   }
   renderMatches(state.recentMatches);
 }
