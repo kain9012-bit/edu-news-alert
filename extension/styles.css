@@ -334,6 +334,55 @@ legend {
   font-weight: 700;
 }
 
+.alert {
+  min-width: 0;
+  background: var(--bg);
+}
+
+.alert main {
+  width: 100%;
+  padding: 14px;
+}
+
+.alertHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.alertHeader h1 {
+  font-size: 18px;
+}
+
+#closeAlert {
+  width: 34px;
+  min-width: 34px;
+  height: 34px;
+  padding: 0;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.alert .list {
+  max-height: 286px;
+  overflow: auto;
+}
+
+.alertActions {
+  display: grid;
+  margin-top: 12px;
+}
+
+.alertActions button {
+  min-height: 38px;
+  border-color: var(--accent);
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+}
+
 @media (max-width: 760px) {
   .filters {
     grid-template-columns: 1fr;
