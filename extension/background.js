@@ -38,12 +38,8 @@ const DEFAULT_SOURCE_IDS = [
 ];
 const SOURCE_SCHEMA_VERSION = 2;
 const ALARM_NAME = "check-news";
-
-async function setBadgeCount(count) {
-  const text = count > 0 ? String(Math.min(count, 99)) : "";
-  await chrome.action.setBadgeText({ text });
-  await chrome.action.setBadgeBackgroundColor({ color: "#0f766e" });
-}
+const ALERT_WIDTH = 390;
+const ALERT_HEIGHT = 430;
 
 function migrateSourceIds(sourceIds, schemaVersion) {
   if (!Array.isArray(sourceIds)) return DEFAULT_SOURCE_IDS;
@@ -154,19 +150,37 @@ async function checkNews({ notify = true } = {}) {
 
   if (notify && newMatches.length > 0) {
     const first = newMatches[0];
-    await setBadgeCount(newMatches.length);
     await chrome.storage.local.set({ lastNotificationUrl: first.url || null });
-    await chrome.notifications.create("news-keyword-match", {
-      type: "basic",
-      iconUrl: "icon.svg",
-      title: `새 관심 보도자료 ${newMatches.length}건`,
-      message: `${first.sourceName || first.source || "교육청"} - ${first.title || "제목 없음"}`,
-      buttons: [{ title: "최근 보도자료 보기" }],
-      priority: 2
-    });
+    await openAlertWindow(newMatches);
   }
 
   return { total: news.length, matches: matches.length, newMatches: newMatches.length };
+}
+
+async function openAlertWindow(newMatches) {
+  await chrome.storage.local.set({ alertMatches: newMatches.slice(0, 8) });
+
+  const { alertWindowId } = await chrome.storage.local.get("alertWindowId");
+  if (alertWindowId) {
+    await chrome.windows.remove(alertWindowId).catch(() => {});
+  }
+
+  const currentWindow = await chrome.windows.getLastFocused().catch(() => null);
+  const left = currentWindow?.left != null && currentWindow?.width
+    ? Math.max(currentWindow.left + currentWindow.width - ALERT_WIDTH - 24, 0)
+    : undefined;
+  const top = currentWindow?.top != null ? Math.max(currentWindow.top + 72, 0) : undefined;
+
+  const alertWindow = await chrome.windows.create({
+    url: chrome.runtime.getURL("alert.html"),
+    type: "popup",
+    width: ALERT_WIDTH,
+    height: ALERT_HEIGHT,
+    left,
+    top,
+    focused: true
+  });
+  await chrome.storage.local.set({ alertWindowId: alertWindow.id });
 }
 
 chrome.runtime.onInstalled.addListener(async () => {
@@ -194,21 +208,6 @@ chrome.alarms.onAlarm.addListener((alarm) => {
     checkNews().catch(async (error) => {
       chrome.storage.local.set({ lastError: error.message, lastCheckedAt: new Date().toISOString() });
     });
-  }
-});
-
-chrome.notifications.onClicked.addListener(async () => {
-  const { lastNotificationUrl } = await chrome.storage.local.get("lastNotificationUrl");
-  await setBadgeCount(0);
-  if (lastNotificationUrl) {
-    await chrome.tabs.create({ url: lastNotificationUrl });
-  }
-});
-
-chrome.notifications.onButtonClicked.addListener(async (notificationId, buttonIndex) => {
-  if (notificationId === "news-keyword-match" && buttonIndex === 0) {
-    await setBadgeCount(0);
-    await chrome.tabs.create({ url: chrome.runtime.getURL("dashboard.html") });
   }
 });
 
