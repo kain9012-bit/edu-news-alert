@@ -62,6 +62,20 @@ PREFER_LIST_TITLE = {
     "jeju",
 }
 
+DATA_ID_ONLY_SOURCES = {
+    "gyeonggi",
+    "busan",
+    "incheon",
+    "chungbuk",
+    "gyeongbuk",
+}
+
+NOTICE_TITLE_PHRASES = [
+    "보도자료 서식",
+    "보도(홍보)자료 제출방법",
+    "보도자료 작성 서식",
+]
+
 TITLE_SELECTORS = {
     "seoul": [".news_view_tit", ".view_title", "h1", "h2"],
     "gyeonggi": [".board_view .tit", ".view_title", ".title", "h1", "h2"],
@@ -221,29 +235,46 @@ def needs_refetch(item: dict[str, Any]) -> bool:
     return is_generic_title(item.get("title", "")) or len(normalize_space(item.get("summary", ""))) < 40
 
 
+def is_usable_item(item: dict[str, Any]) -> bool:
+    title = normalize_space(item.get("title", ""))
+    summary = normalize_space(item.get("summary", ""))
+    return bool(title) and title != "제목 없음" and not is_generic_title(title) and not is_notice_title(title) and len(summary) >= 40
+
+
 def row_text(tag: Any) -> str:
     parent = tag.find_parent(["tr", "li", "div", "article"])
     return normalize_space(parent.get_text(" ", strip=True)) if parent else normalize_space(tag.get_text(" ", strip=True))
+
+
+def is_notice_title(text: str) -> bool:
+    title = normalize_space(text or "")
+    return any(phrase in title for phrase in NOTICE_TITLE_PHRASES)
 
 
 def collect_links(source: dict[str, Any], html: str) -> list[dict[str, str]]:
     soup = BeautifulSoup(html, "lxml")
     seen: set[str] = set()
     links: list[dict[str, str]] = []
+    source_id = source["id"]
 
-    for a in soup.find_all("a"):
-        href = a.get("href") or ""
-        title = clean_candidate_title(a.get_text(" ") or row_text(a))
-        if not href:
-            continue
-        url = urljoin(source["listUrl"], href)
-        if url_matches(url, source) and url not in seen:
-            seen.add(url)
-            links.append({"url": url, "title": title, "listText": row_text(a)})
+    if source_id == "sejong":
+        return []
+
+    if source_id not in DATA_ID_ONLY_SOURCES:
+        for a in soup.find_all("a"):
+            href = a.get("href") or ""
+            title = clean_candidate_title(a.get_text(" ") or row_text(a))
+            if not href or is_notice_title(title):
+                continue
+            url = urljoin(source["listUrl"], href)
+            if url_matches(url, source) and url not in seen:
+                seen.add(url)
+                links.append({"url": url, "title": title, "listText": row_text(a)})
 
     seq_param = source.get("seqParam")
     if seq_param:
-        for tag in soup.find_all(True):
+        tags = soup.select("a.nttInfoBtn[data-id]") if source_id in DATA_ID_ONLY_SOURCES else soup.find_all(True)
+        for tag in tags:
             attrs = tag.attrs
             seq = None
             for name in ["data-id", "data-ntt-sn", "data-nttsn", "data-seq", "data-board-seq"]:
@@ -259,6 +290,8 @@ def collect_links(source: dict[str, Any], html: str) -> list[dict[str, str]]:
                     seq = match.group(1)
             url = detail_url_from_seq(source, seq or "")
             title = clean_candidate_title(tag.get_text(" ") or row_text(tag))
+            if is_notice_title(title):
+                continue
             if url and url_matches(url, source) and url not in seen:
                 seen.add(url)
                 links.append({"url": url, "title": title, "listText": row_text(tag)})
@@ -502,7 +535,7 @@ def main() -> None:
         merged[item["id"]] = {**merged.get(item["id"], {}), **item}
 
     cutoff = now_kst() - timedelta(days=RETENTION_DAYS)
-    kept = [item for item in merged.values() if within_retention(item, cutoff)]
+    kept = [item for item in merged.values() if within_retention(item, cutoff) and is_usable_item(item)]
     kept.sort(key=lambda x: (x.get("date") or "", x.get("collectedAt") or ""), reverse=True)
     kept = kept[:MAX_ITEMS_TOTAL]
 
