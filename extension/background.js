@@ -38,8 +38,8 @@ const DEFAULT_SOURCE_IDS = [
 ];
 const SOURCE_SCHEMA_VERSION = 2;
 const ALARM_NAME = "check-news";
-const ALERT_WIDTH = 390;
-const ALERT_HEIGHT = 520;
+const ALERT_WIDTH = 410;
+const ALERT_HEIGHT = 650;
 
 function migrateSourceIds(sourceIds, schemaVersion) {
   if (!Array.isArray(sourceIds)) return DEFAULT_SOURCE_IDS;
@@ -172,7 +172,7 @@ async function openAlertWindow(newMatches) {
   const top = currentWindow?.top != null ? Math.max(currentWindow.top + 72, 0) : undefined;
 
   const alertWindow = await chrome.windows.create({
-    url: chrome.runtime.getURL("alert.html"),
+    url: chrome.runtime.getURL("popup.html"),
     type: "popup",
     width: ALERT_WIDTH,
     height: ALERT_HEIGHT,
