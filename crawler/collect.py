@@ -40,6 +40,90 @@ DATE_PATTERNS = [
     r"(\d{2})[.\-/](\d{1,2})[.\-/](\d{1,2})",
 ]
 
+GENERIC_TITLE_PHRASES = [
+    "상단영역",
+    "시스템안내",
+    "전북교육소식",
+    "자율 균형 미래 경기도교육청",
+    "GYEONGGIDO OFFICE OF EDUCATION",
+    "보도자료 | 경기도교육청",
+    "보도자료",
+    "뉴스/소식",
+]
+
+PREFER_LIST_TITLE = {
+    "gyeonggi",
+    "busan",
+    "daegu",
+    "incheon",
+    "sejong",
+    "gyeongbuk",
+    "chungnam",
+    "jeju",
+}
+
+TITLE_SELECTORS = {
+    "seoul": [".news_view_tit", ".view_title", "h1", "h2"],
+    "gyeonggi": [".board_view .tit", ".view_title", ".title", "h1", "h2"],
+    "busan": [".bbs_ViewA h3", "h3", ".tit"],
+    "daegu": [".bbs_ViewA h3", "h3"],
+    "incheon": [".bbs_ViewA h3", ".bbs_ViewA", ".subContent"],
+    "gwangju": [".subject", ".view_top .subject"],
+    "daejeon": ["article.board-text h2.tit", "#container h2.tit"],
+    "ulsan": ["h3.vtitle .tit", ".bd-view__vhead h3.vtitle .tit", ".bd-view__vhead h3.vtitle"],
+    "sejong": [".bbs_ViewA h3", ".bbs_ViewA", "#cntntsView"],
+    "gangwon": [".board_detail .title", ".bo_head .title"],
+    "chungbuk": [".bbs_ViewA h3", "h3"],
+    "chungnam": ["article.board-text h1.tit", ".board-text h1.tit", ".tit"],
+    "jeonnam": [".article-view-header h3.heading", ".aht-title-view", "header.article-view-header h3.heading"],
+    "gyeongbuk": ["th.title", ".title"],
+    "gyeongnam": [".bd-view__vhead h3.vtitle .tit", ".bd-view__vhead h3.vtitle", ".bd-view__vhead .tit"],
+    "jeju": [".bdvTit", ".bdvTitWrap .bdvTit"],
+    "moe": ["h3", ".tit", ".title"],
+}
+
+CONTENT_SELECTORS = {
+    "jeonbuk": [".bbs_con", ".board_view"],
+    "jeonbuk_institute": [".bbs_con", ".board_view"],
+    "jeonbuk_support": [".bbs_con", ".board_view"],
+    "seoul": ["#view_txt", ".news_view", ".view_cont"],
+    "gyeonggi": [".bbsV_cont", "#contents", ".board_view", ".view_cont"],
+    "busan": [".bbsV_cont"],
+    "daegu": [".bbsV_cont"],
+    "incheon": [".bbsV_cont"],
+    "gwangju": [".press_content", "#EditorViewer"],
+    "daejeon": [".viewBox"],
+    "ulsan": [".bd-view__vcontent .txt", ".bd-view__vcontent"],
+    "sejong": [".bbsV_cont"],
+    "gangwon": [".bo_con"],
+    "chungbuk": [".bbsV_cont"],
+    "chungnam": [".viewBox"],
+    "jeonnam": ["#article-view-content-div"],
+    "gyeongbuk": ["table"],
+    "gyeongnam": [".bd-view__vcontent .txt", ".bd-view__vcontent"],
+    "jeju": [".bdvCntWrap"],
+    "moe": [".boardView", ".board_view", "body"],
+}
+
+REMOVE_SELECTORS = [
+    "script",
+    "style",
+    "noscript",
+    ".file",
+    ".attach",
+    ".view_file",
+    ".bbsV_atchmnfl",
+    ".fieldBox",
+    ".bdvFileWrap",
+    ".bd-view__vattach",
+    ".bo_file",
+    ".btn_area",
+    ".btnGrp",
+    ".sns",
+    ".listNavi",
+    ".hwp_editor_board_content",
+]
+
 
 def now_kst() -> datetime:
     return datetime.now(KST)
@@ -67,8 +151,9 @@ def stable_id(source_id: str, url: str) -> str:
     return f"{source_id}-{hashlib.sha1(url.encode('utf-8')).hexdigest()[:16]}"
 
 
-def fetch_text(url: str) -> str:
-    res = SESSION.get(url, timeout=TIMEOUT_SECONDS)
+def fetch_text(url: str, source: dict[str, Any] | None = None) -> str:
+    verify = not (source or {}).get("verifySsl") is False
+    res = SESSION.get(url, timeout=TIMEOUT_SECONDS, verify=verify)
     res.raise_for_status()
     if not res.encoding or res.encoding.lower() == "iso-8859-1":
         res.encoding = res.apparent_encoding or "utf-8"
@@ -99,10 +184,46 @@ def detail_url_from_seq(source: dict[str, Any], seq: str) -> str | None:
         return None
     list_query = parse_qs(urlparse(source["listUrl"]).query)
     params = {seq_param: seq}
-    for key in ["bbsId", "mi", "boardID", "m", "s"]:
+    for key in ["bbsId", "mi", "boardID", "m", "s", "searchCate"]:
         if key in list_query:
             params[key] = list_query[key][0]
-    return add_query(urljoin(source["baseUrl"], detail_path), params)
+    return add_query(urljoin(source["listUrl"], detail_path), params)
+
+
+def clean_candidate_title(text: str) -> str:
+    text = normalize_space(text or "")
+    text = re.sub(r"^(닫기\s+)+", "", text)
+    for delimiter in [" < ", " | ", " - "]:
+        if delimiter in text:
+            left = text.split(delimiter, 1)[0].strip()
+            if len(left) >= 5:
+                text = left
+                break
+    for marker in ["작성자", "등록일", "조회수", "담당부서", "▢", "□", "○"]:
+        idx = text.find(marker)
+        if idx > 8:
+            text = text[:idx]
+    text = re.sub(r"\s+\d{4}[.-]\d{2}[.-]\d{2}.*$", "", text)
+    text = re.sub(r"\s+\d{2}[.-]\d{2}[.-]\d{2}.*$", "", text)
+    text = re.sub(r"^\d+\s+", "", text)
+    text = re.sub(r"\s*새글\s*$", "", text)
+    return normalize_space(text).strip(" -|·")
+
+
+def is_generic_title(text: str) -> bool:
+    title = normalize_space(text or "")
+    if len(title) < 5:
+        return True
+    return any(phrase in title for phrase in GENERIC_TITLE_PHRASES)
+
+
+def needs_refetch(item: dict[str, Any]) -> bool:
+    return is_generic_title(item.get("title", "")) or len(normalize_space(item.get("summary", ""))) < 40
+
+
+def row_text(tag: Any) -> str:
+    parent = tag.find_parent(["tr", "li", "div", "article"])
+    return normalize_space(parent.get_text(" ", strip=True)) if parent else normalize_space(tag.get_text(" ", strip=True))
 
 
 def collect_links(source: dict[str, Any], html: str) -> list[dict[str, str]]:
@@ -112,13 +233,13 @@ def collect_links(source: dict[str, Any], html: str) -> list[dict[str, str]]:
 
     for a in soup.find_all("a"):
         href = a.get("href") or ""
-        title = normalize_space(a.get_text(" "))
+        title = clean_candidate_title(a.get_text(" ") or row_text(a))
         if not href:
             continue
-        url = urljoin(source["baseUrl"], href)
+        url = urljoin(source["listUrl"], href)
         if url_matches(url, source) and url not in seen:
             seen.add(url)
-            links.append({"url": url, "title": title})
+            links.append({"url": url, "title": title, "listText": row_text(a)})
 
     seq_param = source.get("seqParam")
     if seq_param:
@@ -133,14 +254,14 @@ def collect_links(source: dict[str, Any], html: str) -> list[dict[str, str]]:
                 onclick = str(attrs.get("onclick") or "")
                 match = re.search(r"(?:nttSn|boardSeq|dataId|seq)['\"\s,:=]+(\d+)", onclick)
                 if not match:
-                    match = re.search(r"\b(\d{4,})\b", onclick)
+                    match = re.search(r"\b(\d{5,})\b", onclick)
                 if match:
                     seq = match.group(1)
             url = detail_url_from_seq(source, seq or "")
-            title = normalize_space(tag.get_text(" "))
+            title = clean_candidate_title(tag.get_text(" ") or row_text(tag))
             if url and url_matches(url, source) and url not in seen:
                 seen.add(url)
-                links.append({"url": url, "title": title})
+                links.append({"url": url, "title": title, "listText": row_text(tag)})
 
     return links[:MAX_ITEMS_PER_SOURCE]
 
@@ -186,41 +307,90 @@ def within_collection_window(item: dict[str, Any], cutoff: datetime) -> bool:
     return dt >= cutoff
 
 
-def extract_title(soup: BeautifulSoup, fallback: str) -> str:
+def meta_content(soup: BeautifulSoup, *selectors: str) -> list[str]:
+    values = []
+    for selector in selectors:
+        node = soup.select_one(selector)
+        if node and node.get("content"):
+            values.append(str(node.get("content")))
+    return values
+
+
+def extract_title(soup: BeautifulSoup, fallback: str, source: dict[str, Any]) -> str:
+    source_id = source["id"]
+    candidates: list[str] = []
+    fallback_title = clean_candidate_title(fallback or "")
+
+    if source_id in PREFER_LIST_TITLE and fallback_title:
+        candidates.append(fallback_title)
+
+    for selector in TITLE_SELECTORS.get(source_id, []):
+        found = soup.select_one(selector)
+        if found:
+            candidates.append(found.get_text(" ", strip=True))
+
+    candidates.extend(meta_content(soup, 'meta[property="og:title"]', 'meta[name="twitter:title"]'))
+
+    page_text = normalize_space(soup.get_text("\n", strip=True))
+    if source_id.startswith("jeonbuk"):
+        for pattern in [r"네이버밴드 공유\s+(?:닫기\s+)?(.{5,180}?)\s+작성자\s*:?"]:
+            match = re.search(pattern, page_text)
+            if match:
+                candidates.append(match.group(1))
+
     for selector in ["h1", "h2", "h3", "h4", ".title", ".view_title", ".view-title", ".tit"]:
         found = soup.select_one(selector)
         if found:
-            text = normalize_space(found.get_text(" "))
-            if len(text) >= 4:
-                return text
+            candidates.append(found.get_text(" ", strip=True))
+
+    if source_id not in PREFER_LIST_TITLE and fallback_title:
+        candidates.append(fallback_title)
     if soup.title:
-        title = normalize_space(soup.title.get_text(" "))
-        if title:
-            return title
-    return fallback or "제목 없음"
+        candidates.append(soup.title.get_text(" ", strip=True))
+
+    for candidate in candidates:
+        title = clean_candidate_title(candidate)
+        if not is_generic_title(title):
+            return title[:200]
+    return fallback_title if fallback_title and not is_generic_title(fallback_title) else "제목 없음"
 
 
-def extract_summary(soup: BeautifulSoup) -> str:
+def clean_content_text(text: str) -> str:
+    lines = [normalize_space(line) for line in (text or "").replace("\r", "\n").split("\n")]
+    return normalize_space("\n".join(line for line in lines if line))
+
+
+def selector_text(soup: BeautifulSoup, selector: str) -> str:
+    node = soup.select_one(selector)
+    if not node:
+        return ""
+    node_soup = BeautifulSoup(str(node), "lxml")
+    for bad_selector in REMOVE_SELECTORS:
+        for bad in node_soup.select(bad_selector):
+            bad.decompose()
+    return clean_content_text(node_soup.get_text("\n", strip=True))
+
+
+def extract_summary(soup: BeautifulSoup, source: dict[str, Any]) -> str:
     candidates = []
-    for selector in ["main", "article", "#contents", ".board_view", ".news_view", ".view_cont", ".bbsV_cont", ".view-content"]:
-        found = soup.select_one(selector)
-        if found:
-            candidates.append(found.get_text(" "))
-    candidates.append(soup.get_text(" "))
+    for selector in CONTENT_SELECTORS.get(source["id"], []):
+        text = selector_text(soup, selector)
+        if text:
+            candidates.append(text)
+    candidates.append(clean_content_text(soup.get_text("\n", strip=True)))
     for text in candidates:
-        cleaned = normalize_space(text)
-        if len(cleaned) > 40:
-            return cleaned[:350]
+        if len(text) > 40:
+            return text[:700]
     return ""
 
 
 def collect_detail(source: dict[str, Any], link: dict[str, str]) -> dict[str, Any]:
-    html = fetch_text(link["url"])
+    html = fetch_text(link["url"], source)
     soup = BeautifulSoup(html, "lxml")
     all_text = soup.get_text(" ")
-    title = extract_title(soup, link.get("title", ""))
-    date = parse_date(all_text)
-    summary = extract_summary(soup)
+    title = extract_title(soup, link.get("title", ""), source)
+    date = parse_date(all_text + " " + link.get("listText", ""))
+    summary = extract_summary(soup, source)
     return {
         "id": stable_id(source["id"], link["url"]),
         "sourceId": source["id"],
@@ -233,24 +403,28 @@ def collect_detail(source: dict[str, Any], link: dict[str, str]) -> dict[str, An
     }
 
 
-def collect_source(source: dict[str, Any], existing_ids: set[str], cutoff: datetime) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+def collect_source(source: dict[str, Any], existing_by_id: dict[str, dict[str, Any]], cutoff: datetime) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     started = now_kst().isoformat(timespec="seconds")
     skipped_existing = 0
     skipped_old = 0
     detail_failures = 0
+    refreshed_existing = 0
     try:
-        html = fetch_text(source["listUrl"])
+        html = fetch_text(source["listUrl"], source)
         links = collect_links(source, html)
         items = []
         for link in links:
             item_id = stable_id(source["id"], link["url"])
-            if item_id in existing_ids:
+            existing = existing_by_id.get(item_id)
+            if existing and not needs_refetch(existing):
                 skipped_existing += 1
                 continue
             try:
                 item = collect_detail(source, link)
-                if within_collection_window(item, cutoff):
+                if within_collection_window(item, cutoff) or existing:
                     items.append(item)
+                    if existing:
+                        refreshed_existing += 1
                 else:
                     skipped_old += 1
             except Exception as exc:
@@ -262,6 +436,7 @@ def collect_source(source: dict[str, Any], existing_ids: set[str], cutoff: datet
             "status": "success",
             "foundLinks": len(links),
             "fetched": len(items),
+            "refreshedExisting": refreshed_existing,
             "skippedExisting": skipped_existing,
             "skippedOutsideWindow": skipped_old,
             "detailFailures": detail_failures,
@@ -275,6 +450,7 @@ def collect_source(source: dict[str, Any], existing_ids: set[str], cutoff: datet
             "status": "failed",
             "foundLinks": 0,
             "fetched": 0,
+            "refreshedExisting": refreshed_existing,
             "skippedExisting": skipped_existing,
             "skippedOutsideWindow": skipped_old,
             "detailFailures": detail_failures,
@@ -308,16 +484,17 @@ def main() -> None:
     PUBLIC_DIR.mkdir(parents=True, exist_ok=True)
     sources = [s for s in read_json(SOURCES_PATH, []) if s.get("enabled", True)]
     old_items = read_json(NEWS_PATH, [])
-    existing_ids = {item.get("id", "") for item in old_items if item.get("id")}
+    existing_by_id = {item.get("id", ""): item for item in old_items if item.get("id")}
     collection_cutoff = now_kst() - timedelta(hours=COLLECTION_WINDOW_HOURS)
 
     all_new: list[dict[str, Any]] = []
     runs: list[dict[str, Any]] = []
     for source in sources:
         print(f"collect {source['id']} {source['name']}")
-        items, run = collect_source(source, existing_ids, collection_cutoff)
+        items, run = collect_source(source, existing_by_id, collection_cutoff)
         all_new.extend(items)
-        existing_ids.update(item["id"] for item in items)
+        for item in items:
+            existing_by_id[item["id"]] = item
         runs.append(run)
 
     merged: dict[str, dict[str, Any]] = {item.get("id", ""): item for item in old_items if item.get("id")}
@@ -334,7 +511,8 @@ def main() -> None:
         "retentionDays": RETENTION_DAYS,
         "collectionWindowHours": COLLECTION_WINDOW_HOURS,
         "total": len(kept),
-        "newlyCollected": len(all_new),
+        "newlyCollected": len([item for item in all_new if item["id"] not in {old.get("id") for old in old_items}]),
+        "updatedOrCollected": len(all_new),
         "collectedAt": now_kst().isoformat(timespec="seconds"),
         "runs": runs,
     }
