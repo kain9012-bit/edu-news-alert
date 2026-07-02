@@ -13,6 +13,7 @@ const DEFAULT_KEYWORDS = [
   "교육행정",
   "데이터 기반"
 ];
+const SOURCE_SCHEMA_VERSION = 2;
 const SOURCES = [
   { id: "moe", name: "교육부", sourceIds: ["moe"] },
   { id: "jeonbuk_group", name: "전북특별자치도교육청", sourceIds: ["jeonbuk", "jeonbuk_institute", "jeonbuk_support"] },
@@ -21,14 +22,13 @@ const SOURCES = [
   { id: "busan", name: "부산광역시교육청", sourceIds: ["busan"] },
   { id: "daegu", name: "대구광역시교육청", sourceIds: ["daegu"] },
   { id: "incheon", name: "인천광역시교육청", sourceIds: ["incheon"] },
-  { id: "gwangju", name: "광주광역시교육청", sourceIds: ["gwangju"] },
+  { id: "jngj_group", name: "전남광주통합특별시교육청", sourceIds: ["jngj_s1n1", "jngj_s1n2", "jngj_s1n3"] },
   { id: "daejeon", name: "대전광역시교육청", sourceIds: ["daejeon"] },
   { id: "ulsan", name: "울산광역시교육청", sourceIds: ["ulsan"] },
   { id: "sejong", name: "세종특별자치시교육청", sourceIds: ["sejong"] },
   { id: "gangwon", name: "강원특별자치도교육청", sourceIds: ["gangwon"] },
   { id: "chungbuk", name: "충청북도교육청", sourceIds: ["chungbuk"] },
   { id: "chungnam", name: "충청남도교육청", sourceIds: ["chungnam"] },
-  { id: "jeonnam", name: "전라남도교육청", sourceIds: ["jeonnam"] },
   { id: "gyeongbuk", name: "경상북도교육청", sourceIds: ["gyeongbuk"] },
   { id: "gyeongnam", name: "경상남도교육청", sourceIds: ["gyeongnam"] },
   { id: "jeju", name: "제주특별자치도교육청", sourceIds: ["jeju"] }
@@ -41,6 +41,23 @@ const intervalMinutes = document.querySelector("#intervalMinutes");
 const sources = document.querySelector("#sources");
 const savedText = document.querySelector("#savedText");
 const resetSeen = document.querySelector("#resetSeen");
+
+function allSourceIds() {
+  return SOURCES.flatMap((source) => source.sourceIds);
+}
+
+function migrateSourceIds(sourceIds, schemaVersion) {
+  if (!Array.isArray(sourceIds)) return allSourceIds();
+  if (schemaVersion === SOURCE_SCHEMA_VERSION) return sourceIds;
+
+  const migrated = new Set(sourceIds.filter((id) => id !== "gwangju" && id !== "jeonnam"));
+  if (sourceIds.includes("gwangju") || sourceIds.includes("jeonnam")) {
+    migrated.add("jngj_s1n1");
+    migrated.add("jngj_s1n2");
+    migrated.add("jngj_s1n3");
+  }
+  return Array.from(migrated).filter((id) => allSourceIds().includes(id));
+}
 
 function renderSources(enabledSourceIds) {
   const enabled = new Set(enabledSourceIds);
@@ -59,24 +76,26 @@ function selectedSources() {
     .flatMap((source) => source.sourceIds);
 }
 
-function allSourceIds() {
-  return SOURCES.flatMap((source) => source.sourceIds);
-}
-
 async function loadOptions() {
   const state = await chrome.storage.local.get({
     dataUrl: DEFAULT_DATA_URL,
     keywords: DEFAULT_KEYWORDS,
     enabledSourceIds: allSourceIds(),
+    sourceSchemaVersion: 0,
     searchMode: "title_summary",
     intervalMinutes: 60
   });
+
+  const enabledSourceIds = migrateSourceIds(state.enabledSourceIds, state.sourceSchemaVersion);
+  if (state.sourceSchemaVersion !== SOURCE_SCHEMA_VERSION) {
+    await chrome.storage.local.set({ enabledSourceIds, sourceSchemaVersion: SOURCE_SCHEMA_VERSION });
+  }
 
   dataUrl.value = state.dataUrl;
   keywords.value = Array.isArray(state.keywords) ? state.keywords.join("\n") : String(state.keywords || "");
   intervalMinutes.value = state.intervalMinutes;
   form.searchMode.value = state.searchMode;
-  renderSources(state.enabledSourceIds);
+  renderSources(enabledSourceIds);
 }
 
 form.addEventListener("submit", async (event) => {
@@ -88,6 +107,7 @@ form.addEventListener("submit", async (event) => {
     dataUrl: dataUrl.value.trim(),
     keywords: nextKeywords,
     enabledSourceIds: nextSources.length > 0 ? nextSources : allSourceIds(),
+    sourceSchemaVersion: SOURCE_SCHEMA_VERSION,
     searchMode: form.searchMode.value,
     intervalMinutes: Math.max(15, Number(intervalMinutes.value) || 60)
   });
