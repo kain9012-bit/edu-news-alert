@@ -39,6 +39,12 @@ const DEFAULT_SOURCE_IDS = [
 const SOURCE_SCHEMA_VERSION = 2;
 const ALARM_NAME = "check-news";
 
+async function setBadgeCount(count) {
+  const text = count > 0 ? String(Math.min(count, 99)) : "";
+  await chrome.action.setBadgeText({ text });
+  await chrome.action.setBadgeBackgroundColor({ color: "#0f766e" });
+}
+
 function migrateSourceIds(sourceIds, schemaVersion) {
   if (!Array.isArray(sourceIds)) return DEFAULT_SOURCE_IDS;
   if (schemaVersion === SOURCE_SCHEMA_VERSION) return sourceIds;
@@ -148,6 +154,7 @@ async function checkNews({ notify = true } = {}) {
 
   if (notify && newMatches.length > 0) {
     const first = newMatches[0];
+    await setBadgeCount(newMatches.length);
     await chrome.storage.local.set({ lastNotificationUrl: first.url || null });
     await chrome.notifications.create("news-keyword-match", {
       type: "basic",
@@ -192,6 +199,7 @@ chrome.alarms.onAlarm.addListener((alarm) => {
 
 chrome.notifications.onClicked.addListener(async () => {
   const { lastNotificationUrl } = await chrome.storage.local.get("lastNotificationUrl");
+  await setBadgeCount(0);
   if (lastNotificationUrl) {
     await chrome.tabs.create({ url: lastNotificationUrl });
   }
@@ -199,6 +207,7 @@ chrome.notifications.onClicked.addListener(async () => {
 
 chrome.notifications.onButtonClicked.addListener(async (notificationId, buttonIndex) => {
   if (notificationId === "news-keyword-match" && buttonIndex === 0) {
+    await setBadgeCount(0);
     await chrome.tabs.create({ url: chrome.runtime.getURL("dashboard.html") });
   }
 });
