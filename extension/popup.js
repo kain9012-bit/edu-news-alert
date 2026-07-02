@@ -32,7 +32,7 @@ function renderMatches(items) {
     const keywords = (item.matchedKeywords || []).map(escapeHtml).join(", ");
     const url = escapeHtml(item.url || "#");
     return `
-      <a class="item" href="${url}" target="_blank" rel="noreferrer">
+      <a class="item" href="${url}" data-url="${url}" rel="noreferrer">
         <span class="source">${escapeHtml(item.sourceName || item.source || item.sourceId || "교육청")}</span>
         <strong>${escapeHtml(item.title || "제목 없음")}</strong>
         <small>${keywords}</small>
@@ -40,6 +40,17 @@ function renderMatches(items) {
     `;
   }).join("");
 }
+
+matchesEl.addEventListener("click", async (event) => {
+  const item = event.target.closest("a.item");
+  if (!item) return;
+
+  event.preventDefault();
+  const url = item.dataset.url;
+  if (url && url !== "#") {
+    await chrome.tabs.create({ url, active: true });
+  }
+});
 
 async function refresh() {
   const state = await chrome.storage.local.get({
