@@ -2,6 +2,10 @@ name: Collect education press releases
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - "crawler/**"
+      - ".github/workflows/collect-news.yml"
   schedule:
     # KST 08:17 = UTC 23:17 on the previous day
     - cron: "17 23 * * *"
