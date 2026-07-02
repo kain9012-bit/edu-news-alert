@@ -117,6 +117,7 @@
     "listUrl": "https://use.go.kr/news/user/bbs/BD_selectBbsList.do?q_bbsSn=1005",
     "include": ["BD_selectBbs.do", "q_bbsDocNo="],
     "exclude": ["ND_fileDownload", "ND_loadImage", "component/file", ".jpg", ".png"],
+    "verifySsl": false,
     "enabled": true
   },
   {
