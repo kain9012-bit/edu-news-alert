@@ -39,7 +39,7 @@ const DEFAULT_SOURCE_IDS = [
 const SOURCE_SCHEMA_VERSION = 2;
 const ALARM_NAME = "check-news";
 const ALERT_WIDTH = 390;
-const ALERT_HEIGHT = 430;
+const ALERT_HEIGHT = 520;
 
 function migrateSourceIds(sourceIds, schemaVersion) {
   if (!Array.isArray(sourceIds)) return DEFAULT_SOURCE_IDS;
