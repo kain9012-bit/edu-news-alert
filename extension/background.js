@@ -23,25 +23,41 @@ const DEFAULT_SOURCE_IDS = [
   "busan",
   "daegu",
   "incheon",
-  "gwangju",
+  "jngj_s1n1",
+  "jngj_s1n2",
+  "jngj_s1n3",
   "daejeon",
   "ulsan",
   "sejong",
   "gangwon",
   "chungbuk",
   "chungnam",
-  "jeonnam",
   "gyeongbuk",
   "gyeongnam",
   "jeju"
 ];
+const SOURCE_SCHEMA_VERSION = 2;
 const ALARM_NAME = "check-news";
+
+function migrateSourceIds(sourceIds, schemaVersion) {
+  if (!Array.isArray(sourceIds)) return DEFAULT_SOURCE_IDS;
+  if (schemaVersion === SOURCE_SCHEMA_VERSION) return sourceIds;
+
+  const migrated = new Set(sourceIds.filter((id) => id !== "gwangju" && id !== "jeonnam"));
+  if (sourceIds.includes("gwangju") || sourceIds.includes("jeonnam")) {
+    migrated.add("jngj_s1n1");
+    migrated.add("jngj_s1n2");
+    migrated.add("jngj_s1n3");
+  }
+  return Array.from(migrated).filter((id) => DEFAULT_SOURCE_IDS.includes(id));
+}
 
 async function getOptions() {
   const saved = await chrome.storage.local.get({
     dataUrl: DEFAULT_DATA_URL,
     keywords: DEFAULT_KEYWORDS,
     enabledSourceIds: DEFAULT_SOURCE_IDS,
+    sourceSchemaVersion: 0,
     searchMode: "title_summary",
     intervalMinutes: 60,
     seenIds: [],
@@ -50,10 +66,15 @@ async function getOptions() {
     lastError: null
   });
 
+  const enabledSourceIds = migrateSourceIds(saved.enabledSourceIds, saved.sourceSchemaVersion);
+  if (saved.sourceSchemaVersion !== SOURCE_SCHEMA_VERSION) {
+    await chrome.storage.local.set({ enabledSourceIds, sourceSchemaVersion: SOURCE_SCHEMA_VERSION });
+  }
+
   return {
     ...saved,
     keywords: normalizeKeywords(saved.keywords),
-    enabledSourceIds: Array.isArray(saved.enabledSourceIds) ? saved.enabledSourceIds : DEFAULT_SOURCE_IDS,
+    enabledSourceIds,
     intervalMinutes: Math.max(15, Number(saved.intervalMinutes) || 60)
   };
 }
@@ -148,6 +169,7 @@ chrome.runtime.onInstalled.addListener(async () => {
       dataUrl: DEFAULT_DATA_URL,
       keywords: DEFAULT_KEYWORDS,
       enabledSourceIds: DEFAULT_SOURCE_IDS,
+      sourceSchemaVersion: SOURCE_SCHEMA_VERSION,
       searchMode: "title_summary",
       intervalMinutes: 60,
       seenIds: [],
