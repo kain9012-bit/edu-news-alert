@@ -337,6 +337,7 @@ legend {
 .alert {
   min-width: 0;
   background: var(--bg);
+  overflow: hidden;
 }
 
 .alert main {
@@ -345,10 +346,6 @@ legend {
 }
 
 .alertHeader {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
   margin-bottom: 12px;
 }
 
@@ -356,17 +353,8 @@ legend {
   font-size: 18px;
 }
 
-#closeAlert {
-  width: 34px;
-  min-width: 34px;
-  height: 34px;
-  padding: 0;
-  font-size: 22px;
-  line-height: 1;
-}
-
 .alert .list {
-  max-height: 286px;
+  max-height: 374px;
   overflow: auto;
 }
 
