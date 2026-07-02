@@ -1,6 +1,5 @@
 const alertMeta = document.querySelector("#alertMeta");
 const alertList = document.querySelector("#alertList");
-const closeAlert = document.querySelector("#closeAlert");
 const openDashboard = document.querySelector("#openDashboard");
 
 function escapeHtml(value) {
@@ -33,10 +32,6 @@ async function render() {
     `;
   }).join("");
 }
-
-closeAlert.addEventListener("click", () => {
-  window.close();
-});
 
 openDashboard.addEventListener("click", async () => {
   await chrome.tabs.create({ url: chrome.runtime.getURL("dashboard.html") });
