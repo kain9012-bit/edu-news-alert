@@ -1,38 +1,37 @@
 {
-  "ok": false,
+  "ok": true,
   "retentionDays": 7,
   "collectionWindowHours": 24,
-  "total": 200,
-  "newlyCollected": 80,
-  "updatedOrCollected": 94,
-  "collectedAt": "2026-07-03T13:14:37+09:00",
+  "total": 224,
+  "newlyCollected": 64,
+  "updatedOrCollected": 86,
+  "collectedAt": "2026-07-03T16:43:50+09:00",
   "runs": [
     {
       "sourceId": "moe",
       "source": "교육부",
-      "status": "failed",
-      "foundLinks": 0,
-      "fetched": 0,
+      "status": "success",
+      "foundLinks": 10,
+      "fetched": 1,
       "refreshedExisting": 0,
-      "skippedExisting": 0,
-      "skippedOutsideWindow": 0,
+      "skippedExisting": 5,
+      "skippedOutsideWindow": 4,
       "detailFailures": 0,
-      "error": "HTTPSConnectionPool(host='www.moe.go.kr', port=443): Max retries exceeded with url: /boardCnts/listRenew.do?boardID=294&m=020402&s=moe (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.moe.go.kr', port=443) at 0x7f4220573850>, 'Connection to www.moe.go.kr timed out. (connect timeout=20)'))",
-      "startedAt": "2026-07-03T13:12:08+09:00",
-      "finishedAt": "2026-07-03T13:12:29+09:00"
+      "startedAt": "2026-07-03T16:41:40+09:00",
+      "finishedAt": "2026-07-03T16:41:57+09:00"
     },
     {
       "sourceId": "jeonbuk",
       "source": "전북특별자치도교육청",
       "status": "success",
       "foundLinks": 10,
-      "fetched": 2,
+      "fetched": 0,
       "refreshedExisting": 0,
-      "skippedExisting": 6,
+      "skippedExisting": 8,
       "skippedOutsideWindow": 2,
       "detailFailures": 0,
-      "startedAt": "2026-07-03T13:12:29+09:00",
-      "finishedAt": "2026-07-03T13:12:32+09:00"
+      "startedAt": "2026-07-03T16:41:57+09:00",
+      "finishedAt": "2026-07-03T16:42:00+09:00"
     },
     {
       "sourceId": "jeonbuk_institute",
@@ -44,21 +43,21 @@
       "skippedExisting": 0,
       "skippedOutsideWindow": 10,
       "detailFailures": 0,
-      "startedAt": "2026-07-03T13:12:32+09:00",
-      "finishedAt": "2026-07-03T13:12:39+09:00"
+      "startedAt": "2026-07-03T16:42:00+09:00",
+      "finishedAt": "2026-07-03T16:42:04+09:00"
     },
     {
       "sourceId": "jeonbuk_support",
       "source": "전북특별자치도교육청",
       "status": "success",
       "foundLinks": 10,
-      "fetched": 3,
+      "fetched": 1,
       "refreshedExisting": 0,
-      "skippedExisting": 7,
+      "skippedExisting": 9,
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
-      "startedAt": "2026-07-03T13:12:39+09:00",
-      "finishedAt": "2026-07-03T13:12:40+09:00"
+      "startedAt": "2026-07-03T16:42:04+09:00",
+      "finishedAt": "2026-07-03T16:42:04+09:00"
     },
     {
       "sourceId": "seoul",
@@ -70,8 +69,8 @@
       "skippedExisting": 5,
       "skippedOutsideWindow": 5,
       "detailFailures": 0,
-      "startedAt": "2026-07-03T13:12:40+09:00",
-      "finishedAt": "2026-07-03T13:12:48+09:00"
+      "startedAt": "2026-07-03T16:42:04+09:00",
+      "finishedAt": "2026-07-03T16:42:16+09:00"
     },
     {
       "sourceId": "gyeonggi",
@@ -83,8 +82,8 @@
       "skippedExisting": 10,
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
-      "startedAt": "2026-07-03T13:12:48+09:00",
-      "finishedAt": "2026-07-03T13:12:54+09:00"
+      "startedAt": "2026-07-03T16:42:16+09:00",
+      "finishedAt": "2026-07-03T16:42:20+09:00"
     },
     {
       "sourceId": "busan",
@@ -96,8 +95,8 @@
       "skippedExisting": 10,
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
-      "startedAt": "2026-07-03T13:12:54+09:00",
-      "finishedAt": "2026-07-03T13:12:56+09:00"
+      "startedAt": "2026-07-03T16:42:20+09:00",
+      "finishedAt": "2026-07-03T16:42:23+09:00"
     },
     {
       "sourceId": "daegu",
@@ -109,8 +108,8 @@
       "skippedExisting": 0,
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
-      "startedAt": "2026-07-03T13:12:56+09:00",
-      "finishedAt": "2026-07-03T13:12:57+09:00"
+      "startedAt": "2026-07-03T16:42:23+09:00",
+      "finishedAt": "2026-07-03T16:42:24+09:00"
     },
     {
       "sourceId": "incheon",
@@ -118,12 +117,12 @@
       "status": "success",
       "foundLinks": 9,
       "fetched": 22,
-      "refreshedExisting": 14,
+      "refreshedExisting": 22,
       "skippedExisting": 0,
       "skippedOutsideWindow": 41,
       "detailFailures": 0,
-      "startedAt": "2026-07-03T13:12:57+09:00",
-      "finishedAt": "2026-07-03T13:13:14+09:00"
+      "startedAt": "2026-07-03T16:42:24+09:00",
+      "finishedAt": "2026-07-03T16:42:40+09:00"
     },
     {
       "sourceId": "jngj_s1n1",
@@ -135,8 +134,8 @@
       "skippedExisting": 0,
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
-      "startedAt": "2026-07-03T13:13:14+09:00",
-      "finishedAt": "2026-07-03T13:13:26+09:00"
+      "startedAt": "2026-07-03T16:42:40+09:00",
+      "finishedAt": "2026-07-03T16:42:48+09:00"
     },
     {
       "sourceId": "jngj_s1n2",
@@ -148,21 +147,21 @@
       "skippedExisting": 0,
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
-      "startedAt": "2026-07-03T13:13:26+09:00",
-      "finishedAt": "2026-07-03T13:13:32+09:00"
+      "startedAt": "2026-07-03T16:42:48+09:00",
+      "finishedAt": "2026-07-03T16:42:53+09:00"
     },
     {
       "sourceId": "jngj_s1n3",
       "source": "전남광주통합특별시교육청",
       "status": "success",
       "foundLinks": 20,
-      "fetched": 20,
+      "fetched": 19,
       "refreshedExisting": 0,
-      "skippedExisting": 0,
+      "skippedExisting": 1,
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
-      "startedAt": "2026-07-03T13:13:32+09:00",
-      "finishedAt": "2026-07-03T13:13:39+09:00"
+      "startedAt": "2026-07-03T16:42:53+09:00",
+      "finishedAt": "2026-07-03T16:42:57+09:00"
     },
     {
       "sourceId": "daejeon",
@@ -174,8 +173,8 @@
       "skippedExisting": 0,
       "skippedOutsideWindow": 0,
       "detailFailures": 11,
-      "startedAt": "2026-07-03T13:13:39+09:00",
-      "finishedAt": "2026-07-03T13:14:05+09:00"
+      "startedAt": "2026-07-03T16:42:57+09:00",
+      "finishedAt": "2026-07-03T16:43:18+09:00"
     },
     {
       "sourceId": "ulsan",
@@ -187,8 +186,8 @@
       "skippedExisting": 6,
       "skippedOutsideWindow": 4,
       "detailFailures": 0,
-      "startedAt": "2026-07-03T13:14:05+09:00",
-      "finishedAt": "2026-07-03T13:14:11+09:00"
+      "startedAt": "2026-07-03T16:43:18+09:00",
+      "finishedAt": "2026-07-03T16:43:23+09:00"
     },
     {
       "sourceId": "sejong",
@@ -200,8 +199,8 @@
       "skippedExisting": 0,
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
-      "startedAt": "2026-07-03T13:14:11+09:00",
-      "finishedAt": "2026-07-03T13:14:15+09:00"
+      "startedAt": "2026-07-03T16:43:23+09:00",
+      "finishedAt": "2026-07-03T16:43:27+09:00"
     },
     {
       "sourceId": "gangwon",
@@ -213,8 +212,8 @@
       "skippedExisting": 0,
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
-      "startedAt": "2026-07-03T13:14:15+09:00",
-      "finishedAt": "2026-07-03T13:14:18+09:00"
+      "startedAt": "2026-07-03T16:43:27+09:00",
+      "finishedAt": "2026-07-03T16:43:30+09:00"
     },
     {
       "sourceId": "chungbuk",
@@ -226,8 +225,8 @@
       "skippedExisting": 10,
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
-      "startedAt": "2026-07-03T13:14:18+09:00",
-      "finishedAt": "2026-07-03T13:14:20+09:00"
+      "startedAt": "2026-07-03T16:43:30+09:00",
+      "finishedAt": "2026-07-03T16:43:34+09:00"
     },
     {
       "sourceId": "chungnam",
@@ -239,8 +238,8 @@
       "skippedExisting": 0,
       "skippedOutsideWindow": 0,
       "detailFailures": 10,
-      "startedAt": "2026-07-03T13:14:20+09:00",
-      "finishedAt": "2026-07-03T13:14:25+09:00"
+      "startedAt": "2026-07-03T16:43:34+09:00",
+      "finishedAt": "2026-07-03T16:43:39+09:00"
     },
     {
       "sourceId": "gyeongbuk",
@@ -252,34 +251,34 @@
       "skippedExisting": 9,
       "skippedOutsideWindow": 1,
       "detailFailures": 0,
-      "startedAt": "2026-07-03T13:14:25+09:00",
-      "finishedAt": "2026-07-03T13:14:31+09:00"
+      "startedAt": "2026-07-03T16:43:39+09:00",
+      "finishedAt": "2026-07-03T16:43:45+09:00"
     },
     {
       "sourceId": "gyeongnam",
       "source": "경상남도교육청",
       "status": "success",
       "foundLinks": 6,
-      "fetched": 0,
+      "fetched": 3,
       "refreshedExisting": 0,
-      "skippedExisting": 4,
-      "skippedOutsideWindow": 2,
+      "skippedExisting": 3,
+      "skippedOutsideWindow": 0,
       "detailFailures": 0,
-      "startedAt": "2026-07-03T13:14:31+09:00",
-      "finishedAt": "2026-07-03T13:14:33+09:00"
+      "startedAt": "2026-07-03T16:43:45+09:00",
+      "finishedAt": "2026-07-03T16:43:48+09:00"
     },
     {
       "sourceId": "jeju",
       "source": "제주특별자치도교육청",
       "status": "success",
       "foundLinks": 10,
-      "fetched": 7,
+      "fetched": 0,
       "refreshedExisting": 0,
-      "skippedExisting": 3,
+      "skippedExisting": 10,
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
-      "startedAt": "2026-07-03T13:14:33+09:00",
-      "finishedAt": "2026-07-03T13:14:37+09:00"
+      "startedAt": "2026-07-03T16:43:48+09:00",
+      "finishedAt": "2026-07-03T16:43:50+09:00"
     }
   ]
 }
