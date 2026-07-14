@@ -15,9 +15,11 @@ const DEFAULT_KEYWORDS = [
 ];
 
 const statusText = document.querySelector("#statusText");
+const briefingScope = document.querySelector("#briefingScope");
 const briefingCount = document.querySelector("#briefingCount");
 const briefingList = document.querySelector("#briefingList");
 const briefingSearch = document.querySelector("#briefingSearch");
+const searchLabel = document.querySelector("#searchLabel");
 const refreshButton = document.querySelector("#refreshBriefing");
 const openOptionsButton = document.querySelector("#openOptions");
 const openDashboardButton = document.querySelector("#openDashboard");
@@ -101,12 +103,19 @@ function renderItems(items, keywords, searchMode, emptyText) {
 
 function renderCurrentView() {
   const query = briefingSearch.value.trim().toLowerCase();
+  const hasSavedKeywords = activeKeywords.length > 0;
+  const baseItems = hasSavedKeywords
+    ? recentItems.filter((item) => matchedKeywords(item, activeKeywords, activeSearchMode).length > 0)
+    : recentItems;
   const items = query
-    ? recentItems.filter((item) => itemText(item, activeSearchMode).includes(query))
-    : recentItems.filter((item) => matchedKeywords(item, activeKeywords, activeSearchMode).length > 0);
+    ? baseItems.filter((item) => itemText(item, activeSearchMode).includes(query))
+    : baseItems;
   const emptyText = query
     ? `“${briefingSearch.value.trim()}” 검색 결과가 없습니다.`
-    : "최근 24시간에 관심 키워드와 일치하는 보도자료가 없습니다.";
+    : hasSavedKeywords
+      ? "최근 24시간에 관심 키워드와 일치하는 보도자료가 없습니다."
+      : "최근 24시간에 표시할 보도자료가 없습니다.";
+
   renderItems(items, activeKeywords, activeSearchMode, emptyText);
 }
 
@@ -126,6 +135,13 @@ async function loadBriefing() {
     recentItems = (briefing.items || []).filter((item) => enabled.size === 0 || enabled.has(item.sourceId));
     activeKeywords = keywords;
     activeSearchMode = state.searchMode;
+    briefingScope.textContent = activeKeywords.length > 0
+      ? "최근 24시간 관심 자료"
+      : "최근 24시간 전체 자료";
+    searchLabel.textContent = activeKeywords.length > 0
+      ? "관심 자료 내 검색"
+      : "전체 보도자료 검색";
+    briefingSearch.placeholder = "제목, 내용 검색";
 
     statusText.textContent = formatWindow(briefing.windowStart, briefing.windowEnd);
     renderCurrentView();
