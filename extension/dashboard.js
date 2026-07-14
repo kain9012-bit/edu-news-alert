@@ -16,14 +16,18 @@ const DEFAULT_KEYWORDS = [
 
 const statusEl = document.querySelector("#dashboardStatus");
 const refreshButton = document.querySelector("#refreshDashboard");
+const startDate = document.querySelector("#startDate");
+const endDate = document.querySelector("#endDate");
 const searchInput = document.querySelector("#searchInput");
 const sourceFilter = document.querySelector("#sourceFilter");
 const keywordFilter = document.querySelector("#keywordFilter");
 const resultCount = document.querySelector("#resultCount");
+const retentionText = document.querySelector("#retentionText");
 const listEl = document.querySelector("#dashboardList");
 
 let allItems = [];
 let keywords = DEFAULT_KEYWORDS;
+let retentionDays = 14;
 
 function escapeHtml(value) {
   return String(value || "")
@@ -33,24 +37,26 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;");
 }
 
+function siblingDataUrl(dataUrl, fileName) {
+  const url = new URL(dataUrl || DEFAULT_DATA_URL);
+  const parts = url.pathname.split("/");
+  parts[parts.length - 1] = fileName;
+  url.pathname = parts.join("/");
+  return url.toString();
+}
+
 function sourceName(item) {
   return item.sourceName || item.source || item.sourceId || "교육청";
 }
 
-function itemDate(item) {
-  const raw = item.date || item.publishedAt || item.collectedAt;
-  if (!raw) return null;
-  const parsed = new Date(raw);
-  return Number.isNaN(parsed.getTime()) ? null : parsed;
+function dateKey(item) {
+  const raw = String(item.date || item.publishedAt || item.collectedAt || "");
+  const match = raw.match(/^\d{4}-\d{2}-\d{2}/);
+  return match ? match[0] : "";
 }
 
 function itemText(item) {
-  return [
-    item.title,
-    item.summary,
-    item.contentPreview,
-    sourceName(item)
-  ].join("\n").toLowerCase();
+  return [item.title, item.summary, item.contentPreview, sourceName(item)].join("\n").toLowerCase();
 }
 
 function matchedKeywords(item) {
@@ -59,20 +65,34 @@ function matchedKeywords(item) {
 }
 
 function formatDate(item) {
-  const date = itemDate(item);
-  if (!date) return "";
-  return new Intl.DateTimeFormat("ko-KR", { dateStyle: "medium" }).format(date);
+  const value = dateKey(item);
+  if (!value) return "";
+  return new Intl.DateTimeFormat("ko-KR", { dateStyle: "medium" }).format(new Date(`${value}T00:00:00+09:00`));
 }
 
-async function fetchItems(dataUrl) {
-  const url = new URL(dataUrl);
-  url.searchParams.set("t", Date.now().toString());
-  const response = await fetch(url.toString(), { cache: "no-store" });
-  if (!response.ok) {
-    throw new Error(`자료를 불러오지 못했습니다. (${response.status})`);
-  }
-  const data = await response.json();
-  return Array.isArray(data) ? data : data.items || [];
+async function fetchJson(url) {
+  const requestUrl = new URL(url);
+  requestUrl.searchParams.set("t", Date.now().toString());
+  const response = await fetch(requestUrl.toString(), { cache: "no-store" });
+  if (!response.ok) throw new Error(`자료를 불러오지 못했습니다. (${response.status})`);
+  return response.json();
+}
+
+function addDays(value, amount) {
+  const date = new Date(`${value}T00:00:00+09:00`);
+  date.setDate(date.getDate() + amount);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function setQuickRange(days) {
+  if (!endDate.max) return;
+  endDate.value = endDate.max;
+  const requestedStart = addDays(endDate.value, -(days - 1));
+  startDate.value = requestedStart < startDate.min ? startDate.min : requestedStart;
+  render();
 }
 
 function fillFilters(items) {
@@ -90,25 +110,55 @@ function fillFilters(items) {
   keywordFilter.value = keywords.includes(currentKeyword) ? currentKeyword : "";
 }
 
+function initializeDateRange(items) {
+  const dates = items.map(dateKey).filter(Boolean).sort();
+  if (dates.length === 0) return;
+  const min = dates[0];
+  const max = dates[dates.length - 1];
+  startDate.min = min;
+  startDate.max = max;
+  endDate.min = min;
+  endDate.max = max;
+  if (!startDate.value || !endDate.value) {
+    endDate.value = max;
+    const sevenDaysAgo = addDays(max, -6);
+    startDate.value = sevenDaysAgo < min ? min : sevenDaysAgo;
+  }
+}
+
 function filteredItems() {
   const query = searchInput.value.trim().toLowerCase();
   const selectedSource = sourceFilter.value;
   const selectedKeyword = keywordFilter.value;
+  const from = startDate.value;
+  const to = endDate.value;
 
   return allItems
+    .filter((item) => {
+      const date = dateKey(item);
+      return (!from || date >= from) && (!to || date <= to);
+    })
     .filter((item) => !selectedSource || sourceName(item) === selectedSource)
     .filter((item) => !selectedKeyword || matchedKeywords(item).includes(selectedKeyword))
     .filter((item) => !query || itemText(item).includes(query))
-    .sort((a, b) => (itemDate(b)?.getTime() || 0) - (itemDate(a)?.getTime() || 0));
+    .sort((a, b) => dateKey(b).localeCompare(dateKey(a)));
 }
 
 function render() {
+  if (startDate.value && endDate.value && startDate.value > endDate.value) {
+    resultCount.textContent = "0건";
+    listEl.className = "dashboardList empty";
+    listEl.textContent = "시작일이 종료일보다 늦습니다.";
+    return;
+  }
+
   const items = filteredItems();
   resultCount.textContent = `${items.length.toLocaleString("ko-KR")}건`;
+  retentionText.textContent = `최근 ${retentionDays}일 보관 자료`;
 
   if (items.length === 0) {
     listEl.className = "dashboardList empty";
-    listEl.textContent = "표시할 보도자료가 없습니다.";
+    listEl.textContent = "조건에 맞는 보도자료가 없습니다.";
     return;
   }
 
@@ -139,27 +189,41 @@ async function loadDashboard() {
   try {
     const state = await chrome.storage.local.get({
       dataUrl: DEFAULT_DATA_URL,
-      keywords: DEFAULT_KEYWORDS
+      keywords: DEFAULT_KEYWORDS,
+      enabledSourceIds: []
     });
+    const [news, status] = await Promise.all([
+      fetchJson(state.dataUrl || DEFAULT_DATA_URL),
+      fetchJson(siblingDataUrl(state.dataUrl, "status.json")).catch(() => ({}))
+    ]);
+    const enabled = new Set(state.enabledSourceIds || []);
+    const items = Array.isArray(news) ? news : news.items || [];
+    allItems = items.filter((item) => enabled.size === 0 || enabled.has(item.sourceId));
     keywords = Array.isArray(state.keywords) ? state.keywords : DEFAULT_KEYWORDS;
-    allItems = await fetchItems(state.dataUrl || DEFAULT_DATA_URL);
+    retentionDays = Number(status.retentionDays) || 14;
     fillFilters(allItems);
-    statusEl.textContent = `마지막 갱신: ${new Intl.DateTimeFormat("ko-KR", { dateStyle: "short", timeStyle: "short" }).format(new Date())}`;
+    initializeDateRange(allItems);
+
+    const collectedAt = status.collectedAt ? new Date(status.collectedAt) : new Date();
+    statusEl.textContent = `마지막 수집 ${new Intl.DateTimeFormat("ko-KR", { dateStyle: "medium", timeStyle: "short" }).format(collectedAt)}`;
     render();
   } catch (error) {
     statusEl.textContent = error.message || "자료를 불러오지 못했습니다.";
     listEl.className = "dashboardList empty";
-    listEl.textContent = "데이터 주소와 GitHub Pages 설정을 확인해 주세요.";
+    listEl.textContent = "데이터 주소와 GitHub Pages 상태를 확인해 주세요.";
   } finally {
     refreshButton.disabled = false;
   }
 }
 
-for (const control of [searchInput, sourceFilter, keywordFilter]) {
+for (const control of [startDate, endDate, searchInput, sourceFilter, keywordFilter]) {
   control.addEventListener("input", render);
   control.addEventListener("change", render);
 }
 
+document.querySelectorAll("[data-days]").forEach((button) => {
+  button.addEventListener("click", () => setQuickRange(Number(button.dataset.days)));
+});
 refreshButton.addEventListener("click", loadDashboard);
 
 loadDashboard();

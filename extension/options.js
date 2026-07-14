@@ -37,10 +37,8 @@ const SOURCES = [
 const form = document.querySelector("#optionsForm");
 const dataUrl = document.querySelector("#dataUrl");
 const keywords = document.querySelector("#keywords");
-const intervalMinutes = document.querySelector("#intervalMinutes");
 const sources = document.querySelector("#sources");
 const savedText = document.querySelector("#savedText");
-const resetSeen = document.querySelector("#resetSeen");
 
 function allSourceIds() {
   return SOURCES.flatMap((source) => source.sourceIds);
@@ -82,8 +80,7 @@ async function loadOptions() {
     keywords: DEFAULT_KEYWORDS,
     enabledSourceIds: allSourceIds(),
     sourceSchemaVersion: 0,
-    searchMode: "title_summary",
-    intervalMinutes: 60
+    searchMode: "title_summary"
   });
 
   const enabledSourceIds = migrateSourceIds(state.enabledSourceIds, state.sourceSchemaVersion);
@@ -93,7 +90,6 @@ async function loadOptions() {
 
   dataUrl.value = state.dataUrl;
   keywords.value = Array.isArray(state.keywords) ? state.keywords.join("\n") : String(state.keywords || "");
-  intervalMinutes.value = state.intervalMinutes;
   form.searchMode.value = state.searchMode;
   renderSources(enabledSourceIds);
 }
@@ -108,17 +104,9 @@ form.addEventListener("submit", async (event) => {
     keywords: nextKeywords,
     enabledSourceIds: nextSources.length > 0 ? nextSources : allSourceIds(),
     sourceSchemaVersion: SOURCE_SCHEMA_VERSION,
-    searchMode: form.searchMode.value,
-    intervalMinutes: Math.max(15, Number(intervalMinutes.value) || 60)
+    searchMode: form.searchMode.value
   });
-  await chrome.runtime.sendMessage({ type: "RESCHEDULE" });
   savedText.textContent = "저장했습니다.";
-  setTimeout(() => { savedText.textContent = ""; }, 2500);
-});
-
-resetSeen.addEventListener("click", async () => {
-  await chrome.storage.local.set({ seenIds: [], recentMatches: [] });
-  savedText.textContent = "알림 기록을 초기화했습니다.";
   setTimeout(() => { savedText.textContent = ""; }, 2500);
 });
 

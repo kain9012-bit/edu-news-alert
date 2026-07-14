@@ -7,10 +7,8 @@ on:
       - "crawler/**"
       - ".github/workflows/collect-news.yml"
   schedule:
-    # KST 08:17 = UTC 23:17 on the previous day
-    - cron: "17 23 * * *"
-    # KST 09:17-18:17 = UTC 00:17-09:17
-    - cron: "17 0-9 * * *"
+    # KST 08:00 = UTC 23:00 on the previous day
+    - cron: "0 23 * * *"
 
 permissions:
   contents: write
@@ -49,9 +47,10 @@ jobs:
 
       - name: Collect press releases
         env:
-          RETENTION_DAYS: "7"
+          RETENTION_DAYS: "14"
           COLLECTION_WINDOW_HOURS: "24"
-          MAX_ITEMS_TOTAL: "1000"
+          BRIEFING_HOUR_KST: "8"
+          MAX_ITEMS_TOTAL: "3000"
           MAX_ITEMS_PER_SOURCE: "20"
         run: python crawler/collect.py
 

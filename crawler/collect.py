@@ -21,9 +21,10 @@ STATUS_PATH = PUBLIC_DIR / "status.json"
 PUBLIC_SOURCES_PATH = PUBLIC_DIR / "sources.json"
 
 KST = timezone(timedelta(hours=9))
-RETENTION_DAYS = int(__import__("os").environ.get("RETENTION_DAYS", "7"))
+RETENTION_DAYS = int(__import__("os").environ.get("RETENTION_DAYS", "14"))
 COLLECTION_WINDOW_HOURS = int(__import__("os").environ.get("COLLECTION_WINDOW_HOURS", "24"))
-MAX_ITEMS_TOTAL = int(__import__("os").environ.get("MAX_ITEMS_TOTAL", "1000"))
+BRIEFING_HOUR_KST = int(__import__("os").environ.get("BRIEFING_HOUR_KST", "8"))
+MAX_ITEMS_TOTAL = int(__import__("os").environ.get("MAX_ITEMS_TOTAL", "3000"))
 MAX_ITEMS_PER_SOURCE = int(__import__("os").environ.get("MAX_ITEMS_PER_SOURCE", "20"))
 TIMEOUT_SECONDS = int(__import__("os").environ.get("REQUEST_TIMEOUT_SECONDS", "20"))
 
@@ -155,6 +156,14 @@ REMOVE_SELECTORS = [
 
 def now_kst() -> datetime:
     return datetime.now(KST)
+
+
+def briefing_window(reference: datetime | None = None) -> tuple[datetime, datetime]:
+    current = reference or now_kst()
+    window_end = current.replace(hour=BRIEFING_HOUR_KST, minute=0, second=0, microsecond=0)
+    if current < window_end:
+        window_end -= timedelta(days=1)
+    return window_end - timedelta(hours=COLLECTION_WINDOW_HOURS), window_end
 
 
 def read_json(path: Path, fallback: Any) -> Any:
@@ -378,14 +387,14 @@ def item_datetime(value: str | None) -> datetime | None:
         return None
 
 
-def within_collection_window(item: dict[str, Any], cutoff: datetime) -> bool:
+def within_collection_window(item: dict[str, Any], window_start: datetime, window_end: datetime) -> bool:
     value = item.get("date") or item.get("publishedAt") or item.get("collectedAt")
     dt = item_datetime(value)
     if not dt:
         return True
     if re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(value)):
-        return dt.date() >= cutoff.date()
-    return dt >= cutoff
+        return window_start.date() <= dt.date() <= window_end.date()
+    return window_start <= dt <= window_end
 
 
 def meta_content(soup: BeautifulSoup, *selectors: str) -> list[str]:
@@ -577,7 +586,12 @@ def split_incheon_bundle_items(item: dict[str, Any]) -> list[dict[str, Any]]:
     return split_items or [item]
 
 
-def collect_source(source: dict[str, Any], existing_by_id: dict[str, dict[str, Any]], cutoff: datetime) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+def collect_source(
+    source: dict[str, Any],
+    existing_by_id: dict[str, dict[str, Any]],
+    window_start: datetime,
+    window_end: datetime,
+) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     started = now_kst().isoformat(timespec="seconds")
     skipped_existing = 0
     skipped_old = 0
@@ -599,7 +613,7 @@ def collect_source(source: dict[str, Any], existing_by_id: dict[str, dict[str, A
                 kept_any = False
                 for expanded in expanded_items:
                     expanded_existing = existing_by_id.get(expanded["id"]) or existing
-                    if within_collection_window(expanded, cutoff) or expanded_existing:
+                    if within_collection_window(expanded, window_start, window_end) or expanded_existing:
                         items.append(expanded)
                         kept_any = True
                         if expanded_existing:
@@ -642,11 +656,13 @@ def collect_source(source: dict[str, Any], existing_by_id: dict[str, dict[str, A
 
 
 def within_retention(item: dict[str, Any], cutoff: datetime) -> bool:
-    for key in ["date", "collectedAt"]:
-        dt = item_datetime(item.get(key))
-        if dt and dt >= cutoff:
-            return True
-    return False
+    value = item.get("publishedAt") or item.get("date") or item.get("collectedAt")
+    dt = item_datetime(value)
+    if not dt:
+        return False
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(value)):
+        return dt.date() >= cutoff.date()
+    return dt >= cutoff
 
 
 def dedupe_items(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -689,13 +705,13 @@ def main() -> None:
     sources = [s for s in read_json(SOURCES_PATH, []) if s.get("enabled", True)]
     old_items = read_json(NEWS_PATH, [])
     existing_by_id = {item.get("id", ""): item for item in old_items if item.get("id")}
-    collection_cutoff = now_kst() - timedelta(hours=COLLECTION_WINDOW_HOURS)
+    window_start, window_end = briefing_window()
 
     all_new: list[dict[str, Any]] = []
     runs: list[dict[str, Any]] = []
     for source in sources:
         print(f"collect {source['id']} {source['name']}")
-        items, run = collect_source(source, existing_by_id, collection_cutoff)
+        items, run = collect_source(source, existing_by_id, window_start, window_end)
         all_new.extend(items)
         for item in items:
             existing_by_id[item["id"]] = item
@@ -705,7 +721,7 @@ def main() -> None:
     for item in all_new:
         merged[item["id"]] = {**merged.get(item["id"], {}), **item}
 
-    cutoff = now_kst() - timedelta(days=RETENTION_DAYS)
+    cutoff = window_end - timedelta(days=RETENTION_DAYS)
     source_names = {source["id"]: source["name"] for source in sources}
     kept = normalize_source_names(
         dedupe_items([item for item in merged.values() if within_retention(item, cutoff) and is_usable_item(item)]),
@@ -713,20 +729,28 @@ def main() -> None:
     )
     kept.sort(key=lambda x: (x.get("date") or "", x.get("collectedAt") or ""), reverse=True)
     kept = kept[:MAX_ITEMS_TOTAL]
+    briefing_items = [item for item in kept if within_collection_window(item, window_start, window_end)]
+    collected_at = now_kst().isoformat(timespec="seconds")
 
     status = {
         "ok": all(run["status"] == "success" for run in runs),
         "retentionDays": RETENTION_DAYS,
         "collectionWindowHours": COLLECTION_WINDOW_HOURS,
+        "briefingWindowStart": window_start.isoformat(timespec="seconds"),
+        "briefingWindowEnd": window_end.isoformat(timespec="seconds"),
         "total": len(kept),
+        "briefingTotal": len(briefing_items),
         "newlyCollected": len([item for item in all_new if item["id"] not in {old.get("id") for old in old_items}]),
         "updatedOrCollected": len(all_new),
-        "collectedAt": now_kst().isoformat(timespec="seconds"),
+        "collectedAt": collected_at,
         "runs": runs,
     }
     latest = {
         "collectedAt": status["collectedAt"],
-        "items": kept[:50],
+        "windowStart": status["briefingWindowStart"],
+        "windowEnd": status["briefingWindowEnd"],
+        "total": len(briefing_items),
+        "items": briefing_items,
         "runs": runs,
     }
 

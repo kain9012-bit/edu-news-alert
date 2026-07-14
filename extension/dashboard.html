@@ -3,18 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>최근 보도자료</title>
+  <title>교육동향 기간 조회</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <main class="dashboard">
     <header class="dashboardHeader">
       <div>
-        <h1>최근 보도자료</h1>
+        <h1>교육동향 기간 조회</h1>
         <p id="dashboardStatus">저장된 보도자료를 불러오는 중입니다.</p>
       </div>
       <button id="refreshDashboard" type="button">새로고침</button>
     </header>
+
+    <section class="rangeControls">
+      <label class="field">
+        <span>시작일</span>
+        <input id="startDate" type="date">
+      </label>
+      <label class="field">
+        <span>종료일</span>
+        <input id="endDate" type="date">
+      </label>
+      <div class="quickRanges" aria-label="빠른 기간 선택">
+        <button type="button" data-days="3">3일</button>
+        <button type="button" data-days="7">7일</button>
+        <button type="button" data-days="14">14일</button>
+      </div>
+    </section>
 
     <section class="filters">
       <label class="field">
@@ -37,7 +53,7 @@
 
     <section class="dashboardMeta">
       <strong id="resultCount">0건</strong>
-      <span>현재 저장된 자료 기준</span>
+      <span id="retentionText">저장된 자료 기준</span>
     </section>
 
     <section id="dashboardList" class="dashboardList empty">표시할 보도자료가 없습니다.</section>

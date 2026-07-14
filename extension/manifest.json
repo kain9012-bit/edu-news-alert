@@ -1,16 +1,16 @@
 {
   "manifest_version": 3,
-  "name": "교육청 보도자료 키워드 알리미",
-  "description": "교육부와 시도교육청 보도자료에서 관심 키워드를 찾아 알려줍니다.",
-  "version": "0.1.1",
+  "name": "교육동향 보도자료 알리미",
+  "description": "교육부와 시도교육청의 최근 24시간 보도자료를 사이드바에서 확인합니다.",
+  "version": "0.2.0",
   "minimum_chrome_version": "116",
-  "permissions": ["alarms", "storage", "tabs", "sidePanel"],
+  "permissions": ["storage", "tabs", "sidePanel"],
   "host_permissions": ["https://kain9012-bit.github.io/*"],
   "background": {
     "service_worker": "background.js"
   },
   "action": {
-    "default_title": "보도자료 알리미 · 사이드바 열기"
+    "default_title": "교육동향 사이드바 열기"
   },
   "side_panel": {
     "default_path": "popup.html"
@@ -21,7 +21,7 @@
         "default": "Ctrl+Shift+Y",
         "mac": "Command+Shift+Y"
       },
-      "description": "보도자료 알리미 사이드바 열기"
+      "description": "교육동향 사이드바 열기 또는 닫기"
     }
   },
   "options_page": "options.html"
