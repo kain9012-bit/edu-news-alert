@@ -17,10 +17,14 @@ const DEFAULT_KEYWORDS = [
 const statusText = document.querySelector("#statusText");
 const briefingCount = document.querySelector("#briefingCount");
 const briefingList = document.querySelector("#briefingList");
+const briefingSearch = document.querySelector("#briefingSearch");
 const refreshButton = document.querySelector("#refreshBriefing");
 const openOptionsButton = document.querySelector("#openOptions");
 const openDashboardButton = document.querySelector("#openDashboard");
 let currentWindowId = null;
+let recentItems = [];
+let activeKeywords = DEFAULT_KEYWORDS;
+let activeSearchMode = "title_summary";
 
 function escapeHtml(value) {
   return String(value || "")
@@ -70,11 +74,11 @@ async function fetchBriefing(url) {
   return response.json();
 }
 
-function renderItems(items, keywords, searchMode) {
+function renderItems(items, keywords, searchMode, emptyText) {
   briefingCount.textContent = `${items.length.toLocaleString("ko-KR")}건`;
   if (items.length === 0) {
     briefingList.className = "list empty";
-    briefingList.textContent = "이 시간대에 표시할 보도자료가 없습니다.";
+    briefingList.textContent = emptyText;
     return;
   }
 
@@ -95,6 +99,17 @@ function renderItems(items, keywords, searchMode) {
   }).join("");
 }
 
+function renderCurrentView() {
+  const query = briefingSearch.value.trim().toLowerCase();
+  const items = query
+    ? recentItems.filter((item) => itemText(item, activeSearchMode).includes(query))
+    : recentItems.filter((item) => matchedKeywords(item, activeKeywords, activeSearchMode).length > 0);
+  const emptyText = query
+    ? `“${briefingSearch.value.trim()}” 검색 결과가 없습니다.`
+    : "최근 24시간에 관심 키워드와 일치하는 보도자료가 없습니다.";
+  renderItems(items, activeKeywords, activeSearchMode, emptyText);
+}
+
 async function loadBriefing() {
   refreshButton.disabled = true;
   statusText.textContent = "최근 자료를 불러오는 중입니다.";
@@ -106,12 +121,14 @@ async function loadBriefing() {
       searchMode: "title_summary"
     });
     const briefing = await fetchBriefing(siblingDataUrl(state.dataUrl, "latest.json"));
-    const enabled = new Set(state.enabledSourceIds || []);
-    const items = (briefing.items || []).filter((item) => enabled.size === 0 || enabled.has(item.sourceId));
     const keywords = Array.isArray(state.keywords) ? state.keywords : DEFAULT_KEYWORDS;
+    const enabled = new Set(state.enabledSourceIds || []);
+    recentItems = (briefing.items || []).filter((item) => enabled.size === 0 || enabled.has(item.sourceId));
+    activeKeywords = keywords;
+    activeSearchMode = state.searchMode;
 
     statusText.textContent = formatWindow(briefing.windowStart, briefing.windowEnd);
-    renderItems(items, keywords, state.searchMode);
+    renderCurrentView();
   } catch (error) {
     statusText.textContent = error.message || "자료를 불러오지 못했습니다.";
     briefingCount.textContent = "0건";
@@ -131,6 +148,7 @@ briefingList.addEventListener("click", async (event) => {
 });
 
 refreshButton.addEventListener("click", loadBriefing);
+briefingSearch.addEventListener("input", renderCurrentView);
 openOptionsButton.addEventListener("click", () => chrome.runtime.openOptionsPage());
 openDashboardButton.addEventListener("click", () => {
   chrome.tabs.create({ url: chrome.runtime.getURL("dashboard.html") });

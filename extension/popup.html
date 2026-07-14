@@ -18,17 +18,22 @@
 
     <section class="briefingSummary">
       <div>
-        <span>최근 24시간</span>
+        <span>최근 24시간 관심 자료</span>
         <strong id="briefingCount">0건</strong>
       </div>
       <button id="refreshBriefing" type="button">새로고침</button>
     </section>
 
+    <label class="sidebarSearch">
+      <span>최근 24시간 검색</span>
+      <input id="briefingSearch" type="search" placeholder="키워드 입력">
+    </label>
+
     <button id="openDashboard" class="primaryAction" type="button">이전 보도자료 기간 조회</button>
 
     <section>
       <h2>보도자료</h2>
-      <div id="briefingList" class="list empty">표시할 보도자료가 없습니다.</div>
+      <div id="briefingList" class="list empty">관심 키워드에 해당하는 보도자료가 없습니다.</div>
     </section>
   </main>
   <script src="popup.js"></script>
