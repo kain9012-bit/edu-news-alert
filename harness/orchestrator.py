@@ -113,6 +113,10 @@ class EducationTrendHarness:
             "relevance": relevance,
             "classifications": classifications,
             "validation": validation,
+            "providerErrors": {
+                "relevance": relevance_result.get("errors", []),
+                "classification": classification_result.get("errors", []),
+            },
             "trace": self.trace,
         }
 

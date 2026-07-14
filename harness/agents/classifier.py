@@ -32,12 +32,14 @@ class ClassifierAgent:
         output: list[dict[str, Any]] = []
         attempts = 0
         fallback_count = 0
+        errors: list[dict[str, Any]] = []
 
         for batch in chunks(news_items, self.batch_size):
             compact = [compact_news(item) for item in batch]
             expected_ids = {item["newsId"] for item in compact}
             source_map = {item["newsId"]: item for item in compact}
             accepted: list[dict[str, Any]] | None = None
+            last_error = ""
 
             for _ in range(self.max_attempts):
                 attempts += 1
@@ -53,18 +55,21 @@ class ClassifierAgent:
                     if not errors:
                         accepted = [self._enrich(item, source_map[item["newsId"]]) for item in values]
                         break
-                except Exception:
+                except Exception as error:
+                    last_error = str(error)[:500]
                     continue
 
             if accepted is None:
                 accepted = [self._fallback(item) for item in compact]
                 fallback_count += len(accepted)
+                errors.append({"newsIds": sorted(expected_ids), "error": last_error or "응답 계약 검증 실패"})
             output.extend(accepted)
 
         return {
             "items": output,
             "attempts": attempts,
             "fallbackCount": fallback_count,
+            "errors": errors,
         }
 
     @staticmethod
