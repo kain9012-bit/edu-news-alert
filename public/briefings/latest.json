@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "runId": "20260714T155834Z-4b851300",
+    "runId": "20260714T160331Z-06809db6",
     "status": "completed_with_fallback",
     "provider": "gemini",
     "model": "gemini-2.5-flash-lite",
-    "generatedAt": "2026-07-14T15:58:48+00:00",
+    "generatedAt": "2026-07-14T16:03:43+00:00",
     "windowStart": "2026-07-13T08:00:00+09:00",
     "windowEnd": "2026-07-14T08:00:00+09:00",
     "inputCount": 141,
@@ -6497,23 +6497,506 @@
       "evidenceIntegrity": true
     }
   },
+  "providerErrors": {
+    "relevance": [
+      {
+        "newsIds": [
+          "incheon-1320eb03926b8b9d",
+          "incheon-6b57530debef3b1b",
+          "incheon-6f2a4369d2c45189",
+          "incheon-74b64741a49cb546",
+          "incheon-d35015ffb42701de",
+          "incheon-e3be3906bdd98f88"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "incheon-038c9a8a41aeed8f",
+          "incheon-1505c845466f7e57",
+          "incheon-f2c33cea6e1bf4d1",
+          "jngj_s1n1-2540a6d3be15889a",
+          "jngj_s1n1-c389e1df0d2ba976",
+          "jngj_s1n1-d266af13634e655a"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "jngj_s1n1-196dcfb378440596",
+          "jngj_s1n1-6197e0e26db3f9c6",
+          "jngj_s1n1-62946d5bca663091",
+          "jngj_s1n1-aba879bbb27cdd39",
+          "jngj_s1n1-cdb9c9e0a84ee86b",
+          "jngj_s1n1-def98da61940b271"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "jngj_s1n1-0034b0a1e3615ecc",
+          "jngj_s1n1-3f94abba0cdcabc4",
+          "jngj_s1n1-420c13809b9581bd",
+          "jngj_s1n1-9409aaf572a07d75",
+          "jngj_s1n1-a4deb7fdf7d8156b",
+          "jngj_s1n1-d586934b0f0474af"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "jngj_s1n1-33dc091d9d042758",
+          "jngj_s1n1-6682fab6cdff778c",
+          "jngj_s1n1-77cab28b43b0fc81",
+          "jngj_s1n1-8f7b6a14f56d1453",
+          "jngj_s1n1-ad2a2869abd83b23",
+          "moe-bf7bc893d13e52c9"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "moe-50a72cf33cae7577",
+          "moe-77ca77b8af05decd",
+          "moe-ec888f438bb0102d",
+          "ulsan-7399e3b6e9288d00",
+          "ulsan-c03e8f04963198a2",
+          "ulsan-f395bfa23d69dc79"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "gyeongbuk-40b70b5f16f0d0d3",
+          "gyeongbuk-a965da909d8ec48f",
+          "ulsan-0c28849993f6de9d",
+          "ulsan-4c292b88377580a5",
+          "ulsan-e158860797ecc91c",
+          "ulsan-fa0a584865dcf2aa"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "gyeongbuk-1e08e55ff7bb04c1",
+          "gyeongbuk-34b75fa7f8ba738d",
+          "gyeongbuk-661ce36f0f0a5581",
+          "gyeongbuk-7161c3a8a46e9fa1",
+          "gyeongbuk-cda97d3c4550c741",
+          "gyeongbuk-fab57675631c569d"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "chungbuk-efeae5c7b691bb61",
+          "gyeongnam-3522c75a6346c463",
+          "gyeongnam-be4155f22e4af886",
+          "jeju-0dba7a65d574ec82",
+          "jeju-1b1210d1fac0b21c",
+          "jeju-a0b636b8e3689910"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "gyeongnam-9b6c79488c7a3c80",
+          "jeju-98c6e3be471505a2",
+          "jeju-a6764d2567128892",
+          "jeju-ed942464b79cbde4",
+          "jeju-f01c55bbfd5304c0",
+          "seoul-48845883d384871e"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "chungbuk-d6ef1d169a760d2a",
+          "chungbuk-ed516fe472cbfbd3",
+          "jeonbuk-5e0a06a8b2154686",
+          "jeonbuk-655ccd164187f6b6",
+          "jeonbuk-9729516c8ea03832",
+          "seoul-8eb4f457792fbd4c"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "busan-8bc2233c2e8a2785",
+          "busan-9a6cd7ffd42f8367",
+          "chungbuk-73db15cfd5d31d42",
+          "chungbuk-a0fb886da343a2eb",
+          "chungbuk-a9924a1a5ce7df32",
+          "chungbuk-d94f459f44156e7a"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "busan-0c3b05d0c5cb9d6c",
+          "busan-4aced4cdb9dd26ae",
+          "busan-a2d0c3b24f490df4",
+          "busan-e557eb2d492112d7",
+          "busan-e8e5ec09b62dc8fc",
+          "busan-eb88433193bc928a"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "busan-95a8d22d451fb0e8",
+          "busan-c26ecb485605a5ef",
+          "incheon-2596019f3aff0beb",
+          "incheon-5da388a0a5965111",
+          "incheon-7d55663434f4f19b",
+          "incheon-de18cf268463d535"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "incheon-92781f5ab32be62f",
+          "incheon-f8d72ba9a9bb6ce2",
+          "moe-470cc7a694763c52",
+          "moe-b7c3c1e0b3cac5f2",
+          "ulsan-2c60c882b4ac04f7",
+          "ulsan-e93c98d207548ce5"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "gyeongbuk-2280eba14bf9fec5",
+          "gyeonggi-37cce019ce9b47ea",
+          "gyeonggi-79a3845053cc19ad",
+          "gyeongnam-e9d0029b84190105",
+          "ulsan-3d06d5bd39a3d94e",
+          "ulsan-5809742787a44455"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "gyeongbuk-1a99d27823aeccb2",
+          "gyeongbuk-728205d65deb4040",
+          "gyeongbuk-8bb06648dac82bca",
+          "gyeongbuk-ab7ea15607c524e5",
+          "gyeongbuk-bebd5a43b7c1b4e9",
+          "gyeongbuk-c1159dc5ef0c7c5f"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "chungbuk-156b9c5fb816523e",
+          "chungbuk-7d4f508c347422dc",
+          "jeonbuk-d7224df1fdacc64a",
+          "seoul-1dd719a7f7a6ad57",
+          "seoul-35459d6d933a57f9",
+          "ulsan-009a4a7bea42ce46"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "jeju-6ccf95b91279257d",
+          "jeju-7cde3dbbd904e3b1",
+          "jeju-92a5dcd71b25a47b",
+          "jeju-c8b5f169ac2b1083",
+          "jeju-cf8e21606c77c2b7",
+          "jeju-f094cb329c4afe50"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "chungbuk-3ec69a0b502a3ab2",
+          "gyeongnam-3a452ae703a32065",
+          "gyeongnam-3ba29b3d5ddfb2ef",
+          "gyeongnam-8eb5680977b85281",
+          "jeju-416d5ae2e1c749ba",
+          "jeju-e593141c91574c1d"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "chungbuk-1c9a82431b14a351",
+          "chungbuk-48f05c83b31b722f",
+          "chungbuk-71558ecf7f0863f8",
+          "chungbuk-82089a97dbdb0297",
+          "chungbuk-a689206ce0f788d6",
+          "chungbuk-e4f58b3a862c41b0"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "busan-59224b1677b16637",
+          "busan-d473137a47c12fb7",
+          "busan-eecc6faf86841e13",
+          "gyeonggi-7ff880f4b4edd557",
+          "jeonbuk-7fa35725c9d3fdba",
+          "jeonbuk-eff3fa0e78b6fcc2"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "busan-289dec62353b7e63",
+          "busan-6c50c73e5266a1e8",
+          "busan-88b970434a85c653",
+          "busan-afd21cd025e4d54a",
+          "busan-b7b13aa133558f0c",
+          "busan-f8e73dc201cec00a"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "busan-cb4bf44927f4e55e",
+          "jeonbuk-37d83a239b75dc16",
+          "jeonbuk-6a360ebbfa1964b4"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      }
+    ],
+    "classification": [
+      {
+        "newsIds": [
+          "incheon-1320eb03926b8b9d",
+          "incheon-6b57530debef3b1b",
+          "incheon-6f2a4369d2c45189",
+          "incheon-74b64741a49cb546",
+          "incheon-d35015ffb42701de",
+          "incheon-e3be3906bdd98f88"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "incheon-038c9a8a41aeed8f",
+          "incheon-1505c845466f7e57",
+          "incheon-f2c33cea6e1bf4d1",
+          "jngj_s1n1-2540a6d3be15889a",
+          "jngj_s1n1-c389e1df0d2ba976",
+          "jngj_s1n1-d266af13634e655a"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "jngj_s1n1-196dcfb378440596",
+          "jngj_s1n1-6197e0e26db3f9c6",
+          "jngj_s1n1-62946d5bca663091",
+          "jngj_s1n1-aba879bbb27cdd39",
+          "jngj_s1n1-cdb9c9e0a84ee86b",
+          "jngj_s1n1-def98da61940b271"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "jngj_s1n1-0034b0a1e3615ecc",
+          "jngj_s1n1-3f94abba0cdcabc4",
+          "jngj_s1n1-9409aaf572a07d75",
+          "jngj_s1n1-a4deb7fdf7d8156b",
+          "jngj_s1n1-ad2a2869abd83b23",
+          "jngj_s1n1-d586934b0f0474af"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "jngj_s1n1-6682fab6cdff778c",
+          "jngj_s1n1-8f7b6a14f56d1453",
+          "moe-50a72cf33cae7577",
+          "moe-77ca77b8af05decd",
+          "moe-bf7bc893d13e52c9",
+          "moe-ec888f438bb0102d"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "gyeongbuk-a965da909d8ec48f",
+          "ulsan-4c292b88377580a5",
+          "ulsan-c03e8f04963198a2",
+          "ulsan-e158860797ecc91c",
+          "ulsan-f395bfa23d69dc79",
+          "ulsan-fa0a584865dcf2aa"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "gyeongbuk-34b75fa7f8ba738d",
+          "gyeongbuk-40b70b5f16f0d0d3",
+          "gyeongbuk-661ce36f0f0a5581",
+          "gyeongbuk-7161c3a8a46e9fa1",
+          "gyeongbuk-cda97d3c4550c741",
+          "gyeongbuk-fab57675631c569d"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "chungbuk-efeae5c7b691bb61",
+          "gyeongbuk-1e08e55ff7bb04c1",
+          "gyeongnam-3522c75a6346c463",
+          "gyeongnam-be4155f22e4af886",
+          "jeju-0dba7a65d574ec82",
+          "jeju-1b1210d1fac0b21c"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "jeju-98c6e3be471505a2",
+          "jeju-a6764d2567128892",
+          "jeju-ed942464b79cbde4",
+          "jeju-f01c55bbfd5304c0",
+          "seoul-48845883d384871e",
+          "seoul-8eb4f457792fbd4c"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "chungbuk-a0fb886da343a2eb",
+          "chungbuk-d94f459f44156e7a",
+          "chungbuk-ed516fe472cbfbd3",
+          "jeonbuk-5e0a06a8b2154686",
+          "jeonbuk-655ccd164187f6b6",
+          "jeonbuk-9729516c8ea03832"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "busan-4aced4cdb9dd26ae",
+          "busan-95a8d22d451fb0e8",
+          "busan-c26ecb485605a5ef",
+          "busan-e8e5ec09b62dc8fc",
+          "busan-eb88433193bc928a",
+          "chungbuk-73db15cfd5d31d42"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "incheon-2596019f3aff0beb",
+          "incheon-5da388a0a5965111",
+          "incheon-7d55663434f4f19b",
+          "incheon-92781f5ab32be62f",
+          "incheon-de18cf268463d535",
+          "incheon-f8d72ba9a9bb6ce2"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "gyeonggi-79a3845053cc19ad",
+          "moe-470cc7a694763c52",
+          "moe-b7c3c1e0b3cac5f2",
+          "ulsan-2c60c882b4ac04f7",
+          "ulsan-3d06d5bd39a3d94e",
+          "ulsan-5809742787a44455"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "gyeongbuk-2280eba14bf9fec5",
+          "gyeongbuk-728205d65deb4040",
+          "gyeongbuk-8bb06648dac82bca",
+          "gyeongbuk-ab7ea15607c524e5",
+          "gyeonggi-37cce019ce9b47ea",
+          "gyeongnam-e9d0029b84190105"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "chungbuk-156b9c5fb816523e",
+          "gyeongbuk-1a99d27823aeccb2",
+          "gyeongbuk-bebd5a43b7c1b4e9",
+          "gyeongbuk-c1159dc5ef0c7c5f",
+          "seoul-1dd719a7f7a6ad57",
+          "seoul-35459d6d933a57f9"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "jeju-6ccf95b91279257d",
+          "jeju-7cde3dbbd904e3b1",
+          "jeju-c8b5f169ac2b1083",
+          "jeju-cf8e21606c77c2b7",
+          "jeju-f094cb329c4afe50",
+          "jeonbuk-d7224df1fdacc64a"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "chungbuk-3ec69a0b502a3ab2",
+          "gyeongnam-3a452ae703a32065",
+          "gyeongnam-3ba29b3d5ddfb2ef",
+          "gyeongnam-8eb5680977b85281",
+          "jeju-416d5ae2e1c749ba",
+          "jeju-e593141c91574c1d"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "chungbuk-1c9a82431b14a351",
+          "chungbuk-48f05c83b31b722f",
+          "chungbuk-71558ecf7f0863f8",
+          "chungbuk-82089a97dbdb0297",
+          "chungbuk-a689206ce0f788d6",
+          "gyeonggi-7ff880f4b4edd557"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "busan-6c50c73e5266a1e8",
+          "busan-88b970434a85c653",
+          "busan-b7b13aa133558f0c",
+          "busan-d473137a47c12fb7",
+          "busan-eecc6faf86841e13",
+          "jeonbuk-eff3fa0e78b6fcc2"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      },
+      {
+        "newsIds": [
+          "busan-cb4bf44927f4e55e",
+          "jeonbuk-6a360ebbfa1964b4"
+        ],
+        "error": "Gemini 요청 실패 (404): {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+      }
+    ]
+  },
   "trace": [
     {
       "step": "filter_relevance",
       "status": "success",
-      "startedAt": "2026-07-14T15:58:34+00:00",
-      "durationMs": 7913
+      "startedAt": "2026-07-14T16:03:31+00:00",
+      "durationMs": 6855
     },
     {
       "step": "classify",
       "status": "success",
-      "startedAt": "2026-07-14T15:58:42+00:00",
-      "durationMs": 5897
+      "startedAt": "2026-07-14T16:03:38+00:00",
+      "durationMs": 5172
     },
     {
       "step": "validate_selection",
       "status": "success",
-      "startedAt": "2026-07-14T15:58:48+00:00",
+      "startedAt": "2026-07-14T16:03:43+00:00",
       "durationMs": 0
     }
   ]
