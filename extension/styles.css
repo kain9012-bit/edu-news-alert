@@ -27,7 +27,8 @@ main {
 }
 
 .popup main {
-  width: 380px;
+  width: 100%;
+  max-width: 420px;
 }
 
 h1,
@@ -331,43 +332,6 @@ legend {
   background: var(--soft);
   color: var(--accent-dark);
   font-size: 12px;
-  font-weight: 700;
-}
-
-.alert {
-  min-width: 0;
-  background: var(--bg);
-  overflow: hidden;
-}
-
-.alert main {
-  width: 100%;
-  padding: 14px;
-}
-
-.alertHeader {
-  margin-bottom: 12px;
-}
-
-.alertHeader h1 {
-  font-size: 18px;
-}
-
-.alert .list {
-  max-height: 374px;
-  overflow: auto;
-}
-
-.alertActions {
-  display: grid;
-  margin-top: 12px;
-}
-
-.alertActions button {
-  min-height: 38px;
-  border-color: var(--accent);
-  background: var(--accent);
-  color: white;
   font-weight: 700;
 }
 
