@@ -3,6 +3,7 @@ const matchesEl = document.querySelector("#matches");
 const checkNowButton = document.querySelector("#checkNow");
 const openOptionsButton = document.querySelector("#openOptions");
 const openDashboardButton = document.querySelector("#openDashboard");
+let currentWindowId = null;
 
 function escapeHtml(value) {
   return String(value || "")
@@ -87,6 +88,23 @@ openOptionsButton.addEventListener("click", () => {
 
 openDashboardButton.addEventListener("click", () => {
   chrome.tabs.create({ url: chrome.runtime.getURL("dashboard.html") });
+});
+
+chrome.windows.getCurrent().then((currentWindow) => {
+  currentWindowId = currentWindow.id;
+  chrome.runtime.sendMessage({ type: "sidePanelOpened", windowId: currentWindowId });
+});
+
+window.addEventListener("beforeunload", () => {
+  if (currentWindowId != null) {
+    chrome.runtime.sendMessage({ type: "sidePanelClosed", windowId: currentWindowId });
+  }
+});
+
+chrome.runtime.onMessage.addListener((message) => {
+  if (message?.type === "closeSidePanel" && message.windowId === currentWindowId) {
+    window.close();
+  }
 });
 
 refresh();
