@@ -23,6 +23,10 @@ const searchLabel = document.querySelector("#searchLabel");
 const refreshButton = document.querySelector("#refreshBriefing");
 const openOptionsButton = document.querySelector("#openOptions");
 const openDashboardButton = document.querySelector("#openDashboard");
+const aiBriefing = document.querySelector("#aiBriefing");
+const aiBriefingMeta = document.querySelector("#aiBriefingMeta");
+const aiBriefingSummary = document.querySelector("#aiBriefingSummary");
+const aiTrendList = document.querySelector("#aiTrendList");
 let currentWindowId = null;
 let recentItems = [];
 let activeKeywords = DEFAULT_KEYWORDS;
@@ -40,6 +44,14 @@ function siblingDataUrl(dataUrl, fileName) {
   const url = new URL(dataUrl || DEFAULT_DATA_URL);
   const parts = url.pathname.split("/");
   parts[parts.length - 1] = fileName;
+  url.pathname = parts.join("/");
+  return url.toString();
+}
+
+function aiBriefingUrl(dataUrl) {
+  const url = new URL(dataUrl || DEFAULT_DATA_URL);
+  const parts = url.pathname.split("/");
+  parts[parts.length - 1] = "briefings/latest.json";
   url.pathname = parts.join("/");
   return url.toString();
 }
@@ -74,6 +86,27 @@ async function fetchBriefing(url) {
   const response = await fetch(requestUrl.toString(), { cache: "no-store" });
   if (!response.ok) throw new Error(`자료를 불러오지 못했습니다. (${response.status})`);
   return response.json();
+}
+
+async function loadAiBriefing(dataUrl) {
+  aiBriefing.hidden = true;
+  try {
+    const result = await fetchBriefing(aiBriefingUrl(dataUrl));
+    const metadata = result.metadata || {};
+    const report = result.report || {};
+    const trends = Array.isArray(report.keyTrends) ? report.keyTrends.slice(0, 4) : [];
+    aiBriefingMeta.textContent = `${metadata.relevantCount || 0}건 채택 · ${metadata.filteredOutCount || 0}건 제외`;
+    aiBriefingSummary.textContent = report.executiveSummary || "분석 요약이 없습니다.";
+    aiTrendList.innerHTML = trends.map((trend) => `
+      <div class="aiTrend">
+        <strong>${escapeHtml(trend.title || "교육동향")}</strong>
+        <p>${escapeHtml(trend.description || "")}</p>
+      </div>
+    `).join("");
+    aiBriefing.hidden = false;
+  } catch (_error) {
+    aiBriefing.hidden = true;
+  }
 }
 
 function renderItems(items, keywords, searchMode, emptyText) {
@@ -130,6 +163,7 @@ async function loadBriefing() {
       searchMode: "title_summary"
     });
     const briefing = await fetchBriefing(siblingDataUrl(state.dataUrl, "latest.json"));
+    loadAiBriefing(state.dataUrl);
     const keywords = Array.isArray(state.keywords) ? state.keywords : DEFAULT_KEYWORDS;
     const enabled = new Set(state.enabledSourceIds || []);
     recentItems = (briefing.items || []).filter((item) => enabled.size === 0 || enabled.has(item.sourceId));

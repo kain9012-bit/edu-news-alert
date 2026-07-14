@@ -13,16 +13,16 @@ const DEFAULT_KEYWORDS = [
   "교육행정",
   "데이터 기반"
 ];
-const SOURCE_SCHEMA_VERSION = 2;
+const SOURCE_SCHEMA_VERSION = 3;
 const SOURCES = [
   { id: "moe", name: "교육부", sourceIds: ["moe"] },
-  { id: "jeonbuk_group", name: "전북특별자치도교육청", sourceIds: ["jeonbuk", "jeonbuk_institute", "jeonbuk_support"] },
+  { id: "jeonbuk_group", name: "전북특별자치도교육청", sourceIds: ["jeonbuk"] },
   { id: "seoul", name: "서울특별시교육청", sourceIds: ["seoul"] },
   { id: "gyeonggi", name: "경기도교육청", sourceIds: ["gyeonggi"] },
   { id: "busan", name: "부산광역시교육청", sourceIds: ["busan"] },
   { id: "daegu", name: "대구광역시교육청", sourceIds: ["daegu"] },
   { id: "incheon", name: "인천광역시교육청", sourceIds: ["incheon"] },
-  { id: "jngj_group", name: "전남광주통합특별시교육청", sourceIds: ["jngj_s1n1", "jngj_s1n2", "jngj_s1n3"] },
+  { id: "jngj_group", name: "전남광주통합특별시교육청", sourceIds: ["jngj_s1n1"] },
   { id: "daejeon", name: "대전광역시교육청", sourceIds: ["daejeon"] },
   { id: "ulsan", name: "울산광역시교육청", sourceIds: ["ulsan"] },
   { id: "sejong", name: "세종특별자치시교육청", sourceIds: ["sejong"] },
@@ -48,11 +48,20 @@ function migrateSourceIds(sourceIds, schemaVersion) {
   if (!Array.isArray(sourceIds)) return allSourceIds();
   if (schemaVersion === SOURCE_SCHEMA_VERSION) return sourceIds;
 
-  const migrated = new Set(sourceIds.filter((id) => id !== "gwangju" && id !== "jeonnam"));
-  if (sourceIds.includes("gwangju") || sourceIds.includes("jeonnam")) {
+  const retiredIds = new Set([
+    "gwangju",
+    "jeonnam",
+    "jeonbuk_institute",
+    "jeonbuk_support",
+    "jngj_s1n2",
+    "jngj_s1n3"
+  ]);
+  const migrated = new Set(sourceIds.filter((id) => !retiredIds.has(id)));
+  if (sourceIds.some((id) => ["gwangju", "jeonnam", "jngj_s1n2", "jngj_s1n3"].includes(id))) {
     migrated.add("jngj_s1n1");
-    migrated.add("jngj_s1n2");
-    migrated.add("jngj_s1n3");
+  }
+  if (sourceIds.some((id) => ["jeonbuk_institute", "jeonbuk_support"].includes(id))) {
+    migrated.add("jeonbuk");
   }
   return Array.from(migrated).filter((id) => allSourceIds().includes(id));
 }

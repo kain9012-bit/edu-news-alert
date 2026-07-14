@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EducationTrendRelevance",
+  "type": "object",
+  "required": ["newsId", "decision", "scope", "reason", "confidence", "evidenceIds"],
+  "properties": {
+    "newsId": { "type": "string" },
+    "decision": { "enum": ["KEEP", "DROP"] },
+    "scope": { "enum": ["national", "provincial", "local", "institution"] },
+    "reason": { "type": "string" },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "evidenceIds": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+  }
+}

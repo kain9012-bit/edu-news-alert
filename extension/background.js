@@ -16,16 +16,12 @@ const DEFAULT_KEYWORDS = [
 const DEFAULT_SOURCE_IDS = [
   "moe",
   "jeonbuk",
-  "jeonbuk_institute",
-  "jeonbuk_support",
   "seoul",
   "gyeonggi",
   "busan",
   "daegu",
   "incheon",
   "jngj_s1n1",
-  "jngj_s1n2",
-  "jngj_s1n3",
   "daejeon",
   "ulsan",
   "sejong",
@@ -36,7 +32,7 @@ const DEFAULT_SOURCE_IDS = [
   "gyeongnam",
   "jeju"
 ];
-const SOURCE_SCHEMA_VERSION = 2;
+const SOURCE_SCHEMA_VERSION = 3;
 
 chrome.sidePanel
   .setPanelBehavior({ openPanelOnActionClick: true })
@@ -48,11 +44,20 @@ function migrateSourceIds(sourceIds, schemaVersion) {
   if (!Array.isArray(sourceIds)) return DEFAULT_SOURCE_IDS;
   if (schemaVersion === SOURCE_SCHEMA_VERSION) return sourceIds;
 
-  const migrated = new Set(sourceIds.filter((id) => id !== "gwangju" && id !== "jeonnam"));
-  if (sourceIds.includes("gwangju") || sourceIds.includes("jeonnam")) {
+  const retiredIds = new Set([
+    "gwangju",
+    "jeonnam",
+    "jeonbuk_institute",
+    "jeonbuk_support",
+    "jngj_s1n2",
+    "jngj_s1n3"
+  ]);
+  const migrated = new Set(sourceIds.filter((id) => !retiredIds.has(id)));
+  if (sourceIds.some((id) => ["gwangju", "jeonnam", "jngj_s1n2", "jngj_s1n3"].includes(id))) {
     migrated.add("jngj_s1n1");
-    migrated.add("jngj_s1n2");
-    migrated.add("jngj_s1n3");
+  }
+  if (sourceIds.some((id) => ["jeonbuk_institute", "jeonbuk_support"].includes(id))) {
+    migrated.add("jeonbuk");
   }
   return Array.from(migrated).filter((id) => DEFAULT_SOURCE_IDS.includes(id));
 }

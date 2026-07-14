@@ -77,6 +77,10 @@ DATA_ID_ONLY_SOURCES = {
 RETIRED_SOURCE_IDS = {
     "gwangju",
     "jeonnam",
+    "jeonbuk_institute",
+    "jeonbuk_support",
+    "jngj_s1n2",
+    "jngj_s1n3",
 }
 
 NOTICE_TITLE_PHRASES = [
@@ -100,8 +104,6 @@ TITLE_SELECTORS = {
     "chungnam": ["article.board-text h1.tit", ".board-text h1.tit", ".tit"],
     "jeonnam": [".article-view-header h3.heading", ".aht-title-view", "header.article-view-header h3.heading"],
     "jngj_s1n1": [".article-view-header h3.heading", ".aht-title-view", "header.article-view-header h3.heading"],
-    "jngj_s1n2": [".article-view-header h3.heading", ".aht-title-view", "header.article-view-header h3.heading"],
-    "jngj_s1n3": [".article-view-header h3.heading", ".aht-title-view", "header.article-view-header h3.heading"],
     "gyeongbuk": ["th.title", ".title"],
     "gyeongnam": [".bd-view__vhead h3.vtitle .tit", ".bd-view__vhead h3.vtitle", ".bd-view__vhead .tit"],
     "jeju": [".bdvTit", ".bdvTitWrap .bdvTit"],
@@ -110,8 +112,6 @@ TITLE_SELECTORS = {
 
 CONTENT_SELECTORS = {
     "jeonbuk": [".bbs_con", ".board_view"],
-    "jeonbuk_institute": [".bbs_con", ".board_view"],
-    "jeonbuk_support": [".bbs_con", ".board_view"],
     "seoul": ["#view_txt", ".news_view", ".view_cont"],
     "gyeonggi": [".bbsV_cont", "#contents", ".board_view", ".view_cont"],
     "busan": [".bbsV_cont"],
@@ -126,8 +126,6 @@ CONTENT_SELECTORS = {
     "chungnam": [".viewBox"],
     "jeonnam": ["#article-view-content-div"],
     "jngj_s1n1": ["#article-view-content-div"],
-    "jngj_s1n2": ["#article-view-content-div"],
-    "jngj_s1n3": ["#article-view-content-div"],
     "gyeongbuk": ["table"],
     "gyeongnam": [".bd-view__vcontent .txt", ".bd-view__vcontent"],
     "jeju": [".bdvCntWrap"],

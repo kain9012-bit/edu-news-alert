@@ -47,6 +47,22 @@ h2 {
   font-size: 15px;
 }
 
+.sectionHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.sectionHeading h2 {
+  margin-bottom: 8px;
+}
+
+.sectionHeading span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
 p,
 small {
   color: var(--muted);
@@ -108,6 +124,40 @@ button:disabled {
   padding: 13px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+}
+
+.aiBriefing {
+  margin-top: 18px;
+  padding: 0 0 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.aiBriefing > p {
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.aiTrendList {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.aiTrend {
+  padding-left: 10px;
+  border-left: 3px solid var(--accent);
+}
+
+.aiTrend strong {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.aiTrend p {
+  margin-top: 3px;
+  font-size: 12px;
+  line-height: 1.45;
 }
 
 .sidebarSearch {
