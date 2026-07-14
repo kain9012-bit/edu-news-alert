@@ -8,7 +8,7 @@
 
 - 주제: 전국 교육청 보도자료 기반 일일 교육동향 선별
 - 목적: 반복적인 보도자료 확인을 줄이고 정책·제도·사업 변화를 빠르게 찾기
-- AI: Gemini API `gemini-2.5-flash-lite`
+- AI: Gemini API `gemini-3.1-flash-lite`
 - 원칙: 원문과 AI 판정을 분리하고 모든 판정에 원문 `newsId` 연결
 - 자동화: GitHub Actions가 수집부터 AI 선별, 검증, Pages 배포까지 실행
 

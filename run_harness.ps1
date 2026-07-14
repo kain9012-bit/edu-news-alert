@@ -2,7 +2,7 @@ param(
     [int]$MaxItems = 0,
     [ValidateSet("gemini", "ollama")]
     [string]$Provider = "gemini",
-    [string]$Model = "gemini-2.5-flash-lite"
+    [string]$Model = "gemini-3.1-flash-lite"
 )
 
 $ErrorActionPreference = "Stop"
