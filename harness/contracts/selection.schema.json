@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EducationTrendSelectionResult",
+  "type": "object",
+  "required": ["metadata", "categorySummary", "selectedItems", "excludedItems", "validation", "trace"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["candidateCount", "relevantCount", "filteredOutCount", "validationStatus"],
+      "properties": {
+        "candidateCount": { "type": "integer", "minimum": 0 },
+        "relevantCount": { "type": "integer", "minimum": 0 },
+        "filteredOutCount": { "type": "integer", "minimum": 0 },
+        "validationStatus": { "enum": ["PASS", "REVISE"] }
+      }
+    },
+    "categorySummary": { "type": "array" },
+    "selectedItems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["newsId", "category", "importance", "selectionReason", "url"]
+      }
+    },
+    "excludedItems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["newsId", "reason", "scope"]
+      }
+    },
+    "validation": { "type": "object" },
+    "trace": { "type": "array" }
+  }
+}

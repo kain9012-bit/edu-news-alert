@@ -1,9 +1,9 @@
 {
-  "model": "exaone3.5:7.8b",
+  "provider": "gemini",
+  "model": "gemini-2.5-flash-lite",
   "ollamaUrl": "http://127.0.0.1:11434",
   "batchSize": 6,
   "maxItems": 0,
-  "maxReviewAttempts": 2,
   "requestTimeoutSeconds": 240,
   "maxOutputTokens": 1536,
   "categories": [

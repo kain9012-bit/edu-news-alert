@@ -12,6 +12,8 @@ class OllamaError(RuntimeError):
 
 
 class OllamaClient:
+    provider = "ollama"
+
     def __init__(
         self,
         base_url: str,
@@ -23,6 +25,7 @@ class OllamaClient:
         self.model = model
         self.timeout_seconds = timeout_seconds
         self.max_output_tokens = max(256, max_output_tokens)
+        self.usage: dict[str, int] = {}
 
     def available_models(self) -> list[str]:
         response = requests.get(f"{self.base_url}/api/tags", timeout=10)

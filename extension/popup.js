@@ -67,6 +67,10 @@ function matchedKeywords(item, keywords, mode) {
   return keywords.filter((keyword) => text.includes(keyword.toLowerCase()));
 }
 
+function importanceLabel(value) {
+  return { high: "중요", medium: "보통", low: "참고" }[value] || value || "";
+}
+
 function formatWindow(startValue, endValue) {
   const start = new Date(startValue);
   const end = new Date(endValue);
@@ -88,24 +92,25 @@ async function fetchBriefing(url) {
   return response.json();
 }
 
-async function loadAiBriefing(dataUrl) {
+async function loadAiSelection(dataUrl) {
   aiBriefing.hidden = true;
   try {
     const result = await fetchBriefing(aiBriefingUrl(dataUrl));
     const metadata = result.metadata || {};
-    const report = result.report || {};
-    const trends = Array.isArray(report.keyTrends) ? report.keyTrends.slice(0, 4) : [];
+    const categories = Array.isArray(result.categorySummary) ? result.categorySummary.slice(0, 6) : [];
     aiBriefingMeta.textContent = `${metadata.relevantCount || 0}건 채택 · ${metadata.filteredOutCount || 0}건 제외`;
-    aiBriefingSummary.textContent = report.executiveSummary || "분석 요약이 없습니다.";
-    aiTrendList.innerHTML = trends.map((trend) => `
+    aiBriefingSummary.textContent = `후보 ${metadata.candidateCount || 0}건 중 교육동향으로 볼 수 있는 자료 ${metadata.relevantCount || 0}건을 남겼습니다.`;
+    aiTrendList.innerHTML = categories.map((item) => `
       <div class="aiTrend">
-        <strong>${escapeHtml(trend.title || "교육동향")}</strong>
-        <p>${escapeHtml(trend.description || "")}</p>
+        <strong>${escapeHtml(item.category || "기타")}</strong>
+        <p>${Number(item.count || 0).toLocaleString("ko-KR")}건</p>
       </div>
     `).join("");
     aiBriefing.hidden = false;
+    return result;
   } catch (_error) {
     aiBriefing.hidden = true;
+    return null;
   }
 }
 
@@ -124,10 +129,14 @@ function renderItems(items, keywords, searchMode, emptyText) {
       ? `<small class="matchedLine">${matches.map(escapeHtml).join(", ")}</small>`
       : "";
     const url = escapeHtml(item.url || "#");
+    const categoryLine = item.aiCategory
+      ? `<small class="categoryLine">${escapeHtml(item.aiCategory)} · ${escapeHtml(importanceLabel(item.aiImportance))}</small>`
+      : "";
     return `
       <a class="item" href="${url}" data-url="${url}" rel="noreferrer">
         <span class="source">${escapeHtml(item.sourceName || item.source || item.sourceId || "교육청")}</span>
         <strong>${escapeHtml(item.title || "제목 없음")}</strong>
+        ${categoryLine}
         ${keywordLine}
       </a>
     `;
@@ -162,16 +171,34 @@ async function loadBriefing() {
       enabledSourceIds: [],
       searchMode: "title_summary"
     });
-    const briefing = await fetchBriefing(siblingDataUrl(state.dataUrl, "latest.json"));
-    loadAiBriefing(state.dataUrl);
+    const [briefing, aiSelection] = await Promise.all([
+      fetchBriefing(siblingDataUrl(state.dataUrl, "latest.json")),
+      loadAiSelection(state.dataUrl)
+    ]);
     const keywords = Array.isArray(state.keywords) ? state.keywords : DEFAULT_KEYWORDS;
     const enabled = new Set(state.enabledSourceIds || []);
-    recentItems = (briefing.items || []).filter((item) => enabled.size === 0 || enabled.has(item.sourceId));
+    const sameSelectionWindow = aiSelection
+      && aiSelection.metadata?.windowStart === briefing.windowStart
+      && aiSelection.metadata?.windowEnd === briefing.windowEnd;
+    if (!sameSelectionWindow) aiBriefing.hidden = true;
+    const selectedItems = sameSelectionWindow && Array.isArray(aiSelection.selectedItems)
+      ? aiSelection.selectedItems
+      : null;
+    const selectedMap = new Map((selectedItems || []).map((item) => [item.newsId, item]));
+    recentItems = (briefing.items || [])
+      .filter((item) => enabled.size === 0 || enabled.has(item.sourceId))
+      .filter((item) => selectedItems === null || selectedMap.has(item.id))
+      .map((item) => {
+        const selected = selectedMap.get(item.id);
+        return selected
+          ? { ...item, aiCategory: selected.category, aiImportance: selected.importance }
+          : item;
+      });
     activeKeywords = keywords;
     activeSearchMode = state.searchMode;
     briefingScope.textContent = activeKeywords.length > 0
-      ? "최근 24시간 관심 자료"
-      : "최근 24시간 전체 자료";
+      ? (selectedItems === null ? "최근 24시간 관심 자료" : "최근 24시간 AI 선별 관심 자료")
+      : (selectedItems === null ? "최근 24시간 전체 자료" : "최근 24시간 AI 선별 자료");
     searchLabel.textContent = activeKeywords.length > 0
       ? "관심 자료 내 검색"
       : "전체 보도자료 검색";

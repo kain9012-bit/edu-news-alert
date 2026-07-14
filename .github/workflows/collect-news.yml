@@ -50,15 +50,22 @@ jobs:
           MAX_ITEMS_PER_SOURCE: "20"
         run: python crawler/collect.py
 
+      - name: Select and classify education trends
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          LLM_PROVIDER: gemini
+          LLM_MODEL: gemini-2.5-flash-lite
+        run: python -m harness.run
+
       - name: Commit collected data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/*.json
+          git add public
           if git diff --cached --quiet; then
             echo "No data changes to commit."
           else
-            git commit -m "Update collected press release data"
+            git commit -m "Update press releases and AI selection"
             git push
           fi
 

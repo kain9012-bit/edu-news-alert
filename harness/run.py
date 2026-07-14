@@ -6,6 +6,7 @@ import os
 from pathlib import Path
 from typing import Any
 
+from harness.gemini_client import GeminiClient
 from harness.llm_client import OllamaClient
 from harness.orchestrator import EducationTrendHarness
 from harness.renderer import render_markdown
@@ -20,6 +21,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--input", default="public/latest.json", help="입력 JSON 경로")
     parser.add_argument("--output", default="public/briefings", help="결과 디렉터리")
     parser.add_argument("--config", default="harness/config.json", help="하네스 설정 JSON")
+    parser.add_argument("--provider", choices=["gemini", "ollama"], help="LLM 제공자")
     parser.add_argument("--model", help="Ollama 모델명")
     parser.add_argument("--ollama-url", help="Ollama API 주소")
     parser.add_argument("--max-items", type=int, help="처리할 최대 건수, 0은 전체")
@@ -50,18 +52,31 @@ def write_outputs(output_dir: Path, result: dict[str, Any]) -> tuple[Path, Path]
 def main() -> int:
     args = parse_args()
     config = read_json(resolve_path(args.config))
-    model = args.model or os.environ.get("OLLAMA_MODEL") or config["model"]
-    ollama_url = args.ollama_url or os.environ.get("OLLAMA_URL") or config["ollamaUrl"]
-    llm = OllamaClient(
-        base_url=ollama_url,
-        model=model,
-        timeout_seconds=int(config.get("requestTimeoutSeconds", 240)),
-        max_output_tokens=(
-            args.max_output_tokens
-            if args.max_output_tokens is not None
-            else int(config.get("maxOutputTokens", 1536))
-        ),
+    provider = args.provider or os.environ.get("LLM_PROVIDER") or config.get("provider", "gemini")
+    if provider == "ollama":
+        model = args.model or os.environ.get("OLLAMA_MODEL") or "exaone3.5:7.8b"
+    else:
+        model = args.model or os.environ.get("LLM_MODEL") or config["model"]
+    max_output_tokens = (
+        args.max_output_tokens
+        if args.max_output_tokens is not None
+        else int(config.get("maxOutputTokens", 1536))
     )
+    if provider == "gemini":
+        llm = GeminiClient(
+            api_key=os.environ.get("GEMINI_API_KEY", ""),
+            model=model,
+            timeout_seconds=int(config.get("requestTimeoutSeconds", 240)),
+            max_output_tokens=max_output_tokens,
+        )
+    else:
+        ollama_url = args.ollama_url or os.environ.get("OLLAMA_URL") or config["ollamaUrl"]
+        llm = OllamaClient(
+            base_url=ollama_url,
+            model=model,
+            timeout_seconds=int(config.get("requestTimeoutSeconds", 240)),
+            max_output_tokens=max_output_tokens,
+        )
     if not args.skip_model_check:
         llm.ensure_model()
 
@@ -73,8 +88,9 @@ def main() -> int:
         json.dumps(
             {
                 "status": result["metadata"]["status"],
+                "provider": result["metadata"]["provider"],
                 "processed": result["metadata"]["processedCount"],
-                "review": result["metadata"]["reviewStatus"],
+                "validation": result["metadata"]["validationStatus"],
                 "json": str(json_path),
                 "markdown": str(markdown_path),
             },

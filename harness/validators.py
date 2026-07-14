@@ -28,7 +28,6 @@ def validate_input(payload: Any) -> list[str]:
             errors.append(f"items[{index}]에 title이 없습니다.")
     return errors
 
-
 def validate_classifications(
     values: Any,
     expected_ids: set[str],
@@ -90,54 +89,4 @@ def validate_relevance(values: Any, expected_ids: set[str]) -> list[str]:
             errors.append(f"{news_id}: evidenceIds가 원문 ID와 다릅니다.")
     if set(returned_ids) != expected_ids or len(returned_ids) != len(expected_ids):
         errors.append("입력과 적합성 판별 결과의 newsId 구성이 다릅니다.")
-    return errors
-
-
-def validate_analysis(value: Any, source_ids: set[str]) -> list[str]:
-    errors: list[str] = []
-    if not isinstance(value, dict):
-        return ["동향 분석 결과가 객체가 아닙니다."]
-    if not str(value.get("headline", "")).strip():
-        errors.append("headline이 없습니다.")
-    if not str(value.get("overview", "")).strip():
-        errors.append("overview가 없습니다.")
-    trends = value.get("trends")
-    if not isinstance(trends, list) or not trends:
-        errors.append("trends가 없습니다.")
-        return errors
-    for index, trend in enumerate(trends):
-        evidence = trend.get("evidenceIds") if isinstance(trend, dict) else None
-        if not isinstance(evidence, list) or not evidence:
-            errors.append(f"trends[{index}]에 근거가 없습니다.")
-        elif any(item not in source_ids for item in evidence):
-            errors.append(f"trends[{index}]에 존재하지 않는 근거 ID가 있습니다.")
-    return errors
-
-
-def validate_report(value: Any, source_ids: set[str]) -> list[str]:
-    errors: list[str] = []
-    if not isinstance(value, dict):
-        return ["보고서가 객체가 아닙니다."]
-    for key in ["title", "executiveSummary"]:
-        if not str(value.get(key, "")).strip():
-            errors.append(f"{key}가 없습니다.")
-    trends = value.get("keyTrends")
-    if not isinstance(trends, list) or not trends:
-        errors.append("keyTrends가 없습니다.")
-    else:
-        for index, trend in enumerate(trends):
-            evidence = trend.get("evidenceIds") if isinstance(trend, dict) else None
-            if not isinstance(evidence, list) or not evidence:
-                errors.append(f"keyTrends[{index}]에 근거가 없습니다.")
-            elif any(item not in source_ids for item in evidence):
-                errors.append(f"keyTrends[{index}]에 존재하지 않는 근거 ID가 있습니다.")
-    notable = value.get("notableNews")
-    if not isinstance(notable, list):
-        errors.append("notableNews가 배열이 아닙니다.")
-    else:
-        for index, item in enumerate(notable):
-            if not isinstance(item, dict) or item.get("newsId") not in source_ids:
-                errors.append(f"notableNews[{index}]의 newsId가 잘못됐습니다.")
-    if not isinstance(value.get("watchList"), list):
-        errors.append("watchList가 배열이 아닙니다.")
     return errors
