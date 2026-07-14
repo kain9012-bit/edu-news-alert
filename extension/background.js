@@ -38,8 +38,12 @@ const DEFAULT_SOURCE_IDS = [
 ];
 const SOURCE_SCHEMA_VERSION = 2;
 const ALARM_NAME = "check-news";
-const ALERT_WIDTH = 410;
-const ALERT_HEIGHT = 650;
+
+chrome.sidePanel
+  .setPanelBehavior({ openPanelOnActionClick: true })
+  .catch((error) => console.warn("setPanelBehavior 실패", error));
+
+const openWindows = new Set();
 
 function migrateSourceIds(sourceIds, schemaVersion) {
   if (!Array.isArray(sourceIds)) return DEFAULT_SOURCE_IDS;
@@ -151,36 +155,21 @@ async function checkNews({ notify = true } = {}) {
   if (notify && newMatches.length > 0) {
     const first = newMatches[0];
     await chrome.storage.local.set({ lastNotificationUrl: first.url || null });
-    await openAlertWindow(newMatches);
+    await openNewsPanel();
   }
 
   return { total: news.length, matches: matches.length, newMatches: newMatches.length };
 }
 
-async function openAlertWindow(newMatches) {
-  await chrome.storage.local.set({ alertMatches: newMatches.slice(0, 8) });
-
-  const { alertWindowId } = await chrome.storage.local.get("alertWindowId");
-  if (alertWindowId) {
-    await chrome.windows.remove(alertWindowId).catch(() => {});
-  }
-
+async function openNewsPanel() {
   const currentWindow = await chrome.windows.getLastFocused().catch(() => null);
-  const left = currentWindow?.left != null && currentWindow?.width
-    ? Math.max(currentWindow.left + currentWindow.width - ALERT_WIDTH - 24, 0)
-    : undefined;
-  const top = currentWindow?.top != null ? Math.max(currentWindow.top + 72, 0) : undefined;
+  if (!currentWindow?.id) return;
 
-  const alertWindow = await chrome.windows.create({
-    url: chrome.runtime.getURL("popup.html"),
-    type: "popup",
-    width: ALERT_WIDTH,
-    height: ALERT_HEIGHT,
-    left,
-    top,
-    focused: true
+  await chrome.sidePanel.open({ windowId: currentWindow.id }).then(() => {
+    openWindows.add(currentWindow.id);
+  }).catch((error) => {
+    console.warn("사이드바 열기 실패", error);
   });
-  await chrome.storage.local.set({ alertWindowId: alertWindow.id });
 }
 
 chrome.runtime.onInstalled.addListener(async () => {
@@ -211,7 +200,37 @@ chrome.alarms.onAlarm.addListener((alarm) => {
   }
 });
 
+chrome.commands.onCommand.addListener((command, tab) => {
+  if (command !== "open-news-alert") return;
+  const windowId = tab && tab.windowId;
+  if (windowId == null) return;
+
+  if (openWindows.has(windowId)) {
+    openWindows.delete(windowId);
+    try {
+      chrome.runtime.sendMessage({ type: "closeSidePanel", windowId }, () => {
+        void chrome.runtime.lastError;
+      });
+    } catch (error) {
+      // 무시한다.
+    }
+  } else {
+    openWindows.add(windowId);
+    chrome.sidePanel
+      .open({ windowId })
+      .catch((error) => console.warn("사이드바 열기 실패", error));
+  }
+});
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message?.type === "sidePanelOpened" && message.windowId != null) {
+    openWindows.add(message.windowId);
+    return false;
+  }
+  if (message?.type === "sidePanelClosed" && message.windowId != null) {
+    openWindows.delete(message.windowId);
+    return false;
+  }
   if (message?.type === "CHECK_NOW") {
     checkNews({ notify: true })
       .then((result) => sendResponse({ ok: true, result }))
