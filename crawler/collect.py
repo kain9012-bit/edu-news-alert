@@ -1,16 +1,32 @@
 from __future__ import annotations
 
 import hashlib
+import html as html_lib
+import io
 import json
 import re
+import struct
+import zipfile
+import zlib
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qs, urlencode, urljoin, urlparse, urlunparse
+from xml.etree import ElementTree as ET
 
 import requests
 from bs4 import BeautifulSoup
 from dateutil import parser as date_parser
+
+try:
+    import olefile
+except ImportError:  # pragma: no cover - optional outside the workflow
+    olefile = None
+
+try:
+    from pypdf import PdfReader
+except ImportError:  # pragma: no cover - optional outside the workflow
+    PdfReader = None
 
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC_DIR = ROOT / "public"
@@ -126,11 +142,33 @@ CONTENT_SELECTORS = {
     "chungnam": [".viewBox"],
     "jeonnam": ["#article-view-content-div"],
     "jngj_s1n1": ["#article-view-content-div"],
-    "gyeongbuk": ["table"],
+    "gyeongbuk": [],
     "gyeongnam": [".bd-view__vcontent .txt", ".bd-view__vcontent"],
     "jeju": [".bdvCntWrap"],
-    "moe": [".boardView", ".board_view", "body"],
+    "moe": ["#txt"],
 }
+
+PREFER_ATTACHMENT_SOURCES = {"gyeongbuk", "jeju", "moe"}
+DOCUMENT_EXTENSIONS = (".hwp", ".hwpx", ".pdf", ".docx")
+BOILERPLATE_PHRASES = [
+    "본문 바로가기",
+    "본문바로가기",
+    "메뉴열기",
+    "전체메뉴",
+    "QUICK MENU",
+    "보도자료 게시판 상세보기 테이블",
+    "이 보도자료의 첨부파일을 확인해 보세요",
+    "첨부파일 다운로드 횟수",
+    "개인정보처리방침",
+    "콘텐츠 만족도 조사",
+]
+HARD_FAILURE_PHRASES = [
+    "QUICK MENU",
+    "본문 바로가기",
+    "본문바로가기",
+    "보도자료 게시판 상세보기 테이블",
+    "이 보도자료의 첨부파일을 확인해 보세요",
+]
 
 REMOVE_SELECTORS = [
     "script",
@@ -149,6 +187,9 @@ REMOVE_SELECTORS = [
     ".sns",
     ".listNavi",
     ".hwp_editor_board_content",
+    ".boardViewInfo",
+    ".bdvTopWrap",
+    ".view-btns",
 ]
 
 
@@ -180,6 +221,99 @@ def write_json(path: Path, value: Any) -> None:
 
 def normalize_space(text: str) -> str:
     return re.sub(r"\s+", " ", text or "").strip()
+
+
+def compact_for_comparison(text: str) -> str:
+    return re.sub(r"[\s\u00a0]+", "", text or "").strip()
+
+
+def semantic_comparison_key(text: str) -> str:
+    return re.sub(r"[^0-9A-Za-z가-힣]", "", text or "").lower()
+
+
+def has_repeated_title(text: str, title: str) -> bool:
+    title_core = re.sub(r"^\[[^\]]+\]", "", title or "").strip()
+    title_key = semantic_comparison_key(title_core)
+    text_key = semantic_comparison_key(text)
+    return len(title_key) >= 8 and text_key.startswith(title_key)
+
+
+def strip_repeated_title(text: str, title: str) -> str:
+    cleaned = clean_content_text(text)
+    compact_title = compact_for_comparison(title)
+    if len(compact_title) < 8:
+        return cleaned
+
+    pattern = r"^\s*" + r"\s*".join(re.escape(char) for char in compact_title) + r"(?:\s+|$)"
+    for _ in range(2):
+        updated = re.sub(pattern, "", cleaned, count=1, flags=re.DOTALL).lstrip()
+        if updated == cleaned:
+            break
+        cleaned = updated
+    if has_repeated_title(cleaned, title):
+        title_core = re.sub(r"^\[[^\]]+\]", "", title or "").strip()
+        chars = semantic_comparison_key(title_core)
+        separator = r"[^0-9A-Za-z가-힣]*"
+        semantic_pattern = r"^\s*" + separator.join(re.escape(char) for char in chars) + r"(?:\s+|$)"
+        cleaned = re.sub(semantic_pattern, "", cleaned, count=1, flags=re.DOTALL).lstrip()
+    return cleaned
+
+
+def strip_attachment_header(text: str, title: str) -> str:
+    cleaned = clean_content_text(text)
+    lines = [line for line in cleaned.splitlines() if line.strip()]
+    title_core = re.sub(r"^\[[^\]]+\]", "", title or "").strip()
+    title_key = semantic_comparison_key(title_core)
+    if len(title_key) < 8:
+        return cleaned
+
+    separator = r"[^0-9A-Za-z가-힣]*"
+    title_pattern = separator.join(re.escape(char) for char in title_key)
+    matches = list(re.finditer(title_pattern, cleaned, flags=re.DOTALL | re.IGNORECASE))
+    for match in reversed(matches):
+        remainder = clean_content_text(cleaned[match.end():])
+        if len(normalize_space(remainder)) >= 10:
+            return remainder
+
+    for index, line in enumerate(lines):
+        line_key = semantic_comparison_key(line)
+        minimum_match_length = max(8, int(len(title_key) * 0.6))
+        if len(line_key) >= minimum_match_length and (title_key in line_key or line_key in title_key):
+            remainder = clean_content_text("\n".join(lines[index + 1:]))
+            if len(normalize_space(remainder)) >= 10:
+                return remainder
+    return cleaned
+
+
+def summary_quality_score(text: str, title: str = "") -> int:
+    normalized = normalize_space(text)
+    if not normalized:
+        return -1000
+
+    score = min(len(normalized), 1200)
+    score += min(300, sum(normalized.count(mark) for mark in ["다.", "했다.", "밝혔다", "추진", "지원"]) * 30)
+    score -= sum(350 for phrase in BOILERPLATE_PHRASES if phrase.lower() in normalized.lower())
+    if has_repeated_title(text, title):
+        score -= 120
+    if len(normalized) < 120:
+        score -= 500
+    return score
+
+
+def is_low_quality_summary(text: str, title: str = "") -> bool:
+    normalized = normalize_space(text)
+    if len(normalized) < 120:
+        return True
+    lowered = normalized.lower()
+    if any(phrase.lower() in lowered for phrase in HARD_FAILURE_PHRASES):
+        return True
+    boilerplate_hits = sum(1 for phrase in BOILERPLATE_PHRASES if phrase.lower() in lowered)
+    return boilerplate_hits >= 2 or summary_quality_score(text, title) < 100
+
+
+def has_hard_failure_boilerplate(text: str) -> bool:
+    lowered = normalize_space(text).lower()
+    return any(phrase.lower() in lowered for phrase in HARD_FAILURE_PHRASES)
 
 
 def stable_id(source_id: str, url: str) -> str:
@@ -253,7 +387,13 @@ def is_generic_title(text: str) -> bool:
 
 
 def needs_refetch(item: dict[str, Any]) -> bool:
-    return is_generic_title(item.get("title", "")) or len(normalize_space(item.get("summary", ""))) < 40
+    title = item.get("title", "")
+    summary = item.get("summary", "")
+    return (
+        is_generic_title(title)
+        or is_low_quality_summary(summary, title)
+        or has_repeated_title(summary, title)
+    )
 
 
 def is_usable_item(item: dict[str, Any]) -> bool:
@@ -263,7 +403,15 @@ def is_usable_item(item: dict[str, Any]) -> bool:
     summary = normalize_space(item.get("summary", ""))
     if item.get("sourceId") == "incheon" and not item.get("bundleIndex") and re.search(r"외\s*\d+건", title):
         return False
-    return bool(title) and title != "제목 없음" and not is_generic_title(title) and not is_notice_title(title) and len(summary) >= 40
+    return (
+        bool(title)
+        and title != "제목 없음"
+        and not is_generic_title(title)
+        and not is_notice_title(title)
+        and len(summary) >= 40
+        and not has_hard_failure_boilerplate(summary)
+        and not has_repeated_title(summary, title)
+    )
 
 
 def row_text(tag: Any) -> str:
@@ -462,19 +610,233 @@ def selector_text(soup: BeautifulSoup, selector: str) -> str:
     return clean_content_text(node_soup.get_text("\n", strip=True))
 
 
-def extract_summary(soup: BeautifulSoup, source: dict[str, Any]) -> str:
-    candidates = []
+def normalize_extracted_document_text(text: str) -> str:
+    text = html_lib.unescape(text or "")
+    text = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f]", "", text)
+    return clean_content_text(text)
+
+
+def extract_hwpx_text_from_bytes(data: bytes) -> str:
+    if not data.startswith(b"PK"):
+        return ""
+    texts: list[str] = []
+    try:
+        with zipfile.ZipFile(io.BytesIO(data)) as archive:
+            names = [
+                name for name in archive.namelist()
+                if name.lower().endswith(".xml")
+                and ("section" in name.lower() or "bodytext" in name.lower())
+            ]
+            for name in sorted(names):
+                try:
+                    root = ET.fromstring(archive.read(name))
+                except Exception:
+                    continue
+                paragraphs = [element for element in root.iter() if element.tag.split("}")[-1].lower() == "p"]
+                if paragraphs:
+                    for paragraph in paragraphs:
+                        parts = [
+                            element.text or ""
+                            for element in paragraph.iter()
+                            if element.tag.split("}")[-1].lower() in {"t", "text"}
+                        ]
+                        if any(part.strip() for part in parts):
+                            texts.append("".join(parts))
+                else:
+                    texts.extend(
+                        element.text
+                        for element in root.iter()
+                        if element.tag.split("}")[-1].lower() in {"t", "text"} and element.text
+                    )
+    except Exception:
+        return ""
+    return normalize_extracted_document_text("\n".join(texts))
+
+
+def extract_docx_text_from_bytes(data: bytes) -> str:
+    if not data.startswith(b"PK"):
+        return ""
+    texts: list[str] = []
+    try:
+        with zipfile.ZipFile(io.BytesIO(data)) as archive:
+            root = ET.fromstring(archive.read("word/document.xml"))
+            for paragraph in (element for element in root.iter() if element.tag.split("}")[-1].lower() == "p"):
+                parts = [
+                    element.text or ""
+                    for element in paragraph.iter()
+                    if element.tag.split("}")[-1].lower() == "t"
+                ]
+                if any(part.strip() for part in parts):
+                    texts.append("".join(parts))
+    except Exception:
+        return ""
+    return normalize_extracted_document_text("\n".join(texts))
+
+
+def extract_hwp_text_from_bytes(data: bytes) -> str:
+    if not data.startswith(b"\xd0\xcf\x11\xe0") or olefile is None:
+        return ""
+    texts: list[str] = []
+    try:
+        with olefile.OleFileIO(io.BytesIO(data)) as document:
+            compressed = False
+            if document.exists("FileHeader"):
+                header = document.openstream("FileHeader").read()
+                if len(header) >= 40:
+                    compressed = bool(struct.unpack_from("<I", header, 36)[0] & 0x01)
+            section_names = [
+                "/".join(entry)
+                for entry in document.listdir(streams=True, storages=False)
+                if "/".join(entry).startswith("BodyText/Section")
+            ]
+            section_names.sort(key=lambda name: int(re.search(r"Section(\d+)$", name).group(1)) if re.search(r"Section(\d+)$", name) else 999999)
+            for name in section_names:
+                raw = document.openstream(name).read()
+                if compressed:
+                    try:
+                        raw = zlib.decompress(raw, -15)
+                    except Exception:
+                        continue
+                position = 0
+                while position + 4 <= len(raw):
+                    header = struct.unpack_from("<I", raw, position)[0]
+                    position += 4
+                    tag_id = header & 0x3FF
+                    size = (header >> 20) & 0xFFF
+                    if size == 0xFFF:
+                        if position + 4 > len(raw):
+                            break
+                        size = struct.unpack_from("<I", raw, position)[0]
+                        position += 4
+                    payload = raw[position:position + size]
+                    position += size
+                    if tag_id == 67 and payload:
+                        texts.append(payload.decode("utf-16le", errors="ignore"))
+    except Exception:
+        return ""
+    return normalize_extracted_document_text("\n".join(texts))
+
+
+def extract_pdf_text_from_bytes(data: bytes) -> str:
+    if not data.startswith(b"%PDF") or PdfReader is None:
+        return ""
+    try:
+        reader = PdfReader(io.BytesIO(data))
+        return normalize_extracted_document_text("\n".join((page.extract_text() or "") for page in reader.pages))
+    except Exception:
+        return ""
+
+
+def extract_attachment_document_text(data: bytes, filename: str = "") -> str:
+    lowered = filename.lower()
+    if data.startswith(b"%PDF") or lowered.endswith(".pdf"):
+        return extract_pdf_text_from_bytes(data)
+    if data.startswith(b"\xd0\xcf\x11\xe0") or lowered.endswith(".hwp"):
+        return extract_hwp_text_from_bytes(data)
+    if data.startswith(b"PK"):
+        if lowered.endswith(".docx"):
+            return extract_docx_text_from_bytes(data)
+        try:
+            with zipfile.ZipFile(io.BytesIO(data)) as archive:
+                if "word/document.xml" in archive.namelist():
+                    return extract_docx_text_from_bytes(data)
+        except Exception:
+            return ""
+        return extract_hwpx_text_from_bytes(data)
+    return ""
+
+
+def direct_attachment_candidates(soup: BeautifulSoup, detail_url: str) -> list[tuple[str, str]]:
+    candidates: list[tuple[str, str]] = []
+    seen: set[str] = set()
+    for link in soup.find_all("a", href=True):
+        href = str(link.get("href") or "")
+        label = normalize_space(link.get_text(" ", strip=True))
+        context_parts = [label]
+        parent = link.parent
+        for _ in range(3):
+            if not parent or not getattr(parent, "get_text", None):
+                break
+            parent_text = normalize_space(parent.get_text(" ", strip=True))
+            if parent_text and len(parent_text) <= 800:
+                context_parts.append(parent_text)
+            parent = parent.parent
+        context = " ".join(context_parts)
+        joined = f"{href} {context}".lower()
+        extension = next((ext for ext in DOCUMENT_EXTENSIONS if ext in joined), "")
+        if not extension or href.lower().startswith("javascript:"):
+            continue
+        url = urljoin(detail_url, href)
+        if url in seen:
+            continue
+        seen.add(url)
+        filename = next((part for part in context_parts if extension in part.lower()), "") or label or f"attachment{extension}"
+        candidates.append((url, filename))
+    return candidates[:3]
+
+
+def extract_gyeongbuk_attachment_text(soup: BeautifulSoup, detail_url: str) -> str:
+    match = re.search(r"fileView\('([^']+)'\)", str(soup))
+    if not match:
+        return ""
+    try:
+        api_url = urljoin(detail_url, "/common/nttGetFilePath.do")
+        response = SESSION.post(api_url, data={"fileKey": match.group(1)}, timeout=TIMEOUT_SECONDS)
+        response.raise_for_status()
+        info = response.json()
+        if info.get("resultAt") != "Y" or not info.get("filePath"):
+            return ""
+        file_url = urljoin(detail_url, info["filePath"])
+        file_response = SESSION.get(file_url, timeout=TIMEOUT_SECONDS)
+        file_response.raise_for_status()
+        return extract_attachment_document_text(file_response.content, file_url)
+    except Exception:
+        return ""
+
+
+def extract_direct_attachment_text(soup: BeautifulSoup, detail_url: str) -> str:
+    best = ""
+    for file_url, filename in direct_attachment_candidates(soup, detail_url):
+        try:
+            response = SESSION.get(file_url, timeout=TIMEOUT_SECONDS)
+            response.raise_for_status()
+            text = extract_attachment_document_text(response.content, filename)
+        except Exception:
+            continue
+        if len(normalize_space(text)) > len(normalize_space(best)):
+            best = text
+    return best
+
+
+def extract_attachment_text(soup: BeautifulSoup, source: dict[str, Any], detail_url: str) -> str:
+    if source["id"] == "gyeongbuk":
+        text = extract_gyeongbuk_attachment_text(soup, detail_url)
+        if text:
+            return text
+    return extract_direct_attachment_text(soup, detail_url)
+
+
+def extract_summary(soup: BeautifulSoup, source: dict[str, Any], title: str = "") -> str:
+    candidates: list[str] = []
     for selector in CONTENT_SELECTORS.get(source["id"], []):
         text = selector_text(soup, selector)
         if text:
             candidates.append(text)
-    candidates.append(clean_content_text(soup.get_text("\n", strip=True)))
-    for text in candidates:
-        if len(text) > 40:
-            if source["id"] == "incheon":
-                return text[:5000]
-            return text[:700]
-    return ""
+    if not candidates:
+        return ""
+    best = max(candidates, key=lambda text: summary_quality_score(text, title))
+    return strip_repeated_title(best, title)[:5000]
+
+
+def choose_best_summary(title: str, html_text: str, attachment_text: str, source_id: str) -> tuple[str, str]:
+    html_clean = strip_repeated_title(html_text, title)
+    attachment_clean = strip_repeated_title(strip_attachment_header(attachment_text, title), title)
+    html_score = summary_quality_score(html_clean, title)
+    attachment_score = summary_quality_score(attachment_clean, title)
+    prefer_attachment = source_id in PREFER_ATTACHMENT_SOURCES and len(normalize_space(attachment_clean)) >= 120
+    if attachment_clean and (prefer_attachment or attachment_score > html_score + 80):
+        return attachment_clean[:5000], "attachment"
+    return html_clean[:5000], "html"
 
 
 def collect_detail(source: dict[str, Any], link: dict[str, str]) -> dict[str, Any]:
@@ -483,7 +845,11 @@ def collect_detail(source: dict[str, Any], link: dict[str, str]) -> dict[str, An
     all_text = soup.get_text(" ")
     title = extract_title(soup, link.get("title", ""), source)
     date = parse_date(all_text + " " + link.get("listText", ""))
-    summary = extract_summary(soup, source)
+    html_summary = extract_summary(soup, source, title)
+    attachment_summary = ""
+    if source["id"] in PREFER_ATTACHMENT_SOURCES or is_low_quality_summary(html_summary, title):
+        attachment_summary = extract_attachment_text(soup, source, link["url"])
+    summary, content_origin = choose_best_summary(title, html_summary, attachment_summary, source["id"])
     return {
         "id": stable_id(source["id"], link["url"]),
         "sourceId": source["id"],
@@ -492,6 +858,8 @@ def collect_detail(source: dict[str, Any], link: dict[str, str]) -> dict[str, An
         "date": date,
         "url": link["url"],
         "summary": summary,
+        "contentOrigin": content_origin,
+        "contentQuality": summary_quality_score(summary, title),
         "collectedAt": now_kst().isoformat(timespec="seconds"),
     }
 
@@ -576,7 +944,8 @@ def split_incheon_bundle_items(item: dict[str, Any]) -> list[dict[str, Any]]:
                 **item,
                 "id": stable_id("incheon", f"{item.get('url', '')}#bundle-{ntt_sn}-{idx:02d}"),
                 "title": title[:200],
-                "summary": section[:700],
+                "summary": strip_repeated_title(section, title)[:5000],
+                "contentQuality": summary_quality_score(strip_repeated_title(section, title), title),
                 "bundleIndex": idx,
                 "bundleTotal": len(markers),
             }
@@ -595,6 +964,7 @@ def collect_source(
     skipped_old = 0
     detail_failures = 0
     refreshed_existing = 0
+    attachment_extracted = 0
     try:
         html = fetch_text(source["listUrl"], source)
         links = collect_links(source, html)
@@ -607,6 +977,8 @@ def collect_source(
                 continue
             try:
                 item = collect_detail(source, link)
+                if item.get("contentOrigin") == "attachment":
+                    attachment_extracted += 1
                 expanded_items = split_incheon_bundle_items(item)
                 kept_any = False
                 for expanded in expanded_items:
@@ -633,6 +1005,7 @@ def collect_source(
             "skippedExisting": skipped_existing,
             "skippedOutsideWindow": skipped_old,
             "detailFailures": detail_failures,
+            "attachmentExtracted": attachment_extracted,
             "startedAt": started,
             "finishedAt": now_kst().isoformat(timespec="seconds"),
         }
@@ -647,6 +1020,7 @@ def collect_source(
             "skippedExisting": skipped_existing,
             "skippedOutsideWindow": skipped_old,
             "detailFailures": detail_failures,
+            "attachmentExtracted": attachment_extracted,
             "error": str(exc)[:500],
             "startedAt": started,
             "finishedAt": now_kst().isoformat(timespec="seconds"),
