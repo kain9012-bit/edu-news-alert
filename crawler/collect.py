@@ -372,6 +372,7 @@ def detail_url_from_seq(source: dict[str, Any], seq: str) -> str | None:
     for key in ["bbsId", "mi", "boardID", "m", "s", "searchCate"]:
         if key in list_query:
             params[key] = list_query[key][0]
+    params.update({str(key): str(value) for key, value in source.get("detailParams", {}).items()})
     return add_query(urljoin(source["listUrl"], detail_path), params)
 
 

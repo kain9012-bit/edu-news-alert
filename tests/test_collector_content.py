@@ -6,6 +6,7 @@ import zipfile
 
 from crawler.collect import (
     choose_best_summary,
+    detail_url_from_seq,
     extract_hwpx_text_from_bytes,
     has_hard_failure_boilerplate,
     is_low_quality_summary,
@@ -15,6 +16,20 @@ from crawler.collect import (
 
 
 class CollectorContentTest(unittest.TestCase):
+    def test_detail_url_includes_source_specific_parameters(self) -> None:
+        source = {
+            "listUrl": "https://example.com/list.do?boardID=8&m=0401&s=news",
+            "detailPath": "/view.do",
+            "seqParam": "boardSeq",
+            "detailParams": {"lev": "0", "statusYN": "W", "opType": "N"},
+        }
+
+        url = detail_url_from_seq(source, "12345")
+
+        self.assertIn("boardSeq=12345", url)
+        self.assertIn("statusYN=W", url)
+        self.assertIn("opType=N", url)
+
     def test_strips_repeated_title_with_fragmented_whitespace(self) -> None:
         title = "인천광역시교육청, 부평 특수학교 설립 추진"
         content = "인천광역시교육청 , 부평 특수학교 설립 추진\n인천광역시교육청은 주민 협의회를 개최했다."
