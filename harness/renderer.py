@@ -55,6 +55,7 @@ def render_markdown(result: dict[str, Any]) -> str:
             "",
             f"- 최종 판정: {result.get('validation', {}).get('status', 'UNKNOWN')}",
             f"- 적합성 대체 처리: {metadata.get('relevanceFallbackCount', 0)}건",
+            f"- 기관 활동 제외 규칙 적용: {metadata.get('institutionGuardCount', 0)}건",
             f"- 분류 대체 처리: {metadata.get('classificationFallbackCount', 0)}건",
             "",
             "이 결과는 공개 보도자료를 AI로 선별·분류한 것이며 각 항목은 원문 링크와 newsId를 유지합니다.",

@@ -32,6 +32,22 @@ LOCAL_OR_INSTITUTION_WORDS = [
     "고등학교",
 ]
 ONE_OFF_WORDS = ["방문", "내방", "공연", "전시", "대회", "수상", "체험", "캠페인", "봉사", "업무협약", "간담회"]
+ROUTINE_ACTIVITY_WORDS = ONE_OFF_WORDS + ["협의회", "연수", "캠프", "콘서트", "박람회", "성료", "행사", "운영"]
+POLICY_EXCEPTION_WORDS = [
+    "기본계획",
+    "시행계획",
+    "조례",
+    "예산",
+    "전면 시행",
+    "의무화",
+    "제도",
+    "정책",
+    "개편",
+    "재구조화",
+    "모든 학교",
+    "전체 학교",
+    "전 학교",
+]
 
 
 class RelevanceFilterAgent:
@@ -46,6 +62,7 @@ class RelevanceFilterAgent:
         output: list[dict[str, Any]] = []
         attempts = 0
         fallback_count = 0
+        guard_count = 0
         errors: list[dict[str, Any]] = []
 
         for batch in chunks(news_items, self.batch_size):
@@ -66,6 +83,8 @@ class RelevanceFilterAgent:
                     values = raw.get("items") if isinstance(raw, dict) else raw
                     if not validate_relevance(values, expected_ids):
                         accepted = [self._enrich(item, source_map[item["newsId"]]) for item in values]
+                        accepted = [self._apply_institution_guard(item) for item in accepted]
+                        guard_count += sum(1 for item in accepted if item.get("guarded"))
                         break
                 except Exception as error:
                     last_error = str(error)[:500]
@@ -81,6 +100,7 @@ class RelevanceFilterAgent:
             "items": output,
             "attempts": attempts,
             "fallbackCount": fallback_count,
+            "guardCount": guard_count,
             "errors": errors,
         }
 
@@ -116,4 +136,22 @@ class RelevanceFilterAgent:
             "title": item["title"],
             "date": item["date"],
             "fallback": True,
+        }
+
+    @staticmethod
+    def _apply_institution_guard(item: dict[str, Any]) -> dict[str, Any]:
+        if item.get("decision") != "KEEP":
+            return item
+        text = str(item.get("title", ""))
+        institution = any(word in text for word in LOCAL_OR_INSTITUTION_WORDS)
+        routine = any(word in text for word in ROUTINE_ACTIVITY_WORDS)
+        policy_exception = any(word in text for word in POLICY_EXCEPTION_WORDS)
+        if not (institution and routine and not policy_exception):
+            return item
+        return {
+            **item,
+            "decision": "DROP",
+            "scope": "institution" if "교육지원청" not in text else "local",
+            "reason": "교육지원청·직속기관·학교가 주체인 일반 협의회·연수·행사로 정책·제도 변화가 확인되지 않아 제외했습니다.",
+            "guarded": True,
         }

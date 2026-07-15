@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from harness.agents.selection_validator import SelectionValidatorAgent
+from harness.agents.relevance_filter import RelevanceFilterAgent
 from harness.orchestrator import EducationTrendHarness
 from harness.validators import validate_relevance
 
@@ -160,6 +161,22 @@ class EducationTrendHarnessTest(unittest.TestCase):
             {"policy-1"},
         )
         self.assertTrue(any("evidenceIds" in error for error in errors))
+
+    def test_institution_guard_drops_routine_support_office_meeting(self) -> None:
+        guarded = RelevanceFilterAgent._apply_institution_guard(
+            {
+                "newsId": "local-1",
+                "decision": "KEEP",
+                "scope": "local",
+                "reason": "학생 안전 협력 체계를 마련했다.",
+                "confidence": 0.9,
+                "evidenceIds": ["local-1"],
+                "title": "장흥교육지원청, 여름방학 학생생활지도 협의회 개최",
+            }
+        )
+
+        self.assertEqual(guarded["decision"], "DROP")
+        self.assertTrue(guarded["guarded"])
 
 
 if __name__ == "__main__":

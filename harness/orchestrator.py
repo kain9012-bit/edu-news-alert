@@ -100,6 +100,7 @@ class EducationTrendHarness:
                 "filteredOutCount": len(excluded_items),
                 "processedCount": len(selected_items),
                 "relevanceFallbackCount": relevance_result.get("fallbackCount", 0),
+                "institutionGuardCount": relevance_result.get("guardCount", 0),
                 "classificationFallbackCount": classification_result.get("fallbackCount", 0),
                 "validationStatus": validation["status"],
                 "usage": getattr(self.llm, "usage", {}),
