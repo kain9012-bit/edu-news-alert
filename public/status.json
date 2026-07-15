@@ -6,9 +6,9 @@
   "briefingWindowEnd": "2026-07-15T08:00:00+09:00",
   "total": 360,
   "briefingTotal": 160,
-  "newlyCollected": 11,
-  "updatedOrCollected": 77,
-  "collectedAt": "2026-07-15T17:59:35+09:00",
+  "newlyCollected": 1,
+  "updatedOrCollected": 67,
+  "collectedAt": "2026-07-15T21:50:32+09:00",
   "runs": [
     {
       "sourceId": "moe",
@@ -21,9 +21,9 @@
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
       "attachmentExtracted": 0,
-      "error": "HTTPSConnectionPool(host='www.moe.go.kr', port=443): Max retries exceeded with url: /boardCnts/listRenew.do?boardID=294&m=020402&s=moe (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.moe.go.kr', port=443) at 0x7fef3b884290>, 'Connection to www.moe.go.kr timed out. (connect timeout=30)'))",
-      "startedAt": "2026-07-15T17:54:22+09:00",
-      "finishedAt": "2026-07-15T17:56:37+09:00"
+      "error": "HTTPSConnectionPool(host='www.moe.go.kr', port=443): Max retries exceeded with url: /boardCnts/listRenew.do?boardID=294&m=020402&s=moe (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.moe.go.kr', port=443) at 0x7f8b264c50d0>, 'Connection to www.moe.go.kr timed out. (connect timeout=30)'))",
+      "startedAt": "2026-07-15T21:45:28+09:00",
+      "finishedAt": "2026-07-15T21:47:47+09:00"
     },
     {
       "sourceId": "jeonbuk",
@@ -36,8 +36,8 @@
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
       "attachmentExtracted": 0,
-      "startedAt": "2026-07-15T17:56:37+09:00",
-      "finishedAt": "2026-07-15T17:56:39+09:00"
+      "startedAt": "2026-07-15T21:47:47+09:00",
+      "finishedAt": "2026-07-15T21:47:49+09:00"
     },
     {
       "sourceId": "seoul",
@@ -50,8 +50,8 @@
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
       "attachmentExtracted": 0,
-      "startedAt": "2026-07-15T17:56:39+09:00",
-      "finishedAt": "2026-07-15T17:56:42+09:00"
+      "startedAt": "2026-07-15T21:47:49+09:00",
+      "finishedAt": "2026-07-15T21:47:51+09:00"
     },
     {
       "sourceId": "gyeonggi",
@@ -64,8 +64,8 @@
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
       "attachmentExtracted": 0,
-      "startedAt": "2026-07-15T17:56:42+09:00",
-      "finishedAt": "2026-07-15T17:56:47+09:00"
+      "startedAt": "2026-07-15T21:47:51+09:00",
+      "finishedAt": "2026-07-15T21:47:56+09:00"
     },
     {
       "sourceId": "busan",
@@ -78,8 +78,8 @@
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
       "attachmentExtracted": 0,
-      "startedAt": "2026-07-15T17:56:47+09:00",
-      "finishedAt": "2026-07-15T17:56:49+09:00"
+      "startedAt": "2026-07-15T21:47:56+09:00",
+      "finishedAt": "2026-07-15T21:47:58+09:00"
     },
     {
       "sourceId": "daegu",
@@ -92,8 +92,8 @@
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
       "attachmentExtracted": 0,
-      "startedAt": "2026-07-15T17:56:49+09:00",
-      "finishedAt": "2026-07-15T17:56:50+09:00"
+      "startedAt": "2026-07-15T21:47:58+09:00",
+      "finishedAt": "2026-07-15T21:48:00+09:00"
     },
     {
       "sourceId": "incheon",
@@ -106,8 +106,8 @@
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
       "attachmentExtracted": 0,
-      "startedAt": "2026-07-15T17:56:50+09:00",
-      "finishedAt": "2026-07-15T17:57:19+09:00"
+      "startedAt": "2026-07-15T21:48:00+09:00",
+      "finishedAt": "2026-07-15T21:48:29+09:00"
     },
     {
       "sourceId": "jngj_s1n1",
@@ -120,22 +120,22 @@
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
       "attachmentExtracted": 0,
-      "startedAt": "2026-07-15T17:57:19+09:00",
-      "finishedAt": "2026-07-15T17:57:21+09:00"
+      "startedAt": "2026-07-15T21:48:29+09:00",
+      "finishedAt": "2026-07-15T21:48:30+09:00"
     },
     {
       "sourceId": "daejeon",
       "source": "대전광역시교육청",
       "status": "success",
       "foundLinks": 11,
-      "fetched": 10,
+      "fetched": 0,
       "refreshedExisting": 0,
-      "skippedExisting": 0,
+      "skippedExisting": 10,
       "skippedOutsideWindow": 1,
       "detailFailures": 0,
       "attachmentExtracted": 1,
-      "startedAt": "2026-07-15T17:57:21+09:00",
-      "finishedAt": "2026-07-15T17:57:40+09:00"
+      "startedAt": "2026-07-15T21:48:30+09:00",
+      "finishedAt": "2026-07-15T21:48:38+09:00"
     },
     {
       "sourceId": "ulsan",
@@ -148,8 +148,8 @@
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
       "attachmentExtracted": 0,
-      "startedAt": "2026-07-15T17:57:40+09:00",
-      "finishedAt": "2026-07-15T17:57:42+09:00"
+      "startedAt": "2026-07-15T21:48:38+09:00",
+      "finishedAt": "2026-07-15T21:48:39+09:00"
     },
     {
       "sourceId": "sejong",
@@ -162,8 +162,8 @@
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
       "attachmentExtracted": 0,
-      "startedAt": "2026-07-15T17:57:42+09:00",
-      "finishedAt": "2026-07-15T17:57:48+09:00"
+      "startedAt": "2026-07-15T21:48:39+09:00",
+      "finishedAt": "2026-07-15T21:48:45+09:00"
     },
     {
       "sourceId": "gangwon",
@@ -176,8 +176,8 @@
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
       "attachmentExtracted": 0,
-      "startedAt": "2026-07-15T17:57:48+09:00",
-      "finishedAt": "2026-07-15T17:57:51+09:00"
+      "startedAt": "2026-07-15T21:48:45+09:00",
+      "finishedAt": "2026-07-15T21:48:48+09:00"
     },
     {
       "sourceId": "chungbuk",
@@ -190,8 +190,8 @@
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
       "attachmentExtracted": 0,
-      "startedAt": "2026-07-15T17:57:51+09:00",
-      "finishedAt": "2026-07-15T17:57:53+09:00"
+      "startedAt": "2026-07-15T21:48:48+09:00",
+      "finishedAt": "2026-07-15T21:48:51+09:00"
     },
     {
       "sourceId": "chungnam",
@@ -204,9 +204,9 @@
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
       "attachmentExtracted": 0,
-      "error": "HTTPConnectionPool(host='news.cne.go.kr', port=80): Max retries exceeded with url: /boardCnts/list.do?boardID=1003&m=0401&s=news&page=1 (Caused by ConnectTimeoutError(<HTTPConnection(host='news.cne.go.kr', port=80) at 0x7fef3b033b90>, 'Connection to news.cne.go.kr timed out. (connect timeout=30)'))",
-      "startedAt": "2026-07-15T17:57:53+09:00",
-      "finishedAt": "2026-07-15T17:59:24+09:00"
+      "error": "HTTPConnectionPool(host='news.cne.go.kr', port=80): Max retries exceeded with url: /boardCnts/list.do?boardID=1003&m=0401&s=news&page=1 (Caused by ConnectTimeoutError(<HTTPConnection(host='news.cne.go.kr', port=80) at 0x7f8b245dc5d0>, 'Connection to news.cne.go.kr timed out. (connect timeout=30)'))",
+      "startedAt": "2026-07-15T21:48:51+09:00",
+      "finishedAt": "2026-07-15T21:50:22+09:00"
     },
     {
       "sourceId": "gyeongbuk",
@@ -219,8 +219,8 @@
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
       "attachmentExtracted": 0,
-      "startedAt": "2026-07-15T17:59:24+09:00",
-      "finishedAt": "2026-07-15T17:59:31+09:00"
+      "startedAt": "2026-07-15T21:50:22+09:00",
+      "finishedAt": "2026-07-15T21:50:29+09:00"
     },
     {
       "sourceId": "gyeongnam",
@@ -233,8 +233,8 @@
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
       "attachmentExtracted": 0,
-      "startedAt": "2026-07-15T17:59:31+09:00",
-      "finishedAt": "2026-07-15T17:59:33+09:00"
+      "startedAt": "2026-07-15T21:50:29+09:00",
+      "finishedAt": "2026-07-15T21:50:31+09:00"
     },
     {
       "sourceId": "jeju",
@@ -247,8 +247,8 @@
       "skippedOutsideWindow": 0,
       "detailFailures": 0,
       "attachmentExtracted": 0,
-      "startedAt": "2026-07-15T17:59:33+09:00",
-      "finishedAt": "2026-07-15T17:59:35+09:00"
+      "startedAt": "2026-07-15T21:50:31+09:00",
+      "finishedAt": "2026-07-15T21:50:32+09:00"
     }
   ]
 }
