@@ -48,6 +48,34 @@ POLICY_EXCEPTION_WORDS = [
     "전체 학교",
     "전 학교",
 ]
+PERSONNEL_APPOINTMENT_WORDS = [
+    "인사 단행",
+    "인사단행",
+    "인사발령",
+    "인사 발령",
+    "정기인사",
+    "정기 인사",
+    "인사 발표",
+    "인사 명단",
+    "승진·전보",
+    "승진 및 전보",
+    "전보 인사",
+    "고위직 인사",
+    "임명장 수여",
+]
+PERSONNEL_POLICY_WORDS = [
+    "인사제도",
+    "인사 제도",
+    "인사정책",
+    "인사 정책",
+    "인사기준",
+    "인사 기준",
+    "인사원칙",
+    "인사 원칙",
+    "인사혁신",
+    "인사 혁신",
+    "인사 운영 계획",
+]
 
 
 class RelevanceFilterAgent:
@@ -63,6 +91,10 @@ class RelevanceFilterAgent:
         attempts = 0
         fallback_count = 0
         guard_count = 0
+        guard_counts = {
+            "institutionActivity": 0,
+            "personnelAppointment": 0,
+        }
         errors: list[dict[str, Any]] = []
 
         for batch in chunks(news_items, self.batch_size):
@@ -83,8 +115,14 @@ class RelevanceFilterAgent:
                     values = raw.get("items") if isinstance(raw, dict) else raw
                     if not validate_relevance(values, expected_ids):
                         accepted = [self._enrich(item, source_map[item["newsId"]]) for item in values]
-                        accepted = [self._apply_institution_guard(item) for item in accepted]
+                        accepted = [self._apply_exclusion_guards(item) for item in accepted]
                         guard_count += sum(1 for item in accepted if item.get("guarded"))
+                        guard_counts["institutionActivity"] += sum(
+                            1 for item in accepted if item.get("guardType") == "institution_activity"
+                        )
+                        guard_counts["personnelAppointment"] += sum(
+                            1 for item in accepted if item.get("guardType") == "personnel_appointment"
+                        )
                         break
                 except Exception as error:
                     last_error = str(error)[:500]
@@ -101,6 +139,7 @@ class RelevanceFilterAgent:
             "attempts": attempts,
             "fallbackCount": fallback_count,
             "guardCount": guard_count,
+            "guardCounts": guard_counts,
             "errors": errors,
         }
 
@@ -116,17 +155,20 @@ class RelevanceFilterAgent:
     @staticmethod
     def _fallback(item: dict[str, Any]) -> dict[str, Any]:
         text = f"{item['title']} {item['summary']}"
+        personnel_appointment = RelevanceFilterAgent._is_personnel_appointment(text)
         has_system_signal = any(word in text for word in SYSTEM_TREND_WORDS)
         has_local_signal = any(word in text for word in LOCAL_OR_INSTITUTION_WORDS)
         has_one_off_signal = any(word in text for word in ONE_OFF_WORDS)
-        drop = not has_system_signal and has_local_signal and has_one_off_signal
+        drop = personnel_appointment or (not has_system_signal and has_local_signal and has_one_off_signal)
         scope = "institution" if has_local_signal else "provincial"
         return {
             "newsId": item["newsId"],
             "decision": "DROP" if drop else "KEEP",
             "scope": scope,
             "reason": (
-                "개별 기관의 일회성 활동으로 판단되어 교육동향 분석에서 제외했다."
+                "개인의 승진·전보·임용 등을 알리는 인사발령 자료로 교육동향 분석에서 제외했다."
+                if personnel_appointment
+                else "개별 기관의 일회성 활동으로 판단되어 교육동향 분석에서 제외했다."
                 if drop
                 else "정책 또는 다수 학교에 영향을 줄 가능성이 있어 교육동향 분석 대상으로 유지했다."
             ),
@@ -136,6 +178,33 @@ class RelevanceFilterAgent:
             "title": item["title"],
             "date": item["date"],
             "fallback": True,
+        }
+
+    @classmethod
+    def _apply_exclusion_guards(cls, item: dict[str, Any]) -> dict[str, Any]:
+        return cls._apply_institution_guard(cls._apply_personnel_appointment_guard(item))
+
+    @staticmethod
+    def _is_personnel_appointment(text: str) -> bool:
+        return (
+            any(word in text for word in PERSONNEL_APPOINTMENT_WORDS)
+            and not any(word in text for word in PERSONNEL_POLICY_WORDS)
+        )
+
+    @classmethod
+    def _apply_personnel_appointment_guard(cls, item: dict[str, Any]) -> dict[str, Any]:
+        if item.get("decision") != "KEEP":
+            return item
+        text = str(item.get("title", ""))
+        if not cls._is_personnel_appointment(text):
+            return item
+        return {
+            **item,
+            "decision": "DROP",
+            "scope": "provincial",
+            "reason": "개인의 승진·전보·임용 등을 알리는 인사발령 자료로 정책·제도 변화가 아니어서 제외했습니다.",
+            "guarded": True,
+            "guardType": "personnel_appointment",
         }
 
     @staticmethod
@@ -154,4 +223,5 @@ class RelevanceFilterAgent:
             "scope": "institution" if "교육지원청" not in text else "local",
             "reason": "교육지원청·직속기관·학교가 주체인 일반 협의회·연수·행사로 정책·제도 변화가 확인되지 않아 제외했습니다.",
             "guarded": True,
+            "guardType": "institution_activity",
         }

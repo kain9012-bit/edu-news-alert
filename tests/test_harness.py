@@ -197,6 +197,37 @@ class EducationTrendHarnessTest(unittest.TestCase):
         self.assertEqual(guarded["decision"], "DROP")
         self.assertTrue(guarded["guarded"])
 
+    def test_personnel_appointment_guard_drops_head_office_announcement(self) -> None:
+        guarded = RelevanceFilterAgent._apply_exclusion_guards(
+            {
+                "newsId": "personnel-1",
+                "decision": "KEEP",
+                "scope": "provincial",
+                "reason": "본청 조직 운영에 영향을 준다.",
+                "confidence": 0.9,
+                "evidenceIds": ["personnel-1"],
+                "title": "전남광주통합특별시교육청, 전남청사 고위직 인사 단행",
+            }
+        )
+
+        self.assertEqual(guarded["decision"], "DROP")
+        self.assertEqual(guarded["guardType"], "personnel_appointment")
+
+    def test_personnel_policy_change_remains_eligible(self) -> None:
+        guarded = RelevanceFilterAgent._apply_exclusion_guards(
+            {
+                "newsId": "personnel-policy-1",
+                "decision": "KEEP",
+                "scope": "provincial",
+                "reason": "교원 인사제도를 개편한다.",
+                "confidence": 0.9,
+                "evidenceIds": ["personnel-policy-1"],
+                "title": "교육청, 교원 인사제도 개편안 발표",
+            }
+        )
+
+        self.assertEqual(guarded["decision"], "KEEP")
+
 
 if __name__ == "__main__":
     unittest.main()
