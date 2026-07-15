@@ -127,37 +127,31 @@ button:disabled {
 }
 
 .aiBriefing {
-  margin-top: 18px;
-  padding: 0 0 16px;
+  margin-top: 14px;
+  padding: 0 0 12px;
   border-bottom: 1px solid var(--line);
 }
 
-.aiBriefing > p {
-  color: var(--text);
-  font-size: 13px;
-  line-height: 1.55;
+.aiBriefing .sectionHeading {
+  margin-bottom: 7px;
 }
 
 .aiTrendList {
-  display: grid;
-  gap: 10px;
-  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
 }
 
 .aiTrend {
-  padding-left: 10px;
-  border-left: 3px solid var(--accent);
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.4;
+  white-space: nowrap;
 }
 
 .aiTrend strong {
-  font-size: 13px;
-  line-height: 1.4;
-}
-
-.aiTrend p {
-  margin-top: 3px;
-  font-size: 12px;
-  line-height: 1.45;
+  color: var(--text);
+  font-size: inherit;
 }
 
 .sidebarSearch {
@@ -240,8 +234,29 @@ button:disabled {
 }
 
 .categoryLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
   color: var(--muted);
   font-weight: 700;
+}
+
+.importanceStars {
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.filledStars {
+  color: #b45309;
+}
+
+.emptyStars {
+  color: #aab2bd;
 }
 
 .source {

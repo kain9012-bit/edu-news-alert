@@ -89,7 +89,7 @@ class EducationTrendHarnessTest(unittest.TestCase):
                         {
                             "newsId": "policy-1",
                             "category": "디지털·AI",
-                            "importance": "high",
+                            "importance": 5,
                             "keywords": ["AI", "수업 지원"],
                             "summary": "전체 학교 대상 AI 수업 지원 정책을 시행한다.",
                             "confidence": 0.95,
@@ -108,6 +108,7 @@ class EducationTrendHarnessTest(unittest.TestCase):
         self.assertEqual([item["newsId"] for item in result["selectedItems"]], ["policy-1"])
         self.assertEqual([item["newsId"] for item in result["excludedItems"]], ["event-1"])
         self.assertEqual(result["selectedItems"][0]["category"], "디지털·AI")
+        self.assertEqual(result["selectedItems"][0]["importance"], 5)
         self.assertEqual(result["validation"]["status"], "PASS")
         self.assertEqual(
             [step["step"] for step in result["trace"]],
@@ -145,6 +146,24 @@ class EducationTrendHarnessTest(unittest.TestCase):
 
         self.assertEqual(result["status"], "REVISE")
         self.assertTrue(any(item["code"] == "CLASSIFICATION_COVERAGE" for item in result["issues"]))
+
+    def test_validator_rejects_importance_outside_five_point_scale(self) -> None:
+        validator = SelectionValidatorAgent(config()["categories"])
+        payload = load_fixture()
+        relevance = relevance_response()["items"]
+        invalid_classification = [
+            {
+                "newsId": "policy-1",
+                "category": "디지털·AI",
+                "importance": 6,
+                "evidenceIds": ["policy-1"],
+            }
+        ]
+
+        result = validator.run(payload["items"], relevance, invalid_classification)
+
+        self.assertEqual(result["status"], "REVISE")
+        self.assertTrue(any(item["code"] == "IMPORTANCE" for item in result["issues"]))
 
     def test_relevance_contract_rejects_unknown_evidence(self) -> None:
         errors = validate_relevance(

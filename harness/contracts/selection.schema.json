@@ -19,7 +19,10 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["newsId", "category", "importance", "selectionReason", "url"]
+        "required": ["newsId", "category", "importance", "selectionReason", "url"],
+        "properties": {
+          "importance": { "type": "integer", "minimum": 1, "maximum": 5 }
+        }
       }
     },
     "excludedItems": {

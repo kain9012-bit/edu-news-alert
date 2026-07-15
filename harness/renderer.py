@@ -10,6 +10,11 @@ def render_markdown(result: dict[str, Any]) -> str:
     for item in result.get("selectedItems", []):
         grouped[item.get("category", "기타")].append(item)
 
+    def importance_stars(value: Any) -> str:
+        score = value if isinstance(value, int) and not isinstance(value, bool) else 1
+        score = max(1, min(5, score))
+        return f"{'★' * score}{'☆' * (5 - score)} ({score}점)"
+
     lines = [
         "# 최근 24시간 교육동향 선별 결과",
         "",
@@ -42,7 +47,7 @@ def render_markdown(result: dict[str, Any]) -> str:
                     f"### {label}",
                     "",
                     f"- 기관: {item.get('source', '')}",
-                    f"- 중요도: {item.get('importance', '')}",
+                    f"- 중요도: {importance_stars(item.get('importance'))}",
                     f"- 선정 이유: {item.get('selectionReason', '')}",
                     f"- 분류 요약: {item.get('summary', '')}",
                     "",

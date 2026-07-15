@@ -25,7 +25,6 @@ const openOptionsButton = document.querySelector("#openOptions");
 const openDashboardButton = document.querySelector("#openDashboard");
 const aiBriefing = document.querySelector("#aiBriefing");
 const aiBriefingMeta = document.querySelector("#aiBriefingMeta");
-const aiBriefingSummary = document.querySelector("#aiBriefingSummary");
 const aiTrendList = document.querySelector("#aiTrendList");
 let currentWindowId = null;
 let recentItems = [];
@@ -67,8 +66,24 @@ function matchedKeywords(item, keywords, mode) {
   return keywords.filter((keyword) => text.includes(keyword.toLowerCase()));
 }
 
-function importanceLabel(value) {
-  return { high: "중요", medium: "보통", low: "참고" }[value] || value || "";
+function importanceScore(value) {
+  const legacyScore = { high: 5, medium: 3, low: 1 }[value];
+  const score = legacyScore || Number(value) || 1;
+  return Math.max(1, Math.min(5, Math.round(score)));
+}
+
+function importanceStars(value) {
+  const score = importanceScore(value);
+  return `
+    <span class="importanceStars" role="img" aria-label="중요도 ${score}점" title="중요도 ${score}점">
+      <span class="filledStars">${"★".repeat(score)}</span><span class="emptyStars">${"☆".repeat(5 - score)}</span>
+    </span>
+  `;
+}
+
+function itemTimestamp(item) {
+  const timestamp = Date.parse(item.date || item.publishedAt || "");
+  return Number.isNaN(timestamp) ? 0 : timestamp;
 }
 
 function formatWindow(startValue, endValue) {
@@ -99,12 +114,8 @@ async function loadAiSelection(dataUrl) {
     const metadata = result.metadata || {};
     const categories = Array.isArray(result.categorySummary) ? result.categorySummary.slice(0, 6) : [];
     aiBriefingMeta.textContent = `${metadata.relevantCount || 0}건 채택 · ${metadata.filteredOutCount || 0}건 제외`;
-    aiBriefingSummary.textContent = `후보 ${metadata.candidateCount || 0}건 중 교육동향으로 볼 수 있는 자료 ${metadata.relevantCount || 0}건을 남겼습니다.`;
     aiTrendList.innerHTML = categories.map((item) => `
-      <div class="aiTrend">
-        <strong>${escapeHtml(item.category || "기타")}</strong>
-        <p>${Number(item.count || 0).toLocaleString("ko-KR")}건</p>
-      </div>
+      <span class="aiTrend"><strong>${escapeHtml(item.category || "기타")}</strong> ${Number(item.count || 0).toLocaleString("ko-KR")}</span>
     `).join("");
     aiBriefing.hidden = false;
     return result;
@@ -130,7 +141,7 @@ function renderItems(items, keywords, searchMode, emptyText) {
       : "";
     const url = escapeHtml(item.url || "#");
     const categoryLine = item.aiCategory
-      ? `<small class="categoryLine">${escapeHtml(item.aiCategory)} · ${escapeHtml(importanceLabel(item.aiImportance))}</small>`
+      ? `<small class="categoryLine"><span>${escapeHtml(item.aiCategory)}</span>${importanceStars(item.aiImportance)}</small>`
       : "";
     return `
       <a class="item" href="${url}" data-url="${url}" rel="noreferrer">
@@ -193,6 +204,11 @@ async function loadBriefing() {
         return selected
           ? { ...item, aiCategory: selected.category, aiImportance: selected.importance }
           : item;
+      })
+      .sort((left, right) => {
+        if (selectedItems === null) return 0;
+        const importanceDifference = importanceScore(right.aiImportance) - importanceScore(left.aiImportance);
+        return importanceDifference || itemTimestamp(right) - itemTimestamp(left);
       });
     activeKeywords = keywords;
     activeSearchMode = state.searchMode;

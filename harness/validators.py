@@ -3,7 +3,6 @@ from __future__ import annotations
 from typing import Any
 
 
-IMPORTANCE = {"high", "medium", "low"}
 RELEVANCE_DECISIONS = {"KEEP", "DROP"}
 SCOPES = {"national", "provincial", "local", "institution"}
 
@@ -47,7 +46,8 @@ def validate_classifications(
             errors.append(f"알 수 없는 newsId: {news_id}")
         if item.get("category") not in categories:
             errors.append(f"허용되지 않은 category: {item.get('category')}")
-        if item.get("importance") not in IMPORTANCE:
+        importance = item.get("importance")
+        if not isinstance(importance, int) or isinstance(importance, bool) or not 1 <= importance <= 5:
             errors.append(f"잘못된 importance: {item.get('importance')}")
         if not isinstance(item.get("keywords"), list):
             errors.append(f"{news_id}: keywords가 배열이 아닙니다.")

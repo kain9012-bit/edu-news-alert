@@ -5,14 +5,19 @@
 
 판단 규칙:
 - category는 허용 카테고리 중 정확히 하나만 사용한다.
-- importance는 전국 파급력, 정책 변화, 예산·안전 영향에 따라 high, medium, low 중 하나다.
+- importance는 다음 기준에 따른 1~5 사이의 정수다.
+  - 5: 전국 단위 또는 의무 적용되는 중대한 정책·조직·예산·안전 변화
+  - 4: 시도 전체 또는 여러 학교에 큰 영향을 주는 정책·사업 변화
+  - 3: 교육동향으로 계속 살펴볼 필요가 있는 사업·운영 정보
+  - 2: 적용 범위가 좁거나 기존 사업을 일부 보완하는 정보
+  - 1: 교육동향에는 해당하지만 우선순위가 낮은 참고 정보
 - summary는 원문에 있는 사실만 사용한 한국어 한 문장이다.
 - keywords는 핵심 업무어 1~5개다.
 - confidence는 0부터 1 사이 숫자다.
 - evidenceIds에는 해당 newsId만 넣는다.
 
 JSON 객체만 출력한다.
-출력 형식: {"items":[{"newsId":"...","category":"...","importance":"medium","keywords":["..."],"summary":"...","confidence":0.8,"evidenceIds":["..."]}]}
+출력 형식: {"items":[{"newsId":"...","category":"...","importance":4,"keywords":["..."],"summary":"...","confidence":0.8,"evidenceIds":["..."]}]}
 
 입력:
 {{ITEMS_JSON}}

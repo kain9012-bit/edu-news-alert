@@ -60,6 +60,9 @@ class SelectionValidatorAgent:
                 issues.append(self._issue("CLASSIFICATION_EVIDENCE", f"{news_id}: 분류 근거 ID가 원문과 다릅니다.", news_id))
             if item.get("category") not in self.categories:
                 issues.append(self._issue("CATEGORY", f"{news_id}: 허용되지 않은 분류입니다.", news_id))
+            importance = item.get("importance")
+            if not isinstance(importance, int) or isinstance(importance, bool) or not 1 <= importance <= 5:
+                issues.append(self._issue("IMPORTANCE", f"{news_id}: 중요도는 1~5 사이 정수여야 합니다.", news_id))
 
         return {
             "status": "PASS" if not issues else "REVISE",
@@ -68,6 +71,7 @@ class SelectionValidatorAgent:
                 "candidateCoverage": candidate_coverage,
                 "classificationCoverage": classification_coverage,
                 "evidenceIntegrity": not any("EVIDENCE" in item["code"] for item in issues),
+                "importanceIntegrity": not any(item["code"] == "IMPORTANCE" for item in issues),
             },
         }
 

@@ -92,7 +92,12 @@ class ClassifierAgent:
                 matched = hits
                 break
         summary = normalize_space(item.get("summary", ""))[:180] or item["title"]
-        importance = "high" if any(word in text for word in ["전국", "정책", "안전", "예산", "개편"]) else "medium"
+        if any(word in text for word in ["전국", "의무", "전면", "대규모", "조직개편"]):
+            importance = 5
+        elif any(word in text for word in ["정책", "안전", "예산", "개편", "전 학교", "모든 학교"]):
+            importance = 4
+        else:
+            importance = 3
         return {
             "newsId": item["newsId"],
             "category": category,
