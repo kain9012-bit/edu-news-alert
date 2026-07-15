@@ -17,6 +17,8 @@ from xml.etree import ElementTree as ET
 import requests
 from bs4 import BeautifulSoup
 from dateutil import parser as date_parser
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 try:
     import olefile
@@ -42,7 +44,7 @@ COLLECTION_WINDOW_HOURS = int(__import__("os").environ.get("COLLECTION_WINDOW_HO
 BRIEFING_HOUR_KST = int(__import__("os").environ.get("BRIEFING_HOUR_KST", "8"))
 MAX_ITEMS_TOTAL = int(__import__("os").environ.get("MAX_ITEMS_TOTAL", "3000"))
 MAX_ITEMS_PER_SOURCE = int(__import__("os").environ.get("MAX_ITEMS_PER_SOURCE", "20"))
-TIMEOUT_SECONDS = int(__import__("os").environ.get("REQUEST_TIMEOUT_SECONDS", "20"))
+TIMEOUT_SECONDS = int(__import__("os").environ.get("REQUEST_TIMEOUT_SECONDS", "30"))
 
 SESSION = requests.Session()
 SESSION.headers.update(
@@ -51,6 +53,20 @@ SESSION.headers.update(
         "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.7,en;q=0.6",
     }
 )
+SESSION.mount(
+    "https://",
+    HTTPAdapter(
+        max_retries=Retry(
+            total=3,
+            connect=3,
+            read=2,
+            backoff_factor=1.5,
+            status_forcelist=[429, 500, 502, 503, 504],
+            allowed_methods=frozenset(["GET", "HEAD"]),
+        )
+    ),
+)
+SESSION.mount("http://", HTTPAdapter(max_retries=2))
 
 DATE_PATTERNS = [
     r"(20\d{2})[.\-/년\s]+(\d{1,2})[.\-/월\s]+(\d{1,2})",
