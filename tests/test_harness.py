@@ -147,6 +147,38 @@ class EducationTrendHarnessTest(unittest.TestCase):
         self.assertEqual(result["status"], "REVISE")
         self.assertTrue(any(item["code"] == "CLASSIFICATION_COVERAGE" for item in result["issues"]))
 
+    def test_validator_rejects_kept_support_office_item(self) -> None:
+        validator = SelectionValidatorAgent(config()["categories"])
+        candidates = [
+            {
+                "id": "support-office-1",
+                "title": "강남교육지원청, 국제교류 사업으로 소규모 학교 살리기에 나서",
+            }
+        ]
+        relevance = [
+            {
+                "newsId": "support-office-1",
+                "decision": "KEEP",
+                "evidenceIds": ["support-office-1"],
+            }
+        ]
+        classifications = [
+            {
+                "newsId": "support-office-1",
+                "category": "정책·행정",
+                "importance": 4,
+                "evidenceIds": ["support-office-1"],
+            }
+        ]
+
+        result = validator.run(candidates, relevance, classifications)
+
+        self.assertEqual(result["status"], "REVISE")
+        self.assertFalse(result["checks"]["supportOfficeExclusion"])
+        self.assertTrue(
+            any(item["code"] == "EDUCATION_SUPPORT_OFFICE_SCOPE" for item in result["issues"])
+        )
+
     def test_validator_rejects_importance_outside_five_point_scale(self) -> None:
         validator = SelectionValidatorAgent(config()["categories"])
         payload = load_fixture()
@@ -196,6 +228,56 @@ class EducationTrendHarnessTest(unittest.TestCase):
 
         self.assertEqual(guarded["decision"], "DROP")
         self.assertTrue(guarded["guarded"])
+
+    def test_support_office_items_are_dropped_before_llm_call(self) -> None:
+        items = [
+            {
+                "id": "support-office-1",
+                "source": "울산광역시교육청",
+                "title": "강남교육지원청, 국제교류 사업으로 소규모 학교 살리기에 나서",
+                "summary": "여러 학교에 적용되는 국제교류 사업을 운영한다.",
+                "date": "2026-07-16",
+            },
+            {
+                "id": "support-office-2",
+                "source": "전남광주통합특별시교육청",
+                "title": "영광고-KENTECH-영광교육지원청, 미래 인재 육성 위해 뭉쳤다",
+                "summary": "지역 교육생태계를 구축한다.",
+                "date": "2026-07-16",
+            },
+            {
+                "id": "support-office-3",
+                "source": "인천광역시교육청",
+                "title": "인천북부교육지원청, 특수교육대상학생 AI 프로그램 운영",
+                "summary": "특수교육 지원 사업을 운영한다.",
+                "date": "2026-07-16",
+            },
+            {
+                "id": "support-office-4",
+                "source": "울산광역시교육청",
+                "title": "[강북교육지원청] 가정·학교 잇는 행동 발달 지원",
+                "summary": "학교 대상 지원을 확대한다.",
+                "date": "2026-07-16",
+            },
+        ]
+        llm = FakeLLM([])
+
+        result = RelevanceFilterAgent(llm).run(items)
+
+        self.assertEqual([item["decision"] for item in result["items"]], ["DROP"] * 4)
+        self.assertEqual(result["attempts"], 0)
+        self.assertEqual(result["fallbackCount"], 0)
+        self.assertEqual(result["guardCount"], 4)
+        self.assertEqual(result["guardCounts"]["educationSupportOffice"], 4)
+        self.assertFalse(llm.prompts)
+
+    def test_generic_support_office_policy_title_is_not_prefiltered(self) -> None:
+        item = {
+            "newsId": "policy-1",
+            "title": "교육부, 교육지원청 조직·기능 개편안 발표",
+        }
+
+        self.assertFalse(RelevanceFilterAgent._is_support_office_item(item))
 
     def test_personnel_appointment_guard_drops_head_office_announcement(self) -> None:
         guarded = RelevanceFilterAgent._apply_exclusion_guards(

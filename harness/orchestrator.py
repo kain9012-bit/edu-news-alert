@@ -101,6 +101,7 @@ class EducationTrendHarness:
                 "processedCount": len(selected_items),
                 "relevanceFallbackCount": relevance_result.get("fallbackCount", 0),
                 "deterministicGuardCount": relevance_result.get("guardCount", 0),
+                "educationSupportOfficeGuardCount": relevance_result.get("guardCounts", {}).get("educationSupportOffice", 0),
                 "institutionGuardCount": relevance_result.get("guardCounts", {}).get("institutionActivity", 0),
                 "personnelAppointmentGuardCount": relevance_result.get("guardCounts", {}).get("personnelAppointment", 0),
                 "classificationFallbackCount": classification_result.get("fallbackCount", 0),

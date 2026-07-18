@@ -1,6 +1,10 @@
 from __future__ import annotations
 
+import re
 from typing import Any
+
+
+SUPPORT_OFFICE_PATTERN = re.compile(r"([가-힣]{1,20})교육지원청")
 
 
 class SelectionValidatorAgent:
@@ -17,6 +21,7 @@ class SelectionValidatorAgent:
     ) -> dict[str, Any]:
         issues: list[dict[str, Any]] = []
         candidate_ids = [str(item.get("id", "")) for item in candidate_items]
+        candidate_map = {str(item.get("id", "")): item for item in candidate_items}
         relevance_ids = [str(item.get("newsId", "")) for item in relevance]
         keep_ids = {
             str(item.get("newsId", ""))
@@ -53,6 +58,15 @@ class SelectionValidatorAgent:
             news_id = str(item.get("newsId", ""))
             if item.get("evidenceIds") != [news_id]:
                 issues.append(self._issue("RELEVANCE_EVIDENCE", f"{news_id}: 적합성 근거 ID가 원문과 다릅니다.", news_id))
+            source = candidate_map.get(news_id, {})
+            if item.get("decision") == "KEEP" and SUPPORT_OFFICE_PATTERN.search(str(source.get("title", ""))):
+                issues.append(
+                    self._issue(
+                        "EDUCATION_SUPPORT_OFFICE_SCOPE",
+                        f"{news_id}: 교육지원청 단위 자료가 KEEP으로 남아 있습니다.",
+                        news_id,
+                    )
+                )
 
         for item in classifications:
             news_id = str(item.get("newsId", ""))
@@ -72,6 +86,9 @@ class SelectionValidatorAgent:
                 "classificationCoverage": classification_coverage,
                 "evidenceIntegrity": not any("EVIDENCE" in item["code"] for item in issues),
                 "importanceIntegrity": not any(item["code"] == "IMPORTANCE" for item in issues),
+                "supportOfficeExclusion": not any(
+                    item["code"] == "EDUCATION_SUPPORT_OFFICE_SCOPE" for item in issues
+                ),
             },
         }
 

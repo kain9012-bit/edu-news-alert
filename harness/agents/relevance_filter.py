@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from typing import Any
 
 from harness.utils import chunks, compact_news, render_prompt
@@ -76,6 +77,7 @@ PERSONNEL_POLICY_WORDS = [
     "인사 혁신",
     "인사 운영 계획",
 ]
+SUPPORT_OFFICE_PATTERN = re.compile(r"([가-힣]{1,20})교육지원청")
 
 
 class RelevanceFilterAgent:
@@ -92,6 +94,7 @@ class RelevanceFilterAgent:
         fallback_count = 0
         guard_count = 0
         guard_counts = {
+            "educationSupportOffice": 0,
             "institutionActivity": 0,
             "personnelAppointment": 0,
         }
@@ -99,8 +102,21 @@ class RelevanceFilterAgent:
 
         for batch in chunks(news_items, self.batch_size):
             compact = [compact_news(item) for item in batch]
-            expected_ids = {item["newsId"] for item in compact}
-            source_map = {item["newsId"]: item for item in compact}
+            prefiltered = {
+                item["newsId"]: self._support_office_exclusion(item)
+                for item in compact
+                if self._is_support_office_item(item)
+            }
+            candidates = [item for item in compact if item["newsId"] not in prefiltered]
+            guard_count += len(prefiltered)
+            guard_counts["educationSupportOffice"] += len(prefiltered)
+
+            if not candidates:
+                output.extend(prefiltered[item["newsId"]] for item in compact)
+                continue
+
+            expected_ids = {item["newsId"] for item in candidates}
+            source_map = {item["newsId"]: item for item in candidates}
             accepted: list[dict[str, Any]] | None = None
             last_error = ""
 
@@ -108,7 +124,7 @@ class RelevanceFilterAgent:
                 attempts += 1
                 prompt = render_prompt(
                     "relevance_filter.md",
-                    ITEMS_JSON=json.dumps(compact, ensure_ascii=False),
+                    ITEMS_JSON=json.dumps(candidates, ensure_ascii=False),
                 )
                 try:
                     raw = self.llm.generate_json(prompt)
@@ -129,10 +145,12 @@ class RelevanceFilterAgent:
                     continue
 
             if accepted is None:
-                accepted = [self._fallback(item) for item in compact]
+                accepted = [self._fallback(item) for item in candidates]
                 fallback_count += len(accepted)
                 errors.append({"newsIds": sorted(expected_ids), "error": last_error or "응답 계약 검증 실패"})
-            output.extend(accepted)
+            result_map = {item["newsId"]: item for item in accepted}
+            result_map.update(prefiltered)
+            output.extend(result_map[item["newsId"]] for item in compact)
 
         return {
             "items": output,
@@ -154,6 +172,8 @@ class RelevanceFilterAgent:
 
     @staticmethod
     def _fallback(item: dict[str, Any]) -> dict[str, Any]:
+        if RelevanceFilterAgent._is_support_office_item(item):
+            return RelevanceFilterAgent._support_office_exclusion(item)
         text = f"{item['title']} {item['summary']}"
         personnel_appointment = RelevanceFilterAgent._is_personnel_appointment(text)
         has_system_signal = any(word in text for word in SYSTEM_TREND_WORDS)
@@ -182,7 +202,36 @@ class RelevanceFilterAgent:
 
     @classmethod
     def _apply_exclusion_guards(cls, item: dict[str, Any]) -> dict[str, Any]:
-        return cls._apply_institution_guard(cls._apply_personnel_appointment_guard(item))
+        return cls._apply_institution_guard(
+            cls._apply_personnel_appointment_guard(cls._apply_support_office_guard(item))
+        )
+
+    @staticmethod
+    def _is_support_office_item(item: dict[str, Any]) -> bool:
+        title = str(item.get("title", ""))
+        return bool(SUPPORT_OFFICE_PATTERN.search(title))
+
+    @staticmethod
+    def _support_office_exclusion(item: dict[str, Any]) -> dict[str, Any]:
+        return {
+            "newsId": item["newsId"],
+            "decision": "DROP",
+            "scope": "local",
+            "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+            "confidence": 1.0,
+            "evidenceIds": [item["newsId"]],
+            "source": item.get("source", ""),
+            "title": item.get("title", ""),
+            "date": item.get("date", ""),
+            "guarded": True,
+            "guardType": "education_support_office",
+        }
+
+    @classmethod
+    def _apply_support_office_guard(cls, item: dict[str, Any]) -> dict[str, Any]:
+        if item.get("decision") != "KEEP" or not cls._is_support_office_item(item):
+            return item
+        return cls._support_office_exclusion(item)
 
     @staticmethod
     def _is_personnel_appointment(text: str) -> bool:
