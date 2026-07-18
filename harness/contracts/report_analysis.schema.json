@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["items"],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["newsId", "analysisPoints", "applicationReviewPoints", "confidence"],
+        "properties": {
+          "newsId": {"type": "string"},
+          "analysisPoints": {"type": "array", "minItems": 1, "maxItems": 5, "items": {"type": "string"}},
+          "applicationReviewPoints": {"type": "array", "minItems": 0, "maxItems": 5, "items": {"type": "string"}},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+        }
+      }
+    }
+  }
+}

@@ -37,13 +37,13 @@ class OllamaClient:
         if self.model not in models:
             raise OllamaError(f"Ollama 모델을 찾을 수 없습니다: {self.model} (설치 모델: {', '.join(models)})")
 
-    def generate_json(self, prompt: str) -> Any:
+    def generate_json(self, prompt: str, schema: dict[str, Any] | None = None) -> Any:
         response = requests.post(
             f"{self.base_url}/api/generate",
             json={
                 "model": self.model,
                 "prompt": prompt,
-                "format": "json",
+                "format": schema or "json",
                 "stream": False,
                 "keep_alive": "10m",
                 "options": {

@@ -1,0 +1,17 @@
+{
+  "factModel": "gemini-3.1-flash-lite",
+  "analysisModel": "gemini-3.5-flash",
+  "verifierModel": "gemini-3.1-flash-lite",
+  "batchSize": 4,
+  "maxBodyChars": 6000,
+  "minBodyChars": 200,
+  "maxOutputTokens": 4096,
+  "requestTimeoutSeconds": 240,
+  "ownOfficeSourceIds": ["jeonbuk"],
+  "ownOfficeNames": ["전북특별자치도교육청"],
+  "artifactRetentionDays": 14,
+  "pricingPerMillionTokensUsd": {
+    "gemini-3.1-flash-lite": {"input": 0.25, "output": 1.5},
+    "gemini-3.5-flash": {"input": 1.5, "output": 9.0}
+  }
+}

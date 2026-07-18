@@ -33,6 +33,22 @@ class GeminiClientTest(unittest.TestCase):
         self.assertEqual(client.usage["requests"], 1)
         self.assertEqual(client.usage["totalTokenCount"], 35)
 
+    @patch("harness.gemini_client.requests.post")
+    def test_generate_json_sends_response_schema(self, post: Mock) -> None:
+        response = Mock()
+        response.ok = True
+        response.json.return_value = {
+            "candidates": [{"content": {"parts": [{"text": '{"items": []}'}]}}],
+            "usageMetadata": {},
+        }
+        post.return_value = response
+        schema = {"type": "object", "properties": {"items": {"type": "array"}}}
+        client = GeminiClient("secret-value", max_output_tokens=512)
+
+        client.generate_json("테스트", schema)
+
+        generation_config = post.call_args.kwargs["json"]["generationConfig"]
+        self.assertEqual(generation_config["responseJsonSchema"], schema)
 
 if __name__ == "__main__":
     unittest.main()

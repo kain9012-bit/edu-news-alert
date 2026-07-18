@@ -45,7 +45,14 @@ class GeminiClient:
         if not response.ok:
             raise GeminiError(f"Gemini 모델 확인 실패 ({response.status_code}): {response.text[:300]}")
 
-    def generate_json(self, prompt: str) -> Any:
+    def generate_json(self, prompt: str, schema: dict[str, Any] | None = None) -> Any:
+        generation_config: dict[str, Any] = {
+            "temperature": 0.1,
+            "maxOutputTokens": self.max_output_tokens,
+            "responseMimeType": "application/json",
+        }
+        if schema:
+            generation_config["responseJsonSchema"] = schema
         response = requests.post(
             f"https://generativelanguage.googleapis.com/v1beta/models/{self.model}:generateContent",
             headers={
@@ -54,11 +61,7 @@ class GeminiClient:
             },
             json={
                 "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-                "generationConfig": {
-                    "temperature": 0.1,
-                    "maxOutputTokens": self.max_output_tokens,
-                    "responseMimeType": "application/json",
-                },
+                "generationConfig": generation_config,
             },
             timeout=self.timeout_seconds,
         )

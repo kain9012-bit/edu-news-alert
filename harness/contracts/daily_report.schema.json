@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "InternalDailyEducationTrendReport",
+  "type": "object",
+  "required": ["metadata", "items", "omittedItems", "validation", "trace"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["reportId", "status", "windowStart", "windowEnd", "sourceCount", "publishedCount"]
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["newsId", "title", "summaryPoints", "analysisPoints", "applicationReviewPoints", "validation"]
+      }
+    },
+    "omittedItems": {"type": "array"},
+    "validation": {"type": "object"},
+    "trace": {"type": "array"}
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["items"],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["newsId", "summaryPoints", "sourceFacts", "confidence"],
+        "properties": {
+          "newsId": {"type": "string"},
+          "summaryPoints": {"type": "array", "minItems": 1, "maxItems": 5, "items": {"type": "string"}},
+          "sourceFacts": {"type": "array", "minItems": 1, "maxItems": 8, "items": {"type": "string"}},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+        }
+      }
+    }
+  }
+}
