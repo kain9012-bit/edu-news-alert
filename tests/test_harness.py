@@ -116,6 +116,27 @@ class EducationTrendHarnessTest(unittest.TestCase):
         )
         self.assertFalse(llm.responses)
 
+    def test_empty_input_publishes_valid_empty_briefing(self) -> None:
+        llm = FakeLLM([])
+        payload = {
+            "windowStart": "2026-07-17T08:00:00+09:00",
+            "windowEnd": "2026-07-18T08:00:00+09:00",
+            "items": [],
+        }
+
+        result = EducationTrendHarness(llm, config()).run(payload)
+
+        self.assertEqual(result["metadata"]["candidateCount"], 0)
+        self.assertEqual(result["metadata"]["status"], "completed")
+        self.assertEqual(result["selectedItems"], [])
+        self.assertEqual(result["excludedItems"], [])
+        self.assertEqual(result["validation"]["status"], "PASS")
+        self.assertEqual(
+            [step["step"] for step in result["trace"]],
+            ["filter_relevance", "validate_selection"],
+        )
+        self.assertFalse(llm.prompts)
+
     def test_all_dropped_skips_classification(self) -> None:
         llm = FakeLLM([relevance_response(keep_policy=False)])
 

@@ -38,8 +38,6 @@ class EducationTrendHarness:
         configured_max = int(self.config.get("maxItems", 0))
         limit = configured_max if max_items is None else max_items
         items = all_items[:limit] if limit and limit > 0 else all_items
-        if not items:
-            raise HarnessInputError("분석할 보도자료가 없습니다.")
 
         run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "-" + uuid.uuid4().hex[:8]
         relevance_result = self._step(
