@@ -15,8 +15,11 @@ def render_markdown(result: dict[str, Any]) -> str:
         score = max(1, min(5, score))
         return f"{'★' * score}{'☆' * (5 - score)} ({score}점)"
 
+    window_hours = metadata.get("windowHours")
+    window_label = f"최근 {window_hours}시간" if window_hours else "해당 기간"
+
     lines = [
-        "# 최근 24시간 교육동향 선별 결과",
+        f"# {window_label} 교육동향 선별 결과",
         "",
         f"- 대상 기간: {metadata.get('windowStart')} ~ {metadata.get('windowEnd')}",
         f"- 수집 후보: {metadata.get('candidateCount', 0)}건",

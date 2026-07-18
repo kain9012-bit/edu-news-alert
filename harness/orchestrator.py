@@ -92,6 +92,7 @@ class EducationTrendHarness:
                 "generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                 "windowStart": payload.get("windowStart"),
                 "windowEnd": payload.get("windowEnd"),
+                "windowHours": payload.get("windowHours"),
                 "inputCount": len(all_items),
                 "candidateCount": len(items),
                 "relevantCount": len(selected_items),

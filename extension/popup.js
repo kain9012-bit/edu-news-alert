@@ -30,6 +30,7 @@ let currentWindowId = null;
 let recentItems = [];
 let activeKeywords = DEFAULT_KEYWORDS;
 let activeSearchMode = "title_summary";
+let activeWindowLabel = "이번 교육동향";
 
 function escapeHtml(value) {
   return String(value || "")
@@ -84,6 +85,13 @@ function importanceStars(value) {
 function itemTimestamp(item) {
   const timestamp = Date.parse(item.date || item.publishedAt || "");
   return Number.isNaN(timestamp) ? 0 : timestamp;
+}
+
+function analysisWindowLabel(startValue, endValue) {
+  const start = new Date(startValue);
+  const end = new Date(endValue);
+  const hours = Math.round((end.getTime() - start.getTime()) / 3600000);
+  return Number.isFinite(hours) && hours > 0 ? `최근 ${hours}시간` : "이번 교육동향";
 }
 
 function formatWindow(startValue, endValue) {
@@ -166,8 +174,8 @@ function renderCurrentView() {
   const emptyText = query
     ? `“${briefingSearch.value.trim()}” 검색 결과가 없습니다.`
     : hasSavedKeywords
-      ? "최근 24시간에 관심 키워드와 일치하는 보도자료가 없습니다."
-      : "최근 24시간에 표시할 보도자료가 없습니다.";
+      ? `${activeWindowLabel}에 관심 키워드와 일치하는 보도자료가 없습니다.`
+      : `${activeWindowLabel}에 표시할 보도자료가 없습니다.`;
 
   renderItems(items, activeKeywords, activeSearchMode, emptyText);
 }
@@ -212,9 +220,10 @@ async function loadBriefing() {
       });
     activeKeywords = keywords;
     activeSearchMode = state.searchMode;
+    activeWindowLabel = analysisWindowLabel(briefing.windowStart, briefing.windowEnd);
     briefingScope.textContent = activeKeywords.length > 0
-      ? (selectedItems === null ? "최근 24시간 관심 자료" : "최근 24시간 AI 선별 관심 자료")
-      : (selectedItems === null ? "최근 24시간 전체 자료" : "최근 24시간 AI 선별 자료");
+      ? (selectedItems === null ? `${activeWindowLabel} 관심 자료` : `${activeWindowLabel} AI 선별 관심 자료`)
+      : (selectedItems === null ? `${activeWindowLabel} 전체 자료` : `${activeWindowLabel} AI 선별 자료`);
     searchLabel.textContent = activeKeywords.length > 0
       ? "관심 자료 내 검색"
       : "전체 보도자료 검색";

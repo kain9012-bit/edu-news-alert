@@ -40,7 +40,7 @@ PUBLIC_SOURCES_PATH = PUBLIC_DIR / "sources.json"
 
 KST = timezone(timedelta(hours=9))
 RETENTION_DAYS = int(__import__("os").environ.get("RETENTION_DAYS", "14"))
-COLLECTION_WINDOW_HOURS = int(__import__("os").environ.get("COLLECTION_WINDOW_HOURS", "24"))
+COLLECTION_WINDOW_HOURS_OVERRIDE = __import__("os").environ.get("COLLECTION_WINDOW_HOURS")
 BRIEFING_HOUR_KST = int(__import__("os").environ.get("BRIEFING_HOUR_KST", "8"))
 MAX_ITEMS_TOTAL = int(__import__("os").environ.get("MAX_ITEMS_TOTAL", "3000"))
 MAX_ITEMS_PER_SOURCE = int(__import__("os").environ.get("MAX_ITEMS_PER_SOURCE", "20"))
@@ -213,12 +213,19 @@ def now_kst() -> datetime:
     return datetime.now(KST)
 
 
+def collection_window_hours(window_end: datetime) -> int:
+    if COLLECTION_WINDOW_HOURS_OVERRIDE:
+        return max(1, int(COLLECTION_WINDOW_HOURS_OVERRIDE))
+    return 72 if window_end.weekday() == 0 else 24
+
+
 def briefing_window(reference: datetime | None = None) -> tuple[datetime, datetime]:
     current = reference or now_kst()
     window_end = current.replace(hour=BRIEFING_HOUR_KST, minute=0, second=0, microsecond=0)
     if current < window_end:
         window_end -= timedelta(days=1)
-    return window_end - timedelta(hours=COLLECTION_WINDOW_HOURS), window_end
+    window_hours = collection_window_hours(window_end)
+    return window_end - timedelta(hours=window_hours), window_end
 
 
 def read_json(path: Path, fallback: Any) -> Any:
@@ -1120,11 +1127,12 @@ def main() -> None:
     kept = kept[:MAX_ITEMS_TOTAL]
     briefing_items = [item for item in kept if within_collection_window(item, window_start, window_end)]
     collected_at = now_kst().isoformat(timespec="seconds")
+    window_hours = int((window_end - window_start).total_seconds() // 3600)
 
     status = {
         "ok": all(run["status"] == "success" for run in runs),
         "retentionDays": RETENTION_DAYS,
-        "collectionWindowHours": COLLECTION_WINDOW_HOURS,
+        "collectionWindowHours": window_hours,
         "briefingWindowStart": window_start.isoformat(timespec="seconds"),
         "briefingWindowEnd": window_end.isoformat(timespec="seconds"),
         "total": len(kept),
@@ -1138,6 +1146,7 @@ def main() -> None:
         "collectedAt": status["collectedAt"],
         "windowStart": status["briefingWindowStart"],
         "windowEnd": status["briefingWindowEnd"],
+        "windowHours": window_hours,
         "total": len(briefing_items),
         "items": briefing_items,
         "runs": runs,

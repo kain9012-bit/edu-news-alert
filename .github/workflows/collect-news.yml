@@ -3,8 +3,8 @@ name: Collect education press releases
 on:
   workflow_dispatch:
   schedule:
-    # KST 08:00 = UTC 23:00 on the previous day
-    - cron: "0 23 * * *"
+    # UTC Sun-Thu 23:00 = KST Mon-Fri 08:00
+    - cron: "0 23 * * 0-4"
 
 permissions:
   contents: write
@@ -44,7 +44,6 @@ jobs:
       - name: Collect press releases
         env:
           RETENTION_DAYS: "14"
-          COLLECTION_WINDOW_HOURS: "24"
           BRIEFING_HOUR_KST: "8"
           MAX_ITEMS_TOTAL: "3000"
           MAX_ITEMS_PER_SOURCE: "20"

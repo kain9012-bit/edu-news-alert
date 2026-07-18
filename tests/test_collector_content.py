@@ -3,8 +3,11 @@ from __future__ import annotations
 import io
 import unittest
 import zipfile
+from datetime import datetime
 
 from crawler.collect import (
+    KST,
+    briefing_window,
     choose_best_summary,
     detail_url_from_seq,
     extract_hwpx_text_from_bytes,
@@ -16,6 +19,24 @@ from crawler.collect import (
 
 
 class CollectorContentTest(unittest.TestCase):
+    def test_monday_briefing_covers_previous_72_hours(self) -> None:
+        window_start, window_end = briefing_window(datetime(2026, 7, 20, 8, 5, tzinfo=KST))
+
+        self.assertEqual(window_start, datetime(2026, 7, 17, 8, 0, tzinfo=KST))
+        self.assertEqual(window_end, datetime(2026, 7, 20, 8, 0, tzinfo=KST))
+
+    def test_weekday_briefing_covers_previous_24_hours(self) -> None:
+        window_start, window_end = briefing_window(datetime(2026, 7, 24, 8, 5, tzinfo=KST))
+
+        self.assertEqual(window_start, datetime(2026, 7, 23, 8, 0, tzinfo=KST))
+        self.assertEqual(window_end, datetime(2026, 7, 24, 8, 0, tzinfo=KST))
+
+    def test_before_eight_uses_previous_briefing_day_rule(self) -> None:
+        window_start, window_end = briefing_window(datetime(2026, 7, 21, 7, 30, tzinfo=KST))
+
+        self.assertEqual(window_start, datetime(2026, 7, 17, 8, 0, tzinfo=KST))
+        self.assertEqual(window_end, datetime(2026, 7, 20, 8, 0, tzinfo=KST))
+
     def test_detail_url_includes_source_specific_parameters(self) -> None:
         source = {
             "listUrl": "https://example.com/list.do?boardID=8&m=0401&s=news",
