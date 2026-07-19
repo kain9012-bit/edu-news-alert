@@ -2,11 +2,16 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "PressReleaseClassification",
   "type": "object",
-  "required": ["newsId", "category", "importance", "keywords", "summary", "confidence", "evidenceIds"],
+  "required": ["newsId", "category", "changeLevel", "importance", "importanceReason", "keywords", "summary", "confidence", "evidenceIds"],
   "properties": {
     "newsId": { "type": "string" },
     "category": { "type": "string" },
+    "changeLevel": {
+      "type": "string",
+      "enum": ["routine_operation", "project_change", "policy_change", "system_change"]
+    },
     "importance": { "type": "integer", "minimum": 1, "maximum": 5 },
+    "importanceReason": { "type": "string", "minLength": 1 },
     "keywords": { "type": "array", "items": { "type": "string" }, "maxItems": 5 },
     "summary": { "type": "string" },
     "confidence": { "type": "number", "minimum": 0, "maximum": 1 },

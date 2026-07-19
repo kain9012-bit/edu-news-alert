@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from typing import Any
 
+from harness.importance import CHANGE_LEVEL_CAPS
+
 
 RELEVANCE_DECISIONS = {"KEEP", "DROP"}
 SCOPES = {"national", "provincial", "local", "institution"}
@@ -49,6 +51,12 @@ def validate_classifications(
         importance = item.get("importance")
         if not isinstance(importance, int) or isinstance(importance, bool) or not 1 <= importance <= 5:
             errors.append(f"잘못된 importance: {item.get('importance')}")
+        change_level = item.get("changeLevel")
+        if change_level not in CHANGE_LEVEL_CAPS:
+            errors.append(f"{news_id}: changeLevel이 잘못됐습니다.")
+
+        if not str(item.get("importanceReason", "")).strip():
+            errors.append(f"{news_id}: importanceReason이 없습니다.")
         if not isinstance(item.get("keywords"), list):
             errors.append(f"{news_id}: keywords가 배열이 아닙니다.")
         if not str(item.get("summary", "")).strip():

@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from typing import Any
 
+from harness.importance import calibrate_importance
 from harness.utils import chunks, compact_news, normalize_space, render_prompt
 from harness.validators import validate_classifications
 
@@ -74,8 +75,19 @@ class ClassifierAgent:
 
     @staticmethod
     def _enrich(value: dict[str, Any], source: dict[str, Any]) -> dict[str, Any]:
+        model_score = value["importance"]
+        assessment_text = f"{source['title']} {source.get('summary', '')}"
+        importance, change_level, adjusted = calibrate_importance(
+            model_score,
+            value["changeLevel"],
+            assessment_text,
+        )
         return {
             **value,
+            "changeLevel": change_level,
+            "importance": importance,
+            "importanceModelScore": model_score,
+            "importanceAdjusted": adjusted,
             "source": source["source"],
             "title": source["title"],
             "date": source["date"],
@@ -92,16 +104,32 @@ class ClassifierAgent:
                 matched = hits
                 break
         summary = normalize_space(item.get("summary", ""))[:180] or item["title"]
-        if any(word in text for word in ["전국", "의무", "전면", "대규모", "조직개편"]):
-            importance = 5
-        elif any(word in text for word in ["정책", "안전", "예산", "개편", "전 학교", "모든 학교"]):
+        if any(word in text for word in ["법령", "의무화", "국가 교육과정", "대입제도", "평가제도", "조직개편", "전국 시행"]):
+            change_level = "system_change"
+            importance = 5 if any(word in text for word in ["전국", "의무", "국가"]) else 4
+        elif any(word in text for word in ["제도 도입", "정책 도입", "조례 개정", "제도 개편", "정책 개편"]):
+            change_level = "policy_change"
             importance = 4
-        else:
+        elif any(word in text for word in ["시범", "확대", "확충", "신규", "재구조화", "본격", "구축"]):
+            change_level = "project_change"
             importance = 3
+        else:
+            change_level = "routine_operation"
+            importance = 2
+        model_score = importance
+        importance, change_level, adjusted = calibrate_importance(
+            model_score,
+            change_level,
+            text,
+        )
         return {
             "newsId": item["newsId"],
             "category": category,
+            "changeLevel": change_level,
             "importance": importance,
+            "importanceModelScore": model_score,
+            "importanceAdjusted": adjusted,
+            "importanceReason": "규칙 기반 대체 판정으로 변화 수준과 적용 범위를 보수적으로 평가했습니다.",
             "keywords": (matched or [category])[:5],
             "summary": summary,
             "confidence": 0.25,

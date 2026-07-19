@@ -7,6 +7,7 @@ from typing import Any
 
 from harness.agents.selection_validator import SelectionValidatorAgent
 from harness.agents.relevance_filter import RelevanceFilterAgent
+from harness.importance import calibrate_importance
 from harness.orchestrator import EducationTrendHarness
 from harness.validators import validate_relevance
 
@@ -89,7 +90,9 @@ class EducationTrendHarnessTest(unittest.TestCase):
                         {
                             "newsId": "policy-1",
                             "category": "디지털·AI",
+                            "changeLevel": "system_change",
                             "importance": 5,
+                            "importanceReason": "전체 학교에 의무 적용되는 제도 변화다.",
                             "keywords": ["AI", "수업 지원"],
                             "summary": "전체 학교 대상 AI 수업 지원 정책을 시행한다.",
                             "confidence": 0.95,
@@ -115,6 +118,49 @@ class EducationTrendHarnessTest(unittest.TestCase):
             ["filter_relevance", "classify", "validate_selection"],
         )
         self.assertFalse(llm.responses)
+
+    def test_routine_facility_project_is_reclassified_and_capped(self) -> None:
+        score, level, adjusted = calibrate_importance(
+            4,
+            "project_change",
+            "대전시교육청, 노후 환경개선 본격 돌입, 안전하고 청렴한 공사 추진",
+        )
+
+        self.assertEqual(score, 2)
+        self.assertEqual(level, "routine_operation")
+        self.assertTrue(adjusted)
+    def test_routine_operation_importance_is_capped_at_two(self) -> None:
+        llm = FakeLLM(
+            [
+                relevance_response(),
+                {
+                    "items": [
+                        {
+                            "newsId": "policy-1",
+                            "category": "안전·시설",
+                            "changeLevel": "routine_operation",
+                            "importance": 4,
+                            "importanceReason": "기존 시설개선 사업의 통상적인 예산 집행이다.",
+                            "keywords": ["시설개선", "안전"],
+                            "summary": "여름방학 중 노후 시설 개선 공사를 추진한다.",
+                            "confidence": 0.93,
+                            "evidenceIds": ["policy-1"],
+                        }
+                    ]
+                },
+            ]
+        )
+
+        result = EducationTrendHarness(llm, config()).run(load_fixture())
+
+        selected = result["selectedItems"][0]
+        self.assertEqual(selected["importance"], 2)
+        self.assertEqual(selected["changeLevel"], "routine_operation")
+        self.assertEqual(
+            selected["importanceReason"],
+            "기존 시설개선 사업의 통상적인 예산 집행이다.",
+        )
+        self.assertTrue(selected["importanceAdjusted"])
 
     def test_empty_input_publishes_valid_empty_briefing(self) -> None:
         llm = FakeLLM([])
