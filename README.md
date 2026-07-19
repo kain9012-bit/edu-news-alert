@@ -159,7 +159,7 @@ C:\Users\kain9\Documents\오늘의 교육동향\YYYY-MM-DD\
 python local_downloader\build_exe.py
 ```
 
-빌드 결과인 `local_downloader\dist\오늘의 교육동향 자동 수신기.exe`를 열고 저장소, Actions 읽기 토큰, 저장 위치를 확인합니다. `연결 확인` 후 `설정 저장`을 누르면 실행 파일을 `%LOCALAPPDATA%\Programs\EduNewsAlertDownloader`에 복사하고 Windows 예약 작업 두 개를 등록합니다. `지금 확인`은 요일과 시간에 관계없이 최근 보고서를 즉시 확인합니다.
+빌드 결과인 `local_downloader\dist\오늘의 교육동향 자동 수신기.exe`를 열고 저장소, Actions 읽기 토큰, 저장 위치를 확인합니다. `연결 확인` 후 `설정 저장`을 누르면 실행 파일을 `%LOCALAPPDATA%\Programs\EduNewsAlertDownloader`에 복사하고 오전 9시 15분 예약 작업과 현재 사용자 로그인 시작 항목을 등록합니다. `지금 확인`은 요일과 시간에 관계없이 최근 보고서를 즉시 확인합니다.
 ## 로컬 실행
 
 Python 3.11 이상에서 다음 명령으로 실행합니다. 로컬 PowerShell에도 `GEMINI_API_KEY` 환경변수가 있어야 합니다.

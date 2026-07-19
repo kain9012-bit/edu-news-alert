@@ -19,6 +19,7 @@ from local_downloader.receiver import (
     save_report,
     check_github_connection,
 )
+from local_downloader import scheduler
 from local_downloader.settings import DownloaderSettings, load_settings, save_settings
 
 
@@ -215,6 +216,39 @@ class LocalDownloaderTest(unittest.TestCase):
         self.assertEqual(loaded, settings)
         self.assertEqual(token, "secret-value")
 
+    def test_scheduler_uses_user_logon_entry_without_onlogon_task(self):
+        with patch.object(
+            scheduler,
+            "launch_command",
+            side_effect=['"receiver.exe" --scheduled', '"receiver.exe" --startup-check'],
+        ), patch.object(scheduler, "_run_schtasks") as run_tasks, patch.object(
+            scheduler,
+            "_install_logon_entry",
+        ) as install_logon:
+            scheduler.install_tasks()
+
+        self.assertEqual(run_tasks.call_count, 1)
+        create_args = run_tasks.call_args.args[0]
+        self.assertIn("WEEKLY", create_args)
+        self.assertNotIn("ONLOGON", create_args)
+        install_logon.assert_called_once_with('"receiver.exe" --startup-check')
+
+    def test_scheduler_rolls_back_morning_task_when_logon_entry_fails(self):
+        with patch.object(
+            scheduler,
+            "launch_command",
+            side_effect=['"receiver.exe" --scheduled', '"receiver.exe" --startup-check'],
+        ), patch.object(scheduler, "_run_schtasks") as run_tasks, patch.object(
+            scheduler,
+            "_install_logon_entry",
+            side_effect=OSError("registry failure"),
+        ), patch.object(scheduler, "_remove_logon_entry") as remove_logon:
+            with self.assertRaises(OSError):
+                scheduler.install_tasks()
+
+        self.assertEqual(run_tasks.call_count, 2)
+        self.assertEqual(run_tasks.call_args_list[1].args[0][:3], ["/Delete", "/F", "/TN"])
+        remove_logon.assert_called_once()
 
 if __name__ == "__main__":
     unittest.main()
