@@ -1,0 +1,1 @@
+"""Windows GitHub Actions report downloader for 오늘의 교육동향."""
