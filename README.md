@@ -180,6 +180,7 @@ python -m unittest discover -s tests -v
 ```powershell
 python -m harness.report_run
 ```
+비공개 저장소의 `Run workflow`에서 `report_date`에 `2026-07-17`처럼 기준일을 입력하면 최근 14일 안의 날짜별 선별 결과와 원문으로 보고서를 다시 생성할 수 있습니다. 날짜가 비어 있으면 기존 평일 자동 실행 규칙을 사용합니다.
 
 Ollama를 비상용 로컬 제공자로 실행하려면 다음처럼 지정합니다.
 
