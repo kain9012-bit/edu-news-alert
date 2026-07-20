@@ -157,7 +157,7 @@ class DownloaderApp:
         options.pack(fill="x", pady=(14, 0))
         ttk.Checkbutton(
             options,
-            text="평일 오전 9시 15분과 Windows 로그인 시 누락 보고서 자동 확인",
+            text="평일 오전 9시 15분·9시 45분과 Windows 로그인 시 누락 보고서 자동 확인",
             variable=self.auto_var,
         ).pack(anchor="w")
         ttk.Label(

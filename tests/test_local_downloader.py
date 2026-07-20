@@ -12,6 +12,7 @@ from pathlib import Path
 from local_downloader.receiver import (
     ARTIFACT_NAME,
     _open_response,
+    _request_json,
     ReportDownloadError,
     download_from_github,
     parse_report_archive,
@@ -196,6 +197,31 @@ class LocalDownloaderTest(unittest.TestCase):
         self.assertIs(response, signed_response)
         self.assertIsNone(redirected_request.get_header("Authorization"))
 
+    def test_transient_github_503_is_retried(self):
+        attempts = []
+
+        def flaky_opener(request, timeout=60):
+            attempts.append((request, timeout))
+            if len(attempts) < 3:
+                raise urllib.error.HTTPError(
+                    request.full_url,
+                    503,
+                    "Service Unavailable",
+                    {},
+                    None,
+                )
+            return FakeResponse(b'{"ok": true}')
+
+        with patch("local_downloader.receiver.time.sleep") as sleep:
+            payload = _request_json(
+                "https://api.github.com/test",
+                "github-token",
+                opener=flaky_opener,
+            )
+
+        self.assertEqual(payload, {"ok": True})
+        self.assertEqual(len(attempts), 3)
+        self.assertEqual(sleep.call_count, 2)
     def test_connection_checks_actions_listing(self):
         github = FakeGitHub()
         check_github_connection(REPOSITORY, "github-token", opener=github)
@@ -227,10 +253,12 @@ class LocalDownloaderTest(unittest.TestCase):
         ) as install_logon:
             scheduler.install_tasks()
 
-        self.assertEqual(run_tasks.call_count, 1)
-        create_args = run_tasks.call_args.args[0]
-        self.assertIn("WEEKLY", create_args)
-        self.assertNotIn("ONLOGON", create_args)
+        self.assertEqual(run_tasks.call_count, 2)
+        first_args = run_tasks.call_args_list[0].args[0]
+        fallback_args = run_tasks.call_args_list[1].args[0]
+        self.assertIn("09:15", first_args)
+        self.assertIn("09:45", fallback_args)
+        self.assertNotIn("ONLOGON", first_args + fallback_args)
         install_logon.assert_called_once_with('"receiver.exe" --startup-check')
 
     def test_scheduler_rolls_back_morning_task_when_logon_entry_fails(self):
@@ -246,8 +274,9 @@ class LocalDownloaderTest(unittest.TestCase):
             with self.assertRaises(OSError):
                 scheduler.install_tasks()
 
-        self.assertEqual(run_tasks.call_count, 2)
-        self.assertEqual(run_tasks.call_args_list[1].args[0][:3], ["/Delete", "/F", "/TN"])
+        self.assertEqual(run_tasks.call_count, 4)
+        self.assertEqual(run_tasks.call_args_list[2].args[0][:3], ["/Delete", "/F", "/TN"])
+        self.assertEqual(run_tasks.call_args_list[3].args[0][:3], ["/Delete", "/F", "/TN"])
         remove_logon.assert_called_once()
 
 if __name__ == "__main__":

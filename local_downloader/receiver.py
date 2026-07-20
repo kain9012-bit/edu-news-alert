@@ -6,6 +6,7 @@ import json
 import os
 import re
 import tempfile
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -21,6 +22,9 @@ REQUIRED_SUFFIXES = ("json", "html", "hwpx")
 MAX_ARCHIVE_BYTES = 50 * 1024 * 1024
 MAX_EXTRACTED_BYTES = 80 * 1024 * 1024
 REPOSITORY_PATTERN = re.compile(r"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
+TRANSIENT_HTTP_CODES = {429, 500, 502, 503, 504}
+REQUEST_ATTEMPTS = 3
+REQUEST_RETRY_SECONDS = 5
 
 
 class ReportDownloadError(RuntimeError):
@@ -106,21 +110,33 @@ def _request_bytes(
             "User-Agent": "edu-news-alert-local-downloader",
         },
     )
-    try:
-        with _open_response(request, opener, timeout=60) as response:
-            payload = response.read(MAX_ARCHIVE_BYTES + 1)
-    except urllib.error.HTTPError as exc:
-        if exc.code in (401, 403):
-            raise ReportDownloadError("GitHub 인증에 실패했습니다. 토큰과 Actions 읽기 권한을 확인해 주세요.") from exc
-        if exc.code == 404:
-            raise ReportDownloadError("비공개 보고서 저장소를 찾지 못했습니다. 저장소 이름과 토큰 권한을 확인해 주세요.") from exc
-        raise ReportDownloadError(f"GitHub에서 파일을 받지 못했습니다. HTTP {exc.code}") from exc
-    except urllib.error.URLError as exc:
-        raise ReportDownloadError("GitHub에 연결하지 못했습니다. 인터넷 연결을 확인해 주세요.") from exc
+
+    payload: bytes | None = None
+    last_error: Exception | None = None
+    for attempt in range(REQUEST_ATTEMPTS):
+        try:
+            with _open_response(request, opener, timeout=60) as response:
+                payload = response.read(MAX_ARCHIVE_BYTES + 1)
+            break
+        except urllib.error.HTTPError as exc:
+            if exc.code in (401, 403):
+                raise ReportDownloadError("GitHub 인증에 실패했습니다. 토큰과 Actions 읽기 권한을 확인해 주세요.") from exc
+            if exc.code == 404:
+                raise ReportDownloadError("비공개 보고서 저장소를 찾지 못했습니다. 저장소 이름과 토큰 권한을 확인해 주세요.") from exc
+            last_error = exc
+            if exc.code not in TRANSIENT_HTTP_CODES or attempt == REQUEST_ATTEMPTS - 1:
+                raise ReportDownloadError(f"GitHub에서 파일을 받지 못했습니다. HTTP {exc.code}") from exc
+        except urllib.error.URLError as exc:
+            last_error = exc
+            if attempt == REQUEST_ATTEMPTS - 1:
+                raise ReportDownloadError("GitHub에 연결하지 못했습니다. 인터넷 연결을 확인해 주세요.") from exc
+        time.sleep(REQUEST_RETRY_SECONDS)
+
+    if payload is None:
+        raise ReportDownloadError("GitHub에서 파일을 받지 못했습니다.") from last_error
     if len(payload) > MAX_ARCHIVE_BYTES:
         raise ReportDownloadError("GitHub 결과 파일의 크기가 허용 범위를 넘었습니다.")
     return payload
-
 
 def _request_json(
     url: str,

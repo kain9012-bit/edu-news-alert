@@ -13,6 +13,7 @@ except ImportError:  # pragma: no cover - Windows-only module
 
 
 MORNING_TASK = "오늘의 교육동향 자동 수신 - 오전"
+FALLBACK_TASK = "오늘의 교육동향 자동 수신 - 보완"
 LOGON_RUN_VALUE = "EduNewsAlertDownloader"
 RUN_KEY = r"Software\Microsoft\Windows\CurrentVersion\Run"
 INSTALLED_EXE_NAME = "오늘의 교육동향 자동 수신기.exe"
@@ -73,26 +74,33 @@ def _remove_logon_entry() -> None:
         pass
 
 
-def install_tasks() -> None:
-    morning_command = launch_command("--scheduled", install_copy=True)
-    logon_command = launch_command("--startup-check", install_copy=True)
+def _create_weekday_task(name: str, command: str, start_time: str) -> None:
     _run_schtasks([
         "/Create", "/F",
-        "/TN", MORNING_TASK,
-        "/TR", morning_command,
+        "/TN", name,
+        "/TR", command,
         "/SC", "WEEKLY",
         "/D", "MON,TUE,WED,THU,FRI",
-        "/ST", "09:15",
+        "/ST", start_time,
         "/RL", "LIMITED",
     ])
+
+
+def install_tasks() -> None:
+    scheduled_command = launch_command("--scheduled", install_copy=True)
+    logon_command = launch_command("--startup-check", install_copy=True)
+    _create_weekday_task(MORNING_TASK, scheduled_command, "09:15")
     try:
+        _create_weekday_task(FALLBACK_TASK, scheduled_command, "09:45")
         _install_logon_entry(logon_command)
     except Exception:
         _run_schtasks(["/Delete", "/F", "/TN", MORNING_TASK], check=False)
+        _run_schtasks(["/Delete", "/F", "/TN", FALLBACK_TASK], check=False)
         _remove_logon_entry()
         raise
 
 
 def remove_tasks() -> None:
     _run_schtasks(["/Delete", "/F", "/TN", MORNING_TASK], check=False)
+    _run_schtasks(["/Delete", "/F", "/TN", FALLBACK_TASK], check=False)
     _remove_logon_entry()

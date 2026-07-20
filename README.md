@@ -138,7 +138,7 @@ C:\Users\kain9\Documents\오늘의 교육동향\YYYY-MM-DD\
 
 자동 수신 규칙:
 
-- 평일 오전 9시 15분에 한 번 확인
+- 평일 오전 9시 15분에 확인하고, GitHub 지연에 대비해 오전 9시 45분에 한 번 더 확인
 - Windows 로그인 시 최근 14일 동안 받지 못한 평일 보고서 확인
 - 토·일요일에는 자동 확인 중단
 - GitHub 결과 파일 ID와 보고서 JSON의 날짜·고유번호·검증 상태 확인
@@ -159,7 +159,7 @@ C:\Users\kain9\Documents\오늘의 교육동향\YYYY-MM-DD\
 python local_downloader\build_exe.py
 ```
 
-빌드 결과인 `local_downloader\dist\오늘의 교육동향 자동 수신기.exe`를 열고 저장소, Actions 읽기 토큰, 저장 위치를 확인합니다. `연결 확인` 후 `설정 저장`을 누르면 실행 파일을 `%LOCALAPPDATA%\Programs\EduNewsAlertDownloader`에 복사하고 오전 9시 15분 예약 작업과 현재 사용자 로그인 시작 항목을 등록합니다. `지금 확인`은 요일과 시간에 관계없이 최근 보고서를 즉시 확인합니다.
+빌드 결과인 `local_downloader\dist\오늘의 교육동향 자동 수신기.exe`를 열고 저장소, Actions 읽기 토큰, 저장 위치를 확인합니다. `연결 확인` 후 `설정 저장`을 누르면 실행 파일을 `%LOCALAPPDATA%\Programs\EduNewsAlertDownloader`에 복사하고 오전 9시 15분·9시 45분 예약 작업과 현재 사용자 로그인 시작 항목을 등록합니다. `지금 확인`은 요일과 시간에 관계없이 최근 보고서를 즉시 확인합니다.
 ## 로컬 실행
 
 Python 3.11 이상에서 다음 명령으로 실행합니다. 로컬 PowerShell에도 `GEMINI_API_KEY` 환경변수가 있어야 합니다.
