@@ -74,8 +74,14 @@ def _remove_logon_entry() -> None:
         pass
 
 
-def _create_weekday_task(name: str, command: str, start_time: str) -> None:
-    _run_schtasks([
+def _create_weekday_task(
+    name: str,
+    command: str,
+    start_time: str,
+    repeat_minutes: int = 0,
+    duration: str = "",
+) -> None:
+    arguments = [
         "/Create", "/F",
         "/TN", name,
         "/TR", command,
@@ -83,15 +89,46 @@ def _create_weekday_task(name: str, command: str, start_time: str) -> None:
         "/D", "MON,TUE,WED,THU,FRI",
         "/ST", start_time,
         "/RL", "LIMITED",
-    ])
+    ]
+    if repeat_minutes:
+        arguments += ["/RI", str(repeat_minutes), "/DU", duration or "01:00"]
+    _run_schtasks(arguments)
+    _enable_wake_and_catchup(name)
+
+
+def _enable_wake_and_catchup(name: str) -> None:
+    """출근 후 부팅·절전 해제로 실행 시각을 놓쳐도 복귀 즉시 따라잡게 한다."""
+    script = (
+        f"$t = Get-ScheduledTask -TaskName '{name}';"
+        "$t.Settings.WakeToRun = $false;"
+        "$t.Settings.StartWhenAvailable = $true;"
+        "$t.Settings.DisallowStartIfOnBatteries = $false;"
+        "$t.Settings.StopIfGoingOnBatteries = $false;"
+        "Set-ScheduledTask -InputObject $t | Out-Null"
+    )
+    try:
+        subprocess.run(
+            ["powershell.exe", "-NoProfile", "-NonInteractive", "-Command", script],
+            check=False,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0),
+        )
+    except OSError:
+        # 부가 설정이므로 실패해도 예약 작업 등록 자체는 유지한다.
+        pass
 
 
 def install_tasks() -> None:
     scheduled_command = launch_command("--scheduled", install_copy=True)
     logon_command = launch_command("--startup-check", install_copy=True)
-    _create_weekday_task(MORNING_TASK, scheduled_command, "09:15")
+    # 배포는 텔레그램으로 이미 끝난 뒤이므로, 수신기는 출근 시각(09:00)에 맞춰
+    # 09:10부터 09:50까지 5분 간격으로 확인해 원본 파일을 폴더에 보관한다.
+    _create_weekday_task(MORNING_TASK, scheduled_command, "09:10", repeat_minutes=5, duration="00:40")
     try:
-        _create_weekday_task(FALLBACK_TASK, scheduled_command, "09:45")
+        _create_weekday_task(FALLBACK_TASK, scheduled_command, "10:00", repeat_minutes=10, duration="01:00")
         _install_logon_entry(logon_command)
     except Exception:
         _run_schtasks(["/Delete", "/F", "/TN", MORNING_TASK], check=False)

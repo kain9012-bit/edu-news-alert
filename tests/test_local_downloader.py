@@ -256,8 +256,10 @@ class LocalDownloaderTest(unittest.TestCase):
         self.assertEqual(run_tasks.call_count, 2)
         first_args = run_tasks.call_args_list[0].args[0]
         fallback_args = run_tasks.call_args_list[1].args[0]
-        self.assertIn("09:15", first_args)
-        self.assertIn("09:45", fallback_args)
+        self.assertIn("09:10", first_args)
+        self.assertIn("10:00", fallback_args)
+        self.assertIn("/RI", first_args)
+        self.assertIn("/RI", fallback_args)
         self.assertNotIn("ONLOGON", first_args + fallback_args)
         install_logon.assert_called_once_with('"receiver.exe" --startup-check')
 

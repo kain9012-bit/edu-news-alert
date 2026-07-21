@@ -9,7 +9,7 @@ from typing import Any
 
 import requests
 
-from crawler.collect import KST, briefing_window
+from crawler.collect import BRIEFING_HOUR_KST, KST, briefing_window
 
 
 def parse_args() -> argparse.Namespace:
@@ -30,16 +30,10 @@ def fetch_json(url: str) -> Any:
 
 def historical_source(selection: dict[str, Any], news: Any, report_date: date) -> dict[str, Any]:
     metadata = selection.get("metadata", {})
-    expected_end = datetime(
-        report_date.year,
-        report_date.month,
-        report_date.day,
-        8,
-        tzinfo=KST,
-    ).isoformat()
     if report_date.weekday() >= 5:
         raise ValueError("주말 날짜의 교육동향 보고서는 생성하지 않습니다.")
-    if metadata.get("windowEnd") != expected_end:
+    # 기준 시각이 바뀌어도 과거 보고서를 다시 만들 수 있도록 날짜만 대조한다.
+    if str(metadata.get("windowEnd", ""))[:10] != report_date.isoformat():
         raise ValueError(f"선별 결과의 기준일이 {report_date.isoformat()}과 다릅니다.")
     if metadata.get("validationStatus") != "PASS":
         raise ValueError("검증을 통과하지 않은 선별 결과입니다.")
@@ -79,7 +73,7 @@ def main() -> int:
             requested_date.year,
             requested_date.month,
             requested_date.day,
-            8,
+            BRIEFING_HOUR_KST,
             tzinfo=KST,
         ).isoformat()
         if requested_date
@@ -104,7 +98,13 @@ def main() -> int:
 
             source_end = source.get("windowEnd")
             selection_end = selection.get("metadata", {}).get("windowEnd")
-            if source_end == expected_end and selection_end == expected_end:
+            if requested_date:
+                # 과거 재생성은 기준 시각 변경 이전 자료도 허용하도록 날짜만 대조한다.
+                target = requested_date.isoformat()
+                ready = str(source_end)[:10] == target and str(selection_end)[:10] == target
+            else:
+                ready = source_end == expected_end and selection_end == expected_end
+            if ready:
                 output = Path(args.output)
                 output.mkdir(parents=True, exist_ok=True)
                 (output / "latest.json").write_text(
