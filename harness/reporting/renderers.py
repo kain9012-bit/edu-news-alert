@@ -155,10 +155,13 @@ footer p {{ margin:4px 0; }}
 .toolbar button:hover {{ opacity:.92; }}
 @media (max-width:700px) {{ .toolbar {{ top:10px; right:10px; }} .toolbar button {{ padding:8px 11px; font-size:12px; }} }}
 @media print {{
+  @page {{ margin:0; }}
   .toolbar {{ display:none !important; }}
   body {{ background:#fff; }} .report {{ width:100%; box-shadow:none; }}
-  article {{ break-before:page; border-bottom:0; padding-top:30px; }}
+  header {{ padding-top:24mm; }}
+  article {{ break-before:page; border-bottom:0; padding-top:18mm; padding-bottom:16mm; }}
   article:first-of-type {{ break-before:auto; }} nav a {{ text-decoration:none; }}
+  footer {{ padding-bottom:18mm; }}
 }}
 </style>
 </head>

@@ -130,6 +130,7 @@
     "name": "전남광주통합특별시교육청",
     "baseUrl": "https://www.jngjedu.kr",
     "listUrl": "https://www.jngjedu.kr/news/articleList.html?sc_section_code=S1N1&view_type=sm",
+    "rssUrl": "https://www.jngjedu.kr/rss/S1N1.xml",
     "include": [
       "articleView.html",
       "idxno="
@@ -140,16 +141,6 @@
       "photo",
       ".jpg",
       ".png"
-    ],
-    "paginate": true,
-    "maxPages": 25,
-    "excludeSectionLabels": [
-      "기관",
-      "학교",
-      "참여",
-      "전남광주교육TV",
-      "영상뉴스",
-      "책방"
     ],
     "enabled": true
   },
