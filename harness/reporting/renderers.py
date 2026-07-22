@@ -50,10 +50,25 @@ def _points_html(points: list[str], empty_text: str | None = None) -> str:
 def render_html(report: dict[str, Any]) -> str:
     metadata = report["metadata"]
     items = report.get("items", [])
-    toc = "".join(
-        f'<li><a href="#item-{index}"><span>{index}.</span> {html.escape(item.get("title", ""))}</a></li>'
-        for index, item in enumerate(items, 1)
+    own_items = report.get("ownOfficeItems", [])
+
+    toc_groups: list[str] = []
+    if items:
+        national_toc = "".join(
+            f'<li><a href="#item-{index}"><span>{index}.</span> {html.escape(item.get("title", ""))}</a></li>'
+            for index, item in enumerate(items, 1)
+        )
+        toc_groups.append(f'<div class="toc-group"><h3>전국 교육동향</h3><ol>{national_toc}</ol></div>')
+    own_toc = "".join(
+        f'<li><a href="#own-item-{index}"><span>전북 {index}.</span> {html.escape(item.get("title", ""))}</a></li>'
+        for index, item in enumerate(own_items, 1)
     )
+    own_toc_body = f"<ol>{own_toc}</ol>" if own_items else '<p class="empty-note">선정된 자료 없음</p>'
+    toc_groups.append(
+        '<div class="toc-group"><h3><a href="#own-office">전북교육청 보도자료</a></h3>'
+        f"{own_toc_body}</div>"
+    )
+
     articles: list[str] = []
     for index, item in enumerate(items, 1):
         url = html.escape(str(item.get("url", "")), quote=True)
@@ -104,7 +119,36 @@ def render_html(report: dict[str, Any]) -> str:
   {analysis_html}
 </article>'''
         )
-    empty_state = "" if items else '<p class="empty-report">검증을 통과한 교육동향이 없습니다.</p>'
+
+    own_articles: list[str] = []
+    for index, item in enumerate(own_items, 1):
+        url = html.escape(str(item.get("url", "")), quote=True)
+        source_link = (
+            f'<a class="source-link" href="{url}" target="_blank" rel="noopener noreferrer">원문 보도자료</a>'
+            if url
+            else ""
+        )
+        own_articles.append(
+            f'''<article class="own-office-article" id="own-item-{index}">
+  <div class="article-number">전북 {index:02d}</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청 · {html.escape(str(item.get("category", "")))}</p>
+    <h2>{html.escape(str(item.get("title", "")))}</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 {int(item.get('importance', 1))}점">{importance_stars(item.get("importance"))}</span>
+      <span>{html.escape(str(item.get("date", "")))}</span>
+      {source_link}
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    {_points_html(item.get("summaryPoints", []))}
+  </section>
+</article>'''
+        )
+
+    empty_state = "" if items else '<p class="empty-report">검증을 통과한 전국 교육동향이 없습니다.</p>'
+    own_empty_state = "" if own_items else '<p class="empty-report own-empty">해당 기간에 선정된 전북교육청 본청 보도자료가 없습니다.</p>'
     omitted_count = int(metadata.get("omittedCount", 0))
     review_count = int(metadata.get("reviewCount", 0))
     notes: list[str] = []
@@ -143,6 +187,9 @@ h1 {{ margin:0; font-family:"Nanum Myeongjo","Batang",serif; font-size:42px; lin
 .summary-strip strong {{ color:var(--ink); margin-left:5px; }}
 nav {{ padding:34px 64px 44px; border-bottom:1px solid var(--line); }}
 nav h2 {{ margin:0 0 15px; font-size:18px; }}
+.toc-group + .toc-group {{ margin-top:24px; padding-top:20px; border-top:1px solid var(--line); }}
+nav h3 {{ margin:0 0 10px; font-size:15px; }}
+nav h3 a {{ text-decoration:none; }}
 nav ol {{ columns:2; column-gap:40px; margin:0; padding:0; list-style:none; }}
 nav li {{ break-inside:avoid; margin:0 0 10px; font-size:14px; line-height:1.45; }}
 nav a {{ text-decoration:none; }}
@@ -168,10 +215,17 @@ li {{ margin:7px 0; padding-left:3px; }}
 .empty-note {{ margin:0; color:var(--muted); }}
 .empty-report {{ padding:70px 64px; text-align:center; color:var(--muted); }}
 .omission-note {{ margin:0; padding:18px 64px; background:var(--amber-soft); color:#664408; font-size:13px; }}
+.own-office-section {{ border-top:12px solid var(--page); scroll-margin-top:12px; }}
+.own-office-heading {{ padding:42px 64px 30px; background:var(--teal-soft); border-bottom:1px solid #c8e5de; }}
+.own-office-heading .kicker {{ margin-bottom:4px; }}
+.own-office-heading h2 {{ margin:0; font-size:28px; line-height:1.4; }}
+.own-office-heading p:last-child {{ margin:8px 0 0; color:var(--muted); font-size:14px; }}
+.own-office-article {{ border-bottom:1px solid var(--line); }}
+.own-empty {{ padding-top:48px; padding-bottom:48px; }}
 footer {{ padding:34px 64px 50px; color:var(--muted); font-size:12px; }}
 footer p {{ margin:4px 0; }}
 @media (max-width:700px) {{
-  header, nav, article, footer {{ padding-left:24px; padding-right:24px; }}
+  header, nav, article, footer, .own-office-heading {{ padding-left:24px; padding-right:24px; }}
   h1 {{ font-size:34px; }}
   .summary-strip {{ padding-left:24px; padding-right:24px; gap:12px; flex-wrap:wrap; }}
   nav ol {{ columns:1; }}
@@ -191,6 +245,8 @@ footer p {{ margin:4px 0; }}
   header {{ padding-top:24mm; }}
   article {{ break-before:page; border-bottom:0; padding-top:18mm; padding-bottom:16mm; }}
   article:first-of-type {{ break-before:auto; }} nav a {{ text-decoration:none; }}
+  .own-office-section {{ break-before:page; border-top:0; }}
+  .own-office-section article {{ break-before:auto; }}
   footer {{ padding-bottom:18mm; }}
 }}
 </style>
@@ -208,17 +264,28 @@ footer p {{ margin:4px 0; }}
   <p class="period">분석 대상: {html.escape(period_label(metadata))}</p>
 </header>
 <div class="summary-strip">
-  <span>교육동향<strong>{len(items)}건</strong></span>
+  <span>전국 교육동향<strong>{len(items)}건</strong></span>
+  <span>전북 보도자료<strong>{len(own_items)}건</strong></span>
   <span>작성<strong>{html.escape(str(metadata.get("analysisModel", "")))}</strong></span>
   <span>검증<strong>{html.escape(str(metadata.get("validationStatus", report.get('validation', {}).get('status', ''))))}</strong></span>
 </div>
 {omission_note}
-<nav aria-label="목차"><h2>목차</h2><ol>{toc}</ol></nav>
+<nav aria-label="목차"><h2>목차</h2>{''.join(toc_groups)}</nav>
 {empty_state}
 {''.join(articles)}
+<section class="own-office-section" id="own-office">
+  <div class="own-office-heading">
+    <p class="kicker">우리 교육청 주요 발표</p>
+    <h2>전북교육청 보도자료</h2>
+    <p>같은 기간 전북특별자치도교육청 본청에서 발표한 주요 보도자료입니다.</p>
+  </div>
+  {own_empty_state}
+  {''.join(own_articles)}
+</section>
 <footer>
   <p>이 문서는 공개 보도자료를 AI로 요약·분석한 내부 검토 자료입니다.</p>
-  <p>적용 검토안은 확정된 정책이나 업무 지시가 아니며, 원문은 각 항목의 링크에서 확인할 수 있습니다.</p>
+  <p>전북교육청 보도자료는 내용 요약만 제공하며, 원문은 각 항목의 링크에서 확인할 수 있습니다.</p>
+  <p>적용 검토안은 확정된 정책이나 업무 지시가 아닙니다.</p>
 </footer>
 </main>
 </body>
@@ -234,17 +301,30 @@ def write_hwpx(report: dict[str, Any], path: Path) -> dict[str, Any]:
 
     metadata = report["metadata"]
     items = report.get("items", [])
+    own_items = report.get("ownOfficeItems", [])
     children: list[Any] = [
         Heading(level=1, text=str(metadata.get("title", "오늘의 교육동향"))),
         Paragraph(text=report_date_label(metadata.get("windowEnd")), align="center", style="emphasis"),
         Paragraph(text=f"분석 대상: {period_label(metadata)}", align="center"),
-        Paragraph(text=f"교육동향 {len(items)}건 · AI 검증 {report.get('validation', {}).get('status', '')}", align="center"),
+        Paragraph(
+            text=(
+                f"전국 교육동향 {len(items)}건 · 전북 보도자료 {len(own_items)}건 · "
+                f"AI 검증 {report.get('validation', {}).get('status', '')}"
+            ),
+            align="center",
+        ),
         Heading(level=2, text="목차"),
+        Heading(level=2, text="전국 교육동향"),
     ]
     if items:
         children.append(Bullet(items=tuple(f"{index}. {item.get('title', '')}" for index, item in enumerate(items, 1)), style="square"))
     else:
-        children.append(Paragraph(text="검증을 통과한 교육동향이 없습니다."))
+        children.append(Paragraph(text="검증을 통과한 전국 교육동향이 없습니다."))
+    children.append(Heading(level=2, text="전북교육청 보도자료"))
+    if own_items:
+        children.append(Bullet(items=tuple(f"{index}. {item.get('title', '')}" for index, item in enumerate(own_items, 1)), style="square"))
+    else:
+        children.append(Paragraph(text="선정된 자료가 없습니다."))
 
     for index, item in enumerate(items, 1):
         review_suffix = "  (검토 필요)" if item.get("reviewRequired") else ""
@@ -274,6 +354,31 @@ def write_hwpx(report: dict[str, Any], path: Path) -> dict[str, Any]:
                 children.append(Bullet(items=tuple(application), style="note"))
             else:
                 children.append(Paragraph(text="직접 적용 검토사항 없음"))
+        if item.get("url"):
+            children.append(Paragraph(text=f"원문: {item['url']}"))
+
+    children.extend(
+        [
+            PageBreak(),
+            Heading(level=1, text="전북교육청 보도자료"),
+            Paragraph(
+                text="같은 기간 전북특별자치도교육청 본청에서 발표한 주요 보도자료입니다.",
+                style="emphasis",
+            ),
+        ]
+    )
+    if not own_items:
+        children.append(Paragraph(text="해당 기간에 선정된 전북교육청 본청 보도자료가 없습니다."))
+    for index, item in enumerate(own_items, 1):
+        children.extend(
+            [
+                Heading(level=2, text=f"{index}. {item.get('title', '')}"),
+                Paragraph(text=f"{item.get('category', '')} · {item.get('date', '')}", style="emphasis"),
+                Paragraph(text=f"중요도  {importance_stars(item.get('importance'))}"),
+                Heading(level=2, text="내용 요약"),
+                Bullet(items=tuple(item.get("summaryPoints", [])), style="square"),
+            ]
+        )
         if item.get("url"):
             children.append(Paragraph(text=f"원문: {item['url']}"))
 

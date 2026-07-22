@@ -164,3 +164,17 @@ def validate_report_item(item: dict[str, Any], source_body: str) -> list[dict[st
                         "message": f"원문에서 확인되지 않는 수치가 있습니다: {sorted(invented_numbers)}",
                     })
     return issues
+
+
+def validate_summary_item(item: dict[str, Any], source_body: str) -> list[dict[str, Any]]:
+    """Validate a summary-only item without requiring analysis sections."""
+    summary_only = {
+        **item,
+        "analysisPoints": ["요약 전용 검증 자리표시자"],
+        "applicationReviewPoints": [],
+    }
+    return [
+        issue
+        for issue in validate_report_item(summary_only, source_body)
+        if issue.get("field") == "summaryPoints"
+    ]
