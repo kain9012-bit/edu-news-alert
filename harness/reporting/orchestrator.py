@@ -103,11 +103,17 @@ class DailyReportHarness:
             }
             for item in candidates
         ]
+        review_threshold = int(self.config.get("reviewImportanceThreshold", 4))
+        early_reviews: list[dict[str, Any]] = []
         fact_result = self._step("extract_facts", lambda: self.fact_agent.run(fact_input))
         fact_map = {item["newsId"]: item for item in fact_result["items"]}
         for item in candidates:
             if item["newsId"] not in fact_map:
-                omitted.append(self._omitted(item, "FACT_EXTRACTION_FAILED", "사실정리 결과가 JSON 계약을 통과하지 못했습니다."))
+                reason = "사실정리 결과가 JSON 계약을 통과하지 못했습니다."
+                if self._keep_for_review(item, review_threshold):
+                    early_reviews.append(self._review_from_candidate(item, None, reason))
+                else:
+                    omitted.append(self._omitted(item, "FACT_EXTRACTION_FAILED", reason))
 
         analysis_input = [
             {
@@ -126,7 +132,11 @@ class DailyReportHarness:
         analysis_map = {item["newsId"]: item for item in analysis_result["items"]}
         for item in candidates:
             if item["newsId"] in fact_map and item["newsId"] not in analysis_map:
-                omitted.append(self._omitted(item, "ANALYSIS_FAILED", "교육동향 분석 결과가 JSON 계약을 통과하지 못했습니다."))
+                reason = "교육동향 분석 결과가 JSON 계약을 통과하지 못했습니다."
+                if self._keep_for_review(item, review_threshold):
+                    early_reviews.append(self._review_from_candidate(item, fact_map[item["newsId"]], reason))
+                else:
+                    omitted.append(self._omitted(item, "ANALYSIS_FAILED", reason))
 
         draft_items = [
             self._draft_item(item, fact_map[item["newsId"]], analysis_map[item["newsId"]])
@@ -153,17 +163,28 @@ class DailyReportHarness:
         verification_map = {item["newsId"]: item for item in verification_result["items"]}
 
         published: list[dict[str, Any]] = []
+        review_count = len(early_reviews)
         for item in draft_items:
             news_id = item["newsId"]
             verification = verification_map.get(news_id)
             local_issues = validate_report_item(item, candidate_map[news_id]["body"])
             if verification is None:
-                omitted.append(self._omitted(item, "VERIFICATION_FAILED", "검증 결과가 JSON 계약을 통과하지 못했습니다."))
+                reason = "검증 결과가 JSON 계약을 통과하지 못했습니다."
+                if self._keep_for_review(item, review_threshold):
+                    published.append(self._review_item(item, reason))
+                    review_count += 1
+                else:
+                    omitted.append(self._omitted(item, "VERIFICATION_FAILED", reason))
                 continue
             combined_issues = [*local_issues, *verification.get("issues", [])]
             if verification.get("status") != "PASS" or combined_issues:
                 message = "; ".join(str(issue.get("message", "검증 필요")) for issue in combined_issues[:5])
-                omitted.append(self._omitted(item, "REPORT_REVISE", message or "AI 근거 검증에서 수정을 요구했습니다."))
+                message = message or "AI 근거 검증에서 수정을 요구했습니다."
+                if self._keep_for_review(item, review_threshold):
+                    published.append(self._review_item(item, message))
+                    review_count += 1
+                else:
+                    omitted.append(self._omitted(item, "REPORT_REVISE", message))
                 continue
             item["validation"] = {
                 "status": "PASS",
@@ -171,6 +192,9 @@ class DailyReportHarness:
                 "confidence": verification.get("confidence", 0),
             }
             published.append(item)
+
+        # 사실정리·분석 단계에서 걸린 중요 항목도 검토 상태로 보고서에 남긴다.
+        published.extend(early_reviews)
 
         metadata = self._metadata(
             selection=selection,
@@ -182,6 +206,7 @@ class DailyReportHarness:
             quality_excluded_count=quality_excluded_count,
         )
         metadata["status"] = "completed" if not omitted else "completed_with_omissions"
+        metadata["reviewCount"] = review_count
         metadata["usage"] = self._usage_summary()
         metadata["estimatedCostUsd"] = self._estimated_cost(metadata["usage"])
         return {
@@ -193,7 +218,7 @@ class DailyReportHarness:
                 "issues": [],
                 "checks": {
                     "ownOfficeExcludedBeforeAi": True,
-                    "publishedItemsVerified": all(item["validation"]["status"] == "PASS" for item in published),
+                    "publishedItemsVerified": all(item["validation"]["status"] in ("PASS", "REVIEW") for item in published),
                     "sourceWindowMatches": True,
                 },
             },
@@ -216,6 +241,51 @@ class DailyReportHarness:
         for key in ("windowStart", "windowEnd"):
             if metadata.get(key) != source_payload.get(key):
                 raise ReportInputError(f"선별 결과와 수집 원문의 {key}가 다릅니다.")
+
+    @staticmethod
+    def _keep_for_review(item: dict[str, Any], threshold: int) -> bool:
+        """중요도가 높은 항목은 검증에서 걸려도 버리지 않고 검토 상태로 남긴다."""
+        try:
+            importance = int(item.get("importance", 0))
+        except (TypeError, ValueError):
+            importance = 0
+        return importance >= threshold
+
+    @staticmethod
+    def _review_item(item: dict[str, Any], reason: str) -> dict[str, Any]:
+        """AI 분석은 보류하되 원문 요약과 링크는 남겨 중요한 자료가 사라지지 않게 한다."""
+        reviewed = dict(item)
+        reviewed["analysisPoints"] = []
+        reviewed["applicationReviewPoints"] = []
+        reviewed["reviewRequired"] = True
+        reviewed["reviewReason"] = reason
+        reviewed["validation"] = {"status": "REVIEW", "issues": [], "confidence": 0}
+        return reviewed
+
+    @staticmethod
+    def _review_from_candidate(
+        candidate: dict[str, Any],
+        facts: dict[str, Any] | None,
+        reason: str,
+    ) -> dict[str, Any]:
+        """사실정리·분석 단계에서 걸린 중요 항목을 원문 요약만으로 검토 상태로 남긴다."""
+        return {
+            "newsId": candidate.get("newsId", ""),
+            "sourceId": candidate.get("sourceId", ""),
+            "source": candidate.get("source", ""),
+            "title": candidate.get("title", ""),
+            "date": candidate.get("date", ""),
+            "url": candidate.get("url", ""),
+            "category": candidate.get("category", "기타"),
+            "importance": candidate.get("importance", 1),
+            "selectionReason": candidate.get("selectionReason", ""),
+            "summaryPoints": list(facts.get("summaryPoints", [])) if facts else [],
+            "analysisPoints": [],
+            "applicationReviewPoints": [],
+            "reviewRequired": True,
+            "reviewReason": reason,
+            "validation": {"status": "REVIEW", "issues": [], "confidence": 0},
+        }
 
     def _is_own_office(self, item: dict[str, Any]) -> bool:
         source_id = str(item.get("sourceId", ""))
