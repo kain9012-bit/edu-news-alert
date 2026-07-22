@@ -1,19 +1,19 @@
 {
   "metadata": {
-    "runId": "20260722T215306Z-7c2a624d",
-    "status": "completed",
+    "runId": "20260722T221106Z-2a6ba6e1",
+    "status": "completed_with_fallback",
     "provider": "gemini",
     "model": "gemini-3.1-flash-lite",
-    "generatedAt": "2026-07-22T21:53:40+00:00",
+    "generatedAt": "2026-07-22T22:11:47+00:00",
     "windowStart": "2026-07-22T06:00:00+09:00",
     "windowEnd": "2026-07-23T06:00:00+09:00",
     "windowHours": 24,
-    "inputCount": 64,
-    "candidateCount": 64,
-    "relevantCount": 11,
-    "filteredOutCount": 53,
-    "processedCount": 11,
-    "relevanceFallbackCount": 0,
+    "inputCount": 68,
+    "candidateCount": 68,
+    "relevantCount": 17,
+    "filteredOutCount": 51,
+    "processedCount": 17,
+    "relevanceFallbackCount": 6,
     "deterministicGuardCount": 11,
     "educationSupportOfficeGuardCount": 11,
     "institutionGuardCount": 0,
@@ -21,11 +21,11 @@
     "classificationFallbackCount": 0,
     "validationStatus": "PASS",
     "usage": {
-      "requests": 13,
-      "promptTokenCount": 36158,
-      "candidatesTokenCount": 9152,
+      "requests": 16,
+      "promptTokenCount": 45303,
+      "candidatesTokenCount": 11805,
       "thoughtsTokenCount": 0,
-      "totalTokenCount": 45310
+      "totalTokenCount": 57108
     }
   },
   "categorySummary": [
@@ -35,22 +35,50 @@
     },
     {
       "category": "정책·행정",
+      "count": 4
+    },
+    {
+      "category": "교육과정·수업",
       "count": 3
     },
     {
-      "category": "기타",
+      "category": "교원·인사",
+      "count": 3
+    },
+    {
+      "category": "지역협력·행사",
       "count": 1
     },
     {
       "category": "디지털·AI",
       "count": 1
-    },
-    {
-      "category": "교원·인사",
-      "count": 1
     }
   ],
   "selectedItems": [
+    {
+      "newsId": "gyeonggi-1c70d26ab755e712",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "경기도교육청, 지자체·지역사회와 손잡고 방학 돌봄 빈틈 메운다",
+      "date": "2026-07-23",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2358614&bbsId=1922&mi=10102",
+      "category": "학생지원·복지",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "교육부 주관 우수모델 선정 및 지역 맞춤형 돌봄 모델의 확대 운영 사례로 타 교육청의 벤치마킹 가치가 있음.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "초등돌봄",
+        "방학돌봄",
+        "지역협력",
+        "교육우수모델"
+      ],
+      "summary": "경기도교육청은 교육부 주관 '2026 방학 중 초등돌봄·교육 우수모델 지원 사업'에 도내 3개 지역이 선정되어 지역 맞춤형 돌봄 체계를 운영한다.",
+      "selectionReason": "교육부 주관 사업에 선정되어 지역사회와 협력한 방학 중 돌봄 모델을 구축하는 정책적 성격의 자료입니다.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.9,
+      "classificationConfidence": 0.9
+    },
     {
       "newsId": "incheon-a20a4174bc95d0a6",
       "sourceId": "incheon",
@@ -61,19 +89,19 @@
       "category": "학생지원·복지",
       "changeLevel": "routine_operation",
       "importance": 2,
-      "importanceReason": "방학 중 방과후·돌봄교실 운영은 매년 반복되는 통상적인 교육 행정 업무이다.",
+      "importanceReason": "방학 중 돌봄교실 운영은 매년 반복되는 통상적인 교육 행정 업무임.",
       "importanceAdjusted": false,
       "keywords": [
+        "여름방학",
         "초등돌봄",
         "방과후학교",
-        "여름방학",
         "지역연계"
       ],
-      "summary": "인천광역시교육청이 여름방학 중 초등학생을 대상으로 지역사회와 연계한 방과후·돌봄교실을 운영한다.",
-      "selectionReason": "방학 중 돌봄 공백 해소를 위한 교육청 차원의 종합적인 방과후·돌봄 운영 계획 및 지역 연계 지원 체계를 다루고 있어 정책적 참고 가치가 있음.",
+      "summary": "인천광역시교육청은 여름방학 기간 동안 관내 전체 초등학교에서 돌봄 공백 해소를 위한 방과후·돌봄교실을 운영한다.",
+      "selectionReason": "교육청 차원에서 전체 초등학교를 대상으로 방학 중 돌봄 공백 해소를 위해 추진하는 교육 정책입니다.",
       "scope": "provincial",
       "relevanceConfidence": 0.9,
-      "classificationConfidence": 0.9
+      "classificationConfidence": 0.95
     },
     {
       "newsId": "incheon-9ddd149b00a06fe1",
@@ -82,19 +110,162 @@
       "title": "인천광역시교육청, 행정구역 개편 맞춰 ‘지역교육자원목록’ 전면 수정 배포",
       "date": "2026-07-22",
       "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3379168&bbsId=1519&mi=11620",
+      "category": "교육과정·수업",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "행정구역 개편에 따른 지역 교육 자원 목록의 전면 수정은 지역 연계 교육과정 운영의 실질적 기반을 재정비하는 조치임.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "지역교육자원",
+        "행정구역개편",
+        "지역연계교육과정",
+        "에듀아이"
+      ],
+      "summary": "인천광역시교육청은 행정구역 개편에 대응하여 학교 현장의 지역 연계 교육과정 활성화를 위한 '지역교육자원목록'을 전면 수정 배포했다.",
+      "selectionReason": "행정구역 개편에 따른 교육과정 운영 지원을 위해 지역교육자원목록을 전면 개편하여 학교 현장에 배포하는 행정적 지원 체계 변화임.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.9,
+      "classificationConfidence": 0.9
+    },
+    {
+      "newsId": "gyeongnam-8cde175bf03acb17",
+      "sourceId": "gyeongnam",
+      "source": "경상남도교육청",
+      "title": "교실의 민주주의, 참여와 실천으로 넓히다 경남교육청, 2026년 경남학생의회 정례회 개최",
+      "date": "2026-07-22",
+      "url": "https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&q_bbsDocNo=20260722161425977",
       "category": "정책·행정",
       "changeLevel": "routine_operation",
       "importance": 2,
-      "importanceReason": "행정구역 개편에 따른 기존 자원 목록의 현행화 작업으로 통상적인 행정 조치에 해당한다.",
+      "importanceReason": "학생의회 정례회 개최는 학생자치 활성화를 위한 연례적인 행사임.",
       "importanceAdjusted": false,
       "keywords": [
-        "행정구역개편",
-        "지역교육자원",
-        "교육과정",
-        "지역연계"
+        "학생의회",
+        "학교자치",
+        "민주시민교육"
       ],
-      "summary": "인천광역시교육청이 행정구역 개편에 대응하여 학교 현장에서 활용할 수 있는 지역교육자원목록을 수정 배포한다.",
-      "selectionReason": "행정구역 개편에 따른 교육과정 운영 지원을 위해 지역교육자원목록을 전면 수정하고 플랫폼을 통해 배포하는 등 교육행정 체계의 실질적 변화를 포함함.",
+      "summary": "경상남도교육청은 도내 학생 대표들이 참여하여 주요 현안을 논의하는 '2026년 경남학생의회 정례회'를 개최했다.",
+      "selectionReason": "정책 또는 다수 학교에 영향을 줄 가능성이 있어 교육동향 분석 대상으로 유지했다.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.25,
+      "classificationConfidence": 0.95
+    },
+    {
+      "newsId": "gyeongbuk-9be9acacaf7bc143",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[행복교육지원과]경북교육청,'2026 경상북도교육청 세계시민교육 청소년 국제포럼' 개최",
+      "date": "2026-07-22",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1631602&bbsId=4744&mi=17643&searchCate=761",
+      "category": "지역협력·행사",
+      "changeLevel": "routine_operation",
+      "importance": 2,
+      "importanceReason": "국제포럼 개최는 교육청의 연례적인 국제교류 및 세계시민교육 행사임.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "세계시민교육",
+        "국제포럼",
+        "국제교류",
+        "지속가능발전목표"
+      ],
+      "summary": "경상북도교육청은 5개국 청소년이 참여하여 세계시민 역량을 함양하는 '2026 경상북도교육청 세계시민교육 청소년 국제포럼'을 개최했다.",
+      "selectionReason": "정책 또는 다수 학교에 영향을 줄 가능성이 있어 교육동향 분석 대상으로 유지했다.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.25,
+      "classificationConfidence": 0.95
+    },
+    {
+      "newsId": "gyeongbuk-5b30652fb45e6e89",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[중등교육과]경북교육청, 학교 간 프리미엄 공동교육과정 '배움잇다' 운영",
+      "date": "2026-07-22",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1631604&bbsId=4744&mi=17643&searchCate=761",
+      "category": "교육과정·수업",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "고교학점제와 연계하여 전문가를 활용한 프리미엄 공동교육과정을 운영하는 것은 농어촌 교육격차 해소를 위한 의미 있는 사업 개선임.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "고교학점제",
+        "공동교육과정",
+        "배움잇다",
+        "농어촌교육"
+      ],
+      "summary": "경상북도교육청은 농어촌 지역 학생의 과목 선택권 확대와 교육격차 해소를 위해 전문가 연계 공동교육과정 '배움잇다'를 운영한다.",
+      "selectionReason": "정책 또는 다수 학교에 영향을 줄 가능성이 있어 교육동향 분석 대상으로 유지했다.",
+      "scope": "institution",
+      "relevanceConfidence": 0.25,
+      "classificationConfidence": 0.9
+    },
+    {
+      "newsId": "gyeongbuk-49978ff06fc7af1f",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[미래교육정보과]경북교육청, 숲․산림․바다에서 배우는 '탄소중립 교원 연수' 운영",
+      "date": "2026-07-22",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1631605&bbsId=4744&mi=17643&searchCate=761",
+      "category": "교원·인사",
+      "changeLevel": "routine_operation",
+      "importance": 2,
+      "importanceReason": "교원의 기후위기 대응 역량 강화를 위한 통상적인 직무 연수 운영 사례이다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "탄소중립",
+        "교원연수",
+        "기후위기",
+        "생태전환교육"
+      ],
+      "summary": "경북교육청이 도내 교원을 대상으로 기후위기 대응 및 탄소중립 실천 역량 강화를 위한 직무 연수를 운영한다.",
+      "selectionReason": "정책 또는 다수 학교에 영향을 줄 가능성이 있어 교육동향 분석 대상으로 유지했다.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.25,
+      "classificationConfidence": 0.95
+    },
+    {
+      "newsId": "gyeongbuk-bf439eb741c0b73f",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[학생생활과]경북교육청, 마음건강 지원 업무 담당자 트라우마 관리 연수 운영",
+      "date": "2026-07-22",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1631606&bbsId=4744&mi=17643&searchCate=761",
+      "category": "교원·인사",
+      "changeLevel": "routine_operation",
+      "importance": 2,
+      "importanceReason": "학교 위기사안 담당자의 정서적 소진 예방을 위한 연례적인 치유 프로그램 운영이다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "마음건강",
+        "트라우마",
+        "교원연수",
+        "위기대응"
+      ],
+      "summary": "경북교육청이 학교 위기사안 업무 담당자의 심리적 회복과 정서적 안정을 돕기 위한 트라우마 관리 연수를 실시했다.",
+      "selectionReason": "정책 또는 다수 학교에 영향을 줄 가능성이 있어 교육동향 분석 대상으로 유지했다.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.25,
+      "classificationConfidence": 0.95
+    },
+    {
+      "newsId": "daejeon-b402f853ee938cd8",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "대전시교육청, 학생평가 전문가 기본과정 연수 운영(중등교육과)",
+      "date": "2026-07-22",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3359109&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "category": "교육과정·수업",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "학생평가 전문가 양성 과정을 통해 단위학교의 평가 역량을 강화하려는 신규 사업이다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "학생평가",
+        "성취평가제",
+        "과정중심평가",
+        "교원역량"
+      ],
+      "summary": "대전시교육청이 고등학교 학생평가의 공정성과 신뢰도를 높이기 위해 학생평가 전문가 기본과정 연수를 운영한다.",
+      "selectionReason": "교육청 차원에서 교원의 평가 역량 강화 및 성취평가제 안착을 위해 추진하는 전문가 양성 정책임.",
       "scope": "provincial",
       "relevanceConfidence": 0.9,
       "classificationConfidence": 0.9
@@ -109,18 +280,18 @@
       "category": "정책·행정",
       "changeLevel": "policy_change",
       "importance": 4,
-      "importanceReason": "교육감이 새로운 교육 비전과 '기본교육'이라는 정책 체계를 제시하여 향후 서울 교육 정책의 방향성을 결정한다.",
+      "importanceReason": "교육청의 향후 교육 방향과 정책 체계를 재정립하는 중대한 비전 선포이다.",
       "importanceAdjusted": false,
       "keywords": [
-        "서울교육비전",
         "기본교육",
-        "학습안전망",
-        "교육복지"
+        "서울교육",
+        "교육비전",
+        "학습안전망"
       ],
-      "summary": "서울특별시교육청이 '모두를 위한 기본교육, 행복한 협력교육'을 2기 비전으로 선포하고 생애 전 단계에 걸친 기본교육 체계를 구축한다.",
-      "selectionReason": "교육청 차원의 새로운 교육 비전 선포 및 기본교육 정책 방향을 제시하는 주요 정책 자료임.",
+      "summary": "서울시교육청이 '모두를 위한 기본교육'을 새로운 교육 기준으로 제시하며 2기 교육 비전을 선포했다.",
+      "selectionReason": "교육감의 새로운 교육 비전과 정책 방향을 제시하는 자료로, 향후 교육청의 주요 정책 추진 근거가 되므로 KEEP합니다.",
       "scope": "provincial",
-      "relevanceConfidence": 1.0,
+      "relevanceConfidence": 0.95,
       "classificationConfidence": 0.95
     },
     {
@@ -133,19 +304,19 @@
       "category": "학생지원·복지",
       "changeLevel": "project_change",
       "importance": 3,
-      "importanceReason": "기존 시범사업의 운영 기관을 4배 확대하여 돌봄 공백 해소를 위한 실질적인 사업 규모를 확장하였다.",
+      "importanceReason": "기존 시범사업의 규모를 4배 확대하여 돌봄 체계를 실질적으로 개선하는 사업이다.",
       "importanceAdjusted": false,
       "keywords": [
         "유아돌봄",
         "틈새돌봄",
         "거점형돌봄",
-        "공휴일돌봄"
+        "공교육"
       ],
-      "summary": "서울특별시교육청이 토요일·공휴일 유아 돌봄 공백 해소를 위해 거점형 틈새돌봄 시범기관을 8개소로 확대 운영한다.",
-      "selectionReason": "교육청 차원에서 추진하는 유아 돌봄 정책의 확대 및 운영 체계 강화에 관한 정책 자료임.",
+      "summary": "서울시교육청이 토요일·공휴일 유아 돌봄 공백 해소를 위해 거점형 틈새돌봄 시범기관을 8개소로 확대 운영한다.",
+      "selectionReason": "교육청 차원에서 추진하는 유아 돌봄 정책의 확대 및 운영 체계 강화에 관한 내용으로 정책적 파급력이 있어 KEEP합니다.",
       "scope": "provincial",
-      "relevanceConfidence": 1.0,
-      "classificationConfidence": 0.9
+      "relevanceConfidence": 0.95,
+      "classificationConfidence": 0.95
     },
     {
       "newsId": "moe-51c733583f77f1d8",
@@ -154,21 +325,21 @@
       "title": "교육부·국제한국어교육재단, 재미동포 유아·청소년 한국어교육 두텁게 지원한다",
       "date": "2026-07-22",
       "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=106749&lev=0&m=020402&s=moe",
-      "category": "기타",
+      "category": "정책·행정",
       "changeLevel": "routine_operation",
       "importance": 2,
-      "importanceReason": "재외동포 대상 교육 지원 및 교재 보급은 교육부의 지속적인 연례 지원 사업이다.",
+      "importanceReason": "재외동포 대상 한국어 교육 지원이라는 기존 사업의 지속적인 집행이다.",
       "importanceAdjusted": false,
       "keywords": [
-        "재외동포",
         "한국어교육",
+        "재외동포",
         "한글학교",
-        "교육지원"
+        "교육부"
       ],
-      "summary": "교육부와 국제한국어교육재단이 재미동포 유아·청소년을 위한 한국어 교재 보급 등 교육 지원 계획을 발표한다.",
-      "selectionReason": "재외동포 대상 한국어 교육 지원이라는 국가 차원의 교육 지원 사업 및 정책적 방향을 담고 있습니다.",
+      "summary": "교육부가 재미동포 유아 및 청소년의 한국어 교육을 지원하기 위해 한글학교에 교재를 보급하고 학술대회에 참석한다.",
+      "selectionReason": "교육부 차원에서 재외동포 대상 한국어 교육 지원 계획을 발표하는 정책적 성격의 자료입니다.",
       "scope": "national",
-      "relevanceConfidence": 0.9,
+      "relevanceConfidence": 0.95,
       "classificationConfidence": 0.9
     },
     {
@@ -181,16 +352,16 @@
       "category": "학생지원·복지",
       "changeLevel": "routine_operation",
       "importance": 2,
-      "importanceReason": "방학 중 초등돌봄 운영은 매년 시행되는 연례적인 정책 집행이다.",
+      "importanceReason": "방학 중 초등돌봄 운영은 기존 정책의 연례적인 집행 및 운영 현황 보고에 해당한다.",
       "importanceAdjusted": false,
       "keywords": [
         "초등돌봄",
-        "방학중운영",
-        "방과후학교",
-        "학부모부담경감"
+        "방학",
+        "온동네초등돌봄",
+        "방과후학교"
       ],
-      "summary": "교육부가 여름방학 중 초등돌봄 및 방과후 교육 참여 학생이 전년 대비 증가함에 따라 돌봄 지원을 내실 있게 운영한다.",
-      "selectionReason": "방학 중 초등돌봄 및 교육 지원 확대는 국가 차원의 주요 교육 복지 정책으로 지속적인 운영 현황을 포함합니다.",
+      "summary": "교육부는 2026년 여름방학 동안 초등돌봄 및 교육 참여 학생이 전년 대비 증가함에 따라 돌봄 공백 최소화를 위해 내실 있는 운영을 지원한다.",
+      "selectionReason": "방학 중 초등돌봄 및 교육 지원 확대는 교육부의 주요 정책 사업으로 전국적으로 적용되는 사안입니다.",
       "scope": "national",
       "relevanceConfidence": 0.95,
       "classificationConfidence": 0.9
@@ -205,7 +376,7 @@
       "category": "디지털·AI",
       "changeLevel": "routine_operation",
       "importance": 2,
-      "importanceReason": "데이터기반행정 활성화를 위한 실무자 대상 워크숍 개최라는 통상적인 역량 강화 활동이다.",
+      "importanceReason": "데이터기반행정 활성화를 위한 실무자 대상 워크숍 개최로, 통상적인 역량 강화 교육에 해당한다.",
       "importanceAdjusted": false,
       "keywords": [
         "인공지능",
@@ -213,10 +384,10 @@
         "워크숍",
         "행정혁신"
       ],
-      "summary": "제주특별자치도교육청이 데이터기반행정 활성화와 인공지능 인재 양성을 위해 실무 담당자 대상 워크숍을 개최했다.",
-      "selectionReason": "교육청 차원에서 범정부 AI 대전환 정책에 발맞추어 데이터 기반 행정 및 인재 양성 체계를 구축하려는 정책적 움직임임.",
+      "summary": "제주특별자치도교육청은 데이터기반행정 실무담당자를 대상으로 인공지능 활용 역량 강화 및 행정 혁신을 위한 워크숍을 개최했다.",
+      "selectionReason": "도교육청 차원에서 데이터기반행정 활성화 및 AI 인재 양성 정책을 추진하기 위한 실무 역량 강화 활동임.",
       "scope": "provincial",
-      "relevanceConfidence": 0.85,
+      "relevanceConfidence": 0.9,
       "classificationConfidence": 0.9
     },
     {
@@ -229,43 +400,19 @@
       "category": "교원·인사",
       "changeLevel": "project_change",
       "importance": 3,
-      "importanceReason": "기간제교사 채용 절차 개선 등 학교 현장의 실질적인 운영 방식을 개선하는 정책 과제에 합의하였다.",
+      "importanceReason": "교원노조와의 협의를 통해 기간제교사 채용 절차 등 학교 현장의 실질적인 운영 개선 과제를 합의하였다.",
       "importanceAdjusted": false,
       "keywords": [
         "기간제교사",
-        "정책협의",
-        "단체협약",
-        "교육정책"
+        "교육정책협약",
+        "교원노조",
+        "정책협의"
       ],
-      "summary": "제주특별자치도교육청과 전교조제주지부가 기간제교사 채용 절차 개선을 포함한 8개 교육정책 과제에 합의했다.",
-      "selectionReason": "기간제교사 채용 절차 개선 등 교육청 차원의 정책 과제 합의 및 제도 개선 사항을 포함함.",
+      "summary": "제주특별자치도교육청과 전교조제주지부는 기간제교사 채용 절차 개선 등 학교 현장의 어려움을 해소하기 위한 8개 정책과제에 합의했다.",
+      "selectionReason": "기간제교사 채용 절차 개선 등 교육청의 주요 정책 과제에 대한 제도적 합의를 다루고 있음.",
       "scope": "provincial",
       "relevanceConfidence": 0.95,
       "classificationConfidence": 0.95
-    },
-    {
-      "newsId": "busan-e661477c9084ad99",
-      "sourceId": "busan",
-      "source": "부산광역시교육청",
-      "title": "부산교육청, 학교폭력 관계회복지원단 실천역량 강화",
-      "date": "2026-07-22",
-      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1176199&bbsId=2286&mi=30397",
-      "category": "학생지원·복지",
-      "changeLevel": "routine_operation",
-      "importance": 2,
-      "importanceReason": "기존 학교폭력 관계회복지원단의 전문성 강화를 위한 연례적인 보수교육 실시 건이다.",
-      "importanceAdjusted": false,
-      "keywords": [
-        "학교폭력",
-        "관계회복",
-        "보수교육",
-        "생활지도"
-      ],
-      "summary": "부산광역시교육청이 학교폭력 예방과 교육적 해결을 위해 관계회복지원단 대상 보수교육을 실시한다.",
-      "selectionReason": "학교폭력 관계회복지원단 운영 및 관계회복 숙려제 등 교육청 차원의 학교폭력 대응 정책 및 제도 운영과 관련됨.",
-      "scope": "provincial",
-      "relevanceConfidence": 0.85,
-      "classificationConfidence": 0.9
     },
     {
       "newsId": "busan-59a4e9676164e693",
@@ -277,7 +424,7 @@
       "category": "정책·행정",
       "changeLevel": "project_change",
       "importance": 3,
-      "importanceReason": "장애인 일자리 정원 확대 및 배치기관 다변화를 통해 고용 정책의 실질적인 운영 규모를 확대하였다.",
+      "importanceReason": "장애인 일자리 정원 확대 및 배치기관 다변화를 통해 고용률을 실질적으로 개선한 사례이다.",
       "importanceAdjusted": false,
       "keywords": [
         "장애인고용",
@@ -285,11 +432,11 @@
         "일자리사업",
         "의무고용률"
       ],
-      "summary": "부산광역시교육청이 장애인 일자리 정원을 확대하고 배치기관을 다변화하여 법적 의무고용률을 달성했다.",
-      "selectionReason": "교육청 차원에서 장애인 고용 확대 및 배치기관 확대를 통해 인사 정책 및 고용 제도를 개선한 사례로 판단됨.",
+      "summary": "부산광역시교육청은 장애인 일자리 정원을 확대하고 배치기관을 다변화하여 법적 의무고용률을 달성했다.",
+      "selectionReason": "장애인 고용 확대 및 배치 기관 확대라는 교육청 차원의 인사·고용 정책 변화를 담고 있음.",
       "scope": "provincial",
-      "relevanceConfidence": 0.9,
-      "classificationConfidence": 0.95
+      "relevanceConfidence": 0.95,
+      "classificationConfidence": 0.9
     },
     {
       "newsId": "moe-069418a1e58848b1",
@@ -301,43 +448,120 @@
       "category": "학생지원·복지",
       "changeLevel": "project_change",
       "importance": 3,
-      "importanceReason": "민관 협력을 통해 청소년 도박 및 금융피해 예방을 위한 새로운 교육 프로그램과 지원 체계를 도입하였다.",
+      "importanceReason": "정부와 민간 기관이 협력하여 예술 체험형 교육 등 새로운 방식의 예방 프로그램을 도입하는 사업이다.",
       "importanceAdjusted": false,
       "keywords": [
         "청소년도박",
         "금융피해예방",
         "업무협약",
-        "예술체험교육"
+        "예방교육"
       ],
-      "summary": "교육부가 민간 기관과 협력하여 청소년 도박 및 금융피해 예방을 위한 예술 체험형 교육과 홍보 활동을 추진한다.",
-      "selectionReason": "교육부 주관으로 청소년 도박 및 금융피해 예방을 위한 범정부적 안전망 구축 및 정책적 협력을 다루고 있음.",
+      "summary": "교육부는 청소년 도박 및 금융피해 예방을 위해 민간 기관과 협력하여 예술 체험형 교육 등 안전망 구축을 추진한다.",
+      "selectionReason": "교육부가 주도하여 청소년 도박 및 금융피해 예방을 위한 범정부적 안전망을 구축하고 학교 현장에 적용하는 정책적 협력 사안입니다.",
       "scope": "national",
-      "relevanceConfidence": 0.9,
-      "classificationConfidence": 0.95
+      "relevanceConfidence": 0.95,
+      "classificationConfidence": 0.9
     }
   ],
   "excludedItems": [
     {
-      "newsId": "gyeongnam-8cde175bf03acb17",
-      "sourceId": "gyeongnam",
-      "source": "경상남도교육청",
-      "title": "교실의 민주주의, 참여와 실천으로 넓히다 경남교육청, 2026년 경남학생의회 정례회 개최",
+      "newsId": "gyeonggi-4a3d9eb6c719047f",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "경기도교육청4.16생명안전교육원, ‘2026 생명·안전·희망 동요제’ 개최",
+      "date": "2026-07-23",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2358616&bbsId=1922&mi=10102",
+      "reason": "직속기관에서 주관하는 일회성 행사 및 동요제 개최 소식으로 정책적 변화가 없습니다.",
+      "scope": "institution",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "gyeonggi-782d9a1ab5a2803a",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "경기도교육청의정부도서관, 교직원 독서회 지원으로 책 읽는 독서문화 확산",
+      "date": "2026-07-23",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2358619&bbsId=1922&mi=10102",
+      "reason": "직속기관인 도서관에서 운영하는 교직원 독서회 지원 사업으로 일반적인 프로그램 운영에 해당합니다.",
+      "scope": "institution",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "gyeonggi-6e7ddbb29c2dc113",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "경기도교육청평생학습관, 자녀와 함께하는 미디어 리터러시 특강 실시",
+      "date": "2026-07-23",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2358621&bbsId=1922&mi=10102",
+      "reason": "직속기관에서 실시하는 학부모 및 학생 대상의 일회성 특강 프로그램입니다.",
+      "scope": "institution",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "incheon-dbd6bb68e452dd65",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, ‘2026 청소년 노동인권캠프’ 운영",
       "date": "2026-07-22",
-      "url": "https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&q_bbsDocNo=20260722161425977",
-      "reason": "학생자치 활성화라는 명분은 있으나, 실제 내용은 학생의회 정례회라는 일회성 행사 개최 소식에 해당함.",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3379168&bbsId=1519&mi=11620",
+      "reason": "교육청이 주관하더라도 특정 학생 대상의 일회성 캠프 운영 소식은 정책적 변화로 보기 어렵습니다.",
       "scope": "provincial",
       "confidence": 0.9
     },
     {
-      "newsId": "gyeongbuk-9be9acacaf7bc143",
-      "sourceId": "gyeongbuk",
-      "source": "경상북도교육청",
-      "title": "[행복교육지원과]경북교육청,'2026 경상북도교육청 세계시민교육 청소년 국제포럼' 개최",
+      "newsId": "incheon-0f378340bacc0891",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 인천시청자미디어센터와 ‘찾아가는 유아 미디어 역기능 대응 교육’ 운영",
       "date": "2026-07-22",
-      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1631602&bbsId=4744&mi=17643&searchCate=761",
-      "reason": "교육청 주관의 국제포럼 행사로, 일회성 행사 및 체험 중심의 활동에 해당함.",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3379168&bbsId=1519&mi=11620",
+      "reason": "특정 기관 대상의 일회성 체험 및 교육 프로그램 운영 소식으로 정책적 변화가 아님.",
       "scope": "provincial",
       "confidence": 0.9
+    },
+    {
+      "newsId": "incheon-317c1505866fe9ad",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 스마트팜 기업 현장에서 미래 먹거리 산업 진로교육 운영",
+      "date": "2026-07-22",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3379168&bbsId=1519&mi=11620",
+      "reason": "학생 대상의 일회성 진로 체험 및 캠프 성격의 프로그램 운영 소식임.",
+      "scope": "provincial",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "incheon-b2f58ccbed402060",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 우리마을교육자치회와 함께 ‘1 마을 1 책 읽기’ 로 ‘독서국가·독서인천’ 조성",
+      "date": "2026-07-22",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3379168&bbsId=1519&mi=11620",
+      "reason": "마을교육공동체 기반의 독서 문화운동 행사로, 교육과정의 제도적 변화가 아닌 개별 사업 운영임.",
+      "scope": "provincial",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "incheon-371d1c2509bc115a",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 권역별 마을교육지원센터 주말학교 운영",
+      "date": "2026-07-22",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3379168&bbsId=1519&mi=11620",
+      "reason": "학생 대상의 주말학교 프로그램 운영 소식으로 일회성 행사 및 체험 활동에 해당함.",
+      "scope": "provincial",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "incheon-7369bec56ece8960",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천북부교육지원청, 특수교육대상학생 가족과 함께하는 스쿨 (SCHOOL) 운영",
+      "date": "2026-07-22",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3379168&bbsId=1519&mi=11620",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "scope": "local",
+      "confidence": 1.0
     },
     {
       "newsId": "gyeongbuk-6b7d903a034a7947",
@@ -346,42 +570,9 @@
       "title": "[유초등교육과]경북교육청, 여름방학 '2026 교육희망캠프' 운영",
       "date": "2026-07-22",
       "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1631603&bbsId=4744&mi=17643&searchCate=761",
-      "reason": "특정 학교에서 운영하는 방학 중 교육 캠프 프로그램으로, 일회성 사업 및 체험 활동에 해당함.",
-      "scope": "provincial",
-      "confidence": 0.9
-    },
-    {
-      "newsId": "gyeongbuk-5b30652fb45e6e89",
-      "sourceId": "gyeongbuk",
-      "source": "경상북도교육청",
-      "title": "[중등교육과]경북교육청, 학교 간 프리미엄 공동교육과정 '배움잇다' 운영",
-      "date": "2026-07-22",
-      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1631604&bbsId=4744&mi=17643&searchCate=761",
-      "reason": "고교학점제 관련 공동교육과정 운영 소식이지만, 실제로는 방학 중 집중 캠프 형태의 일회성 프로그램 운영에 해당함.",
-      "scope": "provincial",
-      "confidence": 0.85
-    },
-    {
-      "newsId": "gyeongbuk-49978ff06fc7af1f",
-      "sourceId": "gyeongbuk",
-      "source": "경상북도교육청",
-      "title": "[미래교육정보과]경북교육청, 숲․산림․바다에서 배우는 '탄소중립 교원 연수' 운영",
-      "date": "2026-07-22",
-      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1631605&bbsId=4744&mi=17643&searchCate=761",
-      "reason": "교원 대상의 직무연수 운영 소식으로, 특정 대상자를 위한 일반적인 연수 활동에 해당함.",
-      "scope": "provincial",
-      "confidence": 0.9
-    },
-    {
-      "newsId": "gyeongbuk-bf439eb741c0b73f",
-      "sourceId": "gyeongbuk",
-      "source": "경상북도교육청",
-      "title": "[학생생활과]경북교육청, 마음건강 지원 업무 담당자 트라우마 관리 연수 운영",
-      "date": "2026-07-22",
-      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1631606&bbsId=4744&mi=17643&searchCate=761",
-      "reason": "업무 담당자 대상의 트라우마 관리 연수 및 치유 프로그램으로, 특정 담당자 대상의 내부 활동에 해당함.",
-      "scope": "provincial",
-      "confidence": 0.9
+      "reason": "개별 기관의 일회성 활동으로 판단되어 교육동향 분석에서 제외했다.",
+      "scope": "institution",
+      "confidence": 0.25
     },
     {
       "newsId": "daejeon-7ba390831f4c4622",
@@ -434,18 +625,7 @@
       "title": "대전시교육청 위(Wee) 센터, 2026년 상반기 학부모보듬위원회 협의회 개최(미래생활교육과)",
       "date": "2026-07-22",
       "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3359107&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
-      "reason": "교육청 산하 위(Wee) 센터의 기존 프로그램 운영 성과 공유 및 협의회로 일상적인 업무 활동임.",
-      "scope": "institution",
-      "confidence": 0.9
-    },
-    {
-      "newsId": "daejeon-b402f853ee938cd8",
-      "sourceId": "daejeon",
-      "source": "대전광역시교육청",
-      "title": "대전시교육청, 학생평가 전문가 기본과정 연수 운영(중등교육과)",
-      "date": "2026-07-22",
-      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3359109&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
-      "reason": "교원 대상의 일반적인 역량 강화 연수 프로그램으로 정책 변화나 제도 개선과는 거리가 있음.",
+      "reason": "교육청 산하 위(Wee) 센터의 운영 성과 공유 및 협의회 개최 소식으로 일상적인 업무 활동임.",
       "scope": "institution",
       "confidence": 0.9
     },
@@ -467,7 +647,7 @@
       "title": "대전시교육청, 지역 연계 초 1·2 맞춤형 프로그램 만족도 큰 폭 상승(초등교육과)",
       "date": "2026-07-22",
       "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3359111&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
-      "reason": "기존에 운영 중인 특정 프로그램의 만족도 조사 결과 및 운영 성과를 알리는 자료로, 새로운 정책 변화나 제도 개선 사항이 포함되어 있지 않음.",
+      "reason": "기존에 운영 중인 특정 프로그램의 만족도 조사 결과 및 운영 성과를 알리는 자료로, 새로운 정책 변화나 제도 개선 사항이 포함되어 있지 않습니다.",
       "scope": "provincial",
       "confidence": 0.9
     },
@@ -478,7 +658,7 @@
       "title": "교육공동체의 성장 이야기 담은 ‘2026년 대전교육 소식지 에세이 공모전’ 결과 발표(공보관)",
       "date": "2026-07-22",
       "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3359125&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
-      "reason": "교육청에서 주관한 일회성 공모전 결과 발표 및 시상 소식으로, 교육 정책적 변화와 무관한 행사성 자료임.",
+      "reason": "교육청에서 주관한 일회성 공모전의 결과 발표 및 시상 소식으로, 교육 정책이나 제도 변화와 무관한 행사성 자료입니다.",
       "scope": "provincial",
       "confidence": 0.95
     },
@@ -489,75 +669,9 @@
       "title": "광주학교운영위원장협의회 제3기 임원단 출범",
       "date": "2026-07-22",
       "url": "https://www.jngjedu.kr/news/articleView.html?idxno=118657",
-      "reason": "학교운영위원장협의회 임원단 취임식 및 기부 캠페인 등 단체 활동 소식으로, 교육행정 정책 변화와 직접적인 관련이 없음.",
+      "reason": "학교운영위원장협의회 임원단 취임식 및 기부 캠페인 등 협의체 활동과 행사 소식으로, 교육행정 정책 변화를 담고 있지 않습니다.",
       "scope": "provincial",
       "confidence": 0.95
-    },
-    {
-      "newsId": "incheon-dbd6bb68e452dd65",
-      "sourceId": "incheon",
-      "source": "인천광역시교육청",
-      "title": "인천광역시교육청, ‘2026 청소년 노동인권캠프’ 운영",
-      "date": "2026-07-22",
-      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3379168&bbsId=1519&mi=11620",
-      "reason": "학생 대상의 일회성 노동인권 캠프 운영 소식으로, 교육 정책의 제도적 변화나 확대 적용에 해당하지 않음.",
-      "scope": "provincial",
-      "confidence": 0.9
-    },
-    {
-      "newsId": "incheon-0f378340bacc0891",
-      "sourceId": "incheon",
-      "source": "인천광역시교육청",
-      "title": "인천광역시교육청, 인천시청자미디어센터와 ‘찾아가는 유아 미디어 역기능 대응 교육’ 운영",
-      "date": "2026-07-22",
-      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3379168&bbsId=1519&mi=11620",
-      "reason": "특정 기관 대상의 일회성 체험 교육 및 프로그램 운영 사례로 정책적 변화가 아닌 일반 사업에 해당함.",
-      "scope": "provincial",
-      "confidence": 0.9
-    },
-    {
-      "newsId": "incheon-317c1505866fe9ad",
-      "sourceId": "incheon",
-      "source": "인천광역시교육청",
-      "title": "인천광역시교육청, 스마트팜 기업 현장에서 미래 먹거리 산업 진로교육 운영",
-      "date": "2026-07-22",
-      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3379168&bbsId=1519&mi=11620",
-      "reason": "학생 대상의 일회성 진로 체험 및 기업 연계 프로그램으로 일반적인 교육 활동에 해당함.",
-      "scope": "provincial",
-      "confidence": 0.9
-    },
-    {
-      "newsId": "incheon-b2f58ccbed402060",
-      "sourceId": "incheon",
-      "source": "인천광역시교육청",
-      "title": "인천광역시교육청, 우리마을교육자치회와 함께 ‘1 마을 1 책 읽기’ 로 ‘독서국가·독서인천’ 조성",
-      "date": "2026-07-22",
-      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3379168&bbsId=1519&mi=11620",
-      "reason": "마을교육공동체 기반의 독서 문화운동 및 개별 프로그램 운영 사례로 정책적 제도 변화가 아님.",
-      "scope": "provincial",
-      "confidence": 0.9
-    },
-    {
-      "newsId": "incheon-371d1c2509bc115a",
-      "sourceId": "incheon",
-      "source": "인천광역시교육청",
-      "title": "인천광역시교육청, 권역별 마을교육지원센터 주말학교 운영",
-      "date": "2026-07-22",
-      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3379168&bbsId=1519&mi=11620",
-      "reason": "학생 대상의 주말학교 프로그램 운영 소식으로 일회성 행사 및 체험 활동에 해당함.",
-      "scope": "provincial",
-      "confidence": 0.9
-    },
-    {
-      "newsId": "incheon-7369bec56ece8960",
-      "sourceId": "incheon",
-      "source": "인천광역시교육청",
-      "title": "인천북부교육지원청, 특수교육대상학생 가족과 함께하는 스쿨 (SCHOOL) 운영",
-      "date": "2026-07-22",
-      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3379168&bbsId=1519&mi=11620",
-      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
-      "scope": "local",
-      "confidence": 1.0
     },
     {
       "newsId": "gyeonggi-1af7e249362ab28a",
@@ -566,9 +680,9 @@
       "title": "무대에서 피어난 공감과 협력의 배움 송운초「2026 시흥 꿈‧잇‧다 학교 교육연극 발표회」운영",
       "date": "2026-07-22",
       "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2358557&bbsId=1922&mi=10102",
-      "reason": "개별 학교에서 주관하는 일회성 교육연극 발표회 행사로 교육행정 정책 변화와 무관함",
+      "reason": "개별 학교에서 운영한 교육연극 발표회 행사로, 정책적 파급력이 없는 일회성 학교 교육 활동입니다.",
       "scope": "institution",
-      "confidence": 1.0
+      "confidence": 0.95
     },
     {
       "newsId": "gyeonggi-58f5ffd3622c9b56",
@@ -621,7 +735,7 @@
       "title": "의정부호동초, ‘호동 다있소’아나바다 알뜰시장 운영 학생 주도의 나눔과 기부 실천으로 따뜻한 학교",
       "date": "2026-07-22",
       "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2358571&bbsId=1922&mi=10102",
-      "reason": "개별 학교에서 학생자치회 주도로 운영하는 일회성 알뜰시장 행사로 정책적 파급력이 없음",
+      "reason": "개별 학교에서 주관하는 일회성 학생 자치 행사 및 체험 활동으로 교육행정적 파급력이 없음",
       "scope": "institution",
       "confidence": 1.0
     },
@@ -643,7 +757,7 @@
       "title": "백의초등학교, 뮤지컬 『빌리 엘리어트』관람 문화예술체험학습 실시",
       "date": "2026-07-22",
       "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2358606&bbsId=1922&mi=10102",
-      "reason": "개별 학교 단위에서 진행한 일회성 문화예술 체험학습 행사로 교육행정적 변화가 없음.",
+      "reason": "개별 학교에서 실시한 일회성 문화예술 현장체험학습으로 교육행정적 정책 변화와 무관함",
       "scope": "institution",
       "confidence": 1.0
     },
@@ -676,9 +790,9 @@
       "title": "천호성 교육감-전북 학부모회협의회 첫 소통",
       "date": "2026-07-22",
       "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1154151",
-      "reason": "교육감과 학부모 단체의 간담회는 일회성 소통 행사로 정책적 변화를 담고 있지 않습니다.",
+      "reason": "교육감과 학부모 단체 간의 단순 간담회 및 소통 행사로, 구체적인 정책 변화나 제도 개선이 명시되지 않아 DROP합니다.",
       "scope": "provincial",
-      "confidence": 0.95
+      "confidence": 0.9
     },
     {
       "newsId": "jeonbuk-fbe52c65a98fd1cf",
@@ -687,7 +801,7 @@
       "title": "“작은학교 소외되지 않도록 문화·체육 활동 지원”",
       "date": "2026-07-22",
       "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1154020",
-      "reason": "특정 지역 작은학교 대상의 일회성 스포츠 관람 지원 행사로 일반적인 정책 변화로 보기 어렵습니다.",
+      "reason": "특정 학생들을 대상으로 하는 일회성 체험 및 행사 지원 사업으로, 교육행정 전반에 영향을 미치는 정책 변화가 아니므로 DROP합니다.",
       "scope": "provincial",
       "confidence": 0.9
     },
@@ -698,7 +812,7 @@
       "title": "청렴문화 확산 이끈다… MZ 청렴 서포터즈 출범",
       "date": "2026-07-22",
       "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1154223",
-      "reason": "교육청 내부 조직의 청렴 서포터즈 발대식 및 캠페인 활동으로 일반적인 교육 정책 변화에 해당하지 않습니다.",
+      "reason": "교육청 내부 조직의 청렴 문화 확산을 위한 서포터즈 발대식으로, 정책적 파급력이 낮은 내부 행사입니다.",
       "scope": "provincial",
       "confidence": 0.9
     },
@@ -709,9 +823,9 @@
       "title": "“교과서, 첫 장의 설렘” 초등학교 교과서·지도서 표지 그림 공모전 개최",
       "date": "2026-07-22",
       "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=106750&lev=0&m=020402&s=moe",
-      "reason": "교과서 표지 그림 공모전은 일회성 행사이며 교육 정책의 본질적인 변화를 담고 있지 않습니다.",
+      "reason": "교과서 표지 그림 공모전은 일회성 행사 및 이벤트에 해당하여 정책적 변화로 보기 어렵습니다.",
       "scope": "national",
-      "confidence": 0.95
+      "confidence": 0.9
     },
     {
       "newsId": "jeju-99af57f6bc2bcef0",
@@ -720,8 +834,8 @@
       "title": "IB 교육 현장 목소리 듣고 함께 해법 찾는다",
       "date": "2026-07-22",
       "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1475919",
-      "reason": "특정 학교의 현안을 논의하는 간담회 성격의 행사로, 정책의 전면적인 변화나 제도 개선을 담고 있지 않음.",
-      "scope": "institution",
+      "reason": "특정 학교(표선고)의 현안을 논의하는 교육감 간담회로, 일반적인 정책 변화가 아닌 개별 학교 단위의 행사입니다.",
+      "scope": "provincial",
       "confidence": 0.9
     },
     {
@@ -731,7 +845,7 @@
       "title": "여름밤, 우리동네 도서관에서 새와 별을 만나요!",
       "date": "2026-07-22",
       "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1475920",
-      "reason": "직속기관인 도서관에서 주관하는 일회성 체험 행사임.",
+      "reason": "직속기관인 도서관에서 주관하는 일회성 체험 행사로 교육행정적 참고 가치가 없습니다.",
       "scope": "institution",
       "confidence": 0.95
     },
@@ -742,9 +856,9 @@
       "title": "우리 아이 언어발달의 골든타임! 부모의 역할은?",
       "date": "2026-07-22",
       "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1475921",
-      "reason": "직속기관에서 주관하는 학부모 대상 교육 프로그램으로, 교육 정책의 변화나 제도적 확산과는 거리가 있음.",
+      "reason": "직속기관인 유아교육진흥원에서 주관하는 보호자 대상 일회성 교육 프로그램으로 정책적 변화가 아님.",
       "scope": "institution",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
       "newsId": "jeju-6ee6c078c273bd79",
@@ -753,9 +867,9 @@
       "title": "기후변화 원리 배우고 탄소중립 실천까지 한눈에",
       "date": "2026-07-22",
       "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1475922",
-      "reason": "직속기관 내 체험 시설의 전시 공간 운영 소식으로, 교육 정책적 변화가 아닌 단순 시설 운영 사례임.",
+      "reason": "직속기관인 융합과학연구원의 체험관 내 전시 공간 조성 및 운영 소식으로 일회성 사업임.",
       "scope": "institution",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
       "newsId": "jeju-5ca56449d2786cea",
@@ -764,7 +878,7 @@
       "title": "체험으로 배우는 안전, 교육현장의 안전을 다지다",
       "date": "2026-07-22",
       "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1475923",
-      "reason": "교육지원청 단위에서 실시한 직원 대상 일회성 안전 체험 교육임.",
+      "reason": "교육지원청 단위에서 실시한 직원 대상 안전 체험 교육으로 정책적 파급력이 없음.",
       "scope": "local",
       "confidence": 0.95
     },
@@ -775,7 +889,7 @@
       "title": "인공지능으로 사회문제 해결…제주 청소년 창업 도전 빛났다",
       "date": "2026-07-22",
       "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1475925",
-      "reason": "학생 대상의 일회성 창업경진대회 및 수상 소식으로 정책적 변화와 무관함.",
+      "reason": "청소년 창업동아리 경진대회 및 수상자 발표는 일회성 행사 및 대회에 해당함.",
       "scope": "provincial",
       "confidence": 0.95
     },
@@ -786,9 +900,9 @@
       "title": "충북교육청, 시카고한국교육원과 국제교육 협력 강화",
       "date": "2026-07-22",
       "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1576313&bbsId=1158&mi=10301",
-      "reason": "교육청 차원의 업무협약이나, 실질적인 내용은 특정 교원 대상의 연수 및 일회성 컨설팅단 운영에 해당함.",
-      "scope": "provincial",
-      "confidence": 0.85
+      "reason": "교육부 사업의 일환이나 실질적으로는 특정 기관의 업무협약 및 일회성 해외 연수 프로그램 운영에 해당함.",
+      "scope": "institution",
+      "confidence": 0.9
     },
     {
       "newsId": "chungbuk-ff31e46b798aa197",
@@ -797,9 +911,9 @@
       "title": "단재교육연수원, 초·중등 교감 미래 리더십 키운다",
       "date": "2026-07-22",
       "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1576296&bbsId=1158&mi=10301",
-      "reason": "직속기관에서 운영하는 교원 자격연수 과정으로, 일반적인 연수 활동에 해당함.",
-      "scope": "provincial",
-      "confidence": 0.9
+      "reason": "직속기관인 단재교육연수원에서 운영하는 교원 자격연수 프로그램으로, 일반적인 연수 활동에 해당함.",
+      "scope": "institution",
+      "confidence": 0.95
     },
     {
       "newsId": "chungbuk-9248131b78180d25",
@@ -808,9 +922,9 @@
       "title": "유아교육진흥원, 이주 배경 유아 위한 찾아가는 문화·예술 공연 운영",
       "date": "2026-07-22",
       "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1576314&bbsId=1158&mi=10301",
-      "reason": "직속기관이 주체인 특정 대상(이주 배경 유아)을 위한 일회성 문화·예술 공연 사업임.",
-      "scope": "provincial",
-      "confidence": 0.9
+      "reason": "직속기관이 주체인 문화·예술 공연 프로그램 운영으로, 일회성 행사 및 체험 활동에 해당함.",
+      "scope": "institution",
+      "confidence": 0.95
     },
     {
       "newsId": "chungbuk-9707b0f6593bde34",
@@ -819,9 +933,9 @@
       "title": "국제교육원, 지역별 맞춤형 <방학집중캠프> 운영",
       "date": "2026-07-22",
       "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1576315&bbsId=1158&mi=10301",
-      "reason": "직속기관에서 운영하는 학생 대상의 방학 중 일회성 체험 캠프임.",
-      "scope": "provincial",
-      "confidence": 0.9
+      "reason": "직속기관에서 운영하는 방학 중 학생 대상 영어 캠프로, 일회성 체험 프로그램에 해당함.",
+      "scope": "institution",
+      "confidence": 0.95
     },
     {
       "newsId": "chungbuk-0e5d5808615c28ba",
@@ -830,7 +944,7 @@
       "title": "해양교육원 제주분원, <자기성장 해양체험> 운영",
       "date": "2026-07-22",
       "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1576297&bbsId=1158&mi=10301",
-      "reason": "직속기관에서 운영하는 학생 대상 일회성 체험 프로그램으로 정책적 변화가 없음.",
+      "reason": "직속기관에서 운영하는 학생 대상 해양 체험 프로그램으로, 일회성 체험 및 행사 활동에 해당함.",
       "scope": "institution",
       "confidence": 0.95
     },
@@ -852,7 +966,7 @@
       "title": "부산동래영재교육원, 여름방학 융합 탐구의 장 마련",
       "date": "2026-07-22",
       "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1176193&bbsId=2286&mi=30397",
-      "reason": "영재교육원 단위의 방학 중 집중 수업 운영으로 일반적인 교육 프로그램에 해당함.",
+      "reason": "직속기관인 영재교육원에서 운영하는 일회성 방학 집중 수업 프로그램으로 정책적 변화가 아님.",
       "scope": "institution",
       "confidence": 0.95
     },
@@ -863,9 +977,9 @@
       "title": "부산SW·AI교육거점센터,‘7월 학부모 디지털 아카데미’",
       "date": "2026-07-22",
       "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1176198&bbsId=2286&mi=30397",
-      "reason": "교육연구정보원에서 주관하는 학부모 대상 일회성 연수 행사임.",
+      "reason": "교육연구정보원에서 주관하는 학부모 대상 일회성 온라인 연수 행사임.",
       "scope": "institution",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
       "newsId": "busan-44b0ef86a2be3635",
@@ -874,7 +988,18 @@
       "title": "부산교육청,‘제7회 부산 청소년 창업경진대회’개최",
       "date": "2026-07-22",
       "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1176196&bbsId=2286&mi=30397",
-      "reason": "학생 대상의 일회성 창업경진대회 개최 소식으로 정책적 제도 변화가 아님.",
+      "reason": "교육청 주관의 일회성 학생 경진대회 행사로 정책적 제도 변화에 해당하지 않음.",
+      "scope": "provincial",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "busan-e661477c9084ad99",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "부산교육청, 학교폭력 관계회복지원단 실천역량 강화",
+      "date": "2026-07-22",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1176199&bbsId=2286&mi=30397",
+      "reason": "학교폭력 관계회복지원단 대상의 역량 강화 보수교육으로 특정 대상자 대상의 내부 연수임.",
       "scope": "provincial",
       "confidence": 0.9
     },
@@ -885,7 +1010,7 @@
       "title": "부산교육청 학생건강증진센터,‘바른 건강·성장 캠프’개최",
       "date": "2026-07-22",
       "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1176201&bbsId=2286&mi=30397",
-      "reason": "교육청 산하 센터에서 운영하는 일회성 학생 대상 캠프 및 체험 프로그램으로 정책적 변화와 무관함.",
+      "reason": "학생건강증진센터에서 운영하는 일회성 건강 캠프 행사임.",
       "scope": "institution",
       "confidence": 0.95
     },
@@ -896,89 +1021,253 @@
       "title": "경기도교육청평생학습관, ‘건강하고 안전한 생활’ 학부모교육 운영",
       "date": "2026-07-22",
       "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2358451&bbsId=1922&mi=10102",
-      "reason": "직속기관인 평생학습관에서 주관하는 학부모 대상 일회성 교육 프로그램 운영 소식임.",
+      "reason": "직속기관인 평생학습관에서 운영하는 일회성 학부모 교육 프로그램으로 정책적 변화나 제도 개선 사항이 포함되어 있지 않습니다.",
       "scope": "institution",
       "confidence": 0.95
     }
   ],
   "relevance": [
     {
-      "newsId": "gyeongnam-8cde175bf03acb17",
+      "newsId": "gyeonggi-1c70d26ab755e712",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "교육부 주관 사업에 선정되어 지역사회와 협력한 방학 중 돌봄 모델을 구축하는 정책적 성격의 자료입니다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "gyeonggi-1c70d26ab755e712"
+      ],
+      "source": "경기도교육청",
+      "title": "경기도교육청, 지자체·지역사회와 손잡고 방학 돌봄 빈틈 메운다",
+      "date": "2026-07-23"
+    },
+    {
+      "newsId": "gyeonggi-4a3d9eb6c719047f",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "직속기관에서 주관하는 일회성 행사 및 동요제 개최 소식으로 정책적 변화가 없습니다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "gyeonggi-4a3d9eb6c719047f"
+      ],
+      "source": "경기도교육청",
+      "title": "경기도교육청4.16생명안전교육원, ‘2026 생명·안전·희망 동요제’ 개최",
+      "date": "2026-07-23"
+    },
+    {
+      "newsId": "gyeonggi-782d9a1ab5a2803a",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "직속기관인 도서관에서 운영하는 교직원 독서회 지원 사업으로 일반적인 프로그램 운영에 해당합니다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "gyeonggi-782d9a1ab5a2803a"
+      ],
+      "source": "경기도교육청",
+      "title": "경기도교육청의정부도서관, 교직원 독서회 지원으로 책 읽는 독서문화 확산",
+      "date": "2026-07-23"
+    },
+    {
+      "newsId": "gyeonggi-6e7ddbb29c2dc113",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "직속기관에서 실시하는 학부모 및 학생 대상의 일회성 특강 프로그램입니다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "gyeonggi-6e7ddbb29c2dc113"
+      ],
+      "source": "경기도교육청",
+      "title": "경기도교육청평생학습관, 자녀와 함께하는 미디어 리터러시 특강 실시",
+      "date": "2026-07-23"
+    },
+    {
+      "newsId": "incheon-a20a4174bc95d0a6",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "교육청 차원에서 전체 초등학교를 대상으로 방학 중 돌봄 공백 해소를 위해 추진하는 교육 정책입니다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "incheon-a20a4174bc95d0a6"
+      ],
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 여름방학에도 돌봄 공백 없이 ‘지역 맞춤형 초등 방과후·돌봄’ 운영",
+      "date": "2026-07-22"
+    },
+    {
+      "newsId": "incheon-dbd6bb68e452dd65",
       "decision": "DROP",
       "scope": "provincial",
-      "reason": "학생자치 활성화라는 명분은 있으나, 실제 내용은 학생의회 정례회라는 일회성 행사 개최 소식에 해당함.",
+      "reason": "교육청이 주관하더라도 특정 학생 대상의 일회성 캠프 운영 소식은 정책적 변화로 보기 어렵습니다.",
       "confidence": 0.9,
+      "evidenceIds": [
+        "incheon-dbd6bb68e452dd65"
+      ],
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, ‘2026 청소년 노동인권캠프’ 운영",
+      "date": "2026-07-22"
+    },
+    {
+      "newsId": "incheon-0f378340bacc0891",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "특정 기관 대상의 일회성 체험 및 교육 프로그램 운영 소식으로 정책적 변화가 아님.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "incheon-0f378340bacc0891"
+      ],
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 인천시청자미디어센터와 ‘찾아가는 유아 미디어 역기능 대응 교육’ 운영",
+      "date": "2026-07-22"
+    },
+    {
+      "newsId": "incheon-317c1505866fe9ad",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "학생 대상의 일회성 진로 체험 및 캠프 성격의 프로그램 운영 소식임.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "incheon-317c1505866fe9ad"
+      ],
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 스마트팜 기업 현장에서 미래 먹거리 산업 진로교육 운영",
+      "date": "2026-07-22"
+    },
+    {
+      "newsId": "incheon-b2f58ccbed402060",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "마을교육공동체 기반의 독서 문화운동 행사로, 교육과정의 제도적 변화가 아닌 개별 사업 운영임.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "incheon-b2f58ccbed402060"
+      ],
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 우리마을교육자치회와 함께 ‘1 마을 1 책 읽기’ 로 ‘독서국가·독서인천’ 조성",
+      "date": "2026-07-22"
+    },
+    {
+      "newsId": "incheon-371d1c2509bc115a",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "학생 대상의 주말학교 프로그램 운영 소식으로 일회성 행사 및 체험 활동에 해당함.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "incheon-371d1c2509bc115a"
+      ],
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 권역별 마을교육지원센터 주말학교 운영",
+      "date": "2026-07-22"
+    },
+    {
+      "newsId": "incheon-9ddd149b00a06fe1",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "행정구역 개편에 따른 교육과정 운영 지원을 위해 지역교육자원목록을 전면 개편하여 학교 현장에 배포하는 행정적 지원 체계 변화임.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "incheon-9ddd149b00a06fe1"
+      ],
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 행정구역 개편 맞춰 ‘지역교육자원목록’ 전면 수정 배포",
+      "date": "2026-07-22"
+    },
+    {
+      "newsId": "incheon-7369bec56ece8960",
+      "decision": "DROP",
+      "scope": "local",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "confidence": 1.0,
+      "evidenceIds": [
+        "incheon-7369bec56ece8960"
+      ],
+      "source": "인천광역시교육청",
+      "title": "인천북부교육지원청, 특수교육대상학생 가족과 함께하는 스쿨 (SCHOOL) 운영",
+      "date": "2026-07-22",
+      "guarded": true,
+      "guardType": "education_support_office"
+    },
+    {
+      "newsId": "gyeongnam-8cde175bf03acb17",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "정책 또는 다수 학교에 영향을 줄 가능성이 있어 교육동향 분석 대상으로 유지했다.",
+      "confidence": 0.25,
       "evidenceIds": [
         "gyeongnam-8cde175bf03acb17"
       ],
       "source": "경상남도교육청",
       "title": "교실의 민주주의, 참여와 실천으로 넓히다 경남교육청, 2026년 경남학생의회 정례회 개최",
-      "date": "2026-07-22"
+      "date": "2026-07-22",
+      "fallback": true
     },
     {
       "newsId": "gyeongbuk-9be9acacaf7bc143",
-      "decision": "DROP",
+      "decision": "KEEP",
       "scope": "provincial",
-      "reason": "교육청 주관의 국제포럼 행사로, 일회성 행사 및 체험 중심의 활동에 해당함.",
-      "confidence": 0.9,
+      "reason": "정책 또는 다수 학교에 영향을 줄 가능성이 있어 교육동향 분석 대상으로 유지했다.",
+      "confidence": 0.25,
       "evidenceIds": [
         "gyeongbuk-9be9acacaf7bc143"
       ],
       "source": "경상북도교육청",
       "title": "[행복교육지원과]경북교육청,'2026 경상북도교육청 세계시민교육 청소년 국제포럼' 개최",
-      "date": "2026-07-22"
+      "date": "2026-07-22",
+      "fallback": true
     },
     {
       "newsId": "gyeongbuk-6b7d903a034a7947",
       "decision": "DROP",
-      "scope": "provincial",
-      "reason": "특정 학교에서 운영하는 방학 중 교육 캠프 프로그램으로, 일회성 사업 및 체험 활동에 해당함.",
-      "confidence": 0.9,
+      "scope": "institution",
+      "reason": "개별 기관의 일회성 활동으로 판단되어 교육동향 분석에서 제외했다.",
+      "confidence": 0.25,
       "evidenceIds": [
         "gyeongbuk-6b7d903a034a7947"
       ],
       "source": "경상북도교육청",
       "title": "[유초등교육과]경북교육청, 여름방학 '2026 교육희망캠프' 운영",
-      "date": "2026-07-22"
+      "date": "2026-07-22",
+      "fallback": true
     },
     {
       "newsId": "gyeongbuk-5b30652fb45e6e89",
-      "decision": "DROP",
-      "scope": "provincial",
-      "reason": "고교학점제 관련 공동교육과정 운영 소식이지만, 실제로는 방학 중 집중 캠프 형태의 일회성 프로그램 운영에 해당함.",
-      "confidence": 0.85,
+      "decision": "KEEP",
+      "scope": "institution",
+      "reason": "정책 또는 다수 학교에 영향을 줄 가능성이 있어 교육동향 분석 대상으로 유지했다.",
+      "confidence": 0.25,
       "evidenceIds": [
         "gyeongbuk-5b30652fb45e6e89"
       ],
       "source": "경상북도교육청",
       "title": "[중등교육과]경북교육청, 학교 간 프리미엄 공동교육과정 '배움잇다' 운영",
-      "date": "2026-07-22"
+      "date": "2026-07-22",
+      "fallback": true
     },
     {
       "newsId": "gyeongbuk-49978ff06fc7af1f",
-      "decision": "DROP",
+      "decision": "KEEP",
       "scope": "provincial",
-      "reason": "교원 대상의 직무연수 운영 소식으로, 특정 대상자를 위한 일반적인 연수 활동에 해당함.",
-      "confidence": 0.9,
+      "reason": "정책 또는 다수 학교에 영향을 줄 가능성이 있어 교육동향 분석 대상으로 유지했다.",
+      "confidence": 0.25,
       "evidenceIds": [
         "gyeongbuk-49978ff06fc7af1f"
       ],
       "source": "경상북도교육청",
       "title": "[미래교육정보과]경북교육청, 숲․산림․바다에서 배우는 '탄소중립 교원 연수' 운영",
-      "date": "2026-07-22"
+      "date": "2026-07-22",
+      "fallback": true
     },
     {
       "newsId": "gyeongbuk-bf439eb741c0b73f",
-      "decision": "DROP",
+      "decision": "KEEP",
       "scope": "provincial",
-      "reason": "업무 담당자 대상의 트라우마 관리 연수 및 치유 프로그램으로, 특정 담당자 대상의 내부 활동에 해당함.",
-      "confidence": 0.9,
+      "reason": "정책 또는 다수 학교에 영향을 줄 가능성이 있어 교육동향 분석 대상으로 유지했다.",
+      "confidence": 0.25,
       "evidenceIds": [
         "gyeongbuk-bf439eb741c0b73f"
       ],
       "source": "경상북도교육청",
       "title": "[학생생활과]경북교육청, 마음건강 지원 업무 담당자 트라우마 관리 연수 운영",
-      "date": "2026-07-22"
+      "date": "2026-07-22",
+      "fallback": true
     },
     {
       "newsId": "daejeon-7ba390831f4c4622",
@@ -1038,7 +1327,7 @@
       "newsId": "daejeon-278e83f388f3be75",
       "decision": "DROP",
       "scope": "institution",
-      "reason": "교육청 산하 위(Wee) 센터의 기존 프로그램 운영 성과 공유 및 협의회로 일상적인 업무 활동임.",
+      "reason": "교육청 산하 위(Wee) 센터의 운영 성과 공유 및 협의회 개최 소식으로 일상적인 업무 활동임.",
       "confidence": 0.9,
       "evidenceIds": [
         "daejeon-278e83f388f3be75"
@@ -1049,9 +1338,9 @@
     },
     {
       "newsId": "daejeon-b402f853ee938cd8",
-      "decision": "DROP",
-      "scope": "institution",
-      "reason": "교원 대상의 일반적인 역량 강화 연수 프로그램으로 정책 변화나 제도 개선과는 거리가 있음.",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "교육청 차원에서 교원의 평가 역량 강화 및 성취평가제 안착을 위해 추진하는 전문가 양성 정책임.",
       "confidence": 0.9,
       "evidenceIds": [
         "daejeon-b402f853ee938cd8"
@@ -1079,7 +1368,7 @@
       "newsId": "daejeon-3efdf3b270d2b5f8",
       "decision": "DROP",
       "scope": "provincial",
-      "reason": "기존에 운영 중인 특정 프로그램의 만족도 조사 결과 및 운영 성과를 알리는 자료로, 새로운 정책 변화나 제도 개선 사항이 포함되어 있지 않음.",
+      "reason": "기존에 운영 중인 특정 프로그램의 만족도 조사 결과 및 운영 성과를 알리는 자료로, 새로운 정책 변화나 제도 개선 사항이 포함되어 있지 않습니다.",
       "confidence": 0.9,
       "evidenceIds": [
         "daejeon-3efdf3b270d2b5f8"
@@ -1092,7 +1381,7 @@
       "newsId": "daejeon-3e96c13fa1f64912",
       "decision": "DROP",
       "scope": "provincial",
-      "reason": "교육청에서 주관한 일회성 공모전 결과 발표 및 시상 소식으로, 교육 정책적 변화와 무관한 행사성 자료임.",
+      "reason": "교육청에서 주관한 일회성 공모전의 결과 발표 및 시상 소식으로, 교육 정책이나 제도 변화와 무관한 행사성 자료입니다.",
       "confidence": 0.95,
       "evidenceIds": [
         "daejeon-3e96c13fa1f64912"
@@ -1105,7 +1394,7 @@
       "newsId": "jngj_s1n1-fd0e531b8eb617b8",
       "decision": "DROP",
       "scope": "provincial",
-      "reason": "학교운영위원장협의회 임원단 취임식 및 기부 캠페인 등 단체 활동 소식으로, 교육행정 정책 변화와 직접적인 관련이 없음.",
+      "reason": "학교운영위원장협의회 임원단 취임식 및 기부 캠페인 등 협의체 활동과 행사 소식으로, 교육행정 정책 변화를 담고 있지 않습니다.",
       "confidence": 0.95,
       "evidenceIds": [
         "jngj_s1n1-fd0e531b8eb617b8"
@@ -1115,117 +1404,11 @@
       "date": "2026-07-22"
     },
     {
-      "newsId": "incheon-a20a4174bc95d0a6",
-      "decision": "KEEP",
-      "scope": "provincial",
-      "reason": "방학 중 돌봄 공백 해소를 위한 교육청 차원의 종합적인 방과후·돌봄 운영 계획 및 지역 연계 지원 체계를 다루고 있어 정책적 참고 가치가 있음.",
-      "confidence": 0.9,
-      "evidenceIds": [
-        "incheon-a20a4174bc95d0a6"
-      ],
-      "source": "인천광역시교육청",
-      "title": "인천광역시교육청, 여름방학에도 돌봄 공백 없이 ‘지역 맞춤형 초등 방과후·돌봄’ 운영",
-      "date": "2026-07-22"
-    },
-    {
-      "newsId": "incheon-dbd6bb68e452dd65",
-      "decision": "DROP",
-      "scope": "provincial",
-      "reason": "학생 대상의 일회성 노동인권 캠프 운영 소식으로, 교육 정책의 제도적 변화나 확대 적용에 해당하지 않음.",
-      "confidence": 0.9,
-      "evidenceIds": [
-        "incheon-dbd6bb68e452dd65"
-      ],
-      "source": "인천광역시교육청",
-      "title": "인천광역시교육청, ‘2026 청소년 노동인권캠프’ 운영",
-      "date": "2026-07-22"
-    },
-    {
-      "newsId": "incheon-0f378340bacc0891",
-      "decision": "DROP",
-      "scope": "provincial",
-      "reason": "특정 기관 대상의 일회성 체험 교육 및 프로그램 운영 사례로 정책적 변화가 아닌 일반 사업에 해당함.",
-      "confidence": 0.9,
-      "evidenceIds": [
-        "incheon-0f378340bacc0891"
-      ],
-      "source": "인천광역시교육청",
-      "title": "인천광역시교육청, 인천시청자미디어센터와 ‘찾아가는 유아 미디어 역기능 대응 교육’ 운영",
-      "date": "2026-07-22"
-    },
-    {
-      "newsId": "incheon-317c1505866fe9ad",
-      "decision": "DROP",
-      "scope": "provincial",
-      "reason": "학생 대상의 일회성 진로 체험 및 기업 연계 프로그램으로 일반적인 교육 활동에 해당함.",
-      "confidence": 0.9,
-      "evidenceIds": [
-        "incheon-317c1505866fe9ad"
-      ],
-      "source": "인천광역시교육청",
-      "title": "인천광역시교육청, 스마트팜 기업 현장에서 미래 먹거리 산업 진로교육 운영",
-      "date": "2026-07-22"
-    },
-    {
-      "newsId": "incheon-b2f58ccbed402060",
-      "decision": "DROP",
-      "scope": "provincial",
-      "reason": "마을교육공동체 기반의 독서 문화운동 및 개별 프로그램 운영 사례로 정책적 제도 변화가 아님.",
-      "confidence": 0.9,
-      "evidenceIds": [
-        "incheon-b2f58ccbed402060"
-      ],
-      "source": "인천광역시교육청",
-      "title": "인천광역시교육청, 우리마을교육자치회와 함께 ‘1 마을 1 책 읽기’ 로 ‘독서국가·독서인천’ 조성",
-      "date": "2026-07-22"
-    },
-    {
-      "newsId": "incheon-371d1c2509bc115a",
-      "decision": "DROP",
-      "scope": "provincial",
-      "reason": "학생 대상의 주말학교 프로그램 운영 소식으로 일회성 행사 및 체험 활동에 해당함.",
-      "confidence": 0.9,
-      "evidenceIds": [
-        "incheon-371d1c2509bc115a"
-      ],
-      "source": "인천광역시교육청",
-      "title": "인천광역시교육청, 권역별 마을교육지원센터 주말학교 운영",
-      "date": "2026-07-22"
-    },
-    {
-      "newsId": "incheon-9ddd149b00a06fe1",
-      "decision": "KEEP",
-      "scope": "provincial",
-      "reason": "행정구역 개편에 따른 교육과정 운영 지원을 위해 지역교육자원목록을 전면 수정하고 플랫폼을 통해 배포하는 등 교육행정 체계의 실질적 변화를 포함함.",
-      "confidence": 0.9,
-      "evidenceIds": [
-        "incheon-9ddd149b00a06fe1"
-      ],
-      "source": "인천광역시교육청",
-      "title": "인천광역시교육청, 행정구역 개편 맞춰 ‘지역교육자원목록’ 전면 수정 배포",
-      "date": "2026-07-22"
-    },
-    {
-      "newsId": "incheon-7369bec56ece8960",
-      "decision": "DROP",
-      "scope": "local",
-      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
-      "confidence": 1.0,
-      "evidenceIds": [
-        "incheon-7369bec56ece8960"
-      ],
-      "source": "인천광역시교육청",
-      "title": "인천북부교육지원청, 특수교육대상학생 가족과 함께하는 스쿨 (SCHOOL) 운영",
-      "date": "2026-07-22",
-      "guarded": true,
-      "guardType": "education_support_office"
-    },
-    {
       "newsId": "gyeonggi-1af7e249362ab28a",
       "decision": "DROP",
       "scope": "institution",
-      "reason": "개별 학교에서 주관하는 일회성 교육연극 발표회 행사로 교육행정 정책 변화와 무관함",
-      "confidence": 1.0,
+      "reason": "개별 학교에서 운영한 교육연극 발표회 행사로, 정책적 파급력이 없는 일회성 학교 교육 활동입니다.",
+      "confidence": 0.95,
       "evidenceIds": [
         "gyeonggi-1af7e249362ab28a"
       ],
@@ -1297,7 +1480,7 @@
       "newsId": "gyeonggi-956d099058bdaa97",
       "decision": "DROP",
       "scope": "institution",
-      "reason": "개별 학교에서 학생자치회 주도로 운영하는 일회성 알뜰시장 행사로 정책적 파급력이 없음",
+      "reason": "개별 학교에서 주관하는 일회성 학생 자치 행사 및 체험 활동으로 교육행정적 파급력이 없음",
       "confidence": 1.0,
       "evidenceIds": [
         "gyeonggi-956d099058bdaa97"
@@ -1325,7 +1508,7 @@
       "newsId": "gyeonggi-8593fe6b46794005",
       "decision": "DROP",
       "scope": "institution",
-      "reason": "개별 학교 단위에서 진행한 일회성 문화예술 체험학습 행사로 교육행정적 변화가 없음.",
+      "reason": "개별 학교에서 실시한 일회성 문화예술 현장체험학습으로 교육행정적 정책 변화와 무관함",
       "confidence": 1.0,
       "evidenceIds": [
         "gyeonggi-8593fe6b46794005"
@@ -1368,8 +1551,8 @@
       "newsId": "seoul-c26005d9a710e42f",
       "decision": "KEEP",
       "scope": "provincial",
-      "reason": "교육청 차원의 새로운 교육 비전 선포 및 기본교육 정책 방향을 제시하는 주요 정책 자료임.",
-      "confidence": 1.0,
+      "reason": "교육감의 새로운 교육 비전과 정책 방향을 제시하는 자료로, 향후 교육청의 주요 정책 추진 근거가 되므로 KEEP합니다.",
+      "confidence": 0.95,
       "evidenceIds": [
         "seoul-c26005d9a710e42f"
       ],
@@ -1381,8 +1564,8 @@
       "newsId": "seoul-6c2218177fb4f685",
       "decision": "KEEP",
       "scope": "provincial",
-      "reason": "교육청 차원에서 추진하는 유아 돌봄 정책의 확대 및 운영 체계 강화에 관한 정책 자료임.",
-      "confidence": 1.0,
+      "reason": "교육청 차원에서 추진하는 유아 돌봄 정책의 확대 및 운영 체계 강화에 관한 내용으로 정책적 파급력이 있어 KEEP합니다.",
+      "confidence": 0.95,
       "evidenceIds": [
         "seoul-6c2218177fb4f685"
       ],
@@ -1394,8 +1577,8 @@
       "newsId": "jeonbuk-57ca463010db8051",
       "decision": "DROP",
       "scope": "provincial",
-      "reason": "교육감과 학부모 단체의 간담회는 일회성 소통 행사로 정책적 변화를 담고 있지 않습니다.",
-      "confidence": 0.95,
+      "reason": "교육감과 학부모 단체 간의 단순 간담회 및 소통 행사로, 구체적인 정책 변화나 제도 개선이 명시되지 않아 DROP합니다.",
+      "confidence": 0.9,
       "evidenceIds": [
         "jeonbuk-57ca463010db8051"
       ],
@@ -1407,7 +1590,7 @@
       "newsId": "jeonbuk-fbe52c65a98fd1cf",
       "decision": "DROP",
       "scope": "provincial",
-      "reason": "특정 지역 작은학교 대상의 일회성 스포츠 관람 지원 행사로 일반적인 정책 변화로 보기 어렵습니다.",
+      "reason": "특정 학생들을 대상으로 하는 일회성 체험 및 행사 지원 사업으로, 교육행정 전반에 영향을 미치는 정책 변화가 아니므로 DROP합니다.",
       "confidence": 0.9,
       "evidenceIds": [
         "jeonbuk-fbe52c65a98fd1cf"
@@ -1420,7 +1603,7 @@
       "newsId": "jeonbuk-e5433bd07ff998ae",
       "decision": "DROP",
       "scope": "provincial",
-      "reason": "교육청 내부 조직의 청렴 서포터즈 발대식 및 캠페인 활동으로 일반적인 교육 정책 변화에 해당하지 않습니다.",
+      "reason": "교육청 내부 조직의 청렴 문화 확산을 위한 서포터즈 발대식으로, 정책적 파급력이 낮은 내부 행사입니다.",
       "confidence": 0.9,
       "evidenceIds": [
         "jeonbuk-e5433bd07ff998ae"
@@ -1433,8 +1616,8 @@
       "newsId": "moe-51c733583f77f1d8",
       "decision": "KEEP",
       "scope": "national",
-      "reason": "재외동포 대상 한국어 교육 지원이라는 국가 차원의 교육 지원 사업 및 정책적 방향을 담고 있습니다.",
-      "confidence": 0.9,
+      "reason": "교육부 차원에서 재외동포 대상 한국어 교육 지원 계획을 발표하는 정책적 성격의 자료입니다.",
+      "confidence": 0.95,
       "evidenceIds": [
         "moe-51c733583f77f1d8"
       ],
@@ -1446,8 +1629,8 @@
       "newsId": "moe-a24734502ab9597d",
       "decision": "DROP",
       "scope": "national",
-      "reason": "교과서 표지 그림 공모전은 일회성 행사이며 교육 정책의 본질적인 변화를 담고 있지 않습니다.",
-      "confidence": 0.95,
+      "reason": "교과서 표지 그림 공모전은 일회성 행사 및 이벤트에 해당하여 정책적 변화로 보기 어렵습니다.",
+      "confidence": 0.9,
       "evidenceIds": [
         "moe-a24734502ab9597d"
       ],
@@ -1459,7 +1642,7 @@
       "newsId": "moe-cbb61c3c7021ea97",
       "decision": "KEEP",
       "scope": "national",
-      "reason": "방학 중 초등돌봄 및 교육 지원 확대는 국가 차원의 주요 교육 복지 정책으로 지속적인 운영 현황을 포함합니다.",
+      "reason": "방학 중 초등돌봄 및 교육 지원 확대는 교육부의 주요 정책 사업으로 전국적으로 적용되는 사안입니다.",
       "confidence": 0.95,
       "evidenceIds": [
         "moe-cbb61c3c7021ea97"
@@ -1471,8 +1654,8 @@
     {
       "newsId": "jeju-99af57f6bc2bcef0",
       "decision": "DROP",
-      "scope": "institution",
-      "reason": "특정 학교의 현안을 논의하는 간담회 성격의 행사로, 정책의 전면적인 변화나 제도 개선을 담고 있지 않음.",
+      "scope": "provincial",
+      "reason": "특정 학교(표선고)의 현안을 논의하는 교육감 간담회로, 일반적인 정책 변화가 아닌 개별 학교 단위의 행사입니다.",
       "confidence": 0.9,
       "evidenceIds": [
         "jeju-99af57f6bc2bcef0"
@@ -1485,7 +1668,7 @@
       "newsId": "jeju-156e1c16ef5ba1dd",
       "decision": "DROP",
       "scope": "institution",
-      "reason": "직속기관인 도서관에서 주관하는 일회성 체험 행사임.",
+      "reason": "직속기관인 도서관에서 주관하는 일회성 체험 행사로 교육행정적 참고 가치가 없습니다.",
       "confidence": 0.95,
       "evidenceIds": [
         "jeju-156e1c16ef5ba1dd"
@@ -1498,8 +1681,8 @@
       "newsId": "jeju-babe550f7d10ce06",
       "decision": "DROP",
       "scope": "institution",
-      "reason": "직속기관에서 주관하는 학부모 대상 교육 프로그램으로, 교육 정책의 변화나 제도적 확산과는 거리가 있음.",
-      "confidence": 0.9,
+      "reason": "직속기관인 유아교육진흥원에서 주관하는 보호자 대상 일회성 교육 프로그램으로 정책적 변화가 아님.",
+      "confidence": 0.95,
       "evidenceIds": [
         "jeju-babe550f7d10ce06"
       ],
@@ -1511,8 +1694,8 @@
       "newsId": "jeju-6ee6c078c273bd79",
       "decision": "DROP",
       "scope": "institution",
-      "reason": "직속기관 내 체험 시설의 전시 공간 운영 소식으로, 교육 정책적 변화가 아닌 단순 시설 운영 사례임.",
-      "confidence": 0.9,
+      "reason": "직속기관인 융합과학연구원의 체험관 내 전시 공간 조성 및 운영 소식으로 일회성 사업임.",
+      "confidence": 0.95,
       "evidenceIds": [
         "jeju-6ee6c078c273bd79"
       ],
@@ -1524,7 +1707,7 @@
       "newsId": "jeju-5ca56449d2786cea",
       "decision": "DROP",
       "scope": "local",
-      "reason": "교육지원청 단위에서 실시한 직원 대상 일회성 안전 체험 교육임.",
+      "reason": "교육지원청 단위에서 실시한 직원 대상 안전 체험 교육으로 정책적 파급력이 없음.",
       "confidence": 0.95,
       "evidenceIds": [
         "jeju-5ca56449d2786cea"
@@ -1537,8 +1720,8 @@
       "newsId": "jeju-92db6a6a6f1d2dc9",
       "decision": "KEEP",
       "scope": "provincial",
-      "reason": "교육청 차원에서 범정부 AI 대전환 정책에 발맞추어 데이터 기반 행정 및 인재 양성 체계를 구축하려는 정책적 움직임임.",
-      "confidence": 0.85,
+      "reason": "도교육청 차원에서 데이터기반행정 활성화 및 AI 인재 양성 정책을 추진하기 위한 실무 역량 강화 활동임.",
+      "confidence": 0.9,
       "evidenceIds": [
         "jeju-92db6a6a6f1d2dc9"
       ],
@@ -1550,7 +1733,7 @@
       "newsId": "jeju-638280c98390e3be",
       "decision": "DROP",
       "scope": "provincial",
-      "reason": "학생 대상의 일회성 창업경진대회 및 수상 소식으로 정책적 변화와 무관함.",
+      "reason": "청소년 창업동아리 경진대회 및 수상자 발표는 일회성 행사 및 대회에 해당함.",
       "confidence": 0.95,
       "evidenceIds": [
         "jeju-638280c98390e3be"
@@ -1563,7 +1746,7 @@
       "newsId": "jeju-0a781ba8c9efceb3",
       "decision": "KEEP",
       "scope": "provincial",
-      "reason": "기간제교사 채용 절차 개선 등 교육청 차원의 정책 과제 합의 및 제도 개선 사항을 포함함.",
+      "reason": "기간제교사 채용 절차 개선 등 교육청의 주요 정책 과제에 대한 제도적 합의를 다루고 있음.",
       "confidence": 0.95,
       "evidenceIds": [
         "jeju-0a781ba8c9efceb3"
@@ -1575,9 +1758,9 @@
     {
       "newsId": "chungbuk-b0772f18729b19b1",
       "decision": "DROP",
-      "scope": "provincial",
-      "reason": "교육청 차원의 업무협약이나, 실질적인 내용은 특정 교원 대상의 연수 및 일회성 컨설팅단 운영에 해당함.",
-      "confidence": 0.85,
+      "scope": "institution",
+      "reason": "교육부 사업의 일환이나 실질적으로는 특정 기관의 업무협약 및 일회성 해외 연수 프로그램 운영에 해당함.",
+      "confidence": 0.9,
       "evidenceIds": [
         "chungbuk-b0772f18729b19b1"
       ],
@@ -1588,9 +1771,9 @@
     {
       "newsId": "chungbuk-ff31e46b798aa197",
       "decision": "DROP",
-      "scope": "provincial",
-      "reason": "직속기관에서 운영하는 교원 자격연수 과정으로, 일반적인 연수 활동에 해당함.",
-      "confidence": 0.9,
+      "scope": "institution",
+      "reason": "직속기관인 단재교육연수원에서 운영하는 교원 자격연수 프로그램으로, 일반적인 연수 활동에 해당함.",
+      "confidence": 0.95,
       "evidenceIds": [
         "chungbuk-ff31e46b798aa197"
       ],
@@ -1601,9 +1784,9 @@
     {
       "newsId": "chungbuk-9248131b78180d25",
       "decision": "DROP",
-      "scope": "provincial",
-      "reason": "직속기관이 주체인 특정 대상(이주 배경 유아)을 위한 일회성 문화·예술 공연 사업임.",
-      "confidence": 0.9,
+      "scope": "institution",
+      "reason": "직속기관이 주체인 문화·예술 공연 프로그램 운영으로, 일회성 행사 및 체험 활동에 해당함.",
+      "confidence": 0.95,
       "evidenceIds": [
         "chungbuk-9248131b78180d25"
       ],
@@ -1614,9 +1797,9 @@
     {
       "newsId": "chungbuk-9707b0f6593bde34",
       "decision": "DROP",
-      "scope": "provincial",
-      "reason": "직속기관에서 운영하는 학생 대상의 방학 중 일회성 체험 캠프임.",
-      "confidence": 0.9,
+      "scope": "institution",
+      "reason": "직속기관에서 운영하는 방학 중 학생 대상 영어 캠프로, 일회성 체험 프로그램에 해당함.",
+      "confidence": 0.95,
       "evidenceIds": [
         "chungbuk-9707b0f6593bde34"
       ],
@@ -1628,7 +1811,7 @@
       "newsId": "chungbuk-0e5d5808615c28ba",
       "decision": "DROP",
       "scope": "institution",
-      "reason": "직속기관에서 운영하는 학생 대상 일회성 체험 프로그램으로 정책적 변화가 없음.",
+      "reason": "직속기관에서 운영하는 학생 대상 해양 체험 프로그램으로, 일회성 체험 및 행사 활동에 해당함.",
       "confidence": 0.95,
       "evidenceIds": [
         "chungbuk-0e5d5808615c28ba"
@@ -1656,7 +1839,7 @@
       "newsId": "busan-1c399b710ba341c0",
       "decision": "DROP",
       "scope": "institution",
-      "reason": "영재교육원 단위의 방학 중 집중 수업 운영으로 일반적인 교육 프로그램에 해당함.",
+      "reason": "직속기관인 영재교육원에서 운영하는 일회성 방학 집중 수업 프로그램으로 정책적 변화가 아님.",
       "confidence": 0.95,
       "evidenceIds": [
         "busan-1c399b710ba341c0"
@@ -1669,8 +1852,8 @@
       "newsId": "busan-15ea1260fa8ee4ae",
       "decision": "DROP",
       "scope": "institution",
-      "reason": "교육연구정보원에서 주관하는 학부모 대상 일회성 연수 행사임.",
-      "confidence": 0.9,
+      "reason": "교육연구정보원에서 주관하는 학부모 대상 일회성 온라인 연수 행사임.",
+      "confidence": 0.95,
       "evidenceIds": [
         "busan-15ea1260fa8ee4ae"
       ],
@@ -1682,7 +1865,7 @@
       "newsId": "busan-44b0ef86a2be3635",
       "decision": "DROP",
       "scope": "provincial",
-      "reason": "학생 대상의 일회성 창업경진대회 개최 소식으로 정책적 제도 변화가 아님.",
+      "reason": "교육청 주관의 일회성 학생 경진대회 행사로 정책적 제도 변화에 해당하지 않음.",
       "confidence": 0.9,
       "evidenceIds": [
         "busan-44b0ef86a2be3635"
@@ -1693,10 +1876,10 @@
     },
     {
       "newsId": "busan-e661477c9084ad99",
-      "decision": "KEEP",
+      "decision": "DROP",
       "scope": "provincial",
-      "reason": "학교폭력 관계회복지원단 운영 및 관계회복 숙려제 등 교육청 차원의 학교폭력 대응 정책 및 제도 운영과 관련됨.",
-      "confidence": 0.85,
+      "reason": "학교폭력 관계회복지원단 대상의 역량 강화 보수교육으로 특정 대상자 대상의 내부 연수임.",
+      "confidence": 0.9,
       "evidenceIds": [
         "busan-e661477c9084ad99"
       ],
@@ -1708,8 +1891,8 @@
       "newsId": "busan-59a4e9676164e693",
       "decision": "KEEP",
       "scope": "provincial",
-      "reason": "교육청 차원에서 장애인 고용 확대 및 배치기관 확대를 통해 인사 정책 및 고용 제도를 개선한 사례로 판단됨.",
-      "confidence": 0.9,
+      "reason": "장애인 고용 확대 및 배치 기관 확대라는 교육청 차원의 인사·고용 정책 변화를 담고 있음.",
+      "confidence": 0.95,
       "evidenceIds": [
         "busan-59a4e9676164e693"
       ],
@@ -1721,7 +1904,7 @@
       "newsId": "busan-0c084b37da676a28",
       "decision": "DROP",
       "scope": "institution",
-      "reason": "교육청 산하 센터에서 운영하는 일회성 학생 대상 캠프 및 체험 프로그램으로 정책적 변화와 무관함.",
+      "reason": "학생건강증진센터에서 운영하는 일회성 건강 캠프 행사임.",
       "confidence": 0.95,
       "evidenceIds": [
         "busan-0c084b37da676a28"
@@ -1734,7 +1917,7 @@
       "newsId": "gyeonggi-446ece6cd160442a",
       "decision": "DROP",
       "scope": "institution",
-      "reason": "직속기관인 평생학습관에서 주관하는 학부모 대상 일회성 교육 프로그램 운영 소식임.",
+      "reason": "직속기관인 평생학습관에서 운영하는 일회성 학부모 교육 프로그램으로 정책적 변화나 제도 개선 사항이 포함되어 있지 않습니다.",
       "confidence": 0.95,
       "evidenceIds": [
         "gyeonggi-446ece6cd160442a"
@@ -1747,8 +1930,8 @@
       "newsId": "moe-069418a1e58848b1",
       "decision": "KEEP",
       "scope": "national",
-      "reason": "교육부 주관으로 청소년 도박 및 금융피해 예방을 위한 범정부적 안전망 구축 및 정책적 협력을 다루고 있음.",
-      "confidence": 0.9,
+      "reason": "교육부가 주도하여 청소년 도박 및 금융피해 예방을 위한 범정부적 안전망을 구축하고 학교 현장에 적용하는 정책적 협력 사안입니다.",
+      "confidence": 0.95,
       "evidenceIds": [
         "moe-069418a1e58848b1"
       ],
@@ -1759,19 +1942,42 @@
   ],
   "classifications": [
     {
+      "newsId": "gyeonggi-1c70d26ab755e712",
+      "category": "학생지원·복지",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "교육부 주관 우수모델 선정 및 지역 맞춤형 돌봄 모델의 확대 운영 사례로 타 교육청의 벤치마킹 가치가 있음.",
+      "keywords": [
+        "초등돌봄",
+        "방학돌봄",
+        "지역협력",
+        "교육우수모델"
+      ],
+      "summary": "경기도교육청은 교육부 주관 '2026 방학 중 초등돌봄·교육 우수모델 지원 사업'에 도내 3개 지역이 선정되어 지역 맞춤형 돌봄 체계를 운영한다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "gyeonggi-1c70d26ab755e712"
+      ],
+      "importanceModelScore": 3,
+      "importanceAdjusted": false,
+      "source": "경기도교육청",
+      "title": "경기도교육청, 지자체·지역사회와 손잡고 방학 돌봄 빈틈 메운다",
+      "date": "2026-07-23"
+    },
+    {
       "newsId": "incheon-a20a4174bc95d0a6",
       "category": "학생지원·복지",
       "changeLevel": "routine_operation",
       "importance": 2,
-      "importanceReason": "방학 중 방과후·돌봄교실 운영은 매년 반복되는 통상적인 교육 행정 업무이다.",
+      "importanceReason": "방학 중 돌봄교실 운영은 매년 반복되는 통상적인 교육 행정 업무임.",
       "keywords": [
+        "여름방학",
         "초등돌봄",
         "방과후학교",
-        "여름방학",
         "지역연계"
       ],
-      "summary": "인천광역시교육청이 여름방학 중 초등학생을 대상으로 지역사회와 연계한 방과후·돌봄교실을 운영한다.",
-      "confidence": 0.9,
+      "summary": "인천광역시교육청은 여름방학 기간 동안 관내 전체 초등학교에서 돌봄 공백 해소를 위한 방과후·돌봄교실을 운영한다.",
+      "confidence": 0.95,
       "evidenceIds": [
         "incheon-a20a4174bc95d0a6"
       ],
@@ -1783,25 +1989,162 @@
     },
     {
       "newsId": "incheon-9ddd149b00a06fe1",
-      "category": "정책·행정",
-      "changeLevel": "routine_operation",
-      "importance": 2,
-      "importanceReason": "행정구역 개편에 따른 기존 자원 목록의 현행화 작업으로 통상적인 행정 조치에 해당한다.",
+      "category": "교육과정·수업",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "행정구역 개편에 따른 지역 교육 자원 목록의 전면 수정은 지역 연계 교육과정 운영의 실질적 기반을 재정비하는 조치임.",
       "keywords": [
-        "행정구역개편",
         "지역교육자원",
-        "교육과정",
-        "지역연계"
+        "행정구역개편",
+        "지역연계교육과정",
+        "에듀아이"
       ],
-      "summary": "인천광역시교육청이 행정구역 개편에 대응하여 학교 현장에서 활용할 수 있는 지역교육자원목록을 수정 배포한다.",
+      "summary": "인천광역시교육청은 행정구역 개편에 대응하여 학교 현장의 지역 연계 교육과정 활성화를 위한 '지역교육자원목록'을 전면 수정 배포했다.",
       "confidence": 0.9,
       "evidenceIds": [
         "incheon-9ddd149b00a06fe1"
       ],
-      "importanceModelScore": 2,
+      "importanceModelScore": 3,
       "importanceAdjusted": false,
       "source": "인천광역시교육청",
       "title": "인천광역시교육청, 행정구역 개편 맞춰 ‘지역교육자원목록’ 전면 수정 배포",
+      "date": "2026-07-22"
+    },
+    {
+      "newsId": "gyeongnam-8cde175bf03acb17",
+      "category": "정책·행정",
+      "changeLevel": "routine_operation",
+      "importance": 2,
+      "importanceReason": "학생의회 정례회 개최는 학생자치 활성화를 위한 연례적인 행사임.",
+      "keywords": [
+        "학생의회",
+        "학교자치",
+        "민주시민교육"
+      ],
+      "summary": "경상남도교육청은 도내 학생 대표들이 참여하여 주요 현안을 논의하는 '2026년 경남학생의회 정례회'를 개최했다.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "gyeongnam-8cde175bf03acb17"
+      ],
+      "importanceModelScore": 2,
+      "importanceAdjusted": false,
+      "source": "경상남도교육청",
+      "title": "교실의 민주주의, 참여와 실천으로 넓히다 경남교육청, 2026년 경남학생의회 정례회 개최",
+      "date": "2026-07-22"
+    },
+    {
+      "newsId": "gyeongbuk-9be9acacaf7bc143",
+      "category": "지역협력·행사",
+      "changeLevel": "routine_operation",
+      "importance": 2,
+      "importanceReason": "국제포럼 개최는 교육청의 연례적인 국제교류 및 세계시민교육 행사임.",
+      "keywords": [
+        "세계시민교육",
+        "국제포럼",
+        "국제교류",
+        "지속가능발전목표"
+      ],
+      "summary": "경상북도교육청은 5개국 청소년이 참여하여 세계시민 역량을 함양하는 '2026 경상북도교육청 세계시민교육 청소년 국제포럼'을 개최했다.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "gyeongbuk-9be9acacaf7bc143"
+      ],
+      "importanceModelScore": 2,
+      "importanceAdjusted": false,
+      "source": "경상북도교육청",
+      "title": "[행복교육지원과]경북교육청,'2026 경상북도교육청 세계시민교육 청소년 국제포럼' 개최",
+      "date": "2026-07-22"
+    },
+    {
+      "newsId": "gyeongbuk-5b30652fb45e6e89",
+      "category": "교육과정·수업",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "고교학점제와 연계하여 전문가를 활용한 프리미엄 공동교육과정을 운영하는 것은 농어촌 교육격차 해소를 위한 의미 있는 사업 개선임.",
+      "keywords": [
+        "고교학점제",
+        "공동교육과정",
+        "배움잇다",
+        "농어촌교육"
+      ],
+      "summary": "경상북도교육청은 농어촌 지역 학생의 과목 선택권 확대와 교육격차 해소를 위해 전문가 연계 공동교육과정 '배움잇다'를 운영한다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "gyeongbuk-5b30652fb45e6e89"
+      ],
+      "importanceModelScore": 3,
+      "importanceAdjusted": false,
+      "source": "경상북도교육청",
+      "title": "[중등교육과]경북교육청, 학교 간 프리미엄 공동교육과정 '배움잇다' 운영",
+      "date": "2026-07-22"
+    },
+    {
+      "newsId": "gyeongbuk-49978ff06fc7af1f",
+      "category": "교원·인사",
+      "changeLevel": "routine_operation",
+      "importance": 2,
+      "importanceReason": "교원의 기후위기 대응 역량 강화를 위한 통상적인 직무 연수 운영 사례이다.",
+      "keywords": [
+        "탄소중립",
+        "교원연수",
+        "기후위기",
+        "생태전환교육"
+      ],
+      "summary": "경북교육청이 도내 교원을 대상으로 기후위기 대응 및 탄소중립 실천 역량 강화를 위한 직무 연수를 운영한다.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "gyeongbuk-49978ff06fc7af1f"
+      ],
+      "importanceModelScore": 2,
+      "importanceAdjusted": false,
+      "source": "경상북도교육청",
+      "title": "[미래교육정보과]경북교육청, 숲․산림․바다에서 배우는 '탄소중립 교원 연수' 운영",
+      "date": "2026-07-22"
+    },
+    {
+      "newsId": "gyeongbuk-bf439eb741c0b73f",
+      "category": "교원·인사",
+      "changeLevel": "routine_operation",
+      "importance": 2,
+      "importanceReason": "학교 위기사안 담당자의 정서적 소진 예방을 위한 연례적인 치유 프로그램 운영이다.",
+      "keywords": [
+        "마음건강",
+        "트라우마",
+        "교원연수",
+        "위기대응"
+      ],
+      "summary": "경북교육청이 학교 위기사안 업무 담당자의 심리적 회복과 정서적 안정을 돕기 위한 트라우마 관리 연수를 실시했다.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "gyeongbuk-bf439eb741c0b73f"
+      ],
+      "importanceModelScore": 2,
+      "importanceAdjusted": false,
+      "source": "경상북도교육청",
+      "title": "[학생생활과]경북교육청, 마음건강 지원 업무 담당자 트라우마 관리 연수 운영",
+      "date": "2026-07-22"
+    },
+    {
+      "newsId": "daejeon-b402f853ee938cd8",
+      "category": "교육과정·수업",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "학생평가 전문가 양성 과정을 통해 단위학교의 평가 역량을 강화하려는 신규 사업이다.",
+      "keywords": [
+        "학생평가",
+        "성취평가제",
+        "과정중심평가",
+        "교원역량"
+      ],
+      "summary": "대전시교육청이 고등학교 학생평가의 공정성과 신뢰도를 높이기 위해 학생평가 전문가 기본과정 연수를 운영한다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "daejeon-b402f853ee938cd8"
+      ],
+      "importanceModelScore": 3,
+      "importanceAdjusted": false,
+      "source": "대전광역시교육청",
+      "title": "대전시교육청, 학생평가 전문가 기본과정 연수 운영(중등교육과)",
       "date": "2026-07-22"
     },
     {
@@ -1809,14 +2152,14 @@
       "category": "정책·행정",
       "changeLevel": "policy_change",
       "importance": 4,
-      "importanceReason": "교육감이 새로운 교육 비전과 '기본교육'이라는 정책 체계를 제시하여 향후 서울 교육 정책의 방향성을 결정한다.",
+      "importanceReason": "교육청의 향후 교육 방향과 정책 체계를 재정립하는 중대한 비전 선포이다.",
       "keywords": [
-        "서울교육비전",
         "기본교육",
-        "학습안전망",
-        "교육복지"
+        "서울교육",
+        "교육비전",
+        "학습안전망"
       ],
-      "summary": "서울특별시교육청이 '모두를 위한 기본교육, 행복한 협력교육'을 2기 비전으로 선포하고 생애 전 단계에 걸친 기본교육 체계를 구축한다.",
+      "summary": "서울시교육청이 '모두를 위한 기본교육'을 새로운 교육 기준으로 제시하며 2기 교육 비전을 선포했다.",
       "confidence": 0.95,
       "evidenceIds": [
         "seoul-c26005d9a710e42f"
@@ -1832,15 +2175,15 @@
       "category": "학생지원·복지",
       "changeLevel": "project_change",
       "importance": 3,
-      "importanceReason": "기존 시범사업의 운영 기관을 4배 확대하여 돌봄 공백 해소를 위한 실질적인 사업 규모를 확장하였다.",
+      "importanceReason": "기존 시범사업의 규모를 4배 확대하여 돌봄 체계를 실질적으로 개선하는 사업이다.",
       "keywords": [
         "유아돌봄",
         "틈새돌봄",
         "거점형돌봄",
-        "공휴일돌봄"
+        "공교육"
       ],
-      "summary": "서울특별시교육청이 토요일·공휴일 유아 돌봄 공백 해소를 위해 거점형 틈새돌봄 시범기관을 8개소로 확대 운영한다.",
-      "confidence": 0.9,
+      "summary": "서울시교육청이 토요일·공휴일 유아 돌봄 공백 해소를 위해 거점형 틈새돌봄 시범기관을 8개소로 확대 운영한다.",
+      "confidence": 0.95,
       "evidenceIds": [
         "seoul-6c2218177fb4f685"
       ],
@@ -1852,17 +2195,17 @@
     },
     {
       "newsId": "moe-51c733583f77f1d8",
-      "category": "기타",
+      "category": "정책·행정",
       "changeLevel": "routine_operation",
       "importance": 2,
-      "importanceReason": "재외동포 대상 교육 지원 및 교재 보급은 교육부의 지속적인 연례 지원 사업이다.",
+      "importanceReason": "재외동포 대상 한국어 교육 지원이라는 기존 사업의 지속적인 집행이다.",
       "keywords": [
-        "재외동포",
         "한국어교육",
+        "재외동포",
         "한글학교",
-        "교육지원"
+        "교육부"
       ],
-      "summary": "교육부와 국제한국어교육재단이 재미동포 유아·청소년을 위한 한국어 교재 보급 등 교육 지원 계획을 발표한다.",
+      "summary": "교육부가 재미동포 유아 및 청소년의 한국어 교육을 지원하기 위해 한글학교에 교재를 보급하고 학술대회에 참석한다.",
       "confidence": 0.9,
       "evidenceIds": [
         "moe-51c733583f77f1d8"
@@ -1878,14 +2221,14 @@
       "category": "학생지원·복지",
       "changeLevel": "routine_operation",
       "importance": 2,
-      "importanceReason": "방학 중 초등돌봄 운영은 매년 시행되는 연례적인 정책 집행이다.",
+      "importanceReason": "방학 중 초등돌봄 운영은 기존 정책의 연례적인 집행 및 운영 현황 보고에 해당한다.",
       "keywords": [
         "초등돌봄",
-        "방학중운영",
-        "방과후학교",
-        "학부모부담경감"
+        "방학",
+        "온동네초등돌봄",
+        "방과후학교"
       ],
-      "summary": "교육부가 여름방학 중 초등돌봄 및 방과후 교육 참여 학생이 전년 대비 증가함에 따라 돌봄 지원을 내실 있게 운영한다.",
+      "summary": "교육부는 2026년 여름방학 동안 초등돌봄 및 교육 참여 학생이 전년 대비 증가함에 따라 돌봄 공백 최소화를 위해 내실 있는 운영을 지원한다.",
       "confidence": 0.9,
       "evidenceIds": [
         "moe-cbb61c3c7021ea97"
@@ -1901,14 +2244,14 @@
       "category": "디지털·AI",
       "changeLevel": "routine_operation",
       "importance": 2,
-      "importanceReason": "데이터기반행정 활성화를 위한 실무자 대상 워크숍 개최라는 통상적인 역량 강화 활동이다.",
+      "importanceReason": "데이터기반행정 활성화를 위한 실무자 대상 워크숍 개최로, 통상적인 역량 강화 교육에 해당한다.",
       "keywords": [
         "인공지능",
         "데이터기반행정",
         "워크숍",
         "행정혁신"
       ],
-      "summary": "제주특별자치도교육청이 데이터기반행정 활성화와 인공지능 인재 양성을 위해 실무 담당자 대상 워크숍을 개최했다.",
+      "summary": "제주특별자치도교육청은 데이터기반행정 실무담당자를 대상으로 인공지능 활용 역량 강화 및 행정 혁신을 위한 워크숍을 개최했다.",
       "confidence": 0.9,
       "evidenceIds": [
         "jeju-92db6a6a6f1d2dc9"
@@ -1924,14 +2267,14 @@
       "category": "교원·인사",
       "changeLevel": "project_change",
       "importance": 3,
-      "importanceReason": "기간제교사 채용 절차 개선 등 학교 현장의 실질적인 운영 방식을 개선하는 정책 과제에 합의하였다.",
+      "importanceReason": "교원노조와의 협의를 통해 기간제교사 채용 절차 등 학교 현장의 실질적인 운영 개선 과제를 합의하였다.",
       "keywords": [
         "기간제교사",
-        "정책협의",
-        "단체협약",
-        "교육정책"
+        "교육정책협약",
+        "교원노조",
+        "정책협의"
       ],
-      "summary": "제주특별자치도교육청과 전교조제주지부가 기간제교사 채용 절차 개선을 포함한 8개 교육정책 과제에 합의했다.",
+      "summary": "제주특별자치도교육청과 전교조제주지부는 기간제교사 채용 절차 개선 등 학교 현장의 어려움을 해소하기 위한 8개 정책과제에 합의했다.",
       "confidence": 0.95,
       "evidenceIds": [
         "jeju-0a781ba8c9efceb3"
@@ -1943,42 +2286,19 @@
       "date": "2026-07-22"
     },
     {
-      "newsId": "busan-e661477c9084ad99",
-      "category": "학생지원·복지",
-      "changeLevel": "routine_operation",
-      "importance": 2,
-      "importanceReason": "기존 학교폭력 관계회복지원단의 전문성 강화를 위한 연례적인 보수교육 실시 건이다.",
-      "keywords": [
-        "학교폭력",
-        "관계회복",
-        "보수교육",
-        "생활지도"
-      ],
-      "summary": "부산광역시교육청이 학교폭력 예방과 교육적 해결을 위해 관계회복지원단 대상 보수교육을 실시한다.",
-      "confidence": 0.9,
-      "evidenceIds": [
-        "busan-e661477c9084ad99"
-      ],
-      "importanceModelScore": 2,
-      "importanceAdjusted": false,
-      "source": "부산광역시교육청",
-      "title": "부산교육청, 학교폭력 관계회복지원단 실천역량 강화",
-      "date": "2026-07-22"
-    },
-    {
       "newsId": "busan-59a4e9676164e693",
       "category": "정책·행정",
       "changeLevel": "project_change",
       "importance": 3,
-      "importanceReason": "장애인 일자리 정원 확대 및 배치기관 다변화를 통해 고용 정책의 실질적인 운영 규모를 확대하였다.",
+      "importanceReason": "장애인 일자리 정원 확대 및 배치기관 다변화를 통해 고용률을 실질적으로 개선한 사례이다.",
       "keywords": [
         "장애인고용",
         "동행실무사",
         "일자리사업",
         "의무고용률"
       ],
-      "summary": "부산광역시교육청이 장애인 일자리 정원을 확대하고 배치기관을 다변화하여 법적 의무고용률을 달성했다.",
-      "confidence": 0.95,
+      "summary": "부산광역시교육청은 장애인 일자리 정원을 확대하고 배치기관을 다변화하여 법적 의무고용률을 달성했다.",
+      "confidence": 0.9,
       "evidenceIds": [
         "busan-59a4e9676164e693"
       ],
@@ -1993,15 +2313,15 @@
       "category": "학생지원·복지",
       "changeLevel": "project_change",
       "importance": 3,
-      "importanceReason": "민관 협력을 통해 청소년 도박 및 금융피해 예방을 위한 새로운 교육 프로그램과 지원 체계를 도입하였다.",
+      "importanceReason": "정부와 민간 기관이 협력하여 예술 체험형 교육 등 새로운 방식의 예방 프로그램을 도입하는 사업이다.",
       "keywords": [
         "청소년도박",
         "금융피해예방",
         "업무협약",
-        "예술체험교육"
+        "예방교육"
       ],
-      "summary": "교육부가 민간 기관과 협력하여 청소년 도박 및 금융피해 예방을 위한 예술 체험형 교육과 홍보 활동을 추진한다.",
-      "confidence": 0.95,
+      "summary": "교육부는 청소년 도박 및 금융피해 예방을 위해 민간 기관과 협력하여 예술 체험형 교육 등 안전망 구축을 추진한다.",
+      "confidence": 0.9,
       "evidenceIds": [
         "moe-069418a1e58848b1"
       ],
@@ -2024,26 +2344,38 @@
     }
   },
   "providerErrors": {
-    "relevance": [],
+    "relevance": [
+      {
+        "newsIds": [
+          "gyeongbuk-49978ff06fc7af1f",
+          "gyeongbuk-5b30652fb45e6e89",
+          "gyeongbuk-6b7d903a034a7947",
+          "gyeongbuk-9be9acacaf7bc143",
+          "gyeongbuk-bf439eb741c0b73f",
+          "gyeongnam-8cde175bf03acb17"
+        ],
+        "error": "응답 계약 검증 실패"
+      }
+    ],
     "classification": []
   },
   "trace": [
     {
       "step": "filter_relevance",
       "status": "success",
-      "startedAt": "2026-07-22T21:53:06+00:00",
-      "durationMs": 25571
+      "startedAt": "2026-07-22T22:11:06+00:00",
+      "durationMs": 28852
     },
     {
       "step": "classify",
       "status": "success",
-      "startedAt": "2026-07-22T21:53:32+00:00",
-      "durationMs": 8016
+      "startedAt": "2026-07-22T22:11:35+00:00",
+      "durationMs": 12026
     },
     {
       "step": "validate_selection",
       "status": "success",
-      "startedAt": "2026-07-22T21:53:40+00:00",
+      "startedAt": "2026-07-22T22:11:47+00:00",
       "durationMs": 0
     }
   ]
