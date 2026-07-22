@@ -7,6 +7,7 @@ from typing import Any
 from harness.reporting.validators import (
     validate_analysis_items,
     validate_fact_items,
+    validate_own_office_summary_items,
     validate_verification_items,
 )
 from harness.utils import chunks, read_json, render_prompt
@@ -72,6 +73,15 @@ class FactExtractionAgent(_BatchAgent):
 
     def validate(self, values: Any, expected_ids: set[str]) -> list[str]:
         return validate_fact_items(values, expected_ids)
+
+
+class OwnOfficeSummaryAgent(_BatchAgent):
+    prompt_name = "report_own_office_summary.md"
+    schema_name = "report_own_office_summary.schema.json"
+    label = "summarize_own_office"
+
+    def validate(self, values: Any, expected_ids: set[str]) -> list[str]:
+        return validate_own_office_summary_items(values, expected_ids)
 
 
 class TrendAnalysisAgent(_BatchAgent):

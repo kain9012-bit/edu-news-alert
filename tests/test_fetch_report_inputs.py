@@ -19,16 +19,22 @@ def selection_for(report_date="2026-07-17"):
 
 
 class HistoricalReportInputTest(unittest.TestCase):
-    def test_builds_source_only_from_selected_ids(self):
+    def test_builds_source_from_selected_ids_and_all_jeonbuk_items_in_window(self):
         news = [
             {"id": "news-1", "summary": "first"},
             {"id": "ignored", "summary": "other"},
             {"id": "news-2", "summary": "second"},
+            {"id": "jeonbuk-1", "sourceId": "jeonbuk", "date": "2026-07-16", "summary": "own"},
+            {"id": "jeonbuk-old", "sourceId": "jeonbuk", "date": "2026-07-15", "summary": "old"},
+            {"id": "jeonbuk-after", "sourceId": "jeonbuk", "date": "2026-07-17", "summary": "after"},
         ]
         source = historical_source(selection_for(), news, date(2026, 7, 17))
         self.assertEqual(source["windowStart"], "2026-07-16T08:00:00+09:00")
         self.assertEqual(source["windowEnd"], "2026-07-17T08:00:00+09:00")
-        self.assertEqual([item["id"] for item in source["items"]], ["news-1", "news-2"])
+        self.assertEqual(
+            [item["id"] for item in source["items"]],
+            ["news-1", "news-2", "jeonbuk-1"],
+        )
 
     def test_rejects_missing_source_or_weekend_date(self):
         with self.assertRaisesRegex(ValueError, "원문"):

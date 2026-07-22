@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import time
 from datetime import date, datetime
 from pathlib import Path
@@ -9,7 +10,7 @@ from typing import Any
 
 import requests
 
-from crawler.collect import BRIEFING_HOUR_KST, KST, briefing_window
+from crawler.collect import BRIEFING_HOUR_KST, KST, briefing_window, item_datetime
 
 
 def parse_args() -> argparse.Namespace:
@@ -45,10 +46,30 @@ def historical_source(selection: dict[str, Any], news: Any, report_date: date) -
         for item in selection.get("selectedItems", [])
         if isinstance(item, dict) and item.get("newsId")
     }
+    window_start = datetime.fromisoformat(str(metadata.get("windowStart")))
+    window_end = datetime.fromisoformat(str(metadata.get("windowEnd")))
+
+    def is_own_office_in_window(item: dict[str, Any]) -> bool:
+        if item.get("sourceId") != "jeonbuk":
+            return False
+        value = item.get("date") or item.get("publishedAt") or item.get("collectedAt")
+        published_at = item_datetime(value)
+        if published_at is None:
+            return False
+        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(value)):
+            return window_start.date() <= published_at.date() < window_end.date()
+        return window_start <= published_at <= window_end
+
+    own_office_ids = {
+        str(item.get("id"))
+        for item in news
+        if isinstance(item, dict) and item.get("id") and is_own_office_in_window(item)
+    }
+    required_ids = selected_ids | own_office_ids
     source_items = [
         item
         for item in news
-        if isinstance(item, dict) and str(item.get("id")) in selected_ids
+        if isinstance(item, dict) and str(item.get("id")) in required_ids
     ]
     found_ids = {str(item.get("id")) for item in source_items}
     missing = sorted(selected_ids - found_ids)

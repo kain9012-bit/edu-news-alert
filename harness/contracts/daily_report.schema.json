@@ -20,7 +20,15 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["newsId", "title", "summaryPoints", "validation"]
+        "required": ["newsId", "title", "summaryPoints", "validation"],
+        "properties": {
+          "summaryPoints": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 2,
+            "items": {"type": "string", "maxLength": 140}
+          }
+        }
       }
     },
     "validation": {"type": "object"},

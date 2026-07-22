@@ -64,6 +64,29 @@ def validate_fact_items(values: Any, expected_ids: set[str]) -> list[str]:
     return errors
 
 
+def validate_own_office_summary_items(values: Any, expected_ids: set[str]) -> list[str]:
+    errors = _validate_id_coverage(values, expected_ids, "전북 보도자료 요약")
+    if not isinstance(values, list):
+        return errors
+    for item in values:
+        if not isinstance(item, dict):
+            continue
+        news_id = str(item.get("newsId", ""))
+        points = item.get("summaryPoints")
+        errors.extend(
+            f"{news_id}: {error}"
+            for error in _validate_points(points, 1, 2, "전북 보도자료 요약")
+        )
+        if isinstance(points, list):
+            for index, point in enumerate(points):
+                if isinstance(point, str) and len(point.strip()) > 140:
+                    errors.append(f"{news_id}: 전북 보도자료 요약[{index}]는 140자 이하여야 합니다.")
+        confidence = item.get("confidence")
+        if not isinstance(confidence, (int, float)) or not 0 <= confidence <= 1:
+            errors.append(f"{news_id}: confidence 범위가 잘못됐습니다.")
+    return errors
+
+
 def validate_analysis_items(values: Any, expected_ids: set[str]) -> list[str]:
     errors = _validate_id_coverage(values, expected_ids, "동향분석")
     if not isinstance(values, list):
@@ -167,14 +190,19 @@ def validate_report_item(item: dict[str, Any], source_body: str) -> list[dict[st
 
 
 def validate_summary_item(item: dict[str, Any], source_body: str) -> list[dict[str, Any]]:
-    """Validate a summary-only item without requiring analysis sections."""
+    """Validate a one-or-two-point summary without requiring analysis sections."""
+    issues = [
+        {"code": "FORMAT", "field": "summaryPoints", "message": error}
+        for error in _validate_points(item.get("summaryPoints"), 1, 2, "summaryPoints")
+    ]
     summary_only = {
         **item,
         "analysisPoints": ["요약 전용 검증 자리표시자"],
         "applicationReviewPoints": [],
     }
-    return [
+    issues.extend(
         issue
         for issue in validate_report_item(summary_only, source_body)
-        if issue.get("field") == "summaryPoints"
-    ]
+        if issue.get("field") == "summaryPoints" and issue.get("code") != "FORMAT"
+    )
+    return issues

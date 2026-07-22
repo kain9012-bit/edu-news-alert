@@ -47,7 +47,7 @@ def report_config() -> dict[str, Any]:
     }
 
 
-def inputs(include_own: bool = False) -> tuple[dict[str, Any], dict[str, Any]]:
+def inputs(include_own_source: bool = False) -> tuple[dict[str, Any], dict[str, Any]]:
     metadata = {
         "runId": "selection-run",
         "validationStatus": "PASS",
@@ -55,42 +55,30 @@ def inputs(include_own: bool = False) -> tuple[dict[str, Any], dict[str, Any]]:
         "windowEnd": "2026-07-17T08:00:00+09:00",
         "windowHours": 24,
     }
-    policy = {
-        "newsId": "policy-1",
-        "sourceId": "seoul",
-        "source": "서울특별시교육청",
-        "title": "기초학력 지원 체계 확대",
-        "date": "2026-07-16",
-        "url": "https://example.com/policy-1",
-        "category": "학생지원·복지",
-        "importance": 4,
-        "selectionReason": "여러 학교에 적용되는 정책이다.",
-    }
-    own = {
-        "newsId": "own-1",
-        "sourceId": "jeonbuk",
-        "source": "전북특별자치도교육청",
-        "title": "전북 기초학력 지원",
-        "date": "2026-07-16",
-        "url": "https://example.com/own-1",
-        "category": "학생지원·복지",
-        "importance": 5,
-        "selectionReason": "시도 전체 정책이다.",
-    }
-    support = {
-        "newsId": "support-1",
-        "sourceId": "ulsan",
-        "source": "울산광역시교육청",
-        "title": "강남교육지원청, 학습지원 사업 운영",
-        "date": "2026-07-16",
-        "url": "https://example.com/support-1",
-        "category": "학생지원·복지",
-        "importance": 2,
-        "selectionReason": "지역 사업이다.",
-    }
-    selected = [policy, support]
-    if include_own:
-        selected.insert(1, own)
+    selected = [
+        {
+            "newsId": "policy-1",
+            "sourceId": "seoul",
+            "source": "서울특별시교육청",
+            "title": "기초학력 지원 체계 확대",
+            "date": "2026-07-16",
+            "url": "https://example.com/policy-1",
+            "category": "학생지원·복지",
+            "importance": 4,
+            "selectionReason": "여러 학교에 적용되는 정책이다.",
+        },
+        {
+            "newsId": "support-1",
+            "sourceId": "ulsan",
+            "source": "울산광역시교육청",
+            "title": "강남교육지원청, 학습지원 사업 운영",
+            "date": "2026-07-16",
+            "url": "https://example.com/support-1",
+            "category": "학생지원·복지",
+            "importance": 2,
+            "selectionReason": "지역 사업이다.",
+        },
+    ]
     body = (
         "서울특별시교육청은 모든 초등학교의 기초학력 지원을 강화한다고 밝혔다. "
         "학교별 진단 결과를 바탕으로 맞춤형 학습 지원을 제공하고 교원 연수를 함께 운영한다. "
@@ -101,36 +89,52 @@ def inputs(include_own: bool = False) -> tuple[dict[str, Any], dict[str, Any]]:
         "학교별 진단 결과를 바탕으로 맞춤형 학습 지원을 제공하고 교원 연수를 함께 운영한다. "
         "지원 과정은 학생 성장 기록과 연계하며 학교 현장의 의견을 반영해 단계적으로 보완한다. "
     )
+    source_items = [
+        {"id": "policy-1", "sourceId": "seoul", "summary": body},
+        {"id": "support-1", "sourceId": "ulsan", "summary": body},
+    ]
+    if include_own_source:
+        source_items.append(
+            {
+                "id": "own-1",
+                "sourceId": "jeonbuk",
+                "source": "전북특별자치도교육청",
+                "title": "전북 기초학력 지원",
+                "date": "2026-07-16",
+                "url": "https://example.com/own-1",
+                "summary": own_body,
+            }
+        )
     source = {
         "windowStart": metadata["windowStart"],
         "windowEnd": metadata["windowEnd"],
-        "items": [
-            {"id": "policy-1", "sourceId": "seoul", "summary": body},
-            {"id": "own-1", "sourceId": "jeonbuk", "summary": own_body},
-            {"id": "support-1", "sourceId": "ulsan", "summary": body},
-        ],
+        "items": source_items,
     }
     return {"metadata": metadata, "selectedItems": selected}, source
 
 
 class DailyReportHarnessTest(unittest.TestCase):
-    def test_separates_own_office_summary_and_excludes_support_office_before_ai(self) -> None:
-        fact = FakeReportLLM("fake-lite", [{
-            "items": [
-                {
+    def test_includes_all_own_office_sources_without_importance_or_selection(self) -> None:
+        fact = FakeReportLLM("fake-lite", [
+            {
+                "items": [{
                     "newsId": "policy-1",
                     "summaryPoints": ["모든 초등학교의 기초학력 지원을 강화한다."],
                     "sourceFacts": ["학교별 진단 결과를 바탕으로 맞춤형 학습 지원을 제공한다."],
                     "confidence": 0.95,
-                },
-                {
+                }]
+            },
+            {
+                "items": [{
                     "newsId": "own-1",
-                    "summaryPoints": ["전북교육청은 도내 모든 초등학교의 기초학력 지원을 강화한다."],
-                    "sourceFacts": ["학교별 진단 결과를 바탕으로 맞춤형 학습 지원을 제공한다."],
+                    "summaryPoints": [
+                        "도내 모든 초등학교의 기초학력 지원을 강화한다.",
+                        "학교별 진단 결과에 따라 맞춤형 학습 지원과 교원 연수를 운영한다.",
+                    ],
                     "confidence": 0.94,
-                },
-            ]
-        }])
+                }]
+            },
+        ])
         analysis = FakeReportLLM("fake-flash", [{
             "items": [{
                 "newsId": "policy-1",
@@ -145,28 +149,33 @@ class DailyReportHarnessTest(unittest.TestCase):
                 {"newsId": "own-1", "status": "PASS", "issues": [], "confidence": 0.92},
             ]
         }])
-        selection, source = inputs(include_own=True)
+        selection, source = inputs(include_own_source=True)
 
         report = DailyReportHarness(fact, analysis, verifier, report_config()).run(selection, source)
 
+        self.assertFalse(any(item.get("newsId") == "own-1" for item in selection["selectedItems"]))
         self.assertEqual(report["metadata"]["publishedCount"], 1)
         self.assertEqual(report["metadata"]["ownOfficeEligibleCount"], 1)
         self.assertEqual(report["metadata"]["ownOfficePublishedCount"], 1)
         self.assertEqual({item["code"] for item in report["omittedItems"]}, {"SUPPORT_OFFICE"})
-        self.assertIn("전북 기초학력 지원", fact.prompts[0])
+        self.assertNotIn("전북 기초학력 지원", fact.prompts[0])
+        self.assertIn("전북 기초학력 지원", fact.prompts[1])
         self.assertNotIn("전북 기초학력 지원", analysis.prompts[0])
         self.assertNotIn("강남교육지원청", fact.prompts[0])
         self.assertIn('"newsId": "own-1"', verifier.prompts[0])
         self.assertIn('"analysisPoints": []', verifier.prompts[0])
-        self.assertEqual(report["items"][0]["validation"]["status"], "PASS")
         own_item = report["ownOfficeItems"][0]
         self.assertEqual(own_item["validation"]["status"], "PASS")
-        self.assertEqual(own_item["analysisPoints"], [])
-        self.assertEqual(own_item["applicationReviewPoints"], [])
+        self.assertLessEqual(len(own_item["summaryPoints"]), 2)
+        self.assertNotIn("importance", own_item)
+        self.assertNotIn("category", own_item)
+        self.assertNotIn("analysisPoints", own_item)
+        self.assertNotIn("applicationReviewPoints", own_item)
         rendered = render_html(report)
-        self.assertIn("전북교육청 보도자료", rendered)
-        self.assertIn("전북 기초학력 지원", rendered)
-        self.assertIn("https://example.com/own-1", rendered)
+        own_html = rendered.split('id="own-item-1"', 1)[1].split("</article>", 1)[0]
+        self.assertIn("전북 기초학력 지원", own_html)
+        self.assertIn("https://example.com/own-1", own_html)
+        self.assertNotIn('class="stars"', own_html)
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory) / "report-with-own-office.hwpx"
             write_hwpx(report, output)
@@ -176,7 +185,50 @@ class DailyReportHarnessTest(unittest.TestCase):
             self.assertGreater(
                 text.rfind("전북 기초학력 지원"), text.rfind("전북교육청 보도자료")
             )
-        self.assertEqual([step["step"] for step in report["trace"]], ["extract_facts", "analyze_trends", "verify_report"])
+        self.assertEqual(
+            [step["step"] for step in report["trace"]],
+            ["extract_facts", "summarize_own_office", "analyze_trends", "verify_report"],
+        )
+
+    def test_keeps_own_office_source_when_ai_summary_fails(self) -> None:
+        fact = FakeReportLLM("fake-lite", [
+            {
+                "items": [{
+                    "newsId": "policy-1",
+                    "summaryPoints": ["모든 초등학교의 기초학력 지원을 강화한다."],
+                    "sourceFacts": ["학교별 진단 결과를 바탕으로 맞춤형 학습 지원을 제공한다."],
+                    "confidence": 0.95,
+                }]
+            },
+            {"items": []},
+            {"items": []},
+        ])
+        analysis = FakeReportLLM("fake-flash", [{
+            "items": [{
+                "newsId": "policy-1",
+                "analysisPoints": ["진단과 지원을 연결하는 체계 강화 흐름이다."],
+                "applicationReviewPoints": [],
+                "confidence": 0.9,
+            }]
+        }])
+        verifier = FakeReportLLM("fake-lite", [{
+            "items": [
+                {"newsId": "policy-1", "status": "PASS", "issues": [], "confidence": 0.9},
+                {"newsId": "own-1", "status": "PASS", "issues": [], "confidence": 0.9},
+            ]
+        }])
+        selection, source = inputs(include_own_source=True)
+
+        report = DailyReportHarness(fact, analysis, verifier, report_config()).run(selection, source)
+
+        self.assertEqual(report["metadata"]["ownOfficePublishedCount"], 1)
+        own_item = report["ownOfficeItems"][0]
+        self.assertEqual(own_item["newsId"], "own-1")
+        self.assertEqual(own_item["validation"]["status"], "REVIEW")
+        self.assertTrue(own_item["reviewRequired"])
+        self.assertGreaterEqual(len(own_item["summaryPoints"]), 1)
+        self.assertLessEqual(len(own_item["summaryPoints"]), 2)
+        self.assertIn("https://example.com/own-1", render_html(report))
 
     def test_local_validator_omits_department_assignment(self) -> None:
         fact = FakeReportLLM("fake-lite", [{

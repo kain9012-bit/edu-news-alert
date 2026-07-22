@@ -63,7 +63,7 @@ def render_html(report: dict[str, Any]) -> str:
         f'<li><a href="#own-item-{index}"><span>전북 {index}.</span> {html.escape(item.get("title", ""))}</a></li>'
         for index, item in enumerate(own_items, 1)
     )
-    own_toc_body = f"<ol>{own_toc}</ol>" if own_items else '<p class="empty-note">선정된 자료 없음</p>'
+    own_toc_body = f"<ol>{own_toc}</ol>" if own_items else '<p class="empty-note">해당 기간 자료 없음</p>'
     toc_groups.append(
         '<div class="toc-group"><h3><a href="#own-office">전북교육청 보도자료</a></h3>'
         f"{own_toc_body}</div>"
@@ -128,15 +128,18 @@ def render_html(report: dict[str, Any]) -> str:
             if url
             else ""
         )
+        review_badge = (
+            '<span class="review-badge">요약 확인 필요</span>' if item.get("reviewRequired") else ""
+        )
         own_articles.append(
             f'''<article class="own-office-article" id="own-item-{index}">
   <div class="article-number">전북 {index:02d}</div>
   <div class="article-head">
-    <p class="eyebrow">전북특별자치도교육청 · {html.escape(str(item.get("category", "")))}</p>
+    <p class="eyebrow">전북특별자치도교육청</p>
     <h2>{html.escape(str(item.get("title", "")))}</h2>
     <div class="article-meta">
-      <span class="stars" aria-label="중요도 {int(item.get('importance', 1))}점">{importance_stars(item.get("importance"))}</span>
       <span>{html.escape(str(item.get("date", "")))}</span>
+      {review_badge}
       {source_link}
     </div>
   </div>
@@ -148,7 +151,7 @@ def render_html(report: dict[str, Any]) -> str:
         )
 
     empty_state = "" if items else '<p class="empty-report">검증을 통과한 전국 교육동향이 없습니다.</p>'
-    own_empty_state = "" if own_items else '<p class="empty-report own-empty">해당 기간에 선정된 전북교육청 본청 보도자료가 없습니다.</p>'
+    own_empty_state = "" if own_items else '<p class="empty-report own-empty">해당 기간에 수집된 전북교육청 본청 보도자료가 없습니다.</p>'
     omitted_count = int(metadata.get("omittedCount", 0))
     review_count = int(metadata.get("reviewCount", 0))
     notes: list[str] = []
@@ -277,7 +280,7 @@ footer p {{ margin:4px 0; }}
   <div class="own-office-heading">
     <p class="kicker">우리 교육청 주요 발표</p>
     <h2>전북교육청 보도자료</h2>
-    <p>같은 기간 전북특별자치도교육청 본청에서 발표한 주요 보도자료입니다.</p>
+    <p>같은 기간 전북특별자치도교육청 본청에서 발표한 보도자료 전체입니다.</p>
   </div>
   {own_empty_state}
   {''.join(own_articles)}
@@ -324,7 +327,7 @@ def write_hwpx(report: dict[str, Any], path: Path) -> dict[str, Any]:
     if own_items:
         children.append(Bullet(items=tuple(f"{index}. {item.get('title', '')}" for index, item in enumerate(own_items, 1)), style="square"))
     else:
-        children.append(Paragraph(text="선정된 자료가 없습니다."))
+        children.append(Paragraph(text="해당 기간에 수집된 자료가 없습니다."))
 
     for index, item in enumerate(items, 1):
         review_suffix = "  (검토 필요)" if item.get("reviewRequired") else ""
@@ -362,19 +365,19 @@ def write_hwpx(report: dict[str, Any], path: Path) -> dict[str, Any]:
             PageBreak(),
             Heading(level=1, text="전북교육청 보도자료"),
             Paragraph(
-                text="같은 기간 전북특별자치도교육청 본청에서 발표한 주요 보도자료입니다.",
+                text="같은 기간 전북특별자치도교육청 본청에서 발표한 보도자료 전체입니다.",
                 style="emphasis",
             ),
         ]
     )
     if not own_items:
-        children.append(Paragraph(text="해당 기간에 선정된 전북교육청 본청 보도자료가 없습니다."))
+        children.append(Paragraph(text="해당 기간에 수집된 전북교육청 본청 보도자료가 없습니다."))
     for index, item in enumerate(own_items, 1):
+        review_suffix = "  (요약 확인 필요)" if item.get("reviewRequired") else ""
         children.extend(
             [
-                Heading(level=2, text=f"{index}. {item.get('title', '')}"),
-                Paragraph(text=f"{item.get('category', '')} · {item.get('date', '')}", style="emphasis"),
-                Paragraph(text=f"중요도  {importance_stars(item.get('importance'))}"),
+                Heading(level=2, text=f"{index}. {item.get('title', '')}{review_suffix}"),
+                Paragraph(text=str(item.get("date", "")), style="emphasis"),
                 Heading(level=2, text="내용 요약"),
                 Bullet(items=tuple(item.get("summaryPoints", [])), style="square"),
             ]

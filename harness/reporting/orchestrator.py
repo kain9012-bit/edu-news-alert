@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 import time
 import uuid
 from datetime import datetime, timezone
@@ -7,6 +8,7 @@ from typing import Any, Callable
 
 from harness.reporting.agents import (
     FactExtractionAgent,
+    OwnOfficeSummaryAgent,
     ReportVerificationAgent,
     TrendAnalysisAgent,
 )
@@ -33,6 +35,7 @@ class DailyReportHarness:
         self.trace: list[dict[str, Any]] = []
         batch_size = int(config.get("batchSize", 4))
         self.fact_agent = FactExtractionAgent(fact_llm, batch_size=batch_size)
+        self.own_office_summary_agent = OwnOfficeSummaryAgent(fact_llm, batch_size=batch_size)
         self.analysis_agent = TrendAnalysisAgent(analysis_llm, batch_size=batch_size)
         self.verification_agent = ReportVerificationAgent(verifier_llm, batch_size=batch_size)
 
@@ -43,11 +46,13 @@ class DailyReportHarness:
             selection.get("selectedItems", []),
             key=lambda item: (-int(item.get("importance", 1)), str(item.get("title", ""))),
         )
-        source_map = {
-            str(item.get("id", "")): item
+        selected_external = [item for item in selected if not self._is_own_office(item)]
+        source_items = [
+            item
             for item in source_payload.get("items", [])
             if isinstance(item, dict) and item.get("id")
-        }
+        ]
+        source_map = {str(item.get("id", "")): item for item in source_items}
         candidates: list[dict[str, Any]] = []
         own_office_candidates: list[dict[str, Any]] = []
         omitted: list[dict[str, Any]] = []
@@ -55,7 +60,7 @@ class DailyReportHarness:
         max_body_chars = int(self.config.get("maxBodyChars", 6000))
         minimum_chars = int(self.config.get("minBodyChars", 200))
 
-        for item in selected:
+        for item in selected_external:
             news_id = str(item.get("newsId", ""))
             if "교육지원청" in str(item.get("title", "")):
                 omitted.append(self._omitted(item, "SUPPORT_OFFICE", "교육지원청 단위 보도자료는 내부 동향 보고서에서 제외합니다."))
@@ -71,26 +76,41 @@ class DailyReportHarness:
                 quality_excluded_count += 1
                 omitted.append(self._omitted(item, "BODY_QUALITY", " ".join(issues)))
                 continue
-            candidate = {
-                "newsId": news_id,
-                "sourceId": item.get("sourceId") or source.get("sourceId", ""),
-                "source": item.get("source") or source.get("source") or source.get("sourceName", ""),
-                "title": item.get("title") or source.get("title", ""),
-                "date": item.get("date") or source.get("date") or source.get("publishedAt", ""),
-                "url": item.get("url") or source.get("url", ""),
-                "category": item.get("category", "기타"),
-                "importance": item.get("importance", 1),
-                "selectionReason": item.get("selectionReason", ""),
-                "body": body[:max_body_chars],
-            }
-            if self._is_own_office(item):
-                own_office_candidates.append(candidate)
-            else:
-                candidates.append(candidate)
+            candidates.append(
+                {
+                    "newsId": news_id,
+                    "sourceId": item.get("sourceId") or source.get("sourceId", ""),
+                    "source": item.get("source") or source.get("source") or source.get("sourceName", ""),
+                    "title": item.get("title") or source.get("title", ""),
+                    "date": item.get("date") or source.get("date") or source.get("publishedAt", ""),
+                    "url": item.get("url") or source.get("url", ""),
+                    "category": item.get("category", "기타"),
+                    "importance": item.get("importance", 1),
+                    "selectionReason": item.get("selectionReason", ""),
+                    "body": body[:max_body_chars],
+                }
+            )
 
-        all_candidates = [*candidates, *own_office_candidates]
-        if not all_candidates:
-            return self._empty_result(selection, selected, omitted, quality_excluded_count)
+        for source in source_items:
+            if not self._is_own_office(source):
+                continue
+            title = str(source.get("title") or "제목 없음")
+            body = normalize_space(source.get("summary") or source.get("contentPreview") or title)
+            own_office_candidates.append(
+                {
+                    "newsId": str(source.get("id", "")),
+                    "sourceId": str(source.get("sourceId") or "jeonbuk"),
+                    "source": str(source.get("source") or source.get("sourceName") or "전북특별자치도교육청"),
+                    "title": title,
+                    "date": source.get("date") or source.get("publishedAt", ""),
+                    "url": source.get("url", ""),
+                    "body": body[:max_body_chars],
+                }
+            )
+        own_office_candidates.sort(key=lambda item: str(item.get("date", "")), reverse=True)
+
+        if not candidates and not own_office_candidates:
+            return self._empty_result(selection, selected_external, omitted, quality_excluded_count)
 
         fact_input = [
             {
@@ -100,18 +120,42 @@ class DailyReportHarness:
                 "date": item["date"],
                 "sourceBody": item["body"],
             }
-            for item in all_candidates
+            for item in candidates
         ]
+        empty_agent_result = {"items": [], "attempts": 0, "errors": []}
+        fact_result = (
+            self._step("extract_facts", lambda: self.fact_agent.run(fact_input))
+            if fact_input
+            else empty_agent_result
+        )
+        fact_map = {item["newsId"]: item for item in fact_result["items"]}
+
+        own_summary_input = [
+            {
+                "newsId": item["newsId"],
+                "source": item["source"],
+                "title": item["title"],
+                "date": item["date"],
+                "sourceBody": item["body"],
+            }
+            for item in own_office_candidates
+        ]
+        own_summary_result = (
+            self._step(
+                "summarize_own_office",
+                lambda: self.own_office_summary_agent.run(own_summary_input),
+            )
+            if own_summary_input
+            else empty_agent_result
+        )
+        own_summary_map = {item["newsId"]: item for item in own_summary_result["items"]}
+
         review_threshold = int(self.config.get("reviewImportanceThreshold", 4))
         early_reviews: list[dict[str, Any]] = []
-        fact_result = self._step("extract_facts", lambda: self.fact_agent.run(fact_input))
-        fact_map = {item["newsId"]: item for item in fact_result["items"]}
-        for item in all_candidates:
+        for item in candidates:
             if item["newsId"] not in fact_map:
                 reason = "사실정리 결과가 JSON 계약을 통과하지 못했습니다."
-                if self._is_own_office(item):
-                    omitted.append(self._omitted(item, "OWN_OFFICE_FACT_EXTRACTION_FAILED", reason))
-                elif self._keep_for_review(item, review_threshold):
+                if self._keep_for_review(item, review_threshold):
                     early_reviews.append(self._review_from_candidate(item, None, reason))
                 else:
                     omitted.append(self._omitted(item, "FACT_EXTRACTION_FAILED", reason))
@@ -129,7 +173,11 @@ class DailyReportHarness:
             for item in candidates
             if item["newsId"] in fact_map
         ]
-        analysis_result = self._step("analyze_trends", lambda: self.analysis_agent.run(analysis_input))
+        analysis_result = (
+            self._step("analyze_trends", lambda: self.analysis_agent.run(analysis_input))
+            if analysis_input
+            else empty_agent_result
+        )
         analysis_map = {item["newsId"]: item for item in analysis_result["items"]}
         for item in candidates:
             if item["newsId"] in fact_map and item["newsId"] not in analysis_map:
@@ -144,32 +192,47 @@ class DailyReportHarness:
             for item in candidates
             if item["newsId"] in fact_map and item["newsId"] in analysis_map
         ]
-        own_office_drafts = [
-            self._own_office_item(item, fact_map[item["newsId"]])
-            for item in own_office_candidates
-            if item["newsId"] in fact_map
-        ]
-        candidate_map = {item["newsId"]: item for item in all_candidates}
+        own_office_drafts: list[dict[str, Any]] = []
+        for item in own_office_candidates:
+            summary = own_summary_map.get(item["newsId"])
+            if summary is None:
+                summary = {
+                    "summaryPoints": self._fallback_own_office_summary(item),
+                    "confidence": 0,
+                }
+                draft = self._own_office_item(item, summary)
+                draft["reviewRequired"] = True
+                draft["reviewReason"] = "AI 요약 생성에 실패해 원문 앞부분을 사용했습니다."
+            else:
+                draft = self._own_office_item(item, summary)
+            own_office_drafts.append(draft)
+
+        candidate_map = {
+            item["newsId"]: item for item in [*candidates, *own_office_candidates]
+        }
         verification_input = [
             {
                 "newsId": item["newsId"],
                 "sourceBody": candidate_map[item["newsId"]]["body"],
                 "report": {
                     "summaryPoints": item["summaryPoints"],
-                    "analysisPoints": item["analysisPoints"],
-                    "applicationReviewPoints": item["applicationReviewPoints"],
+                    "analysisPoints": item.get("analysisPoints", []),
+                    "applicationReviewPoints": item.get("applicationReviewPoints", []),
                 },
             }
             for item in [*draft_items, *own_office_drafts]
         ]
-        verification_result = self._step(
-            "verify_report",
-            lambda: self.verification_agent.run(verification_input),
+        verification_result = (
+            self._step(
+                "verify_report",
+                lambda: self.verification_agent.run(verification_input),
+            )
+            if verification_input
+            else empty_agent_result
         )
         verification_map = {item["newsId"]: item for item in verification_result["items"]}
 
         published: list[dict[str, Any]] = []
-        own_office_published: list[dict[str, Any]] = []
         review_count = len(early_reviews)
         for item in draft_items:
             news_id = item["newsId"]
@@ -199,31 +262,42 @@ class DailyReportHarness:
                 "confidence": verification.get("confidence", 0),
             }
             published.append(item)
+        published.extend(early_reviews)
 
+        own_office_published: list[dict[str, Any]] = []
+        own_office_review_count = 0
         for item in own_office_drafts:
             news_id = item["newsId"]
             verification = verification_map.get(news_id)
             local_issues = validate_summary_item(item, candidate_map[news_id]["body"])
-            if verification is None:
-                omitted.append(self._omitted(item, "OWN_OFFICE_VERIFICATION_FAILED", "전북교육청 보도자료 요약 검증 결과가 없습니다."))
-                continue
-            combined_issues = [*local_issues, *verification.get("issues", [])]
-            if verification.get("status") != "PASS" or combined_issues:
-                message = "; ".join(str(issue.get("message", "검증 필요")) for issue in combined_issues[:5])
-                omitted.append(self._omitted(item, "OWN_OFFICE_REVISE", message or "전북교육청 보도자료 요약을 다시 확인해야 합니다."))
-                continue
-            item["validation"] = {
-                "status": "PASS",
-                "issues": [],
-                "confidence": verification.get("confidence", 0),
-            }
+            combined_issues = [*local_issues, *(verification or {}).get("issues", [])]
+            if (
+                item.get("reviewRequired")
+                or verification is None
+                or verification.get("status") != "PASS"
+                or combined_issues
+            ):
+                reason = "; ".join(
+                    str(issue.get("message", "검증 필요")) for issue in combined_issues[:5]
+                )
+                if not reason:
+                    reason = item.get("reviewReason") or "AI 요약 검증 결과를 확인해야 합니다."
+                item["summaryPoints"] = self._fallback_own_office_summary(candidate_map[news_id])
+                item["reviewRequired"] = True
+                item["reviewReason"] = reason
+                item["validation"] = {"status": "REVIEW", "issues": [], "confidence": 0}
+                own_office_review_count += 1
+            else:
+                item["validation"] = {
+                    "status": "PASS",
+                    "issues": [],
+                    "confidence": verification.get("confidence", 0),
+                }
             own_office_published.append(item)
-
-        published.extend(early_reviews)
 
         metadata = self._metadata(
             selection=selection,
-            source_count=len(selected),
+            source_count=len(selected_external) + len(own_office_candidates),
             eligible_count=len(candidates),
             published_count=len(published),
             omitted_count=len(omitted),
@@ -233,6 +307,7 @@ class DailyReportHarness:
         )
         metadata["status"] = "completed" if not omitted else "completed_with_omissions"
         metadata["reviewCount"] = review_count
+        metadata["ownOfficeReviewCount"] = own_office_review_count
         metadata["usage"] = self._usage_summary()
         metadata["estimatedCostUsd"] = self._estimated_cost(metadata["usage"])
         return {
@@ -245,6 +320,7 @@ class DailyReportHarness:
                 "issues": [],
                 "checks": {
                     "ownOfficeExcludedFromTrendAnalysis": True,
+                    "ownOfficeAllIncluded": len(own_office_published) == len(own_office_candidates),
                     "ownOfficeSummariesVerified": all(
                         item["validation"]["status"] == "PASS" for item in own_office_published
                     ),
@@ -254,6 +330,7 @@ class DailyReportHarness:
             },
             "providerErrors": {
                 "facts": fact_result.get("errors", []),
+                "ownOfficeSummaries": own_summary_result.get("errors", []),
                 "analysis": analysis_result.get("errors", []),
                 "verification": verification_result.get("errors", []),
             },
@@ -348,7 +425,29 @@ class DailyReportHarness:
         }
 
     @staticmethod
-    def _own_office_item(source: dict[str, Any], facts: dict[str, Any]) -> dict[str, Any]:
+    def _fallback_own_office_summary(source: dict[str, Any]) -> list[str]:
+        body = normalize_space(str(source.get("body") or ""))
+        title = normalize_space(str(source.get("title") or "보도자료"))
+        sentences = [
+            sentence.strip()
+            for sentence in re.split(r"(?<=[.!?])\s+", body)
+            if sentence.strip()
+        ]
+        points: list[str] = []
+        for sentence in sentences:
+            if sentence == title or len(sentence) < 10:
+                continue
+            point = sentence if len(sentence) <= 140 else sentence[:137].rstrip() + "..."
+            points.append(point)
+            if len(points) == 2:
+                break
+        if not points:
+            fallback = body or title
+            points.append(fallback if len(fallback) <= 140 else fallback[:137].rstrip() + "...")
+        return points
+
+    @staticmethod
+    def _own_office_item(source: dict[str, Any], summary: dict[str, Any]) -> dict[str, Any]:
         return {
             "newsId": source["newsId"],
             "sourceId": source["sourceId"],
@@ -356,17 +455,11 @@ class DailyReportHarness:
             "title": source["title"],
             "date": source["date"],
             "url": source["url"],
-            "category": source["category"],
-            "importance": source["importance"],
-            "selectionReason": source["selectionReason"],
-            "summaryPoints": facts["summaryPoints"],
-            "analysisPoints": [],
-            "applicationReviewPoints": [],
-            "sourceFacts": facts["sourceFacts"],
-            "confidence": {"facts": facts.get("confidence", 0)},
+            "summaryPoints": list(summary.get("summaryPoints", []))[:2],
+            "confidence": {"summary": summary.get("confidence", 0)},
         }
-
     @staticmethod
+
     def _omitted(item: dict[str, Any], code: str, reason: str) -> dict[str, Any]:
         return {
             "newsId": item.get("newsId", ""),
@@ -441,15 +534,17 @@ class DailyReportHarness:
                 "issues": [],
                 "checks": {
                     "ownOfficeExcludedFromTrendAnalysis": True,
+                    "ownOfficeAllIncluded": True,
                     "ownOfficeSummariesVerified": True,
                     "publishedItemsVerified": True,
                     "sourceWindowMatches": True,
                 },
             },
-            "providerErrors": {"facts": [], "analysis": [], "verification": []},
+            "providerErrors": {"facts": [], "ownOfficeSummaries": [], "analysis": [], "verification": []},
             "trace": self.trace,
         }
     def _usage_summary(self) -> dict[str, Any]:
+
         stages = {
             "facts": self._usage(self.fact_llm),
             "analysis": self._usage(self.analysis_llm),
