@@ -230,7 +230,7 @@ class DailyReportHarnessTest(unittest.TestCase):
         self.assertLessEqual(len(own_item["summaryPoints"]), 2)
         self.assertIn("https://example.com/own-1", render_html(report))
 
-    def test_local_validator_omits_department_assignment(self) -> None:
+    def test_local_validator_repairs_department_assignment(self) -> None:
         fact = FakeReportLLM("fake-lite", [{
             "items": [{
                 "newsId": "policy-1",
@@ -239,29 +239,45 @@ class DailyReportHarnessTest(unittest.TestCase):
                 "confidence": 0.95,
             }]
         }])
-        analysis = FakeReportLLM("fake-flash", [{
-            "items": [{
-                "newsId": "policy-1",
-                "analysisPoints": ["진단과 지원을 연결하는 체계 강화 흐름이다."],
-                "applicationReviewPoints": ["관련 부서에서 즉시 도입해야 한다."],
-                "confidence": 0.8,
-            }]
-        }])
-        verifier = FakeReportLLM("fake-lite", [{
-            "items": [{"newsId": "policy-1", "status": "PASS", "issues": [], "confidence": 0.8}]
-        }])
+        analysis = FakeReportLLM("fake-flash", [
+            {
+                "items": [{
+                    "newsId": "policy-1",
+                    "analysisPoints": ["진단과 지원을 연결하는 체계 강화 흐름이다."],
+                    "applicationReviewPoints": ["관련 부서에서 즉시 도입해야 한다."],
+                    "confidence": 0.8,
+                }]
+            },
+            {
+                "items": [{
+                    "newsId": "policy-1",
+                    "summaryPoints": ["모든 초등학교의 기초학력 지원을 강화한다."],
+                    "analysisPoints": ["학교별 진단과 맞춤형 지원을 연결하는 흐름으로 볼 수 있다."],
+                    "applicationReviewPoints": ["기존 지원 체계와 운영 방식을 비교해 볼 수 있다."],
+                    "confidence": 0.9,
+                }]
+            },
+        ])
+        verifier = FakeReportLLM("fake-lite", [
+            {"items": [{"newsId": "policy-1", "status": "PASS", "issues": [], "confidence": 0.8}]},
+            {"items": [{"newsId": "policy-1", "status": "PASS", "issues": [], "confidence": 0.95}]},
+        ])
         selection, source = inputs()
-        # 중요도가 낮은 항목은 검증에서 걸리면 그대로 제외된다.
         selection["selectedItems"][0]["importance"] = 2
 
         report = DailyReportHarness(fact, analysis, verifier, report_config()).run(selection, source)
 
-        self.assertEqual(report["metadata"]["publishedCount"], 0)
-        revised = [item for item in report["omittedItems"] if item["code"] == "REPORT_REVISE"]
-        self.assertEqual(len(revised), 1)
-        self.assertIn("관련 부서", revised[0]["reason"])
+        self.assertEqual(report["metadata"]["publishedCount"], 1)
+        self.assertEqual(report["metadata"]["summaryOnlyCount"], 0)
+        item = report["items"][0]
+        self.assertEqual(item["validation"]["status"], "PASS")
+        self.assertNotIn("관련 부서", " ".join(item["applicationReviewPoints"]))
+        self.assertEqual(
+            [step["step"] for step in report["trace"]][-2:],
+            ["repair_report_1", "verify_repair_1"],
+        )
 
-    def test_high_importance_item_kept_for_review_when_verification_fails(self) -> None:
+    def test_repeated_repair_failure_becomes_unmarked_summary_only_item(self) -> None:
         fact = FakeReportLLM("fake-lite", [{
             "items": [{
                 "newsId": "policy-1",
@@ -286,15 +302,15 @@ class DailyReportHarnessTest(unittest.TestCase):
         report = DailyReportHarness(fact, analysis, verifier, report_config()).run(selection, source)
 
         self.assertEqual(report["metadata"]["publishedCount"], 1)
-        self.assertEqual(report["metadata"]["reviewCount"], 1)
+        self.assertEqual(report["metadata"]["summaryOnlyCount"], 1)
         item = report["items"][0]
-        self.assertTrue(item["reviewRequired"])
-        self.assertEqual(item["validation"]["status"], "REVIEW")
+        self.assertTrue(item["summaryOnly"])
+        self.assertEqual(item["validation"]["status"], "SUMMARY_ONLY")
+        self.assertEqual(item["analysisPoints"], [])
         self.assertEqual(item["applicationReviewPoints"], [])
-        self.assertFalse(any(o["code"] == "REPORT_REVISE" for o in report["omittedItems"]))
         rendered = render_html(report)
-        self.assertIn("검토 필요", rendered)
-        self.assertNotIn("관련 부서", rendered)
+        self.assertNotIn("AI 분석 보류", rendered)
+        self.assertNotIn("검토 필요", rendered)
 
     def test_html_and_hwpx_are_rendered_from_same_report(self) -> None:
         fact = FakeReportLLM("fake-lite", [{

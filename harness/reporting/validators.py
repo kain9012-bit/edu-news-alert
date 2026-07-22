@@ -103,6 +103,30 @@ def validate_analysis_items(values: Any, expected_ids: set[str]) -> list[str]:
     return errors
 
 
+
+def validate_repair_items(values: Any, expected_ids: set[str]) -> list[str]:
+    errors = _validate_id_coverage(values, expected_ids, "보고서 수정")
+    if not isinstance(values, list):
+        return errors
+    for item in values:
+        if not isinstance(item, dict):
+            continue
+        news_id = str(item.get("newsId", ""))
+        sections = (
+            ("내용 요약", item.get("summaryPoints"), 1, 5),
+            ("교육동향 분석", item.get("analysisPoints"), 1, 5),
+            ("전북교육 적용 검토", item.get("applicationReviewPoints"), 0, 5),
+        )
+        for label, points, minimum, maximum in sections:
+            errors.extend(
+                f"{news_id}: {error}"
+                for error in _validate_points(points, minimum, maximum, label)
+            )
+        confidence = item.get("confidence")
+        if not isinstance(confidence, (int, float)) or not 0 <= confidence <= 1:
+            errors.append(f"{news_id}: confidence 범위가 잘못됐습니다.")
+    return errors
+
 def validate_verification_items(values: Any, expected_ids: set[str]) -> list[str]:
     errors = _validate_id_coverage(values, expected_ids, "검증")
     if not isinstance(values, list):

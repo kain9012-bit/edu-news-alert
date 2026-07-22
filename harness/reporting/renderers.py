@@ -77,14 +77,8 @@ def render_html(report: dict[str, Any]) -> str:
             if url
             else ""
         )
-        if item.get("reviewRequired"):
-            analysis_html = (
-                '<section class="report-section review-note">'
-                '<h3>AI 분석 보류</h3>'
-                '<p>이 자료는 중요도가 높아 목록에 포함했으나, AI 분석·적용 검토가 근거 검증을 '
-                '통과하지 못해 생략했습니다. 위 내용 요약과 아래 원문을 직접 확인해 주세요.</p>'
-                "</section>"
-            )
+        if item.get("summaryOnly"):
+            analysis_html = ""
         else:
             analysis_html = (
                 '<section class="report-section analysis">'
@@ -96,9 +90,6 @@ def render_html(report: dict[str, Any]) -> str:
                 f'{_points_html(item.get("applicationReviewPoints", []), "직접 적용 검토사항 없음")}'
                 "</section>"
             )
-        review_badge = (
-            '<span class="review-badge">검토 필요</span>' if item.get("reviewRequired") else ""
-        )
         articles.append(
             f'''<article id="item-{index}">
   <div class="article-number">{index:02d}</div>
@@ -108,7 +99,6 @@ def render_html(report: dict[str, Any]) -> str:
     <div class="article-meta">
       <span class="stars" aria-label="중요도 {int(item.get('importance', 1))}점">{importance_stars(item.get("importance"))}</span>
       <span>{html.escape(str(item.get("date", "")))}</span>
-      {review_badge}
       {source_link}
     </div>
   </div>
@@ -128,9 +118,6 @@ def render_html(report: dict[str, Any]) -> str:
             if url
             else ""
         )
-        review_badge = (
-            '<span class="review-badge">요약 확인 필요</span>' if item.get("reviewRequired") else ""
-        )
         own_articles.append(
             f'''<article class="own-office-article" id="own-item-{index}">
   <div class="article-number">전북 {index:02d}</div>
@@ -139,7 +126,6 @@ def render_html(report: dict[str, Any]) -> str:
     <h2>{html.escape(str(item.get("title", "")))}</h2>
     <div class="article-meta">
       <span>{html.escape(str(item.get("date", "")))}</span>
-      {review_badge}
       {source_link}
     </div>
   </div>
@@ -153,15 +139,10 @@ def render_html(report: dict[str, Any]) -> str:
     empty_state = "" if items else '<p class="empty-report">검증을 통과한 전국 교육동향이 없습니다.</p>'
     own_empty_state = "" if own_items else '<p class="empty-report own-empty">해당 기간에 수집된 전북교육청 본청 보도자료가 없습니다.</p>'
     omitted_count = int(metadata.get("omittedCount", 0))
-    review_count = int(metadata.get("reviewCount", 0))
     notes: list[str] = []
     if omitted_count:
         notes.append(
             f'AI 근거 검증 또는 원문 품질 검사를 통과하지 못한 {omitted_count}건은 배포본에서 제외되었습니다.'
-        )
-    if review_count:
-        notes.append(
-            f'중요도가 높아 목록에 포함했으나 AI 분석이 보류된 {review_count}건은 「검토 필요」로 표시했습니다.'
         )
     omission_note = (
         '<p class="omission-note">' + " ".join(html.escape(note) for note in notes) + "</p>"
@@ -330,25 +311,17 @@ def write_hwpx(report: dict[str, Any], path: Path) -> dict[str, Any]:
         children.append(Paragraph(text="해당 기간에 수집된 자료가 없습니다."))
 
     for index, item in enumerate(items, 1):
-        review_suffix = "  (검토 필요)" if item.get("reviewRequired") else ""
         children.extend(
             [
                 PageBreak(),
-                Heading(level=1, text=f"{index}. {item.get('title', '')}{review_suffix}"),
+                Heading(level=1, text=f"{index}. {item.get('title', '')}"),
                 Paragraph(text=f"{item.get('source', '')} · {item.get('category', '')} · {item.get('date', '')}", style="emphasis"),
                 Paragraph(text=f"중요도  {importance_stars(item.get('importance'))}"),
                 Heading(level=2, text="내용 요약"),
                 Bullet(items=tuple(item.get("summaryPoints", [])), style="square"),
             ]
         )
-        if item.get("reviewRequired"):
-            children.append(Heading(level=2, text="AI 분석 보류"))
-            children.append(
-                Paragraph(
-                    text="중요도가 높아 목록에 포함했으나, AI 분석·적용 검토가 근거 검증을 통과하지 못해 생략했습니다. 원문을 직접 확인해 주세요."
-                )
-            )
-        else:
+        if not item.get("summaryOnly"):
             children.append(Heading(level=2, text="교육동향 분석"))
             children.append(Bullet(items=tuple(item.get("analysisPoints", [])), style="circle"))
             children.append(Heading(level=2, text="전북교육 적용 검토"))
@@ -373,10 +346,9 @@ def write_hwpx(report: dict[str, Any], path: Path) -> dict[str, Any]:
     if not own_items:
         children.append(Paragraph(text="해당 기간에 수집된 전북교육청 본청 보도자료가 없습니다."))
     for index, item in enumerate(own_items, 1):
-        review_suffix = "  (요약 확인 필요)" if item.get("reviewRequired") else ""
         children.extend(
             [
-                Heading(level=2, text=f"{index}. {item.get('title', '')}{review_suffix}"),
+                Heading(level=2, text=f"{index}. {item.get('title', '')}"),
                 Paragraph(text=str(item.get("date", "")), style="emphasis"),
                 Heading(level=2, text="내용 요약"),
                 Bullet(items=tuple(item.get("summaryPoints", [])), style="square"),

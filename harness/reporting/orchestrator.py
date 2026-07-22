@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import re
 import time
 import uuid
 from datetime import datetime, timezone
@@ -9,10 +8,12 @@ from typing import Any, Callable
 from harness.reporting.agents import (
     FactExtractionAgent,
     OwnOfficeSummaryAgent,
+    ReportRepairAgent,
     ReportVerificationAgent,
     TrendAnalysisAgent,
 )
-from harness.reporting.validators import body_quality_issues, validate_report_item, validate_summary_item
+from harness.reporting.repair import ReportRepairCoordinator, source_summary, verification_input
+from harness.reporting.validators import body_quality_issues, validate_summary_item
 from harness.utils import normalize_space
 
 
@@ -37,6 +38,7 @@ class DailyReportHarness:
         self.fact_agent = FactExtractionAgent(fact_llm, batch_size=batch_size)
         self.own_office_summary_agent = OwnOfficeSummaryAgent(fact_llm, batch_size=batch_size)
         self.analysis_agent = TrendAnalysisAgent(analysis_llm, batch_size=batch_size)
+        self.repair_agent = ReportRepairAgent(analysis_llm, batch_size=batch_size)
         self.verification_agent = ReportVerificationAgent(verifier_llm, batch_size=batch_size)
 
     def run(self, selection: dict[str, Any], source_payload: dict[str, Any]) -> dict[str, Any]:
@@ -150,15 +152,11 @@ class DailyReportHarness:
         )
         own_summary_map = {item["newsId"]: item for item in own_summary_result["items"]}
 
-        review_threshold = int(self.config.get("reviewImportanceThreshold", 4))
         early_reviews: list[dict[str, Any]] = []
         for item in candidates:
             if item["newsId"] not in fact_map:
                 reason = "사실정리 결과가 JSON 계약을 통과하지 못했습니다."
-                if self._keep_for_review(item, review_threshold):
-                    early_reviews.append(self._review_from_candidate(item, None, reason))
-                else:
-                    omitted.append(self._omitted(item, "FACT_EXTRACTION_FAILED", reason))
+                early_reviews.append(self._repair_draft_from_candidate(item, None, reason))
 
         analysis_input = [
             {
@@ -182,22 +180,20 @@ class DailyReportHarness:
         for item in candidates:
             if item["newsId"] in fact_map and item["newsId"] not in analysis_map:
                 reason = "교육동향 분석 결과가 JSON 계약을 통과하지 못했습니다."
-                if self._keep_for_review(item, review_threshold):
-                    early_reviews.append(self._review_from_candidate(item, fact_map[item["newsId"]], reason))
-                else:
-                    omitted.append(self._omitted(item, "ANALYSIS_FAILED", reason))
+                early_reviews.append(self._repair_draft_from_candidate(item, fact_map[item["newsId"]], reason))
 
         draft_items = [
             self._draft_item(item, fact_map[item["newsId"]], analysis_map[item["newsId"]])
             for item in candidates
             if item["newsId"] in fact_map and item["newsId"] in analysis_map
         ]
+        draft_items.extend(early_reviews)
         own_office_drafts: list[dict[str, Any]] = []
         for item in own_office_candidates:
             summary = own_summary_map.get(item["newsId"])
             if summary is None:
                 summary = {
-                    "summaryPoints": self._fallback_own_office_summary(item),
+                    "summaryPoints": source_summary(item),
                     "confidence": 0,
                 }
                 draft = self._own_office_item(item, summary)
@@ -210,59 +206,32 @@ class DailyReportHarness:
         candidate_map = {
             item["newsId"]: item for item in [*candidates, *own_office_candidates]
         }
-        verification_input = [
-            {
-                "newsId": item["newsId"],
-                "sourceBody": candidate_map[item["newsId"]]["body"],
-                "report": {
-                    "summaryPoints": item["summaryPoints"],
-                    "analysisPoints": item.get("analysisPoints", []),
-                    "applicationReviewPoints": item.get("applicationReviewPoints", []),
-                },
-            }
-            for item in [*draft_items, *own_office_drafts]
-        ]
+        initial_verification_input = verification_input(
+            [*draft_items, *own_office_drafts], candidate_map
+        )
         verification_result = (
             self._step(
                 "verify_report",
-                lambda: self.verification_agent.run(verification_input),
+                lambda: self.verification_agent.run(initial_verification_input),
             )
-            if verification_input
+            if initial_verification_input
             else empty_agent_result
         )
         verification_map = {item["newsId"]: item for item in verification_result["items"]}
 
-        published: list[dict[str, Any]] = []
-        review_count = len(early_reviews)
-        for item in draft_items:
-            news_id = item["newsId"]
-            verification = verification_map.get(news_id)
-            local_issues = validate_report_item(item, candidate_map[news_id]["body"])
-            if verification is None:
-                reason = "검증 결과가 JSON 계약을 통과하지 못했습니다."
-                if self._keep_for_review(item, review_threshold):
-                    published.append(self._review_item(item, reason))
-                    review_count += 1
-                else:
-                    omitted.append(self._omitted(item, "VERIFICATION_FAILED", reason))
-                continue
-            combined_issues = [*local_issues, *verification.get("issues", [])]
-            if verification.get("status") != "PASS" or combined_issues:
-                message = "; ".join(str(issue.get("message", "검증 필요")) for issue in combined_issues[:5])
-                message = message or "AI 근거 검증에서 수정을 요구했습니다."
-                if self._keep_for_review(item, review_threshold):
-                    published.append(self._review_item(item, message))
-                    review_count += 1
-                else:
-                    omitted.append(self._omitted(item, "REPORT_REVISE", message))
-                continue
-            item["validation"] = {
-                "status": "PASS",
-                "issues": [],
-                "confidence": verification.get("confidence", 0),
-            }
-            published.append(item)
-        published.extend(early_reviews)
+        repair_coordinator = ReportRepairCoordinator(
+            repair_agent=self.repair_agent,
+            verification_agent=self.verification_agent,
+            step=self._step,
+            rounds=int(self.config.get("reportRepairRounds", 2)),
+        )
+        repair_outcome = repair_coordinator.run(
+            drafts=draft_items,
+            candidate_map=candidate_map,
+            verification_map=verification_map,
+        )
+        published = repair_outcome["items"]
+        summary_only_count = repair_outcome["summaryOnlyCount"]
 
         own_office_published: list[dict[str, Any]] = []
         own_office_review_count = 0
@@ -282,7 +251,7 @@ class DailyReportHarness:
                 )
                 if not reason:
                     reason = item.get("reviewReason") or "AI 요약 검증 결과를 확인해야 합니다."
-                item["summaryPoints"] = self._fallback_own_office_summary(candidate_map[news_id])
+                item["summaryPoints"] = source_summary(candidate_map[news_id])
                 item["reviewRequired"] = True
                 item["reviewReason"] = reason
                 item["validation"] = {"status": "REVIEW", "issues": [], "confidence": 0}
@@ -306,7 +275,7 @@ class DailyReportHarness:
             quality_excluded_count=quality_excluded_count,
         )
         metadata["status"] = "completed" if not omitted else "completed_with_omissions"
-        metadata["reviewCount"] = review_count
+        metadata["summaryOnlyCount"] = summary_only_count
         metadata["ownOfficeReviewCount"] = own_office_review_count
         metadata["usage"] = self._usage_summary()
         metadata["estimatedCostUsd"] = self._estimated_cost(metadata["usage"])
@@ -324,7 +293,7 @@ class DailyReportHarness:
                     "ownOfficeSummariesVerified": all(
                         item["validation"]["status"] == "PASS" for item in own_office_published
                     ),
-                    "publishedItemsVerified": all(item["validation"]["status"] in ("PASS", "REVIEW") for item in published),
+                    "publishedItemsVerified": all(item["validation"]["status"] in ("PASS", "SUMMARY_ONLY") for item in published),
                     "sourceWindowMatches": True,
                 },
             },
@@ -333,6 +302,8 @@ class DailyReportHarness:
                 "ownOfficeSummaries": own_summary_result.get("errors", []),
                 "analysis": analysis_result.get("errors", []),
                 "verification": verification_result.get("errors", []),
+                "repairs": repair_outcome.get("repairErrors", []),
+                "repairVerifications": repair_outcome.get("verificationErrors", []),
             },
             "trace": self.trace,
         }
@@ -349,33 +320,14 @@ class DailyReportHarness:
             if metadata.get(key) != source_payload.get(key):
                 raise ReportInputError(f"선별 결과와 수집 원문의 {key}가 다릅니다.")
 
-    @staticmethod
-    def _keep_for_review(item: dict[str, Any], threshold: int) -> bool:
-        """중요도가 높은 항목은 검증에서 걸려도 버리지 않고 검토 상태로 남긴다."""
-        try:
-            importance = int(item.get("importance", 0))
-        except (TypeError, ValueError):
-            importance = 0
-        return importance >= threshold
 
     @staticmethod
-    def _review_item(item: dict[str, Any], reason: str) -> dict[str, Any]:
-        """AI 분석은 보류하되 원문 요약과 링크는 남겨 중요한 자료가 사라지지 않게 한다."""
-        reviewed = dict(item)
-        reviewed["analysisPoints"] = []
-        reviewed["applicationReviewPoints"] = []
-        reviewed["reviewRequired"] = True
-        reviewed["reviewReason"] = reason
-        reviewed["validation"] = {"status": "REVIEW", "issues": [], "confidence": 0}
-        return reviewed
-
-    @staticmethod
-    def _review_from_candidate(
+    def _repair_draft_from_candidate(
         candidate: dict[str, Any],
         facts: dict[str, Any] | None,
         reason: str,
     ) -> dict[str, Any]:
-        """사실정리·분석 단계에서 걸린 중요 항목을 원문 요약만으로 검토 상태로 남긴다."""
+        """Create a repairable draft when an earlier generation step fails."""
         return {
             "newsId": candidate.get("newsId", ""),
             "sourceId": candidate.get("sourceId", ""),
@@ -386,12 +338,10 @@ class DailyReportHarness:
             "category": candidate.get("category", "기타"),
             "importance": candidate.get("importance", 1),
             "selectionReason": candidate.get("selectionReason", ""),
-            "summaryPoints": list(facts.get("summaryPoints", [])) if facts else [],
+            "summaryPoints": list(facts.get("summaryPoints", [])) if facts else source_summary(candidate),
             "analysisPoints": [],
             "applicationReviewPoints": [],
-            "reviewRequired": True,
-            "reviewReason": reason,
-            "validation": {"status": "REVIEW", "issues": [], "confidence": 0},
+            "generationReason": reason,
         }
 
     def _is_own_office(self, item: dict[str, Any]) -> bool:
@@ -423,28 +373,6 @@ class DailyReportHarness:
                 "analysis": analysis.get("confidence", 0),
             },
         }
-
-    @staticmethod
-    def _fallback_own_office_summary(source: dict[str, Any]) -> list[str]:
-        body = normalize_space(str(source.get("body") or ""))
-        title = normalize_space(str(source.get("title") or "보도자료"))
-        sentences = [
-            sentence.strip()
-            for sentence in re.split(r"(?<=[.!?])\s+", body)
-            if sentence.strip()
-        ]
-        points: list[str] = []
-        for sentence in sentences:
-            if sentence == title or len(sentence) < 10:
-                continue
-            point = sentence if len(sentence) <= 140 else sentence[:137].rstrip() + "..."
-            points.append(point)
-            if len(points) == 2:
-                break
-        if not points:
-            fallback = body or title
-            points.append(fallback if len(fallback) <= 140 else fallback[:137].rstrip() + "...")
-        return points
 
     @staticmethod
     def _own_office_item(source: dict[str, Any], summary: dict[str, Any]) -> dict[str, Any]:

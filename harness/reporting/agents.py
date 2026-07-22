@@ -8,6 +8,7 @@ from harness.reporting.validators import (
     validate_analysis_items,
     validate_fact_items,
     validate_own_office_summary_items,
+    validate_repair_items,
     validate_verification_items,
 )
 from harness.utils import chunks, read_json, render_prompt
@@ -91,6 +92,15 @@ class TrendAnalysisAgent(_BatchAgent):
 
     def validate(self, values: Any, expected_ids: set[str]) -> list[str]:
         return validate_analysis_items(values, expected_ids)
+
+
+class ReportRepairAgent(_BatchAgent):
+    prompt_name = "report_repair.md"
+    schema_name = "report_repair.schema.json"
+    label = "repair_report"
+
+    def validate(self, values: Any, expected_ids: set[str]) -> list[str]:
+        return validate_repair_items(values, expected_ids)
 
 
 class ReportVerificationAgent(_BatchAgent):
