@@ -149,7 +149,13 @@ footer p {{ margin:4px 0; }}
   .article-head h2 {{ font-size:21px; }}
   .omission-note {{ padding-left:24px; padding-right:24px; }}
 }}
+.toolbar {{ position:fixed; top:18px; right:18px; z-index:50; display:flex; gap:8px; }}
+.toolbar button {{ display:inline-flex; align-items:center; gap:6px; padding:9px 14px; border:1px solid var(--teal); border-radius:8px; background:var(--teal); color:#fff; font:inherit; font-size:13px; font-weight:700; cursor:pointer; box-shadow:0 2px 8px rgba(18,31,43,.16); }}
+.toolbar button.secondary {{ background:#fff; color:var(--teal); }}
+.toolbar button:hover {{ opacity:.92; }}
+@media (max-width:700px) {{ .toolbar {{ top:10px; right:10px; }} .toolbar button {{ padding:8px 11px; font-size:12px; }} }}
 @media print {{
+  .toolbar {{ display:none !important; }}
   body {{ background:#fff; }} .report {{ width:100%; box-shadow:none; }}
   article {{ break-before:page; border-bottom:0; padding-top:30px; }}
   article:first-of-type {{ break-before:auto; }} nav a {{ text-decoration:none; }}
@@ -157,6 +163,10 @@ footer p {{ margin:4px 0; }}
 </style>
 </head>
 <body>
+<div class="toolbar" role="toolbar" aria-label="문서 도구">
+  <button type="button" class="secondary" onclick="window.print()" title="인쇄 대화상자를 엽니다">🖨 인쇄</button>
+  <button type="button" onclick="window.print()" title="인쇄 대화상자에서 '대상'을 'PDF로 저장'으로 선택하세요">📄 PDF 저장</button>
+</div>
 <main class="report">
 <header>
   <p class="kicker">전국 교육정책 및 교육행정 동향</p>

@@ -475,6 +475,106 @@ def collect_moe_links(source: dict[str, Any], soup: BeautifulSoup) -> list[dict[
     return links[:MAX_ITEMS_PER_SOURCE]
 
 
+NDSOFT_SECTION_LABELS = {
+    "본청",
+    "기관",
+    "학교",
+    "참여",
+    "전남광주교육TV",
+    "영상뉴스",
+    "책방",
+}
+
+
+def parse_list_md_datetime(text: str, reference: datetime | None = None) -> datetime | None:
+    """목록의 'MM.DD HH:MM' 표기를 KST 일시로 해석한다(연도 미표기 보정)."""
+    reference = reference or now_kst()
+    match = re.search(r"\b(\d{1,2})\.(\d{1,2})\s+(\d{1,2}):(\d{2})\b", text or "")
+    if not match:
+        return None
+    month, day, hour, minute = (int(part) for part in match.groups())
+    for year in (reference.year, reference.year - 1):
+        try:
+            candidate = datetime(year, month, day, hour, minute, tzinfo=KST)
+        except ValueError:
+            return None
+        if candidate <= reference + timedelta(days=1):
+            return candidate
+    return None
+
+
+def collect_ndsoft_section_links(
+    source: dict[str, Any],
+    window_start: datetime,
+) -> list[dict[str, str]]:
+    """전남광주 통합청처럼 섹션 필터가 무력화된 ndsoft 게시판을 위한 수집기.
+
+    사이트가 sc_section_code 필터를 무시하고 전체기사를 돌려주므로, 각 기사 행의
+    분류 배지(본청·기관·학교 등)로 직접 걸러내고 분석 기간이 끝날 때까지 페이지를
+    넘겨가며 본청 자료를 모은다.
+    """
+    exclude_labels = set(source.get("excludeSectionLabels") or [])
+    keep_labels = set(source.get("keepSectionLabels") or [])
+    max_pages = int(source.get("maxPages", 25))
+    base_url = source["listUrl"]
+    seen: set[str] = set()
+    links: list[dict[str, str]] = []
+
+    for page in range(1, max_pages + 1):
+        page_url = add_query(base_url, {"page": str(page)})
+        try:
+            html = fetch_text(page_url, source)
+        except Exception as exc:  # noqa: BLE001 - 페이지 실패는 수집 중단으로 처리
+            print(f"jngj page fetch failed {page_url}: {exc}")
+            break
+        soup = BeautifulSoup(html, "lxml")
+        rows_on_page = 0
+        oldest_on_page: datetime | None = None
+
+        for li in soup.find_all("li"):
+            anchor = li.select_one("h4 a[href*='articleView'], .titles a[href*='articleView']")
+            if anchor is None:
+                anchor = li.find(
+                    "a",
+                    href=lambda value: bool(value) and "articleView.html" in value and "idxno=" in value,
+                )
+            if anchor is None:
+                continue
+            detail_url = urljoin(base_url, anchor.get("href") or "")
+            if not url_matches(detail_url, source):
+                continue
+            rows_on_page += 1
+
+            row_dt = parse_list_md_datetime(li.get_text(" "))
+            if row_dt and (oldest_on_page is None or row_dt < oldest_on_page):
+                oldest_on_page = row_dt
+
+            badges = [normalize_space(tag.get_text(" ")) for tag in li.find_all(["em", "span", "i"])]
+            category = next((badge for badge in badges if badge in NDSOFT_SECTION_LABELS), None)
+            if category is not None:
+                if exclude_labels and category in exclude_labels:
+                    continue
+                if keep_labels and category not in keep_labels:
+                    continue
+
+            if detail_url in seen:
+                continue
+            title = clean_candidate_title(anchor.get_text(" "))
+            if is_notice_title(title):
+                continue
+            seen.add(detail_url)
+            links.append(
+                {"url": detail_url, "title": title, "listText": normalize_space(li.get_text(" "))}
+            )
+
+        if rows_on_page == 0:
+            break
+        if oldest_on_page is not None and oldest_on_page.date() < window_start.date():
+            break
+
+    return links[:MAX_ITEMS_PER_SOURCE]
+
+
 def collect_links(source: dict[str, Any], html: str) -> list[dict[str, str]]:
     soup = BeautifulSoup(html, "lxml")
     seen: set[str] = set()
@@ -990,8 +1090,11 @@ def collect_source(
     refreshed_existing = 0
     attachment_extracted = 0
     try:
-        html = fetch_text(source["listUrl"], source)
-        links = collect_links(source, html)
+        if source.get("paginate"):
+            links = collect_ndsoft_section_links(source, window_start)
+        else:
+            html = fetch_text(source["listUrl"], source)
+            links = collect_links(source, html)
         items = []
         for link in links:
             item_id = stable_id(source["id"], link["url"])
