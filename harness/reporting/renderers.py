@@ -8,6 +8,44 @@ from typing import Any
 
 WEEKDAYS = "월화수목금토일"
 
+SOURCE_SHORT_LABELS = {
+    "moe": "교육부",
+    "jeonbuk": "전북",
+    "seoul": "서울",
+    "gyeonggi": "경기",
+    "busan": "부산",
+    "daegu": "대구",
+    "incheon": "인천",
+    "jngj_s1n1": "전남광주",
+    "daejeon": "대전",
+    "ulsan": "울산",
+    "sejong": "세종",
+    "gangwon": "강원",
+    "chungbuk": "충북",
+    "chungnam": "충남",
+    "gyeongbuk": "경북",
+    "gyeongnam": "경남",
+    "jeju": "제주",
+}
+
+
+def source_short_label(item: dict[str, Any]) -> str:
+    source_id = str(item.get("sourceId") or "")
+    if source_id in SOURCE_SHORT_LABELS:
+        return SOURCE_SHORT_LABELS[source_id]
+    source = str(item.get("source") or "교육기관")
+    for suffix in (
+        "특별자치도교육청",
+        "특별자치시교육청",
+        "광역시교육청",
+        "특별시교육청",
+        "도교육청",
+        "교육청",
+    ):
+        if source.endswith(suffix):
+            return source[: -len(suffix)] or source
+    return source
+
 
 def report_date_label(value: str | None) -> str:
     if not value:
@@ -55,18 +93,51 @@ def render_html(report: dict[str, Any]) -> str:
     toc_groups: list[str] = []
     if items:
         national_toc = "".join(
-            f'<li><a href="#item-{index}"><span>{index}.</span> {html.escape(item.get("title", ""))}</a></li>'
+            f'<li><a href="#item-{index}"><span>{index}.</span> <strong class="toc-region">({html.escape(source_short_label(item))})</strong> {html.escape(item.get("title", ""))}</a></li>'
             for index, item in enumerate(items, 1)
         )
         toc_groups.append(f'<div class="toc-group"><h3>전국 교육동향</h3><ol>{national_toc}</ol></div>')
     own_toc = "".join(
-        f'<li><a href="#own-item-{index}"><span>전북 {index}.</span> {html.escape(item.get("title", ""))}</a></li>'
+        f'<li><a href="#own-item-{index}"><span>{index}.</span> <strong class="toc-region">(전북)</strong> {html.escape(item.get("title", ""))}</a></li>'
         for index, item in enumerate(own_items, 1)
     )
     own_toc_body = f"<ol>{own_toc}</ol>" if own_items else '<p class="empty-note">해당 기간 자료 없음</p>'
     toc_groups.append(
         '<div class="toc-group"><h3><a href="#own-office">전북교육청 보도자료</a></h3>'
         f"{own_toc_body}</div>"
+    )
+
+    controller_groups: list[str] = []
+    if items:
+        controller_items = "".join(
+            f'<li><a href="#item-{index}" data-report-target="item-{index}">'
+            f'<span class="controller-number">{index}</span>'
+            f'<span class="controller-label"><strong>({html.escape(source_short_label(item))})</strong> '
+            f'{html.escape(str(item.get("title", "")))}</span></a></li>'
+            for index, item in enumerate(items, 1)
+        )
+        controller_groups.append(
+            '<section><h2>전국 교육동향</h2><ol>' + controller_items + "</ol></section>"
+        )
+    if own_items:
+        controller_items = "".join(
+            f'<li><a href="#own-item-{index}" data-report-target="own-item-{index}">'
+            f'<span class="controller-number">전북 {index}</span>'
+            f'<span class="controller-label">{html.escape(str(item.get("title", "")))}</span>'
+            "</a></li>"
+            for index, item in enumerate(own_items, 1)
+        )
+        controller_groups.append(
+            '<section><h2>전북교육청</h2><ol>' + controller_items + "</ol></section>"
+        )
+    side_controller = (
+        '<aside class="toc-controller" aria-label="빠른 목차">'
+        '<a class="toc-controller-home" href="#report-toc">목차</a>'
+        '<div class="toc-controller-scroll">'
+        + "".join(controller_groups)
+        + "</div></aside>"
+        if controller_groups
+        else ""
     )
 
     articles: list[str] = []
@@ -179,6 +250,24 @@ nav li {{ break-inside:avoid; margin:0 0 10px; font-size:14px; line-height:1.45;
 nav a {{ text-decoration:none; }}
 nav a:hover {{ color:var(--teal); text-decoration:underline; }}
 nav li span {{ color:var(--teal); font-weight:800; margin-right:5px; }}
+.toc-region {{ color:var(--muted); font-weight:700; }}
+.toc-controller {{ display:none; }}
+@media (min-width:1500px) {{
+  .toc-controller {{ position:fixed; z-index:40; top:24px; bottom:24px; left:calc(50% - 720px); width:216px; display:flex; flex-direction:column; overflow:hidden; background:rgba(255,255,255,.98); border:1px solid var(--line); border-radius:8px; box-shadow:0 8px 24px rgba(18,31,43,.10); }}
+  .toc-controller-home {{ display:block; flex:0 0 auto; padding:15px 16px 13px; border-bottom:1px solid var(--line); color:var(--teal); font-size:14px; font-weight:800; text-decoration:none; }}
+  .toc-controller-home:hover {{ background:var(--teal-soft); }}
+  .toc-controller-scroll {{ min-height:0; overflow-y:auto; padding:12px 0 16px; scrollbar-color:#aab5bd transparent; scrollbar-width:thin; }}
+  .toc-controller section + section {{ margin-top:15px; padding-top:13px; border-top:1px solid var(--line); }}
+  .toc-controller h2 {{ margin:0; padding:0 14px 7px; color:var(--muted); font-size:12px; line-height:1.4; }}
+  .toc-controller ol {{ margin:0; padding:0; list-style:none; }}
+  .toc-controller li {{ margin:0; padding:0; }}
+  .toc-controller li a {{ display:grid; grid-template-columns:38px minmax(0,1fr); gap:6px; align-items:start; min-height:38px; padding:7px 12px 7px 11px; border-left:3px solid transparent; color:var(--ink); font-size:12px; line-height:1.35; text-decoration:none; }}
+  .toc-controller li a:hover {{ background:#f3f7f7; color:var(--teal); }}
+  .toc-controller li a.active {{ border-left-color:var(--teal); background:var(--teal-soft); }}
+  .controller-number {{ color:var(--teal); font-weight:800; white-space:nowrap; }}
+  .controller-label {{ min-width:0; overflow:hidden; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow-wrap:anywhere; }}
+  .controller-label strong {{ color:var(--muted); font-weight:700; }}
+}}
 article {{ position:relative; padding:52px 64px 58px; border-bottom:10px solid var(--page); scroll-margin-top:12px; }}
 .article-number {{ position:absolute; top:51px; left:19px; color:#9aa5af; font-size:13px; font-weight:800; }}
 .eyebrow {{ margin:0 0 8px; color:var(--teal); font-size:13px; font-weight:800; }}
@@ -226,6 +315,7 @@ footer p {{ margin:4px 0; }}
   @page {{ margin:0; }}
   .toolbar {{ display:none !important; }}
   body {{ background:#fff; }} .report {{ width:100%; box-shadow:none; }}
+  .toc-controller {{ display:none !important; }}
   header {{ padding-top:24mm; }}
   article {{ break-before:page; border-bottom:0; padding-top:18mm; padding-bottom:16mm; }}
   article:first-of-type {{ break-before:auto; }} nav a {{ text-decoration:none; }}
@@ -242,6 +332,7 @@ footer p {{ margin:4px 0; }}
   <button type="button" onclick="window.print()" title="인쇄 대화상자에서 '대상'을 'PDF로 저장'으로 선택하세요">📄 PDF 저장</button>
 </div>
 <main class="report">
+{side_controller}
 <header>
   <p class="kicker">전국 교육정책 및 교육행정 동향</p>
   <h1>{html.escape(str(metadata.get("title", "오늘의 교육동향")))}</h1>
@@ -255,7 +346,7 @@ footer p {{ margin:4px 0; }}
   <span>검증<strong>{html.escape(str(metadata.get("validationStatus", report.get('validation', {}).get('status', ''))))}</strong></span>
 </div>
 {omission_note}
-<nav aria-label="목차"><h2>목차</h2>{''.join(toc_groups)}</nav>
+<nav id="report-toc" aria-label="목차"><h2>목차</h2>{''.join(toc_groups)}</nav>
 {empty_state}
 {''.join(articles)}
 <section class="own-office-section" id="own-office">
@@ -273,6 +364,36 @@ footer p {{ margin:4px 0; }}
   <p>적용 검토안은 확정된 정책이나 업무 지시가 아닙니다.</p>
 </footer>
 </main>
+<script>
+(() => {{
+  const links = Array.from(document.querySelectorAll('.toc-controller [data-report-target]'));
+  const targets = links.map(link => document.getElementById(link.dataset.reportTarget)).filter(Boolean);
+  if (!links.length || !targets.length) return;
+  let ticking = false;
+  const updateActive = () => {{
+    const threshold = window.innerHeight * 0.35;
+    let activeId = '';
+    for (const target of targets) {{
+      if (target.getBoundingClientRect().top <= threshold) activeId = target.id;
+      else break;
+    }}
+    for (const link of links) {{
+      const active = link.dataset.reportTarget === activeId;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    }}
+    ticking = false;
+  }};
+  window.addEventListener('scroll', () => {{
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateActive);
+  }}, {{ passive:true }});
+  window.addEventListener('hashchange', updateActive);
+  updateActive();
+}})();
+</script>
 </body>
 </html>
 '''
@@ -302,12 +423,12 @@ def write_hwpx(report: dict[str, Any], path: Path) -> dict[str, Any]:
         Heading(level=2, text="전국 교육동향"),
     ]
     if items:
-        children.append(Bullet(items=tuple(f"{index}. {item.get('title', '')}" for index, item in enumerate(items, 1)), style="square"))
+        children.append(Bullet(items=tuple(f"{index}. ({source_short_label(item)}) {item.get('title', '')}" for index, item in enumerate(items, 1)), style="square"))
     else:
         children.append(Paragraph(text="검증을 통과한 전국 교육동향이 없습니다."))
     children.append(Heading(level=2, text="전북교육청 보도자료"))
     if own_items:
-        children.append(Bullet(items=tuple(f"{index}. {item.get('title', '')}" for index, item in enumerate(own_items, 1)), style="square"))
+        children.append(Bullet(items=tuple(f"{index}. (전북) {item.get('title', '')}" for index, item in enumerate(own_items, 1)), style="square"))
     else:
         children.append(Paragraph(text="해당 기간에 수집된 자료가 없습니다."))
 

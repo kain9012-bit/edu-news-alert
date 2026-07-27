@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from harness.reporting.orchestrator import DailyReportHarness
-from harness.reporting.renderers import render_html, write_hwpx
+from harness.reporting.renderers import render_html, source_short_label, write_hwpx
 
 
 class FakeReportLLM:
@@ -114,6 +114,11 @@ def inputs(include_own_source: bool = False) -> tuple[dict[str, Any], dict[str, 
 
 
 class DailyReportHarnessTest(unittest.TestCase):
+    def test_source_short_labels_cover_ministry_and_regions(self) -> None:
+        self.assertEqual(source_short_label({"sourceId": "moe"}), "교육부")
+        self.assertEqual(source_short_label({"sourceId": "daejeon"}), "대전")
+        self.assertEqual(source_short_label({"sourceId": "jngj_s1n1"}), "전남광주")
+
     def test_includes_all_own_office_sources_without_importance_or_selection(self) -> None:
         fact = FakeReportLLM("fake-lite", [
             {
@@ -338,6 +343,10 @@ class DailyReportHarnessTest(unittest.TestCase):
         rendered = render_html(report)
         self.assertIn("오늘의 교육동향", rendered)
         self.assertIn("nav { break-after:page; page-break-after:always; }", rendered)
+        self.assertIn('<strong class="toc-region">(서울)</strong>', rendered)
+        self.assertIn('class="toc-controller"', rendered)
+        self.assertIn('data-report-target="item-1"', rendered)
+        self.assertIn('href="#report-toc"', rendered)
         self.assertIn("직접 적용 검토사항 없음", rendered)
         self.assertNotIn("관련 부서", rendered)
         self.assertIn("전북교육청 보도자료", rendered)
@@ -353,6 +362,7 @@ class DailyReportHarnessTest(unittest.TestCase):
             self.assertIn("오늘의 교육동향", text)
             self.assertIn("기초학력 지원 체계 확대", text)
             self.assertIn("전북교육청 보도자료", text)
+            self.assertIn("(서울) 기초학력 지원 체계 확대", text)
 
 
 if __name__ == "__main__":
