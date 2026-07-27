@@ -122,7 +122,7 @@ def render_html(report: dict[str, Any]) -> str:
     if own_items:
         controller_items = "".join(
             f'<li><a href="#own-item-{index}" data-report-target="own-item-{index}">'
-            f'<span class="controller-number">전북 {index}</span>'
+            f'<span class="controller-number">{index}</span>'
             f'<span class="controller-label">{html.escape(str(item.get("title", "")))}</span>'
             "</a></li>"
             for index, item in enumerate(own_items, 1)
@@ -191,7 +191,7 @@ def render_html(report: dict[str, Any]) -> str:
         )
         own_articles.append(
             f'''<article class="own-office-article" id="own-item-{index}">
-  <div class="article-number">전북 {index:02d}</div>
+  <div class="article-number">{index:02d}</div>
   <div class="article-head">
     <p class="eyebrow">전북특별자치도교육청</p>
     <h2>{html.escape(str(item.get("title", "")))}</h2>

@@ -178,6 +178,8 @@ class DailyReportHarnessTest(unittest.TestCase):
         self.assertNotIn("applicationReviewPoints", own_item)
         rendered = render_html(report)
         own_html = rendered.split('id="own-item-1"', 1)[1].split("</article>", 1)[0]
+        self.assertIn('<div class="article-number">01</div>', own_html)
+        self.assertNotIn('<div class="article-number">전북 ', rendered)
         self.assertIn("전북 기초학력 지원", own_html)
         self.assertIn("https://example.com/own-1", own_html)
         self.assertNotIn('class="stars"', own_html)
@@ -347,6 +349,7 @@ class DailyReportHarnessTest(unittest.TestCase):
         self.assertIn('class="toc-controller"', rendered)
         self.assertIn('data-report-target="item-1"', rendered)
         self.assertIn('href="#report-toc"', rendered)
+        self.assertNotIn('<span class="controller-number">전북 ', rendered)
         self.assertNotIn('<strong class="toc-region">(전북)</strong>', rendered)
         self.assertIn("width:324px", rendered)
         self.assertIn("직접 적용 검토사항 없음", rendered)
