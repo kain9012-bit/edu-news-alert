@@ -337,6 +337,7 @@ class DailyReportHarnessTest(unittest.TestCase):
 
         rendered = render_html(report)
         self.assertIn("오늘의 교육동향", rendered)
+        self.assertIn("nav { break-after:page; page-break-after:always; }", rendered)
         self.assertIn("직접 적용 검토사항 없음", rendered)
         self.assertNotIn("관련 부서", rendered)
         self.assertIn("전북교육청 보도자료", rendered)

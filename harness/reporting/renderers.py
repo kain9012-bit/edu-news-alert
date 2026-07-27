@@ -229,6 +229,7 @@ footer p {{ margin:4px 0; }}
   header {{ padding-top:24mm; }}
   article {{ break-before:page; border-bottom:0; padding-top:18mm; padding-bottom:16mm; }}
   article:first-of-type {{ break-before:auto; }} nav a {{ text-decoration:none; }}
+  nav {{ break-after:page; page-break-after:always; }}
   .own-office-section {{ break-before:page; border-top:0; }}
   .own-office-section article {{ break-before:auto; }}
   footer {{ padding-bottom:18mm; }}

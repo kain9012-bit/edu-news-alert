@@ -116,6 +116,7 @@ Gemini 응답은 단계별 JSON 계약으로 검사합니다. 계약을 어기�
 내부 보고서는 `public`에 저장하거나 Git 기록에 커밋하지 않습니다. 비공개 저장소 [`kain9012-bit/edu-news-alert-private-reports`](https://github.com/kain9012-bit/edu-news-alert-private-reports)가 최신 공개 선별 결과를 받아 다음 세 파일을 동일한 기준 JSON에서 생성합니다.
 
 기준 JSON은 타 시도 교육동향을 `items`, 분석 기간에 수집된 전북교육청 본청 보도자료 전체를 `ownOfficeItems`에 분리해 저장합니다. HTML·HWPX는 전국 교육동향을 먼저 보여 준 뒤 문서 마지막에 전북교육청 보도자료를 제목·날짜·1~2개 요약·원문 링크 형식으로 표시합니다. 전북 자료에는 중요도와 교육동향 분류를 적용하지 않습니다.
+HTML 인쇄 시 첫 페이지는 표지·요약·목차에서 끝나며, 전국 교육동향은 다음 페이지부터 보도자료별 한 페이지 단위로 시작합니다.
 
 - `오늘의 교육동향 (YYYYMMDD).json`: 검증된 기준 데이터와 모델·토큰·예상 비용 기록
 - `오늘의 교육동향 (YYYYMMDD).html`: 기본 배포본
