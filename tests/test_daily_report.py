@@ -347,6 +347,8 @@ class DailyReportHarnessTest(unittest.TestCase):
         self.assertIn('class="toc-controller"', rendered)
         self.assertIn('data-report-target="item-1"', rendered)
         self.assertIn('href="#report-toc"', rendered)
+        self.assertNotIn('<strong class="toc-region">(전북)</strong>', rendered)
+        self.assertIn("width:324px", rendered)
         self.assertIn("직접 적용 검토사항 없음", rendered)
         self.assertNotIn("관련 부서", rendered)
         self.assertIn("전북교육청 보도자료", rendered)
@@ -362,6 +364,7 @@ class DailyReportHarnessTest(unittest.TestCase):
             self.assertIn("오늘의 교육동향", text)
             self.assertIn("기초학력 지원 체계 확대", text)
             self.assertIn("전북교육청 보도자료", text)
+            self.assertNotIn("(전북) 전북교육청", text)
             self.assertIn("(서울) 기초학력 지원 체계 확대", text)
 
 

@@ -98,7 +98,7 @@ def render_html(report: dict[str, Any]) -> str:
         )
         toc_groups.append(f'<div class="toc-group"><h3>전국 교육동향</h3><ol>{national_toc}</ol></div>')
     own_toc = "".join(
-        f'<li><a href="#own-item-{index}"><span>{index}.</span> <strong class="toc-region">(전북)</strong> {html.escape(item.get("title", ""))}</a></li>'
+        f'<li><a href="#own-item-{index}"><span>{index}.</span> {html.escape(item.get("title", ""))}</a></li>'
         for index, item in enumerate(own_items, 1)
     )
     own_toc_body = f"<ol>{own_toc}</ol>" if own_items else '<p class="empty-note">해당 기간 자료 없음</p>'
@@ -252,8 +252,8 @@ nav a:hover {{ color:var(--teal); text-decoration:underline; }}
 nav li span {{ color:var(--teal); font-weight:800; margin-right:5px; }}
 .toc-region {{ color:var(--muted); font-weight:700; }}
 .toc-controller {{ display:none; }}
-@media (min-width:1500px) {{
-  .toc-controller {{ position:fixed; z-index:40; top:24px; bottom:24px; left:calc(50% - 720px); width:216px; display:flex; flex-direction:column; overflow:hidden; background:rgba(255,255,255,.98); border:1px solid var(--line); border-radius:8px; box-shadow:0 8px 24px rgba(18,31,43,.10); }}
+@media (min-width:1700px) {{
+  .toc-controller {{ position:fixed; z-index:40; top:24px; bottom:24px; left:calc(50% - 828px); width:324px; display:flex; flex-direction:column; overflow:hidden; background:rgba(255,255,255,.98); border:1px solid var(--line); border-radius:8px; box-shadow:0 8px 24px rgba(18,31,43,.10); }}
   .toc-controller-home {{ display:block; flex:0 0 auto; padding:15px 16px 13px; border-bottom:1px solid var(--line); color:var(--teal); font-size:14px; font-weight:800; text-decoration:none; }}
   .toc-controller-home:hover {{ background:var(--teal-soft); }}
   .toc-controller-scroll {{ min-height:0; overflow-y:auto; padding:12px 0 16px; scrollbar-color:#aab5bd transparent; scrollbar-width:thin; }}
@@ -428,7 +428,7 @@ def write_hwpx(report: dict[str, Any], path: Path) -> dict[str, Any]:
         children.append(Paragraph(text="검증을 통과한 전국 교육동향이 없습니다."))
     children.append(Heading(level=2, text="전북교육청 보도자료"))
     if own_items:
-        children.append(Bullet(items=tuple(f"{index}. (전북) {item.get('title', '')}" for index, item in enumerate(own_items, 1)), style="square"))
+        children.append(Bullet(items=tuple(f"{index}. {item.get('title', '')}" for index, item in enumerate(own_items, 1)), style="square"))
     else:
         children.append(Paragraph(text="해당 기간에 수집된 자료가 없습니다."))
 
