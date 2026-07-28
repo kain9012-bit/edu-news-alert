@@ -89,6 +89,13 @@ def render_html(report: dict[str, Any]) -> str:
     metadata = report["metadata"]
     items = report.get("items", [])
     own_items = report.get("ownOfficeItems", [])
+    toc_item_count = len(items) + len(own_items)
+    if toc_item_count >= 20:
+        toc_print_class = "toc-compact toc-tight"
+    elif toc_item_count >= 13:
+        toc_print_class = "toc-compact"
+    else:
+        toc_print_class = ""
 
     toc_groups: list[str] = []
     if items:
@@ -324,6 +331,16 @@ footer p {{ margin:4px 0; }}
   article {{ break-before:page; border-bottom:0; padding-top:18mm; padding-bottom:16mm; }}
   article:first-of-type {{ break-before:auto; }} nav a {{ text-decoration:none; }}
   nav {{ break-after:page; page-break-after:always; }}
+  nav.toc-compact {{ padding-top:22px; padding-bottom:26px; }}
+  nav.toc-compact h2 {{ margin-bottom:9px; font-size:16px; }}
+  nav.toc-compact .toc-group + .toc-group {{ margin-top:12px; padding-top:10px; }}
+  nav.toc-compact h3 {{ margin-bottom:5px; font-size:13px; }}
+  nav.toc-compact li {{ margin-bottom:4px; font-size:12px; line-height:1.28; }}
+  nav.toc-tight {{ padding-top:16px; padding-bottom:18px; }}
+  nav.toc-tight h2 {{ margin-bottom:6px; font-size:15px; }}
+  nav.toc-tight .toc-group + .toc-group {{ margin-top:8px; padding-top:7px; }}
+  nav.toc-tight h3 {{ margin-bottom:3px; font-size:12px; }}
+  nav.toc-tight li {{ margin-bottom:2px; font-size:11px; line-height:1.18; }}
   .own-office-section {{ break-before:page; border-top:0; }}
   .own-office-section article {{ break-before:auto; }}
   .own-office-heading {{ break-after:avoid; page-break-after:avoid; }}
@@ -354,7 +371,7 @@ footer p {{ margin:4px 0; }}
   <span>검증<strong>{html.escape(str(metadata.get("validationStatus", report.get('validation', {}).get('status', ''))))}</strong></span>
 </div>
 {omission_note}
-<nav id="report-toc" aria-label="목차"><h2>목차</h2>{''.join(toc_groups)}</nav>
+<nav id="report-toc" class="{toc_print_class}" aria-label="목차"><h2>목차</h2>{''.join(toc_groups)}</nav>
 {empty_state}
 {''.join(articles)}
 <section class="own-office-section" id="own-office">

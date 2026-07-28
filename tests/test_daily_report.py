@@ -206,6 +206,30 @@ class DailyReportHarnessTest(unittest.TestCase):
             self.assertGreater(
                 text.rfind("전북 기초학력 지원"), text.rfind("전북교육청 보도자료")
             )
+
+        base_item = report["items"][0]
+        compact_report = {
+            **report,
+            "items": [
+                {**base_item, "newsId": f"compact-{index}", "title": f"교육동향 {index}"}
+                for index in range(1, 13)
+            ],
+        }
+        compact_html = render_html(compact_report)
+        self.assertIn('<nav id="report-toc" class="toc-compact"', compact_html)
+        tight_report = {
+            **report,
+            "items": [
+                {**base_item, "newsId": f"tight-{index}", "title": f"교육동향 {index}"}
+                for index in range(1, 20)
+            ],
+        }
+        tight_html = render_html(tight_report)
+        self.assertIn('<nav id="report-toc" class="toc-compact toc-tight"', tight_html)
+        self.assertIn(
+            "nav.toc-tight li { margin-bottom:2px; font-size:11px; line-height:1.18; }",
+            tight_html,
+        )
         self.assertEqual(
             [step["step"] for step in report["trace"]],
             ["extract_facts", "summarize_own_office", "analyze_trends", "verify_report"],
