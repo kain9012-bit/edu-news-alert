@@ -183,6 +183,20 @@ class DailyReportHarnessTest(unittest.TestCase):
         self.assertIn("전북 기초학력 지원", own_html)
         self.assertIn("https://example.com/own-1", own_html)
         self.assertNotIn('class="stars"', own_html)
+        grouped_report = {
+            **report,
+            "ownOfficeItems": [
+                {**own_item, "newsId": f"own-{index}", "title": f"전북 보도자료 {index}"}
+                for index in range(1, 6)
+            ],
+        }
+        grouped_html = render_html(grouped_report)
+        self.assertEqual(grouped_html.count('<div class="own-office-page">'), 3)
+        self.assertIn(
+            ".own-office-page + .own-office-page { break-before:page; page-break-before:always; }",
+            grouped_html,
+        )
+
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory) / "report-with-own-office.hwpx"
             write_hwpx(report, output)

@@ -209,6 +209,10 @@ def render_html(report: dict[str, Any]) -> str:
 
     empty_state = "" if items else '<p class="empty-report">검증을 통과한 전국 교육동향이 없습니다.</p>'
     own_empty_state = "" if own_items else '<p class="empty-report own-empty">해당 기간에 수집된 전북교육청 본청 보도자료가 없습니다.</p>'
+    own_article_pages = "".join(
+        '<div class="own-office-page">' + "".join(own_articles[index : index + 2]) + "</div>"
+        for index in range(0, len(own_articles), 2)
+    )
     omitted_count = int(metadata.get("omittedCount", 0))
     notes: list[str] = []
     if omitted_count:
@@ -322,6 +326,10 @@ footer p {{ margin:4px 0; }}
   nav {{ break-after:page; page-break-after:always; }}
   .own-office-section {{ break-before:page; border-top:0; }}
   .own-office-section article {{ break-before:auto; }}
+  .own-office-heading {{ break-after:avoid; page-break-after:avoid; }}
+  .own-office-page {{ break-inside:avoid; page-break-inside:avoid; }}
+  .own-office-page + .own-office-page {{ break-before:page; page-break-before:always; }}
+  .own-office-article {{ break-inside:avoid; page-break-inside:avoid; padding-top:10mm; padding-bottom:10mm; }}
   footer {{ padding-bottom:18mm; }}
 }}
 </style>
@@ -356,7 +364,7 @@ footer p {{ margin:4px 0; }}
     <p>같은 기간 전북특별자치도교육청 본청에서 발표한 보도자료 전체입니다.</p>
   </div>
   {own_empty_state}
-  {''.join(own_articles)}
+  {own_article_pages}
 </section>
 <footer>
   <p>이 문서는 공개 보도자료를 AI로 요약·분석한 내부 검토 자료입니다.</p>
