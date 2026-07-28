@@ -90,7 +90,7 @@ def render_html(report: dict[str, Any]) -> str:
     items = report.get("items", [])
     own_items = report.get("ownOfficeItems", [])
     toc_item_count = len(items) + len(own_items)
-    if toc_item_count >= 20:
+    if toc_item_count >= 24:
         toc_print_class = "toc-compact toc-tight"
     elif toc_item_count >= 13:
         toc_print_class = "toc-compact"
@@ -331,16 +331,16 @@ footer p {{ margin:4px 0; }}
   article {{ break-before:page; border-bottom:0; padding-top:18mm; padding-bottom:16mm; }}
   article:first-of-type {{ break-before:auto; }} nav a {{ text-decoration:none; }}
   nav {{ break-after:page; page-break-after:always; }}
-  nav.toc-compact {{ padding-top:22px; padding-bottom:26px; }}
-  nav.toc-compact h2 {{ margin-bottom:9px; font-size:16px; }}
-  nav.toc-compact .toc-group + .toc-group {{ margin-top:12px; padding-top:10px; }}
-  nav.toc-compact h3 {{ margin-bottom:5px; font-size:13px; }}
-  nav.toc-compact li {{ margin-bottom:4px; font-size:12px; line-height:1.28; }}
-  nav.toc-tight {{ padding-top:16px; padding-bottom:18px; }}
-  nav.toc-tight h2 {{ margin-bottom:6px; font-size:15px; }}
-  nav.toc-tight .toc-group + .toc-group {{ margin-top:8px; padding-top:7px; }}
-  nav.toc-tight h3 {{ margin-bottom:3px; font-size:12px; }}
-  nav.toc-tight li {{ margin-bottom:2px; font-size:11px; line-height:1.18; }}
+  nav.toc-compact {{ padding-top:26px; padding-bottom:30px; }}
+  nav.toc-compact h2 {{ margin-bottom:11px; font-size:17px; }}
+  nav.toc-compact .toc-group + .toc-group {{ margin-top:16px; padding-top:12px; }}
+  nav.toc-compact h3 {{ margin-bottom:7px; font-size:14px; }}
+  nav.toc-compact li {{ margin-bottom:7px; font-size:13px; line-height:1.38; }}
+  nav.toc-tight {{ padding-top:20px; padding-bottom:24px; }}
+  nav.toc-tight h2 {{ margin-bottom:8px; font-size:16px; }}
+  nav.toc-tight .toc-group + .toc-group {{ margin-top:12px; padding-top:10px; }}
+  nav.toc-tight h3 {{ margin-bottom:5px; font-size:13px; }}
+  nav.toc-tight li {{ margin-bottom:5px; font-size:12px; line-height:1.35; }}
   .own-office-section {{ break-before:page; border-top:0; }}
   .own-office-section article {{ break-before:auto; }}
   .own-office-heading {{ break-after:avoid; page-break-after:avoid; }}

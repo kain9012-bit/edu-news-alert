@@ -221,13 +221,13 @@ class DailyReportHarnessTest(unittest.TestCase):
             **report,
             "items": [
                 {**base_item, "newsId": f"tight-{index}", "title": f"교육동향 {index}"}
-                for index in range(1, 20)
+                for index in range(1, 24)
             ],
         }
         tight_html = render_html(tight_report)
         self.assertIn('<nav id="report-toc" class="toc-compact toc-tight"', tight_html)
         self.assertIn(
-            "nav.toc-tight li { margin-bottom:2px; font-size:11px; line-height:1.18; }",
+            "nav.toc-tight li { margin-bottom:5px; font-size:12px; line-height:1.35; }",
             tight_html,
         )
         self.assertEqual(
