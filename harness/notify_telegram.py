@@ -66,11 +66,14 @@ def build_caption(report: dict[str, Any]) -> str:
     metadata = report.get("metadata", {})
     items = report.get("items", [])
     validation = report.get("validation", {}).get("status", "")
+    omitted_count = int(metadata.get("omittedCount", 0) or 0)
 
     lines = [
         f"오늘의 교육동향 · {date_label(metadata.get('windowEnd'))}",
-        f"교육동향 {len(items)}건 · 제외 {metadata.get('omittedCount', 0)}건 · 검증 {validation}",
+        f"교육동향 {len(items)}건 · 검증 {validation}",
     ]
+    if omitted_count > 0:
+        lines.append(f"※ AI 검증·원문 품질 사유로 {omitted_count}건 제외")
     if items:
         lines.append("")
         for index, item in enumerate(items, 1):

@@ -177,6 +177,8 @@ class DailyReportHarnessTest(unittest.TestCase):
         self.assertNotIn("analysisPoints", own_item)
         self.assertNotIn("applicationReviewPoints", own_item)
         rendered = render_html(report)
+        self.assertNotIn("배포본에서 제외되었습니다", rendered)
+        self.assertNotIn('class="omission-note"', rendered)
         own_html = rendered.split('id="own-item-1"', 1)[1].split("</article>", 1)[0]
         self.assertIn('<div class="article-number">01</div>', own_html)
         self.assertNotIn('<div class="article-number">전북 ', rendered)

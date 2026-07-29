@@ -126,7 +126,7 @@ HTML·HWPX의 전국 교육동향 목차에는 각 제목 앞에 `(교육부)`, 
 세 파일은 비공개 GitHub Actions 결과 파일 `daily-education-trend-report`로 묶어 14일간만 보관하며, 동시에 HTML·HWPX를 텔레그램으로 발송해 PC를 켜지 않아도 휴대폰에서 확인하고 배포할 수 있습니다. Gmail은 사용하지 않습니다. Windows 자동 수신기가 GitHub의 결과 목록과 JSON 검증 상태를 확인한 뒤 지정 폴더에 내려받으며, 보관 기한이 지나면 GitHub에서 자동으로 삭제됩니다.
 ## 텔레그램 발송
 
-내부 보고서 생성이 끝나면 `harness/notify_telegram.py`가 HTML과 HWPX를 텔레그램 문서로 보냅니다. HTML에는 기준일, 교육동향 건수, 검증 상태와 제목 목록이 설명으로 붙습니다. 휴대폰에서 내용을 확인한 뒤 HTML 파일을 그대로 메신저로 전달해 배포할 수 있습니다.
+내부 보고서 생성이 끝나면 `harness/notify_telegram.py`가 HTML과 HWPX를 텔레그램 문서로 보냅니다. HTML에는 기준일, 교육동향 건수, 검증 상태와 제목 목록이 설명으로 붙고, AI 근거 검증이나 원문 품질 검사로 제외된 자료가 있을 때만 제외 건수를 함께 알립니다. 이 제외 안내는 내부 확인용 텔레그램 설명에만 표시하며 보고서 본문에는 넣지 않습니다. 휴대폰에서 내용을 확인한 뒤 HTML 파일을 그대로 메신저로 전달해 배포할 수 있습니다.
 
 비공개 저장소 `Settings` → `Secrets and variables` → `Actions`에 다음 두 Secret을 등록합니다.
 

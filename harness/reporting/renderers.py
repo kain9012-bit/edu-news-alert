@@ -220,17 +220,6 @@ def render_html(report: dict[str, Any]) -> str:
         '<div class="own-office-page">' + "".join(own_articles[index : index + 2]) + "</div>"
         for index in range(0, len(own_articles), 2)
     )
-    omitted_count = int(metadata.get("omittedCount", 0))
-    notes: list[str] = []
-    if omitted_count:
-        notes.append(
-            f'AI 근거 검증 또는 원문 품질 검사를 통과하지 못한 {omitted_count}건은 배포본에서 제외되었습니다.'
-        )
-    omission_note = (
-        '<p class="omission-note">' + " ".join(html.escape(note) for note in notes) + "</p>"
-        if notes
-        else ""
-    )
     return f'''<!doctype html>
 <html lang="ko">
 <head>
@@ -298,7 +287,6 @@ li {{ margin:7px 0; padding-left:3px; }}
 .review-badge {{ display:inline-block; padding:2px 9px; border-radius:11px; background:var(--amber-soft); color:#8a4b00; font-size:12px; font-weight:800; }}
 .empty-note {{ margin:0; color:var(--muted); }}
 .empty-report {{ padding:70px 64px; text-align:center; color:var(--muted); }}
-.omission-note {{ margin:0; padding:18px 64px; background:var(--amber-soft); color:#664408; font-size:13px; }}
 .own-office-section {{ border-top:12px solid var(--page); scroll-margin-top:12px; }}
 .own-office-heading {{ padding:42px 64px 30px; background:var(--teal-soft); border-bottom:1px solid #c8e5de; }}
 .own-office-heading .kicker {{ margin-bottom:4px; }}
@@ -315,7 +303,6 @@ footer p {{ margin:4px 0; }}
   nav ol {{ columns:1; }}
   .article-number {{ position:static; margin-bottom:10px; }}
   .article-head h2 {{ font-size:21px; }}
-  .omission-note {{ padding-left:24px; padding-right:24px; }}
 }}
 .toolbar {{ position:fixed; top:18px; right:18px; z-index:50; display:flex; gap:8px; }}
 .toolbar button {{ display:inline-flex; align-items:center; gap:6px; padding:9px 14px; border:1px solid var(--teal); border-radius:8px; background:var(--teal); color:#fff; font:inherit; font-size:13px; font-weight:700; cursor:pointer; box-shadow:0 2px 8px rgba(18,31,43,.16); }}
@@ -370,7 +357,6 @@ footer p {{ margin:4px 0; }}
   <span>작성<strong>{html.escape(str(metadata.get("analysisModel", "")))}</strong></span>
   <span>검증<strong>{html.escape(str(metadata.get("validationStatus", report.get('validation', {}).get('status', ''))))}</strong></span>
 </div>
-{omission_note}
 <nav id="report-toc" class="{toc_print_class}" aria-label="목차"><h2>목차</h2>{''.join(toc_groups)}</nav>
 {empty_state}
 {''.join(articles)}
