@@ -25,24 +25,89 @@ def verification_input(
     ]
 
 
+_BULLET_MARKERS = r"[◦□○▪▫■●▲△▶◆➀-➉①-⑳※▸▹‣·]"
+
+
+def clean_body(raw: Any) -> str:
+    """개조식·표형 보도자료의 깨진 본문을 AI가 분석할 수 있는 한글 문장으로 정리한다.
+
+    수집기가 표·개조식 게시글을 추출하면 숫자와 단위가 줄바꿈으로 쪼개지고(예: "60\\n일"),
+    ◦·부제 대시·영문 각주가 섞인다. 이 상태로 분석하면 근거 검증이 원문과 맞지 않는다고
+    판단해 항목이 요약만 남는다. 여기서 문장을 복원해 정상 분석이 가능하도록 만든다.
+    """
+    text = str(raw or "").replace("\r", "")
+    # 문두 부제('- .... -'가 한 줄로 끝나는 경우)만 제거한다. 단어 내 하이픈은 건드리지 않는다.
+    text = re.sub(r"^\s*[-–—]\s*[^\n]{4,70}?\s*[-–—]\s*(?=\n)", "", text)
+    # 줄바꿈으로 쪼개진 숫자를 이어 붙인다("60\n일" -> "60일").
+    text = re.sub(r"(\d)\s*\n\s*", r"\1", text)
+    # 불릿 기호와 줄머리 대시를 공백으로 바꾼다.
+    text = re.sub(_BULLET_MARKERS, " ", text)
+    text = re.sub(r"^\s*[-–—]\s+", " ", text, flags=re.M)
+    # 영문 각주(*로 시작하는 조각)를 제거한다.
+    text = re.sub(r"\*\s*[A-Za-z][^\n]*", " ", text)
+    text = text.replace("\n", " ")
+    # 숫자와 한글 단위 사이의 불필요한 공백을 제거한다("60 일" -> "60일").
+    text = re.sub(r"(\d)\s+(?=[가-힣%])", r"\1", text)
+    text = re.sub(r"~\s+(\d)", r"~\1", text)
+    # 괄호·문장부호 주변 공백을 정리한다.
+    text = re.sub(r"\(\s+", "(", text)
+    text = re.sub(r"\s+\)", ")", text)
+    text = re.sub(r"(?<=[가-힣])\s+\((?=[가-힣])", "(", text)
+    text = re.sub(r"\s+([,\.\’”%])", r"\1", text)
+    text = re.sub(r"([‘“])\s+", r"\1", text)
+    text = re.sub(r"\s{2,}", " ", text)
+    return text.strip()
+
+
+def _clean_fragment(text: str) -> str:
+    """개조식 보도자료 조각에서 불릿·부제 대시·깨진 공백을 정리한다."""
+    text = text.strip()
+    text = re.sub(r"^[\-–—·•*\s]+", "", text)
+    text = re.sub(r"[\-–—·•\s]+$", "", text)
+    text = re.sub(r"\s+", " ", text)
+    text = re.sub(r"\s+([,\.\’”\)\]%])", r"\1", text)
+    text = re.sub(r"([‘“\(\[])\s+", r"\1", text)
+    text = re.sub(r"(\d)\s+(?=[가-힣])", r"\1", text)
+    text = re.sub(r"~\s+(\d)", r"~\1", text)
+    return text.strip()
+
+
+def _is_korean_body(text: str) -> bool:
+    """한글 본문 조각만 남기고 영문 각주·기호줄을 배제한다."""
+    if len(text) < 15:
+        return False
+    hangul = sum(1 for ch in text if "가" <= ch <= "힣")
+    non_space = sum(1 for ch in text if not ch.isspace())
+    return hangul >= 10 and hangul * 2 >= non_space
+
+
 def source_summary(source: dict[str, Any]) -> list[str]:
-    body = normalize_space(str(source.get("body") or ""))
+    """AI 요약이 없을 때 원문에서 읽을 만한 한글 요약 두 줄을 뽑는다.
+
+    개조식(부제·불릿·마침표 없는 머리말) 보도자료도 줄바꿈과 불릿 기호로 조각내고
+    깨진 띄어쓰기와 영문 각주를 정리해 사람이 읽기 좋은 형태로 만든다.
+    """
+    body = str(source.get("body") or "")
     title = normalize_space(str(source.get("title") or "보도자료"))
-    sentences = [
-        sentence.strip()
-        for sentence in re.split(r"(?<=[.!?])\s+", body)
-        if sentence.strip()
-    ]
+    fragments = re.split(
+        r"[\n\r]+|(?<=[.!?])\s+|\s*" + _BULLET_MARKERS + r"\s*",
+        body,
+    )
     points: list[str] = []
-    for sentence in sentences:
-        if sentence == title or len(sentence) < 10:
+    seen: set[str] = set()
+    for fragment in fragments:
+        cleaned = _clean_fragment(fragment)
+        if not cleaned or cleaned == title or cleaned in seen:
             continue
-        point = sentence if len(sentence) <= 140 else sentence[:137].rstrip() + "..."
-        points.append(point)
+        if not _is_korean_body(cleaned):
+            continue
+        cleaned = cleaned if len(cleaned) <= 140 else cleaned[:137].rstrip() + "..."
+        points.append(cleaned)
+        seen.add(cleaned)
         if len(points) == 2:
             break
     if not points:
-        fallback = body or title
+        fallback = _clean_fragment(normalize_space(body)) or title
         points.append(fallback if len(fallback) <= 140 else fallback[:137].rstrip() + "...")
     return points
 

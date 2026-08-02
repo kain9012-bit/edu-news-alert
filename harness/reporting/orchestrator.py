@@ -12,7 +12,7 @@ from harness.reporting.agents import (
     ReportVerificationAgent,
     TrendAnalysisAgent,
 )
-from harness.reporting.repair import ReportRepairCoordinator, source_summary, verification_input
+from harness.reporting.repair import ReportRepairCoordinator, clean_body, source_summary, verification_input
 from harness.reporting.validators import body_quality_issues, validate_summary_item
 from harness.utils import normalize_space
 
@@ -72,7 +72,7 @@ class DailyReportHarness:
                 quality_excluded_count += 1
                 omitted.append(self._omitted(item, "SOURCE_MISSING", "수집 원문을 찾을 수 없습니다."))
                 continue
-            body = normalize_space(source.get("summary") or source.get("contentPreview") or "")
+            body = clean_body(source.get("summary") or source.get("contentPreview") or "")
             issues = body_quality_issues(body, minimum_chars)
             if issues:
                 quality_excluded_count += 1
@@ -97,7 +97,7 @@ class DailyReportHarness:
             if not self._is_own_office(source):
                 continue
             title = str(source.get("title") or "제목 없음")
-            body = normalize_space(source.get("summary") or source.get("contentPreview") or title)
+            body = clean_body(source.get("summary") or source.get("contentPreview") or title)
             own_office_candidates.append(
                 {
                     "newsId": str(source.get("id", "")),
