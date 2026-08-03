@@ -6,6 +6,15 @@ from typing import Any
 
 
 NUMBER_PATTERN = re.compile(r"\d+(?:[.,]\d+)*")
+
+
+def _normalize_numbers(text: str) -> set[str]:
+    """숫자를 표기 차이와 무관하게 비교하기 위해 천단위 콤마를 제거해 정규화한다.
+
+    "1,290"과 "1290"을 같은 수치로 보고, 원문에 있는 숫자를 표기만 달리 인용한
+    문장이 '근거 없는 수치'로 잘못 걸리지 않게 한다.
+    """
+    return {match.replace(",", "") for match in NUMBER_PATTERN.findall(text or "")}
 DEPARTMENT_ASSIGNMENT_PATTERN = re.compile(
     r"(관련|담당|주관)\s*부서|[가-힣]{2,15}(과|담당관|팀)\s*(에서|이|가|은|는)?\s*(담당|추진|검토)"
 )
@@ -201,8 +210,13 @@ def validate_report_item(item: dict[str, Any], source_body: str) -> list[dict[st
                     "message": "적용 검토안이 확정적 지시처럼 표현됐습니다.",
                 })
             if field != "applicationReviewPoints":
-                source_numbers = set(NUMBER_PATTERN.findall(source_body))
-                invented_numbers = set(NUMBER_PATTERN.findall(point)) - source_numbers
+                source_numbers = _normalize_numbers(source_body)
+                # 한 자리 숫자("2가지", "3개", "제2회" 등)는 통계 수치가 아니라 오탐이 많아 제외한다.
+                invented_numbers = {
+                    number
+                    for number in _normalize_numbers(point) - source_numbers
+                    if len(number) >= 2
+                }
                 if invented_numbers:
                     issues.append({
                         "code": "UNSUPPORTED_NUMBER",

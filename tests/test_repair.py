@@ -3,6 +3,7 @@ from __future__ import annotations
 import unittest
 
 from harness.reporting.repair import clean_body, source_summary
+from harness.reporting.validators import validate_report_item
 
 
 class CleanBodyTest(unittest.TestCase):
@@ -48,6 +49,38 @@ class SourceSummaryTest(unittest.TestCase):
         self.assertEqual(len(points), 2)
         self.assertTrue(all(p and "\n" not in p for p in points))
         self.assertIn("설명회를 개최했다", points[0])
+
+
+class NumberValidationTest(unittest.TestCase):
+    def test_thousands_comma_number_is_not_flagged(self) -> None:
+        body = "이번 시험에는 1290명이 응시했다."
+        item = {
+            "summaryPoints": ["총 1,290명이 응시했다."],
+            "analysisPoints": ["응시 규모가 1,290명에 이른다."],
+            "applicationReviewPoints": [],
+        }
+        codes = [issue["code"] for issue in validate_report_item(item, body)]
+        self.assertNotIn("UNSUPPORTED_NUMBER", codes)
+
+    def test_single_digit_number_is_not_flagged(self) -> None:
+        body = "2027학년도 수능 원서접수 설명회를 개최했다."
+        item = {
+            "summaryPoints": ["온라인 사전입력 등 2가지 방식을 안내했다."],
+            "analysisPoints": ["2가지 개선 방향을 제시했다."],
+            "applicationReviewPoints": [],
+        }
+        codes = [issue["code"] for issue in validate_report_item(item, body)]
+        self.assertNotIn("UNSUPPORTED_NUMBER", codes)
+
+    def test_truly_invented_number_is_still_flagged(self) -> None:
+        body = "재결 기간을 60일로 단축했다."
+        item = {
+            "summaryPoints": ["재결 기간을 999일로 단축했다."],
+            "analysisPoints": ["절차가 빨라졌다."],
+            "applicationReviewPoints": [],
+        }
+        codes = [issue["code"] for issue in validate_report_item(item, body)]
+        self.assertIn("UNSUPPORTED_NUMBER", codes)
 
 
 if __name__ == "__main__":
