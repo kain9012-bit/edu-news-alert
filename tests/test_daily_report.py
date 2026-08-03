@@ -114,6 +114,16 @@ def inputs(include_own_source: bool = False) -> tuple[dict[str, Any], dict[str, 
 
 
 class DailyReportHarnessTest(unittest.TestCase):
+    def test_routine_exam_notices_are_excluded_but_policy_changes_kept(self) -> None:
+        drop = DailyReportHarness._is_routine_exam_notice
+        self.assertTrue(drop({"title": "2026년도 제2회 검정고시 시험장소 공고"}))
+        self.assertTrue(drop({"title": "울산교육청, 2026학년도 제2회 검정고시에 565명 지원"}))
+        self.assertTrue(drop({"title": "전남광주교육청, 검정고시 8월 11일 시행"}))
+        # 제도·접수 방식 변경이나 설명회는 남긴다.
+        self.assertFalse(drop({"title": "경북교육청, 2027학년도 수능 원서접수 설명회 개최"}))
+        self.assertFalse(drop({"title": "검정고시 응시 요건 전면 개편"}))
+        self.assertFalse(drop({"title": "서울시교육청, 학교뜰 프로젝트 시행"}))
+
     def test_source_short_labels_cover_ministry_and_regions(self) -> None:
         self.assertEqual(source_short_label({"sourceId": "moe"}), "교육부")
         self.assertEqual(source_short_label({"sourceId": "daejeon"}), "대전")

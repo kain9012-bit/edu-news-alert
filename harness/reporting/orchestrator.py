@@ -67,6 +67,9 @@ class DailyReportHarness:
             if "교육지원청" in str(item.get("title", "")):
                 omitted.append(self._omitted(item, "SUPPORT_OFFICE", "교육지원청 단위 보도자료는 내부 동향 보고서에서 제외합니다."))
                 continue
+            if self._is_routine_exam_notice(item):
+                omitted.append(self._omitted(item, "EXAM_NOTICE", "검정고시 등 정기 시험의 단순 시행 안내·결과 발표는 내부 동향 보고서에서 제외합니다."))
+                continue
             source = source_map.get(news_id)
             if source is None:
                 quality_excluded_count += 1
@@ -343,6 +346,24 @@ class DailyReportHarness:
             "applicationReviewPoints": [],
             "generationReason": reason,
         }
+
+    @staticmethod
+    def _is_routine_exam_notice(item: dict[str, Any]) -> bool:
+        """검정고시 등 정기 시험의 단순 시행 안내·결과 발표를 걸러낸다.
+
+        응시 요건·접수 방식·평가 제도 변경처럼 정책성이 있으면 남긴다.
+        """
+        title = str(item.get("title", ""))
+        change_terms = ("변경", "개편", "개선", "도입", "신설", "확대", "폐지", "제도", "전면")
+        if any(term in title for term in change_terms):
+            return False
+        if "검정고시" in title:
+            return True
+        exam_terms = ("수능", "대학수학능력시험", "모의평가", "학력평가")
+        notice_terms = ("시험장소", "고사장", "응시원서", "유의사항", "합격자", "지원자")
+        if any(term in title for term in exam_terms) and any(term in title for term in notice_terms):
+            return True
+        return False
 
     def _is_own_office(self, item: dict[str, Any]) -> bool:
         source_id = str(item.get("sourceId", ""))
