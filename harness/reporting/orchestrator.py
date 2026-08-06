@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 import time
 import uuid
 from datetime import datetime, timezone
@@ -62,13 +63,14 @@ class DailyReportHarness:
         max_body_chars = int(self.config.get("maxBodyChars", 6000))
         minimum_chars = int(self.config.get("minBodyChars", 200))
 
+        routine_cluster_ids = self._routine_cluster_ids(selected_external)
         for item in selected_external:
             news_id = str(item.get("newsId", ""))
             if "교육지원청" in str(item.get("title", "")):
                 omitted.append(self._omitted(item, "SUPPORT_OFFICE", "교육지원청 단위 보도자료는 내부 동향 보고서에서 제외합니다."))
                 continue
-            if self._is_routine_exam_notice(item):
-                omitted.append(self._omitted(item, "EXAM_NOTICE", "검정고시 등 정기 시험의 단순 시행 안내·결과 발표는 내부 동향 보고서에서 제외합니다."))
+            if news_id in routine_cluster_ids:
+                omitted.append(self._omitted(item, "ROUTINE_CLUSTER", "여러 기관이 같은 날 발표한 같은 종류의 중요도 낮은 정기 안내로 제외합니다."))
                 continue
             source = source_map.get(news_id)
             if source is None:
@@ -347,23 +349,89 @@ class DailyReportHarness:
             "generationReason": reason,
         }
 
-    @staticmethod
-    def _is_routine_exam_notice(item: dict[str, Any]) -> bool:
-        """검정고시 등 정기 시험의 단순 시행 안내·결과 발표를 걸러낸다.
+    def _routine_cluster_ids(self, items: list[dict[str, Any]]) -> set[str]:
+        """같은 날 여러 기관이 함께 낸 '같은 종류 · 중요도 낮은' 정기 안내를 찾아낸다.
 
-        응시 요건·접수 방식·평가 제도 변경처럼 정책성이 있으면 남긴다.
+        특정 키워드(검정고시·교사 임용 등)를 하드코딩하지 않고, 제목이 서로 닮은
+        보도자료가 하루에 일정 수(min_size) 이상 모이고 그 묶음의 중요도가 모두 낮으면
+        정기 행정 안내로 보고 제외 대상으로 표시한다. 제목에 뚜렷이 닮은 자료가 없거나
+        묶음에 중요도 높은 자료가 하나라도 있으면 남긴다.
         """
-        title = str(item.get("title", ""))
-        change_terms = ("변경", "개편", "개선", "도입", "신설", "확대", "폐지", "제도", "전면")
-        if any(term in title for term in change_terms):
-            return False
-        if "검정고시" in title:
-            return True
-        exam_terms = ("수능", "대학수학능력시험", "모의평가", "학력평가")
-        notice_terms = ("시험장소", "고사장", "응시원서", "유의사항", "합격자", "지원자")
-        if any(term in title for term in exam_terms) and any(term in title for term in notice_terms):
-            return True
-        return False
+        min_size = int(self.config.get("routineClusterMinSize", 3))
+        importance_max = int(self.config.get("routineClusterImportanceMax", 3))
+        min_shared = int(self.config.get("routineClusterMinSharedTokens", 2))
+        count = len(items)
+        if count < min_size:
+            return set()
+
+        signatures = [self._title_keywords(str(item.get("title", ""))) for item in items]
+        parent = list(range(count))
+
+        def find(node: int) -> int:
+            while parent[node] != node:
+                parent[node] = parent[parent[node]]
+                node = parent[node]
+            return node
+
+        for left in range(count):
+            for right in range(left + 1, count):
+                if len(signatures[left] & signatures[right]) >= min_shared:
+                    parent[find(left)] = find(right)
+
+        groups: dict[int, list[int]] = {}
+        for index in range(count):
+            groups.setdefault(find(index), []).append(index)
+
+        drop_ids: set[str] = set()
+        for members in groups.values():
+            if len(members) < min_size:
+                continue
+            if any(int(items[m].get("importance", 1)) > importance_max for m in members):
+                continue
+            for m in members:
+                news_id = str(items[m].get("newsId", ""))
+                if news_id:
+                    drop_ids.add(news_id)
+        return drop_ids
+
+    _REGION_TOKENS = (
+        "경기", "서울", "부산", "대구", "인천", "광주", "대전", "울산", "세종",
+        "강원", "충북", "충남", "전북", "전남", "경북", "경남", "제주", "전남광주",
+    )
+    _TITLE_STOPWORDS = frozenset(
+        "학년도 년도 보도참고자료 추진 운영 개최 실시 위한 통해 나서 시작 강화 본격 착수"
+        " 지원 사업 대한 관련 위해 및 등 첫 제 교육감 예정 계획".split()
+    )
+    _JOSA_SUFFIXES = (
+        "으로서", "으로써", "에서의", "에게서", "에서", "에게", "으로", "이라는", "라는",
+        "와의", "과의", "부터", "까지", "보다", "처럼", "마다", "조차", "이나", "거나",
+        "은", "는", "이", "가", "을", "를", "의", "에", "와", "과", "도", "만", "로", "라", "께",
+    )
+
+    @classmethod
+    def _title_keywords(cls, title: str) -> frozenset[str]:
+        """제목에서 기관명·숫자·조사·일반어를 걷어내고 비교용 핵심 토큰만 남긴다."""
+        text = re.sub(r"\[[^\]]*\]", " ", title)
+        text = re.sub(r"[\"'“”‘’(){}·,\.!?~…\-–—/]", " ", text)
+        keywords: set[str] = set()
+        for word in text.split():
+            if not word or word.isdigit():
+                continue
+            if any(region in word for region in cls._REGION_TOKENS):
+                continue
+            if "교육청" in word or "교육부" in word:
+                continue
+            if re.fullmatch(r"\d+명이?|\d+개교?|\d+회|\d+차|\d+종", word):
+                continue
+            word = re.sub(r"^\d+", "", word)
+            for josa in sorted(cls._JOSA_SUFFIXES, key=len, reverse=True):
+                if word.endswith(josa) and len(word) - len(josa) >= 2:
+                    word = word[: -len(josa)]
+                    break
+            if len(word) < 2 or word in cls._TITLE_STOPWORDS:
+                continue
+            keywords.add(word)
+        return frozenset(keywords)
 
     def _is_own_office(self, item: dict[str, Any]) -> bool:
         source_id = str(item.get("sourceId", ""))

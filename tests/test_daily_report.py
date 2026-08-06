@@ -114,15 +114,30 @@ def inputs(include_own_source: bool = False) -> tuple[dict[str, Any], dict[str, 
 
 
 class DailyReportHarnessTest(unittest.TestCase):
-    def test_routine_exam_notices_are_excluded_but_policy_changes_kept(self) -> None:
-        drop = DailyReportHarness._is_routine_exam_notice
-        self.assertTrue(drop({"title": "2026년도 제2회 검정고시 시험장소 공고"}))
-        self.assertTrue(drop({"title": "울산교육청, 2026학년도 제2회 검정고시에 565명 지원"}))
-        self.assertTrue(drop({"title": "전남광주교육청, 검정고시 8월 11일 시행"}))
-        # 제도·접수 방식 변경이나 설명회는 남긴다.
-        self.assertFalse(drop({"title": "경북교육청, 2027학년도 수능 원서접수 설명회 개최"}))
-        self.assertFalse(drop({"title": "검정고시 응시 요건 전면 개편"}))
-        self.assertFalse(drop({"title": "서울시교육청, 학교뜰 프로젝트 시행"}))
+    def test_routine_cluster_drops_repeated_low_importance_notices(self) -> None:
+        harness = DailyReportHarness(None, None, None, report_config())
+        items = [
+            {"newsId": "r1", "importance": 2, "title": "제주교육청, 2027학년도 공립학교 신규교사 선발 사전 예고"},
+            {"newsId": "r2", "importance": 2, "title": "경북교육청, 2027학년도 공립학교 신규교사 선발 사전 예고"},
+            {"newsId": "r3", "importance": 2, "title": "충북교육청, 2027학년도 공립학교 신규교사 선발 사전 예고"},
+            {"newsId": "r4", "importance": 2, "title": "부산교육청, 2027학년도 공립학교 신규교사 선발 예고"},
+            {"newsId": "k1", "importance": 4, "title": "경기도교육청, 교복 문화 개선 방안 발표"},
+            {"newsId": "k2", "importance": 2, "title": "대전교육청, 폭염 대응 공사현장 안전점검 추진"},
+            {"newsId": "k3", "importance": 2, "title": "인천교육청, 검단·송도 학교 중앙투자심사 승인"},
+        ]
+        drop = harness._routine_cluster_ids(items)
+        # 닮은 저중요도 자료 4건은 제외, 서로 다른 주제는 유지.
+        self.assertEqual(drop, {"r1", "r2", "r3", "r4"})
+
+    def test_routine_cluster_keeps_group_with_a_high_importance_item(self) -> None:
+        harness = DailyReportHarness(None, None, None, report_config())
+        items = [
+            {"newsId": "a", "importance": 5, "title": "경북교육청, 공립학교 신규교사 선발 사전 예고 대폭 확대"},
+            {"newsId": "b", "importance": 2, "title": "부산교육청, 공립학교 신규교사 선발 사전 예고"},
+            {"newsId": "c", "importance": 2, "title": "충북교육청, 공립학교 신규교사 선발 사전 예고"},
+        ]
+        # 묶음에 중요도 높은 자료가 있으면 통째로 남긴다.
+        self.assertEqual(harness._routine_cluster_ids(items), set())
 
     def test_source_short_labels_cover_ministry_and_regions(self) -> None:
         self.assertEqual(source_short_label({"sourceId": "moe"}), "교육부")
