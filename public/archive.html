@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>교육동향 보도자료 아카이브</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --primary:#256EF4; --primary-dark:#0B50D0; --primary-soft:#E8F0FE;
+    --point:#0B50D0; --ink:#1A1A1A; --muted:#5A5F66; --line:#E0E2E5;
+    --bg:#F4F5F6; --white:#fff; --ok:#166F3B; --ok-soft:#E5F4EB;
+    --radius:10px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard","Pretendard GOV","Noto Sans KR",-apple-system,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .skip{position:absolute;left:-9999px;}
+  .skip:focus{left:12px;top:12px;background:var(--ink);color:#fff;padding:8px 14px;border-radius:8px;z-index:100;}
+
+  header.gov{background:var(--white);border-bottom:1px solid var(--line);}
+  .gov-top{max-width:1080px;margin:0 auto;padding:8px 20px;font-size:12px;color:var(--muted);}
+  .gov-main{max-width:1080px;margin:0 auto;padding:20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .gov-main .mark{width:40px;height:40px;border-radius:10px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;flex:none;}
+  .gov-main h1{margin:0;font-size:22px;font-weight:700;letter-spacing:-.02em;}
+  .gov-main p{margin:2px 0 0;font-size:13px;color:var(--muted);}
+  .gov-updated{margin-left:auto;font-size:12px;color:var(--muted);text-align:right;}
+
+  main{max-width:1080px;margin:0 auto;padding:22px 20px 80px;}
+
+  .stats{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 18px;}
+  .stat{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:14px 18px;min-width:130px;}
+  .stat .label{font-size:12px;color:var(--muted);}
+  .stat .value{font-size:24px;font-weight:700;margin-top:2px;}
+  .stat.sel .value{color:var(--primary);}
+
+  .controls{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;display:flex;gap:12px;flex-wrap:wrap;align-items:end;margin-bottom:18px;position:sticky;top:0;z-index:20;box-shadow:0 1px 0 rgba(0,0,0,.02);}
+  .field{display:flex;flex-direction:column;gap:5px;}
+  .field label{font-size:12px;font-weight:600;color:var(--muted);}
+  .field select,.field input{height:42px;border:1px solid var(--line);border-radius:8px;padding:0 12px;font:inherit;font-size:14px;background:var(--white);color:var(--ink);}
+  .field select:focus,.field input:focus{outline:2px solid var(--primary);outline-offset:0;border-color:var(--primary);}
+  .field.grow{flex:1;min-width:200px;}
+  .field.grow input{width:100%;}
+  .toggle{display:inline-flex;align-items:center;gap:7px;height:42px;font-size:14px;color:var(--ink);white-space:nowrap;cursor:pointer;}
+  .toggle input{width:18px;height:18px;accent-color:var(--primary);}
+
+  .daygroup{margin-bottom:26px;}
+  .daygroup > h2{position:sticky;top:82px;z-index:10;margin:0 0 10px;font-size:15px;font-weight:700;color:var(--point);background:var(--bg);padding:6px 2px;border-bottom:2px solid var(--primary-soft);}
+  .rows{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
+  .row{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #eef0f2;}
+  .row:last-child{border-bottom:0;}
+  .row:hover{background:#fafbfc;}
+  .org{flex:none;width:132px;font-size:12px;font-weight:600;color:var(--muted);}
+  .row .title{flex:1;font-size:15px;letter-spacing:-.01em;}
+  .row .title a{text-decoration:none;}
+  .row .title a:hover{text-decoration:underline;color:var(--primary-dark);}
+  .badge{flex:none;font-size:11px;font-weight:700;padding:2px 9px;border-radius:11px;}
+  .badge.sel{background:var(--ok-soft);color:var(--ok);}
+  .badge.no{background:#F1F3F5;color:#8A9099;}
+
+  .empty,.loading{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:48px 20px;text-align:center;color:var(--muted);}
+  .err{background:#FDECEC;border:1px solid #F5C2C2;color:#A32020;border-radius:var(--radius);padding:18px;font-size:14px;}
+
+  footer{max-width:1080px;margin:0 auto;padding:20px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+
+  @media (max-width:640px){
+    .org{width:auto;min-width:74px;}
+    .row{flex-wrap:wrap;gap:6px 10px;}
+    .row .title{flex-basis:100%;order:3;}
+    .daygroup > h2{top:76px;}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#list">본문 바로가기</a>
+<header class="gov">
+  <div class="gov-top"><span>전북특별자치도교육청 · 교육동향 보도자료 아카이브</span><a href="reports.html" style="margin-left:14px;color:#0B50D0;text-decoration:none;">오늘의 교육동향 지난 호 →</a></div>
+  <div class="gov-main">
+    <div class="mark" aria-hidden="true">📑</div>
+    <div>
+      <h1>교육동향 보도자료 아카이브</h1>
+      <p>교육부와 전국 시도교육청 본청 보도자료 전체 수집분입니다. 교육동향으로 선정된 자료는 <b>선정</b>으로 표시됩니다.</p>
+    </div>
+    <div class="gov-updated" id="updated"></div>
+  </div>
+</header>
+
+<main>
+  <section class="stats" id="stats" aria-live="polite"></section>
+
+  <div class="controls" role="search">
+    <div class="field">
+      <label for="date">기간</label>
+      <select id="date"><option value="all">전체 기간</option></select>
+    </div>
+    <div class="field">
+      <label for="org">기관</label>
+      <select id="org"><option value="all">전체 기관</option></select>
+    </div>
+    <div class="field grow">
+      <label for="q">제목 검색</label>
+      <input id="q" type="search" placeholder="예: 인공지능, 학교폭력, 기초학력" autocomplete="off">
+    </div>
+    <label class="toggle"><input type="checkbox" id="selonly"> 교육동향 선정만</label>
+  </div>
+
+  <div id="list" tabindex="-1">
+    <div class="loading" id="loading">데이터를 불러오는 중입니다…</div>
+  </div>
+</main>
+
+<footer>
+  이 페이지는 공개 보도자료 게시판에서 자동 수집한 제목과 원문 링크만 제공합니다. 자료의 저작권은 각 기관에 있습니다.
+</footer>
+
+<script>
+(function(){
+  var BASE = location.pathname.replace(/[^/]*$/, "");   // 같은 폴더 기준
+  var qs = function(id){ return document.getElementById(id); };
+  var state = { items: [], selected: new Set(), dates: [], orgs: [] };
+
+  function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
+  function addDays(iso, n){ var d = new Date(iso+"T00:00:00+09:00"); d.setDate(d.getDate()+n); return d.toISOString().slice(0,10); }
+  function weekdayLabel(iso){ var d=new Date(iso+"T00:00:00+09:00"); return "일월화수목금토".charAt(d.getDay()); }
+
+  function fetchJson(url){ return fetch(url, {cache:"no-cache"}).then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }); }
+
+  function loadSelected(dates){
+    // 각 게시일 d 의 선별 결과는 배포일(d 또는 d+1) briefing 파일에 담긴다. 둘 다 시도해 합친다.
+    var wanted = new Set();
+    dates.forEach(function(d){ wanted.add(d); wanted.add(addDays(d,1)); });
+    var urls = Array.from(wanted).map(function(d){ return BASE + "briefings/" + d + ".json"; });
+    return Promise.all(urls.map(fetchJson)).then(function(results){
+      var sel = new Set();
+      results.forEach(function(j){
+        if (j && Array.isArray(j.selectedItems)) {
+          j.selectedItems.forEach(function(it){ if(it && it.newsId) sel.add(String(it.newsId)); });
+        }
+      });
+      return sel;
+    });
+  }
+
+  function render(){
+    var date = qs("date").value, org = qs("org").value;
+    var q = (qs("q").value||"").trim().toLowerCase();
+    var selOnly = qs("selonly").checked;
+
+    var rows = state.items.filter(function(it){
+      if (date !== "all" && it.date !== date) return false;
+      if (org !== "all" && it.source !== org) return false;
+      if (selOnly && !state.selected.has(it.id)) return false;
+      if (q && it.title.toLowerCase().indexOf(q) < 0) return false;
+      return true;
+    });
+
+    var host = qs("list");
+    if (!rows.length){ host.innerHTML = '<div class="empty">조건에 맞는 보도자료가 없습니다.</div>'; return; }
+
+    // 게시일(desc) → 기관 순 그룹
+    var byDate = {};
+    rows.forEach(function(it){ (byDate[it.date] = byDate[it.date] || []).push(it); });
+    var dates = Object.keys(byDate).sort().reverse();
+    var html = "";
+    dates.forEach(function(d){
+      var list = byDate[d].sort(function(a,b){ return a.source < b.source ? -1 : a.source > b.source ? 1 : (a.title<b.title?-1:1); });
+      var sel = list.filter(function(x){ return state.selected.has(x.id); }).length;
+      html += '<section class="daygroup"><h2>'+ d +' ('+ weekdayLabel(d) +') · '+ list.length +'건, 선정 '+ sel +'건</h2><div class="rows">';
+      list.forEach(function(it){
+        var isSel = state.selected.has(it.id);
+        html += '<div class="row">'
+          + '<span class="org">'+ esc(it.source) +'</span>'
+          + '<span class="title">'+ (it.url ? '<a href="'+ esc(it.url) +'" target="_blank" rel="noopener noreferrer">'+ esc(it.title) +'</a>' : esc(it.title)) +'</span>'
+          + '<span class="badge '+ (isSel?'sel':'no') +'">'+ (isSel?'선정':'미선정') +'</span>'
+          + '</div>';
+      });
+      html += '</div></section>';
+    });
+    host.innerHTML = html;
+  }
+
+  function renderStats(){
+    var total = state.items.length;
+    var sel = state.items.filter(function(it){ return state.selected.has(it.id); }).length;
+    var days = state.dates.length;
+    qs("stats").innerHTML =
+      '<div class="stat"><div class="label">수집 기간</div><div class="value">'+ days +'일</div></div>'
+      + '<div class="stat"><div class="label">전체 수집</div><div class="value">'+ total +'건</div></div>'
+      + '<div class="stat sel"><div class="label">교육동향 선정</div><div class="value">'+ sel +'건</div></div>';
+  }
+
+  function fillSelects(){
+    var dsel = qs("date");
+    state.dates.forEach(function(d){
+      var o = document.createElement("option"); o.value = d; o.textContent = d + " (" + weekdayLabel(d) + ")"; dsel.appendChild(o);
+    });
+    var osel = qs("org");
+    state.orgs.forEach(function(o){ var el=document.createElement("option"); el.value=o; el.textContent=o; osel.appendChild(el); });
+  }
+
+  function init(items){
+    state.items = items.map(function(it){
+      return { id:String(it.id||""), source:String(it.source||it.sourceName||"기타"), title:String(it.title||""), date:String(it.date||it.publishedAt||"").slice(0,10), url:String(it.url||"") };
+    }).filter(function(it){ return it.title && it.date; });
+    state.dates = Array.from(new Set(state.items.map(function(it){ return it.date; }))).sort().reverse();
+    state.orgs = Array.from(new Set(state.items.map(function(it){ return it.source; }))).sort();
+    qs("updated").textContent = "최근 업데이트 " + (state.dates[0]||"-");
+    fillSelects();
+    ["date","org","selonly"].forEach(function(id){ qs(id).addEventListener("change", render); });
+    var t; qs("q").addEventListener("input", function(){ clearTimeout(t); t=setTimeout(render, 120); });
+    loadSelected(state.dates).then(function(sel){ state.selected = sel; renderStats(); render(); });
+    renderStats(); render();
+  }
+
+  fetchJson(BASE + "news.json").then(function(data){
+    if (!data){ qs("list").innerHTML = '<div class="err">보도자료 데이터를 불러오지 못했습니다. 잠시 후 새로고침해 주세요.</div>'; return; }
+    var items = Array.isArray(data) ? data : (data.items || []);
+    if (!items.length){ qs("list").innerHTML = '<div class="empty">수집된 보도자료가 없습니다.</div>'; return; }
+    init(items);
+  });
+})();
+</script>
+</body>
+</html>

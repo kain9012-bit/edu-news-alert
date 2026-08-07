@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>오늘의 교육동향 · 지난 호 보기</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --primary:#256EF4; --primary-dark:#0B50D0; --primary-soft:#E8F0FE;
+    --ink:#1A1A1A; --muted:#5A5F66; --line:#E0E2E5; --bg:#F4F5F6; --white:#fff;
+    --ok:#166F3B; --ok-soft:#E5F4EB; --radius:10px;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard","Pretendard GOV","Noto Sans KR",-apple-system,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .skip{position:absolute;left:-9999px;}
+  .skip:focus{left:12px;top:12px;background:var(--ink);color:#fff;padding:8px 14px;border-radius:8px;z-index:100;}
+
+  header.gov{background:var(--white);border-bottom:1px solid var(--line);}
+  .gov-top{max-width:960px;margin:0 auto;padding:8px 20px;font-size:12px;color:var(--muted);display:flex;gap:14px;}
+  .gov-top a{color:var(--primary-dark);text-decoration:none;}
+  .gov-main{max-width:960px;margin:0 auto;padding:20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .gov-main .mark{width:40px;height:40px;border-radius:10px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;flex:none;}
+  .gov-main h1{margin:0;font-size:22px;font-weight:700;letter-spacing:-.02em;}
+  .gov-main p{margin:2px 0 0;font-size:13px;color:var(--muted);}
+
+  main{max-width:960px;margin:0 auto;padding:22px 20px 80px;}
+  .field{display:flex;flex-direction:column;gap:5px;margin-bottom:18px;max-width:360px;}
+  .field label{font-size:12px;font-weight:600;color:var(--muted);}
+  .field input{height:42px;border:1px solid var(--line);border-radius:8px;padding:0 12px;font:inherit;font-size:14px;}
+  .field input:focus{outline:2px solid var(--primary);border-color:var(--primary);}
+
+  ul.reports{list-style:none;margin:0;padding:0;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
+  li.report{border-bottom:1px solid #eef0f2;}
+  li.report:last-child{border-bottom:0;}
+  a.report-link{display:flex;align-items:center;gap:14px;padding:16px 18px;text-decoration:none;}
+  a.report-link:hover{background:#fafbfc;}
+  .rdate{flex:none;width:150px;font-size:16px;font-weight:700;color:var(--primary-dark);}
+  .rday{color:var(--muted);font-weight:600;font-size:13px;margin-left:4px;}
+  .rmeta{flex:1;font-size:13px;color:var(--muted);}
+  .rmeta b{color:var(--ink);font-weight:700;}
+  .go{flex:none;color:var(--primary);font-size:13px;font-weight:700;}
+
+  .empty,.loading{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:48px 20px;text-align:center;color:var(--muted);}
+  .err{background:#FDECEC;border:1px solid #F5C2C2;color:#A32020;border-radius:var(--radius);padding:18px;font-size:14px;}
+  footer{max-width:960px;margin:0 auto;padding:20px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);}
+
+  @media (max-width:640px){
+    .rdate{width:auto;}
+    a.report-link{flex-wrap:wrap;gap:4px 12px;}
+    .rmeta{flex-basis:100%;}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#list">본문 바로가기</a>
+<header class="gov">
+  <div class="gov-top"><span>전북특별자치도교육청 · 오늘의 교육동향</span><a href="archive.html">전체 보도자료 아카이브 →</a></div>
+  <div class="gov-main">
+    <div class="mark" aria-hidden="true">🗂️</div>
+    <div>
+      <h1>오늘의 교육동향 · 지난 호 보기</h1>
+      <p>날짜를 선택하면 그날의 '오늘의 교육동향' 보고서를 그대로 볼 수 있습니다.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="field">
+    <label for="q">날짜 검색</label>
+    <input id="q" type="search" placeholder="예: 2026-08 또는 08-06" autocomplete="off">
+  </div>
+  <div id="list">
+    <div class="loading" id="loading">지난 호 목록을 불러오는 중입니다…</div>
+  </div>
+</main>
+
+<footer>이 문서는 공개 보도자료를 AI로 요약·분석한 내부 검토 자료입니다. 적용 검토안은 확정된 정책이나 업무 지시가 아닙니다.</footer>
+
+<script>
+(function(){
+  var BASE = location.pathname.replace(/[^/]*$/, "");
+  var qs = function(id){ return document.getElementById(id); };
+  var reports = [];
+
+  function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
+  function weekday(iso){ var d=new Date(iso+"T00:00:00+09:00"); return "일월화수목금토".charAt(d.getDay()); }
+
+  function render(){
+    var q=(qs("q").value||"").trim().toLowerCase();
+    var rows = reports.filter(function(r){ return !q || String(r.date).toLowerCase().indexOf(q) >= 0; });
+    var host = qs("list");
+    if (!rows.length){ host.innerHTML = '<div class="empty">표시할 보고서가 없습니다.</div>'; return; }
+    var html = '<ul class="reports">';
+    rows.forEach(function(r){
+      html += '<li class="report"><a class="report-link" href="reports/'+ encodeURIComponent(r.date) +'.html">'
+        + '<span class="rdate">'+ esc(r.date) +'<span class="rday"> ('+ weekday(r.date) +')</span></span>'
+        + '<span class="rmeta">교육동향 <b>'+ (r.trendCount||0) +'</b>건'
+        + (r.ownOfficeCount ? ' · 전북 <b>'+ r.ownOfficeCount +'</b>건' : '') +'</span>'
+        + '<span class="go">보기 →</span></a></li>';
+    });
+    html += '</ul>';
+    host.innerHTML = html;
+  }
+
+  fetch(BASE + "reports/index.json", {cache:"no-cache"})
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(data){
+      if (!data){ qs("list").innerHTML = '<div class="empty">아직 발행된 지난 호가 없습니다.</div>'; return; }
+      reports = (data.reports || []).slice().sort(function(a,b){ return a.date<b.date?1:-1; });
+      if (!reports.length){ qs("list").innerHTML = '<div class="empty">아직 발행된 지난 호가 없습니다.</div>'; return; }
+      qs("q").addEventListener("input", render);
+      render();
+    })
+    .catch(function(){ qs("list").innerHTML = '<div class="err">목록을 불러오지 못했습니다. 잠시 후 새로고침해 주세요.</div>'; });
+})();
+</script>
+</body>
+</html>

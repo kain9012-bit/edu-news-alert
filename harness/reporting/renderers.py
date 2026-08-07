@@ -8,6 +8,11 @@ from typing import Any
 
 WEEKDAYS = "월화수목금토일"
 
+# 수집한 전체 보도자료를 조회하는 GitHub Pages 아카이브 주소(보고서 상단 버튼 링크)
+ARCHIVE_URL = "https://kain9012-bit.github.io/edu-news-alert/archive.html"
+# 과거 '오늘의 교육동향' 지난 호를 날짜별로 보는 목록 페이지 주소
+REPORTS_URL = "https://kain9012-bit.github.io/edu-news-alert/reports.html"
+
 SOURCE_SHORT_LABELS = {
     "moe": "교육부",
     "jeonbuk": "전북",
@@ -146,6 +151,24 @@ def render_html(report: dict[str, Any]) -> str:
         if controller_groups
         else ""
     )
+
+    archive_url = str(metadata.get("archiveUrl") or ARCHIVE_URL)
+    reports_url = str(metadata.get("reportsUrl") or REPORTS_URL)
+    reports_button = (
+        f'<a class="tool-link secondary" href="{html.escape(reports_url, quote=True)}" '
+        'target="_blank" rel="noopener noreferrer" '
+        'title="지난 오늘의 교육동향을 날짜별로 봅니다">🗂 지난 호</a>'
+        if reports_url
+        else ""
+    )
+    archive_button = (
+        f'<a class="tool-link secondary" href="{html.escape(archive_url, quote=True)}" '
+        'target="_blank" rel="noopener noreferrer" '
+        'title="교육동향으로 선정되지 않은 자료까지 수집한 전체 보도자료를 봅니다">📰 전체 보도자료</a>'
+        if archive_url
+        else ""
+    )
+    index_button = reports_button + archive_button
 
     articles: list[str] = []
     for index, item in enumerate(items, 1):
@@ -306,9 +329,10 @@ footer p {{ margin:4px 0; }}
 }}
 .toolbar {{ position:fixed; top:18px; right:18px; z-index:50; display:flex; gap:8px; }}
 .toolbar button {{ display:inline-flex; align-items:center; gap:6px; padding:9px 14px; border:1px solid var(--teal); border-radius:8px; background:var(--teal); color:#fff; font:inherit; font-size:13px; font-weight:700; cursor:pointer; box-shadow:0 2px 8px rgba(18,31,43,.16); }}
-.toolbar button.secondary {{ background:#fff; color:var(--teal); }}
-.toolbar button:hover {{ opacity:.92; }}
-@media (max-width:700px) {{ .toolbar {{ top:10px; right:10px; }} .toolbar button {{ padding:8px 11px; font-size:12px; }} }}
+.toolbar button.secondary, .toolbar .tool-link.secondary {{ background:#fff; color:var(--teal); }}
+.toolbar button:hover, .toolbar .tool-link:hover {{ opacity:.92; }}
+.toolbar .tool-link {{ display:inline-flex; align-items:center; gap:6px; padding:9px 14px; border:1px solid var(--teal); border-radius:8px; background:var(--teal); color:#fff; font:inherit; font-size:13px; font-weight:700; text-decoration:none; cursor:pointer; box-shadow:0 2px 8px rgba(18,31,43,.16); }}
+@media (max-width:700px) {{ .toolbar {{ top:10px; right:10px; }} .toolbar button, .toolbar .tool-link {{ padding:8px 11px; font-size:12px; }} }}
 @media print {{
   @page {{ margin:0; }}
   .toolbar {{ display:none !important; }}
@@ -340,6 +364,7 @@ footer p {{ margin:4px 0; }}
 </head>
 <body>
 <div class="toolbar" role="toolbar" aria-label="문서 도구">
+  {index_button}
   <button type="button" class="secondary" onclick="window.print()" title="인쇄 대화상자를 엽니다">🖨 인쇄</button>
   <button type="button" onclick="window.print()" title="인쇄 대화상자에서 '대상'을 'PDF로 저장'으로 선택하세요">📄 PDF 저장</button>
 </div>
