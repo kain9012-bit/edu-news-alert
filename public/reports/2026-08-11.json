@@ -1,0 +1,615 @@
+{
+  "metadata": {
+    "reportId": "20260811T001539Z-b6e784cb",
+    "title": "오늘의 교육동향",
+    "status": "completed",
+    "generatedAt": "2026-08-11T00:15:39+00:00",
+    "windowStart": "2026-08-10T06:00:00+09:00",
+    "windowEnd": "2026-08-11T06:00:00+09:00",
+    "windowHours": 24,
+    "selectionRunId": "20260810T215325Z-f2be4ebf",
+    "sourceCount": 15,
+    "eligibleCount": 9,
+    "publishedCount": 9,
+    "omittedCount": 0,
+    "ownOfficeEligibleCount": 6,
+    "ownOfficePublishedCount": 6,
+    "qualityExcludedCount": 0,
+    "factModel": "gemini-3.1-flash-lite",
+    "analysisModel": "gemini-3.5-flash",
+    "verifierModel": "gemini-3.1-flash-lite",
+    "summaryOnlyCount": 0,
+    "ownOfficeReviewCount": 0,
+    "usage": {
+      "stages": {
+        "facts": {
+          "model": "gemini-3.1-flash-lite",
+          "requests": 5,
+          "promptTokenCount": 10956,
+          "candidatesTokenCount": 3051,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 14007
+        },
+        "analysis": {
+          "model": "gemini-3.5-flash",
+          "requests": 3,
+          "promptTokenCount": 3545,
+          "candidatesTokenCount": 1950,
+          "thoughtsTokenCount": 6418,
+          "totalTokenCount": 11913
+        },
+        "verification": {
+          "model": "gemini-3.1-flash-lite",
+          "requests": 4,
+          "promptTokenCount": 13375,
+          "candidatesTokenCount": 869,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 14244
+        }
+      },
+      "total": {
+        "requests": 12,
+        "promptTokenCount": 27876,
+        "candidatesTokenCount": 5870,
+        "thoughtsTokenCount": 6418,
+        "totalTokenCount": 40164
+      }
+    },
+    "estimatedCostUsd": 0.092592
+  },
+  "items": [
+    {
+      "newsId": "jngj_s1n1-fe0299d48ddf5e16",
+      "sourceId": "jngj_s1n1",
+      "source": "전남광주통합특별시교육청",
+      "title": "전남광주교육청, ‘학생교육수당’ 올바른 사용 관리 강화",
+      "date": "2026-08-10",
+      "url": "https://www.jngjedu.kr/news/articleView.html?idxno=119413",
+      "category": "학생지원·복지",
+      "importance": 3,
+      "selectionReason": "교육복지 정책인 학생교육수당의 관리체계 강화 및 부정 사용 방지를 위한 제도적 운영 개선 사항임.",
+      "summaryPoints": [
+        "학생교육수당의 올바른 사용 문화 확산을 위해 관리체계를 강화함",
+        "상시 모니터링단 운영 및 부당 사용 신고센터를 통해 부정 사용을 예방함",
+        "사용처 현장점검을 실시하고 위반 사례 적발 시 지원금 환수 등 엄정 조치할 예정임",
+        "학생 및 학부모 대상 경제교육과 워크북 보급 등 건전한 사용 문화 정착을 지원함"
+      ],
+      "analysisPoints": [
+        "현금성 복지 지원금의 목적 외 사용을 방지하기 위한 상시 모니터링 및 가맹점 관리 체계 구축의 필요성을 보여줌",
+        "부정 사용에 대한 환수 및 제한 조치 등 사후 관리 규정 마련이 중요함을 시사함",
+        "단순 지원에 그치지 않고 학생 대상 금융교육 및 수당 활용법 교육을 병행하여 건전한 소비 문화를 유도함"
+      ],
+      "applicationReviewPoints": [
+        "유사한 학생 대상 지원금 제도가 있을 경우 부정 사용 방지를 위한 모니터링단 운영 및 가맹점 관리 방안을 비교해 볼 수 있음",
+        "지원금의 올바른 사용을 유도하기 위해 찾아가는 경제교육이나 활용법 교육 프로그램을 연계하는 방안을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "전남광주통합특별시교육청은 학생교육수당 사용 관리체계를 강화함",
+        "학생교육수당은 초등 3학년부터 중학교 2학년까지 지급됨",
+        "상시 모니터링단은 교육활동 목적 외 사용처를 점검하고 가맹점 등록을 관리함",
+        "부당 사용 확인 시 지원금 환수, 지급 제한, 가맹점 이용 제한 조치를 시행함",
+        "학교로 찾아가는 공생의 경제교실을 통해 금융지식 및 수당 활용법을 교육함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jngj_s1n1-f0f84d2bdfc53330",
+      "sourceId": "jngj_s1n1",
+      "source": "전남광주통합특별시교육청",
+      "title": "전남광주특별시교육청, 개학 앞두고 ‘교원 안심 밀착 지원’ 강화",
+      "date": "2026-08-10",
+      "url": "https://www.jngjedu.kr/news/articleView.html?idxno=119440",
+      "category": "교원·인사",
+      "importance": 3,
+      "selectionReason": "교원 보호를 위한 상담 지원 체계 확대 및 밀착 지원 정책의 변화를 담고 있음.",
+      "summaryPoints": [
+        "2학기 개학을 앞두고 교원 안심 밀착지원을 확대함",
+        "상담 치료에 대한 심리적 부담을 낮추기 위해 익명 상담을 지원함",
+        "아동학대 신고나 민원이 발생한 학교에 변호사와 담당자가 직접 방문하여 법률 및 심리 지원을 제공함",
+        "교육활동 보호를 위한 종합대책 TF를 구성하여 9월 중 발표할 예정임"
+      ],
+      "analysisPoints": [
+        "교원의 심리적 장벽을 낮추기 위한 익명 상담 지원과 복직 교원에 대한 맞춤형 치유 연계의 중요성을 보여줌",
+        "악성 민원이나 아동학대 신고 발생 시 변호사와 담당자가 직접 현장을 방문하는 밀착형 법률 및 심리 지원의 필요성을 시사함",
+        "기존 상담 전화 및 외부 전문가 협력 체계를 내실화하여 실효성 있는 교육활동 보호망을 구축하고자 함"
+      ],
+      "applicationReviewPoints": [
+        "교원 대상 익명 심리 및 법률 상담 서비스와 복직 교원 대상 상담 치료 연계 프로그램의 운영 현황을 점검하고 보완책을 비교해 볼 수 있음",
+        "민원 및 아동학대 신고 발생 학교에 전문가가 직접 방문하여 지원하는 현장 밀착형 대응 체계 도입을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "교육활동보호센터를 통해 익명 심리 법률상담을 지원함",
+        "악성 민원 반복 지역 및 아동학대 신고 학교에 현장 밀착지원을 우선 실시함",
+        "교육활동 침해로 인한 휴가 후 복직 교원에게 상담 치료를 연계함",
+        "기존 교원 상담전화 1395 및 변호사 협력 등 지원 체계를 내실화함",
+        "기획조정실 미래교육전략기획관 등 관련 부서가 협력하여 종합대책을 준비 중임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungbuk-e2b893381a0d6c56",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "충북교육청, 충북도·SK하이닉스 등 5개 기관과 AI 심리상담 업무협약",
+      "date": "2026-08-10",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1577055&bbsId=1158&mi=10301",
+      "category": "디지털·AI",
+      "importance": 3,
+      "selectionReason": "AI 기반 심리상담 플랫폼 구축 및 학생 지원 체계 마련을 위한 다기관 협력 사업으로 교육청 차원의 새로운 학생 지원 정책에 해당함.",
+      "summaryPoints": [
+        "청소년 AI 심리상담 사업 추진을 위해 5개 기관과 업무협약을 체결함",
+        "AI 기반 심리상담 플랫폼을 구축하여 청소년의 심리 정서적 어려움을 조기에 발견함",
+        "AI 상담에서 확인된 위험 신호를 전문상담기관과 연계하는 지원체계를 마련함",
+        "학생 마음건강 119 지원체계를 학교 밖 생활공간까지 확대함"
+      ],
+      "analysisPoints": [
+        "지자체, 기업, 전문기관과의 다자간 협업을 통해 예산 확보 및 기술적 플랫폼 구축의 한계를 극복하는 모델을 제시함",
+        "AI 기술을 활용하여 청소년의 심리적 위험 신호를 조기에 발견하고 전문 상담기관으로 연계하는 상시적 스크리닝 체계를 마련함",
+        "학교 내부 자원에만 의존하지 않고 지역사회 전문기관과 연계하여 학생 마음건강 지원망을 학교 밖까지 확장함"
+      ],
+      "applicationReviewPoints": [
+        "민관 협력을 통한 AI 기반 학생 심리상담 플랫폼 구축 및 지역 전문기관 연계 체계의 실현 가능성을 검토할 수 있음",
+        "AI 상담을 통해 발견된 고위험군 학생을 교육청 내 전문 센터와 신속히 연계하는 시스템을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "충청북도교육청, 충청북도, SK하이닉스 등 5개 기관이 협약에 참여함",
+        "SK하이닉스는 사업비 지원과 AI 심리상담 플랫폼 구축을 담당함",
+        "충북과학기술혁신원은 AI 상담 시스템 개발 및 운영을 맡음",
+        "충청북도청소년종합진흥원은 상담 운영 및 전문상담기관 연계를 수행함",
+        "위험 신호 발견 시 도교육청 마음건강증진센터 및 Wee 센터로 연계함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "ulsan-1a7485e06d111c91",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "[울산교육청] 울산학생창의누리관 준공 검사 완료…학생 체험 교육 새 거점 조성",
+      "date": "2026-08-10",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20260810083553441",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "교육청 차원의 대규모 예산이 투입된 신규 교육 시설 준공 및 개관 소식으로 교육 인프라 변화에 해당함.",
+      "summaryPoints": [
+        "울산학생창의누리관 신축 공사를 마치고 준공 검사를 완료함",
+        "이달 말 개관을 목표로 최종 시설 점검 및 운영 준비를 진행 중임",
+        "놀이 창작 표현 중심의 체험활동을 통해 학생들의 창의성과 문제해결력을 기를 예정임",
+        "지역 간 교육격차 해소 및 미래 진로 탐색을 위한 거점 교육기관으로 활용함"
+      ],
+      "analysisPoints": [
+        "놀이, 창작, 예술 매체 활동 등 융합형 체험 공간을 제공하여 학생들의 창의성과 문제해결력을 기르는 거점 시설의 필요성을 보여줌",
+        "지역 내 교육격차 해소와 미래 진로 탐색을 지원하기 위한 다목적 학생 체험 공간 설계의 방향성을 제시함"
+      ],
+      "applicationReviewPoints": [
+        "지역 간 교육격차 해소 및 창의 융합 체험 교육 활성화를 위한 거점형 학생 체험 시설의 공간 구성 방식을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "울산학생창의누리관은 울산 동구 방어동에 위치함",
+        "총사업비 277억 9,000만 원이 투입되었으며 지상 4층 규모임",
+        "1층은 휴식 공간, 2층은 창작 공간, 3층은 예술 매체 활동 공간, 4층은 운영 공간으로 구성됨",
+        "지난 7일 준공 검사를 완료하고 이달 말 개관 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongnam-b086adbe1cfbc535",
+      "sourceId": "gyeongnam",
+      "source": "경상남도교육청",
+      "title": "경남교육청, 학생맞춤통합지원 정책 연수 개최",
+      "date": "2026-08-10",
+      "url": "https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&q_bbsDocNo=20260810152152474",
+      "category": "학생지원·복지",
+      "importance": 2,
+      "selectionReason": "학생맞춤통합지원법 시행에 따른 간부 공무원 대상 정책 연수 및 지역사회 협력 체계 구축은 교육행정의 제도적 안착을 위한 정책 활동입니다.",
+      "summaryPoints": [
+        "학생맞춤통합지원법 시행에 따른 간부 공무원 정책 연수 개최함",
+        "복합 위기 학생 조기 발굴 및 예방적 지원 체계 정착 도모함",
+        "학생맞춤통합지원센터 중심의 지역사회 협력 체계 구축 강조함"
+      ],
+      "analysisPoints": [
+        "학생맞춤통합지원법 시행에 대비하여 간부 공무원의 정책 이해도를 높이고 선제적인 대응 체계를 마련하려는 시도로 볼 수 있음",
+        "복합 위기 학생을 조기에 발굴하고 예방적으로 지원하기 위해 교육청 중심의 다각적 협력망 구축이 요구됨",
+        "학생맞춤통합지원센터를 매개로 지역사회와의 유기적인 연계 체계를 강화하는 방향으로 정책이 변화하고 있음"
+      ],
+      "applicationReviewPoints": [
+        "학생맞춤통합지원법 시행에 대비한 전북교육청 차원의 간부 공무원 대상 정책 연수 및 인식 제고 방안을 검토할 수 있음",
+        "지역사회와 연계한 학생맞춤통합지원센터의 운영 모델 및 협력 체계 구축 현황을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "2026년 8월 10일 경남교육청 본청 공감홀에서 연수 개최함",
+        "간부 공무원 130여 명 참석함",
+        "2026년 3월 학생맞춤통합지원법 시행됨",
+        "교육부 학생지원총괄과 박경령 사무관 특강 진행함",
+        "아주대학교 최웅 교수가 지역사회 협력 체계 구축 방안 제시함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "incheon-3f3168972a1a9f5c",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "도성훈 인천광역시교육감, 개학 앞두고 폭염 대응 철저 지시",
+      "date": "2026-08-10",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3380455&bbsId=1519&mi=11620",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "교육청 차원에서 관내 모든 학교를 대상으로 하는 폭염 대응 안전 대책 및 시설 점검 지침을 담고 있어 정책적 중요도가 높습니다.",
+      "summaryPoints": [
+        "개학 대비 학교 현장 폭염 대응 상황 점검 및 안전대책 지시함",
+        "냉방시설 운영 및 온열질환 예방 대책 논의함",
+        "방학 중 시설공사 현장 안전 수칙 준수 강조함"
+      ],
+      "analysisPoints": [
+        "기후변화로 인한 폭염 장기화에 대응하여 개학기 학생 안전 확보를 최우선으로 하는 선제적 안전 대책 마련의 중요성을 보여줌",
+        "냉방시설 가동 상태 점검과 온열질환 예방 대책 수립을 통해 안전한 교육환경을 조성하려는 흐름임",
+        "기상 상황에 맞춘 교육활동의 탄력적 운영 지침을 제공하여 학교 현장의 대응력을 높이고자 함"
+      ],
+      "applicationReviewPoints": [
+        "개학기 폭염 대비 전북 관내 학교의 냉방시설 점검 및 온열질환 예방 대책 수립 현황을 확인할 필요가 있음",
+        "기상 특보 발생 시 교육활동의 탄력적 운영 가이드라인이 현장에서 실효성 있게 작동하는지 검토해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "2026년 8월 6일 도성훈 교육감 주재 폭염 대비 안전대책 회의 개최함",
+        "교육지원청 교육장 및 시교육청 국장급 간부 참석함",
+        "개학 전 관내 모든 학교 교육시설 안전 점검 완료 예정임",
+        "기상 상황에 따른 교육활동 탄력 운영 지시함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeju-aff5fe05ac2b3526",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "아이들이 안전한 제주교육…학교 출입관리 체계 강화한다",
+      "date": "2026-08-10",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1477032",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "학교 안전 및 출입관리 체계의 표준화와 제도적 개선을 다루는 정책성 자료입니다.",
+      "summaryPoints": [
+        "학교별 특성을 고려한 맞춤형 출입관리 체계 구축 논의함",
+        "시설 개선 및 관리 매뉴얼 정비 등 단계적 추진 검토함",
+        "학교 안전망 구축을 위한 제2차 타운홀 미팅 개최 예정임"
+      ],
+      "analysisPoints": [
+        "학교별 물리적 환경과 특성을 반영한 맞춤형 출입관리 체계를 구축하여 학교 안전의 실효성을 높이려는 시도임",
+        "시설 개선과 관리 매뉴얼 정비를 병행하여 체계적이고 단계적인 안전망 강화를 도모함",
+        "타운홀 미팅 등 교육공동체의 의견 수렴 과정을 통해 정책의 수용성과 완성도를 높이고자 함"
+      ],
+      "applicationReviewPoints": [
+        "전북 관내 학교의 출입관리 실태 및 학교별 특성에 맞는 맞춤형 출입통제 시스템 도입 가능성을 검토할 수 있음",
+        "학교 안전망 구축 과정에서 교육공동체의 의견을 수렴하는 소통 창구 운영 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "2026년 8월 10일 본청 상황실에서 함께 성장 주간회의 개최함",
+        "학교안전시설 전수조사 및 자문단 회의 결과 공유함",
+        "2026년 8월 27일 제2차 타운홀 미팅 개최 예정임",
+        "학교 안전 및 광복절 교육 의미 구현 강조함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeju-4a917e2bbc1a8c74",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "제주형 자율학교의 새로운 도약, 교육공동체와 함께 모색하다",
+      "date": "2026-08-10",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1477012",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "교육청 본청 주관의 정책 토론회로, 제주형 자율학교 운영 체계 개선 및 정책 방향을 논의하는 교육 정책 관련 자료임.",
+      "summaryPoints": [
+        "제주형 자율학교 운영 성과 진단 및 발전 방향 모색함",
+        "교육공동체 의견 수렴을 통한 운영체계 개선 추진함",
+        "학교 자율성과 교육 공공성이 조화된 운영 모델 마련 계획임"
+      ],
+      "analysisPoints": [
+        "자율학교의 운영 성과를 객관적으로 진단하고 교육공동체의 의견을 수렴하여 지속 가능한 발전 방향을 모색하려는 흐름임",
+        "학교의 자율성 확대와 교육의 공공성 확보라는 두 가지 가치를 조화롭게 구현하는 운영 모델 정립이 요구됨",
+        "정책토론회 결과를 연구 용역 및 재구조화 계획에 반영하여 정책의 신뢰성과 타당성을 확보하고자 함"
+      ],
+      "applicationReviewPoints": [
+        "전북형 자율학교의 운영 성과 진단 및 재구조화 방안 마련 시 타 시도의 교육공동체 의견 수렴 및 토론회 운영 방식을 참고해 볼 수 있음",
+        "자율성과 공공성을 조화시킨 자율학교 운영 모델의 세부 기준을 비교 및 검토할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2026년 8월 7일 제주학생문화원 소극장에서 정책토론회 개최함",
+        "제주대학교 고전 교수가 좌장을 맡아 토론 진행함",
+        "토론회 의견을 제주형 자율학교 종합 진단 및 재구조화 연구에 반영 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "busan-d5636580dab510dd",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "학생제안 Canva Korea도 감동…교육청·기업·학생‘삼박자’빛났다",
+      "date": "2026-08-10",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1177501&bbsId=2286&mi=30397",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "학생의 제안을 반영하여 교육청의 통합 로그인 시스템 및 디지털 서비스 정책에 실제 변화를 준 적극행정 사례임.",
+      "summaryPoints": [
+        "부산광역시교육청이 학생의 제안을 정책에 반영한 적극행정 사례를 창출함",
+        "교육연구정보원이 추진 중인 통합 로그인 시스템 '펜즈(penz)'에 학생 제안을 연계함",
+        "부산국제고 학생이 제안한 디자인 플랫폼 '캔바(Canva)' 도입을 위해 기업과 협력함",
+        "캔바 코리아가 교육청의 적극행정과 학생의 제안에 공감하며 화답함"
+      ],
+      "analysisPoints": [
+        "학생의 제안을 교육청 정책 및 시스템 구축에 적극적으로 반영하는 수요자 중심의 적극행정 모델을 제시함",
+        "클라우드 및 AI 서비스 통합 로그인 시스템 구축 과정에서 외부 디자인 플랫폼과의 연계를 도모하여 교육 서비스의 편의성을 높임",
+        "교육청, 학생, 민간 기업 간의 유기적인 협력을 통해 교육 현장의 요구를 신속하게 해결하는 상생 협력 사례를 보여줌"
+      ],
+      "applicationReviewPoints": [
+        "전북교육청에서 추진 중인 통합 로그인 시스템이나 교육용 플랫폼 구축 시 학생 및 현장의 제안을 반영할 수 있는 소통 채널 활성화 방안을 검토할 수 있음",
+        "교육용 디자인 플랫폼 등 민간 에듀테크 서비스 도입 시 기업과의 직접적인 협력을 통한 맞춤형 서비스 제공 가능성을 확인해 볼 필요가 있음"
+      ],
+      "sourceFacts": [
+        "부산광역시교육청 교육연구정보원이 클라우드 및 AI 서비스 통합 로그인 시스템 '펜즈(penz)'를 구축 중임",
+        "부산국제고등학교 김희린 학생이 교육청 차원의 '캔바(Canva)' 서비스 제공을 제안함",
+        "교육연구정보원이 학생 제안을 검토하여 캔바 코리아와 공유함",
+        "2026년 8월 7일 개최된 '2026 Edu Conference'에서 김희린 학생에게 선물이 전달됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "ownOfficeItems": [
+    {
+      "newsId": "jeonbuk-8e9370575e2e7c6d",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "수학 자신감 향상, 학력 신장 캠프가 이끈다",
+      "date": "2026-08-10",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1162497",
+      "summaryPoints": [
+        "수학 마스터즈클럽 참여 학생 250여 명 대상 수학 학력 신장 캠프 개최함",
+        "수능 및 심화 문항 분석과 해결 전략 탐구 등 자기주도 학습 역량 강화 지원함"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-b7f4e48496c95020",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "2027년도 교육 예산편성 도민 의견 듣는다",
+      "date": "2026-08-10",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1162563",
+      "summaryPoints": [
+        "2027년도 교육 예산편성을 위해 8월 11일부터 9월 3일까지 주민 의견 수렴함",
+        "교육지원청 주민참여 공모사업 신설 및 설문조사 등을 통해 예산 편성 참여 기회 확대함"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-3a08a238b92745b5",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "전북교육청, 청렴계약에 사회적 가치 더했다",
+      "date": "2026-08-10",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1162562",
+      "summaryPoints": [
+        "교육기관전자조달시스템 청렴기관 선정 및 중증장애인생산품 우선구매 우수기관으로 선정됨",
+        "법정 의무구매비율을 초과 달성하며 공공구매를 통한 사회적 가치 실현 성과를 인정받음"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-292d7a7819fe4f08",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "특별하고 깊이 있게, 고3 학생부종합전형 전문상담 운영",
+      "date": "2026-08-10",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1162560",
+      "summaryPoints": [
+        "8월 10일부터 12일까지 고3 학생 및 졸업생 189명 대상 학생부종합전형 전문상담 운영함",
+        "입학사정관 및 진학 전문가가 참여해 학교생활기록부 분석 기반 1:1 맞춤형 대입 전략 제공함"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeonbuk-2ab80e2b1f0ca5f8",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "천호성 교육감,“수업 연구·공개·성과 교사 우대”",
+      "date": "2026-08-10",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1162610",
+      "summaryPoints": [
+        "수업 연구 및 공개 참여 교사를 발굴·포상하고 승진시키는 구체적 시스템 구축 지시함",
+        "지역소멸 위기 대응을 위한 지자체 협력 강화 및 특별자치도 특례 발굴 적극 추진 당부함"
+      ],
+      "confidence": {
+        "summary": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeonbuk-dead73e04aa4b58f",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "제20대 전북교육감직 인수위원회 활동 백서 발간",
+      "date": "2026-08-10",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1162565",
+      "summaryPoints": [
+        "제20대 전북교육감직 인수위원회 활동 백서 발간 및 전북교육청 누리집 공개함",
+        "향후 4년간 추진할 10대 핵심과제와 5대 정책목표별 세부 추진과제 등 수록함"
+      ],
+      "confidence": {
+        "summary": 0.98
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    }
+  ],
+  "omittedItems": [],
+  "validation": {
+    "status": "PASS",
+    "issues": [],
+    "checks": {
+      "ownOfficeExcludedFromTrendAnalysis": true,
+      "ownOfficeAllIncluded": true,
+      "ownOfficeSummariesVerified": true,
+      "publishedItemsVerified": true,
+      "sourceWindowMatches": true
+    }
+  },
+  "providerErrors": {
+    "facts": [],
+    "ownOfficeSummaries": [],
+    "analysis": [],
+    "verification": [],
+    "repairs": [],
+    "repairVerifications": []
+  },
+  "trace": [
+    {
+      "step": "extract_facts",
+      "status": "success",
+      "startedAt": "2026-08-11T00:14:50+00:00",
+      "durationMs": 9397
+    },
+    {
+      "step": "summarize_own_office",
+      "status": "success",
+      "startedAt": "2026-08-11T00:15:00+00:00",
+      "durationMs": 3009
+    },
+    {
+      "step": "analyze_trends",
+      "status": "success",
+      "startedAt": "2026-08-11T00:15:03+00:00",
+      "durationMs": 31448
+    },
+    {
+      "step": "verify_report",
+      "status": "success",
+      "startedAt": "2026-08-11T00:15:34+00:00",
+      "durationMs": 4450
+    }
+  ],
+  "rendering": {
+    "canonical": "json",
+    "html": "오늘의 교육동향 (20260811).html",
+    "hwpx": "오늘의 교육동향 (20260811).hwpx",
+    "hwpxValidation": {
+      "hardGates": {
+        "package_validation": "pass",
+        "document_errors": "pass",
+        "schema_lint": "pass",
+        "reopen": "pass",
+        "editor_open_safety": "pass",
+        "id_integrity": "pass"
+      },
+      "packageOk": true,
+      "documentOk": true,
+      "reopenedOk": true,
+      "visualReviewRequired": true
+    }
+  }
+}
