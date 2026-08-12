@@ -1,0 +1,102 @@
+/* Pretendard — KRDS 표준 본문 서체 (@import는 다른 규칙보다 앞서야 한다) */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@1.3.9/dist/web/variable/pretendardvariable.min.css");
+@import "tailwindcss";
+
+/* ============================================================
+   KRDS(대한민국 디지털 정부 디자인시스템) 색 토큰
+   https://github.com/KRDS-uiux/krds-uiux
+   ============================================================ */
+:root {
+  --krds-primary-5: #ecf2fe;
+  --krds-primary-10: #d8e5fd;
+  --krds-primary-40: #4c87f6;
+  --krds-primary-50: #256ef4;
+  --krds-primary-60: #0b50d0;
+  --krds-primary-70: #083891;
+  --krds-gray-5: #f4f5f6;
+  --krds-gray-40: #8a949e;
+  --krds-gray-60: #58616a;
+  --krds-gray-90: #1e2124;
+  --krds-success-5: #eaf6ec;
+  --krds-success-60: #267337;
+}
+
+/* Tailwind 기본 팔레트를 KRDS 값으로 치환한다(유틸리티 클래스는 그대로, 색만 KRDS). */
+@theme {
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, "Malgun Gothic",
+    "Apple SD Gothic Neo", system-ui, sans-serif;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.1875rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+
+  --color-slate-50: #f4f5f6;
+  --color-slate-100: #e6e8ea;
+  --color-slate-200: #cdd1d5;
+  --color-slate-300: #b1b8be;
+  --color-slate-400: #8a949e;
+  --color-slate-500: #6d7882;
+  --color-slate-600: #58616a;
+  --color-slate-700: #464c53;
+  --color-slate-800: #33363d;
+  --color-slate-900: #1e2124;
+
+  --color-blue-50: #ecf2fe;
+  --color-blue-100: #d8e5fd;
+  --color-blue-200: #b1cefb;
+  --color-blue-400: #4c87f6;
+  --color-blue-500: #256ef4;
+  --color-blue-600: #256ef4;
+  --color-blue-700: #0b50d0;
+  --color-blue-800: #083891;
+
+  --color-green-50: #eaf6ec;
+  --color-green-100: #d8eedd;
+  --color-green-600: #267337;
+  --color-green-700: #228738;
+
+  --color-amber-50: #fff3db;
+  --color-amber-600: #9e6a00;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* KRDS 접근성: 본문 바로가기 */
+.krds-skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+}
+.krds-skip:focus {
+  left: 12px;
+  top: 12px;
+  background: #1e2124;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+/* 가로 스크롤 탭에서 스크롤바 숨김 */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
