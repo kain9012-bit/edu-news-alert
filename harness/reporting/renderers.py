@@ -331,8 +331,13 @@ footer p {{ margin:4px 0; }}
 .toolbar button {{ display:inline-flex; align-items:center; gap:6px; padding:9px 14px; border:1px solid var(--teal); border-radius:8px; background:var(--teal); color:#fff; font:inherit; font-size:13px; font-weight:700; cursor:pointer; box-shadow:0 2px 8px rgba(18,31,43,.16); }}
 .toolbar button.secondary, .toolbar .tool-link.secondary {{ background:#fff; color:var(--teal); }}
 .toolbar button:hover, .toolbar .tool-link:hover {{ opacity:.92; }}
+.toolbar button, .toolbar .tool-link {{ white-space:nowrap; }}
 .toolbar .tool-link {{ display:inline-flex; align-items:center; gap:6px; padding:9px 14px; border:1px solid var(--teal); border-radius:8px; background:var(--teal); color:#fff; font:inherit; font-size:13px; font-weight:700; text-decoration:none; cursor:pointer; box-shadow:0 2px 8px rgba(18,31,43,.16); }}
-@media (max-width:700px) {{ .toolbar {{ top:10px; right:10px; }} .toolbar button, .toolbar .tool-link {{ padding:8px 11px; font-size:12px; }} }}
+@media (max-width:700px) {{
+  .toolbar {{ top:10px; right:10px; }}
+  .toolbar button, .toolbar .tool-link {{ padding:8px 11px; font-size:12px; }}
+  .toolbar .print-tool {{ display:none !important; }}
+}}
 @media print {{
   @page {{ margin:0; }}
   .toolbar {{ display:none !important; }}
@@ -365,8 +370,8 @@ footer p {{ margin:4px 0; }}
 <body>
 <div class="toolbar" role="toolbar" aria-label="문서 도구">
   {index_button}
-  <button type="button" class="secondary" onclick="window.print()" title="인쇄 대화상자를 엽니다">🖨 인쇄</button>
-  <button type="button" onclick="window.print()" title="인쇄 대화상자에서 '대상'을 'PDF로 저장'으로 선택하세요">📄 PDF 저장</button>
+  <button type="button" class="secondary print-tool" onclick="window.print()" title="인쇄 대화상자를 엽니다">🖨 인쇄</button>
+  <button type="button" class="print-tool" onclick="window.print()" title="인쇄 대화상자에서 '대상'을 'PDF로 저장'으로 선택하세요">📄 PDF 저장</button>
 </div>
 <main class="report">
 {side_controller}
