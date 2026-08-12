@@ -152,9 +152,21 @@ export function ArchiveTab() {
                   {g.items.map((it) => {
                     const isSel = selected.has(it.id);
                     return (
-                      <li key={it.id} className="flex items-center gap-3 px-4 py-3 hover:bg-slate-50">
-                        <span className="text-xs font-bold text-slate-500 w-[110px] shrink-0">{it.source}</span>
-                        <span className="flex-1 text-slate-800">
+                      <li
+                        key={it.id}
+                        className="flex flex-wrap items-center gap-x-3 gap-y-1 px-4 py-3 hover:bg-slate-50"
+                      >
+                        <span className="order-1 text-xs font-bold text-slate-500 sm:w-[110px] sm:shrink-0">
+                          {it.source}
+                        </span>
+                        <span
+                          className={`order-2 ml-auto sm:order-3 sm:ml-0 shrink-0 text-xs font-bold px-2 py-0.5 rounded-full ${
+                            isSel ? "bg-green-50 text-green-700" : "bg-slate-100 text-slate-400"
+                          }`}
+                        >
+                          {isSel ? "선정" : "미선정"}
+                        </span>
+                        <span className="order-3 w-full sm:order-2 sm:w-auto sm:flex-1 text-slate-800 break-keep">
                           {it.url ? (
                             <a href={it.url} target="_blank" rel="noopener noreferrer" className="hover:text-blue-700 hover:underline inline-flex items-baseline gap-1">
                               {it.title}
@@ -163,13 +175,6 @@ export function ArchiveTab() {
                           ) : (
                             it.title
                           )}
-                        </span>
-                        <span
-                          className={`shrink-0 text-xs font-bold px-2 py-0.5 rounded-full ${
-                            isSel ? "bg-green-50 text-green-700" : "bg-slate-100 text-slate-400"
-                          }`}
-                        >
-                          {isSel ? "선정" : "미선정"}
                         </span>
                       </li>
                     );

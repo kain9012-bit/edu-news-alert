@@ -37,12 +37,12 @@ export function ReportsTab() {
                 {r.date}
                 <span className="text-slate-400 text-sm font-semibold"> ({weekday(r.date)})</span>
               </span>
-              <span className="flex-1 text-sm text-slate-600">
-                교육동향 <b className="text-slate-900">{r.trendCount}</b>건
+              <span className="flex-1 text-sm text-slate-600 break-keep">
+                <span className="whitespace-nowrap">교육동향 <b className="text-slate-900">{r.trendCount}</b>건</span>
                 {r.ownOfficeCount ? (
-                  <>
+                  <span className="whitespace-nowrap">
                     {" · "}전북 <b className="text-slate-900">{r.ownOfficeCount}</b>건
-                  </>
+                  </span>
                 ) : null}
               </span>
               <ExternalLink className="w-4 h-4 text-slate-300 shrink-0 hidden sm:block" />
