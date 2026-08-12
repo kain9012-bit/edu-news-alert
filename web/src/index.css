@@ -68,6 +68,9 @@
 
 html {
   scroll-behavior: smooth;
+  /* 스크롤바 공간을 항상 확보해 탭 전환 시 가로 폭이 흔들리지 않게 한다. */
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
 }
 body {
   font-family: var(--font-sans);

@@ -17,18 +17,32 @@ async function getJson<T>(path: string): Promise<T | null> {
   }
 }
 
+// 탭을 오갈 때마다 다시 받지 않도록 한 세션 동안 결과를 캐시한다(로딩 깜빡임 방지).
+let indexCache: Promise<{ reports: ReportIndexEntry[] } | null> | null = null;
+let newsCache: Promise<NewsItem[]> | null = null;
+const reportCache = new Map<string, Promise<Report | null>>();
+
 export function fetchReportIndex(): Promise<{ reports: ReportIndexEntry[] } | null> {
-  return getJson("reports/index.json");
+  if (!indexCache) indexCache = getJson("reports/index.json");
+  return indexCache;
 }
 
 export function fetchReport(date: string): Promise<Report | null> {
-  return getJson(`reports/${date}.json`);
+  let p = reportCache.get(date);
+  if (!p) {
+    p = getJson<Report>(`reports/${date}.json`);
+    reportCache.set(date, p);
+  }
+  return p;
 }
 
 export async function fetchNews(): Promise<NewsItem[]> {
-  const data = await getJson<NewsItem[] | { items: NewsItem[] }>("news.json");
-  if (!data) return [];
-  return Array.isArray(data) ? data : data.items || [];
+  if (!newsCache) {
+    newsCache = getJson<NewsItem[] | { items: NewsItem[] }>("news.json").then((data) =>
+      !data ? [] : Array.isArray(data) ? data : data.items || []
+    );
+  }
+  return newsCache;
 }
 
 interface Briefing {
