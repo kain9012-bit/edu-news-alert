@@ -41,17 +41,17 @@ export function Header({ activeTab, setActiveTab }: HeaderProps) {
           </button>
 
           <nav aria-label="주 메뉴" className="-mb-px w-full sm:w-auto">
-            <ul className="flex overflow-x-auto overflow-y-hidden no-scrollbar" role="tablist">
+            <ul className="flex" role="tablist">
               {TABS.map(({ id, label }) => {
                 const on = activeTab === id;
                 return (
-                  <li key={id} role="presentation" className="shrink-0">
+                  <li key={id} role="presentation" className="flex-1 sm:flex-none">
                     <button
                       type="button"
                       role="tab"
                       aria-selected={on}
                       onClick={() => setActiveTab(id)}
-                      className={`px-4 py-4 text-base font-bold whitespace-nowrap border-b-[3px] transition-colors ${
+                      className={`w-full text-center px-4 py-4 text-base font-bold whitespace-nowrap border-b-[3px] transition-colors ${
                         on
                           ? "text-blue-700 border-blue-600"
                           : "text-slate-600 border-transparent hover:text-slate-900"
