@@ -8,10 +8,10 @@ from typing import Any
 
 WEEKDAYS = "월화수목금토일"
 
-# 수집한 전체 보도자료를 조회하는 GitHub Pages 아카이브 주소(보고서 상단 버튼 링크)
-ARCHIVE_URL = "https://kain9012-bit.github.io/edu-news-alert/archive.html"
-# 과거 '오늘의 교육동향' 지난 호를 날짜별로 보는 목록 페이지 주소
-REPORTS_URL = "https://kain9012-bit.github.io/edu-news-alert/reports.html"
+# 수집한 전체 보도자료를 조회하는 통합 웹앱(Vercel) 주소(보고서 상단 버튼 링크)
+ARCHIVE_URL = "https://jbe-edu-trends.vercel.app/?tab=archive"
+# 과거 '오늘의 교육동향' 지난 호를 날짜별로 보는 통합 웹앱(Vercel) 주소
+REPORTS_URL = "https://jbe-edu-trends.vercel.app/?tab=reports"
 
 SOURCE_SHORT_LABELS = {
     "moe": "교육부",

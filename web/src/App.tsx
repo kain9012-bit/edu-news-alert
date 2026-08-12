@@ -5,11 +5,21 @@ import { Header } from "./components/Header";
 import { ReportsTab } from "./components/ReportsTab";
 import { ArchiveTab } from "./components/ArchiveTab";
 
+function initialTab(): ActiveTab {
+  const params = new URLSearchParams(window.location.search);
+  const value = (params.get("tab") || window.location.hash.replace("#", "")).toLowerCase();
+  return value === "archive" ? "archive" : "reports";
+}
+
 export default function App() {
-  const [activeTab, setActiveTab] = useState<ActiveTab>("reports");
+  const [activeTab, setActiveTab] = useState<ActiveTab>(initialTab);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
+    // 현재 탭을 URL에 반영해 새로고침·공유 시에도 같은 탭이 열리게 한다.
+    const url = new URL(window.location.href);
+    url.searchParams.set("tab", activeTab);
+    window.history.replaceState(null, "", url);
   }, [activeTab]);
 
   return (

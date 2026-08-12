@@ -5,11 +5,37 @@ import { dateLabel, fetchNews, fetchSelectedIds, weekday } from "../lib/data";
 
 interface Row {
   id: string;
+  sid: string;
   source: string;
   title: string;
   date: string;
   url?: string;
 }
+
+// 기관 필터 정렬 순서: 교육부 → 정식 시도교육청 순(광주·전남은 통합청 하나).
+const SOURCE_ORDER = [
+  "moe",
+  "seoul",
+  "busan",
+  "daegu",
+  "incheon",
+  "jngj_s1n1",
+  "daejeon",
+  "ulsan",
+  "sejong",
+  "gyeonggi",
+  "gangwon",
+  "chungbuk",
+  "chungnam",
+  "jeonbuk",
+  "gyeongbuk",
+  "gyeongnam",
+  "jeju",
+];
+const sourceRank = (sid: string) => {
+  const i = SOURCE_ORDER.indexOf(sid);
+  return i < 0 ? SOURCE_ORDER.length : i;
+};
 
 export function ArchiveTab() {
   const [rows, setRows] = useState<Row[]>([]);
@@ -26,6 +52,7 @@ export function ArchiveTab() {
       const cleaned: Row[] = news
         .map((n: NewsItem) => ({
           id: String(n.id || ""),
+          sid: String(n.sourceId || ""),
           source: String(n.source || "기타"),
           title: String(n.title || ""),
           date: String(n.date || "").slice(0, 10),
@@ -43,10 +70,14 @@ export function ArchiveTab() {
     () => [...new Set(rows.map((r) => r.date))].sort().reverse(),
     [rows]
   );
-  const orgs = useMemo(
-    () => [...new Set(rows.map((r) => r.source))].sort(),
-    [rows]
-  );
+  const orgs = useMemo(() => {
+    const sidByName = new Map<string, string>();
+    for (const r of rows) if (!sidByName.has(r.source)) sidByName.set(r.source, r.sid);
+    return [...sidByName.keys()].sort((a, b) => {
+      const d = sourceRank(sidByName.get(a) || "") - sourceRank(sidByName.get(b) || "");
+      return d !== 0 ? d : a < b ? -1 : 1;
+    });
+  }, [rows]);
 
   const filtered = useMemo(() => {
     const query = q.trim().toLowerCase();
