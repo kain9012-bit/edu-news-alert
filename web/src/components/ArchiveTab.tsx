@@ -128,7 +128,7 @@ export function ArchiveTab() {
         </div>
       </div>
 
-      <div className="bg-white border border-slate-200 rounded-xl p-3 sm:p-4 flex flex-wrap items-end gap-3 mb-5 sticky top-[57px] z-20">
+      <div className="bg-white border border-slate-200 rounded-xl p-3 sm:p-4 flex flex-wrap items-end gap-3 mb-5">
         <label className="flex flex-col gap-1 flex-1 min-w-0 sm:flex-none">
           <span className="text-xs font-bold text-slate-500">기간</span>
           <select value={date} onChange={(e) => setDate(e.target.value)} className="w-full h-10 border border-slate-200 rounded-lg px-3 text-sm bg-white">
@@ -176,7 +176,7 @@ export function ArchiveTab() {
             const sel = g.items.filter((x) => selected.has(x.id)).length;
             return (
               <section key={g.date}>
-                <h2 className="text-sm font-bold text-blue-700 border-b-2 border-blue-100 pb-1.5 mb-2 sticky top-[140px] bg-white/95 backdrop-blur">
+                <h2 className="text-sm font-bold text-blue-700 border-b-2 border-blue-100 pb-1.5 mb-2">
                   {dateLabel(g.date)} · {g.items.length}건, 선정 {sel}건
                 </h2>
                 <ul className="bg-white border border-slate-200 rounded-xl overflow-hidden divide-y divide-slate-50">
