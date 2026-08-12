@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ChevronRight, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import type { ReportIndexEntry } from "../types";
 import { DATA_BASE, fetchReportIndex, weekday } from "../lib/data";
 
@@ -46,7 +46,6 @@ export function ReportsTab() {
                 ) : null}
               </span>
               <ExternalLink className="w-4 h-4 text-slate-300 shrink-0 hidden sm:block" />
-              <ChevronRight className="w-5 h-5 text-slate-400 shrink-0 sm:hidden" />
             </a>
           </li>
         ))}
