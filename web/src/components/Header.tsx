@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Newspaper } from "lucide-react";
 import type { ActiveTab } from "../types";
 
@@ -5,6 +6,35 @@ const TABS: { id: ActiveTab; label: string }[] = [
   { id: "reports", label: "오늘의 교육동향" },
   { id: "archive", label: "전체 보도자료" },
 ];
+
+// GoatCounter 공개 카운터로 오늘·누적 방문자 수를 가져온다(응답은 최대 4시간 캐시).
+const GC_TOTAL = "https://jbe-edu-trends.goatcounter.com/counter/TOTAL.json";
+
+function VisitorCounts() {
+  const [total, setTotal] = useState<string | null>(null);
+  const [today, setToday] = useState<string | null>(null);
+
+  useEffect(() => {
+    // 한국 시간(KST) 기준 오늘 날짜
+    const kstToday = new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
+    const get = (url: string) =>
+      fetch(url)
+        .then((r) => (r.ok ? r.json() : null))
+        .then((d) => (d && typeof d.count === "string" ? d.count : null))
+        .catch(() => null);
+    get(GC_TOTAL).then(setTotal);
+    get(`${GC_TOTAL}?start=${kstToday}&end=${kstToday}`).then(setToday);
+  }, []);
+
+  if (total === null && today === null) return null;
+  return (
+    <span className="shrink-0 text-xs text-slate-500 whitespace-nowrap">
+      오늘 <b className="text-slate-700">{today ?? "-"}</b>
+      <span className="mx-1.5 text-slate-300">·</span>
+      누적 <b className="text-slate-700">{total ?? "-"}</b>
+    </span>
+  );
+}
 
 interface HeaderProps {
   activeTab: ActiveTab;
@@ -15,8 +45,11 @@ export function Header({ activeTab, setActiveTab }: HeaderProps) {
   return (
     <header className="bg-white sticky top-0 z-30 border-b border-slate-200">
       <div className="bg-slate-50 text-slate-600 border-b border-slate-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-2 text-xs">
-          전북특별자치도교육청 · 공개 보도자료를 AI로 선별·분석한 내부 검토 자료
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-2 text-xs flex items-center justify-between gap-3">
+          <span className="min-w-0 truncate">
+            전북특별자치도교육청 · 공개 보도자료를 AI로 선별·분석한 내부 검토 자료
+          </span>
+          <VisitorCounts />
         </div>
       </div>
 
