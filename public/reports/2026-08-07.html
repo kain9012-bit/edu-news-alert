@@ -86,8 +86,13 @@ footer p { margin:4px 0; }
 .toolbar button { display:inline-flex; align-items:center; gap:6px; padding:9px 14px; border:1px solid var(--teal); border-radius:8px; background:var(--teal); color:#fff; font:inherit; font-size:13px; font-weight:700; cursor:pointer; box-shadow:0 2px 8px rgba(18,31,43,.16); }
 .toolbar button.secondary, .toolbar .tool-link.secondary { background:#fff; color:var(--teal); }
 .toolbar button:hover, .toolbar .tool-link:hover { opacity:.92; }
+.toolbar button, .toolbar .tool-link { white-space:nowrap; }
 .toolbar .tool-link { display:inline-flex; align-items:center; gap:6px; padding:9px 14px; border:1px solid var(--teal); border-radius:8px; background:var(--teal); color:#fff; font:inherit; font-size:13px; font-weight:700; text-decoration:none; cursor:pointer; box-shadow:0 2px 8px rgba(18,31,43,.16); }
-@media (max-width:700px) { .toolbar { top:10px; right:10px; } .toolbar button, .toolbar .tool-link { padding:8px 11px; font-size:12px; } }
+@media (max-width:700px) {
+  .toolbar { top:10px; right:10px; }
+  .toolbar button, .toolbar .tool-link { padding:8px 11px; font-size:12px; }
+  .toolbar .print-tool { display:none !important; }
+}
 @media print {
   @page { margin:0; }
   .toolbar { display:none !important; }
@@ -120,8 +125,8 @@ footer p { margin:4px 0; }
 <body>
 <div class="toolbar" role="toolbar" aria-label="문서 도구">
   <a class="tool-link secondary" href="https://kain9012-bit.github.io/edu-news-alert/reports.html" target="_blank" rel="noopener noreferrer" title="지난 오늘의 교육동향을 날짜별로 봅니다">🗂 지난 호</a><a class="tool-link secondary" href="https://kain9012-bit.github.io/edu-news-alert/archive.html" target="_blank" rel="noopener noreferrer" title="교육동향으로 선정되지 않은 자료까지 수집한 전체 보도자료를 봅니다">📰 전체 보도자료</a>
-  <button type="button" class="secondary" onclick="window.print()" title="인쇄 대화상자를 엽니다">🖨 인쇄</button>
-  <button type="button" onclick="window.print()" title="인쇄 대화상자에서 '대상'을 'PDF로 저장'으로 선택하세요">📄 PDF 저장</button>
+  <button type="button" class="secondary print-tool" onclick="window.print()" title="인쇄 대화상자를 엽니다">🖨 인쇄</button>
+  <button type="button" class="print-tool" onclick="window.print()" title="인쇄 대화상자에서 '대상'을 'PDF로 저장'으로 선택하세요">📄 PDF 저장</button>
 </div>
 <main class="report">
 <aside class="toc-controller" aria-label="빠른 목차"><a class="toc-controller-home" href="#report-toc">목차</a><div class="toc-controller-scroll"><section><h2>전국 교육동향</h2><ol><li><a href="#item-1" data-report-target="item-1"><span class="controller-number">1</span><span class="controller-label"><strong>(충북)</strong> 충북교육청, 안전한 민원상담 환경 조성 위한 운영 가이드라인 마련</span></a></li><li><a href="#item-2" data-report-target="item-2"><span class="controller-number">2</span><span class="controller-label"><strong>(경북)</strong> [유초등교육과]경북교육청, 인공지능 시대 맞춤형 &#x27;수리력+ 웹 콘텐츠&#x27; 개발‧보급</span></a></li><li><a href="#item-3" data-report-target="item-3"><span class="controller-number">3</span><span class="controller-label"><strong>(대전)</strong> 대전시교육청, 지자체와 손잡고 어린이집 회계 모니터링 나선다(유아특수교육과)</span></a></li><li><a href="#item-4" data-report-target="item-4"><span class="controller-number">4</span><span class="controller-label"><strong>(충북)</strong> 충북교육청, 방학에도 돌봄 공백 제로, 미래형 프로그램과 지역 인프라로 알차게</span></a></li><li><a href="#item-5" data-report-target="item-5"><span class="controller-number">5</span><span class="controller-label"><strong>(경기)</strong> ‘안전한 교육시설 건설공사를 위한 첫 단추’ 제4기 건설공사 시민감리단, 본격 현장 활동 착수</span></a></li><li><a href="#item-6" data-report-target="item-6"><span class="controller-number">6</span><span class="controller-label"><strong>(경남)</strong> 경남교육청, 학교 폭염 대응 현장 점검</span></a></li><li><a href="#item-7" data-report-target="item-7"><span class="controller-number">7</span><span class="controller-label"><strong>(인천)</strong> 인천광역시교육청, ‘만화로 배우는 교육시설 안전 점검 설명서’ 제작</span></a></li><li><a href="#item-8" data-report-target="item-8"><span class="controller-number">8</span><span class="controller-label"><strong>(인천)</strong> 인천광역시교육청, ‘특수학급 공간 구축 실무 절차 안내서’ 제작</span></a></li><li><a href="#item-9" data-report-target="item-9"><span class="controller-number">9</span><span class="controller-label"><strong>(전남광주)</strong> 전남광주특별시교육청, 체육수업 전문성 강화 ‘팔 걷었다’</span></a></li><li><a href="#item-10" data-report-target="item-10"><span class="controller-number">10</span><span class="controller-label"><strong>(충남)</strong> 충남교육청, 2027학년도 대학수학능력시험 원서 접수 연수 실시</span></a></li><li><a href="#item-11" data-report-target="item-11"><span class="controller-number">11</span><span class="controller-label"><strong>(충남)</strong> 충남교육청, 「다보듬돌봄기관」 운영으로 촘촘한 돌봄 체계 구축</span></a></li><li><a href="#item-12" data-report-target="item-12"><span class="controller-number">12</span><span class="controller-label"><strong>(제주)</strong> 학생 맞춤형 읽기 지원, 전문성에서 시작된다</span></a></li></ol></section></div></aside>
