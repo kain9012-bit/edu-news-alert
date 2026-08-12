@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowLeft, ChevronRight } from "lucide-react";
 import type { ReportIndexEntry } from "../types";
-import { DATA_BASE, dateLabel, fetchReportIndex } from "../lib/data";
+import { DATA_BASE, dateLabel, fetchReportIndex, weekday } from "../lib/data";
 
 export function ReportsTab() {
   const [index, setIndex] = useState<ReportIndexEntry[]>([]);
@@ -71,9 +71,9 @@ export function ReportsTab() {
               onClick={() => setSelected(r.date)}
               className="w-full flex items-center gap-4 px-4 sm:px-5 py-4 text-left hover:bg-slate-50 transition-colors"
             >
-              <span className="text-blue-700 font-bold text-base sm:text-lg w-[130px] shrink-0">
+              <span className="text-blue-700 font-bold text-base sm:text-lg shrink-0 whitespace-nowrap">
                 {r.date}
-                <span className="text-slate-400 text-sm font-semibold"> ({dateLabel(r.date).slice(-2, -1)})</span>
+                <span className="text-slate-400 text-sm font-semibold"> ({weekday(r.date)})</span>
               </span>
               <span className="flex-1 text-sm text-slate-600">
                 교육동향 <b className="text-slate-900">{r.trendCount}</b>건
