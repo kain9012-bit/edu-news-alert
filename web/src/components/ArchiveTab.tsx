@@ -16,10 +16,10 @@ interface Row {
 const SOURCE_ORDER = [
   "moe",
   "seoul",
+  "jngj_s1n1",
   "busan",
   "daegu",
   "incheon",
-  "jngj_s1n1",
   "daejeon",
   "ulsan",
   "sejong",
@@ -129,18 +129,18 @@ export function ArchiveTab() {
       </div>
 
       <div className="bg-white border border-slate-200 rounded-xl p-3 sm:p-4 flex flex-wrap items-end gap-3 mb-5 sticky top-[57px] z-20">
-        <label className="flex flex-col gap-1">
+        <label className="flex flex-col gap-1 flex-1 min-w-0 sm:flex-none">
           <span className="text-xs font-bold text-slate-500">기간</span>
-          <select value={date} onChange={(e) => setDate(e.target.value)} className="h-10 border border-slate-200 rounded-lg px-3 text-sm bg-white">
+          <select value={date} onChange={(e) => setDate(e.target.value)} className="w-full h-10 border border-slate-200 rounded-lg px-3 text-sm bg-white">
             <option value="all">전체 기간</option>
             {dates.map((d) => (
               <option key={d} value={d}>{d} ({weekday(d)})</option>
             ))}
           </select>
         </label>
-        <label className="flex flex-col gap-1">
+        <label className="flex flex-col gap-1 flex-1 min-w-0 sm:flex-none">
           <span className="text-xs font-bold text-slate-500">기관</span>
-          <select value={org} onChange={(e) => setOrg(e.target.value)} className="h-10 border border-slate-200 rounded-lg px-3 text-sm bg-white max-w-[160px]">
+          <select value={org} onChange={(e) => setOrg(e.target.value)} className="w-full h-10 border border-slate-200 rounded-lg px-3 text-sm bg-white sm:max-w-[160px]">
             <option value="all">전체 기관</option>
             {orgs.map((o) => (
               <option key={o} value={o}>{o}</option>
