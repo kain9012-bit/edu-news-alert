@@ -1,0 +1,481 @@
+{
+  "metadata": {
+    "reportId": "20260812T222243Z-2bf3fbfc",
+    "title": "오늘의 교육동향",
+    "status": "completed",
+    "generatedAt": "2026-08-12T22:22:43+00:00",
+    "windowStart": "2026-08-12T06:00:00+09:00",
+    "windowEnd": "2026-08-13T06:00:00+09:00",
+    "windowHours": 24,
+    "selectionRunId": "20260812T215732Z-0acccfab",
+    "sourceCount": 10,
+    "eligibleCount": 7,
+    "publishedCount": 7,
+    "omittedCount": 0,
+    "ownOfficeEligibleCount": 3,
+    "ownOfficePublishedCount": 3,
+    "qualityExcludedCount": 0,
+    "factModel": "gemini-3.1-flash-lite",
+    "analysisModel": "gemini-3.5-flash",
+    "verifierModel": "gemini-3.1-flash-lite",
+    "summaryOnlyCount": 0,
+    "ownOfficeReviewCount": 1,
+    "usage": {
+      "stages": {
+        "facts": {
+          "model": "gemini-3.1-flash-lite",
+          "requests": 3,
+          "promptTokenCount": 7629,
+          "candidatesTokenCount": 2541,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 10170
+        },
+        "analysis": {
+          "model": "gemini-3.5-flash",
+          "requests": 3,
+          "promptTokenCount": 4548,
+          "candidatesTokenCount": 1922,
+          "thoughtsTokenCount": 7986,
+          "totalTokenCount": 14456
+        },
+        "verification": {
+          "model": "gemini-3.1-flash-lite",
+          "requests": 3,
+          "promptTokenCount": 9802,
+          "candidatesTokenCount": 649,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 10451
+        }
+      },
+      "total": {
+        "requests": 9,
+        "promptTokenCount": 21979,
+        "candidatesTokenCount": 5112,
+        "thoughtsTokenCount": 7986,
+        "totalTokenCount": 35077
+      }
+    },
+    "estimatedCostUsd": 0.105137
+  },
+  "items": [
+    {
+      "newsId": "chungnam-9d9ad48dd78f0d9a",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, 전국 최초 ‘가족돌봄학생’ 통합 지원 운영 계획 시행",
+      "date": "2026-08-12",
+      "url": "http://news.cne.go.kr/boardCnts/view.do?boardSeq=2371767&boardID=1003&m=0401&s=news&lev=0&searchType=null&statusYN=W&page=1&opType=N",
+      "category": "학생지원·복지",
+      "importance": 4,
+      "selectionReason": "가족돌봄학생을 위한 전국 최초의 통합 지원 운영 계획 및 조례 기반의 정책적 지원 체계 구축 사례로 교육행정적 파급력이 큼.",
+      "summaryPoints": [
+        "전국 시·도교육청 최초로 가족돌봄학생 통합 지원 운영 계획 시행함",
+        "가족돌봄학생을 위한 관련 조례를 제정하여 법적 근거를 마련함",
+        "2026년 15명 내외 학생 대상 2,000만 원 규모 예산 지원 예정임",
+        "조기 발굴 체계 구축 및 유관기관 협력망을 통한 맞춤형 통합 지원 추진함"
+      ],
+      "analysisPoints": [
+        "가족돌봄학생에 대한 법적 근거 마련을 통해 체계적이고 지속 가능한 지원 기반을 구축한 사례임",
+        "조기 발굴 체계와 유관기관 협력망을 연계하여 복지 사각지대에 놓인 학생들을 통합 지원하는 정책적 방향성을 제시함",
+        "소규모 시범 운영을 거쳐 단계적으로 지원 규모를 확대하는 안정적인 정책 추진 방식을 보여줌"
+      ],
+      "applicationReviewPoints": [
+        "전북 지역 내 가족돌봄학생의 현황 파악 및 지원을 위한 조례 제정 필요성을 검토해 볼 수 있음",
+        "유관기관과의 협력망을 통한 복지 사각지대 학생 조기 발굴 및 맞춤형 통합 지원 체계 구축 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "가족돌봄학생은 중병·장애·노령 가족을 돌보며 학업을 병행하는 초중고 재학생임",
+        "충남교육청은 2025년 9월 30일 관련 조례를 제정함",
+        "2026년 지원 대상은 15명 내외임",
+        "2026년 지원 예산은 2,000만 원 규모임",
+        "2027년부터 지원 규모를 확대할 계획임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungnam-a320a8a672fc345c",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "교권침해 조사, 학교 손 떠난다. 조사는 전문가에게, 갈등은 조정으로",
+      "date": "2026-08-12",
+      "url": "http://news.cne.go.kr/boardCnts/view.do?boardSeq=2371770&boardID=1003&m=0401&s=news&lev=0&searchType=null&statusYN=W&page=1&opType=N",
+      "category": "교원·인사",
+      "importance": 3,
+      "selectionReason": "교권보호 사안조사관 및 갈등조정관 도입이라는 교원 정책 및 제도적 변화를 담고 있음.",
+      "summaryPoints": [
+        "교권침해 사안조사관 및 갈등조정관 도입을 위한 선발 협의회 개최함",
+        "학교 현장의 2차 피해 방지를 위해 교육청 차원의 전문 조사관 파견 추진함",
+        "교권침해 관련자 간 갈등 해소를 위해 갈등조정관 제도 도입함",
+        "사안조사관 10명, 갈등조정관 100명가량 선발 및 위촉 예정임"
+      ],
+      "analysisPoints": [
+        "교권침해 사안 조사와 갈등 조정을 분리하고 외부 전문가를 활용하여 학교 현장의 행정 부담과 2차 피해를 경감하려는 시도임",
+        "사안조사관과 갈등조정관의 이원화된 전문 인력 풀을 구축하여 공정성과 갈등 해결의 실효성을 동시에 도모함"
+      ],
+      "applicationReviewPoints": [
+        "교권침해 사안의 공정한 조사와 교원 및 보호자 간 갈등 조정을 위한 외부 전문 인력 도입 방안을 검토해 볼 수 있음",
+        "학교 현장의 업무 부담 경감 및 2차 피해 방지를 위한 교육청 차원의 전문 인력 파견 체계를 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "교권보호관 추진은 제19대 충남교육감 공약사업임",
+        "사안조사관은 교육활동 침해 사안을 공정하게 조사하는 역할을 함",
+        "갈등조정관은 교원과 보호자 간 갈등을 조정하고 해소하는 역할을 함",
+        "사안조사관은 10명가량 선발 예정임",
+        "갈등조정관은 100명가량 선발 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungbuk-d3fe624673e91767",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "충북교육청, 학교 행정수요 반영한 지방공무원 정원 배정기준 개정",
+      "date": "2026-08-12",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1577261&bbsId=1158&mi=10301",
+      "category": "정책·행정",
+      "importance": 3,
+      "selectionReason": "지방공무원 정원 배정기준이라는 인사 및 조직 운영 제도의 개편을 다루고 있음.",
+      "summaryPoints": [
+        "학교별 실제 행정수요를 반영한 지방공무원 정원 배정기준 개정안 마련함",
+        "기존 학급 수 중심 배정방식에서 객관적 통계지표를 반영한 정원 산식으로 변경함",
+        "정원 조정 시기를 매년 3월 1일에서 7월 1일로 변경함",
+        "신설학교 및 BTL 운영학교에 대한 예외 기준을 마련함"
+      ],
+      "analysisPoints": [
+        "단순 학급 수 중심에서 세출결산액과 교육공무직원 수 등 다각적인 통계지표를 반영하여 실질적인 행정수요에 부합하도록 정원 배정 방식을 개선함",
+        "정원 조정 시기를 학기 초에서 7월 1일로 변경하여 학교 현장의 행정 혼선을 예방하고 인사 예측 가능성을 높임",
+        "총정원 증원 없이 학교 간 행정수요 편차를 합리적으로 조정하는 효율적 인력 재배치 모델을 제시함"
+      ],
+      "applicationReviewPoints": [
+        "지방공무원 정원 배정 시 학급 수 외에 세출결산액과 교육공무직원 수 등 다각적 지표를 반영하는 방안을 검토해 볼 수 있음",
+        "학기 초 행정 혼선 방지를 위해 정원 조정 시기를 변경하는 방안의 타당성을 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "정원 산식에 학급 수, 최근 3년 평균 세출결산액, 교육공무직원 수를 반영함",
+        "정원 조정 시기 변경으로 학기 초 행정 혼선을 줄이고 예측 가능성을 높임",
+        "이번 개정은 인력 증원이 아닌 학교 간 행정수요 차이를 반영한 제도 개선임",
+        "2025년 정책연구용역 및 교육행정 연구회 운영을 통해 개정안을 확정함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongbuk-6f74fd0defd5b9e8",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[미래교육정보과]경북교육청, '경북형 웍스 인공지능' 영상 강의 공개...교직원 인공지능 활용 지원 강화",
+      "date": "2026-08-12",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1635665&bbsId=4744&mi=17643&searchCate=761",
+      "category": "디지털·AI",
+      "importance": 2,
+      "selectionReason": "생성형 AI 통합 플랫폼 활용 강의를 통해 교직원의 디지털 역량 강화 및 행정 효율화를 지원하는 정책적 성격의 자료임.",
+      "summaryPoints": [
+        "교직원 인공지능 활용 역량 강화를 위해 경북형 웍스 인공지능 활용 강의 공개함",
+        "경북교육청 공식 유튜브 채널을 통해 누구나 반복 학습 가능한 영상 제공함",
+        "프롬프트 작성, 이미지·영상 제작, 회의록 작성 등 실습 중심 콘텐츠 구성함",
+        "향후 심화 과정 및 학교 현장 의견을 반영한 맞춤형 콘텐츠 확대 예정임"
+      ],
+      "analysisPoints": [
+        "다양한 생성형 인공지능 모델을 통합한 자체 플랫폼을 기반으로 교직원의 실무 역량 강화를 지원하는 상시 학습 체계를 구축함",
+        "유튜브 등 접근성 높은 매체를 활용하여 시공간 제약 없는 자기주도형 실습 중심 교육 콘텐츠를 제공함"
+      ],
+      "applicationReviewPoints": [
+        "교직원의 행정 업무 효율화를 위한 생성형 인공지능 통합 플랫폼 구축 및 활용 지원 방안을 검토해 볼 수 있음",
+        "자체 플랫폼 활용법과 프롬프트 작성 등 실무 중심의 상시 학습용 영상 콘텐츠 제작 및 보급 사례를 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "경북형 웍스 인공지능은 생성형 인공지능 모델 7종을 기반으로 한 통합 플랫폼임",
+        "플랫폼 기능으로 문서 작성, 요약, 데이터 분석, 자료 검색, 이미지 생성 등을 제공함",
+        "강의는 경북교육청 공식 유튜브 채널 맛쿨멋쿨TV에 공개됨",
+        "자기주도형 상시 학습체계를 구축할 계획임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungnam-6e0b5351caf9261e",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "“선생님, 혼자 두지 않겠습니다”... 충남교육청, 교권 침해 신속 대응 훈련 첫 실시",
+      "date": "2026-08-12",
+      "url": "http://news.cne.go.kr/boardCnts/view.do?boardSeq=2371774&boardID=1003&m=0401&s=news&lev=0&searchType=null&statusYN=W&page=1&opType=N",
+      "category": "교원·인사",
+      "importance": 2,
+      "selectionReason": "교권 침해 대응을 위한 신속 대응 체계 구축 및 훈련 등 교육청 차원의 제도적 대응 강화 사례임.",
+      "summaryPoints": [
+        "충남교육청이 교육활동 침해 사안 발생 시 신속 대응을 위한 모의훈련을 실시함",
+        "위험등급별로 S·A등급은 1시간, B등급은 2시간, C등급은 24시간 이내 대응을 목표로 함",
+        "교권보호관추진단은 이번 훈련을 통해 초동조치 능력을 점검하고 9월 1일 정식 출범할 예정임"
+      ],
+      "analysisPoints": [
+        "교권 침해 사안 발생 시 신속한 초동조치를 위해 위험등급별(S·A·B·C) 대응 목표 시간을 설정하고 모의훈련을 통해 실효성을 점검함",
+        "교원안심온콜 등 단일 창구를 활용한 불시 훈련으로 실제 상황에서의 대응 역량과 절차적 미비점을 보완하고자 함",
+        "전담 조직 출범과 연계하여 현장 밀착형 지원 체계를 체계화하려는 시도로 볼 수 있음"
+      ],
+      "applicationReviewPoints": [
+        "교권 침해 사안의 경중과 시급성에 따른 단계별 대응 기준 및 현장 출동 시간 가이드라인 수립 여부를 비교해 볼 수 있음",
+        "모의훈련 방식을 도입하여 교권 보호 대응 체계의 작동 여부를 정기적으로 점검하는 방안을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "충남교육청은 2026년 8월 12일 제1차 교권침해 피해교원 보호 신속 대응 훈련을 실시함",
+        "교원안심온콜(1588-9331)을 통해 불시 사안을 부여하여 대응 절차를 점검함",
+        "위험등급은 S, A, B, C 4단계로 구분함",
+        "S·A등급은 사안 접수 즉시 교권보호관이 출동하여 1시간 이내 현장에 도착함",
+        "B등급은 2시간 이내 담당자 지정, C등급은 24시간 이내 회신을 목표로 함",
+        "교권보호관추진단은 9월 1일자로 정식 출범할 계획임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "seoul-4258f73ed790ef1c",
+      "sourceId": "seoul",
+      "source": "서울특별시교육청",
+      "title": "서울시교육청, 휴대전화 등 스마트기기 사용 제한 관련 토론회 개최",
+      "date": "2026-08-12",
+      "url": "https://enews.sen.go.kr/news/view.do?bbsSn=191949&step1=3&step2=1",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "학생생활규정 제·개정 및 스마트기기 사용 제한이라는 교육 정책적 의제를 다루고 있어 파급력이 있습니다.",
+      "summaryPoints": [
+        "서울시교육청이 교내 스마트기기 사용 제한 방안을 논의하기 위한 대토론회를 개최함",
+        "토론회에서 스마트기기 제한 방식과 학생생활규정 제·개정을 위한 민주적 절차를 다룸",
+        "학생, 교원, 학부모 및 외부전문가가 참여하여 찬반 입장과 대안을 논의함"
+      ],
+      "analysisPoints": [
+        "교내 스마트기기 사용 제한에 대해 전면 수거, 자율 규제 등 다양한 대안을 열어두고 사회적 합의를 도출하려는 시도임",
+        "학생생활규정 제·개정 과정에서 교육공동체와 외부전문가의 참여를 통한 민주적 의사결정 절차를 강조함"
+      ],
+      "applicationReviewPoints": [
+        "스마트기기 사용 제한 관련 학생생활규정 개정 시 교육공동체의 의견을 수렴하는 공론화 토론회 운영 방식을 참고해 볼 수 있음",
+        "전면 수거 외에 자율 규제나 대안 기기 활용 등 다양한 제한 방식의 적용 가능성을 검토할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "서울시교육청은 휴대전화 등 스마트기기 사용 제한 관련 대토론회를 개최함",
+        "토론회 주제는 교내 스마트기기 사용 제한 방식과 학생생활규정 제·개정 절차임",
+        "스마트기기 제한 방식에는 전면 수거, 자율 규제, 대안 기기 활용 등이 포함됨",
+        "토론회에는 학생, 교원, 학부모, 외부전문가가 참석함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jngj_s1n1-db81c0daf1044690",
+      "sourceId": "jngj_s1n1",
+      "source": "전남광주통합특별시교육청",
+      "title": "전남광주특별시교육청, ‘2027 수능 세부시행계획 및 원서접수 설명회’ 개최",
+      "date": "2026-08-12",
+      "url": "https://www.jngjedu.kr/news/articleView.html?idxno=119567",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "통합특별시교육청 출범 이후 첫 수능 원서접수 체계 안내 및 시험 운영 지원을 위한 행정적 조치임.",
+      "summaryPoints": [
+        "전남광주통합특별시교육청이 2027학년도 수능 세부시행계획 및 원서접수 설명회를 개최함",
+        "수능 응시원서 접수는 8월 24일부터 9월 4일까지 진행되며 본인 직접 방문 접수가 원칙임",
+        "통합교육청 출범에도 불구하고 기존 8개 시험지구 체제는 유지됨",
+        "올해부터 응시수수료 현금 수납이 폐지되고 결제대행사 시스템을 통한 납부로 일원화됨",
+        "시험장 반입금지 물품에 스마트안경이 추가되는 등 주요 변경사항이 안내됨"
+      ],
+      "analysisPoints": [
+        "수능 응시수수료의 현금 수납을 폐지하고 신용카드, 간편결제 등 시스템 납부로 일원화하여 행정 편의성을 높이고 수납 과정을 간소화함",
+        "스마트안경의 반입 금지 물품 명시, 사진 철인 폐지, 온라인 성적표 발급 대상 확대 등 변화하는 기술 환경과 행정 효율화를 반영함"
+      ],
+      "applicationReviewPoints": [
+        "수능 응시수수료 납부 방식의 시스템 일원화 및 사진 철인 폐지 등 행정 절차 간소화 사항이 현장에 혼선 없이 적용되도록 안내 체계를 점검할 필요가 있음",
+        "스마트안경 등 신규 반입 금지 물품에 대한 수험생 유의사항 홍보 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "2027학년도 수능 응시원서 접수 기간은 2026년 8월 24일부터 9월 4일까지임",
+        "수능 시험일은 2026년 11월 19일임",
+        "응시수수료는 4개 영역 이하 37,000원, 5개 영역 42,000원, 6개 영역 47,000원임",
+        "응시수수료 납부는 신용카드, 가상계좌, 간편결제 등 시스템 납부로 일원화됨",
+        "전남광주통합특별시교육청은 8개 시험지구 체제를 유지함",
+        "시험장 반입금지 물품에 스마트안경이 새롭게 명시됨",
+        "응시원서 사진 철인(압인)이 폐지됨",
+        "온라인 성적표 발급 대상이 재학생까지 확대됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "ownOfficeItems": [
+    {
+      "newsId": "jeonbuk-3be52f9afc723660",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "“2027 대입 수시전형 지원 전략 알려드려요”",
+      "date": "2026-08-12",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1163553",
+      "summaryPoints": [
+        "8월 22일 창조나래 시청각실에서 2027 대입 수시전형 지원 전략 입시설명회 개최 예정임",
+        "전북권 및 수도권 대학별 수시 지원 전략을 분석하고 현장 접수 및 유튜브를 통해 정보 제공함"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-77c79a8689bb4636",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "공문 분류도 AI가 척척… AI 교육행정 새지평 열었다",
+      "date": "2026-08-12",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1163551",
+      "summaryPoints": [
+        "공문서 자동 분류 및 담당자 배부 시스템인 K 뚝배기를 자체 개발하여 8월부터 순차 도입함",
+        "로컬 AI 구동으로 정보 유출을 차단하고 업무 효율화 및 행정력 낭비 방지를 도모함"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeonbuk-f29ec25b25c3379c",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "2026년 민원 담당자 역량 강화 교육 실시",
+      "date": "2026-08-12",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1163691",
+      "summaryPoints": [
+        "전북특별자치도교육청(교육감 천호성) 은 12일 본청 창조나래 4회의실에서 ‘2026년 민원 담당자 역량 강화 교육’ 을 개최했다.",
+        "본청과 교육지원청, 직속기관 정보공개 및 민원 업무 담당자 60여 명이 참석한 이 교육은 최근 증가 추세에 있는 특이 민원에 체계적으로 대응하기 위해 마련됐다."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "reviewRequired": true,
+      "reviewReason": "원문에는 12일에 교육을 개최했다는 사실만 명시되어 있으며, 8월이라는 구체적인 월 정보는 원문에 없습니다.",
+      "validation": {
+        "status": "REVIEW",
+        "issues": [],
+        "confidence": 0
+      }
+    }
+  ],
+  "omittedItems": [],
+  "validation": {
+    "status": "PASS",
+    "issues": [],
+    "checks": {
+      "ownOfficeExcludedFromTrendAnalysis": true,
+      "ownOfficeAllIncluded": true,
+      "ownOfficeSummariesVerified": false,
+      "publishedItemsVerified": true,
+      "sourceWindowMatches": true
+    }
+  },
+  "providerErrors": {
+    "facts": [],
+    "ownOfficeSummaries": [],
+    "analysis": [],
+    "verification": [],
+    "repairs": [],
+    "repairVerifications": []
+  },
+  "trace": [
+    {
+      "step": "extract_facts",
+      "status": "success",
+      "startedAt": "2026-08-12T22:21:53+00:00",
+      "durationMs": 7873
+    },
+    {
+      "step": "summarize_own_office",
+      "status": "success",
+      "startedAt": "2026-08-12T22:22:01+00:00",
+      "durationMs": 1586
+    },
+    {
+      "step": "analyze_trends",
+      "status": "success",
+      "startedAt": "2026-08-12T22:22:03+00:00",
+      "durationMs": 36661
+    },
+    {
+      "step": "verify_report",
+      "status": "success",
+      "startedAt": "2026-08-12T22:22:39+00:00",
+      "durationMs": 3345
+    }
+  ],
+  "rendering": {
+    "canonical": "json",
+    "html": "오늘의 교육동향 (20260813).html",
+    "hwpx": "오늘의 교육동향 (20260813).hwpx",
+    "hwpxValidation": {
+      "hardGates": {
+        "package_validation": "pass",
+        "document_errors": "pass",
+        "schema_lint": "pass",
+        "reopen": "pass",
+        "editor_open_safety": "pass",
+        "id_integrity": "pass"
+      },
+      "packageOk": true,
+      "documentOk": true,
+      "reopenedOk": true,
+      "visualReviewRequired": true
+    }
+  }
+}
