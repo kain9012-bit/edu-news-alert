@@ -113,18 +113,18 @@ export function ArchiveTab() {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-5">
+      <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-5">
         <div className="bg-slate-50 rounded-lg p-3">
           <p className="text-xs text-slate-500">수집 기간</p>
-          <p className="text-xl font-bold text-slate-900">{dates.length}일</p>
+          <p className="text-lg sm:text-xl font-bold text-slate-900">{dates.length}일</p>
         </div>
         <div className="bg-slate-50 rounded-lg p-3">
           <p className="text-xs text-slate-500">전체 수집</p>
-          <p className="text-xl font-bold text-slate-900">{rows.length}건</p>
+          <p className="text-lg sm:text-xl font-bold text-slate-900">{rows.length}건</p>
         </div>
         <div className="bg-slate-50 rounded-lg p-3">
           <p className="text-xs text-slate-500">교육동향 선정</p>
-          <p className="text-xl font-bold text-blue-700">{selectedCount}건</p>
+          <p className="text-lg sm:text-xl font-bold text-blue-700">{selectedCount}건</p>
         </div>
       </div>
 
@@ -147,7 +147,7 @@ export function ArchiveTab() {
             ))}
           </select>
         </label>
-        <label className="flex flex-col gap-1 flex-1 min-w-[180px]">
+        <label className="flex flex-col gap-1 w-full sm:w-auto sm:flex-1 sm:min-w-[180px]">
           <span className="text-xs font-bold text-slate-500">제목 검색</span>
           <span className="relative">
             <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
