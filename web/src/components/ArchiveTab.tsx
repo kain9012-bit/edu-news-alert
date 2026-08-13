@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { ExternalLink, Search } from "lucide-react";
 import type { NewsItem } from "../types";
-import { dateLabel, fetchNews, fetchSelectedIds, weekday } from "../lib/data";
+import { dateLabel, fetchNews, fetchReportIndex, fetchSelectedIds, weekday } from "../lib/data";
 
 interface Row {
   id: string;
@@ -61,8 +61,10 @@ export function ArchiveTab() {
         .filter((r) => r.title && r.date);
       setRows(cleaned);
       setLoading(false);
-      const dates = [...new Set(cleaned.map((r) => r.date))];
-      fetchSelectedIds(dates).then(setSelected);
+      // 발행된 모든 보고서의 briefing을 합쳐 선정 여부를 집계한다.
+      const idx = await fetchReportIndex();
+      const reportDates = (idx?.reports || []).map((r) => r.date);
+      fetchSelectedIds(reportDates).then(setSelected);
     })();
   }, []);
 

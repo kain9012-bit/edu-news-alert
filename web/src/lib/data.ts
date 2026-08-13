@@ -49,15 +49,13 @@ interface Briefing {
   selectedItems?: { newsId?: string }[];
 }
 
-// 게시일 d 의 선별 결과는 배포일(d 또는 d+1) briefing 파일에 담긴다. 둘 다 시도해 합친다.
-export async function fetchSelectedIds(dates: string[]): Promise<Set<string>> {
-  const wanted = new Set<string>();
-  for (const d of dates) {
-    wanted.add(d);
-    wanted.add(addDays(d, 1));
-  }
+// 한 기사가 어느 날 보고서에 선정됐는지는 발행일 briefing 파일에 담긴다.
+// 발행된 모든 보고서(reports/index.json의 날짜)의 briefing을 합쳐, 수집일과 발행일이
+// 하루 어긋나는 경우까지 빠짐없이 선정 여부를 집계한다.
+export async function fetchSelectedIds(reportDates: string[]): Promise<Set<string>> {
+  const dates = [...new Set(reportDates)];
   const results = await Promise.all(
-    [...wanted].map((d) => getJson<Briefing>(`briefings/${d}.json`))
+    dates.map((d) => getJson<Briefing>(`briefings/${d}.json`))
   );
   const selected = new Set<string>();
   for (const b of results) {
