@@ -124,6 +124,10 @@ OTHER_REGION_HINTS = (
 )
 # 지역 단서가 없어도 제목이 이만큼 일치하면 같은 사안으로 본다.
 STRONG_MATCH_SCORE = 0.8
+# 보도자료 배포일 전후 이 범위의 기사는 같은 사안일 가능성이 매우 높다.
+# 언론사가 제목을 새로 뽑는 경우가 많아, 이때는 유사도 기준을 크게 낮춘다.
+NEAR_DAYS = 2
+NEAR_MIN_SCORE = 0.22
 
 
 def parse_args() -> argparse.Namespace:
@@ -193,18 +197,39 @@ def clean_department(value: str) -> str:
     text = re.sub(r"\s+", "", value or "")
     text = re.sub(r"^\(?문\s*의\)?", "", text)
     text = text.strip("()·-")
+    # '감사관실'과 '감사관', '대변인실'과 '대변인'은 같은 부서로 본다.
+    text = re.sub(r"(관|인)실$", r"\1", text)
     return text
 
 
 def extract_department(document_text: str) -> str | None:
+    """'담당 부서 / (문 의) / <부서명> / <직책> ...' 표에서 부서명을 읽는다.
+
+    직책이 과장·대변인·감사관 등으로 제각각이라 직책 목록에 기대지 않고,
+    '(문 의)' 바로 다음 줄을 부서명으로 본다.
+    """
+    marker = re.search(r"담당\s*부\s*서", document_text)
+    if marker:
+        tail = document_text[marker.end() :]
+        lines = [line.strip() for line in tail.splitlines()]
+        for line in lines[:6]:
+            if not line:
+                continue
+            # '(문 의)' 같은 표 머리말은 건너뛴다.
+            if re.fullmatch(r"\(?\s*문\s*의\s*\)?", line):
+                continue
+            name = clean_department(line)
+            if 2 <= len(name) <= 20 and not re.search(r"\d", name):
+                return name
+            break
+
     match = DEPARTMENT_PATTERN.search(document_text)
     if match:
         name = clean_department(match.group(1))
         if len(name) >= 2:
             return name
-    marker = document_text.find("담당")
-    if marker >= 0:
-        alt = DEPARTMENT_FALLBACK.search(document_text[marker:])
+    if marker:
+        alt = DEPARTMENT_FALLBACK.search(document_text[marker.start() :])
         if alt:
             name = clean_department(alt.group(1))
             if len(name) >= 2:
@@ -251,32 +276,54 @@ def has_other_region(text: str) -> bool:
     return any(hint in (text or "") for hint in OTHER_REGION_HINTS)
 
 
-def is_same_case(score: float, article: dict[str, str], min_score: float) -> bool:
-    """제목 유사도만으로는 걸러지지 않는 타 지역 기사를 배제한다."""
-    if score < min_score:
-        return False
+def days_apart(article_date: str, release_date: str) -> int | None:
+    if not article_date:
+        return None
+    try:
+        return abs((date.fromisoformat(article_date) - date.fromisoformat(release_date)).days)
+    except ValueError:
+        return None
+
+
+def is_same_case(
+    score: float, article: dict[str, str], min_score: float, release_date: str = ""
+) -> bool:
+    """같은 사안을 다룬 기사인지 판정한다.
+
+    보도자료는 배포 당일에 기사화되므로 날짜가 가장 강한 단서다. 배포일 전후
+    이틀 안의 기사는 언론사가 제목을 새로 뽑아도 같은 사안일 가능성이 높아
+    유사도 기준을 낮추고, 날짜가 멀면 제목이 거의 같아야 인정한다.
+    """
     title = article.get("title", "")
     # 다른 지자체가 주어인 기사는 표현이 겹쳐도 다른 사안이다.
     if has_other_region(title) and not has_region_hint(title):
         return False
-    # 지역 언론이 쓴 기사라면 제목에 지역명이 없어도 우리 사안일 가능성이 높다.
-    if has_region_hint(f"{title} {article.get('publisher', '')}"):
-        return True
+
+    gap = days_apart(article.get("publishedAt", ""), release_date) if release_date else None
+    if gap is not None and gap <= NEAR_DAYS:
+        # 배포 직후 기사는 제목을 새로 뽑았어도 같은 사안으로 본다.
+        return score >= NEAR_MIN_SCORE
+    # 날짜가 멀면 과거의 비슷한 행사일 수 있으므로 제목이 거의 같아야 인정한다.
     return score >= STRONG_MATCH_SCORE
 
 
+QUERY_TERM_LIMIT = 4
+
+
 def build_query(title: str, tokens: set[str]) -> str:
-    """검색어는 핵심 토큰 위주로 만들어 지나치게 긴 질의를 피한다."""
-    ordered = [t for t in re.split(r"\s+", re.sub(r"[^0-9A-Za-z가-힣\s]", " ", title)) if t]
-    keep: list[str] = []
-    for raw in ordered:
-        token = strip_josa(raw)
-        if token in tokens and token not in keep:
-            keep.append(token)
-        if len(keep) >= 8:
-            break
-    if not keep:
-        keep = ordered[:8]
+    """검색어는 핵심 낱말 몇 개로만 만든다.
+
+    낱말을 많이 넣으면 모두 포함한 기사만 찾아 결과가 0건이 되기 쉽고,
+    조사를 떼면 '신뢰받'처럼 실제로 쓰이지 않는 형태가 되어 검색이 어긋난다.
+    그래서 원문 표기를 그대로 쓰고, 길이가 긴(정보량이 많은) 낱말을 고른다.
+    """
+    words = [w for w in re.split(r"\s+", re.sub(r"[^0-9A-Za-z가-힣\s]", " ", title)) if w]
+    candidates = [w for w in words if strip_josa(w) in tokens]
+    if not candidates:
+        candidates = words
+    ranked = sorted(dict.fromkeys(candidates), key=lambda w: -len(w))[:QUERY_TERM_LIMIT]
+    # 제목에 나온 순서를 지켜야 검색 결과가 자연스럽다.
+    keep = [w for w in dict.fromkeys(candidates) if w in ranked]
     return " ".join(["전북교육청", *keep])
 
 
@@ -423,7 +470,7 @@ def collect(args: argparse.Namespace) -> dict[str, Any]:
         if xml_text:
             for article in parse_rss(xml_text):
                 score = similarity(tokens, article["title"])
-                if not is_same_case(score, article, args.min_score):
+                if not is_same_case(score, article, args.min_score, release_date):
                     continue
                 if not within_window(
                     article["publishedAt"], release_date, args.window_before, args.window_after

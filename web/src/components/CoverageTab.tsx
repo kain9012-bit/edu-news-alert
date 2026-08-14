@@ -50,7 +50,7 @@ function ReleaseRow({ item }: { item: CoverageItem }) {
             covered ? "bg-green-50 text-green-700" : "bg-slate-100 text-slate-400"
           }`}
         >
-          {covered ? `보도 ${item.articleCount}` : "미보도"}
+          {covered ? `게재 ${item.articleCount}` : "미게재"}
         </span>
       </button>
 
@@ -83,6 +83,7 @@ export function CoverageTab() {
   const [data, setData] = useState<Coverage | null>(null);
   const [loading, setLoading] = useState(true);
   const [q, setQ] = useState("");
+  const [period, setPeriod] = useState("all");
   const [dept, setDept] = useState("all");
   const [uncoveredOnly, setUncoveredOnly] = useState(false);
 
@@ -101,9 +102,22 @@ export function CoverageTab() {
     return [...names].sort();
   }, [items]);
 
+  // 최근 N일 기준일은 자료의 최신 날짜에서 되짚는다(수집이 하루 늦어도 어긋나지 않는다).
+  const latestDate = useMemo(
+    () => items.reduce((max, it) => (it.date > max ? it.date : max), ""),
+    [items]
+  );
+
   const filtered = useMemo(() => {
     const query = q.trim().toLowerCase();
+    let from = "";
+    if (period !== "all" && latestDate) {
+      const d = new Date(`${latestDate}T00:00:00+09:00`);
+      d.setDate(d.getDate() - (Number(period) - 1));
+      from = d.toISOString().slice(0, 10);
+    }
     return items.filter((it) => {
+      if (from && it.date < from) return false;
       if (dept !== "all" && (it.department || "") !== dept) return false;
       if (uncoveredOnly && it.articleCount > 0) return false;
       if (!query) return true;
@@ -113,9 +127,34 @@ export function CoverageTab() {
           a.title.toLowerCase().includes(query) || a.publisher.toLowerCase().includes(query)
       );
     });
-  }, [items, q, dept, uncoveredOnly]);
+  }, [items, q, dept, uncoveredOnly, period, latestDate]);
 
-  if (loading) return <p className="text-slate-500 py-16 text-center">언론 보도 현황을 불러오는 중…</p>;
+  // 아래 통계 패널도 지금 보고 있는 조건을 그대로 따른다.
+  const publisherStats = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const it of filtered)
+      for (const a of it.articles) counts.set(a.publisher, (counts.get(a.publisher) || 0) + 1);
+    return [...counts.entries()]
+      .map(([name, count]) => ({ name, count }))
+      .sort((a, b) => b.count - a.count || (a.name < b.name ? -1 : 1));
+  }, [filtered]);
+
+  const deptStats = useMemo(() => {
+    const rows = new Map<string, { releaseCount: number; coveredCount: number; articleCount: number }>();
+    for (const it of filtered) {
+      const name = it.department || "미확인";
+      const row = rows.get(name) || { releaseCount: 0, coveredCount: 0, articleCount: 0 };
+      row.releaseCount += 1;
+      row.articleCount += it.articleCount;
+      if (it.articleCount > 0) row.coveredCount += 1;
+      rows.set(name, row);
+    }
+    return [...rows.entries()]
+      .map(([name, row]) => ({ name, ...row }))
+      .sort((a, b) => b.articleCount - a.articleCount || (a.name < b.name ? -1 : 1));
+  }, [filtered]);
+
+  if (loading) return <p className="text-slate-500 py-16 text-center">언론 게재현황을 불러오는 중…</p>;
   if (!data || !items.length)
     return (
       <p className="text-slate-500 py-16 text-center">
@@ -123,24 +162,43 @@ export function CoverageTab() {
       </p>
     );
 
-  const rate = data.releaseCount ? Math.round((data.coveredCount / data.releaseCount) * 100) : 0;
+  // 통계는 지금 보고 있는 조건(기간·부서)에 맞춰 계산한다.
+  const shown = {
+    releases: filtered.length,
+    covered: filtered.filter((it) => it.articleCount > 0).length,
+    articles: filtered.reduce((sum, it) => sum + it.articleCount, 0),
+  };
+  const rate = shown.releases ? Math.round((shown.covered / shown.releases) * 100) : 0;
 
   return (
     <div>
       <div className="mb-4">
-        <h1 className="text-2xl font-bold text-slate-900">언론 보도</h1>
+        <h1 className="text-2xl font-bold text-slate-900">언론 게재현황</h1>
         <p className="text-slate-500 text-sm mt-1 break-keep">
-          전북교육청 보도자료가 어느 언론사에 실렸는지 모아봅니다. 제목을 누르면 기사 목록이 열립니다.
+          전북교육청 보도자료를 어느 언론사가 기사로 다뤘는지 모아봅니다. 제목을 누르면 기사 목록이 열립니다.
         </p>
       </div>
 
       <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-5">
-        <Stat label="보도자료" value={`${data.releaseCount}건`} />
-        <Stat label="보도됨" value={`${data.coveredCount}건 (${rate}%)`} accent />
-        <Stat label="게재 기사" value={`${data.articleCount}건`} />
+        <Stat label="보도자료" value={`${shown.releases}건`} />
+        <Stat label="게재율" value={`${rate}%`} accent />
+        <Stat label="게재 기사" value={`${shown.articles}건`} />
       </div>
 
       <div className="bg-white border border-slate-200 rounded-xl p-3 sm:p-4 flex flex-wrap items-end gap-3 mb-5">
+        <label className="flex flex-col gap-1 flex-1 min-w-0 sm:flex-none">
+          <span className="text-xs font-bold text-slate-500">기간</span>
+          <select
+            value={period}
+            onChange={(e) => setPeriod(e.target.value)}
+            className="w-full h-10 border border-slate-200 rounded-lg px-3 text-sm bg-white sm:max-w-[140px]"
+          >
+            <option value="all">전체 기간</option>
+            <option value="7">최근 7일</option>
+            <option value="14">최근 14일</option>
+            <option value="30">최근 30일</option>
+          </select>
+        </label>
         <label className="flex flex-col gap-1 flex-1 min-w-0 sm:flex-none">
           <span className="text-xs font-bold text-slate-500">부서</span>
           <select
@@ -154,15 +212,6 @@ export function CoverageTab() {
             ))}
           </select>
         </label>
-        <label className="inline-flex items-center gap-2 h-10 text-sm text-slate-700 whitespace-nowrap flex-1 min-w-0 sm:flex-none">
-          <input
-            type="checkbox"
-            checked={uncoveredOnly}
-            onChange={(e) => setUncoveredOnly(e.target.checked)}
-            className="w-4 h-4 accent-blue-600"
-          />
-          미보도만
-        </label>
         <label className="flex flex-col gap-1 w-full sm:w-auto sm:flex-1 sm:min-w-[180px]">
           <span className="text-xs font-bold text-slate-500">검색</span>
           <span className="relative">
@@ -175,6 +224,15 @@ export function CoverageTab() {
               className="w-full h-10 border border-slate-200 rounded-lg pl-9 pr-3 text-sm"
             />
           </span>
+        </label>
+        <label className="inline-flex items-center gap-2 h-10 text-sm text-slate-700 whitespace-nowrap w-full sm:w-auto">
+          <input
+            type="checkbox"
+            checked={uncoveredOnly}
+            onChange={(e) => setUncoveredOnly(e.target.checked)}
+            className="w-4 h-4 accent-blue-600"
+          />
+          미게재만 보기
         </label>
       </div>
 
@@ -192,11 +250,11 @@ export function CoverageTab() {
             많이 실어준 매체
           </h2>
           <ul className="space-y-1.5">
-            {data.publishers.slice(0, 12).map((p) => (
+            {publisherStats.slice(0, 12).map((p) => (
               <li key={p.name} className="flex items-center gap-2 text-sm">
                 <span className="flex-1 min-w-0 truncate text-slate-700">{p.name}</span>
                 <span className="h-1.5 rounded-full bg-blue-500 shrink-0"
-                  style={{ width: `${Math.max(6, (p.count / data.publishers[0].count) * 80)}px` }}
+                  style={{ width: `${Math.max(6, (p.count / (publisherStats[0]?.count || 1)) * 80)}px` }}
                   aria-hidden
                 />
                 <span className="w-8 text-right font-bold text-slate-900 tabular-nums">{p.count}</span>
@@ -210,7 +268,7 @@ export function CoverageTab() {
             부서별 보도 실적
           </h2>
           <ul className="space-y-1.5">
-            {data.departments.map((d) => (
+            {deptStats.map((d) => (
               <li key={d.name} className="flex items-center gap-2 text-sm">
                 <span className="flex-1 min-w-0 truncate text-slate-700">{d.name}</span>
                 <span className="text-xs text-slate-400 whitespace-nowrap">
