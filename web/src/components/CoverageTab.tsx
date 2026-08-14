@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { ChevronDown, ChevronRight, ExternalLink, Search } from "lucide-react";
 import type { Coverage, CoverageItem } from "../types";
-import { dateLabel, fetchCoverage } from "../lib/data";
+import { fetchCoverage } from "../lib/data";
+import { DateRange } from "./DateRange";
 
 function Stat({ label, value, accent }: { label: string; value: string; accent?: boolean }) {
   return (
@@ -83,7 +84,7 @@ export function CoverageTab() {
   const [data, setData] = useState<Coverage | null>(null);
   const [loading, setLoading] = useState(true);
   const [q, setQ] = useState("");
-  const [period, setPeriod] = useState("all");
+  const [range, setRange] = useState({ from: "", to: "" });
   const [dept, setDept] = useState("all");
   const [uncoveredOnly, setUncoveredOnly] = useState(false);
 
@@ -102,22 +103,17 @@ export function CoverageTab() {
     return [...names].sort();
   }, [items]);
 
-  // 최근 N일 기준일은 자료의 최신 날짜에서 되짚는다(수집이 하루 늦어도 어긋나지 않는다).
-  const latestDate = useMemo(
-    () => items.reduce((max, it) => (it.date > max ? it.date : max), ""),
-    [items]
-  );
+  // 날짜 입력의 선택 가능 범위는 실제 자료가 있는 구간으로 제한한다.
+  const bounds = useMemo(() => {
+    const dates = items.map((it) => it.date).filter(Boolean).sort();
+    return { min: dates[0] || "", max: dates[dates.length - 1] || "" };
+  }, [items]);
 
   const filtered = useMemo(() => {
     const query = q.trim().toLowerCase();
-    let from = "";
-    if (period !== "all" && latestDate) {
-      const d = new Date(`${latestDate}T00:00:00+09:00`);
-      d.setDate(d.getDate() - (Number(period) - 1));
-      from = d.toISOString().slice(0, 10);
-    }
     return items.filter((it) => {
-      if (from && it.date < from) return false;
+      if (range.from && it.date < range.from) return false;
+      if (range.to && it.date > range.to) return false;
       if (dept !== "all" && (it.department || "") !== dept) return false;
       if (uncoveredOnly && it.articleCount > 0) return false;
       if (!query) return true;
@@ -127,7 +123,7 @@ export function CoverageTab() {
           a.title.toLowerCase().includes(query) || a.publisher.toLowerCase().includes(query)
       );
     });
-  }, [items, q, dept, uncoveredOnly, period, latestDate]);
+  }, [items, q, dept, uncoveredOnly, range]);
 
   // 아래 통계 패널도 지금 보고 있는 조건을 그대로 따른다.
   const publisherStats = useMemo(() => {
@@ -189,19 +185,7 @@ export function CoverageTab() {
       </div>
 
       <div className="bg-white border border-slate-200 rounded-xl p-3 sm:p-4 flex flex-wrap items-end gap-3 mb-5">
-        <label className="flex flex-col gap-1 flex-1 min-w-0 sm:flex-none">
-          <span className="text-xs font-bold text-slate-500">기간</span>
-          <select
-            value={period}
-            onChange={(e) => setPeriod(e.target.value)}
-            className="w-full h-10 border border-slate-200 rounded-lg px-3 text-sm bg-white sm:max-w-[140px]"
-          >
-            <option value="all">전체 기간</option>
-            <option value="7">최근 7일</option>
-            <option value="14">최근 14일</option>
-            <option value="30">최근 30일</option>
-          </select>
-        </label>
+        <DateRange from={range.from} to={range.to} min={bounds.min} max={bounds.max} onChange={setRange} />
         <label className="flex flex-col gap-1 flex-1 min-w-0 sm:flex-none">
           <span className="text-xs font-bold text-slate-500">부서</span>
           <select

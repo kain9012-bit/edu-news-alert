@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { ExternalLink, Search } from "lucide-react";
 import type { NewsItem } from "../types";
-import { dateLabel, fetchNews, fetchReportIndex, fetchSelectedIds, weekday } from "../lib/data";
+import { dateLabel, fetchNews, fetchReportIndex, fetchSelectedIds } from "../lib/data";
+import { DateRange } from "./DateRange";
 
 interface Row {
   id: string;
@@ -43,7 +44,7 @@ export function ArchiveTab() {
   const [loading, setLoading] = useState(true);
   const [q, setQ] = useState("");
   const [org, setOrg] = useState("all");
-  const [date, setDate] = useState("all");
+  const [range, setRange] = useState({ from: "", to: "" });
   const [selOnly, setSelOnly] = useState(false);
 
   useEffect(() => {
@@ -84,13 +85,14 @@ export function ArchiveTab() {
   const filtered = useMemo(() => {
     const query = q.trim().toLowerCase();
     return rows.filter((r) => {
-      if (date !== "all" && r.date !== date) return false;
+      if (range.from && r.date < range.from) return false;
+      if (range.to && r.date > range.to) return false;
       if (org !== "all" && r.source !== org) return false;
       if (selOnly && !selected.has(r.id)) return false;
       if (query && r.title.toLowerCase().indexOf(query) < 0) return false;
       return true;
     });
-  }, [rows, q, org, date, selOnly, selected]);
+  }, [rows, q, org, range, selOnly, selected]);
 
   const grouped = useMemo(() => {
     const by: Record<string, Row[]> = {};
@@ -131,15 +133,13 @@ export function ArchiveTab() {
       </div>
 
       <div className="bg-white border border-slate-200 rounded-xl p-3 sm:p-4 flex flex-wrap items-end gap-3 mb-5">
-        <label className="flex flex-col gap-1 flex-1 min-w-0 sm:flex-none">
-          <span className="text-xs font-bold text-slate-500">기간</span>
-          <select value={date} onChange={(e) => setDate(e.target.value)} className="w-full h-10 border border-slate-200 rounded-lg px-3 text-sm bg-white">
-            <option value="all">전체 기간</option>
-            {dates.map((d) => (
-              <option key={d} value={d}>{d} ({weekday(d)})</option>
-            ))}
-          </select>
-        </label>
+        <DateRange
+          from={range.from}
+          to={range.to}
+          min={dates[dates.length - 1]}
+          max={dates[0]}
+          onChange={setRange}
+        />
         <label className="flex flex-col gap-1 flex-1 min-w-0 sm:flex-none">
           <span className="text-xs font-bold text-slate-500">기관</span>
           <select value={org} onChange={(e) => setOrg(e.target.value)} className="w-full h-10 border border-slate-200 rounded-lg px-3 text-sm bg-white sm:max-w-[160px]">
