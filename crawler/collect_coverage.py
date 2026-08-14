@@ -237,14 +237,41 @@ def extract_department(document_text: str) -> str | None:
     return None
 
 
-def fetch_department(session: requests.Session, detail_url: str) -> str | None:
-    """보도자료 상세 페이지의 한글 첨부를 열어 주관 부서를 확인한다."""
+# 한글 첨부에서 제목·부제 줄 앞에 붙어 나오는 깨진 머리글자.
+SUBTITLE_MARKER = "汤捯"
+
+
+def extract_subtitle(document_text: str, title: str) -> str | None:
+    """보도자료의 부제를 뽑는다.
+
+    언론사가 부제를 그대로 기사 제목으로 쓰는 경우가 많아, 제목만으로는
+    같은 사안임을 알아채지 못한다. 부제를 함께 확보해 매칭에 쓴다.
+    """
+    title_tokens = tokenize(title)
+    best: tuple[float, str] | None = None
+    for line in document_text.splitlines():
+        if SUBTITLE_MARKER not in line:
+            continue
+        text = line.replace(SUBTITLE_MARKER, "").strip()
+        if len(text) < 8:
+            continue
+        # 제목과 같은 줄은 건너뛰고, 제목과 가장 덜 겹치는 줄을 부제로 본다.
+        score = similarity(title_tokens, text)
+        if score >= 0.8:
+            continue
+        if best is None or score < best[0]:
+            best = (score, text)
+    return best[1] if best else None
+
+
+def fetch_release_meta(session: requests.Session, detail_url: str) -> tuple[str | None, str | None]:
+    """보도자료 상세 페이지의 한글 첨부를 열어 주관 부서와 부제를 확인한다."""
     if not detail_url:
-        return None
+        return None, None
     try:
         page = session.get(detail_url, timeout=REQUEST_TIMEOUT)
         if page.status_code != 200:
-            return None
+            return None, None
         page.encoding = page.apparent_encoding or "utf-8"
         soup = BeautifulSoup(page.text, "html.parser")
         link = None
@@ -254,18 +281,20 @@ def fetch_department(session: requests.Session, detail_url: str) -> str | None:
                 link = anchor["href"]
                 break
         if not link:
-            return None
+            return None, None
         if link.startswith("/"):
             parsed = urllib.parse.urlsplit(detail_url)
             link = f"{parsed.scheme}://{parsed.netloc}{link}"
         attachment = session.get(link, timeout=(5, 30))
         if attachment.status_code != 200:
-            return None
+            return None, None
         text = extract_attachment_document_text(attachment.content, "release.hwp")
-        return extract_department(text) if text else None
+        if not text:
+            return None, None
+        return extract_department(text), text
     except (requests.RequestException, ValueError) as exc:
-        print(f"  부서 확인 실패: {exc}", file=sys.stderr)
-        return None
+        print(f"  첨부 확인 실패: {exc}", file=sys.stderr)
+        return None, None
 
 
 def has_region_hint(text: str) -> bool:
@@ -427,72 +456,96 @@ def summarize_departments(entries: Iterable[dict[str, Any]]) -> list[dict[str, A
     ]
 
 
-def load_known_departments(out_path: Path) -> dict[str, str]:
-    """이미 확인한 부서는 다시 내려받지 않도록 기존 결과에서 읽어둔다."""
+def load_known_meta(out_path: Path) -> dict[str, dict[str, Any]]:
+    """이미 확인한 부서·부제는 다시 내려받지 않도록 기존 결과에서 읽어둔다."""
     if not out_path.exists():
         return {}
     try:
         old = json.loads(out_path.read_text(encoding="utf-8"))
     except json.JSONDecodeError:
         return {}
-    known: dict[str, str] = {}
+    known: dict[str, dict[str, Any]] = {}
     for entry in old.get("items", []) or []:
-        if entry.get("newsId") and entry.get("department"):
-            known[str(entry["newsId"])] = str(entry["department"])
+        news_id = entry.get("newsId")
+        if not news_id:
+            continue
+        # 첨부를 실제로 열어본 자료만 캐시로 인정한다(예전 형식은 다시 확인).
+        if not entry.get("metaChecked"):
+            continue
+        known[str(news_id)] = {
+            "department": entry.get("department"),
+            "subtitle": entry.get("subtitle"),
+        }
     return known
 
 
 def collect(args: argparse.Namespace) -> dict[str, Any]:
     releases = load_releases(Path(args.news), args.source_id, args.days, args.max_items)
-    known_departments = load_known_departments(Path(args.out))
-    print(f"대상 보도자료 {len(releases)}건 (부서 기확인 {len(known_departments)}건)")
+    known_meta = load_known_meta(Path(args.out))
+    print(f"대상 보도자료 {len(releases)}건 (첨부 기확인 {len(known_meta)}건)")
 
     session = requests.Session()
     session.headers.update({"User-Agent": USER_AGENT, "Accept": "application/rss+xml, application/xml"})
 
     entries: list[dict[str, Any]] = []
     last_request = 0.0
-    for index, release in enumerate(releases, 1):
-        title = str(release.get("title", "")).strip()
-        release_date = str(release.get("date", ""))[:10]
-        tokens = tokenize(title)
-        query = build_query(title, tokens)
-        print(f"[{index}/{len(releases)}] {release_date} {title[:40]}")
 
+    def throttled_rss(query: str) -> list[dict[str, str]]:
+        nonlocal last_request
         wait = REQUEST_INTERVAL - (time.monotonic() - last_request)
         if wait > 0:
             time.sleep(wait)
         last_request = time.monotonic()
-
         xml_text = fetch_rss(session, query)
+        return parse_rss(xml_text) if xml_text else []
+
+    for index, release in enumerate(releases, 1):
+        title = str(release.get("title", "")).strip()
+        release_date = str(release.get("date", ""))[:10]
+        news_id = str(release.get("id") or "")
+        print(f"[{index}/{len(releases)}] {release_date} {title[:40]}")
+
+        cached = known_meta.get(news_id)
+        department = cached.get("department") if cached else None
+        subtitle = cached.get("subtitle") if cached else None
+        meta_checked = bool(cached)
+        if not cached and not args.skip_departments:
+            department, document = fetch_release_meta(session, str(release.get("url") or ""))
+            meta_checked = document is not None
+            if document:
+                subtitle = extract_subtitle(document, title)
+
+        # 언론사가 제목을 새로 뽑는 일이 잦아, 보도자료 제목과 부제를 모두 기준으로 삼는다.
+        headlines = [h for h in (title, subtitle) if h]
+        token_sets = [tokenize(h) for h in headlines]
+
+        articles: list[dict[str, str]] = []
+        for headline, tokens in zip(headlines, token_sets):
+            articles.extend(throttled_rss(build_query(headline, tokens)))
+
         matched: list[dict[str, str]] = []
         seen: set[str] = set()
-        if xml_text:
-            for article in parse_rss(xml_text):
-                score = similarity(tokens, article["title"])
-                if not is_same_case(score, article, args.min_score, release_date):
-                    continue
-                if not within_window(
-                    article["publishedAt"], release_date, args.window_before, args.window_after
-                ):
-                    continue
-                key = article["url"]
-                if key in seen:
-                    continue
-                seen.add(key)
-                matched.append(article)
+        for article in articles:
+            if article["url"] in seen:
+                continue
+            score = max((similarity(t, article["title"]) for t in token_sets), default=0.0)
+            if not is_same_case(score, article, args.min_score, release_date):
+                continue
+            if not within_window(
+                article["publishedAt"], release_date, args.window_before, args.window_after
+            ):
+                continue
+            seen.add(article["url"])
+            matched.append(article)
 
         matched.sort(key=lambda a: (a.get("publishedAt") or "", a.get("publisher") or ""))
-
-        news_id = str(release.get("id") or "")
-        department = known_departments.get(news_id)
-        if department is None and not args.skip_departments:
-            department = fetch_department(session, str(release.get("url") or ""))
 
         entries.append(
             {
                 "newsId": release.get("id"),
                 "title": title,
+                "subtitle": subtitle,
+                "metaChecked": meta_checked,
                 "date": release_date,
                 "url": release.get("url"),
                 "department": department,

@@ -177,6 +177,9 @@ export function CoverageTab() {
         <p className="text-slate-500 text-sm mt-1 break-keep">
           전북교육청 보도자료를 어느 언론사가 기사로 다뤘는지 모아봅니다. 제목을 누르면 기사 목록이 열립니다.
         </p>
+        <p className="text-slate-400 text-xs mt-1.5 break-keep">
+          ※ 구글 뉴스에 색인된 기사 기준이라 실제 게재 건수보다 적게 잡힐 수 있습니다. 절대 수치보다 자료별·부서별 비교로 보시는 편이 정확합니다.
+        </p>
       </div>
 
       <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-5">
