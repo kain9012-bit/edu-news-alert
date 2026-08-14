@@ -5,6 +5,7 @@ import type { ActiveTab } from "../types";
 const TABS: { id: ActiveTab; label: string }[] = [
   { id: "reports", label: "오늘의 교육동향" },
   { id: "archive", label: "전체 보도자료" },
+  { id: "coverage", label: "언론 보도" },
 ];
 
 // GoatCounter 공개 카운터로 오늘·누적 방문자 수를 가져온다(응답은 최대 4시간 캐시).
@@ -84,7 +85,7 @@ export function Header({ activeTab, setActiveTab }: HeaderProps) {
                       role="tab"
                       aria-selected={on}
                       onClick={() => setActiveTab(id)}
-                      className={`w-full text-center px-4 py-4 text-base font-bold whitespace-nowrap border-b-[3px] transition-colors ${
+                      className={`w-full text-center px-2 sm:px-4 py-4 text-sm sm:text-base font-bold whitespace-nowrap border-b-[3px] transition-colors ${
                         on
                           ? "text-blue-700 border-blue-600"
                           : "text-slate-600 border-transparent hover:text-slate-900"

@@ -49,6 +49,12 @@ jobs:
           MAX_ITEMS_PER_SOURCE: "20"
         run: python crawler/collect.py
 
+      - name: Collect press coverage of our releases
+        continue-on-error: true
+        run: |
+          timeout 900 python crawler/collect_coverage.py \
+            --days 45 --max-items 62 --out public/coverage.json
+
       - name: Select and classify education trends
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

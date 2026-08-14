@@ -1,0 +1,232 @@
+import { useEffect, useMemo, useState } from "react";
+import { ChevronDown, ChevronRight, ExternalLink, Search } from "lucide-react";
+import type { Coverage, CoverageItem } from "../types";
+import { dateLabel, fetchCoverage } from "../lib/data";
+
+function Stat({ label, value, accent }: { label: string; value: string; accent?: boolean }) {
+  return (
+    <div className="bg-slate-50 rounded-lg p-3">
+      <p className="text-xs text-slate-500 break-keep">{label}</p>
+      <p className={`text-lg sm:text-xl font-bold ${accent ? "text-blue-700" : "text-slate-900"}`}>
+        {value}
+      </p>
+    </div>
+  );
+}
+
+function ReleaseRow({ item }: { item: CoverageItem }) {
+  const [open, setOpen] = useState(false);
+  const covered = item.articleCount > 0;
+  return (
+    <li className="border-b border-slate-100 last:border-0">
+      <button
+        type="button"
+        onClick={() => covered && setOpen((v) => !v)}
+        className={`w-full text-left px-4 py-3 flex items-start gap-3 ${
+          covered ? "hover:bg-slate-50 cursor-pointer" : "cursor-default"
+        }`}
+        aria-expanded={open}
+      >
+        <span className="shrink-0 mt-0.5 w-4 text-slate-400">
+          {covered ? (
+            open ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />
+          ) : null}
+        </span>
+
+        <span className="min-w-0 flex-1">
+          <span className="block text-slate-800 break-keep">{item.title}</span>
+          <span className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-slate-500">
+            <span className="whitespace-nowrap">{item.date}</span>
+            {item.department && (
+              <span className="px-1.5 py-0.5 rounded bg-blue-50 text-blue-700 font-bold whitespace-nowrap">
+                {item.department}
+              </span>
+            )}
+          </span>
+        </span>
+
+        <span
+          className={`shrink-0 text-xs font-bold px-2 py-0.5 rounded-full whitespace-nowrap ${
+            covered ? "bg-green-50 text-green-700" : "bg-slate-100 text-slate-400"
+          }`}
+        >
+          {covered ? `보도 ${item.articleCount}` : "미보도"}
+        </span>
+      </button>
+
+      {open && covered && (
+        <ul className="px-4 pb-3 pl-11 space-y-1.5">
+          {item.articles.map((a, i) => (
+            <li key={`${a.url}-${i}`} className="text-sm flex flex-wrap items-baseline gap-x-2">
+              <span className="font-bold text-slate-500 whitespace-nowrap">{a.publisher}</span>
+              <a
+                href={a.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-700 hover:text-blue-700 hover:underline break-keep inline-flex items-baseline gap-1"
+              >
+                {a.title}
+                <ExternalLink className="w-3 h-3 shrink-0 self-center text-slate-300" />
+              </a>
+              {a.publishedAt && (
+                <span className="text-xs text-slate-400 whitespace-nowrap">{a.publishedAt}</span>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
+    </li>
+  );
+}
+
+export function CoverageTab() {
+  const [data, setData] = useState<Coverage | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [q, setQ] = useState("");
+  const [dept, setDept] = useState("all");
+  const [uncoveredOnly, setUncoveredOnly] = useState(false);
+
+  useEffect(() => {
+    fetchCoverage().then((d) => {
+      setData(d);
+      setLoading(false);
+    });
+  }, []);
+
+  const items = data?.items || [];
+
+  const depts = useMemo(() => {
+    const names = new Set<string>();
+    for (const it of items) if (it.department) names.add(it.department);
+    return [...names].sort();
+  }, [items]);
+
+  const filtered = useMemo(() => {
+    const query = q.trim().toLowerCase();
+    return items.filter((it) => {
+      if (dept !== "all" && (it.department || "") !== dept) return false;
+      if (uncoveredOnly && it.articleCount > 0) return false;
+      if (!query) return true;
+      if (it.title.toLowerCase().includes(query)) return true;
+      return it.articles.some(
+        (a) =>
+          a.title.toLowerCase().includes(query) || a.publisher.toLowerCase().includes(query)
+      );
+    });
+  }, [items, q, dept, uncoveredOnly]);
+
+  if (loading) return <p className="text-slate-500 py-16 text-center">언론 보도 현황을 불러오는 중…</p>;
+  if (!data || !items.length)
+    return (
+      <p className="text-slate-500 py-16 text-center">
+        아직 수집된 언론 보도 자료가 없습니다.
+      </p>
+    );
+
+  const rate = data.releaseCount ? Math.round((data.coveredCount / data.releaseCount) * 100) : 0;
+
+  return (
+    <div>
+      <div className="mb-4">
+        <h1 className="text-2xl font-bold text-slate-900">언론 보도</h1>
+        <p className="text-slate-500 text-sm mt-1 break-keep">
+          전북교육청 보도자료가 어느 언론사에 실렸는지 모아봅니다. 제목을 누르면 기사 목록이 열립니다.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-5">
+        <Stat label="보도자료" value={`${data.releaseCount}건`} />
+        <Stat label="보도됨" value={`${data.coveredCount}건 (${rate}%)`} accent />
+        <Stat label="게재 기사" value={`${data.articleCount}건`} />
+      </div>
+
+      <div className="bg-white border border-slate-200 rounded-xl p-3 sm:p-4 flex flex-wrap items-end gap-3 mb-5">
+        <label className="flex flex-col gap-1 flex-1 min-w-0 sm:flex-none">
+          <span className="text-xs font-bold text-slate-500">부서</span>
+          <select
+            value={dept}
+            onChange={(e) => setDept(e.target.value)}
+            className="w-full h-10 border border-slate-200 rounded-lg px-3 text-sm bg-white sm:max-w-[180px]"
+          >
+            <option value="all">전체 부서</option>
+            {depts.map((d) => (
+              <option key={d} value={d}>{d}</option>
+            ))}
+          </select>
+        </label>
+        <label className="inline-flex items-center gap-2 h-10 text-sm text-slate-700 whitespace-nowrap flex-1 min-w-0 sm:flex-none">
+          <input
+            type="checkbox"
+            checked={uncoveredOnly}
+            onChange={(e) => setUncoveredOnly(e.target.checked)}
+            className="w-4 h-4 accent-blue-600"
+          />
+          미보도만
+        </label>
+        <label className="flex flex-col gap-1 w-full sm:w-auto sm:flex-1 sm:min-w-[180px]">
+          <span className="text-xs font-bold text-slate-500">검색</span>
+          <span className="relative">
+            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+            <input
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+              type="search"
+              placeholder="보도자료 제목, 기사 제목, 언론사"
+              className="w-full h-10 border border-slate-200 rounded-lg pl-9 pr-3 text-sm"
+            />
+          </span>
+        </label>
+      </div>
+
+      <ul className="bg-white border border-slate-200 rounded-xl overflow-hidden mb-6">
+        {filtered.length ? (
+          filtered.map((it) => <ReleaseRow key={it.newsId} item={it} />)
+        ) : (
+          <li className="px-4 py-10 text-center text-slate-500">조건에 맞는 자료가 없습니다.</li>
+        )}
+      </ul>
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        <section className="bg-white border border-slate-200 rounded-xl p-4">
+          <h2 className="text-sm font-bold text-blue-700 border-b-2 border-blue-100 pb-1.5 mb-3">
+            많이 실어준 매체
+          </h2>
+          <ul className="space-y-1.5">
+            {data.publishers.slice(0, 12).map((p) => (
+              <li key={p.name} className="flex items-center gap-2 text-sm">
+                <span className="flex-1 min-w-0 truncate text-slate-700">{p.name}</span>
+                <span className="h-1.5 rounded-full bg-blue-500 shrink-0"
+                  style={{ width: `${Math.max(6, (p.count / data.publishers[0].count) * 80)}px` }}
+                  aria-hidden
+                />
+                <span className="w-8 text-right font-bold text-slate-900 tabular-nums">{p.count}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="bg-white border border-slate-200 rounded-xl p-4">
+          <h2 className="text-sm font-bold text-blue-700 border-b-2 border-blue-100 pb-1.5 mb-3">
+            부서별 보도 실적
+          </h2>
+          <ul className="space-y-1.5">
+            {data.departments.map((d) => (
+              <li key={d.name} className="flex items-center gap-2 text-sm">
+                <span className="flex-1 min-w-0 truncate text-slate-700">{d.name}</span>
+                <span className="text-xs text-slate-400 whitespace-nowrap">
+                  {d.coveredCount}/{d.releaseCount}건
+                </span>
+                <span className="w-8 text-right font-bold text-slate-900 tabular-nums">
+                  {d.articleCount}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3 text-xs text-slate-400 break-keep">
+            숫자는 게재된 기사 수입니다. 부서는 보도자료 첨부파일의 담당 부서를 따릅니다.
+          </p>
+        </section>
+      </div>
+    </div>
+  );
+}

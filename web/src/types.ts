@@ -53,4 +53,36 @@ export interface NewsItem {
   url?: string;
 }
 
-export type ActiveTab = "reports" | "archive";
+export interface CoverageArticle {
+  title: string;
+  publisher: string;
+  publishedAt?: string;
+  url: string;
+}
+
+export interface CoverageItem {
+  newsId: string;
+  title: string;
+  date: string;
+  url?: string;
+  department?: string | null;
+  articleCount: number;
+  articles: CoverageArticle[];
+}
+
+export interface Coverage {
+  generatedAt?: string;
+  releaseCount: number;
+  coveredCount: number;
+  articleCount: number;
+  publishers: { name: string; count: number }[];
+  departments: {
+    name: string;
+    releaseCount: number;
+    coveredCount: number;
+    articleCount: number;
+  }[];
+  items: CoverageItem[];
+}
+
+export type ActiveTab = "reports" | "archive" | "coverage";

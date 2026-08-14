@@ -1,4 +1,4 @@
-import type { NewsItem, Report, ReportIndexEntry } from "../types";
+import type { Coverage, NewsItem, Report, ReportIndexEntry } from "../types";
 
 // GitHub Pages(edu-news-alert)를 데이터 소스로 그대로 사용한다.
 // Access-Control-Allow-Origin: * 이므로 Vercel에서 교차 출처로 바로 불러올 수 있다.
@@ -34,6 +34,13 @@ export function fetchReport(date: string): Promise<Report | null> {
     reportCache.set(date, p);
   }
   return p;
+}
+
+let coverageCache: Promise<Coverage | null> | null = null;
+
+export function fetchCoverage(): Promise<Coverage | null> {
+  if (!coverageCache) coverageCache = getJson<Coverage>("coverage.json");
+  return coverageCache;
 }
 
 export async function fetchNews(): Promise<NewsItem[]> {

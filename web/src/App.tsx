@@ -4,11 +4,14 @@ import type { ActiveTab } from "./types";
 import { Header } from "./components/Header";
 import { ReportsTab } from "./components/ReportsTab";
 import { ArchiveTab } from "./components/ArchiveTab";
+import { CoverageTab } from "./components/CoverageTab";
 
 function initialTab(): ActiveTab {
   const params = new URLSearchParams(window.location.search);
   const value = (params.get("tab") || window.location.hash.replace("#", "")).toLowerCase();
-  return value === "archive" ? "archive" : "reports";
+  if (value === "archive") return "archive";
+  if (value === "coverage") return "coverage";
+  return "reports";
 }
 
 export default function App() {
@@ -31,7 +34,13 @@ export default function App() {
       <Header activeTab={activeTab} setActiveTab={setActiveTab} />
 
       <main id="container" className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        {activeTab === "reports" ? <ReportsTab /> : <ArchiveTab />}
+        {activeTab === "reports" ? (
+          <ReportsTab />
+        ) : activeTab === "archive" ? (
+          <ArchiveTab />
+        ) : (
+          <CoverageTab />
+        )}
       </main>
 
       <footer className="border-t border-slate-200 bg-slate-50">
