@@ -56,7 +56,7 @@ function ReleaseRow({ item }: { item: CoverageItem }) {
       </button>
 
       {open && covered && (
-        <ul className="px-4 pb-3 pl-11 space-y-1.5">
+        <ul className="mb-3 ml-11 mr-4 pl-4 border-l-2 border-slate-100 space-y-1.5">
           {item.articles.map((a, i) => (
             <li key={`${a.url}-${i}`} className="text-sm flex flex-wrap items-baseline gap-x-2">
               <span className="font-bold text-slate-500 whitespace-nowrap">{a.publisher}</span>
