@@ -196,6 +196,13 @@ DEPARTMENT_PATTERN = re.compile(
 DEPARTMENT_FALLBACK = re.compile(r"([가-힣]{2,12}(?:과|담당관|정책관|센터|교육원|실))\s*\n")
 
 
+# 소속 부서로 묶어서 봐야 하는 산하 기관·명칭 변형.
+DEPARTMENT_ALIASES = {
+    "전북학부모지원센터": "교육협력과",
+    "학부모지원센터": "교육협력과",
+}
+
+
 def clean_department(value: str) -> str:
     """'(문의)재무과' 처럼 붙어 나오는 표 머리말을 떼어낸다."""
     text = re.sub(r"\s+", "", value or "")
@@ -203,7 +210,9 @@ def clean_department(value: str) -> str:
     text = text.strip("()·-")
     # '감사관실'과 '감사관', '대변인실'과 '대변인'은 같은 부서로 본다.
     text = re.sub(r"(관|인)실$", r"\1", text)
-    return text
+    # '중등교육과장'처럼 직책이 붙어 나오면 부서명만 남긴다.
+    text = re.sub(r"(과|관|원|실|부|단|센터)장$", r"\1", text)
+    return DEPARTMENT_ALIASES.get(text, text)
 
 
 def extract_department(document_text: str) -> str | None:
@@ -299,6 +308,60 @@ def fetch_release_meta(session: requests.Session, detail_url: str) -> tuple[str 
     except (requests.RequestException, ValueError) as exc:
         print(f"  첨부 확인 실패: {exc}", file=sys.stderr)
         return None, None
+
+
+BOARD_LIST_URL = (
+    "https://news.jbe.go.kr/board/list.jbe"
+    "?boardId=BBS_0000222&menuCd=DOM_000001201001000000"
+    "&paging=ok&searchOperation=AND&startPage={page}"
+)
+
+
+def fetch_department_map(
+    session: requests.Session, since_date: str, max_pages: int = 60
+) -> dict[str, str]:
+    """보도자료 목록 화면에서 글번호별 담당부서를 읽어온다.
+
+    목록에 '담당부서 : 대변인'이 그대로 적혀 있으므로 첨부파일을 열 필요가 없다.
+    대상 기간의 가장 오래된 자료가 나올 때까지 목록을 넘겨, 모든 자료의 부서를 채운다.
+    """
+    mapping: dict[str, str] = {}
+    for page in range(1, max_pages + 1):
+        try:
+            response = session.get(BOARD_LIST_URL.format(page=page), timeout=REQUEST_TIMEOUT)
+        except requests.RequestException as exc:
+            print(f"  목록 {page}쪽 조회 실패: {exc}", file=sys.stderr)
+            break
+        if response.status_code != 200:
+            break
+        response.encoding = response.apparent_encoding or "utf-8"
+        soup = BeautifulSoup(response.text, "html.parser")
+        found = 0
+        oldest = ""
+        for item in soup.select("ul.news_list > li"):
+            anchor = item.find("a", href=True)
+            if not anchor or "dataSid=" not in anchor["href"]:
+                continue
+            sid = re.search(r"dataSid=(\d+)", anchor["href"])
+            info = anchor.find("em", class_="info")
+            if not sid or not info:
+                continue
+            text = info.get_text(" ", strip=True)
+            dept = re.search(r"담당부서\s*:\s*([^\s]+?)\s*(?:연락처|$)", text)
+            if dept:
+                mapping[sid.group(1)] = clean_department(dept.group(1))
+                found += 1
+            posted = re.search(r"작성일\s*:\s*(\d\d)\.(\d\d)\.(\d\d)", text)
+            if posted:
+                value = f"20{posted.group(1)}-{posted.group(2)}-{posted.group(3)}"
+                oldest = value if not oldest else min(oldest, value)
+        if not found:
+            break
+        # 대상 기간을 지나면 더 넘길 필요가 없다.
+        if oldest and since_date and oldest < since_date:
+            break
+        time.sleep(REQUEST_INTERVAL / 2)
+    return mapping
 
 
 def has_region_hint(text: str) -> bool:
@@ -558,6 +621,13 @@ def collect(args: argparse.Namespace) -> dict[str, Any]:
     session = requests.Session()
     session.headers.update({"User-Agent": USER_AGENT, "Accept": "application/rss+xml, application/xml"})
 
+    # 부서는 목록 화면에서 한 번에 받아온다(첨부를 열 필요가 없다).
+    department_map: dict[str, str] = {}
+    if not args.skip_departments:
+        oldest_needed = min((str(r.get("date", ""))[:10] for r in releases), default="")
+        department_map = fetch_department_map(session, oldest_needed)
+        print(f"목록에서 부서 {len(department_map)}건 확인 (기준 {oldest_needed})")
+
     entries: list[dict[str, Any]] = []
     last_request = 0.0
 
@@ -577,11 +647,18 @@ def collect(args: argparse.Namespace) -> dict[str, Any]:
         print(f"[{index}/{len(releases)}] {release_date} {title[:40]}")
 
         cached = known_meta.get(news_id)
-        department = cached.get("department") if cached else None
         subtitle = cached.get("subtitle") if cached else None
         meta_checked = bool(cached)
+
+        # 부서는 게시판 목록에 그대로 적혀 있으므로 그 값을 그대로 쓴다.
+        sid = re.search(r"dataSid=(\d+)", str(release.get("url") or ""))
+        department = department_map.get(sid.group(1)) if sid else None
+        if not department:
+            department = release.get("department") or (cached.get("department") if cached else None)
+
+        # 첨부는 목록에 없는 부제를 확인할 때만 연다.
         if not cached and not args.skip_departments:
-            department, document = fetch_release_meta(session, str(release.get("url") or ""))
+            _unused, document = fetch_release_meta(session, str(release.get("url") or ""))
             meta_checked = document is not None
             if document:
                 subtitle = extract_subtitle(document, title)
