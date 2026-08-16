@@ -422,7 +422,10 @@ def is_same_case(
     return score >= STRONG_MATCH_SCORE
 
 
-QUERY_TERM_LIMIT = 4
+# 낱말을 많이 넣을수록 구글 뉴스가 결과를 거의 돌려주지 않는다(5개면 0건인 경우가 잦다).
+QUERY_TERM_LIMIT = 3
+# '만들어간다'처럼 서술어로 끝나는 낱말은 기사 제목에 그대로 쓰이지 않는 일이 많다.
+VERB_ENDINGS = ("다", "요", "까", "죠", "임", "함")
 
 
 def build_query(title: str, tokens: set[str]) -> str:
@@ -438,6 +441,9 @@ def build_query(title: str, tokens: set[str]) -> str:
     without_numbers = [w for w in candidates if not re.search(r"\d", w)]
     if without_numbers:
         candidates = without_numbers
+    nouns = [w for w in candidates if not w.endswith(VERB_ENDINGS)]
+    if nouns:
+        candidates = nouns
     if not candidates:
         candidates = words
     ranked = sorted(dict.fromkeys(candidates), key=lambda w: -len(w))[:QUERY_TERM_LIMIT]
@@ -667,9 +673,16 @@ def collect(args: argparse.Namespace) -> dict[str, Any]:
         headlines = [h for h in (title, subtitle) if h]
         token_sets = [tokenize(h) for h in headlines]
 
-        articles: list[dict[str, str]] = []
+        # 낱말 질의는 결과가 넓고, 제목 전체를 따옴표로 묶은 질의는 정확히 같은 제목을 집어낸다.
+        queries: list[str] = []
         for headline, tokens in zip(headlines, token_sets):
-            articles.extend(throttled_rss(build_query(headline, tokens)))
+            queries.append(build_query(headline, tokens))
+        if title:
+            queries.append(f'"{title}"')
+
+        articles: list[dict[str, str]] = []
+        for query in dict.fromkeys(queries):
+            articles.extend(throttled_rss(query))
 
         entries.append(
             {
