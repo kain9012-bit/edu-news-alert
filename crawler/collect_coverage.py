@@ -27,6 +27,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from collect import extract_attachment_document_text  # noqa: E402
 
 RSS_ENDPOINT = "https://news.google.com/rss/search"
+# 구글 뉴스가 색인하지 않는 기사를 Bing 뉴스가 잡는 경우가 있어 두 검색을 함께 쓴다.
+BING_RSS_ENDPOINT = "https://www.bing.com/news/search"
 USER_AGENT = (
     "Mozilla/5.0 (compatible; jbe-edu-trends/1.0; "
     "+https://jbe-edu-trends.vercel.app) press-coverage-collector"
@@ -466,6 +468,56 @@ def fetch_rss(session: requests.Session, query: str) -> str | None:
     return response.text
 
 
+def fetch_bing_rss(session: requests.Session, query: str) -> str | None:
+    params = {"q": query, "format": "rss", "setmkt": "ko-KR"}
+    url = f"{BING_RSS_ENDPOINT}?{urllib.parse.urlencode(params)}"
+    try:
+        response = session.get(url, timeout=REQUEST_TIMEOUT)
+    except requests.RequestException as exc:
+        print(f"  Bing 요청 실패: {exc}", file=sys.stderr)
+        return None
+    return response.text if response.status_code == 200 else None
+
+
+def _unwrap_bing_link(link: str) -> str:
+    """Bing 뉴스 링크는 apiclick 리디렉션일 수 있어 원문 주소를 꺼낸다."""
+    parsed = urllib.parse.urlsplit(link)
+    if "bing.com" in parsed.netloc:
+        for key, value in urllib.parse.parse_qsl(parsed.query):
+            if key == "url":
+                return value
+    return link
+
+
+def parse_bing_rss(xml_text: str) -> list[dict[str, str]]:
+    try:
+        root = ET.fromstring(xml_text)
+    except ET.ParseError:
+        return []
+    articles: list[dict[str, str]] = []
+    for node in root.iterfind(".//item"):
+        title = (node.findtext("title") or "").strip()
+        link = _unwrap_bing_link((node.findtext("link") or "").strip())
+        if not title or not link:
+            continue
+        source = ""
+        for child in node:
+            if child.tag.lower().endswith("source") and (child.text or "").strip():
+                source = child.text.strip()
+                break
+        if not source:
+            source = urllib.parse.urlsplit(link).netloc.replace("www.", "")
+        articles.append(
+            {
+                "title": title,
+                "publisher": source,
+                "publishedAt": parse_pubdate(node.findtext("pubDate")),
+                "url": link,
+            }
+        )
+    return articles
+
+
 def parse_rss(xml_text: str) -> list[dict[str, str]]:
     try:
         root = ET.fromstring(xml_text)
@@ -500,7 +552,12 @@ def parse_rss(xml_text: str) -> list[dict[str, str]]:
 def parse_pubdate(value: str | None) -> str:
     if not value:
         return ""
-    for fmt in ("%a, %d %b %Y %H:%M:%S %Z", "%a, %d %b %Y %H:%M:%S %z"):
+    for fmt in (
+        "%a, %d %b %Y %H:%M:%S %Z",
+        "%a, %d %b %Y %H:%M:%S %z",
+        "%a, %d %b %Y %H:%M %Z",  # Bing은 초를 생략하기도 한다.
+        "%a, %d %b %Y %H:%M %z",
+    ):
         try:
             parsed = datetime.strptime(value.strip(), fmt)
         except ValueError:
@@ -638,13 +695,23 @@ def collect(args: argparse.Namespace) -> dict[str, Any]:
     last_request = 0.0
 
     def throttled_rss(query: str) -> list[dict[str, str]]:
+        """구글·Bing 뉴스 검색을 모두 돌려 결과를 합친다."""
         nonlocal last_request
-        wait = REQUEST_INTERVAL - (time.monotonic() - last_request)
-        if wait > 0:
-            time.sleep(wait)
-        last_request = time.monotonic()
-        xml_text = fetch_rss(session, query)
-        return parse_rss(xml_text) if xml_text else []
+        results: list[dict[str, str]] = []
+        for engine in ("google", "bing"):
+            wait = REQUEST_INTERVAL - (time.monotonic() - last_request)
+            if wait > 0:
+                time.sleep(wait)
+            last_request = time.monotonic()
+            if engine == "google":
+                xml_text = fetch_rss(session, query)
+                if xml_text:
+                    results.extend(parse_rss(xml_text))
+            else:
+                xml_text = fetch_bing_rss(session, query)
+                if xml_text:
+                    results.extend(parse_bing_rss(xml_text))
+        return results
 
     for index, release in enumerate(releases, 1):
         title = str(release.get("title", "")).strip()
@@ -738,7 +805,24 @@ def merge_with_existing(fresh: dict[str, Any], out_path: Path) -> dict[str, Any]
         if entry.get("newsId"):
             by_id[str(entry["newsId"])] = entry
     for entry in fresh["items"]:
-        by_id[str(entry["newsId"])] = entry
+        key = str(entry["newsId"])
+        previous = by_id.get(key)
+        if previous:
+            # 웹검색·AI 등 다른 경로로 확보한 기사가 지워지지 않도록 합집합으로 병합한다.
+            seen = {a.get("url") for a in entry.get("articles", []) or []}
+            for article in previous.get("articles", []) or []:
+                if article.get("url") not in seen:
+                    entry["articles"].append(article)
+                    seen.add(article.get("url"))
+            entry["articles"].sort(
+                key=lambda a: (a.get("publishedAt") or "", a.get("publisher") or "")
+            )
+            entry["articleCount"] = len(entry["articles"])
+            if not entry.get("department"):
+                entry["department"] = previous.get("department")
+            if not entry.get("subtitle"):
+                entry["subtitle"] = previous.get("subtitle")
+        by_id[key] = entry
     merged = sorted(by_id.values(), key=lambda e: (str(e.get("date", "")), str(e.get("title", ""))), reverse=True)
 
     publishers: dict[str, int] = {}
