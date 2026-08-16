@@ -180,9 +180,6 @@ export function CoverageTab() {
         <p className="text-slate-500 text-sm mt-1 break-keep">
           전북교육청 보도자료를 어느 언론사가 기사로 다뤘는지 모아봅니다. 제목을 누르면 기사 목록이 열립니다.
         </p>
-        <p className="text-slate-400 text-xs mt-1.5 break-keep">
-          ※ 검색으로 찾은 기사만 집계하므로 실제 게재 건수보다 적게 잡힙니다. <b>“확인 안 됨”은 보도되지 않았다는 뜻이 아니라 검색에서 찾지 못했다는 뜻입니다.</b>
-        </p>
       </div>
 
       <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-5">
