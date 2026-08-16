@@ -126,8 +126,11 @@ OTHER_REGION_HINTS = (
 STRONG_MATCH_SCORE = 0.8
 # 보도자료 배포일 전후 이 범위의 기사는 같은 사안일 가능성이 매우 높다.
 # 언론사가 제목을 새로 뽑는 경우가 많아, 이때는 유사도 기준을 크게 낮춘다.
-NEAR_DAYS = 2
+NEAR_DAYS = 4
 NEAR_MIN_SCORE = 0.22
+# 같은 날 기사라도 이 점수에 못 미치면, 주체가 전북교육청인지 따로 확인한다.
+# ('청렴문화 확산'처럼 흔한 표현만 겹친 타 기관 기사를 걸러내기 위함)
+NEAR_TRUST_SCORE = 0.6
 
 
 def parse_args() -> argparse.Namespace:
@@ -137,7 +140,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--source-id", default="jeonbuk", help="대상 기관 sourceId")
     parser.add_argument("--days", type=int, default=30, help="최근 며칠치 보도자료를 대상으로 할지")
     parser.add_argument("--max-items", type=int, default=40, help="한 번에 조회할 보도자료 최대 건수")
-    parser.add_argument("--window-before", type=int, default=1, help="보도자료보다 이 일수 전 기사까지 인정")
+    # 금요일에 배포한 자료를 월요일에 게시판에 올리는 일이 있어 앞쪽 여유를 넉넉히 둔다.
+    parser.add_argument("--window-before", type=int, default=4, help="보도자료보다 이 일수 전 기사까지 인정")
     parser.add_argument("--window-after", type=int, default=10, help="보도자료보다 이 일수 후 기사까지 인정")
     parser.add_argument("--min-score", type=float, default=0.45, help="제목 유사도 임계값(0~1)")
     parser.add_argument("--limit-per-item", type=int, default=30, help="보도자료당 저장할 기사 최대 건수")
@@ -305,6 +309,18 @@ def has_other_region(text: str) -> bool:
     return any(hint in (text or "") for hint in OTHER_REGION_HINTS)
 
 
+# '익산시, 공감과 참여로 청렴문화 확산'처럼 지자체가 주어인 기사를 가려낸다.
+MUNICIPALITY_SUBJECT = re.compile(r"^\s*[가-힣]{2,6}(?:시|군|구)\s*[,，]")
+EDU_SUBJECT_HINTS = ("교육청", "교육감", "교육지원청", "전북교육", "교육원", "학교")
+
+
+def is_other_organization(title: str) -> bool:
+    """지자체 등 다른 기관이 주어이고 교육청 단서가 없으면 다른 사안으로 본다."""
+    if not MUNICIPALITY_SUBJECT.match(title or ""):
+        return False
+    return not any(hint in title for hint in EDU_SUBJECT_HINTS)
+
+
 def days_apart(article_date: str, release_date: str) -> int | None:
     if not article_date:
         return None
@@ -327,11 +343,18 @@ def is_same_case(
     # 다른 지자체가 주어인 기사는 표현이 겹쳐도 다른 사안이다.
     if has_other_region(title) and not has_region_hint(title):
         return False
+    if is_other_organization(title):
+        return False
 
     gap = days_apart(article.get("publishedAt", ""), release_date) if release_date else None
     if gap is not None and gap <= NEAR_DAYS:
         # 배포 직후 기사는 제목을 새로 뽑았어도 같은 사안으로 본다.
-        return score >= NEAR_MIN_SCORE
+        if score < NEAR_MIN_SCORE:
+            return False
+        if score >= NEAR_TRUST_SCORE:
+            return True
+        # 겹치는 말이 적다면 다른 기관 소식일 수 있으니 전북 단서를 확인한다.
+        return has_region_hint(f"{title} {article.get('publisher', '')}")
     # 날짜가 멀면 과거의 비슷한 행사일 수 있으므로 제목이 거의 같아야 인정한다.
     return score >= STRONG_MATCH_SCORE
 
@@ -348,6 +371,10 @@ def build_query(title: str, tokens: set[str]) -> str:
     """
     words = [w for w in re.split(r"\s+", re.sub(r"[^0-9A-Za-z가-힣\s]", " ", title)) if w]
     candidates = [w for w in words if strip_josa(w) in tokens]
+    # '1,259명에'가 '259명에'로 쪼개지는 등 숫자가 섞인 낱말은 검색을 어긋나게 한다.
+    without_numbers = [w for w in candidates if not re.search(r"\d", w)]
+    if without_numbers:
+        candidates = without_numbers
     if not candidates:
         candidates = words
     ranked = sorted(dict.fromkeys(candidates), key=lambda w: -len(w))[:QUERY_TERM_LIMIT]
@@ -439,6 +466,47 @@ def load_releases(path: Path, source_id: str, days: int, max_items: int) -> list
     return picked[:max_items]
 
 
+def assign_articles(entries: list[dict[str, Any]], args: argparse.Namespace) -> None:
+    """한 기사는 가장 잘 맞는 보도자료 한 곳에만 배정한다.
+
+    비슷한 사업의 보도자료가 잇달아 나가면 같은 기사가 여러 자료에 붙는다.
+    어느 자료의 검색에서 나왔는지와 무관하게 모든 기사를 모든 자료와 대조해,
+    점수가 가장 높은 자료 하나에만 넣는다.
+    """
+    pool: dict[str, dict[str, str]] = {}
+    for entry in entries:
+        for article in entry["_found"]:
+            pool.setdefault(article["url"], article)
+
+    best: dict[str, tuple[float, int, int]] = {}
+    for index, entry in enumerate(entries):
+        release_date = entry["date"]
+        for url, article in pool.items():
+            score = max(
+                (similarity(tokens, article["title"]) for tokens in entry["_tokens"]), default=0.0
+            )
+            if not is_same_case(score, article, args.min_score, release_date):
+                continue
+            if not within_window(
+                article["publishedAt"], release_date, args.window_before, args.window_after
+            ):
+                continue
+            gap = days_apart(article.get("publishedAt", ""), release_date)
+            # 점수가 높은 자료, 같으면 배포일이 기사와 가까운 자료를 택한다.
+            rank = (score, -(gap if gap is not None else 99), index)
+            current = best.get(url)
+            if current is None or rank[:2] > current[:2]:
+                best[url] = rank
+
+    for index, entry in enumerate(entries):
+        entry.pop("_tokens", None)
+        entry.pop("_found", None)
+        kept = [pool[url] for url, rank in best.items() if rank[2] == index]
+        kept.sort(key=lambda a: (a.get("publishedAt") or "", a.get("publisher") or ""))
+        entry["articleCount"] = len(kept)
+        entry["articles"] = kept[: args.limit_per_item]
+
+
 def summarize_departments(entries: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
     """부서별로 보도자료 수·보도된 건수·기사 수를 집계한다."""
     stats: dict[str, dict[str, int]] = {}
@@ -450,9 +518,12 @@ def summarize_departments(entries: Iterable[dict[str, Any]]) -> list[dict[str, A
         row["articleCount"] += count
         if count > 0:
             row["coveredCount"] += 1
+    # 순위는 부서가 배포한 보도자료 건수 기준으로 매긴다.
     return [
         {"name": name, **row}
-        for name, row in sorted(stats.items(), key=lambda kv: (-kv[1]["articleCount"], kv[0]))
+        for name, row in sorted(
+            stats.items(), key=lambda kv: (-kv[1]["releaseCount"], -kv[1]["articleCount"], kv[0])
+        )
     ]
 
 
@@ -523,23 +594,6 @@ def collect(args: argparse.Namespace) -> dict[str, Any]:
         for headline, tokens in zip(headlines, token_sets):
             articles.extend(throttled_rss(build_query(headline, tokens)))
 
-        matched: list[dict[str, str]] = []
-        seen: set[str] = set()
-        for article in articles:
-            if article["url"] in seen:
-                continue
-            score = max((similarity(t, article["title"]) for t in token_sets), default=0.0)
-            if not is_same_case(score, article, args.min_score, release_date):
-                continue
-            if not within_window(
-                article["publishedAt"], release_date, args.window_before, args.window_after
-            ):
-                continue
-            seen.add(article["url"])
-            matched.append(article)
-
-        matched.sort(key=lambda a: (a.get("publishedAt") or "", a.get("publisher") or ""))
-
         entries.append(
             {
                 "newsId": release.get("id"),
@@ -549,11 +603,13 @@ def collect(args: argparse.Namespace) -> dict[str, Any]:
                 "date": release_date,
                 "url": release.get("url"),
                 "department": department,
-                "articleCount": len(matched),
-                "articles": matched[: args.limit_per_item],
+                "_tokens": token_sets,
+                "_found": articles,
             }
         )
-        print(f"    → 기사 {len(matched)}건 / 부서 {department or '미확인'}")
+        print(f"    → 검색 결과 {len(articles)}건 / 부서 {department or '미확인'}")
+
+    assign_articles(entries, args)
 
     publishers: dict[str, int] = {}
     for entry in entries:

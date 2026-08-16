@@ -147,7 +147,13 @@ export function CoverageTab() {
     }
     return [...rows.entries()]
       .map(([name, row]) => ({ name, ...row }))
-      .sort((a, b) => b.articleCount - a.articleCount || (a.name < b.name ? -1 : 1));
+      // 순위는 부서가 배포한 보도자료 건수 기준으로 매긴다.
+      .sort(
+        (a, b) =>
+          b.releaseCount - a.releaseCount ||
+          b.articleCount - a.articleCount ||
+          (a.name < b.name ? -1 : 1)
+      );
   }, [filtered]);
 
   if (loading) return <p className="text-slate-500 py-16 text-center">언론 게재현황을 불러오는 중…</p>;
@@ -259,16 +265,16 @@ export function CoverageTab() {
               <li key={d.name} className="flex items-center gap-2 text-sm">
                 <span className="flex-1 min-w-0 truncate text-slate-700">{d.name}</span>
                 <span className="text-xs text-slate-400 whitespace-nowrap">
-                  {d.coveredCount}/{d.releaseCount}건
+                  기사 {d.articleCount}건
                 </span>
-                <span className="w-8 text-right font-bold text-slate-900 tabular-nums">
-                  {d.articleCount}
+                <span className="w-10 text-right font-bold text-slate-900 tabular-nums whitespace-nowrap">
+                  {d.releaseCount}건
                 </span>
               </li>
             ))}
           </ul>
           <p className="mt-3 text-xs text-slate-400 break-keep">
-            숫자는 게재된 기사 수입니다. 부서는 보도자료 첨부파일의 담당 부서를 따릅니다.
+            오른쪽 숫자는 그 부서가 배포한 보도자료 건수입니다. 부서는 보도자료 첨부파일의 담당 부서를 따릅니다.
           </p>
         </section>
       </div>
