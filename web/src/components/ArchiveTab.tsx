@@ -111,7 +111,7 @@ export function ArchiveTab() {
   return (
     <div>
       <div className="mb-4">
-        <h1 className="text-2xl font-bold text-slate-900">전체 보도자료</h1>
+        <h1 className="text-2xl font-bold text-slate-900">전국 보도자료</h1>
         <p className="text-slate-500 text-sm mt-1">
           교육부와 전국 시도교육청 본청 보도자료 전체 수집분입니다. 교육동향으로 선정된 자료는 <b className="text-green-700">선정</b>으로 표시됩니다.
         </p>

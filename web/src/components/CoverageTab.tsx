@@ -87,6 +87,7 @@ export function CoverageTab() {
   const [range, setRange] = useState({ from: "", to: "" });
   const [dept, setDept] = useState("all");
   const [uncoveredOnly, setUncoveredOnly] = useState(false);
+  const [statsOpen, setStatsOpen] = useState(false);
 
   useEffect(() => {
     fetchCoverage().then((d) => {
@@ -175,7 +176,7 @@ export function CoverageTab() {
   return (
     <div>
       <div className="mb-4">
-        <h1 className="text-2xl font-bold text-slate-900">언론 게재현황</h1>
+        <h1 className="text-2xl font-bold text-slate-900">전북 언론 게재현황</h1>
         <p className="text-slate-500 text-sm mt-1 break-keep">
           전북교육청 보도자료를 어느 언론사가 기사로 다뤘는지 모아봅니다. 제목을 누르면 기사 목록이 열립니다.
         </p>
@@ -229,15 +230,26 @@ export function CoverageTab() {
         </label>
       </div>
 
-      <ul className="bg-white border border-slate-200 rounded-xl overflow-hidden mb-6">
-        {filtered.length ? (
-          filtered.map((it) => <ReleaseRow key={it.newsId} item={it} />)
-        ) : (
-          <li className="px-4 py-10 text-center text-slate-500">조건에 맞는 자료가 없습니다.</li>
-        )}
-      </ul>
-
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="mb-5">
+        <button
+          type="button"
+          onClick={() => setStatsOpen((v) => !v)}
+          aria-expanded={statsOpen}
+          className="w-full flex items-center gap-2 px-4 py-3 bg-white border border-slate-200 rounded-xl text-left hover:bg-slate-50 transition-colors"
+        >
+          {statsOpen ? (
+            <ChevronDown className="w-4 h-4 text-slate-400 shrink-0" />
+          ) : (
+            <ChevronRight className="w-4 h-4 text-slate-400 shrink-0" />
+          )}
+          <span className="font-bold text-slate-800">매체별 · 부서별 집계</span>
+          <span className="ml-auto text-xs text-slate-400 whitespace-nowrap">
+            매체 {publisherStats.length} · 부서 {deptStats.length}
+          </span>
+        </button>
+        {statsOpen && (
+          <div className="mt-3">
+            <div className="grid gap-4 sm:grid-cols-2">
         <section className="bg-white border border-slate-200 rounded-xl p-4">
           <h2 className="text-sm font-bold text-blue-700 border-b-2 border-blue-100 pb-1.5 mb-3">
             많이 실어준 매체
@@ -261,23 +273,38 @@ export function CoverageTab() {
             부서별 보도 실적
           </h2>
           <ul className="space-y-1.5">
+            <li className="flex items-center gap-2 text-xs font-bold text-slate-400 pb-1 border-b border-slate-100">
+              <span className="flex-1 min-w-0">부서</span>
+              <span className="w-16 text-right whitespace-nowrap">보도자료</span>
+              <span className="w-16 text-right whitespace-nowrap">게재 기사</span>
+            </li>
             {deptStats.map((d) => (
               <li key={d.name} className="flex items-center gap-2 text-sm">
                 <span className="flex-1 min-w-0 truncate text-slate-700">{d.name}</span>
-                <span className="text-xs text-slate-400 whitespace-nowrap">
-                  기사 {d.articleCount}건
-                </span>
-                <span className="w-10 text-right font-bold text-slate-900 tabular-nums whitespace-nowrap">
+                <span className="w-16 text-right font-bold text-slate-900 tabular-nums whitespace-nowrap">
                   {d.releaseCount}건
+                </span>
+                <span className="w-16 text-right text-slate-500 tabular-nums whitespace-nowrap">
+                  {d.articleCount}건
                 </span>
               </li>
             ))}
           </ul>
           <p className="mt-3 text-xs text-slate-400 break-keep">
-            오른쪽 숫자는 그 부서가 배포한 보도자료 건수입니다. 부서는 보도자료 첨부파일의 담당 부서를 따릅니다.
+            부서는 보도자료 게시판에 표시된 담당 부서를 따릅니다.
           </p>
-        </section>
+            </section>
+            </div>
+          </div>
+        )}
       </div>
+      <ul className="bg-white border border-slate-200 rounded-xl overflow-hidden mb-6">
+        {filtered.length ? (
+          filtered.map((it) => <ReleaseRow key={it.newsId} item={it} />)
+        ) : (
+          <li className="px-4 py-10 text-center text-slate-500">조건에 맞는 자료가 없습니다.</li>
+        )}
+      </ul>
     </div>
   );
 }
