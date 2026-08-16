@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>오늘의 교육동향 2026. 8. 17. (월)</title>
+<style>
+:root { color-scheme: light; --ink:#17202a; --muted:#5d6875; --line:#d7dde3; --teal:#087f73; --teal-soft:#e9f6f3; --amber:#a96800; --amber-soft:#fff6df; --paper:#ffffff; --page:#eef1f3; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--page); color:var(--ink); font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; line-height:1.72; letter-spacing:0; }
+a { color:inherit; }
+.report { width:min(960px,100%); margin:0 auto; background:var(--paper); min-height:100vh; box-shadow:0 0 28px rgba(18,31,43,.08); }
+header { padding:52px 64px 40px; border-top:7px solid var(--teal); border-bottom:1px solid var(--line); }
+.kicker { margin:0 0 8px; color:var(--teal); font-weight:700; font-size:14px; }
+h1 { margin:0; font-family:"Nanum Myeongjo","Batang",serif; font-size:42px; line-height:1.25; letter-spacing:0; }
+.report-date { margin:16px 0 0; font-size:18px; font-weight:700; }
+.period { margin:4px 0 0; color:var(--muted); font-size:13px; overflow-wrap:anywhere; }
+.summary-strip { display:flex; gap:24px; padding:18px 64px; border-bottom:1px solid var(--line); font-size:14px; color:var(--muted); }
+.summary-strip strong { color:var(--ink); margin-left:5px; }
+nav { padding:34px 64px 44px; border-bottom:1px solid var(--line); }
+nav h2 { margin:0 0 15px; font-size:18px; }
+.toc-group + .toc-group { margin-top:24px; padding-top:20px; border-top:1px solid var(--line); }
+nav h3 { margin:0 0 10px; font-size:15px; }
+nav h3 a { text-decoration:none; }
+nav ol { columns:2; column-gap:40px; margin:0; padding:0; list-style:none; }
+nav li { break-inside:avoid; margin:0 0 10px; font-size:14px; line-height:1.45; }
+nav a { text-decoration:none; }
+nav a:hover { color:var(--teal); text-decoration:underline; }
+nav li span { color:var(--teal); font-weight:800; margin-right:5px; }
+.toc-region { color:var(--muted); font-weight:700; }
+.toc-controller { display:none; }
+@media (min-width:1700px) {
+  .toc-controller { position:fixed; z-index:40; top:24px; bottom:24px; left:calc(50% - 828px); width:324px; display:flex; flex-direction:column; overflow:hidden; background:rgba(255,255,255,.98); border:1px solid var(--line); border-radius:8px; box-shadow:0 8px 24px rgba(18,31,43,.10); }
+  .toc-controller-home { display:block; flex:0 0 auto; padding:15px 16px 13px; border-bottom:1px solid var(--line); color:var(--teal); font-size:14px; font-weight:800; text-decoration:none; }
+  .toc-controller-home:hover { background:var(--teal-soft); }
+  .toc-controller-scroll { min-height:0; overflow-y:auto; padding:12px 0 16px; scrollbar-color:#aab5bd transparent; scrollbar-width:thin; }
+  .toc-controller section + section { margin-top:15px; padding-top:13px; border-top:1px solid var(--line); }
+  .toc-controller h2 { margin:0; padding:0 14px 7px; color:var(--muted); font-size:12px; line-height:1.4; }
+  .toc-controller ol { margin:0; padding:0; list-style:none; }
+  .toc-controller li { margin:0; padding:0; }
+  .toc-controller li a { display:grid; grid-template-columns:38px minmax(0,1fr); gap:6px; align-items:start; min-height:38px; padding:7px 12px 7px 11px; border-left:3px solid transparent; color:var(--ink); font-size:12px; line-height:1.35; text-decoration:none; }
+  .toc-controller li a:hover { background:#f3f7f7; color:var(--teal); }
+  .toc-controller li a.active { border-left-color:var(--teal); background:var(--teal-soft); }
+  .controller-number { color:var(--teal); font-weight:800; white-space:nowrap; }
+  .controller-label { min-width:0; overflow:hidden; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow-wrap:anywhere; }
+  .controller-label strong { color:var(--muted); font-weight:700; }
+}
+article { position:relative; padding:52px 64px 58px; border-bottom:10px solid var(--page); scroll-margin-top:12px; }
+.article-number { position:absolute; top:51px; left:19px; color:#9aa5af; font-size:13px; font-weight:800; }
+.eyebrow { margin:0 0 8px; color:var(--teal); font-size:13px; font-weight:800; }
+.article-head h2 { margin:0; font-size:25px; line-height:1.45; letter-spacing:0; overflow-wrap:anywhere; }
+.article-meta { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:14px; color:var(--muted); font-size:13px; }
+.stars { color:var(--amber); letter-spacing:0; font-size:17px; }
+.source-link { color:var(--teal); font-weight:700; text-underline-offset:3px; }
+.report-section { margin-top:34px; padding-top:22px; border-top:1px solid var(--line); }
+.report-section h3 { margin:0 0 12px; font-size:16px; }
+ul { margin:0; padding-left:1.35em; }
+li { margin:7px 0; padding-left:3px; }
+.application { border-top-color:#ead9b3; }
+.application h3 { color:#805200; }
+.review-note { border-top-color:#ead9b3; }
+.review-note h3 { color:#a13d00; }
+.review-note p { margin:0; color:#7a4a1e; }
+.review-badge { display:inline-block; padding:2px 9px; border-radius:11px; background:var(--amber-soft); color:#8a4b00; font-size:12px; font-weight:800; }
+.empty-note { margin:0; color:var(--muted); }
+.empty-report { padding:70px 64px; text-align:center; color:var(--muted); }
+.own-office-section { border-top:12px solid var(--page); scroll-margin-top:12px; }
+.own-office-heading { padding:42px 64px 30px; background:var(--teal-soft); border-bottom:1px solid #c8e5de; }
+.own-office-heading .kicker { margin-bottom:4px; }
+.own-office-heading h2 { margin:0; font-size:28px; line-height:1.4; }
+.own-office-heading p:last-child { margin:8px 0 0; color:var(--muted); font-size:14px; }
+.own-office-article { border-bottom:1px solid var(--line); }
+.own-empty { padding-top:48px; padding-bottom:48px; }
+footer { padding:34px 64px 50px; color:var(--muted); font-size:12px; }
+footer p { margin:4px 0; }
+@media (max-width:700px) {
+  header, nav, article, footer, .own-office-heading { padding-left:24px; padding-right:24px; }
+  h1 { font-size:34px; }
+  .summary-strip { padding-left:24px; padding-right:24px; gap:12px; flex-wrap:wrap; }
+  nav ol { columns:1; }
+  .article-number { position:static; margin-bottom:10px; }
+  .article-head h2 { font-size:21px; }
+}
+.toolbar { position:fixed; top:18px; right:18px; z-index:50; display:flex; gap:8px; }
+.toolbar button { display:inline-flex; align-items:center; gap:6px; padding:9px 14px; border:1px solid var(--teal); border-radius:8px; background:var(--teal); color:#fff; font:inherit; font-size:13px; font-weight:700; cursor:pointer; box-shadow:0 2px 8px rgba(18,31,43,.16); }
+.toolbar button.secondary, .toolbar .tool-link.secondary { background:#fff; color:var(--teal); }
+.toolbar button:hover, .toolbar .tool-link:hover { opacity:.92; }
+.toolbar button, .toolbar .tool-link { white-space:nowrap; }
+.toolbar .tool-link { display:inline-flex; align-items:center; gap:6px; padding:9px 14px; border:1px solid var(--teal); border-radius:8px; background:var(--teal); color:#fff; font:inherit; font-size:13px; font-weight:700; text-decoration:none; cursor:pointer; box-shadow:0 2px 8px rgba(18,31,43,.16); }
+@media (max-width:700px) {
+  .toolbar { top:10px; right:10px; }
+  .toolbar button, .toolbar .tool-link { padding:8px 11px; font-size:12px; }
+  .toolbar .print-tool { display:none !important; }
+}
+@media print {
+  @page { margin:0; }
+  .toolbar { display:none !important; }
+  body { background:#fff; } .report { width:100%; box-shadow:none; }
+  .toc-controller { display:none !important; }
+  header { padding-top:24mm; }
+  article { break-before:page; border-bottom:0; padding-top:18mm; padding-bottom:16mm; }
+  article:first-of-type { break-before:auto; } nav a { text-decoration:none; }
+  nav { break-after:page; page-break-after:always; }
+  nav.toc-compact { padding-top:26px; padding-bottom:30px; }
+  nav.toc-compact h2 { margin-bottom:11px; font-size:17px; }
+  nav.toc-compact .toc-group + .toc-group { margin-top:16px; padding-top:12px; }
+  nav.toc-compact h3 { margin-bottom:7px; font-size:14px; }
+  nav.toc-compact li { margin-bottom:7px; font-size:13px; line-height:1.38; }
+  nav.toc-tight { padding-top:20px; padding-bottom:24px; }
+  nav.toc-tight h2 { margin-bottom:8px; font-size:16px; }
+  nav.toc-tight .toc-group + .toc-group { margin-top:12px; padding-top:10px; }
+  nav.toc-tight h3 { margin-bottom:5px; font-size:13px; }
+  nav.toc-tight li { margin-bottom:5px; font-size:12px; line-height:1.35; }
+  .own-office-section { break-before:page; border-top:0; }
+  .own-office-section article { break-before:auto; }
+  .own-office-heading { break-after:avoid; page-break-after:avoid; }
+  .own-office-page { break-inside:avoid; page-break-inside:avoid; }
+  .own-office-page + .own-office-page { break-before:page; page-break-before:always; }
+  .own-office-article { break-inside:avoid; page-break-inside:avoid; padding-top:10mm; padding-bottom:10mm; }
+  footer { padding-bottom:18mm; }
+}
+</style>
+</head>
+<body>
+<div class="toolbar" role="toolbar" aria-label="문서 도구">
+  <a class="tool-link secondary" href="https://jbe-edu-trends.vercel.app/?tab=reports" target="_blank" rel="noopener noreferrer" title="지난 오늘의 교육동향을 날짜별로 봅니다">🗂 지난 호</a><a class="tool-link secondary" href="https://jbe-edu-trends.vercel.app/?tab=archive" target="_blank" rel="noopener noreferrer" title="교육동향으로 선정되지 않은 자료까지 수집한 전체 보도자료를 봅니다">📰 전체 보도자료</a>
+  <button type="button" class="secondary print-tool" onclick="window.print()" title="인쇄 대화상자를 엽니다">🖨 인쇄</button>
+  <button type="button" class="print-tool" onclick="window.print()" title="인쇄 대화상자에서 '대상'을 'PDF로 저장'으로 선택하세요">📄 PDF 저장</button>
+</div>
+<main class="report">
+<aside class="toc-controller" aria-label="빠른 목차"><a class="toc-controller-home" href="#report-toc">목차</a><div class="toc-controller-scroll"><section><h2>전국 교육동향</h2><ol><li><a href="#item-1" data-report-target="item-1"><span class="controller-number">1</span><span class="controller-label"><strong>(충북)</strong> 충북교육청, 내년부터 초등학교 6학년도 학급당 20명 이하로</span></a></li><li><a href="#item-2" data-report-target="item-2"><span class="controller-number">2</span><span class="controller-label"><strong>(서울)</strong> 서울시교육청, 서울형 난산 학생 지원 ‘서울셈(SEM)’ 본격 가동</span></a></li><li><a href="#item-3" data-report-target="item-3"><span class="controller-number">3</span><span class="controller-label"><strong>(충북)</strong> 윤건영 교육감, “충북평가관리센터, 새로운 교육 패러다임에 맞춰 구축·운영해야”</span></a></li><li><a href="#item-4" data-report-target="item-4"><span class="controller-number">4</span><span class="controller-label"><strong>(충북)</strong> 충북교육청, &lt;병원형 위(Wee)센터 설립 타당성 및 운영 방안&gt; 정책 연구 중간보고회 개최</span></a></li><li><a href="#item-5" data-report-target="item-5"><span class="controller-number">5</span><span class="controller-label"><strong>(경남)</strong> 경남교육청, 학생 선택 중심 교육과정 설계 역량 강화 연수 개최</span></a></li><li><a href="#item-6" data-report-target="item-6"><span class="controller-number">6</span><span class="controller-label"><strong>(경기)</strong> 변화하는 안보 환경에 발맞춘 실전 훈련! 경기도교육청, 2026년 을지연습 실시</span></a></li><li><a href="#item-7" data-report-target="item-7"><span class="controller-number">7</span><span class="controller-label"><strong>(부산)</strong> 부산교육청, 770억 원 규모 추경 편성 공교육 경쟁력 중점</span></a></li></ol></section><section><h2>전북교육청</h2><ol><li><a href="#own-item-1" data-report-target="own-item-1"><span class="controller-number">1</span><span class="controller-label">교육청·도·시군, 지역소멸위기 공동 대응 나선다</span></a></li><li><a href="#own-item-2" data-report-target="own-item-2"><span class="controller-number">2</span><span class="controller-label">전북교육청, 본청 전입 공모 평가방식 전면 개편</span></a></li><li><a href="#own-item-3" data-report-target="own-item-3"><span class="controller-number">3</span><span class="controller-label">독립정신 계승 청소년 콘텐츠대회 수상작 발표</span></a></li><li><a href="#own-item-4" data-report-target="own-item-4"><span class="controller-number">4</span><span class="controller-label">천호성 교육감, 직무수행 평가 전국 1위</span></a></li></ol></section></div></aside>
+<header>
+  <p class="kicker">전국 교육정책 및 교육행정 동향</p>
+  <h1>오늘의 교육동향</h1>
+  <p class="report-date">2026. 8. 17. (월)</p>
+  <p class="period">분석 대상: 2026. 8. 14. 06:00 ~ 2026. 8. 17. 06:00</p>
+</header>
+<div class="summary-strip">
+  <span>전국 교육동향<strong>7건</strong></span>
+  <span>전북 보도자료<strong>4건</strong></span>
+  <span>작성<strong>gemini-3.5-flash</strong></span>
+  <span>검증<strong>PASS</strong></span>
+</div>
+<nav id="report-toc" class="" aria-label="목차"><h2>목차</h2><div class="toc-group"><h3>전국 교육동향</h3><ol><li><a href="#item-1"><span>1.</span> <strong class="toc-region">(충북)</strong> 충북교육청, 내년부터 초등학교 6학년도 학급당 20명 이하로</a></li><li><a href="#item-2"><span>2.</span> <strong class="toc-region">(서울)</strong> 서울시교육청, 서울형 난산 학생 지원 ‘서울셈(SEM)’ 본격 가동</a></li><li><a href="#item-3"><span>3.</span> <strong class="toc-region">(충북)</strong> 윤건영 교육감, “충북평가관리센터, 새로운 교육 패러다임에 맞춰 구축·운영해야”</a></li><li><a href="#item-4"><span>4.</span> <strong class="toc-region">(충북)</strong> 충북교육청, &lt;병원형 위(Wee)센터 설립 타당성 및 운영 방안&gt; 정책 연구 중간보고회 개최</a></li><li><a href="#item-5"><span>5.</span> <strong class="toc-region">(경남)</strong> 경남교육청, 학생 선택 중심 교육과정 설계 역량 강화 연수 개최</a></li><li><a href="#item-6"><span>6.</span> <strong class="toc-region">(경기)</strong> 변화하는 안보 환경에 발맞춘 실전 훈련! 경기도교육청, 2026년 을지연습 실시</a></li><li><a href="#item-7"><span>7.</span> <strong class="toc-region">(부산)</strong> 부산교육청, 770억 원 규모 추경 편성 공교육 경쟁력 중점</a></li></ol></div><div class="toc-group"><h3><a href="#own-office">전북교육청 보도자료</a></h3><ol><li><a href="#own-item-1"><span>1.</span> 교육청·도·시군, 지역소멸위기 공동 대응 나선다</a></li><li><a href="#own-item-2"><span>2.</span> 전북교육청, 본청 전입 공모 평가방식 전면 개편</a></li><li><a href="#own-item-3"><span>3.</span> 독립정신 계승 청소년 콘텐츠대회 수상작 발표</a></li><li><a href="#own-item-4"><span>4.</span> 천호성 교육감, 직무수행 평가 전국 1위</a></li></ol></div></nav>
+
+<article id="item-1">
+  <div class="article-number">01</div>
+  <div class="article-head">
+    <p class="eyebrow">충청북도교육청 · 정책·행정</p>
+    <h2>충북교육청, 내년부터 초등학교 6학년도 학급당 20명 이하로</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 4점">★★★★☆</span>
+      <span>2026-08-14</span>
+      <a class="source-link" href="https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1577394&amp;bbsId=1158&amp;mi=10301" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>2027학년도부터 초등학교 6학년 학급당 학생 수를 20명 이하로 조정함</li><li>학급당 학생 수 조정으로 6학년 학급은 692학급에서 814학급으로 증가할 예정임</li><li>학급당 평균 학생 수는 19.4명에서 16.5명으로 감소할 것으로 예상됨</li><li>학교별 여건에 따라 학급당 학생 수를 탄력적으로 운영할 수 있음</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>초등학교 고학년까지 학급당 학생 수 감축을 확대하여 개별 맞춤형 교육 여건을 조성하려는 흐름임</li><li>학급 수 증가에 따른 교원 수급 및 교실 확보 등 학교별 여건에 맞춘 탄력적 운영 방안이 수반되어야 함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>전북 관내 초등학교 고학년의 학급당 학생 수 기준 및 배치 현황을 비교해 볼 수 있음</li><li>학급당 학생 수 감축 시 필요한 유휴 교실 확보 가능 여부와 교원 배치 여건을 확인할 필요가 있음</li></ul></section>
+</article><article id="item-2">
+  <div class="article-number">02</div>
+  <div class="article-head">
+    <p class="eyebrow">서울특별시교육청 · 학생지원·복지</p>
+    <h2>서울시교육청, 서울형 난산 학생 지원 ‘서울셈(SEM)’ 본격 가동</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-08-14</span>
+      <a class="source-link" href="https://enews.sen.go.kr/news/view.do?bbsSn=191966&amp;step1=3&amp;step2=1" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>난산 학생 지원 체계인 서울셈(SEM)을 본격적으로 운영함</li><li>심층진단을 완료한 초·중학생 105명을 대상으로 맞춤형 학습 지원을 시작함</li><li>교사 대상 온라인 코칭, 전문교사 학교 방문 수업, 전문기관 연계 통합 중재를 제공함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>기초학력 보장 지원 대상을 난독에 이어 난산 영역까지 구체화하여 맞춤형으로 지원하는 추세임</li><li>교사 코칭, 전문교사 방문, 전문기관 연계 등 다차원적인 통합 지원 체계를 구축하여 실효성을 높이고자 함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>전북 관내 난산 학생을 위한 진단 및 지원 체계 현황을 확인할 필요가 있음</li><li>교사 대상 온라인 코칭 및 전문기관 연계 통합 지원 모델의 도입 가능성을 검토해 볼 수 있음</li></ul></section>
+</article><article id="item-3">
+  <div class="article-number">03</div>
+  <div class="article-head">
+    <p class="eyebrow">충청북도교육청 · 디지털·AI</p>
+    <h2>윤건영 교육감, “충북평가관리센터, 새로운 교육 패러다임에 맞춰 구축·운영해야”</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-08-14</span>
+      <a class="source-link" href="https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1577460&amp;bbsId=1158&amp;mi=10301" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>2027년 3월 충북평가관리센터 운영을 시작할 예정임</li><li>센터는 성취평가제 모니터링, 평가문항 개발, 교원 평가 전문성 지원 등을 수행함</li><li>교원의 평가 역량을 교육과정 재구성 및 수업 설계와 연계하여 강화할 방침임</li><li>교수·학습 플랫폼 다채움과 연계하여 AI 기반 평가 도구 활용을 지원함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>성취평가제 안착과 평가 신뢰도 제고를 위해 전문적인 평가 전담 기구를 구축하는 방향임</li><li>AI 기술을 서·논술형 평가 등 교사의 평가 업무를 보조하는 도구로 연계하여 활용성을 높이고자 함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>학생 평가의 공정성과 전문성 강화를 위한 전담 지원 체계 구축 방안을 비교해 볼 수 있음</li><li>AI 기반 평가 도구를 교사 지원용으로 연계·활용하는 방안의 타당성을 검토해 볼 수 있음</li></ul></section>
+</article><article id="item-4">
+  <div class="article-number">04</div>
+  <div class="article-head">
+    <p class="eyebrow">충청북도교육청 · 학생지원·복지</p>
+    <h2>충북교육청, &lt;병원형 위(Wee)센터 설립 타당성 및 운영 방안&gt; 정책 연구 중간보고회 개최</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-08-14</span>
+      <a class="source-link" href="https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1577396&amp;bbsId=1158&amp;mi=10301" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>정서·행동 고위기 학생 지원을 위한 충북형 병원형 위(Wee)센터 설립을 검토 중임</li><li>의료기관과 협력하여 진료, 치료, 교육, 학교 복귀를 연계하는 모델을 구상함</li><li>인덕대학교 산학협력단이 정책 연구를 수행 중이며 10월 최종 결과가 도출될 예정임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>정서·행동 고위기 학생을 위해 의료와 대안교육을 결합한 전문적인 치유·지원 모델의 필요성이 증대되고 있음</li><li>병원형 위센터 설립을 위해 전문 연구기관을 통한 타당성 검증 및 구체적 운영 모델 설계를 선행하고 있음</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>전북 내 정서·행동 고위기 학생을 위한 치료·교육 연계 지원 체계 현황을 점검해 볼 수 있음</li><li>병원형 위센터 모델의 타당성 연구 결과 및 타 시도 운영 사례를 확인할 필요가 있음</li></ul></section>
+</article><article id="item-5">
+  <div class="article-number">05</div>
+  <div class="article-head">
+    <p class="eyebrow">경상남도교육청 · 교육과정·수업</p>
+    <h2>경남교육청, 학생 선택 중심 교육과정 설계 역량 강화 연수 개최</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-08-14</span>
+      <a class="source-link" href="https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&amp;q_bbsDocNo=20260814155945772" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>경남교육청이 일반고 교육과정 업무 담당자 200명을 대상으로 직무연수를 개최함</li><li>2022 개정 교육과정 이해와 2027학년도 입학생 대상 교육과정 편성 실무 역량 강화를 목적으로 함</li><li>대입 제도 변화와 학생 과목 선택권 확대 연계 방안 등을 주요 내용으로 다룸</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>2022 개정 교육과정 및 2028 대입 개편안에 대응하여 고등학교 교육과정 설계 담당자의 실무 역량을 선제적으로 강화하려는 취지임</li><li>학생의 과목 선택권 확대와 대입 제도 변화를 유기적으로 연계하여 학교 현장의 혼란을 최소화하고자 함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>전북 지역 일반고 교육과정 담당자를 대상으로 한 개정 교육과정 및 대입 개편 연계 연수 프로그램의 구성과 운영 현황을 비교해 볼 수 있음</li><li>2027학년도 입학생 대상 교육과정 편성 기준 수립 시 타 시도의 실무 연수 자료와 편성 사례를 참고할 필요가 있음</li></ul></section>
+</article><article id="item-6">
+  <div class="article-number">06</div>
+  <div class="article-head">
+    <p class="eyebrow">경기도교육청 · 안전·시설</p>
+    <h2>변화하는 안보 환경에 발맞춘 실전 훈련! 경기도교육청, 2026년 을지연습 실시</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-08-14</span>
+      <a class="source-link" href="https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2362847&amp;bbsId=1922&amp;mi=10102" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>경기도교육청이 8월 18일부터 21일까지 3박 4일간 2026 을지연습을 실시함</li><li>AI 활용 메시지 부여, 접경 지역 학교 위기 대응 토의, 가상 자폭 드론 대피 훈련 등 실전형 프로그램을 운영함</li><li>도민 대상 안보 교육 및 체험 프로그램을 통해 안보 의식 고취를 도모함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>최근 안보 환경 변화에 맞춰 AI 기술과 VR 체험 등 첨단 기술을 을지연습에 접목하여 실전성을 극대화함</li><li>접경 지역 학교의 특수성을 고려한 맞춤형 위기 대응 토의 등 지역별 안보 취약 요소를 반영한 훈련 모델을 제시함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>을지연습 및 재난대비 훈련 시 AI 활용 메시지 부여 방식이나 VR 체험 프로그램 도입 가능성을 검토할 수 있음</li><li>지역적 특성을 반영한 학교 맞춤형 위기 대응 토의 훈련 방식을 전북 지역 학교 안전 계획 수립 시 참고할 필요가 있음</li></ul></section>
+</article><article id="item-7">
+  <div class="article-number">07</div>
+  <div class="article-head">
+    <p class="eyebrow">부산광역시교육청 · 정책·행정</p>
+    <h2>부산교육청, 770억 원 규모 추경 편성 공교육 경쟁력 중점</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-08-14</span>
+      <a class="source-link" href="https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1177952&amp;bbsId=2286&amp;mi=30397" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>부산교육청이 770억 원 규모의 2026년도 제2회 추가경정예산안을 편성함</li><li>공교육 경쟁력 강화, 학생 중심 교육복지 및 안전망 강화, 안전한 교육환경 조성에 중점을 둠</li><li>추경안은 부산시의회 심의를 거쳐 9월 중 최종 확정될 예정임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>추가경정예산을 통해 공교육 경쟁력 강화와 교육환경 개선에 집중 투자하여 교육의 질적 향상과 안전망 확보를 동시에 도모함</li><li>안전한 교육환경 조성 및 현장 지원에 예산의 상당 부분을 배정하여 학교 현장의 실질적인 요구를 반영하고자 함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>전북교육청의 추가경정예산 편성 시 공교육 경쟁력 강화 및 교육환경 개선 분야의 재원 배분 비율을 비교해 볼 수 있음</li><li>학교 현장 지원과 안전한 교육환경 조성을 위한 예산 집중 투자 분야의 세부 사업 내용을 확인할 필요가 있음</li></ul></section>
+</article>
+<section class="own-office-section" id="own-office">
+  <div class="own-office-heading">
+    <p class="kicker">우리 교육청 주요 발표</p>
+    <h2>전북교육청 보도자료</h2>
+    <p>같은 기간 전북특별자치도교육청 본청에서 발표한 보도자료 전체입니다.</p>
+  </div>
+  
+  <div class="own-office-page"><article class="own-office-article" id="own-item-1">
+  <div class="article-number">01</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>교육청·도·시군, 지역소멸위기 공동 대응 나선다</h2>
+    <div class="article-meta">
+      <span>2026-08-14</span>
+      <a class="source-link" href="https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1164341" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>전북교육청과 도내 14개 시군이 지역소멸 위기 극복을 위한 업무협약을 체결함.</li><li>정주 여건 개선 및 교육 인프라 공동 활용 등 4대 분야에서 상호 협력을 강화할 예정임.</li></ul>
+  </section>
+</article><article class="own-office-article" id="own-item-2">
+  <div class="article-number">02</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>전북교육청, 본청 전입 공모 평가방식 전면 개편</h2>
+    <div class="article-meta">
+      <span>2026-08-14</span>
+      <a class="source-link" href="https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1164329" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>전북특별자치도교육청(교육감 천호성) 이 본청 전입 공개모집 평가방식을 전면 개편해 ‘공정성’ 과 ‘조직 경쟁력’ 을 동시에 확보한다.</li><li>전북교육청은 기존 ‘전 (全) 직급 면접 100%’ 라는 단일 정성평가 방식에서 벗어나 직급별로 평가방식을 다각화해 실무역량 중심의 선발을 강화한다고 14일 밝혔다.</li></ul>
+  </section>
+</article></div><div class="own-office-page"><article class="own-office-article" id="own-item-3">
+  <div class="article-number">03</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>독립정신 계승 청소년 콘텐츠대회 수상작 발표</h2>
+    <div class="article-meta">
+      <span>2026-08-14</span>
+      <a class="source-link" href="https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1164328" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>제4회 독립정신 계승 청소년 콘텐츠대회 수상작 46편을 선정하고 발표함.</li><li>수상작은 학교 교육 자료로 활용할 예정이며 시상식은 오는 28일 개최함.</li></ul>
+  </section>
+</article><article class="own-office-article" id="own-item-4">
+  <div class="article-number">04</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>천호성 교육감, 직무수행 평가 전국 1위</h2>
+    <div class="article-meta">
+      <span>2026-08-14</span>
+      <a class="source-link" href="https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1164342" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>천호성 전북특별자치도교육감이 2026년 7월 전국 시도 교육감 직무수행 평가에서 1위를 기록함.</li></ul>
+  </section>
+</article></div>
+</section>
+<footer>
+  <p>이 문서는 공개 보도자료를 AI로 요약·분석한 내부 검토 자료입니다.</p>
+  <p>전북교육청 보도자료는 내용 요약만 제공하며, 원문은 각 항목의 링크에서 확인할 수 있습니다.</p>
+  <p>적용 검토안은 확정된 정책이나 업무 지시가 아닙니다.</p>
+</footer>
+</main>
+<script>
+(() => {
+  const links = Array.from(document.querySelectorAll('.toc-controller [data-report-target]'));
+  const targets = links.map(link => document.getElementById(link.dataset.reportTarget)).filter(Boolean);
+  if (!links.length || !targets.length) return;
+  let ticking = false;
+  const updateActive = () => {
+    const threshold = window.innerHeight * 0.35;
+    let activeId = '';
+    for (const target of targets) {
+      if (target.getBoundingClientRect().top <= threshold) activeId = target.id;
+      else break;
+    }
+    for (const link of links) {
+      const active = link.dataset.reportTarget === activeId;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    }
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateActive);
+  }, { passive:true });
+  window.addEventListener('hashchange', updateActive);
+  updateActive();
+})();
+</script>
+</body>
+</html>
