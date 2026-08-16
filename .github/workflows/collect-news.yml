@@ -55,6 +55,17 @@ jobs:
           timeout 900 python crawler/collect_coverage.py \
             --days 45 --max-items 62 --out public/coverage.json
 
+      # 구글 뉴스 RSS가 놓친 기사를 Gemini 구글 검색 연동으로 보완한다.
+      # 모든 보도자료에 동일하게 적용하고(비교 왜곡 방지), 자료당 한 번만 검색한다.
+      # 검색 연동은 월 5,000회까지 무료이며 사용량은 그 2% 수준이다.
+      - name: Supplement coverage with AI web search
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          timeout 900 python crawler/ai_coverage_search.py \
+            --coverage public/coverage.json --max-calls 25
+
       - name: Select and classify education trends
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

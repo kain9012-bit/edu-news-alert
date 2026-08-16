@@ -58,6 +58,8 @@ export interface CoverageArticle {
   publisher: string;
   publishedAt?: string;
   url: string;
+  /** "ai"면 구글 검색 연동으로 보완 수집한 기사 */
+  via?: string;
 }
 
 export interface CoverageItem {
