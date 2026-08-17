@@ -1016,6 +1016,11 @@ def split_incheon_bundle_items(item: dict[str, Any]) -> list[dict[str, Any]]:
     return split_items or [item]
 
 
+def title_excluded(source: dict[str, Any], title: str) -> bool:
+    """보도자료가 아닌 공지(예: 대전 '주간행사계획')를 제목 패턴으로 걸러낸다."""
+    return any(pattern in (title or "") for pattern in source.get("titleExclude", []) or [])
+
+
 def collect_source(
     source: dict[str, Any],
     existing_by_id: dict[str, dict[str, Any]],
@@ -1036,6 +1041,9 @@ def collect_source(
             links = collect_links(source, html)
         items = []
         for link in links:
+            if title_excluded(source, link.get("title", "")):
+                skipped_old += 1
+                continue
             item_id = stable_id(source["id"], link["url"])
             existing = existing_by_id.get(item_id)
             if existing and source["id"] != "incheon" and not needs_refetch(existing):
@@ -1043,6 +1051,10 @@ def collect_source(
                 continue
             try:
                 item = collect_detail(source, link)
+                # 목록 제목이 비어 있던 경우를 대비해 상세 제목으로도 한 번 더 거른다.
+                if title_excluded(source, item.get("title", "")):
+                    skipped_old += 1
+                    continue
                 if item.get("contentOrigin") == "attachment":
                     attachment_extracted += 1
                 expanded_items = split_incheon_bundle_items(item)

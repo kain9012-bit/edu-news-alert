@@ -149,6 +149,10 @@
     "name": "대전광역시교육청",
     "baseUrl": "https://www.dje.go.kr",
     "listUrl": "https://www.dje.go.kr/boardCnts/list.do?boardID=8&menuID=040201&m=040201&s=dje&page=1",
+    "titleExclude": [
+      "주간행사계획",
+      "주간 행사계획"
+    ],
     "include": [
       "boardCnts/view.do",
       "boardSeq="
