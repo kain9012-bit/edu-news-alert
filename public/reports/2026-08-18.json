@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "reportId": "20260817T215413Z-8a5a5cfa",
+    "title": "오늘의 교육동향",
+    "status": "completed_empty",
+    "generatedAt": "2026-08-17T21:54:13+00:00",
+    "windowStart": "2026-08-17T06:00:00+09:00",
+    "windowEnd": "2026-08-18T06:00:00+09:00",
+    "windowHours": 24,
+    "selectionRunId": "20260817T215121Z-69dba459",
+    "sourceCount": 0,
+    "eligibleCount": 0,
+    "publishedCount": 0,
+    "omittedCount": 0,
+    "ownOfficeEligibleCount": 0,
+    "ownOfficePublishedCount": 0,
+    "qualityExcludedCount": 0,
+    "factModel": "gemini-3.1-flash-lite",
+    "analysisModel": "gemini-3.5-flash",
+    "verifierModel": "gemini-3.1-flash-lite",
+    "usage": {
+      "stages": {
+        "facts": {
+          "model": "gemini-3.1-flash-lite",
+          "requests": 0,
+          "promptTokenCount": 0,
+          "candidatesTokenCount": 0,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 0
+        },
+        "analysis": {
+          "model": "gemini-3.5-flash",
+          "requests": 0,
+          "promptTokenCount": 0,
+          "candidatesTokenCount": 0,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 0
+        },
+        "verification": {
+          "model": "gemini-3.1-flash-lite",
+          "requests": 0,
+          "promptTokenCount": 0,
+          "candidatesTokenCount": 0,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 0
+        }
+      },
+      "total": {
+        "requests": 0,
+        "promptTokenCount": 0,
+        "candidatesTokenCount": 0,
+        "thoughtsTokenCount": 0,
+        "totalTokenCount": 0
+      }
+    },
+    "estimatedCostUsd": 0.0
+  },
+  "items": [],
+  "ownOfficeItems": [],
+  "omittedItems": [],
+  "validation": {
+    "status": "PASS",
+    "issues": [],
+    "checks": {
+      "ownOfficeExcludedFromTrendAnalysis": true,
+      "ownOfficeAllIncluded": true,
+      "ownOfficeSummariesVerified": true,
+      "publishedItemsVerified": true,
+      "sourceWindowMatches": true
+    }
+  },
+  "providerErrors": {
+    "facts": [],
+    "ownOfficeSummaries": [],
+    "analysis": [],
+    "verification": []
+  },
+  "trace": [],
+  "rendering": {
+    "canonical": "json",
+    "html": "오늘의 교육동향 (20260818).html",
+    "hwpx": "오늘의 교육동향 (20260818).hwpx",
+    "hwpxValidation": {
+      "hardGates": {
+        "package_validation": "pass",
+        "document_errors": "pass",
+        "schema_lint": "pass",
+        "reopen": "pass",
+        "editor_open_safety": "pass",
+        "id_integrity": "pass"
+      },
+      "packageOk": true,
+      "documentOk": true,
+      "reopenedOk": true,
+      "visualReviewRequired": true
+    }
+  }
+}
