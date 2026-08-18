@@ -64,6 +64,8 @@ STOPWORDS = {
     "대한",
     "모든",
     "이번",
+    # '전국 1위', '전국 대회'처럼 흔한 수식어만 겹쳐 무관한 기사가 붙는 것을 막는다.
+    "전국",
 }
 JOSA = ("으로", "에서", "에게", "이나", "라도", "까지", "부터", "보다", "은", "는", "이", "가", "을", "를", "의", "에", "도", "와", "과", "로")
 
@@ -592,6 +594,37 @@ def load_releases(path: Path, source_id: str, days: int, max_items: int) -> list
     return picked[:max_items]
 
 
+def dedupe_articles(articles: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """같은 언론사의 같은 기사를 하나로 합친다.
+
+    구글·Bing이 같은 기사를 서로 다른 주소(리디렉션·MSN 재게재판)로 돌려주므로
+    URL만으로는 걸러지지 않는다. 언론사명(MSN 꼬리표 제거)과 제목을 정규화해
+    비교하고, 원문 주소(구글/MSN 리디렉션이 아닌 것)를 우선 남긴다.
+    """
+    def norm_publisher(name: str) -> str:
+        text = re.sub(r"\s*on\s+MSN\s*$", "", name or "", flags=re.I)
+        return re.sub(r"\s+", "", text).lower()
+
+    def norm_title(title: str) -> str:
+        return re.sub(r"[^0-9A-Za-z가-힣]", "", title or "")
+
+    def directness(article: dict[str, Any]) -> int:
+        host = urllib.parse.urlsplit(article.get("url", "")).netloc
+        if "news.google.com" in host or "msn.com" in host or "bing.com" in host:
+            return 1
+        return 0
+
+    best: dict[tuple[str, str], dict[str, Any]] = {}
+    for article in articles:
+        key = (norm_publisher(article.get("publisher", "")), norm_title(article.get("title", "")))
+        current = best.get(key)
+        if current is None or directness(article) < directness(current):
+            best[key] = article
+    kept = list(best.values())
+    kept.sort(key=lambda a: (a.get("publishedAt") or "", a.get("publisher") or ""))
+    return kept
+
+
 def assign_articles(entries: list[dict[str, Any]], args: argparse.Namespace) -> None:
     """한 기사는 가장 잘 맞는 보도자료 한 곳에만 배정한다.
 
@@ -628,7 +661,7 @@ def assign_articles(entries: list[dict[str, Any]], args: argparse.Namespace) -> 
         entry.pop("_tokens", None)
         entry.pop("_found", None)
         kept = [pool[url] for url, rank in best.items() if rank[2] == index]
-        kept.sort(key=lambda a: (a.get("publishedAt") or "", a.get("publisher") or ""))
+        kept = dedupe_articles(kept)
         entry["articleCount"] = len(kept)
         entry["articles"] = kept[: args.limit_per_item]
 
@@ -814,9 +847,7 @@ def merge_with_existing(fresh: dict[str, Any], out_path: Path) -> dict[str, Any]
                 if article.get("url") not in seen:
                     entry["articles"].append(article)
                     seen.add(article.get("url"))
-            entry["articles"].sort(
-                key=lambda a: (a.get("publishedAt") or "", a.get("publisher") or "")
-            )
+            entry["articles"] = dedupe_articles(entry["articles"])
             entry["articleCount"] = len(entry["articles"])
             if not entry.get("department"):
                 entry["department"] = previous.get("department")
