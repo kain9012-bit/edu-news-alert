@@ -1,0 +1,504 @@
+{
+  "metadata": {
+    "reportId": "20260819T215527Z-243706bc",
+    "title": "오늘의 교육동향",
+    "status": "completed",
+    "generatedAt": "2026-08-19T21:55:27+00:00",
+    "windowStart": "2026-08-19T06:00:00+09:00",
+    "windowEnd": "2026-08-20T06:00:00+09:00",
+    "windowHours": 24,
+    "selectionRunId": "20260819T215129Z-23a1c83b",
+    "sourceCount": 10,
+    "eligibleCount": 8,
+    "publishedCount": 8,
+    "omittedCount": 0,
+    "ownOfficeEligibleCount": 2,
+    "ownOfficePublishedCount": 2,
+    "qualityExcludedCount": 0,
+    "factModel": "gemini-3.1-flash-lite",
+    "analysisModel": "gemini-3.5-flash",
+    "verifierModel": "gemini-3.1-flash-lite",
+    "summaryOnlyCount": 0,
+    "ownOfficeReviewCount": 0,
+    "usage": {
+      "stages": {
+        "facts": {
+          "model": "gemini-3.1-flash-lite",
+          "requests": 3,
+          "promptTokenCount": 10206,
+          "candidatesTokenCount": 2542,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 12748
+        },
+        "analysis": {
+          "model": "gemini-3.5-flash",
+          "requests": 2,
+          "promptTokenCount": 3121,
+          "candidatesTokenCount": 1597,
+          "thoughtsTokenCount": 5834,
+          "totalTokenCount": 10552
+        },
+        "verification": {
+          "model": "gemini-3.1-flash-lite",
+          "requests": 3,
+          "promptTokenCount": 12371,
+          "candidatesTokenCount": 566,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 12937
+        }
+      },
+      "total": {
+        "requests": 8,
+        "promptTokenCount": 25698,
+        "candidatesTokenCount": 4705,
+        "thoughtsTokenCount": 5834,
+        "totalTokenCount": 36237
+      }
+    },
+    "estimatedCostUsd": 0.081867
+  },
+  "items": [
+    {
+      "newsId": "gyeonggi-3a81c15ebe4d5a0f",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "경기도교육청, 경기교육대전환 크게 제대로! 공정성·합리성 높인 2027학년도 평준화학군 배정 방안",
+      "date": "2026-08-19",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2363067&bbsId=1922&mi=10102",
+      "category": "정책·행정",
+      "importance": 4,
+      "selectionReason": "교육청 차원의 고등학교 평준화 학군 학생 배정 방안이라는 제도적 변화를 다루고 있습니다.",
+      "summaryPoints": [
+        "2027학년도 평준화학군 일반고 배정 방안 발표함",
+        "부천·광명·의정부 단일학군 배정 방식을 학군별 지원율 기준 정원 비례 배정으로 변경함",
+        "가습기살균제 피해자를 선배정 대상에 포함함",
+        "과학고 전환 예정인 부천고와 분당중앙고를 배정 대상에서 제외함",
+        "9월 중순부터 학생·학부모·교원 대상 온라인 설명회 개최 예정임"
+      ],
+      "analysisPoints": [
+        "학군별 지원율을 기준으로 정원 비례 배정 방식을 도입하여 고교 배정의 공정성과 합리성을 제고하고자 함.",
+        "사회적 참사 피해자를 선배정 대상에 추가하여 교육의 사회적 책무성을 강화함.",
+        "특목고 전환 예정교를 일반고 배정에서 제외하고 외고·국제고·자사고 지원자의 일반고 동시 지원을 허용하여 고입 전형의 안정성을 도모함."
+      ],
+      "applicationReviewPoints": [
+        "평준화 지역 내 고교 배정 방식의 형평성을 높이기 위해 타 시도의 정원 비례 배정 방식 도입 사례를 비교해 볼 수 있음.",
+        "사회적 배려 대상자 및 특정 피해자에 대한 선배정 기준의 다양화 방안을 검토할 필요가 있음."
+      ],
+      "sourceFacts": [
+        "경기도 내 평준화 지역은 9개 학군 12개 시 지역임",
+        "배정 방식은 선지원 후추첨 방식을 기본으로 함",
+        "구역설정학군과 단일학군으로 구분하여 배정함",
+        "부천·광명·의정부 단일학군은 학군별 지원율을 기준으로 정원 비례 배정함",
+        "가습기살균제 피해자 선배정 대상 포함",
+        "분당중앙고와 부천고는 2027년 3월 과학고 전환 예정으로 일반고 배정 제외",
+        "외국어고·국제고·자사고 지원자는 평준화 학군 일반고 동시 지원 가능함",
+        "9월 중순부터 온라인 설명회 개최 및 SATP 포털 안내 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungbuk-931349315fcaf12e",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "충북교육청, <독서교육도시, 충북> 조성 나선다",
+      "date": "2026-08-19",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1577577&bbsId=1158&mi=10301",
+      "category": "정책·행정",
+      "importance": 4,
+      "selectionReason": "지자체와 협력하여 독서교육 생태계를 구축하는 교육청 차원의 중장기 정책 사업임.",
+      "summaryPoints": [
+        "충북교육청이 지자체와 협력하여 독서교육도시 조성 추진함",
+        "학교·가정·지역사회를 연결하는 평생독서 생태계 구축 목표임",
+        "지역별 특색을 살린 독서교육 협력체계 마련 예정임",
+        "독서 소외계층 지원 확대 및 읽기 복지 강화함",
+        "9월 3일 청주오스코에서 비전 선포식 개최함"
+      ],
+      "analysisPoints": [
+        "교육청과 광역·기초 지자체가 협력하는 독서교육 거버넌스를 구축하여 지역사회 전반의 평생독서 생태계를 조성하고자 함.",
+        "지역서점, 대학, 평생학습기관 등 지역 내 인적·물적 자원을 연계하여 독서교육의 지속 가능성을 확보함.",
+        "인문고전 중심의 독서 정책과 연계하여 독서 소외계층 지원 및 읽기 복지를 강화하는 방향성을 제시함."
+      ],
+      "applicationReviewPoints": [
+        "지자체 및 지역 유관기관과의 협력을 통한 지역 밀착형 독서 거버넌스 구축 방안을 비교해 볼 수 있음.",
+        "지역 서점 및 대학 등 지역 자원을 연계한 독서 프로그램 활성화 방안을 검토할 필요가 있음."
+      ],
+      "sourceFacts": [
+        "충북교육청과 충청북도 및 11개 시·군이 독서교육 거버넌스 구축",
+        "2024년부터 인문고전 중심 독서교육 정책 언제나 책봄 운영 중",
+        "독서교육도시 비전은 충북 하늘 아래 모든 곳이 우리 아이들의 도서관임",
+        "지역서점·대학·평생학습기관 등 지역 독서 자원 연결",
+        "9월 3일 청주오스코에서 2026 독서교육 도시 충북 비전 선포식 개최"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongbuk-3a08e1d88b77d6d9",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[유초등교육과]경북교육청, '질문 중심 수업‧평가 올인원 모델' 전국 확산 이끈다",
+      "date": "2026-08-19",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1637132&bbsId=4744&mi=17643&searchCate=761",
+      "category": "교육과정·수업",
+      "importance": 3,
+      "selectionReason": "교육부 주관 사업의 일환으로 전국 단위 선도교원 양성 및 수업·평가 모델 확산을 다루고 있어 교육과정 변화와 연관됨.",
+      "summaryPoints": [
+        "학생 질문 중심 수업 및 평가 모델 전국 확산 추진함",
+        "전국 초등 선도교원 1,000명 양성 완료함",
+        "수업과 평가를 연계한 36차시 표준 교육모듈 개발함",
+        "실습 중심 연수 운영으로 현장 적용성 강화함",
+        "온라인 플랫폼을 활용한 학습자 중심 연수 체계 구축함"
+      ],
+      "analysisPoints": [
+        "수업과 평가를 연계한 표준 교육모듈을 개발하여 교원의 수업 설계 및 평가 역량을 체계적으로 지원함.",
+        "온·오프라인 혼합형 연수 체계를 구축하여 대규모 선도교원 양성의 효율성을 높임.",
+        "양성된 선도교원을 지역별 거점으로 활용하여 질문 중심 수업 문화를 현장에 확산하고자 함."
+      ],
+      "applicationReviewPoints": [
+        "질문 중심 수업 및 평가의 현장 안착을 위해 온·오프라인 혼합형 표준 교육모듈 개발 사례를 참고할 필요가 있음.",
+        "교원의 수업·평가 역량 강화를 위한 대규모 선도교원 양성 및 지역별 확산 체계를 비교해 볼 수 있음."
+      ],
+      "sourceFacts": [
+        "2026년 학생 질문 중심 수업·평가 초등 선도교원 연수 실시",
+        "수업·평가 올인원 모델 구축",
+        "표준 교육모듈은 VOD 10차시, 실시간 원격 8차시, 집합 18차시로 구성",
+        "온라인 웰컴레터 및 온라인 학습 플랫폼 활용",
+        "양성된 선도교원이 각 지역에서 질문 중심 수업 확산 역할 수행"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongnam-b564699a9506fc66",
+      "sourceId": "gyeongnam",
+      "source": "경상남도교육청",
+      "title": "가짜 뉴스, 사이버 폭력 스스로 거른다",
+      "date": "2026-08-19",
+      "url": "https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&q_bbsDocNo=20260819142550336",
+      "category": "디지털·AI",
+      "importance": 3,
+      "selectionReason": "디지털 미디어 문해교육을 도내 40개 학교에 확대 적용하는 정책성 사업으로 교육청 차원의 학생 지원 활동에 해당함.",
+      "summaryPoints": [
+        "디지털 미디어 문해교육을 통해 학생의 비판적 사고력 함양 지원함",
+        "경남시청자미디어센터와 협력하여 도내 40개 학교 대상 운영함",
+        "팩트 체크, 건강한 미디어 이용, AI 문해교육 3개 주제로 구성함",
+        "전문 강사가 학교를 방문하여 참여형 수업으로 진행함",
+        "8월 19일부터 12월 15일까지 교육 실시함"
+      ],
+      "analysisPoints": [
+        "미디어 전문기관과의 협력을 통해 학교 현장에 전문 강사를 파견함으로써 디지털 미디어 문해교육의 전문성을 제고함.",
+        "팩트 체크, AI 윤리, 미디어 이용 등 현대 디지털 환경에 필요한 실천적 주제 중심의 참여형 교육을 제공함.",
+        "학생들이 스스로 허위 정보와 사이버 폭력을 예방할 수 있도록 비판적 사고력 함양에 초점을 맞춤."
+      ],
+      "applicationReviewPoints": [
+        "지역 미디어 전문기관과의 연계를 통한 학교로 찾아가는 디지털 미디어 문해교육 프로그램 도입을 검토할 수 있음.",
+        "생성형 AI 윤리 및 팩트 체크 등 실천적 미디어 리터러시 교육 콘텐츠의 활용 가능성을 확인할 필요가 있음."
+      ],
+      "sourceFacts": [
+        "2026년 학교로 찾아가는 디지털 미디어 문해교육 사업",
+        "도내 40개 초·중학교 136학급 대상",
+        "교육 기간은 8월 19일부터 12월 15일까지",
+        "팩트 체크 교육, 건강한 미디어 이용, 인공지능 문해교육 주제",
+        "디지털 지지자 양성 및 생성형 AI 윤리 교육 포함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "moe-43ab4a3d4d3bcac6",
+      "sourceId": "moe",
+      "source": "교육부",
+      "title": "인공지능(AI) 온이음, 인공지능(AI)과 이어지는 첫 연결고리",
+      "date": "2026-08-19",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=106930&lev=0&m=020402&s=moe",
+      "category": "디지털·AI",
+      "importance": 3,
+      "selectionReason": "교육부 차원에서 취약계층 및 지역 학생을 대상으로 AI 교육 서비스와 프로그램을 지원하는 신규 사업임.",
+      "summaryPoints": [
+        "취약계층 및 농어촌 지역 고등학생 12만 명 대상 AI 서비스 및 교육 프로그램 지원 사업 추진함",
+        "유형1은 교육급여 대상자 등 취약계층, 유형2는 농어촌 소재 고등학교 학생으로 구분함",
+        "8월 20일부터 28일까지 학교 단위로 한국장학재단에 신청함",
+        "안전한 AI 활용을 위해 윤리 교육 이수 의무화 및 기술적 안전조치를 적용함"
+      ],
+      "analysisPoints": [
+        "취약계층 및 농어촌 지역 고등학생의 디지털 격차 해소를 위한 맞춤형 AI 서비스 지원 체계 구축임",
+        "안전한 AI 활용을 위해 윤리 교육 이수 의무화 및 기술적 안전조치를 병행하는 안전망 마련이 강조됨"
+      ],
+      "applicationReviewPoints": [
+        "전북 지역 내 취약계층 및 농어촌 고등학생의 AI 서비스 수혜 확대를 위해 신청 절차 및 홍보 방안을 확인할 필요가 있음",
+        "AI 활용 교육 시 윤리 교육 및 기술적 안전조치 적용 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "사업명은 2026년 인공지능(AI) 온이음 사업임",
+        "지원 대상은 총 12만 명임",
+        "신청 기간은 8월 20일부터 8월 28일까지임",
+        "유형1은 취약계층 고등학생, 유형2는 농어촌 소재 고등학교임",
+        "학생은 AI 윤리 등 사전 교육을 이수해야 함",
+        "서비스 이용 시 금칙어 입력 방지 등 기술적 안전조치가 제공됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeonggi-7902d71885b3ad1e",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "경기도교육청, 학교 냉난방 설비 긴급출동 지원! 민간 전문기업과 업무협약 체결 ​",
+      "date": "2026-08-19",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2363177&bbsId=1922&mi=10102",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "도내 학교의 냉난방 설비 긴급출동 지원체계를 구축하여 교육환경 안전 및 관리 효율성을 높이는 정책적 변화임.",
+      "summaryPoints": [
+        "경기도교육청이 민간 전문기업과 학교 냉난방 설비 긴급출동 지원 업무협약을 체결함",
+        "폭염 및 한파 시 냉난방 설비 고장에 신속 대응하여 교육환경 불편을 최소화함",
+        "고장 신고 접수 시 전문 기술 인력이 성수기 기준 48시간 이내에 현장 조치함"
+      ],
+      "analysisPoints": [
+        "민간 전문기업과의 협업을 통해 기후변화에 따른 학교 냉난방 설비 고장에 신속히 대응하는 민관 협력 모델임",
+        "성수기 기준 48시간 이내 현장 조치를 원칙으로 하여 교육환경의 불편을 최소화하고 재난 대응력을 강화함"
+      ],
+      "applicationReviewPoints": [
+        "폭염 및 한파 대비 학교 냉난방 설비의 신속한 유지보수를 위해 민간 전문기업과의 협업 체계 구축 방안을 검토할 수 있음",
+        "긴급출동 서비스 도입에 따른 학교 현장의 불편 해소 효과와 관리 효율성 제고 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "협약 대상 기업은 하이엠솔루텍주식회사와 삼성전자로지텍주식회사임",
+        "협약 체결일은 2026년 8월 19일임",
+        "성수기 기준 48시간 이내 현장 출동 및 조치를 원칙으로 함",
+        "학교 냉난방 설비 관리 효율성 제고 및 재난 대응 체계 강화를 목적으로 함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongnam-14682abb66094cc4",
+      "sourceId": "gyeongnam",
+      "source": "경상남도교육청",
+      "title": "경남교육청, 24일부터 2027학년도 수능 응시 원서 접수",
+      "date": "2026-08-19",
+      "url": "https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&q_bbsDocNo=20260819111426335",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "수능 원서 접수 안내이나, 결제 방식의 전면 개편(현금 불가, 온라인 사전 입력)이라는 제도적 변화가 명시되어 있음.",
+      "summaryPoints": [
+        "2027학년도 대학수학능력시험 응시 원서를 8월 24일부터 9월 4일까지 접수함",
+        "온라인 사전 입력 시스템을 운영하며 접수처 방문을 통해 최종 접수를 완료함",
+        "올해부터 응시 수수료 현금 납부를 폐지하고 카드 및 간편결제 방식을 도입함"
+      ],
+      "analysisPoints": [
+        "수능 원서 접수 시 현금 납부를 폐지하고 카드 및 간편결제를 도입하여 납부 편의성을 제고하고 행정 효율성을 높임",
+        "온라인 사전 입력 시스템과 현장 최종 접수를 연계하여 접수 과정의 혼잡을 완화함"
+      ],
+      "applicationReviewPoints": [
+        "수능 응시 수수료의 카드 및 간편결제 도입에 따른 수험생 편의성 및 행정 처리 절차 개선 효과를 확인할 필요가 있음",
+        "온라인 사전 입력 시스템 운영 현황과 현장 접수 연계 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "접수 기간은 8월 24일부터 9월 4일까지임",
+        "접수 시간은 오전 9시부터 오후 5시까지임",
+        "온라인 사전 입력 기간은 8월 20일부터 9월 3일까지임",
+        "응시 수수료는 신용카드, 가상계좌, 간편결제만 가능함",
+        "원서 접수처는 도내 고등학교 및 7개 시험지구 교육지원청임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "seoul-c9bfef095134e5d5",
+      "sourceId": "seoul",
+      "source": "서울특별시교육청",
+      "title": "학교 시설, 시민의 눈으로 직접 살핀다! 서울시교육청 「시민참여 현장검증단...",
+      "date": "2026-08-19",
+      "url": "https://enews.sen.go.kr/news/view.do?bbsSn=191985&step1=3&step2=1",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "교육환경개선 사업의 우선순위 선정 과정에 시민참여 현장검증단을 도입하여 예산 편성의 공정성과 타당성을 강화하는 제도적 변화임.",
+      "summaryPoints": [
+        "서울시교육청이 8월 20일부터 24일까지 시민참여 현장검증단을 운영함",
+        "96개 학교를 방문하여 2027~2028년 교육환경개선 사업의 우선순위를 검증함",
+        "시민의 시각으로 예산 낭비를 방지하고 사업의 공정성과 타당성을 확보함"
+      ],
+      "analysisPoints": [
+        "교육환경개선 사업의 우선순위 검증에 시민이 직접 참여하여 예산 집행의 공정성과 타당성을 확보하는 주민참여 예산제 모델임",
+        "현장 검증 결과를 차기 연도 예산 편성에 직접 반영하여 교육행정의 투명성을 제고함"
+      ],
+      "applicationReviewPoints": [
+        "교육환경개선 사업 선정 과정의 투명성 확보를 위해 시민참여형 현장 검증단 운영 방안을 검토할 수 있음",
+        "시민 검증 결과를 예산 편성에 연계하는 심의 및 반영 절차를 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "현장검증단은 총 60명(12팀)으로 구성됨",
+        "검증 대상은 96개 학교임",
+        "운영 기간은 8월 20일부터 8월 24일까지임",
+        "우선순위는 9월 중 심의위원회를 거쳐 확정함",
+        "검증 결과는 2027년 예산 편성부터 반영할 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "ownOfficeItems": [
+    {
+      "newsId": "jeonbuk-fa753d43208e5d46",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "전북교육청, 9월부터 「책바다」 우편비 전액 지원",
+      "date": "2026-08-19",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1166043",
+      "summaryPoints": [
+        "9월 1일부터 전북교육청 소속 도서관 이용자의 국가상호대차 서비스 우편비 전액 지원함."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-6e408aeb7fc53d3c",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "전북교육청,‘2026 교육가족 공모전’개최",
+      "date": "2026-08-19",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1166045",
+      "summaryPoints": [
+        "도전과 모험을 주제로 한 2026 교육가족 공모전을 개최하여 동시, 포토시, 쇼트폼, 만화 분야 작품을 모집함.",
+        "10월 1일부터 22일까지 전북교육청 누리집을 통해 접수하며 11월 13일 수상작을 발표할 예정임."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "omittedItems": [],
+  "validation": {
+    "status": "PASS",
+    "issues": [],
+    "checks": {
+      "ownOfficeExcludedFromTrendAnalysis": true,
+      "ownOfficeAllIncluded": true,
+      "ownOfficeSummariesVerified": true,
+      "publishedItemsVerified": true,
+      "sourceWindowMatches": true
+    }
+  },
+  "providerErrors": {
+    "facts": [],
+    "ownOfficeSummaries": [],
+    "analysis": [],
+    "verification": [],
+    "repairs": [],
+    "repairVerifications": []
+  },
+  "trace": [
+    {
+      "step": "extract_facts",
+      "status": "success",
+      "startedAt": "2026-08-19T21:54:48+00:00",
+      "durationMs": 8576
+    },
+    {
+      "step": "summarize_own_office",
+      "status": "success",
+      "startedAt": "2026-08-19T21:54:57+00:00",
+      "durationMs": 1318
+    },
+    {
+      "step": "analyze_trends",
+      "status": "success",
+      "startedAt": "2026-08-19T21:54:58+00:00",
+      "durationMs": 24982
+    },
+    {
+      "step": "verify_report",
+      "status": "success",
+      "startedAt": "2026-08-19T21:55:23+00:00",
+      "durationMs": 3368
+    }
+  ],
+  "rendering": {
+    "canonical": "json",
+    "html": "오늘의 교육동향 (20260820).html",
+    "hwpx": "오늘의 교육동향 (20260820).hwpx",
+    "hwpxValidation": {
+      "hardGates": {
+        "package_validation": "pass",
+        "document_errors": "pass",
+        "schema_lint": "pass",
+        "reopen": "pass",
+        "editor_open_safety": "pass",
+        "id_integrity": "pass"
+      },
+      "packageOk": true,
+      "documentOk": true,
+      "reopenedOk": true,
+      "visualReviewRequired": true
+    }
+  }
+}
