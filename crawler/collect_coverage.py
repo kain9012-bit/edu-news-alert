@@ -127,7 +127,7 @@ OTHER_REGION_HINTS = (
     "순천",
 )
 # 지역 단서가 없어도 제목이 이만큼 일치하면 같은 사안으로 본다.
-STRONG_MATCH_SCORE = 0.8
+STRONG_MATCH_SCORE = 0.7
 # 보도자료 배포일 전후 이 범위의 기사는 같은 사안일 가능성이 매우 높다.
 # 언론사가 제목을 새로 뽑는 경우가 많아, 이때는 유사도 기준을 크게 낮춘다.
 NEAR_DAYS = 4
@@ -146,7 +146,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-items", type=int, default=40, help="한 번에 조회할 보도자료 최대 건수")
     # 금요일에 배포한 자료를 월요일에 게시판에 올리는 일이 있어 앞쪽 여유를 넉넉히 둔다.
     parser.add_argument("--window-before", type=int, default=4, help="보도자료보다 이 일수 전 기사까지 인정")
-    parser.add_argument("--window-after", type=int, default=10, help="보도자료보다 이 일수 후 기사까지 인정")
+    parser.add_argument("--window-after", type=int, default=14, help="보도자료보다 이 일수 후 기사까지 인정")
     parser.add_argument("--min-score", type=float, default=0.45, help="제목 유사도 임계값(0~1)")
     parser.add_argument("--limit-per-item", type=int, default=30, help="보도자료당 저장할 기사 최대 건수")
     parser.add_argument(
@@ -172,8 +172,25 @@ def tokenize(text: str) -> set[str]:
             continue
         if token in STOPWORDS:
             continue
+        # '2026' 같은 연도·숫자만으로는 같은 사안이라 볼 수 없다.
+        if token.isdigit():
+            continue
         tokens.add(token)
     return tokens
+
+
+def match_stats(release_tokens: set[str], article_title: str) -> tuple[float, int]:
+    """유사도(비율)와 실제로 겹친 낱말 수를 함께 돌려준다."""
+    if not release_tokens:
+        return 0.0, 0
+    article_tokens = tokenize(article_title)
+    if not article_tokens:
+        return 0.0, 0
+    hit = 0
+    for token in release_tokens:
+        if any(token in other or other in token for other in article_tokens):
+            hit += 1
+    return hit / len(release_tokens), hit
 
 
 def similarity(release_tokens: set[str], article_title: str) -> float:
@@ -398,7 +415,11 @@ def days_apart(article_date: str, release_date: str) -> int | None:
 
 
 def is_same_case(
-    score: float, article: dict[str, str], min_score: float, release_date: str = ""
+    score: float,
+    article: dict[str, str],
+    min_score: float,
+    release_date: str = "",
+    hits: int | None = None,
 ) -> bool:
     """같은 사안을 다룬 기사인지 판정한다.
 
@@ -420,7 +441,10 @@ def is_same_case(
             return False
         if score >= NEAR_TRUST_SCORE:
             return True
-        # 겹치는 말이 적다면 다른 기관 소식일 수 있으니 전북 단서를 확인한다.
+        # 겹치는 말이 적다면 다른 기관 소식일 수 있으니 전북 단서와 함께
+        # 최소 두 낱말 이상 겹치는지를 요구한다(한 단어 우연 일치 방지).
+        if hits is not None and hits < 2:
+            return False
         return has_region_hint(f"{title} {article.get('publisher', '')}")
     # 날짜가 멀면 과거의 비슷한 행사일 수 있으므로 제목이 거의 같아야 인정한다.
     return score >= STRONG_MATCH_SCORE
