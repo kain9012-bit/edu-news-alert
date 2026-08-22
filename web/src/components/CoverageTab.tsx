@@ -302,62 +302,90 @@ export function CoverageTab() {
             일별 보도자료 수 추이
           </h2>
           {dailyStats.length ? (
-            <svg viewBox="0 0 320 150" className="w-full h-40" role="img" aria-label="일별 보도자료 수 추이">
-              {/* 세로 눈금(월요일) */}
-              {dailyStats.map((d, i) =>
-                d.monday ? (
-                  <g key={`g-${d.key}`}>
-                    <line
-                      x1={10 + (i / Math.max(1, dailyStats.length - 1)) * 300}
-                      x2={10 + (i / Math.max(1, dailyStats.length - 1)) * 300}
-                      y1={10} y2={120} stroke="#e6e8ea" strokeWidth="1"
+            <div>
+              <div className="relative h-36 w-full">
+                {/* 그래프 본체: 패널 폭에 맞춰 늘어난다 */}
+                <svg
+                  viewBox="0 0 100 100"
+                  preserveAspectRatio="none"
+                  className="absolute inset-0 w-full h-full"
+                  aria-hidden
+                >
+                  {dailyStats.map((d, i) =>
+                    d.monday ? (
+                      <line
+                        key={`g-${d.key}`}
+                        x1={(i / Math.max(1, dailyStats.length - 1)) * 100}
+                        x2={(i / Math.max(1, dailyStats.length - 1)) * 100}
+                        y1="2" y2="100"
+                        stroke="#e6e8ea" strokeWidth="1" vectorEffect="non-scaling-stroke"
+                      />
+                    ) : null
+                  )}
+                  <polygon
+                    fill="#256ef4" opacity="0.08" stroke="none"
+                    points={`0,100 ${dailyStats
+                      .map((d, i) =>
+                        `${(i / Math.max(1, dailyStats.length - 1)) * 100},${100 - (d.count / dailyMax) * 92}`
+                      )
+                      .join(" ")} 100,100`}
+                  />
+                  <polyline
+                    fill="none" stroke="#256ef4" strokeWidth="2"
+                    strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke"
+                    points={dailyStats
+                      .map((d, i) =>
+                        `${(i / Math.max(1, dailyStats.length - 1)) * 100},${100 - (d.count / dailyMax) * 92}`
+                      )
+                      .join(" ")}
+                  />
+                  <line x1="0" y1="100" x2="100" y2="100" stroke="#cdd1d5" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+                </svg>
+                {/* 점(HTML이라 비율 왜곡 없음) + 날짜·건수 툴팁 */}
+                {dailyStats.map((d, i) =>
+                  d.count ? (
+                    <span
+                      key={`p-${d.key}`}
+                      title={`${d.key} · ${d.count}건`}
+                      className="absolute w-2 h-2 rounded-full bg-blue-700 -translate-x-1/2 translate-y-1/2 hover:scale-150 transition-transform"
+                      style={{
+                        left: `${(i / Math.max(1, dailyStats.length - 1)) * 100}%`,
+                        bottom: `${(d.count / dailyMax) * 92}%`,
+                      }}
                     />
-                    <text
-                      x={10 + (i / Math.max(1, dailyStats.length - 1)) * 300}
-                      y={135} textAnchor="middle" fontSize="9" fill="#8a949e"
+                  ) : null
+                )}
+                {/* 최고점 값 */}
+                {dailyStats.map((d, i) =>
+                  d.count === dailyMax ? (
+                    <span
+                      key={`m-${d.key}`}
+                      className="absolute -translate-x-1/2 text-[11px] font-bold text-blue-700"
+                      style={{
+                        left: `${(i / Math.max(1, dailyStats.length - 1)) * 100}%`,
+                        bottom: `calc(${(d.count / dailyMax) * 92}% + 8px)`,
+                      }}
+                    >
+                      {d.count}
+                    </span>
+                  ) : null
+                )}
+              </div>
+              {/* 날짜 라벨(월요일) */}
+              <div className="relative h-4 w-full mt-1">
+                {dailyStats.map((d, i) =>
+                  d.monday ? (
+                    <span
+                      key={`l-${d.key}`}
+                      className="absolute -translate-x-1/2 text-[10px] text-slate-400 whitespace-nowrap"
+                      style={{ left: `${(i / Math.max(1, dailyStats.length - 1)) * 100}%` }}
                     >
                       {d.label}
-                    </text>
-                  </g>
-                ) : null
-              )}
-              {/* 영역 채움 */}
-              <polygon
-                fill="#256ef4" opacity="0.08" stroke="none"
-                points={`10,120 ${dailyStats
-                  .map((d, i) =>
-                    `${10 + (i / Math.max(1, dailyStats.length - 1)) * 300},${120 - (d.count / dailyMax) * 105}`
-                  )
-                  .join(" ")} 310,120`}
-              />
-              {/* 꺾은선 */}
-              <polyline
-                fill="none" stroke="#256ef4" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round"
-                points={dailyStats
-                  .map((d, i) =>
-                    `${10 + (i / Math.max(1, dailyStats.length - 1)) * 300},${120 - (d.count / dailyMax) * 105}`
-                  )
-                  .join(" ")}
-              />
-              {/* 점 + 값 */}
-              {dailyStats.map((d, i) => {
-                const x = 10 + (i / Math.max(1, dailyStats.length - 1)) * 300;
-                const y = 120 - (d.count / dailyMax) * 105;
-                return (
-                  <g key={d.key}>
-                    <circle cx={x} cy={y} r={d.count ? 2.4 : 0} fill="#0b50d0">
-                      <title>{`${d.key} · ${d.count}건`}</title>
-                    </circle>
-                    {d.count === dailyMax && (
-                      <text x={x} y={y - 5} textAnchor="middle" fontSize="9" fontWeight="700" fill="#0b50d0">
-                        {d.count}
-                      </text>
-                    )}
-                  </g>
-                );
-              })}
-              <line x1="10" y1="120" x2="310" y2="120" stroke="#cdd1d5" strokeWidth="1" />
-            </svg>
+                    </span>
+                  ) : null
+                )}
+              </div>
+            </div>
           ) : (
             <p className="text-sm text-slate-400 py-8 text-center">표시할 자료가 없습니다.</p>
           )}
