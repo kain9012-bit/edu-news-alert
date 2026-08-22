@@ -160,25 +160,31 @@ export function CoverageTab() {
       );
   }, [filtered]);
 
-  // 주별(월요일 시작) 보도자료 배포 건수 추이.
-  const weeklyStats = useMemo(() => {
-    const byWeek = new Map<string, number>();
+  // 일별 보도자료 배포 건수 추이(빈 날은 0으로 채워 흐름을 그대로 보여준다).
+  const dailyStats = useMemo(() => {
+    const byDay = new Map<string, number>();
     for (const it of filtered) {
-      if (!it.date) continue;
-      const d = new Date(`${it.date}T00:00:00+09:00`);
-      const day = (d.getDay() + 6) % 7; // 월=0
-      d.setDate(d.getDate() - day);
-      const key = d.toISOString().slice(0, 10);
-      byWeek.set(key, (byWeek.get(key) || 0) + 1);
+      if (it.date) byDay.set(it.date, (byDay.get(it.date) || 0) + 1);
     }
-    return [...byWeek.entries()]
-      .sort((a, b) => (a[0] < b[0] ? -1 : 1))
-      .map(([key, count]) => {
-        const [, m, dd] = key.split("-");
-        return { label: `${Number(m)}/${Number(dd)}`, count };
+    const keys = [...byDay.keys()].sort();
+    if (!keys.length) return [] as { key: string; label: string; count: number; monday: boolean }[];
+    const out: { key: string; label: string; count: number; monday: boolean }[] = [];
+    const cursor = new Date(`${keys[0]}T00:00:00+09:00`);
+    const last = new Date(`${keys[keys.length - 1]}T00:00:00+09:00`);
+    while (cursor <= last) {
+      const key = cursor.toISOString().slice(0, 10);
+      const [, m, dd] = key.split("-");
+      out.push({
+        key,
+        label: `${Number(m)}/${Number(dd)}`,
+        count: byDay.get(key) || 0,
+        monday: (cursor.getDay() + 6) % 7 === 0,
       });
+      cursor.setDate(cursor.getDate() + 1);
+    }
+    return out;
   }, [filtered]);
-  const weeklyMax = Math.max(1, ...weeklyStats.map((w) => w.count));
+  const dailyMax = Math.max(1, ...dailyStats.map((d) => d.count));
 
   // 부서별 보도자료 수 도넛(상위 9개 + 기타).
   const donutData = useMemo(() => {
@@ -293,27 +299,70 @@ export function CoverageTab() {
             <div className="grid gap-4 sm:grid-cols-2">
         <section className="bg-white border border-slate-200 rounded-xl p-4">
           <h2 className="text-sm font-bold text-blue-700 border-b-2 border-blue-100 pb-1.5 mb-3">
-            주별 보도자료 수 추이
+            일별 보도자료 수 추이
           </h2>
-          {weeklyStats.length ? (
-            <div className="flex items-end gap-1.5 h-36 pt-2">
-              {weeklyStats.map((w) => (
-                <div key={w.label} className="flex-1 min-w-0 flex flex-col items-center gap-1">
-                  <span className="text-xs font-bold text-slate-700 tabular-nums">{w.count}</span>
-                  <div
-                    className="w-full max-w-[34px] rounded-t bg-blue-500"
-                    style={{ height: `${Math.max(4, (w.count / weeklyMax) * 96)}px` }}
-                    title={`${w.label} 주 ${w.count}건`}
-                  />
-                  <span className="text-[11px] text-slate-400 whitespace-nowrap">{w.label}</span>
-                </div>
-              ))}
-            </div>
+          {dailyStats.length ? (
+            <svg viewBox="0 0 320 150" className="w-full h-40" role="img" aria-label="일별 보도자료 수 추이">
+              {/* 세로 눈금(월요일) */}
+              {dailyStats.map((d, i) =>
+                d.monday ? (
+                  <g key={`g-${d.key}`}>
+                    <line
+                      x1={10 + (i / Math.max(1, dailyStats.length - 1)) * 300}
+                      x2={10 + (i / Math.max(1, dailyStats.length - 1)) * 300}
+                      y1={10} y2={120} stroke="#e6e8ea" strokeWidth="1"
+                    />
+                    <text
+                      x={10 + (i / Math.max(1, dailyStats.length - 1)) * 300}
+                      y={135} textAnchor="middle" fontSize="9" fill="#8a949e"
+                    >
+                      {d.label}
+                    </text>
+                  </g>
+                ) : null
+              )}
+              {/* 영역 채움 */}
+              <polygon
+                fill="#256ef4" opacity="0.08" stroke="none"
+                points={`10,120 ${dailyStats
+                  .map((d, i) =>
+                    `${10 + (i / Math.max(1, dailyStats.length - 1)) * 300},${120 - (d.count / dailyMax) * 105}`
+                  )
+                  .join(" ")} 310,120`}
+              />
+              {/* 꺾은선 */}
+              <polyline
+                fill="none" stroke="#256ef4" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round"
+                points={dailyStats
+                  .map((d, i) =>
+                    `${10 + (i / Math.max(1, dailyStats.length - 1)) * 300},${120 - (d.count / dailyMax) * 105}`
+                  )
+                  .join(" ")}
+              />
+              {/* 점 + 값 */}
+              {dailyStats.map((d, i) => {
+                const x = 10 + (i / Math.max(1, dailyStats.length - 1)) * 300;
+                const y = 120 - (d.count / dailyMax) * 105;
+                return (
+                  <g key={d.key}>
+                    <circle cx={x} cy={y} r={d.count ? 2.4 : 0} fill="#0b50d0">
+                      <title>{`${d.key} · ${d.count}건`}</title>
+                    </circle>
+                    {d.count === dailyMax && (
+                      <text x={x} y={y - 5} textAnchor="middle" fontSize="9" fontWeight="700" fill="#0b50d0">
+                        {d.count}
+                      </text>
+                    )}
+                  </g>
+                );
+              })}
+              <line x1="10" y1="120" x2="310" y2="120" stroke="#cdd1d5" strokeWidth="1" />
+            </svg>
           ) : (
             <p className="text-sm text-slate-400 py-8 text-center">표시할 자료가 없습니다.</p>
           )}
           <p className="mt-3 text-xs text-slate-400 break-keep">
-            월요일 시작 주 단위로 배포된 보도자료 건수입니다.
+            날짜별 배포 건수이며, 세로 눈금은 월요일입니다. 점에 마우스를 올리면 날짜와 건수가 표시됩니다.
           </p>
         </section>
 
