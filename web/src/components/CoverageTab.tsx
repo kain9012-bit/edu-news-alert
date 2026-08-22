@@ -4,6 +4,9 @@ import type { Coverage, CoverageItem } from "../types";
 import { fetchCoverage } from "../lib/data";
 import { DateRange } from "./DateRange";
 
+// 도넛 그래프 반지름 46 기준 원둘레.
+const DONUT_CIRC = 2 * Math.PI * 46;
+
 function Stat({ label, value, accent }: { label: string; value: string; accent?: boolean }) {
   return (
     <div className="bg-slate-50 rounded-lg p-3">
@@ -157,6 +160,47 @@ export function CoverageTab() {
       );
   }, [filtered]);
 
+  // 주별(월요일 시작) 보도자료 배포 건수 추이.
+  const weeklyStats = useMemo(() => {
+    const byWeek = new Map<string, number>();
+    for (const it of filtered) {
+      if (!it.date) continue;
+      const d = new Date(`${it.date}T00:00:00+09:00`);
+      const day = (d.getDay() + 6) % 7; // 월=0
+      d.setDate(d.getDate() - day);
+      const key = d.toISOString().slice(0, 10);
+      byWeek.set(key, (byWeek.get(key) || 0) + 1);
+    }
+    return [...byWeek.entries()]
+      .sort((a, b) => (a[0] < b[0] ? -1 : 1))
+      .map(([key, count]) => {
+        const [, m, dd] = key.split("-");
+        return { label: `${Number(m)}/${Number(dd)}`, count };
+      });
+  }, [filtered]);
+  const weeklyMax = Math.max(1, ...weeklyStats.map((w) => w.count));
+
+  // 부서별 보도자료 수 도넛(상위 9개 + 기타).
+  const donutData = useMemo(() => {
+    const palette = [
+      "#256ef4", "#0b50d0", "#4c87f6", "#228738", "#9e6a00",
+      "#d95f5f", "#7a5fd9", "#2a9d8f", "#b1518e", "#8a949e",
+    ];
+    const top = deptStats.slice(0, 9);
+    const restCount = deptStats.slice(9).reduce((s, d) => s + d.releaseCount, 0);
+    const rows = [...top.map((d) => ({ name: d.name, count: d.releaseCount }))];
+    if (restCount > 0) rows.push({ name: "기타", count: restCount });
+    const total = rows.reduce((s, r) => s + r.count, 0);
+    let offset = 0;
+    const slices = rows.map((r, i) => {
+      const length = total ? (r.count / total) * DONUT_CIRC : 0;
+      const slice = { ...r, color: palette[i % palette.length], length, offset };
+      offset += length;
+      return slice;
+    });
+    return { total, slices };
+  }, [deptStats]);
+
   if (loading) return <p className="text-slate-500 py-16 text-center">언론 게재현황을 불러오는 중…</p>;
   if (!data || !items.length)
     return (
@@ -239,9 +283,9 @@ export function CoverageTab() {
           ) : (
             <ChevronRight className="w-4 h-4 text-slate-400 shrink-0" />
           )}
-          <span className="font-bold text-slate-800">매체별 · 부서별 집계</span>
+          <span className="font-bold text-slate-800">보도자료 추이 · 부서별 비중</span>
           <span className="ml-auto text-xs text-slate-400 whitespace-nowrap">
-            매체 {publisherStats.length} · 부서 {deptStats.length}
+            부서 {deptStats.length}곳
           </span>
         </button>
         {statsOpen && (
@@ -249,48 +293,73 @@ export function CoverageTab() {
             <div className="grid gap-4 sm:grid-cols-2">
         <section className="bg-white border border-slate-200 rounded-xl p-4">
           <h2 className="text-sm font-bold text-blue-700 border-b-2 border-blue-100 pb-1.5 mb-3">
-            많이 실어준 매체
+            주별 보도자료 수 추이
           </h2>
-          <ul className="space-y-1.5">
-            {publisherStats.slice(0, 12).map((p) => (
-              <li key={p.name} className="flex items-center gap-2 text-sm">
-                <span className="flex-1 min-w-0 truncate text-slate-700">{p.name}</span>
-                <span className="h-1.5 rounded-full bg-blue-500 shrink-0"
-                  style={{ width: `${Math.max(6, (p.count / (publisherStats[0]?.count || 1)) * 80)}px` }}
-                  aria-hidden
-                />
-                <span className="w-8 text-right font-bold text-slate-900 tabular-nums">{p.count}</span>
-              </li>
-            ))}
-          </ul>
+          {weeklyStats.length ? (
+            <div className="flex items-end gap-1.5 h-36 pt-2">
+              {weeklyStats.map((w) => (
+                <div key={w.label} className="flex-1 min-w-0 flex flex-col items-center gap-1">
+                  <span className="text-xs font-bold text-slate-700 tabular-nums">{w.count}</span>
+                  <div
+                    className="w-full max-w-[34px] rounded-t bg-blue-500"
+                    style={{ height: `${Math.max(4, (w.count / weeklyMax) * 96)}px` }}
+                    title={`${w.label} 주 ${w.count}건`}
+                  />
+                  <span className="text-[11px] text-slate-400 whitespace-nowrap">{w.label}</span>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-sm text-slate-400 py-8 text-center">표시할 자료가 없습니다.</p>
+          )}
+          <p className="mt-3 text-xs text-slate-400 break-keep">
+            월요일 시작 주 단위로 배포된 보도자료 건수입니다.
+          </p>
         </section>
 
         <section className="bg-white border border-slate-200 rounded-xl p-4">
           <h2 className="text-sm font-bold text-blue-700 border-b-2 border-blue-100 pb-1.5 mb-3">
-            부서별 보도 실적
+            부서별 보도자료 비중
           </h2>
-          <ul className="space-y-1.5">
-            <li className="flex items-center gap-2 text-xs font-bold text-slate-400 pb-1 border-b border-slate-100">
-              <span className="flex-1 min-w-0">부서</span>
-              <span className="w-16 text-right whitespace-nowrap">보도자료</span>
-              <span className="w-16 text-right whitespace-nowrap">게재 기사</span>
-            </li>
-            {deptStats.map((d) => (
-              <li key={d.name} className="flex items-center gap-2 text-sm">
-                <span className="flex-1 min-w-0 truncate text-slate-700">{d.name}</span>
-                <span className="w-16 text-right font-bold text-slate-900 tabular-nums whitespace-nowrap">
-                  {d.releaseCount}건
-                </span>
-                <span className="w-16 text-right text-slate-500 tabular-nums whitespace-nowrap">
-                  {d.articleCount}건
-                </span>
-              </li>
-            ))}
-          </ul>
+          {donutData.total ? (
+            <div className="flex flex-wrap items-center gap-4">
+              <svg viewBox="0 0 120 120" className="w-36 h-36 shrink-0" role="img" aria-label="부서별 보도자료 비중">
+                {donutData.slices.map((sl) => (
+                  <circle
+                    key={sl.name}
+                    cx="60" cy="60" r="46" fill="none"
+                    stroke={sl.color} strokeWidth="20"
+                    strokeDasharray={`${sl.length} ${DONUT_CIRC - sl.length}`}
+                    strokeDashoffset={-sl.offset}
+                    transform="rotate(-90 60 60)"
+                  >
+                    <title>{`${sl.name} ${sl.count}건`}</title>
+                  </circle>
+                ))}
+                <text x="60" y="57" textAnchor="middle" className="fill-slate-900" fontSize="15" fontWeight="700">
+                  {donutData.total}건
+                </text>
+                <text x="60" y="72" textAnchor="middle" className="fill-slate-400" fontSize="9">
+                  보도자료
+                </text>
+              </svg>
+              <ul className="flex-1 min-w-[150px] space-y-1">
+                {donutData.slices.map((sl) => (
+                  <li key={sl.name} className="flex items-center gap-2 text-sm">
+                    <span className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ background: sl.color }} aria-hidden />
+                    <span className="flex-1 min-w-0 truncate text-slate-700">{sl.name}</span>
+                    <span className="font-bold text-slate-900 tabular-nums">{sl.count}건</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : (
+            <p className="text-sm text-slate-400 py-8 text-center">표시할 자료가 없습니다.</p>
+          )}
           <p className="mt-3 text-xs text-slate-400 break-keep">
             부서는 보도자료 게시판에 표시된 담당 부서를 따릅니다.
           </p>
-            </section>
+        </section>
             </div>
           </div>
         )}
