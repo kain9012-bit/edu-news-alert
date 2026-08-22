@@ -297,13 +297,13 @@ export function CoverageTab() {
         {statsOpen && (
           <div className="mt-3">
             <div className="grid gap-4 sm:grid-cols-2">
-        <section className="bg-white border border-slate-200 rounded-xl p-4">
+        <section className="bg-white border border-slate-200 rounded-xl p-4 flex flex-col">
           <h2 className="text-sm font-bold text-blue-700 border-b-2 border-blue-100 pb-1.5 mb-3">
             일별 보도자료 수 추이
           </h2>
           {dailyStats.length ? (
-            <div>
-              <div className="relative h-36 w-full">
+            <div className="flex-1 flex flex-col">
+              <div className="relative flex-1 min-h-36 w-full">
                 {/* 그래프 본체: 패널 폭에 맞춰 늘어난다 */}
                 <svg
                   viewBox="0 0 100 100"
@@ -372,7 +372,7 @@ export function CoverageTab() {
                 )}
               </div>
               {/* 날짜 라벨(월요일) */}
-              <div className="relative h-4 w-full mt-1">
+              <div className="relative h-4 w-full mt-1 shrink-0">
                 {dailyStats.map((d, i) =>
                   d.monday ? (
                     <span
