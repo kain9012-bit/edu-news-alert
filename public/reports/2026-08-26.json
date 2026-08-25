@@ -1,0 +1,810 @@
+{
+  "metadata": {
+    "reportId": "20260825T215705Z-30e210de",
+    "title": "오늘의 교육동향",
+    "status": "completed",
+    "generatedAt": "2026-08-25T21:57:05+00:00",
+    "windowStart": "2026-08-25T06:00:00+09:00",
+    "windowEnd": "2026-08-26T06:00:00+09:00",
+    "windowHours": 24,
+    "selectionRunId": "20260825T215123Z-dead5c22",
+    "sourceCount": 19,
+    "eligibleCount": 15,
+    "publishedCount": 15,
+    "omittedCount": 0,
+    "ownOfficeEligibleCount": 4,
+    "ownOfficePublishedCount": 4,
+    "qualityExcludedCount": 0,
+    "factModel": "gemini-3.1-flash-lite",
+    "analysisModel": "gemini-3.5-flash",
+    "verifierModel": "gemini-3.1-flash-lite",
+    "summaryOnlyCount": 0,
+    "ownOfficeReviewCount": 0,
+    "usage": {
+      "stages": {
+        "facts": {
+          "model": "gemini-3.1-flash-lite",
+          "requests": 5,
+          "promptTokenCount": 15560,
+          "candidatesTokenCount": 4465,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 20025
+        },
+        "analysis": {
+          "model": "gemini-3.5-flash",
+          "requests": 4,
+          "promptTokenCount": 5608,
+          "candidatesTokenCount": 3017,
+          "thoughtsTokenCount": 8679,
+          "totalTokenCount": 17304
+        },
+        "verification": {
+          "model": "gemini-3.1-flash-lite",
+          "requests": 5,
+          "promptTokenCount": 19283,
+          "candidatesTokenCount": 1084,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 20367
+        }
+      },
+      "total": {
+        "requests": 14,
+        "promptTokenCount": 40451,
+        "candidatesTokenCount": 8566,
+        "thoughtsTokenCount": 8679,
+        "totalTokenCount": 57696
+      }
+    },
+    "estimatedCostUsd": 0.13071
+  },
+  "items": [
+    {
+      "newsId": "jeju-4ea9256056edcf70",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "“교육재정 축소·교육자치 훼손”, 교육교부금 개편안 철회 촉구",
+      "date": "2026-08-25",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1477992",
+      "category": "정책·행정",
+      "importance": 4,
+      "selectionReason": "지방교육재정교부금 개편이라는 교육청 차원의 주요 정책 및 예산 관련 대응 자료입니다.",
+      "summaryPoints": [
+        "정부의 지방교육재정교부금 개편안 철회를 촉구함",
+        "교부금 규모가 100조 원에서 80조 원으로 20조 원 감소할 것으로 전망됨",
+        "정부는 감소분을 미래대응기금으로 적립하여 생애주기 교육에 재투자할 계획임",
+        "대한민국교육감협의회는 시도교육감이 참여하는 공식 협의체 구성을 요구함"
+      ],
+      "analysisPoints": [
+        "정부의 지방교육재정교부금 개편안에 따른 교육재정 축소 우려가 전국적으로 확산되는 추세임",
+        "교부금 감소분을 미래대응기금으로 적립하여 영유아 및 고등교육에 재투자하려는 정부 방침과 시도교육청 간의 입장 차이가 존재함",
+        "대한민국교육감협의회를 중심으로 시도교육감이 참여하는 공식 협의체 구성을 요구하는 등 공동 대응 움직임이 강화됨"
+      ],
+      "applicationReviewPoints": [
+        "지방교육재정교부금 개편에 따른 재정적 영향력을 분석하고 타 시도교육청과의 공동 대응 방안을 검토할 수 있음",
+        "교육재정 축소 우려에 대비하여 자체 재원 운용의 효율성을 높이는 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "정부의 교육교부금 개편안으로 교부금 규모가 20조 원 감소할 것으로 예상됨",
+        "정부는 감소분을 미래대응기금으로 적립하여 영유아 및 고등교육 등에 재투자할 방침임",
+        "대한민국교육감협의회는 2026년 8월 25일 국회에서 긴급 기자회견을 개최함",
+        "시도교육감들은 지방교육재정 개편 절대 반대 성명서를 발표함",
+        "교육감들은 시도교육감이 참여하는 공식 협의체 구성을 요구함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "gyeongnam-f372ae1bd98ba49a",
+      "sourceId": "gyeongnam",
+      "source": "경상남도교육청",
+      "title": "경남교육청, 교육재정 근간 흔드는 교부금 개편안 즉각 철회 촉구",
+      "date": "2026-08-25",
+      "url": "https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&q_bbsDocNo=20260825144355705",
+      "category": "정책·행정",
+      "importance": 4,
+      "selectionReason": "지방교육재정교부금 개편에 대한 교육청 차원의 공식적인 정책 대응 및 입장 표명 자료입니다.",
+      "summaryPoints": [
+        "학생 수 감소를 근거로 한 교육재정 축소에 반대함",
+        "내국세 연동률 20.79% 유지를 요구함",
+        "소규모 학교의 존립 위기와 지역 간 교육 격차 심화를 우려함",
+        "AI 디지털 교육 등 새로운 교육 수요 증가로 안정적 재정 확보가 필수적임"
+      ],
+      "analysisPoints": [
+        "학령인구 감소에도 불구하고 소규모 학교 유지 비용, 인건비 등 고정 비용과 AI 디지털 교육 등 신규 교육 수요로 인해 안정적 재정 확보가 필수적임",
+        "내국세 연동률 유지를 요구하며 지역 간 교육 격차 심화 및 소규모 학교 존립 위기를 우려하는 목소리가 높음"
+      ],
+      "applicationReviewPoints": [
+        "소규모 학교 비율 및 고정 비용 현황을 파악하여 중장기 재정 수요 전망에 반영하는 방안을 검토할 수 있음",
+        "AI 디지털 교육 및 돌봄 등 신규 교육 수요 증가에 따른 안정적 재원 확보 대책을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "경상남도교육청은 지방교육재정교부금 개편안의 즉각 철회를 촉구함",
+        "현행 내국세 연동률 20.79% 유지를 요구함",
+        "경남 지역 전체 학교 중 전교생 60명 이하 소규모 학교 비율은 26.8%임",
+        "학령인구 감소에도 불구하고 학교 운영비와 인건비 등 기본 수요는 지속됨",
+        "AI 디지털 교육 및 돌봄 등 새로운 교육 수요가 확대되고 있음"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeju-30556e8784447744",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "수업 중 스마트폰은 잠시 멈춤! 배움에는 더 집중!",
+      "date": "2026-08-25",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1477967",
+      "category": "정책·행정",
+      "importance": 4,
+      "selectionReason": "교육청 차원의 학생 생활지도 및 학칙 개정 등 제도적 변화가 적용되는 정책 자료입니다.",
+      "summaryPoints": [
+        "9월 1일부터 수업 중 스마트기기 사용 제한을 시행함",
+        "초중등교육법 제20조의5에 따라 수업 중 휴대전화 사용이 금지됨",
+        "장애나 교육 목적, 긴급 상황 등 법령이 정한 예외적인 경우 사용이 가능함",
+        "학교별로 학생생활규정에 스마트기기 사용 기준을 반영함"
+      ],
+      "analysisPoints": [
+        "초중등교육법 개정에 따라 수업 중 스마트기기 사용 제한을 학칙에 반영하는 제도적 정비가 추진되고 있음",
+        "학습권 및 교육활동 보호를 목적으로 하면서도 예외적 허용 기준 마련과 디지털 시민성 교육을 병행하는 균형적 접근이 이루어짐"
+      ],
+      "applicationReviewPoints": [
+        "초중등교육법 개정에 따른 수업 중 스마트기기 사용 제한 기준의 학칙 반영 현황을 점검하고 보완책을 검토할 수 있음",
+        "스마트기기 사용 제한과 연계하여 학생의 자기조절 역량 및 디지털 시민성 교육 프로그램 도입을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "제주특별자치도교육청은 2026년 9월 1일부터 수업 중 스마트기기 사용 제한을 시행함",
+        "초중등교육법 제20조의5 개정에 따른 조치임",
+        "도내 모든 학교는 8월 31일까지 학칙에 스마트기기 사용 제한 기준을 반영함",
+        "학생의 학습권 보호와 교원의 교육활동 보호를 목적으로 함",
+        "학생의 자기조절 역량과 디지털 시민성 함양 교육을 병행할 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "chungnam-a418a5845e514740",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "이병도 충남교육감, 교부금법 개편 전면 재검토 강력 요구",
+      "date": "2026-08-25",
+      "url": "http://news.cne.go.kr/boardCnts/view.do?boardSeq=2372621&boardID=1003&m=0401&s=news&lev=0&searchType=null&statusYN=W&page=1&opType=N",
+      "category": "정책·행정",
+      "importance": 4,
+      "selectionReason": "지방교육재정교부금법 개편이라는 교육 재정 정책의 핵심 사안에 대한 교육청의 공식 입장과 대응을 다루고 있습니다.",
+      "summaryPoints": [
+        "지방교육재정교부금법 개편안의 전면 재검토를 요구함",
+        "내국세 20.79% 연동제 폐지가 지방 교육 기반을 흔들 것이라고 주장함",
+        "일반지방자치단체와 시도교육청 간 재정지원 방식의 형평성 문제를 지적함",
+        "미래대응기금을 교육자치의 재정 보전으로 활용할 수 없다는 입장을 밝힘"
+      ],
+      "analysisPoints": [
+        "도농복합 지역의 특성상 학교 신증설 수요와 농산어촌 교육여건 유지 수요가 동시에 존재하여 재정 압박이 가중될 수 있음",
+        "미래대응기금이 목적성 재원으로 제한되어 교육자치의 자율적 재원 활용을 저해할 수 있다는 우려가 제기됨"
+      ],
+      "applicationReviewPoints": [
+        "도농복합 지역 특성에 따른 학교 신증설 및 농산어촌 교육여건 유지 수요를 분석하여 재정 계획 수립 시 참고할 필요가 있음",
+        "목적성 재원 확대에 따른 교육자치 재정 운용의 자율성 확보 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "충청남도교육청은 지방교육재정교부금 개편안에 대해 전면 재검토를 요구함",
+        "내국세 20.79% 연동구조 폐지에 대해 강력히 반대함",
+        "충남은 도농복합 지역으로 학교 신증설 수요와 농산어촌 교육여건 유지 수요가 공존함",
+        "미래대응기금은 목적성 재원으로 교육자치의 여건에 맞게 활용될 수 없다고 주장함",
+        "교육 현장의 인건비와 물가 상승으로 인해 안정적인 재정 증가가 필요함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "chungbuk-9f97d5f1e9c393c9",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "충북교육청, 제2기 공감동행교육 위한 조직개편 본격 추진",
+      "date": "2026-08-25",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1577870&bbsId=1158&mi=10301",
+      "category": "정책·행정",
+      "importance": 4,
+      "selectionReason": "교육청 조직체계 개편 및 기능 재정립에 관한 정책적 변화를 다루고 있습니다.",
+      "summaryPoints": [
+        "2027년 3월 1일 자 조직개편 추진",
+        "안전국 신설 및 미래교육·공교육 책임제 강화",
+        "본청은 기획·총괄, 직속기관은 역할 재정립, 교육지원청은 현장 지원 중심으로 기능 재편",
+        "조직개편추진단 구성 및 현장 의견 수렴"
+      ],
+      "analysisPoints": [
+        "안전 컨트롤 타워 구축을 통한 교육 안전망 강화 및 본청·직속기관·교육지원청의 기능 재정립을 목표로 함",
+        "대규모 조직개편추진단 구성을 통해 현장 의견을 수렴하고 체계적인 조직 개편을 도모함"
+      ],
+      "applicationReviewPoints": [
+        "본청의 기획·총괄 기능과 교육지원청의 현장 지원 중심 기능 재편 사례를 비교해 볼 수 있음",
+        "안전 컨트롤 타워 구축을 위한 안전국 신설 방안을 검토해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "충청북도교육청 2027년 3월 1일 자 조직개편 추진",
+        "제2기 공감동행교육 5대 핵심가치 교육행정 구현",
+        "안전 컨트롤 타워인 안전국 구축",
+        "조직개편추진단 63명 구성",
+        "부교육감 직무대리(기획국장) 단장 임명"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongbuk-49f5b9d05f5b37de",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[유초등교육과]경북교육청, 유보통합 대비 보육업무 실무 안내서 발간",
+      "date": "2026-08-25",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1638613&bbsId=4744&mi=17643&searchCate=761",
+      "category": "정책·행정",
+      "importance": 3,
+      "selectionReason": "유보통합은 정부 핵심 국정과제이며, 이를 위한 실무 안내서 발간은 제도 안착을 위한 행정 체계 변화의 일환임.",
+      "summaryPoints": [
+        "유보통합 대비 보육업무 실무 안내서 2종 발간",
+        "보육업무 담당자의 전문성 및 업무 일관성 제고",
+        "경북형 웍스 AI를 활용해 자료 제작 효율성 및 완성도 향상",
+        "지자체 협업을 통한 현장 중심의 실무 사례 반영"
+      ],
+      "analysisPoints": [
+        "유보통합에 대비하여 지자체와의 협업을 통해 실무 중심의 안내서를 선제적으로 제작 및 배포함",
+        "자체 AI 기술을 활용하여 법령 및 지침 정리의 효율성과 완성도를 높임"
+      ],
+      "applicationReviewPoints": [
+        "유보통합 대비 보육업무 및 어린이집 현지조사 실무 안내서 제작 시 지자체 협업 방식을 참고할 수 있음",
+        "안내서 제작 과정에서 AI 기술을 활용하여 업무 효율성을 높이는 방안을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "보육업무 첫걸음 및 어린이집 현지조사 실무 안내서 발간",
+        "어린이집 현지조사 실무 안내서는 전국 시도교육청 최초 발간",
+        "경북형 웍스 AI를 활용한 법령 및 지침 정리",
+        "안동시 보육업무 담당자 집필 및 편집 참여",
+        "교육부 및 전국 시도교육청, 도내 교육지원청 배부"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongnam-932eb5a9238cd50a",
+      "sourceId": "gyeongnam",
+      "source": "경상남도교육청",
+      "title": "교육공무직원 ‘급여 통합 지급 연수’ 개최",
+      "date": "2026-08-25",
+      "url": "https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&q_bbsDocNo=20260825145334594",
+      "category": "교원·인사",
+      "importance": 3,
+      "selectionReason": "교육공무직원 급여 통합 지급 제도라는 교육청 차원의 행정 체계 및 제도 변화를 다루고 있습니다.",
+      "summaryPoints": [
+        "교육공무직원 급여 통합 지급 제도 9월 전 지역 확대 시행",
+        "학교 행정 부담 경감 및 급여 산정 정확성 제고",
+        "담당자 역량 강화를 위한 실무 연수 개최"
+      ],
+      "analysisPoints": [
+        "도교육청 차원의 급여 일괄 산정 및 지급을 통해 학교 현장의 행정 업무 부담을 경감하고자 함",
+        "제도 확대에 맞춰 담당자 대상 실무 연수를 실시하여 급여 산정의 정확성과 업무 역량을 제고함"
+      ],
+      "applicationReviewPoints": [
+        "학교 행정 부담 경감을 위한 교육공무직원 급여 통합 지급 제도의 도입 타당성을 검토해 볼 수 있음",
+        "급여 통합 지급 도입 시 담당자 역량 강화를 위한 실무 연수 프로그램을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "2026년 8월 24일, 25일, 27일 교육공무직원 급여업무 담당자 연수 실시",
+        "교육공무직원 급여 통합 지급 제도 9월 도내 전역 확대",
+        "연수 내용에 엑셀 활용법 및 나이스 처리 절차 포함",
+        "도교육청이 급여를 일괄 산정 및 지급하는 방식"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungnam-f58759b32ec6645f",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, 교권보호 통합지원 체계 구축",
+      "date": "2026-08-25",
+      "url": "http://news.cne.go.kr/boardCnts/view.do?boardSeq=2372618&boardID=1003&m=0401&s=news&lev=0&searchType=null&statusYN=W&page=1&opType=N",
+      "category": "교원·인사",
+      "importance": 3,
+      "selectionReason": "교육청 차원의 교권보호 통합지원 체계 구축이라는 제도적 변화를 다루고 있어 정책적 파급력이 큽니다.",
+      "summaryPoints": [
+        "9월 1일 교권보호관 출범 및 통합지원 체계 구축",
+        "신고부터 사후관리까지 원스톱 지원 시스템 마련",
+        "사안별 신속 대응 및 전담보호관제 도입",
+        "사안조사관 및 갈등조정관 제도 신설"
+      ],
+      "analysisPoints": [
+        "교권보호관 출범 및 24시간 신고 체계 구축을 통해 교권 침해 사안에 대한 원스톱 지원 체계를 마련함",
+        "1:1 지정 보호관, 사안조사관, 갈등조정관 등 전문 인력을 활용하여 신속하고 체계적인 대응을 도모함",
+        "학부모 특별교육 미이수자 과태료 부과 및 구상권 행사 등 엄정한 법적 조치를 병행함"
+      ],
+      "applicationReviewPoints": [
+        "교권 침해 사안에 신속히 대응하기 위한 24시간 신고 접수 및 즉시 출동 체계 구축 방안을 검토할 수 있음",
+        "1:1 지정 보호관 및 사안조사관, 갈등조정관 제도 도입의 실효성을 확인해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "충청남도교육청 9월 1일 교권보호관 출범",
+        "24시간 연중 신고 접수 체계 운영",
+        "폭행 등 신변위협 사안 즉시 출동 원칙",
+        "피해 교원 대상 1:1 지정 보호관 배정",
+        "학부모 특별교육 미이수자 과태료 부과",
+        "교원 귀책 사유 시 구상권 행사"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungbuk-d341400119c4bc86",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "충북교육청, 교육회복지원추진단 워크숍 개최",
+      "date": "2026-08-25",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1577905&bbsId=1158&mi=10301",
+      "category": "교원·인사",
+      "importance": 3,
+      "selectionReason": "교육활동 보호를 위한 추진단 구성 및 향후 정책 개선을 위한 제도적 기반 마련 소식입니다.",
+      "summaryPoints": [
+        "충북교육청이 교육회복지원추진단을 공식 출범하고 워크숍을 개최함",
+        "추진단은 부교육감을 단장으로 교원, 학부모, 변호사 등 100명으로 구성됨",
+        "2027년 2월까지 교육활동 보호 현장 지원, 모니터링, 갈등 조정 등을 수행할 예정임",
+        "워크숍에서 교육활동 보호 관련 법령 특강과 운영 방향 안내가 이루어짐"
+      ],
+      "analysisPoints": [
+        "교육활동 보호를 위해 교원, 학부모, 변호사 등 다양한 주체가 참여하는 대규모 추진단을 구성하여 현장 지원 체계를 강화함.",
+        "추진단을 현장지원단, 모니터링단, 교육공감지원단으로 세분화하여 다각적인 지원 및 갈등 조정 역할을 수행하도록 설계함.",
+        "교육활동보호센터가 총괄 운영을 맡아 정책 추진의 전문성과 일관성을 확보하고자 함."
+      ],
+      "applicationReviewPoints": [
+        "교육활동 보호 및 갈등 조정을 위한 다기능 추진단 구성 방식과 세부 조직의 운영 체계를 비교해 볼 수 있음.",
+        "교육활동보호센터 중심의 총괄 운영 방식과 현장 지원 연계 방안을 검토할 필요가 있음."
+      ],
+      "sourceFacts": [
+        "충북교육청 교육회복지원추진단 100명 구성",
+        "추진단 활동 기간은 2027년 2월까지임",
+        "추진단은 현장지원단, 모니터링단, 교육공감지원단으로 나뉨",
+        "교육활동보호센터가 추진단 운영 및 업무를 총괄함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongbuk-47a950760b073196",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[행정과]경북교육청, 상희학교 이전 설립 본격 추진",
+      "date": "2026-08-25",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1638603&bbsId=4744&mi=17643&searchCate=761",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "특수학교 이전 설립은 교육청 차원의 대규모 교육환경 개선 및 교육과정 운영을 위한 정책적 사업에 해당함.",
+      "summaryPoints": [
+        "경북교육청이 상희학교의 노후 시설 개선과 교육환경 조성을 위해 이전 설립을 추진함",
+        "상주시 성동동 일원으로 이전하며 2031년 3월 개교를 목표로 함",
+        "유치원부터 전공과까지 25학급, 학생 150명 규모로 설립될 예정임",
+        "올해 하반기 주민설명회를 개최하여 지역사회와 소통할 계획임"
+      ],
+      "analysisPoints": [
+        "특수학교의 노후 시설 개선과 교육환경 조성을 위해 장기적인 이전 설립 계획을 추진함.",
+        "단순 교실 확충을 넘어 자립생활교육관 및 카페 등 실습·체험형 교육공간을 함께 마련하여 장애학생의 자립 교육을 강화하고자 함."
+      ],
+      "applicationReviewPoints": [
+        "특수학교 이전 또는 신설 시 자립생활교육관이나 실습용 카페 등 맞춤형 교육공간을 통합 구축하는 방안을 참고해 볼 수 있음."
+      ],
+      "sourceFacts": [
+        "상희학교 이전 예정지는 상주시 성동동 일원임",
+        "2031년 3월 개교 목표",
+        "25학급, 학생 150명 규모로 조성",
+        "자립생활교육관 꿈담채 및 감나무카페 등 교육공간 마련 예정"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "busan-a64b8756f1bf5b8c",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "부산교육청, 초등 수업혁신 정책 포럼 개최",
+      "date": "2026-08-25",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1178621&bbsId=2286&mi=30397",
+      "category": "교육과정·수업",
+      "importance": 2,
+      "selectionReason": "교육청 본청이 주관하는 수업 혁신 및 정책 과제 모색을 위한 포럼으로 교육 정책 방향과 관련됨.",
+      "summaryPoints": [
+        "부산교육청이 초등 수업혁신 지원을 위해 수리력 보장 정책 포럼을 개최함",
+        "8월 27일 부산교대 참빛극장에서 초등 교원 및 교육전문직원 200여 명을 대상으로 진행함",
+        "수리력의 의미와 학생 수리력 보장을 위한 학교 관리자 및 교사의 역할을 논의함",
+        "질문과 탐구 중심의 수학 수업 사례와 진단도구 개발 경험을 공유할 예정임"
+      ],
+      "analysisPoints": [
+        "초등 단계에서의 수리력 보장을 위해 학계 전문가와 교육 현장이 참여하는 정책 논의의 장을 마련함.",
+        "수리력 보장 책무성, 질문과 탐구 중심의 수업, 지원체계 구축 등 다각적인 관점에서 초등 수학 교육의 혁신 방향을 모색함."
+      ],
+      "applicationReviewPoints": [
+        "기초학력 보장 차원에서 초등학생의 수리력 향상을 위한 포럼 개최 및 질문·탐구 중심의 수학 수업 지원 방안을 검토할 필요가 있음."
+      ],
+      "sourceFacts": [
+        "포럼 주제는 세상을 이해하는 아름다운 언어, 수학을 만나다임",
+        "기조강연은 카이스트 김재경 교수가 진행함",
+        "패널토의는 수리력 보장 책무, 질문과 탐구, 지원체계 등 3개 주제로 구성됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jngj_s1n1-cf05056978e44e46",
+      "sourceId": "jngj_s1n1",
+      "source": "전남광주통합특별시교육청",
+      "title": "전남광주교육청, “교육재정 근간 흔드는 교부금법·교육세 개편 절대 반대”",
+      "date": "2026-08-25",
+      "url": "https://www.jngjedu.kr/news/articleView.html?idxno=120003",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "지방교육재정교부금 개편안에 대한 교육감협의회의 공동 대응은 교육행정 전반의 예산 정책과 직결됨.",
+      "summaryPoints": [
+        "전남광주교육청이 정부의 지방교육재정교부금 개편안에 대해 반대 입장을 표명함",
+        "내국세 연동률 폐지 및 학령인구 반영 방식이 교육재정 안정성을 훼손한다고 주장함",
+        "정부의 일방적인 정책 추진과 절차적 정당성 결여를 비판함",
+        "국회 입법 과정 대응을 위해 전담 대응팀을 구성하고 연대 활동을 확대할 계획임"
+      ],
+      "analysisPoints": [
+        "지방교육재정교부금 개편 및 담배소비세분 일몰에 따른 시도교육청의 심각한 재원 감소 우려에 대응하고자 함.",
+        "재정 위기 상황에 체계적으로 대응하기 위해 전담 대응팀을 구성하고 대외 협력 및 연대 활동을 모색함."
+      ],
+      "applicationReviewPoints": [
+        "향후 담배소비세분 일몰 및 교부금 개편에 따른 재정 감소 영향력을 분석하고, 이에 대응하기 위한 자체 전담 대응 체계 마련을 검토할 수 있음."
+      ],
+      "sourceFacts": [
+        "현행 내국세 연동률은 20.79%임",
+        "2027년 교부금 증가분은 인건비 상승분 보전 수준에 그침",
+        "2026년 담배소비세분 일몰로 시도교육청 재원 1조 6천억 원 감소 예정",
+        "전남광주교육청은 재정전략기획담당관을 단장으로 한 전담 대응팀을 구성함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "daejeon-b2124442d91cc4b7",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "지방교육재정교부금 제도 개편 절대 반대 국회 긴급 기자회견(기획예산과)",
+      "date": "2026-08-25",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3361726&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "지방교육재정교부금 제도 개편은 교육청의 예산 및 재정 운영에 직접적인 영향을 미치는 중대한 정책 사안임.",
+      "summaryPoints": [
+        "대전광역시교육감을 포함한 16개 시도교육감들이 지방교육재정교부금 제도 개편에 반대하는 성명을 발표함",
+        "정부의 내국세 20.79% 연동방식 폐지 방침에 대해 국회에서 긴급 기자회견을 개최함"
+      ],
+      "analysisPoints": [
+        "지방교육재정의 안정적 확보를 위한 전국 시도교육감들의 공동 대응 움직임이 강화되고 있음",
+        "정부의 내국세 연동방식 폐지 추진에 따른 교육재정 축소 우려와 이에 대한 선제적 대응 필요성이 대두됨"
+      ],
+      "applicationReviewPoints": [
+        "지방교육재정교부금 제도 개편 움직임에 따른 전북교육재정의 영향도를 분석하고 공동 대응 방안을 검토할 필요가 있음",
+        "향후 재정 여건 변화에 대비한 자체 재원 운용의 효율화 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "오석진 대전광역시교육감은 2026년 8월 25일 오전 11시 국회에서 기자회견을 진행함",
+        "대한민국교육감협의회 명의로 지방교육재정교부금 개편 반대 성명서를 발표함",
+        "정부의 지방교육재정교부금 개편안은 내국세 20.79% 연동방식 폐지를 포함함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungbuk-9efa860defbdb605",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "충북교육청, 신학기 식중독 예방 학교급식 안전관리 총력",
+      "date": "2026-08-25",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1577906&bbsId=1158&mi=10301",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "교육청 차원에서 관내 모든 학교를 대상으로 실시하는 안전 대책 및 위생 관리 강화 정책입니다.",
+      "summaryPoints": [
+        "충청북도교육청이 신학기 식중독 예방을 위해 학교급식 위생 및 안전관리 강화에 나섬",
+        "관내 유치원과 학교를 대상으로 급식시설, 식재료, 조리과정 등에 대한 자체점검을 실시함",
+        "폭염이 지속되는 8~9월 식중독 발생 위험에 대비해 급식 전반의 위생 수칙 준수 여부를 확인함"
+      ],
+      "analysisPoints": [
+        "신학기 시작 및 폭염 지속 시기인 8~9월의 식중독 발생 위험에 대비한 선제적 급식 위생 점검의 중요성이 강조됨",
+        "급식시설뿐만 아니라 식재료 소비기한, 조리기구 구분 사용, 종사자 위생 교육 등 다각적인 안전관리 체계 구축이 요구됨"
+      ],
+      "applicationReviewPoints": [
+        "신학기 및 고온 다습한 시기의 학교급식 위생 점검 항목과 자체 점검 방식을 비교해 볼 수 있음",
+        "식중독 예방을 위한 급식종사자 대상 위생 교육 및 현장 점검 체계를 강화하는 방안을 검토할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "충청북도교육청은 2026년 8월 25일 학교급식 위생관리 강화 방침을 밝힘",
+        "점검 대상은 급식시설 위생, 냉장·냉동고 온도, 식재료 소비기한, 조리기구 구분 사용 등임",
+        "급식종사자의 건강진단, 위생복 착용, 위생교육 실시 여부를 점검함",
+        "8월과 9월은 병원성대장균 및 살모넬라로 인한 식중독 위험이 높은 시기임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungbuk-114f3661242e0d88",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "충북교육청, 하반기 학생 생활교육 내실화 나선다",
+      "date": "2026-08-25",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1577868&bbsId=1158&mi=10301",
+      "category": "학생지원·복지",
+      "importance": 2,
+      "selectionReason": "교육청 차원의 학생 생활교육 정책 추진 방향과 주요 업무를 안내하는 정책성 자료입니다.",
+      "summaryPoints": [
+        "충청북도교육청이 학교폭력 담당 교사 및 업무 담당자를 대상으로 하반기 학생 생활교육 설명회를 개최함",
+        "학생생활규정 개정, 학교폭력 예방, 학업중단 예방 등 주요 업무 추진 방향을 공유함",
+        "학교 현장의 갈등 해결과 관계 회복을 위한 숙려제도 및 사회정서교육 운영 방안을 안내함"
+      ],
+      "analysisPoints": [
+        "학교폭력 예방 및 사후 처리를 넘어 관계 회복과 사회정서교육을 통한 근본적인 갈등 해결로의 정책 패러다임 변화를 보여줌",
+        "현장 담당자 대상 대규모 설명회를 통해 학생생활규정 개정, 도박 예방, CCTV 운영 등 다각적인 생활지도 현안을 신속히 공유함"
+      ],
+      "applicationReviewPoints": [
+        "관계 회복을 위한 숙려제도 및 사회정서교육 프로그램의 전북교육 현장 적용 가능성을 검토할 필요가 있음",
+        "학교폭력 담당 교사 및 업무 담당자의 역량 강화를 위한 하반기 소통 및 연수 운영 방식을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "2026년 8월 25일 교육연구정보원에서 설명회가 개최됨",
+        "참석 대상은 각급 학교 학교폭력 담당 교사와 교육지원청 업무 담당자 500여 명임",
+        "주요 안내 사항에는 학교 내 CCTV 운영, 언어문화 개선, 학생 도박 예방교육 등이 포함됨",
+        "충북형 사회정서교육 운영 방향과 학교폭력 관계회복 숙려제도 안착 방안을 논의함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "ownOfficeItems": [
+    {
+      "newsId": "jeonbuk-759e27c8ba858841",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "특수학급 설치 사전예고제 시행 설명회 개최",
+      "date": "2026-08-25",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1168499",
+      "summaryPoints": [
+        "2027학년도 특수학급 설치 사전예고제 시행을 위한 설명회를 26일 개최함",
+        "대상 학교장 및 교육지원청 담당자를 대상으로 설치 절차와 예산 등을 안내할 예정임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-1a9b2b9c5dfa7046",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "전북교육청, 계약담당자 역량 강화 연수 실시",
+      "date": "2026-08-25",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1168497",
+      "summaryPoints": [
+        "본청 및 지역교육청 계약담당자 60여 명을 대상으로 하반기 역량 강화 연수를 실시함",
+        "계약 실무 및 관련 법령 교육을 통해 계약 업무의 공정성과 투명성을 제고할 예정임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-ec95a6f549f73543",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "종합청렴도 1등급 달성을 위한 최종 성과 점검",
+      "date": "2026-08-25",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1168671",
+      "summaryPoints": [
+        "종합청렴도 1등급 달성을 위해 반부패 청렴정책 추진단 회의를 개최하고 성과를 점검함",
+        "9월 말까지 청렴정책 과제 이행률 100%를 달성하고 현장 체감형 정책을 지속 추진할 예정임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-861ca3c49d6eedb4",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "민주시민역량 지표 개발 본격화… 학술적 기반 확보",
+      "date": "2026-08-25",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1168501",
+      "summaryPoints": [
+        "전북형 민주시민역량 지표 개발을 위한 1단계 실증연구인 예비문항 진단을 완료함",
+        "연구 결과를 바탕으로 전문가 검토를 거쳐 2027년 2월까지 지표를 확정할 예정임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "omittedItems": [],
+  "validation": {
+    "status": "PASS",
+    "issues": [],
+    "checks": {
+      "ownOfficeExcludedFromTrendAnalysis": true,
+      "ownOfficeAllIncluded": true,
+      "ownOfficeSummariesVerified": true,
+      "publishedItemsVerified": true,
+      "sourceWindowMatches": true
+    }
+  },
+  "providerErrors": {
+    "facts": [],
+    "ownOfficeSummaries": [],
+    "analysis": [],
+    "verification": [],
+    "repairs": [],
+    "repairVerifications": []
+  },
+  "trace": [
+    {
+      "step": "extract_facts",
+      "status": "success",
+      "startedAt": "2026-08-25T21:56:00+00:00",
+      "durationMs": 15573
+    },
+    {
+      "step": "summarize_own_office",
+      "status": "success",
+      "startedAt": "2026-08-25T21:56:15+00:00",
+      "durationMs": 2056
+    },
+    {
+      "step": "analyze_trends",
+      "status": "success",
+      "startedAt": "2026-08-25T21:56:17+00:00",
+      "durationMs": 42200
+    },
+    {
+      "step": "verify_report",
+      "status": "success",
+      "startedAt": "2026-08-25T21:57:00+00:00",
+      "durationMs": 5739
+    }
+  ],
+  "rendering": {
+    "canonical": "json",
+    "html": "오늘의 교육동향 (20260826).html",
+    "hwpx": "오늘의 교육동향 (20260826).hwpx",
+    "hwpxValidation": {
+      "hardGates": {
+        "package_validation": "pass",
+        "document_errors": "pass",
+        "schema_lint": "pass",
+        "reopen": "pass",
+        "editor_open_safety": "pass",
+        "id_integrity": "pass"
+      },
+      "packageOk": true,
+      "documentOk": true,
+      "reopenedOk": true,
+      "visualReviewRequired": true
+    }
+  }
+}
