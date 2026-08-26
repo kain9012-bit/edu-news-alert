@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>오늘의 교육동향 2026. 8. 27. (목)</title>
+<style>
+:root { color-scheme: light; --ink:#17202a; --muted:#5d6875; --line:#d7dde3; --teal:#087f73; --teal-soft:#e9f6f3; --amber:#a96800; --amber-soft:#fff6df; --paper:#ffffff; --page:#eef1f3; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--page); color:var(--ink); font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; line-height:1.72; letter-spacing:0; }
+a { color:inherit; }
+.report { width:min(960px,100%); margin:0 auto; background:var(--paper); min-height:100vh; box-shadow:0 0 28px rgba(18,31,43,.08); }
+header { padding:52px 64px 40px; border-top:7px solid var(--teal); border-bottom:1px solid var(--line); }
+.kicker { margin:0 0 8px; color:var(--teal); font-weight:700; font-size:14px; }
+h1 { margin:0; font-family:"Nanum Myeongjo","Batang",serif; font-size:42px; line-height:1.25; letter-spacing:0; }
+.report-date { margin:16px 0 0; font-size:18px; font-weight:700; }
+.period { margin:4px 0 0; color:var(--muted); font-size:13px; overflow-wrap:anywhere; }
+.summary-strip { display:flex; gap:24px; padding:18px 64px; border-bottom:1px solid var(--line); font-size:14px; color:var(--muted); }
+.summary-strip strong { color:var(--ink); margin-left:5px; }
+nav { padding:34px 64px 44px; border-bottom:1px solid var(--line); }
+nav h2 { margin:0 0 15px; font-size:18px; }
+.toc-group + .toc-group { margin-top:24px; padding-top:20px; border-top:1px solid var(--line); }
+nav h3 { margin:0 0 10px; font-size:15px; }
+nav h3 a { text-decoration:none; }
+nav ol { columns:2; column-gap:40px; margin:0; padding:0; list-style:none; }
+nav li { break-inside:avoid; margin:0 0 10px; font-size:14px; line-height:1.45; }
+nav a { text-decoration:none; }
+nav a:hover { color:var(--teal); text-decoration:underline; }
+nav li span { color:var(--teal); font-weight:800; margin-right:5px; }
+.toc-region { color:var(--muted); font-weight:700; }
+.toc-controller { display:none; }
+@media (min-width:1700px) {
+  .toc-controller { position:fixed; z-index:40; top:24px; bottom:24px; left:calc(50% - 828px); width:324px; display:flex; flex-direction:column; overflow:hidden; background:rgba(255,255,255,.98); border:1px solid var(--line); border-radius:8px; box-shadow:0 8px 24px rgba(18,31,43,.10); }
+  .toc-controller-home { display:block; flex:0 0 auto; padding:15px 16px 13px; border-bottom:1px solid var(--line); color:var(--teal); font-size:14px; font-weight:800; text-decoration:none; }
+  .toc-controller-home:hover { background:var(--teal-soft); }
+  .toc-controller-scroll { min-height:0; overflow-y:auto; padding:12px 0 16px; scrollbar-color:#aab5bd transparent; scrollbar-width:thin; }
+  .toc-controller section + section { margin-top:15px; padding-top:13px; border-top:1px solid var(--line); }
+  .toc-controller h2 { margin:0; padding:0 14px 7px; color:var(--muted); font-size:12px; line-height:1.4; }
+  .toc-controller ol { margin:0; padding:0; list-style:none; }
+  .toc-controller li { margin:0; padding:0; }
+  .toc-controller li a { display:grid; grid-template-columns:38px minmax(0,1fr); gap:6px; align-items:start; min-height:38px; padding:7px 12px 7px 11px; border-left:3px solid transparent; color:var(--ink); font-size:12px; line-height:1.35; text-decoration:none; }
+  .toc-controller li a:hover { background:#f3f7f7; color:var(--teal); }
+  .toc-controller li a.active { border-left-color:var(--teal); background:var(--teal-soft); }
+  .controller-number { color:var(--teal); font-weight:800; white-space:nowrap; }
+  .controller-label { min-width:0; overflow:hidden; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow-wrap:anywhere; }
+  .controller-label strong { color:var(--muted); font-weight:700; }
+}
+article { position:relative; padding:52px 64px 58px; border-bottom:10px solid var(--page); scroll-margin-top:12px; }
+.article-number { position:absolute; top:51px; left:19px; color:#9aa5af; font-size:13px; font-weight:800; }
+.eyebrow { margin:0 0 8px; color:var(--teal); font-size:13px; font-weight:800; }
+.article-head h2 { margin:0; font-size:25px; line-height:1.45; letter-spacing:0; overflow-wrap:anywhere; }
+.article-meta { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:14px; color:var(--muted); font-size:13px; }
+.stars { color:var(--amber); letter-spacing:0; font-size:17px; }
+.source-link { color:var(--teal); font-weight:700; text-underline-offset:3px; }
+.report-section { margin-top:34px; padding-top:22px; border-top:1px solid var(--line); }
+.report-section h3 { margin:0 0 12px; font-size:16px; }
+ul { margin:0; padding-left:1.35em; }
+li { margin:7px 0; padding-left:3px; }
+.application { border-top-color:#ead9b3; }
+.application h3 { color:#805200; }
+.review-note { border-top-color:#ead9b3; }
+.review-note h3 { color:#a13d00; }
+.review-note p { margin:0; color:#7a4a1e; }
+.review-badge { display:inline-block; padding:2px 9px; border-radius:11px; background:var(--amber-soft); color:#8a4b00; font-size:12px; font-weight:800; }
+.empty-note { margin:0; color:var(--muted); }
+.empty-report { padding:70px 64px; text-align:center; color:var(--muted); }
+.own-office-section { border-top:12px solid var(--page); scroll-margin-top:12px; }
+.own-office-heading { padding:42px 64px 30px; background:var(--teal-soft); border-bottom:1px solid #c8e5de; }
+.own-office-heading .kicker { margin-bottom:4px; }
+.own-office-heading h2 { margin:0; font-size:28px; line-height:1.4; }
+.own-office-heading p:last-child { margin:8px 0 0; color:var(--muted); font-size:14px; }
+.own-office-article { border-bottom:1px solid var(--line); }
+.own-empty { padding-top:48px; padding-bottom:48px; }
+footer { padding:34px 64px 50px; color:var(--muted); font-size:12px; }
+footer p { margin:4px 0; }
+@media (max-width:700px) {
+  header, nav, article, footer, .own-office-heading { padding-left:24px; padding-right:24px; }
+  h1 { font-size:34px; }
+  .summary-strip { padding-left:24px; padding-right:24px; gap:12px; flex-wrap:wrap; }
+  nav ol { columns:1; }
+  .article-number { position:static; margin-bottom:10px; }
+  .article-head h2 { font-size:21px; }
+}
+.toolbar { position:fixed; top:18px; right:18px; z-index:50; display:flex; gap:8px; }
+.toolbar button { display:inline-flex; align-items:center; gap:6px; padding:9px 14px; border:1px solid var(--teal); border-radius:8px; background:var(--teal); color:#fff; font:inherit; font-size:13px; font-weight:700; cursor:pointer; box-shadow:0 2px 8px rgba(18,31,43,.16); }
+.toolbar button.secondary, .toolbar .tool-link.secondary { background:#fff; color:var(--teal); }
+.toolbar button:hover, .toolbar .tool-link:hover { opacity:.92; }
+.toolbar button, .toolbar .tool-link { white-space:nowrap; }
+.toolbar .tool-link { display:inline-flex; align-items:center; gap:6px; padding:9px 14px; border:1px solid var(--teal); border-radius:8px; background:var(--teal); color:#fff; font:inherit; font-size:13px; font-weight:700; text-decoration:none; cursor:pointer; box-shadow:0 2px 8px rgba(18,31,43,.16); }
+@media (max-width:700px) {
+  .toolbar { top:10px; right:10px; }
+  .toolbar button, .toolbar .tool-link { padding:8px 11px; font-size:12px; }
+  .toolbar .print-tool { display:none !important; }
+}
+@media print {
+  @page { margin:0; }
+  .toolbar { display:none !important; }
+  body { background:#fff; } .report { width:100%; box-shadow:none; }
+  .toc-controller { display:none !important; }
+  header { padding-top:24mm; }
+  article { break-before:page; border-bottom:0; padding-top:18mm; padding-bottom:16mm; }
+  article:first-of-type { break-before:auto; } nav a { text-decoration:none; }
+  nav { break-after:page; page-break-after:always; }
+  nav.toc-compact { padding-top:26px; padding-bottom:30px; }
+  nav.toc-compact h2 { margin-bottom:11px; font-size:17px; }
+  nav.toc-compact .toc-group + .toc-group { margin-top:16px; padding-top:12px; }
+  nav.toc-compact h3 { margin-bottom:7px; font-size:14px; }
+  nav.toc-compact li { margin-bottom:7px; font-size:13px; line-height:1.38; }
+  nav.toc-tight { padding-top:20px; padding-bottom:24px; }
+  nav.toc-tight h2 { margin-bottom:8px; font-size:16px; }
+  nav.toc-tight .toc-group + .toc-group { margin-top:12px; padding-top:10px; }
+  nav.toc-tight h3 { margin-bottom:5px; font-size:13px; }
+  nav.toc-tight li { margin-bottom:5px; font-size:12px; line-height:1.35; }
+  .own-office-section { break-before:page; border-top:0; }
+  .own-office-section article { break-before:auto; }
+  .own-office-heading { break-after:avoid; page-break-after:avoid; }
+  .own-office-page { break-inside:avoid; page-break-inside:avoid; }
+  .own-office-page + .own-office-page { break-before:page; page-break-before:always; }
+  .own-office-article { break-inside:avoid; page-break-inside:avoid; padding-top:10mm; padding-bottom:10mm; }
+  footer { padding-bottom:18mm; }
+}
+</style>
+</head>
+<body>
+<div class="toolbar" role="toolbar" aria-label="문서 도구">
+  <a class="tool-link secondary" href="https://jbe-edu-trends.vercel.app/?tab=reports" target="_blank" rel="noopener noreferrer" title="지난 오늘의 교육동향을 날짜별로 봅니다">🗂 지난 호</a><a class="tool-link secondary" href="https://jbe-edu-trends.vercel.app/?tab=archive" target="_blank" rel="noopener noreferrer" title="교육동향으로 선정되지 않은 자료까지 수집한 전체 보도자료를 봅니다">📰 전체 보도자료</a>
+  <button type="button" class="secondary print-tool" onclick="window.print()" title="인쇄 대화상자를 엽니다">🖨 인쇄</button>
+  <button type="button" class="print-tool" onclick="window.print()" title="인쇄 대화상자에서 '대상'을 'PDF로 저장'으로 선택하세요">📄 PDF 저장</button>
+</div>
+<main class="report">
+<aside class="toc-controller" aria-label="빠른 목차"><a class="toc-controller-home" href="#report-toc">목차</a><div class="toc-controller-scroll"><section><h2>전국 교육동향</h2><ol><li><a href="#item-1" data-report-target="item-1"><span class="controller-number">1</span><span class="controller-label"><strong>(서울)</strong> 「서울특별시 학생인권 조례 폐지 조례안」 재의 부결 서울시교육감 입장 존경하는 서울 시민 여러분, 서울 교육 가족 여러분 오늘 서울시의회는 제가 재의를 요구했던 「서울특별시 학생인권 조례 폐지조례안」을 부결하였습니다. 이에 따라 현행 「서울특별시 학생인권 조례」는 계속 효력을 유지하게 되었습니다. 서울시교육감으로서 이번 결정을 존중하며, 학생의 기본적 권리</span></a></li><li><a href="#item-2" data-report-target="item-2"><span class="controller-number">2</span><span class="controller-label"><strong>(부산)</strong> 부산교육청, 지방교육재정교부금 개편 반대 입장 밝혀</span></a></li><li><a href="#item-3" data-report-target="item-3"><span class="controller-number">3</span><span class="controller-label"><strong>(경북)</strong> [중등교육과]경북교육청, 우석여자고등학교 국제바칼로레아(IB) 디플로마 프로그램(DP) 후보학교 승인</span></a></li><li><a href="#item-4" data-report-target="item-4"><span class="controller-number">4</span><span class="controller-label"><strong>(경북)</strong> [미래학교추진단]경북교육청, 2027년도 공간재구조화사업 대상학교 선정 추진</span></a></li><li><a href="#item-5" data-report-target="item-5"><span class="controller-number">5</span><span class="controller-label"><strong>(경북)</strong> [학생생활과]경북교육청, 학생 마음건강 안전망 강화</span></a></li><li><a href="#item-6" data-report-target="item-6"><span class="controller-number">6</span><span class="controller-label"><strong>(경남)</strong> 경남교육청, 중학교 학부모 대상 고교학점제 설명회 개최</span></a></li><li><a href="#item-7" data-report-target="item-7"><span class="controller-number">7</span><span class="controller-label"><strong>(부산)</strong> 부산학생인성교육원, 리모델링 마치고 새롭게 개원</span></a></li><li><a href="#item-8" data-report-target="item-8"><span class="controller-number">8</span><span class="controller-label"><strong>(서울)</strong> 서울시교육청, 서울시의회 「학생인권 조례 폐지조례안」 재의 부결 환영</span></a></li><li><a href="#item-9" data-report-target="item-9"><span class="controller-number">9</span><span class="controller-label"><strong>(울산)</strong> 울산교육청, 원문 공개율 전국 최고 기록</span></a></li></ol></section><section><h2>전북교육청</h2><ol><li><a href="#own-item-1" data-report-target="own-item-1"><span class="controller-number">1</span><span class="controller-label">2026년 제2회 추경예산 1,415억 원 증액 편성</span></a></li><li><a href="#own-item-2" data-report-target="own-item-2"><span class="controller-number">2</span><span class="controller-label">농촌·국제유학 아우르는 ‘전북유학’ 확대 시동</span></a></li><li><a href="#own-item-3" data-report-target="own-item-3"><span class="controller-number">3</span><span class="controller-label">중대산업재해 비상대응 모의훈련, 신속 대응체계 점검</span></a></li><li><a href="#own-item-4" data-report-target="own-item-4"><span class="controller-number">4</span><span class="controller-label">노동조합과 손잡고 갑질 피해 상담 전문성 높인다</span></a></li></ol></section></div></aside>
+<header>
+  <p class="kicker">전국 교육정책 및 교육행정 동향</p>
+  <h1>오늘의 교육동향</h1>
+  <p class="report-date">2026. 8. 27. (목)</p>
+  <p class="period">분석 대상: 2026. 8. 26. 06:00 ~ 2026. 8. 27. 06:00</p>
+</header>
+<div class="summary-strip">
+  <span>전국 교육동향<strong>9건</strong></span>
+  <span>전북 보도자료<strong>4건</strong></span>
+  <span>작성<strong>gemini-3.5-flash</strong></span>
+  <span>검증<strong>PASS</strong></span>
+</div>
+<nav id="report-toc" class="toc-compact" aria-label="목차"><h2>목차</h2><div class="toc-group"><h3>전국 교육동향</h3><ol><li><a href="#item-1"><span>1.</span> <strong class="toc-region">(서울)</strong> 「서울특별시 학생인권 조례 폐지 조례안」 재의 부결 서울시교육감 입장 존경하는 서울 시민 여러분, 서울 교육 가족 여러분 오늘 서울시의회는 제가 재의를 요구했던 「서울특별시 학생인권 조례 폐지조례안」을 부결하였습니다. 이에 따라 현행 「서울특별시 학생인권 조례」는 계속 효력을 유지하게 되었습니다. 서울시교육감으로서 이번 결정을 존중하며, 학생의 기본적 권리</a></li><li><a href="#item-2"><span>2.</span> <strong class="toc-region">(부산)</strong> 부산교육청, 지방교육재정교부금 개편 반대 입장 밝혀</a></li><li><a href="#item-3"><span>3.</span> <strong class="toc-region">(경북)</strong> [중등교육과]경북교육청, 우석여자고등학교 국제바칼로레아(IB) 디플로마 프로그램(DP) 후보학교 승인</a></li><li><a href="#item-4"><span>4.</span> <strong class="toc-region">(경북)</strong> [미래학교추진단]경북교육청, 2027년도 공간재구조화사업 대상학교 선정 추진</a></li><li><a href="#item-5"><span>5.</span> <strong class="toc-region">(경북)</strong> [학생생활과]경북교육청, 학생 마음건강 안전망 강화</a></li><li><a href="#item-6"><span>6.</span> <strong class="toc-region">(경남)</strong> 경남교육청, 중학교 학부모 대상 고교학점제 설명회 개최</a></li><li><a href="#item-7"><span>7.</span> <strong class="toc-region">(부산)</strong> 부산학생인성교육원, 리모델링 마치고 새롭게 개원</a></li><li><a href="#item-8"><span>8.</span> <strong class="toc-region">(서울)</strong> 서울시교육청, 서울시의회 「학생인권 조례 폐지조례안」 재의 부결 환영</a></li><li><a href="#item-9"><span>9.</span> <strong class="toc-region">(울산)</strong> 울산교육청, 원문 공개율 전국 최고 기록</a></li></ol></div><div class="toc-group"><h3><a href="#own-office">전북교육청 보도자료</a></h3><ol><li><a href="#own-item-1"><span>1.</span> 2026년 제2회 추경예산 1,415억 원 증액 편성</a></li><li><a href="#own-item-2"><span>2.</span> 농촌·국제유학 아우르는 ‘전북유학’ 확대 시동</a></li><li><a href="#own-item-3"><span>3.</span> 중대산업재해 비상대응 모의훈련, 신속 대응체계 점검</a></li><li><a href="#own-item-4"><span>4.</span> 노동조합과 손잡고 갑질 피해 상담 전문성 높인다</a></li></ol></div></nav>
+
+<article id="item-1">
+  <div class="article-number">01</div>
+  <div class="article-head">
+    <p class="eyebrow">서울특별시교육청 · 정책·행정</p>
+    <h2>「서울특별시 학생인권 조례 폐지 조례안」 재의 부결 서울시교육감 입장 존경하는 서울 시민 여러분, 서울 교육 가족 여러분 오늘 서울시의회는 제가 재의를 요구했던 「서울특별시 학생인권 조례 폐지조례안」을 부결하였습니다. 이에 따라 현행 「서울특별시 학생인권 조례」는 계속 효력을 유지하게 되었습니다. 서울시교육감으로서 이번 결정을 존중하며, 학생의 기본적 권리</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 4점">★★★★☆</span>
+      <span>2026-08-26</span>
+      <a class="source-link" href="https://enews.sen.go.kr/news/view.do?bbsSn=192024&amp;step1=3&amp;step2=1" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>서울시의회가 학생인권 조례 폐지조례안을 부결함</li><li>현행 서울특별시 학생인권 조례가 효력을 유지함</li><li>학생과 교원의 권리가 상호 존중받는 학교 문화를 조성할 예정임</li><li>인권친화적 학교공동체를 위해 예방·교육·갈등조정 체계를 강화할 계획임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>학생인권 조례 폐지안 부결에 따라 학생 권리 보장과 교권 존중의 균형을 맞추는 학교 문화 조성 흐름이 지속될 것으로 전망됨</li><li>인권친화적 학교공동체 구축을 위해 교육청과 지방의회 간의 협력적 관계 유지가 중요함을 시사함</li><li>예방, 교육, 갈등조정 체계 강화를 통한 실질적인 학교 내 갈등 해결 방안 모색이 요구됨</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>학생과 교원의 권리가 상호 존중받는 학교 문화 조성을 위한 예방 및 갈등조정 체계를 비교해 볼 수 있음</li><li>인권친화적 학교공동체 구축을 위한 교육청 차원의 지원 방안을 검토할 수 있음</li></ul></section>
+</article><article id="item-2">
+  <div class="article-number">02</div>
+  <div class="article-head">
+    <p class="eyebrow">부산광역시교육청 · 정책·행정</p>
+    <h2>부산교육청, 지방교육재정교부금 개편 반대 입장 밝혀</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 4점">★★★★☆</span>
+      <span>2026-08-26</span>
+      <a class="source-link" href="https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1178779&amp;bbsId=2286&amp;mi=30397" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>부산교육청이 정부의 지방교육재정교부금 개편안에 반대 입장을 표명함</li><li>현행 내국세 연동 방식 유지를 촉구함</li><li>학생 수 감소가 교육재정 수요 감소로 직결되지 않음을 강조함</li><li>교부금 개편 시 실질적인 교육재정 축소가 우려됨</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>정부의 지방교육재정교부금 개편 추진에 따른 시도교육청의 실질적인 재정 축소 우려와 이에 대한 공동 대응 필요성이 제기됨</li><li>학령인구 감소가 교육재정 수요 감소로 직결되지 않으며 노후시설 개선 및 인건비 상승 등 고정 비용 부담이 지속됨을 보여줌</li><li>교부금 산정 방식 변경 시 발생할 수 있는 이전수입 감소 규모에 대한 선제적 분석과 대비가 요구됨</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>지방교육재정교부금 개편 시 전북교육청에 미칠 재정적 영향과 이전수입 감소 규모를 선제적으로 분석해 볼 필요가 있음</li><li>향후 노후학교 개축 등 대규모 재정 수요가 예상되는 사업의 중장기 재원 조달 계획을 점검해 볼 수 있음</li></ul></section>
+</article><article id="item-3">
+  <div class="article-number">03</div>
+  <div class="article-head">
+    <p class="eyebrow">경상북도교육청 · 교육과정·수업</p>
+    <h2>[중등교육과]경북교육청, 우석여자고등학교 국제바칼로레아(IB) 디플로마 프로그램(DP) 후보학교 승인</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-08-26</span>
+      <a class="source-link" href="https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1639025&amp;bbsId=4744&amp;mi=17643&amp;searchCate=761" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>우석여자고등학교가 국제바칼로레아(IB) 디플로마 프로그램(DP) 후보학교로 승인됨</li><li>경북 내 두 번째이자 상주 지역 첫 번째 후보학교임</li><li>학생 주도 탐구와 사고력 중심 수업을 강화할 예정임</li><li>도내 학교와 수업·평가 사례를 공유하고 확산할 계획임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>공교육 내 국제바칼로레아(IB) 프로그램 도입을 통해 학생 주도 탐구 및 사고력 중심 수업과 평가 체제로의 전환이 확산되는 추세임</li><li>지역 내 후보학교 승인을 시작으로 우수 수업 및 평가 사례의 관내 학교 확산과 현장 안착 지원이 중요해짐</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>타 시도교육청의 IB DP 후보학교 운영 사례 및 수업·평가 모델을 분석하여 전북 내 도입 가능성을 검토해 볼 수 있음</li><li>학생 주도 탐구 중심 교육과정 확산을 위한 교원 역량 강화 지원 방안을 비교해 볼 수 있음</li></ul></section>
+</article><article id="item-4">
+  <div class="article-number">04</div>
+  <div class="article-head">
+    <p class="eyebrow">경상북도교육청 · 안전·시설</p>
+    <h2>[미래학교추진단]경북교육청, 2027년도 공간재구조화사업 대상학교 선정 추진</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-08-26</span>
+      <a class="source-link" href="https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1639027&amp;bbsId=4744&amp;mi=17643&amp;searchCate=761" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>경북교육청이 2027년도 공간재구조화사업 대상학교 선정을 추진함</li><li>40년 이상 노후 학교를 미래교육 공간으로 전환하는 사업임</li><li>2027년 사업 규모는 10동, 총사업비 1,350억 원임</li><li>10월 중 최종 대상학교를 선정할 예정임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>40년 이상 노후 학교 건물을 미래교육 공간으로 전환하는 중장기 공간재구조화사업의 지속적 추진이 필요함</li><li>학령인구 감소 추세를 반영하여 사업 완료 후 일정 규모 이상의 학생 수 유지가 예상되는 학교를 우선 선정하는 합리적 기준 설정이 중요함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>공간재구조화사업 대상학교 선정 시 적용하는 학생 수 유지 기준 등 선정 요건을 비교해 볼 수 있음</li><li>노후 학교 건물의 미래교육 공간 전환을 위한 중장기 단계별 개선 계획 수립 여부를 확인할 필요가 있음</li></ul></section>
+</article><article id="item-5">
+  <div class="article-number">05</div>
+  <div class="article-head">
+    <p class="eyebrow">경상북도교육청 · 학생지원·복지</p>
+    <h2>[학생생활과]경북교육청, 학생 마음건강 안전망 강화</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-08-26</span>
+      <a class="source-link" href="https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1639030&amp;bbsId=4744&amp;mi=17643&amp;searchCate=761" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>학생자살예방위원회와 학생 마음건강 다품협의체를 개최하여 위기지원 정책을 점검함</li><li>학생 마음건강 위기지원 프로젝트 HOPE를 중심으로 하반기 자살예방 정책 방향을 논의함</li><li>관심군 학생 심리검사비 지원 및 정신건강 위기학생 3차 안전망 운영체계를 점검함</li><li>학교와 교육지원청, 관계기관 간의 협력 체계를 강화하여 위기학생 조기 발견 및 지속 관리 체계를 구축할 예정임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>학생 자살 예방 및 마음건강 위기 지원을 위해 자문기구와 현장 협력체를 연계한 다각적 거버넌스를 구축·운영함</li><li>위기지원 프로젝트를 중심으로 정책 방향을 설정하고 관심군 학생 대상 심리검사비 지원 등 실질적 지원책을 강화함</li><li>정신건강 위기학생을 위한 3차 안전망 운영체계를 점검하여 조기 발견 및 지속 관리 체계의 실효성을 높임</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>전북 지역 내 학생 마음건강 위기지원 체계 및 유관기관 협력 네트워크 현황을 점검하고 보완책을 비교해 볼 수 있음</li><li>위기학생 대상 심리검사비 지원 범위 및 3차 안전망 운영 방식의 다각화 방안을 검토할 수 있음</li></ul></section>
+</article><article id="item-6">
+  <div class="article-number">06</div>
+  <div class="article-head">
+    <p class="eyebrow">경상남도교육청 · 교육과정·수업</p>
+    <h2>경남교육청, 중학교 학부모 대상 고교학점제 설명회 개최</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-08-26</span>
+      <a class="source-link" href="https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&amp;q_bbsDocNo=20260826091159942" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>중학생 학부모 500여 명을 대상으로 고교학점제 이해도 제고 설명회를 개최함</li><li>고교학점제 도입 취지, 운영 방식, 과목 선택 방법 및 2028학년도 대입 제도 변화를 안내함</li><li>사전 설문을 통한 질의응답으로 학부모의 진학 및 진로 설계 궁금증을 해소함</li><li>교육청 차원의 고교학점제 운영 지원 정책과 학교 현장 교육과정 뒷받침 방안을 공유함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>고교학점제 전면 도입 및 대입 제도 개편에 대응하여 중학교 학부모 대상의 선제적 정보 제공과 이해도 제고를 도모함</li><li>교육부 관계자 특강 및 교육청 자체 지원 정책 소개를 병행하여 정책 신뢰도를 높이고 학부모의 진로 설계 불안감을 해소함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>중학생 학부모 대상 고교학점제 및 대입 제도 변화 연계 설명회 운영 현황을 확인하고 다각화 방안을 검토할 수 있음</li><li>사전 설문을 활용한 맞춤형 질의응답 방식을 도입하여 학부모 만족도를 높이는 방안을 비교해 볼 수 있음</li></ul></section>
+</article><article id="item-7">
+  <div class="article-number">07</div>
+  <div class="article-head">
+    <p class="eyebrow">부산광역시교육청 · 안전·시설</p>
+    <h2>부산학생인성교육원, 리모델링 마치고 새롭게 개원</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-08-26</span>
+      <a class="source-link" href="https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1178722&amp;bbsId=2286&amp;mi=30397" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>부산학생인성교육원이 10개월간의 리모델링 공사를 마치고 새롭게 개원함</li><li>총 200억 원의 예산을 투입하여 체험실 증축 및 본관, 기숙사, 식당 등 시설을 개선함</li><li>내진보강을 통해 시설 안전성을 높이고 학생 중심의 교육공간을 조성함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>노후화된 인성교육 시설의 전면 리모델링 및 증축을 통해 안전하고 현대적인 학생 중심 교육 공간을 확보함</li><li>내진보강 등 시설 안전성 강화 조치를 병행하여 재난 대비 안전 기준을 충족함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>전북 내 학생 체험 및 인성교육 시설의 노후도와 안전성을 점검하고 리모델링 필요성을 검토할 수 있음</li><li>체험 중심 교육 공간 확충 및 내진보강 등 안전성 강화 설계 기준을 비교해 볼 수 있음</li></ul></section>
+</article><article id="item-8">
+  <div class="article-number">08</div>
+  <div class="article-head">
+    <p class="eyebrow">서울특별시교육청 · 정책·행정</p>
+    <h2>서울시교육청, 서울시의회 「학생인권 조례 폐지조례안」 재의 부결 환영</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-08-26</span>
+      <a class="source-link" href="https://enews.sen.go.kr/news/view.do?bbsSn=192025&amp;step1=3&amp;step2=1" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>서울시의회 임시회 본회의에서 재의 요구된 &#x27;학생인권 조례 폐지조례안&#x27;이 부결되어 학생인권조례의 효력이 유지되게 됨</li><li>서울시교육청은 학생인권조례의 성과를 계승하면서 변화한 교육환경과 학교 현장의 요구를 반영해 관련 제도를 보완할 계획임</li><li>학생의 권리 보장과 교원의 정당한 교육활동 보호를 대립 구도로 보지 않고 상호 존중하는 학교공동체를 구축하고자 함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>학생인권조례 폐지조례안의 최종 부결로 학생 인권 보장을 위한 제도적 기반과 권리구제 체계의 지속성을 확보한 것으로 평가됨</li><li>학생의 권리 보장과 교원의 교육활동 보호를 조화롭게 연계하여 교육공동체 모두의 인권이 존중받는 예방, 교육, 갈등조정 체계로의 발전 방향을 제시함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>학생 인권 보장과 교권 보호가 상호 존중되는 인권친화적 학교 문화를 조성하기 위해 타 시도의 조례 보완 및 제도 개선 동향을 모니터링하고 관련 방안을 검토할 필요가 있음</li></ul></section>
+</article><article id="item-9">
+  <div class="article-number">09</div>
+  <div class="article-head">
+    <p class="eyebrow">울산광역시교육청 · 정책·행정</p>
+    <h2>울산교육청, 원문 공개율 전국 최고 기록</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 1점">★☆☆☆☆</span>
+      <span>2026-08-26</span>
+      <a class="source-link" href="https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&amp;q_bbsDocNo=20260826174514068" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>울산광역시교육청의 올해 1월부터 7월까지 결재문서 원문 공개율이 88.1%로 전국 시도교육청 중 1위를 기록함</li><li>전국 평균 공개율인 84.5%보다 3.6%포인트 높은 수치를 달성함</li><li>사전 정보 공표 제도 확대 및 비공개 문서 재분류를 통해 불필요한 비공개를 최소화함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>결재문서 원문 공개율 제고를 통해 교육행정의 투명성과 신뢰성을 확보하려는 노력이 지속되고 있음</li><li>사전 정보 공표 제도의 확대 및 비공개 문서의 주기적인 재분류가 원문 공개율을 높이는 실질적인 방안이 될 수 있음</li><li>정보공개 종합 평가 등 대외적 신뢰도 평가에서 우수한 성과를 거두기 위해 체계적인 문서 관리와 공개 기준 정립이 요구됨</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>전북교육청의 결재문서 원문 공개율 현황을 전국 평균 및 타 시도교육청 수준과 비교해 볼 수 있음</li><li>비공개 문서의 재분류 기준을 점검하고 불필요한 비공개 처리를 최소화하는 방안을 검토할 수 있음</li><li>사전 정보 공표 대상의 확대 가능성과 정보공개 평가 대비 체계를 확인할 필요가 있음</li></ul></section>
+</article>
+<section class="own-office-section" id="own-office">
+  <div class="own-office-heading">
+    <p class="kicker">우리 교육청 주요 발표</p>
+    <h2>전북교육청 보도자료</h2>
+    <p>같은 기간 전북특별자치도교육청 본청에서 발표한 보도자료 전체입니다.</p>
+  </div>
+  
+  <div class="own-office-page"><article class="own-office-article" id="own-item-1">
+  <div class="article-number">01</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>2026년 제2회 추경예산 1,415억 원 증액 편성</h2>
+    <div class="article-meta">
+      <span>2026-08-26</span>
+      <a class="source-link" href="https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1168934" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>2026년 제2회 추가경정예산안을 기정예산 대비 1,415억 원 증액한 4조 8,471억 원 규모로 편성함.</li><li>교육 비전 및 공약사업 실행, 교육환경 개선, 필수 의무 경비 반영을 위해 편성했으며 9월 도의회 심의를 거칠 예정임.</li></ul>
+  </section>
+</article><article class="own-office-article" id="own-item-2">
+  <div class="article-number">02</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>농촌·국제유학 아우르는 ‘전북유학’ 확대 시동</h2>
+    <div class="article-meta">
+      <span>2026-08-26</span>
+      <a class="source-link" href="https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1169065" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>농촌유학 확대와 특성화고 국제반 설치 등 전북유학 정책 구체화를 위한 추진단 정기회의를 개최함.</li><li>지역 인구 소멸 대응 및 전북교육 활성화를 위해 12월까지 매월 정기회의를 열어 정책 기반을 마련할 예정임.</li></ul>
+  </section>
+</article></div><div class="own-office-page"><article class="own-office-article" id="own-item-3">
+  <div class="article-number">03</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>중대산업재해 비상대응 모의훈련, 신속 대응체계 점검</h2>
+    <div class="article-meta">
+      <span>2026-08-26</span>
+      <a class="source-link" href="https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1169011" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>본청 내 중대산업재해 대응조직을 대상으로 낙상사고 상황을 가정한 비상대응 모의훈련을 실시함.</li><li>사고 발생 시 초기 대응 과정과 개인별 임무를 점검하여 신속한 대응 체계와 안전보건관리 역량을 강화함.</li></ul>
+  </section>
+</article><article class="own-office-article" id="own-item-4">
+  <div class="article-number">04</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>노동조합과 손잡고 갑질 피해 상담 전문성 높인다</h2>
+    <div class="article-meta">
+      <span>2026-08-26</span>
+      <a class="source-link" href="https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1169086" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>노동조합 임원을 대상으로 갑질 피해 상담 전문성과 현장 대응 역량 강화를 위한 교육을 실시함.</li><li>갑질 근절 추진계획의 일환으로 초기 상담자의 역할과 사례별 대응 방법을 공유하여 상담 지원 체계를 강화함.</li></ul>
+  </section>
+</article></div>
+</section>
+<footer>
+  <p>이 문서는 공개 보도자료를 AI로 요약·분석한 내부 검토 자료입니다.</p>
+  <p>전북교육청 보도자료는 내용 요약만 제공하며, 원문은 각 항목의 링크에서 확인할 수 있습니다.</p>
+  <p>적용 검토안은 확정된 정책이나 업무 지시가 아닙니다.</p>
+</footer>
+</main>
+<script>
+(() => {
+  const links = Array.from(document.querySelectorAll('.toc-controller [data-report-target]'));
+  const targets = links.map(link => document.getElementById(link.dataset.reportTarget)).filter(Boolean);
+  if (!links.length || !targets.length) return;
+  let ticking = false;
+  const updateActive = () => {
+    const threshold = window.innerHeight * 0.35;
+    let activeId = '';
+    for (const target of targets) {
+      if (target.getBoundingClientRect().top <= threshold) activeId = target.id;
+      else break;
+    }
+    for (const link of links) {
+      const active = link.dataset.reportTarget === activeId;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    }
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateActive);
+  }, { passive:true });
+  window.addEventListener('hashchange', updateActive);
+  updateActive();
+})();
+</script>
+</body>
+</html>
