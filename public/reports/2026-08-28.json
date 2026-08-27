@@ -1,0 +1,739 @@
+{
+  "metadata": {
+    "reportId": "20260827T233554Z-54fd850d",
+    "title": "오늘의 교육동향",
+    "status": "completed",
+    "generatedAt": "2026-08-27T23:35:54+00:00",
+    "windowStart": "2026-08-27T06:00:00+09:00",
+    "windowEnd": "2026-08-28T06:00:00+09:00",
+    "windowHours": 24,
+    "selectionRunId": "20260827T233241Z-5b97aa22",
+    "sourceCount": 17,
+    "eligibleCount": 13,
+    "publishedCount": 13,
+    "omittedCount": 0,
+    "ownOfficeEligibleCount": 4,
+    "ownOfficePublishedCount": 4,
+    "qualityExcludedCount": 0,
+    "factModel": "gemini-3.1-flash-lite",
+    "analysisModel": "gemini-3.5-flash",
+    "verifierModel": "gemini-3.1-flash-lite",
+    "summaryOnlyCount": 0,
+    "ownOfficeReviewCount": 0,
+    "usage": {
+      "stages": {
+        "facts": {
+          "model": "gemini-3.1-flash-lite",
+          "requests": 5,
+          "promptTokenCount": 16822,
+          "candidatesTokenCount": 3918,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 20740
+        },
+        "analysis": {
+          "model": "gemini-3.5-flash",
+          "requests": 5,
+          "promptTokenCount": 6059,
+          "candidatesTokenCount": 3308,
+          "thoughtsTokenCount": 10308,
+          "totalTokenCount": 19675
+        },
+        "verification": {
+          "model": "gemini-3.1-flash-lite",
+          "requests": 6,
+          "promptTokenCount": 21607,
+          "candidatesTokenCount": 1039,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 22646
+        }
+      },
+      "total": {
+        "requests": 16,
+        "promptTokenCount": 44488,
+        "candidatesTokenCount": 8265,
+        "thoughtsTokenCount": 10308,
+        "totalTokenCount": 63061
+      }
+    },
+    "estimatedCostUsd": 0.148675
+  },
+  "items": [
+    {
+      "newsId": "seoul-7b930d3c891a73bf",
+      "sourceId": "seoul",
+      "source": "서울특별시교육청",
+      "title": "서울시교육청, 9월부터 초등학생 32만여 명 등·하교 알림서비스 전면 무상 ...",
+      "date": "2026-08-27",
+      "url": "https://enews.sen.go.kr/news/view.do?bbsSn=192029&step1=3&step2=1",
+      "category": "학생지원·복지",
+      "importance": 4,
+      "selectionReason": "교육청 차원에서 초등학생 등·하교 알림서비스를 전면 무상 시행하는 정책적 변화임.",
+      "summaryPoints": [
+        "서울시교육청이 9월부터 모든 초등학교 대상 등·하교 알림서비스를 전면 무상 시행함",
+        "학생 소지 단말기와 학교 중계기를 활용해 학부모에게 등·하교 정보를 실시간 제공함",
+        "교육부 재난안전관리 특별교부금을 활용해 이용료와 단말기 비용을 지원함"
+      ],
+      "analysisPoints": [
+        "학부모 부담 경감 및 학생 안전 강화를 위해 기존 수익자 부담 방식의 등·하교 알림 서비스를 전면 무상 지원으로 전환하는 정책적 변화를 보여줌",
+        "특별교부금 등 외부 재원을 적극 활용하여 대규모 예산 수립 부담을 완화하고 정책 추진 동력을 확보한 사례임",
+        "설문조사를 통해 높은 수요와 찬성 여론을 확인하고 이를 바탕으로 정책적 타당성을 확보함"
+      ],
+      "applicationReviewPoints": [
+        "전북 관내 초등학생을 대상으로 한 등·하교 알림 서비스의 지원 현황 및 학부모 부담 여부를 파악하고 무상 지원 전환 가능성을 검토해 볼 수 있음",
+        "재난안전관리 특별교부금 등 정부 재원을 활용한 학생 안전 복지 사업의 다각화 방안을 확인해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "대상은 서울 국·공·사립 초등학교 607교 및 학생 약 32만 명임",
+        "기존에는 학부모가 월 2,200~3,300원의 이용료를 부담하는 수익자 부담 방식이었음",
+        "2025년 11월 어린이 등하굣길 안전확보 종합대책의 후속 조치임",
+        "국민생각함 설문 결과 응답자 4,802명 중 96.9%가 무상 지원에 찬성함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongbuk-bed7b9c7aac661cc",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[유초등교육과]경북교육청, 2학기 기초학력 맞춤형 지원 강화",
+      "date": "2026-08-27",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1639265&bbsId=4744&mi=17643&searchCate=761",
+      "category": "학생지원·복지",
+      "importance": 3,
+      "selectionReason": "기초학력 보장을 위한 1:1 멘토링 및 두레강사 확대 운영 등 교육청 차원의 학생 지원 정책입니다.",
+      "summaryPoints": [
+        "경북교육청이 2026학년도 2학기 기초학력 공모사업으로 1:1 멘토링과 두레강사 사업을 추진함",
+        "1:1 멘토링은 초·중학교 100교의 학생 100명을 대상으로 정서 및 학습을 지원함",
+        "두레강사는 1수업 2교사제 형태의 협력수업을 통해 학습결손을 예방함"
+      ],
+      "analysisPoints": [
+        "기초학력 보장을 위해 일대일 맞춤형 정서·학습 멘토링과 협력수업을 병행하여 다각적인 학습결손 예방책을 제시함",
+        "추경예산 확보를 통해 학기 중에도 유연하게 기초학력 지원 사업을 확대·강화하는 유연한 재정 운용을 보여줌"
+      ],
+      "applicationReviewPoints": [
+        "전북 내 기초학력 부진 학생을 위한 일대일 정서·학습 통합 지원 프로그램 및 협력수업 모델의 운영 현황과 비교해 볼 수 있음",
+        "학기 중 추가 수요에 대응하기 위한 추경 예산 편성 및 지원 확대 방안을 검토해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "1:1 멘토링은 초등학교 74교와 중학교 26교에서 운영함",
+        "두레강사 사업은 기존 운영교 47교에 예산을 추가 지원하고 25교를 신규 지정함",
+        "추경예산을 확보하여 2학기 사업을 확대 운영함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongbuk-77b5a9c2d26a458c",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[유초등교육과]경북교육청, 찾아가는 유아 독서교육 북트럭 '다-읽차' 운영",
+      "date": "2026-08-27",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1639268&bbsId=4744&mi=17643&searchCate=761",
+      "category": "교육과정·수업",
+      "importance": 3,
+      "selectionReason": "유아 독서교육 격차 해소를 위한 북트럭 운영 등 교육청 차원의 신규 교육 지원 사업입니다.",
+      "summaryPoints": [
+        "경북교육청이 유아 독서교육을 위해 찾아가는 북트럭 '다-읽차'를 9월부터 운영함",
+        "그림책과 놀이 체험을 결합한 참여형 독서 프로그램을 제공함",
+        "경북 특화 독서 콘텐츠 15선을 연계하여 지역 자긍심 고취를 도모함"
+      ],
+      "analysisPoints": [
+        "유치원과 어린이집을 직접 찾아가는 이동형 북트럭을 통해 유아기 독서 교육의 접근성을 높인 사례임",
+        "단순 도서 대여를 넘어 그림책과 놀이 체험을 결합한 참여형 콘텐츠를 제공하여 유아의 흥미를 유발함",
+        "지역 특화 독서 콘텐츠를 연계하여 독서 교육과 지역 정체성 교육을 동시에 도모함"
+      ],
+      "applicationReviewPoints": [
+        "도서관 접근성이 낮은 지역의 유치원 및 어린이집을 대상으로 찾아가는 이동식 독서 체험 프로그램 도입 가능성을 검토해 볼 수 있음",
+        "전북 지역의 특색을 반영한 유아용 독서 콘텐츠 개발 및 연계 방안을 확인해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "9월부터 11월까지 도내 선정 유치원과 어린이집을 순회함",
+        "당초 1,000명 참여 예상 대비 3,600여 명의 유아가 신청함",
+        "교육청 최초로 운영되는 찾아가는 유아 독서교육 사업임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "busan-f083a7da142e7d8e",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "부산교육청,“학교 업무 교육청이 해드립니다”",
+      "date": "2026-08-27",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1178805&bbsId=2286&mi=30397",
+      "category": "정책·행정",
+      "importance": 3,
+      "selectionReason": "교육청 차원에서 학교 행정 업무를 본청 산하 기관으로 이관하는 제도적 변화 및 업무 경감 대책임.",
+      "summaryPoints": [
+        "부산교육청이 학교 행정 부담 경감을 위해 4개 업무를 학교행정지원본부로 이관함",
+        "이관 대상은 불용물품 공동매각, 기초학력 지원강사 채용, 심폐소생술 교육, 수질검사 지원임",
+        "2027년 1월 1일부터 본격적인 지원 업무를 시작할 예정임"
+      ],
+      "analysisPoints": [
+        "학교 현장의 행정 부담을 실질적으로 경감하기 위해 공통·반복 행정 업무를 교육청 본청 또는 지원본부로 이관하는 정책적 흐름을 보여줌",
+        "불용물품 매각, 강사 채용, 위생·안전 검사 등 학교 자체 해결이 번거로운 업무를 통합 관리하여 행정 효율성을 도모함",
+        "심의 조정위원회를 통한 체계적인 과제 선정과 매뉴얼 마련 등 단계적 이행 절차를 거침"
+      ],
+      "applicationReviewPoints": [
+        "전북교육청의 학교 행정 업무 경감 정책과 비교하여 불용물품 공동매각, 강사 채용 등 공통 업무의 교육청 이관 가능성을 검토해 볼 수 있음",
+        "학교 업무 이관을 위한 전담 조직의 역할 및 세부 업무 매뉴얼 수립 과정을 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "학교업무 경감 추진단 심의 조정위원회를 통해 이관 과제를 최종 확정함",
+        "하반기 중 세부 업무 매뉴얼 마련 및 예산 수립을 진행함",
+        "지난해 AI 비서 PenGPT 도입 및 상반기 가정통신문 재생산 제로화 대책을 시행한 바 있음"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "busan-8f7d3012fd90e605",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "부산학력개발원, 학생 주도적 진로설계 지원 확대",
+      "date": "2026-08-28",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1178911&bbsId=2286&mi=30397",
+      "category": "진로·직업교육",
+      "importance": 3,
+      "selectionReason": "교육청 산하 학력개발원에서 고교학점제 등 교육환경 변화에 대응하여 학생 진로 설계 지원 시스템을 구축하고 관내 학교에 보급하는 정책적 사업임.",
+      "summaryPoints": [
+        "부산학력개발원, 학생 자기주도적 진로 설계를 위한 진로정보 키오스크 운영 시작",
+        "진로정보 키오스크를 통해 학교 정보, 학과 정보, 적성검사 등 원스톱 서비스 제공",
+        "우수 진로체험처를 직군별로 분류한 지도형 리플릿 '내 꿈 JOB을 지도' 제작 및 배포 예정"
+      ],
+      "analysisPoints": [
+        "디지털 기기를 활용하여 학생 맞춤형 진로 및 진학 정보를 원스톱으로 제공하는 접근성 제고 방안임",
+        "지역 내 우수 진로체험처를 직군별로 시각화한 지도형 리플릿을 통해 학생들의 자기주도적 진로 탐색을 지원함"
+      ],
+      "applicationReviewPoints": [
+        "전북 지역 내 진로 및 진학 정보 제공을 위해 키오스크 등 디지털 매체를 활용한 정보 접근성 개선 방안을 검토할 수 있음",
+        "지역 진로체험처 정보를 직군별로 분류한 지도 형태의 홍보물 제작 및 배포 사례를 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "부산광역시교육청학력개발원, 진로정보 키오스크 가동 및 리플릿 제작",
+        "진로정보 키오스크는 8월 24일부터 운영 중임",
+        "키오스크는 학교별 진학률, 학과 정보, QR 코드 적성검사 등을 제공함",
+        "리플릿 '내 꿈 JOB을 지도'는 다음 달 관내 초·중·고교에 배포 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "moe-6a175978fe5c764f",
+      "sourceId": "moe",
+      "source": "교육부",
+      "title": "인공지능(AI) 교과, 교원이 주도하여 교육자료부터 인정교과서까지 만든다",
+      "date": "2026-08-27",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107049&lev=0&m=020402&s=moe",
+      "category": "교육과정·수업",
+      "importance": 3,
+      "selectionReason": "AI 교과서 개발 및 인정교과서 체계 도입은 교육과정 및 교원 정책의 실질적인 변화를 포함함.",
+      "summaryPoints": [
+        "교육부, 인공지능(AI) 교과 교과서 및 교육자료 개발 지원",
+        "현장 교원이 직접 집필에 참여하는 교원 주도형 인정교과서 개발",
+        "2027년 1학기 시도교육청 인정 심의 및 시범 적용 예정",
+        "2028년 3월부터 학교 수업에 본격 적용"
+      ],
+      "analysisPoints": [
+        "현장 교원이 직접 집필에 참여하는 교원 주도형 인정교과서 개발을 통해 학교 현장의 적합성과 전문성을 높이고자 함",
+        "급변하는 인공지능 기술 속도에 대응하기 위해 교과서 외에 최신 기술 동향을 담은 교육자료를 병행 개발하는 유연한 교육과정 지원 방식임",
+        "정부 부처 및 다수 시도교육청과의 협업을 통해 개발 효율성을 극대화하고 예산을 절감하는 구조임"
+      ],
+      "applicationReviewPoints": [
+        "인공지능 교과서 및 교육자료 개발과 관련하여 타 시도교육청과의 협업 추진 현황을 확인할 필요가 있음",
+        "교원 주도형 인정교과서 개발 및 심의 프로세스를 전북 교육과정 운영 계획과 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "인공지능 관련 16개 과목을 공모로 선정함",
+        "8월 28일부터 29일까지 대구에서 집필위원 대상 역량 강화 연수 개최",
+        "교과서와 별도로 최신 기술 동향을 담은 교육자료를 병행 개발함",
+        "충남대학교 능력중심교육과정 교과서연구소가 개발 과정 전반을 위탁 지원함",
+        "과학기술정보통신부와 10개 시도교육청이 협업 과제로 추진함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "incheon-b8404bb149ab04e8",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 특수학교 대학형 전공과 학생 무상급식비 지원",
+      "date": "2026-08-27",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3382696&bbsId=1519&mi=11620",
+      "category": "학생지원·복지",
+      "importance": 3,
+      "selectionReason": "특수교육대상학생에 대한 무상급식 지원 확대라는 교육 복지 정책의 변화를 담고 있음.",
+      "summaryPoints": [
+        "인천광역시교육청에서 관내 특수학교 소속 대학형 전공과 학생 78명을 대상으로 무상급식비를 지원함",
+        "지원 금액은 대학교 구내식당 금액에 따라 1일 6,000원에서 6,500원까지 상이함",
+        "올해 1학기분은 소급 지원하고 2학기부터는 대학 제공 식권 이용 후 소속 특수학교가 사후 정산하는 방식을 적용함"
+      ],
+      "analysisPoints": [
+        "대학형 전공과 특수교육대상학생에게 균등한 교육 복지를 제공하고 건강한 학교생활을 보장하려는 조치로 볼 수 있음",
+        "대학 구내식당 이용이라는 특수성을 고려하여 소급 지원 및 사후 정산 등 유연한 지원 방식을 도입한 점이 특징임"
+      ],
+      "applicationReviewPoints": [
+        "전북 관내 특수학교 대학형 전공과 운영 현황 및 해당 학생들에 대한 급식비 지원 실태를 파악해 볼 필요가 있음",
+        "외부 대학 시설을 이용하는 특수교육대상학생을 위한 맞춤형 급식비 지원 및 정산 프로세스 도입 방안을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "지원 대상은 관내 특수학교 소속 대학형 전공과 학생 78명임",
+        "장애인 등에 대한 특수교육법에 근거하여 추진함",
+        "8월 25일부터 지원을 시작함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9,
+        "repair": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "moe-017aff5b9a198e56",
+      "sourceId": "moe",
+      "source": "교육부",
+      "title": "2029학년도 대학입학전형기본사항 발표",
+      "date": "2026-08-27",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107052&lev=0&m=020402&s=moe",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "대학입학전형기본사항은 교육부 차원의 국가적 교육 정책 및 제도 변화를 담고 있음.",
+      "summaryPoints": [
+        "한국대학교육협의회, 2029학년도 대학입학전형기본사항 수립 및 공표",
+        "고교 교육과정 범위 내 출제 및 사교육비 절감 기여 원칙 유지",
+        "대학별 전형방법 수를 수시 4개, 정시 2개 등 최대 6개 이내로 제한",
+        "입학전형 공정성 확보를 위해 회피·배제 제도 및 외부위원 포함 권고"
+      ],
+      "analysisPoints": [
+        "고교 교육과정 중심의 대입 전형 원칙을 유지하고 전형 방법을 단순화하여 학생과 학부모의 입시 부담을 완화하고자 함",
+        "대입 전형의 공정성을 높이기 위해 회피 및 배제 제도 활성화와 외부위원 참여 권고 등 제도적 보완책을 강화함"
+      ],
+      "applicationReviewPoints": [
+        "대입 전형 변화에 따른 고등학교 현장의 진학 지도 방향 및 대비책 마련 여부를 확인할 필요가 있음",
+        "수시모집 수능 최저학력기준 활용 제한 등 주요 변경 사항에 대응하는 진학 정보 제공 방안을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "대학입학전형기본사항은 고등교육법 제34조의5에 근거함",
+        "학생부위주, 논술위주, 실기/실적위주, 수능위주로 전형 체계 표준화 권고",
+        "수시모집에서 수능은 최저학력기준으로만 활용 가능함",
+        "대학윤리위원회는 전형 위반 사항 조사 및 징계 요구 권한을 가짐"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jngj_s1n1-78dee7d710f5a117",
+      "sourceId": "jngj_s1n1",
+      "source": "전남광주통합특별시교육청",
+      "title": "[설명자료]“서 · 논술형 평가 연수, 교육부 전국 단위 계획 따라 추진”",
+      "date": "2026-08-28",
+      "url": "https://www.jngjedu.kr/news/articleView.html?idxno=120121",
+      "category": "교원·인사",
+      "importance": 2,
+      "selectionReason": "교육부의 전국 단위 평가 정책에 따른 시도교육청 차원의 연수 운영 계획 및 평가 방향성을 담고 있습니다.",
+      "summaryPoints": [
+        "서·논술형 평가 연수는 교육부의 전국 단위 선도교원 양성 사업의 일환임",
+        "전남광주교육청은 교육부 계획에 따라 9~11월 중 확산 연수를 순차 운영할 예정임",
+        "해당 연수는 서·논술형 평가 확대 방침에 따라 새롭게 마련된 것이 아닌 기존 계획된 과정임"
+      ],
+      "analysisPoints": [
+        "국가 수준 교육과정에서 강조하는 서·논술형 평가의 안착을 위해 교육부 전국 단위 계획과 연계한 체계적인 교원 연수 추진이 요구됨",
+        "지역 교육지원청의 여건에 맞춘 순차적 확산 연수 운영을 통해 현장 교원의 평가 역량을 단계적으로 강화할 필요가 있음"
+      ],
+      "applicationReviewPoints": [
+        "교육부의 질문 중심 수업 평가 선도교원 연수와 연계하여 도내 초등교원 대상 서·논술형 평가 확산 연수 운영 방안을 검토할 수 있음",
+        "지역 교육지원청별 여건을 고려한 맞춤형 연수 일정 및 운영 방식을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "교육부 주관 2026학생 질문 중심 수업 평가 초등 선도교원 연수의 후속 연수임",
+        "교육부는 7월 27일부터 8월 14일까지 경주에서 초등교원 1,000여 명 대상 집합 연수를 실시함",
+        "전남광주교육청은 9~11월 각 지역청 여건에 맞춰 연수를 운영할 예정임",
+        "서·논술형 평가는 국가 수준 교육과정에서 강조하는 평가 방식임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongbuk-cced4db4495a4b7c",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[유초등교육과]경북교육청, 학생평가‧교육결손해소 현장 찾아 맞춤형 지원 강화",
+      "date": "2026-08-27",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1639266&bbsId=4744&mi=17643&searchCate=761",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "학생평가 및 교육결손 해소 사업의 현장 지원과 시스템 개선을 통한 정책 실효성 제고 활동입니다.",
+      "summaryPoints": [
+        "경북교육청은 7~8월 도내 표집학교 8교를 대상으로 학생평가 및 교육결손해소 지원사업 현장 지원을 실시함",
+        "현장 지원을 통해 사업 운영 상황을 점검하고 학교 현장의 의견을 수렴하여 정책 개선에 반영할 예정임",
+        "경북학생성장지원평가 시스템 기능 개선 및 활용 상황을 점검하고 학교별 우수 사례를 공유함"
+      ],
+      "analysisPoints": [
+        "표집학교 대상의 현장 방문 지원을 통해 학생평가 및 교육결손해소 사업의 운영 상황을 밀착 점검하고 실효성을 높일 수 있음",
+        "학생성장지원평가 시스템의 기능 개선을 통해 평가 결과의 즉시 제공 및 평가결과표 활용 편의성을 제고함",
+        "현장 지원 과정에서 수렴한 의견을 향후 사업 개선에 환류하는 체계적인 피드백 구조 마련이 중요함"
+      ],
+      "applicationReviewPoints": [
+        "도내 학생평가 및 교육결손해소 지원 사업의 현장 안착을 위해 표집학교 대상의 맞춤형 현장 지원 컨설팅 운영을 검토할 수 있음",
+        "학생평가 시스템의 결과 즉시 제공 및 평가결과표 개선 등 기능 보완 사례를 참고하여 관련 시스템 개선 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "도 단위 표집학교 8교(초 6교, 중 2교)를 대상으로 현장 지원을 실시함",
+        "교육결손해소 지원사업, 경북학생성장지원평가, 학교생활기록부 관리 등을 종합적으로 점검함",
+        "경북학생성장지원평가 시스템은 시험 결과 즉시 제공 및 평가결과표 개선 등의 기능을 보완함",
+        "현장 지원에서 수렴한 의견을 향후 사업 개선에 반영할 계획임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "daejeon-b64cd6b9f0d43715",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "대전시교육청, 유보통합 업무이관 준비자료집 2권 발간(유아특수교육과)",
+      "date": "2026-08-27",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3361817&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "유보통합이라는 국가적 교육 정책의 이행을 위한 교육청 차원의 실무 체계 구축 및 행정 준비 자료 발간으로 정책적 중요도가 높음.",
+      "summaryPoints": [
+        "대전시교육청은 유보통합 업무이관을 대비한 실무자료집 2권을 발간함",
+        "자료집은 어린이집 운영비 지원, 보육교직원 인건비, 어린이집 인가 등 핵심 보육업무를 다룸",
+        "교육청과 지자체 담당자가 제작에 참여하여 실무 활용도를 높임"
+      ],
+      "analysisPoints": [
+        "유보통합에 따른 지자체 보육 업무의 교육청 이관을 안정적으로 준비하기 위해 구체적인 실무자료집 제작이 필수적임",
+        "교육청과 지자체 담당자의 공동 참여를 통해 실무 중심의 전문성과 활용도를 극대화할 수 있음",
+        "향후 유보통합 관련 정책 변화에 맞추어 자료집을 지속적으로 보완하고 업데이트하는 유연한 대응이 요구됨"
+      ],
+      "applicationReviewPoints": [
+        "지자체 보육 업무의 원활한 이관을 위해 교육청과 지자체 공동 협력 기반의 실무자료집 제작 및 활용 방안을 검토할 수 있음",
+        "기존 발간된 자료집과의 연계성 및 향후 정책 변화에 따른 지속적인 보완 체계 마련 방안을 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2026년 8월 27일 대전형 유보통합 업무이관 준비자료집 2권을 발간함",
+        "2025년 12월에 보육비용 지원 등을 담은 1권을 발간한 바 있음",
+        "자료집은 교육청 및 지자체 업무담당자에게 배부됨",
+        "향후 정책 변화에 따라 자료집을 지속적으로 보완할 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "ulsan-1fde7948409d1468",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "울산교육청, 시내버스 파업 대비 학생 등하교 대책 마련",
+      "date": "2026-08-27",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20260827184845377",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "시내버스 파업이라는 지역 내 비상 상황에 대응하여 교육청 차원의 학사 운영 및 안전 대책을 수립한 사례임.",
+      "summaryPoints": [
+        "울산교육청은 28일 시내버스 파업 예고에 따른 학생 등하교 안전 대책을 마련함",
+        "학교별 여건에 따라 등교 시각 조정 등 학사일정을 학교장이 자율적으로 결정하도록 안내함",
+        "울산시와 연락 체계를 유지하며 상황 변동 시 신속하게 안내할 예정임"
+      ],
+      "analysisPoints": [
+        "대중교통 파업 등 비상 상황 발생 시 학생 안전과 학습권 보호를 위한 선제적인 비상수업대책반 구성 및 가동이 필요함",
+        "학교별 여건에 따른 등교 시각 조정 등 학사운영의 자율성을 보장하여 현장 혼란을 최소화할 수 있음",
+        "지자체와의 긴밀한 연락 체계 유지 및 가정통신문을 통한 신속한 상황 전파가 중요함"
+      ],
+      "applicationReviewPoints": [
+        "대중교통 파업 등 지역 내 비상 상황 발생 시 신속하게 대응할 수 있는 비상수업대책반 구성 및 운영 매뉴얼을 점검해 볼 수 있음",
+        "학교장 자율의 학사일정 조정 가이드라인 및 가정통신문을 통한 신속한 안내 체계를 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "시내버스 노사 협상 결렬 시 28일 오전 5시 30분부터 운행이 중단될 예정임",
+        "울산교육청은 25일 비상수업대책반을 구성함",
+        "가정통신문을 통해 학사일정 조정 및 등하교 협조 사항을 안내함",
+        "파업 장기화 시 비상수업대책반을 통해 추가 대책을 마련할 계획임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "incheon-786c4cd0ed5a684b",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 교육활동 침해 특별교육 미이수 보호자 과태료 부과",
+      "date": "2026-08-27",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3382696&bbsId=1519&mi=11620",
+      "category": "교원·인사",
+      "importance": 2,
+      "selectionReason": "교육활동 보호를 위한 법적 조치 및 과태료 부과 등 교육청 차원의 제도적 대응 사례로 정책적 파급력이 있음.",
+      "summaryPoints": [
+        "인천광역시교육청이 교육활동 침해 보호자 대상 특별교육 미이수자 3명에게 과태료를 부과함",
+        "교원지위법에 따라 특별교육 및 심리치료 조치를 정당한 사유 없이 이행하지 않은 보호자가 대상임",
+        "사전통지 및 의견제출 절차를 거쳐 4월부터 5월 사이 과태료 부과 처분을 통지함",
+        "향후 이행 여부 점검을 지속하여 교육활동 침해 재발 방지 및 제도 실효성을 확보할 예정임"
+      ],
+      "analysisPoints": [
+        "교원지위법에 근거하여 교육활동 침해 보호자의 특별교육 미이수에 대해 과태료를 부과함으로써 법적 조치의 실효성을 강화함",
+        "사전통지 및 의견제출 등 적법한 행정 절차를 거쳐 과태료 부과 처분의 신뢰성과 정당성을 확보함",
+        "교육활동 침해 재발 방지를 위해 보호자 대상 조치 이행 여부에 대한 지속적인 모니터링 체계가 요구됨"
+      ],
+      "applicationReviewPoints": [
+        "전북 관내 교육활동 침해 보호자의 특별교육 및 심리치료 조치 이행 현황을 점검해 볼 수 있음",
+        "미이수 보호자에 대한 과태료 부과 절차 및 세부 기준이 수립되어 있는지 확인할 필요가 있음",
+        "교육활동 보호 제도의 실효성 제고를 위해 타 시도의 과태료 부과 행정 절차 및 운영 사례를 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "인천광역시교육청은 2026년 8월 26일 과태료 부과 사실을 발표함",
+        "과태료 부과 대상은 특별교육 이수 조치를 받은 보호자 중 미이수자 3명임",
+        "교원의 지위 향상 및 교육활동 보호를 위한 특별법에 근거하여 과태료를 부과함",
+        "특별교육 및 심리치료 조치 미이행 시 과태료 부과 대상이 됨",
+        "과태료 부과 처분 통지는 2026년 4월부터 5월까지 진행됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "ownOfficeItems": [
+    {
+      "newsId": "jeonbuk-3b6f2074c5d6b1ae",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "전북교육청, 교직원이 AI로 만든 업무 도구 공유",
+      "date": "2026-08-27",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1169369",
+      "summaryPoints": [
+        "교직원이 생성형 AI를 활용해 직접 제작한 업무 도구와 활용 사례를 공유하는 게시판을 운영함.",
+        "에듀파인 및 나이스 업무 효율화 도구 등 30건이 등록되어 동료 교직원 간 자발적인 공유가 이루어짐."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-3af3b5baf90e7800",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "2026년 8월 말 퇴직교원 정부포상 전수식 개최",
+      "date": "2026-08-27",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1169502",
+      "summaryPoints": [
+        "2026년 8월 말 퇴직교원 93명을 대상으로 정부포상 전수식을 27일 개최함.",
+        "헌신적인 공직생활로 전북교육 발전에 기여한 퇴직 교원들에게 훈장 및 표창을 수여함."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-3ac96d937af7e9f3",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "공적 항공마일리지 기부로 교육공동체 나눔 실천",
+      "date": "2026-08-27",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1169371",
+      "summaryPoints": [
+        "공무출장으로 적립된 항공마일리지를 기부해 사회복지시설에 생필품을 전달할 예정임.",
+        "전국 시도교육청 최초로 소멸 예정인 마일리지를 활용한 사회공헌활동을 추진함."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-f4d159c9e23ac462",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "초등 학생평가, 2학기 서논술형 문항개발 본격화",
+      "date": "2026-08-27",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1169610",
+      "summaryPoints": [
+        "초등 문항지원단 180명을 대상으로 2학기 학생평가용 서논술형 문항개발 실행연수를 실시함.",
+        "교사가 직접 문항을 개발하고 검토하는 과정을 통해 학생의 배움과 성장을 확인하는 평가 체계를 강화함."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    }
+  ],
+  "omittedItems": [],
+  "validation": {
+    "status": "PASS",
+    "issues": [],
+    "checks": {
+      "ownOfficeExcludedFromTrendAnalysis": true,
+      "ownOfficeAllIncluded": true,
+      "ownOfficeSummariesVerified": true,
+      "publishedItemsVerified": true,
+      "sourceWindowMatches": true
+    }
+  },
+  "providerErrors": {
+    "facts": [],
+    "ownOfficeSummaries": [],
+    "analysis": [],
+    "verification": [],
+    "repairs": [],
+    "repairVerifications": []
+  },
+  "trace": [
+    {
+      "step": "extract_facts",
+      "status": "success",
+      "startedAt": "2026-08-27T23:34:38+00:00",
+      "durationMs": 12953
+    },
+    {
+      "step": "summarize_own_office",
+      "status": "success",
+      "startedAt": "2026-08-27T23:34:51+00:00",
+      "durationMs": 1861
+    },
+    {
+      "step": "analyze_trends",
+      "status": "success",
+      "startedAt": "2026-08-27T23:34:52+00:00",
+      "durationMs": 46923
+    },
+    {
+      "step": "verify_report",
+      "status": "success",
+      "startedAt": "2026-08-27T23:35:39+00:00",
+      "durationMs": 5365
+    },
+    {
+      "step": "repair_report_1",
+      "status": "success",
+      "startedAt": "2026-08-27T23:35:45+00:00",
+      "durationMs": 8233
+    },
+    {
+      "step": "verify_repair_1",
+      "status": "success",
+      "startedAt": "2026-08-27T23:35:53+00:00",
+      "durationMs": 629
+    }
+  ],
+  "rendering": {
+    "canonical": "json",
+    "html": "오늘의 교육동향 (20260828).html",
+    "hwpx": "오늘의 교육동향 (20260828).hwpx",
+    "hwpxValidation": {
+      "hardGates": {
+        "package_validation": "pass",
+        "document_errors": "pass",
+        "schema_lint": "pass",
+        "reopen": "pass",
+        "editor_open_safety": "pass",
+        "id_integrity": "pass"
+      },
+      "packageOk": true,
+      "documentOk": true,
+      "reopenedOk": true,
+      "visualReviewRequired": true
+    }
+  }
+}
