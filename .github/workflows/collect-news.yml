@@ -98,10 +98,20 @@ jobs:
           git add public
           if git diff --cached --quiet; then
             echo "No data changes to commit."
-          else
-            git commit -m "Update press releases and AI selection"
-            git push
+            exit 0
           fi
+          git commit -m "Update press releases and AI selection"
+          # 실행 중 원격에 다른 커밋이 오면 rebase 후 재시도한다(충돌 시 이번 수집분 우선).
+          for attempt in 1 2 3; do
+            if git push; then
+              exit 0
+            fi
+            echo "push 거절됨(${attempt}회) — 원격 변경분 위로 rebase 후 재시도"
+            git fetch origin main
+            git rebase -X theirs origin/main || { git rebase --abort; exit 1; }
+          done
+          echo "3회 재시도 후에도 push 실패"
+          exit 1
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
