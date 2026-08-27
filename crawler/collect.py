@@ -907,6 +907,14 @@ def collect_detail(source: dict[str, Any], link: dict[str, str]) -> dict[str, An
     soup = BeautifulSoup(html, "lxml")
     all_text = soup.get_text(" ")
     title = extract_title(soup, link.get("title", ""), source)
+    # 상세 페이지에서 제목에 본문이 딸려 붙는 경우가 있어(예: 서울 입장문),
+    # 목록 제목이 멀쩡하면 그것을 쓰고, 없으면 과도하게 긴 제목을 잘라낸다.
+    list_title = normalize_space(link.get("title", ""))
+    if len(title) > 90:
+        if len(list_title) >= 8 and not is_generic_title(list_title) and len(list_title) < len(title):
+            title = list_title
+        else:
+            title = title[:90].rsplit(" ", 1)[0] + "…"
     date = parse_date(all_text + " " + link.get("listText", ""))
     html_summary = extract_summary(soup, source, title)
     attachment_summary = ""
