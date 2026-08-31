@@ -3,11 +3,10 @@ name: Collect education press releases
 on:
   workflow_dispatch:
   schedule:
-    # GitHub 예약 실행은 지연·누락이 잦아 여러 시각에 걸어두고, 이미 끝났으면 건너뛴다.
-    # KST 06:05 / 06:50 / 07:40 (UTC 21:05 / 21:50 / 22:40, 일~목)
+    # 예약을 여러 개 걸면 GitHub가 이 워크플로 우선순위를 낮춰 오히려 늦어진다(8/27~8/31 확인).
+    # 1회만 유지하고, 정시성은 외부 스케줄러의 workflow_dispatch 호출로 보완한다.
+    # UTC Sun-Thu 21:05 = KST Mon-Fri 06:05
     - cron: "5 21 * * 0-4"
-    - cron: "50 21 * * 0-4"
-    - cron: "40 22 * * 0-4"
 
 permissions:
   contents: write
@@ -64,6 +63,38 @@ jobs:
           MAX_ITEMS_PER_SOURCE: "20"
         run: python crawler/collect.py
 
+      - name: Select and classify education trends
+        if: steps.done.outputs.briefing != 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          LLM_PROVIDER: gemini
+          LLM_MODEL: gemini-3.1-flash-lite
+        run: python -m harness.run
+
+      - name: Commit collected data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+            exit 0
+          fi
+          git commit -m "Update press releases and AI selection"
+          # 실행 중 원격에 다른 커밋이 오면 rebase 후 재시도한다(충돌 시 이번 수집분 우선).
+          for attempt in 1 2 3; do
+            if git push; then
+              exit 0
+            fi
+            echo "push 거절됨(${attempt}회) — 원격 변경분 위로 rebase 후 재시도"
+            git fetch origin main
+            git rebase -X theirs origin/main || { git rebase --abort; exit 1; }
+          done
+          echo "3회 재시도 후에도 push 실패"
+          exit 1
+
+
+      # 무거운 게재현황·AI검색은 선별 결과를 먼저 발행한 뒤에 돈다(보고서 지연 방지).
       - name: Collect press coverage of our releases
         if: steps.done.outputs.briefing != 'true'
         continue-on-error: true
@@ -83,15 +114,7 @@ jobs:
           timeout 900 python crawler/ai_coverage_search.py \
             --coverage public/coverage.json --max-calls 25
 
-      - name: Select and classify education trends
-        if: steps.done.outputs.briefing != 'true'
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          LLM_PROVIDER: gemini
-          LLM_MODEL: gemini-3.1-flash-lite
-        run: python -m harness.run
-
-      - name: Commit collected data
+      - name: Commit coverage data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -100,7 +123,7 @@ jobs:
             echo "No data changes to commit."
             exit 0
           fi
-          git commit -m "Update press releases and AI selection"
+          git commit -m "Update press coverage"
           # 실행 중 원격에 다른 커밋이 오면 rebase 후 재시도한다(충돌 시 이번 수집분 우선).
           for attempt in 1 2 3; do
             if git push; then
