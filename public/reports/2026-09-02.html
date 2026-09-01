@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>오늘의 교육동향 2026. 9. 2. (수)</title>
+<style>
+:root { color-scheme: light; --ink:#17202a; --muted:#5d6875; --line:#d7dde3; --teal:#087f73; --teal-soft:#e9f6f3; --amber:#a96800; --amber-soft:#fff6df; --paper:#ffffff; --page:#eef1f3; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--page); color:var(--ink); font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; line-height:1.72; letter-spacing:0; }
+a { color:inherit; }
+.report { width:min(960px,100%); margin:0 auto; background:var(--paper); min-height:100vh; box-shadow:0 0 28px rgba(18,31,43,.08); }
+header { padding:52px 64px 40px; border-top:7px solid var(--teal); border-bottom:1px solid var(--line); }
+.kicker { margin:0 0 8px; color:var(--teal); font-weight:700; font-size:14px; }
+h1 { margin:0; font-family:"Nanum Myeongjo","Batang",serif; font-size:42px; line-height:1.25; letter-spacing:0; }
+.report-date { margin:16px 0 0; font-size:18px; font-weight:700; }
+.period { margin:4px 0 0; color:var(--muted); font-size:13px; overflow-wrap:anywhere; }
+.summary-strip { display:flex; gap:24px; padding:18px 64px; border-bottom:1px solid var(--line); font-size:14px; color:var(--muted); }
+.summary-strip strong { color:var(--ink); margin-left:5px; }
+nav { padding:34px 64px 44px; border-bottom:1px solid var(--line); }
+nav h2 { margin:0 0 15px; font-size:18px; }
+.toc-group + .toc-group { margin-top:24px; padding-top:20px; border-top:1px solid var(--line); }
+nav h3 { margin:0 0 10px; font-size:15px; }
+nav h3 a { text-decoration:none; }
+nav ol { columns:2; column-gap:40px; margin:0; padding:0; list-style:none; }
+nav li { break-inside:avoid; margin:0 0 10px; font-size:14px; line-height:1.45; }
+nav a { text-decoration:none; }
+nav a:hover { color:var(--teal); text-decoration:underline; }
+nav li span { color:var(--teal); font-weight:800; margin-right:5px; }
+.toc-region { color:var(--muted); font-weight:700; }
+.toc-controller { display:none; }
+@media (min-width:1700px) {
+  .toc-controller { position:fixed; z-index:40; top:24px; bottom:24px; left:calc(50% - 828px); width:324px; display:flex; flex-direction:column; overflow:hidden; background:rgba(255,255,255,.98); border:1px solid var(--line); border-radius:8px; box-shadow:0 8px 24px rgba(18,31,43,.10); }
+  .toc-controller-home { display:block; flex:0 0 auto; padding:15px 16px 13px; border-bottom:1px solid var(--line); color:var(--teal); font-size:14px; font-weight:800; text-decoration:none; }
+  .toc-controller-home:hover { background:var(--teal-soft); }
+  .toc-controller-scroll { min-height:0; overflow-y:auto; padding:12px 0 16px; scrollbar-color:#aab5bd transparent; scrollbar-width:thin; }
+  .toc-controller section + section { margin-top:15px; padding-top:13px; border-top:1px solid var(--line); }
+  .toc-controller h2 { margin:0; padding:0 14px 7px; color:var(--muted); font-size:12px; line-height:1.4; }
+  .toc-controller ol { margin:0; padding:0; list-style:none; }
+  .toc-controller li { margin:0; padding:0; }
+  .toc-controller li a { display:grid; grid-template-columns:38px minmax(0,1fr); gap:6px; align-items:start; min-height:38px; padding:7px 12px 7px 11px; border-left:3px solid transparent; color:var(--ink); font-size:12px; line-height:1.35; text-decoration:none; }
+  .toc-controller li a:hover { background:#f3f7f7; color:var(--teal); }
+  .toc-controller li a.active { border-left-color:var(--teal); background:var(--teal-soft); }
+  .controller-number { color:var(--teal); font-weight:800; white-space:nowrap; }
+  .controller-label { min-width:0; overflow:hidden; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow-wrap:anywhere; }
+  .controller-label strong { color:var(--muted); font-weight:700; }
+}
+article { position:relative; padding:52px 64px 58px; border-bottom:10px solid var(--page); scroll-margin-top:12px; }
+.article-number { position:absolute; top:51px; left:19px; color:#9aa5af; font-size:13px; font-weight:800; }
+.eyebrow { margin:0 0 8px; color:var(--teal); font-size:13px; font-weight:800; }
+.article-head h2 { margin:0; font-size:25px; line-height:1.45; letter-spacing:0; overflow-wrap:anywhere; }
+.article-meta { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:14px; color:var(--muted); font-size:13px; }
+.stars { color:var(--amber); letter-spacing:0; font-size:17px; }
+.source-link { color:var(--teal); font-weight:700; text-underline-offset:3px; }
+.report-section { margin-top:34px; padding-top:22px; border-top:1px solid var(--line); }
+.report-section h3 { margin:0 0 12px; font-size:16px; }
+ul { margin:0; padding-left:1.35em; }
+li { margin:7px 0; padding-left:3px; }
+.application { border-top-color:#ead9b3; }
+.application h3 { color:#805200; }
+.review-note { border-top-color:#ead9b3; }
+.review-note h3 { color:#a13d00; }
+.review-note p { margin:0; color:#7a4a1e; }
+.review-badge { display:inline-block; padding:2px 9px; border-radius:11px; background:var(--amber-soft); color:#8a4b00; font-size:12px; font-weight:800; }
+.empty-note { margin:0; color:var(--muted); }
+.empty-report { padding:70px 64px; text-align:center; color:var(--muted); }
+.own-office-section { border-top:12px solid var(--page); scroll-margin-top:12px; }
+.own-office-heading { padding:42px 64px 30px; background:var(--teal-soft); border-bottom:1px solid #c8e5de; }
+.own-office-heading .kicker { margin-bottom:4px; }
+.own-office-heading h2 { margin:0; font-size:28px; line-height:1.4; }
+.own-office-heading p:last-child { margin:8px 0 0; color:var(--muted); font-size:14px; }
+.own-office-article { border-bottom:1px solid var(--line); }
+.own-empty { padding-top:48px; padding-bottom:48px; }
+footer { padding:34px 64px 50px; color:var(--muted); font-size:12px; }
+footer p { margin:4px 0; }
+@media (max-width:700px) {
+  header, nav, article, footer, .own-office-heading { padding-left:24px; padding-right:24px; }
+  h1 { font-size:34px; }
+  .summary-strip { padding-left:24px; padding-right:24px; gap:12px; flex-wrap:wrap; }
+  nav ol { columns:1; }
+  .article-number { position:static; margin-bottom:10px; }
+  .article-head h2 { font-size:21px; }
+}
+.toolbar { position:fixed; top:18px; right:18px; z-index:50; display:flex; gap:8px; }
+.toolbar button { display:inline-flex; align-items:center; gap:6px; padding:9px 14px; border:1px solid var(--teal); border-radius:8px; background:var(--teal); color:#fff; font:inherit; font-size:13px; font-weight:700; cursor:pointer; box-shadow:0 2px 8px rgba(18,31,43,.16); }
+.toolbar button.secondary, .toolbar .tool-link.secondary { background:#fff; color:var(--teal); }
+.toolbar button:hover, .toolbar .tool-link:hover { opacity:.92; }
+.toolbar button, .toolbar .tool-link { white-space:nowrap; }
+.toolbar .tool-link { display:inline-flex; align-items:center; gap:6px; padding:9px 14px; border:1px solid var(--teal); border-radius:8px; background:var(--teal); color:#fff; font:inherit; font-size:13px; font-weight:700; text-decoration:none; cursor:pointer; box-shadow:0 2px 8px rgba(18,31,43,.16); }
+@media (max-width:700px) {
+  .toolbar { top:10px; right:10px; }
+  .toolbar button, .toolbar .tool-link { padding:8px 11px; font-size:12px; }
+  .toolbar .print-tool { display:none !important; }
+}
+@media print {
+  @page { margin:0; }
+  .toolbar { display:none !important; }
+  body { background:#fff; } .report { width:100%; box-shadow:none; }
+  .toc-controller { display:none !important; }
+  header { padding-top:24mm; }
+  article { break-before:page; border-bottom:0; padding-top:18mm; padding-bottom:16mm; }
+  article:first-of-type { break-before:auto; } nav a { text-decoration:none; }
+  nav { break-after:page; page-break-after:always; }
+  nav.toc-compact { padding-top:26px; padding-bottom:30px; }
+  nav.toc-compact h2 { margin-bottom:11px; font-size:17px; }
+  nav.toc-compact .toc-group + .toc-group { margin-top:16px; padding-top:12px; }
+  nav.toc-compact h3 { margin-bottom:7px; font-size:14px; }
+  nav.toc-compact li { margin-bottom:7px; font-size:13px; line-height:1.38; }
+  nav.toc-tight { padding-top:20px; padding-bottom:24px; }
+  nav.toc-tight h2 { margin-bottom:8px; font-size:16px; }
+  nav.toc-tight .toc-group + .toc-group { margin-top:12px; padding-top:10px; }
+  nav.toc-tight h3 { margin-bottom:5px; font-size:13px; }
+  nav.toc-tight li { margin-bottom:5px; font-size:12px; line-height:1.35; }
+  .own-office-section { break-before:page; border-top:0; }
+  .own-office-section article { break-before:auto; }
+  .own-office-heading { break-after:avoid; page-break-after:avoid; }
+  .own-office-page { break-inside:avoid; page-break-inside:avoid; }
+  .own-office-page + .own-office-page { break-before:page; page-break-before:always; }
+  .own-office-article { break-inside:avoid; page-break-inside:avoid; padding-top:10mm; padding-bottom:10mm; }
+  footer { padding-bottom:18mm; }
+}
+</style>
+</head>
+<body>
+<div class="toolbar" role="toolbar" aria-label="문서 도구">
+  <a class="tool-link secondary" href="https://jbe-edu-trends.vercel.app/?tab=reports" target="_blank" rel="noopener noreferrer" title="지난 오늘의 교육동향을 날짜별로 봅니다">🗂 지난 호</a><a class="tool-link secondary" href="https://jbe-edu-trends.vercel.app/?tab=archive" target="_blank" rel="noopener noreferrer" title="교육동향으로 선정되지 않은 자료까지 수집한 전체 보도자료를 봅니다">📰 전체 보도자료</a>
+  <button type="button" class="secondary print-tool" onclick="window.print()" title="인쇄 대화상자를 엽니다">🖨 인쇄</button>
+  <button type="button" class="print-tool" onclick="window.print()" title="인쇄 대화상자에서 '대상'을 'PDF로 저장'으로 선택하세요">📄 PDF 저장</button>
+</div>
+<main class="report">
+<aside class="toc-controller" aria-label="빠른 목차"><a class="toc-controller-home" href="#report-toc">목차</a><div class="toc-controller-scroll"><section><h2>전국 교육동향</h2><ol><li><a href="#item-1" data-report-target="item-1"><span class="controller-number">1</span><span class="controller-label"><strong>(경기)</strong> “지역에서 더 가까이, 학부모와 함께하는 경기교육” 경기학부모지원센터, 27개로 확대</span></a></li><li><a href="#item-2" data-report-target="item-2"><span class="controller-number">2</span><span class="controller-label"><strong>(전남광주)</strong> 전남광주특별시교육청, ‘청렴도 향상 마스터플랜’ 발표</span></a></li><li><a href="#item-3" data-report-target="item-3"><span class="controller-number">3</span><span class="controller-label"><strong>(대전)</strong> 대전시교육청, 특수교육 방과후활동비 전자카드 전면 시행(유아특수교육과)</span></a></li><li><a href="#item-4" data-report-target="item-4"><span class="controller-number">4</span><span class="controller-label"><strong>(경기)</strong> 스마트폰 내려놓고, 더 넓은 세상으로… 경기도교육청, ‘폰프리 100일 대장정’ 돌입</span></a></li><li><a href="#item-5" data-report-target="item-5"><span class="controller-number">5</span><span class="controller-label"><strong>(울산)</strong> 울산교육청, 2027년 교육공무직 채용시험 사전 안내</span></a></li><li><a href="#item-6" data-report-target="item-6"><span class="controller-number">6</span><span class="controller-label"><strong>(대전)</strong> 대전시교육청, 학교기본운영비 증액 지원(기획예산과)</span></a></li></ol></section></div></aside>
+<header>
+  <p class="kicker">전국 교육정책 및 교육행정 동향</p>
+  <h1>오늘의 교육동향</h1>
+  <p class="report-date">2026. 9. 2. (수)</p>
+  <p class="period">분석 대상: 2026. 9. 1. 06:00 ~ 2026. 9. 2. 06:00</p>
+</header>
+<div class="summary-strip">
+  <span>전국 교육동향<strong>6건</strong></span>
+  <span>전북 보도자료<strong>0건</strong></span>
+  <span>작성<strong>gemini-3.5-flash</strong></span>
+  <span>검증<strong>PASS</strong></span>
+</div>
+<nav id="report-toc" class="" aria-label="목차"><h2>목차</h2><div class="toc-group"><h3>전국 교육동향</h3><ol><li><a href="#item-1"><span>1.</span> <strong class="toc-region">(경기)</strong> “지역에서 더 가까이, 학부모와 함께하는 경기교육” 경기학부모지원센터, 27개로 확대</a></li><li><a href="#item-2"><span>2.</span> <strong class="toc-region">(전남광주)</strong> 전남광주특별시교육청, ‘청렴도 향상 마스터플랜’ 발표</a></li><li><a href="#item-3"><span>3.</span> <strong class="toc-region">(대전)</strong> 대전시교육청, 특수교육 방과후활동비 전자카드 전면 시행(유아특수교육과)</a></li><li><a href="#item-4"><span>4.</span> <strong class="toc-region">(경기)</strong> 스마트폰 내려놓고, 더 넓은 세상으로… 경기도교육청, ‘폰프리 100일 대장정’ 돌입</a></li><li><a href="#item-5"><span>5.</span> <strong class="toc-region">(울산)</strong> 울산교육청, 2027년 교육공무직 채용시험 사전 안내</a></li><li><a href="#item-6"><span>6.</span> <strong class="toc-region">(대전)</strong> 대전시교육청, 학교기본운영비 증액 지원(기획예산과)</a></li></ol></div><div class="toc-group"><h3><a href="#own-office">전북교육청 보도자료</a></h3><p class="empty-note">해당 기간 자료 없음</p></div></nav>
+
+<article id="item-1">
+  <div class="article-number">01</div>
+  <div class="article-head">
+    <p class="eyebrow">경기도교육청 · 정책·행정</p>
+    <h2>“지역에서 더 가까이, 학부모와 함께하는 경기교육” 경기학부모지원센터, 27개로 확대</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 4점">★★★★☆</span>
+      <span>2026-09-01</span>
+      <a class="source-link" href="https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2364615&amp;bbsId=1922&amp;mi=10102" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>경기학부모지원센터를 기존 1개에서 27개 체계로 확대 재구조화함</li><li>본청은 정책 총괄, 평생학습관은 광역 전문교육, 교육지원청은 지역 맞춤형 지원을 담당함</li><li>교육지원청별 학부모지원팀을 지정하여 학부모회 네트워크 및 아카데미 등 소통 사업을 운영함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>학부모 지원 체계를 본청(총괄), 평생학습관(전문교육), 교육지원청(지역 맞춤형)으로 다원화하여 역할 분담을 명확히 함</li><li>지역 교육지원청별로 전담팀을 지정하여 밀착형 학부모 네트워크 및 아카데미를 활성화하려는 시도로 볼 수 있음</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>전북 지역 내 학부모 지원 체계의 효율적 운영을 위해 본청과 직속기관, 교육지원청 간의 역할 분담 방안을 비교해 볼 수 있음</li><li>지역별 특성을 반영한 학부모 네트워크 및 맞춤형 교육 프로그램 운영 방안을 검토할 수 있음</li></ul></section>
+</article><article id="item-2">
+  <div class="article-number">02</div>
+  <div class="article-head">
+    <p class="eyebrow">전남광주통합특별시교육청 · 정책·행정</p>
+    <h2>전남광주특별시교육청, ‘청렴도 향상 마스터플랜’ 발표</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 4점">★★★★☆</span>
+      <span>2026-09-01</span>
+      <a class="source-link" href="https://www.jngjedu.kr/news/articleView.html?idxno=120342" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>종합청렴도 1등급 달성을 위한 청렴도 향상 마스터플랜을 발표함</li><li>2027년부터 2030년까지를 청렴도 도약 집중 추진 기간으로 설정함</li><li>부패취약분야 상시 모니터링 강화 및 청렴 거버넌스 확대를 추진함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>중장기 계획을 통해 청렴도 향상을 체계적으로 추진하고 부패취약분야를 집중 관리하려는 의지를 보여줌</li><li>학교운동부, 인사, 계약, 급식 등 구체적인 취약 분야를 지정하고 특정감사 등 실질적인 통제 장치를 마련함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>부패취약분야에 대한 상시 모니터링 체계 및 특정감사 도입 여부를 비교해 볼 수 있음</li><li>청렴도 향상을 위한 중장기 마스터플랜 수립 및 고위직 청렴 리더십 실천 방안을 검토할 필요가 있음</li></ul></section>
+</article><article id="item-3">
+  <div class="article-number">03</div>
+  <div class="article-head">
+    <p class="eyebrow">대전광역시교육청 · 학생지원·복지</p>
+    <h2>대전시교육청, 특수교육 방과후활동비 전자카드 전면 시행(유아특수교육과)</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-09-01</span>
+      <a class="source-link" href="https://www.dje.go.kr/boardCnts/view.do?boardSeq=3362198&amp;boardID=8&amp;m=040201&amp;s=dje&amp;lev=0&amp;searchType=null&amp;statusYN=W&amp;page=1&amp;opType=N&amp;prntBoardID=0&amp;prntBoardSeq=0&amp;prntLev=0" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>2027년 1월부터 특수교육 방과후활동비 지원 방식을 전자카드로 일원화함</li><li>기존 계좌이체 방식의 증빙 서류 제출 절차를 간소화하여 행정 효율성을 높임</li><li>현재 3,060명의 학생이 전자카드를 이용 중이며 지원체계의 투명성을 강화함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>특수교육 방과후활동비 지원 방식을 전자카드로 일원화하여 행정 절차를 간소화하고 투명성을 높임</li><li>병행 운영 기간을 거쳐 전면 시행함으로써 현장의 혼란을 최소화하고 가맹점 확보를 통해 이용 편의성을 제고함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>특수교육대상학생 지원금 집행의 투명성 제고 및 행정 업무 경감을 위해 전자카드 도입 가능성을 검토할 수 있음</li><li>기존 계좌이체 방식과의 병행 운영 및 가맹점 확보 등 사전 준비 과정을 비교해 볼 수 있음</li></ul></section>
+</article><article id="item-4">
+  <div class="article-number">04</div>
+  <div class="article-head">
+    <p class="eyebrow">경기도교육청 · 학생지원·복지</p>
+    <h2>스마트폰 내려놓고, 더 넓은 세상으로… 경기도교육청, ‘폰프리 100일 대장정’ 돌입</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-09-01</span>
+      <a class="source-link" href="https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2364669&amp;bbsId=1922&amp;mi=10102" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>학생자치회 주관으로 100일간 스마트폰 사용을 조절하는 폰프리 챌린지를 운영함</li><li>학생들은 독서, 예술, 체육 등 대체 활동을 실천하며 자기조절 역량을 키움</li><li>100일간의 실천 포트폴리오를 바탕으로 우수 학생 100명을 선정하여 국외 탐방을 지원함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>학생자치회가 주도하는 디지털 디톡스 프로젝트를 통해 학생들의 자기조절 역량을 강화하고자 함</li><li>100일간의 실천 기록과 국외 탐방 지원 등 실질적인 보상 체계를 연계하여 참여 동기를 유발함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>학생 주도의 스마트폰 사용 조절 캠페인 및 디지털 디톡스 프로그램의 시범 적용을 검토할 수 있음</li><li>실천 포트폴리오 작성 및 우수 학생 대상 인센티브 제공 방식의 효과성을 확인할 필요가 있음</li></ul></section>
+</article><article id="item-5">
+  <div class="article-number">05</div>
+  <div class="article-head">
+    <p class="eyebrow">울산광역시교육청 · 교원·인사</p>
+    <h2>울산교육청, 2027년 교육공무직 채용시험 사전 안내</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-09-01</span>
+      <a class="source-link" href="https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&amp;q_bbsDocNo=20260901173359750" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>2027년 교육공무직 7개 직종 175명 채용 예정임</li><li>10월 28일 시행계획 공고 후 11월 원서접수 및 12월 필기시험 진행 예정임</li><li>조리실무사 채용 시 체력 검정 제도 최초 도입함</li><li>조리사 응시 자격 강화 및 필기시험 경력가산점 상향 조정함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>조리실무사 채용 시 체력 검정 제도를 최초 도입하여 현장 업무 수행 능력을 사전 검증하고자 함</li><li>조리사 응시 자격 강화 및 경력 가산점 상향을 통해 전문성과 현장 경력을 갖춘 우수 인력을 확보하려는 경향을 보임</li><li>채용 시험 일정을 사전에 안내하여 지원자의 예측 가능성을 높이고 안정적인 인력 수급을 도모함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>조리실무사 채용 시 체력 검정 제도 도입의 타당성과 현장 적용 가능성을 비교해 볼 수 있음</li><li>조리사 직종의 응시 자격 기준 및 경력 가산점 부여 방식의 적정성을 검토해 볼 필요가 있음</li><li>교육공무직 채용 사전 안내제 운영 현황을 파악하고 개선 방안을 검토할 수 있음</li></ul></section>
+</article><article id="item-6">
+  <div class="article-number">06</div>
+  <div class="article-head">
+    <p class="eyebrow">대전광역시교육청 · 정책·행정</p>
+    <h2>대전시교육청, 학교기본운영비 증액 지원(기획예산과)</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-09-01</span>
+      <a class="source-link" href="https://www.dje.go.kr/boardCnts/view.do?boardSeq=3362197&amp;boardID=8&amp;m=040201&amp;s=dje&amp;lev=0&amp;searchType=null&amp;statusYN=W&amp;page=1&amp;opType=N&amp;prntBoardID=0&amp;prntBoardSeq=0&amp;prntLev=0" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>단위학교 교육여건 개선을 위해 학교기본운영비 28억 원 추가 지원함</li><li>학교 규모에 따라 학교당 800만 원에서 1,000만 원 차등 지원함</li><li>학교 구성원이 자율적으로 사업을 선택하여 추진하는 방식임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>공공요금 및 물가 상승으로 인한 단위학교의 재정 부담을 완화하기 위해 학교기본운영비를 증액 지원함</li><li>학교 규모에 따른 차등 지원 방식을 적용하여 재정 지원의 효율성을 높이고자 함</li><li>학교 구성원이 필요한 사업을 자율적으로 선택하여 추진하도록 하여 단위학교의 자율성을 강화함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>물가 상승에 대응한 학교기본운영비 추가 지원 여부 및 재원 확보 방안을 검토해 볼 필요가 있음</li><li>학교 규모별 차등 지원 기준의 적정성을 전북의 지원 기준과 비교해 볼 수 있음</li><li>학교 구성원의 자율성을 보장하는 학교사업선택제 방식의 예산 지원 모델 도입을 검토할 수 있음</li></ul></section>
+</article>
+<section class="own-office-section" id="own-office">
+  <div class="own-office-heading">
+    <p class="kicker">우리 교육청 주요 발표</p>
+    <h2>전북교육청 보도자료</h2>
+    <p>같은 기간 전북특별자치도교육청 본청에서 발표한 보도자료 전체입니다.</p>
+  </div>
+  <p class="empty-report own-empty">해당 기간에 수집된 전북교육청 본청 보도자료가 없습니다.</p>
+  
+</section>
+<footer>
+  <p>이 문서는 공개 보도자료를 AI로 요약·분석한 내부 검토 자료입니다.</p>
+  <p>전북교육청 보도자료는 내용 요약만 제공하며, 원문은 각 항목의 링크에서 확인할 수 있습니다.</p>
+  <p>적용 검토안은 확정된 정책이나 업무 지시가 아닙니다.</p>
+</footer>
+</main>
+<script>
+(() => {
+  const links = Array.from(document.querySelectorAll('.toc-controller [data-report-target]'));
+  const targets = links.map(link => document.getElementById(link.dataset.reportTarget)).filter(Boolean);
+  if (!links.length || !targets.length) return;
+  let ticking = false;
+  const updateActive = () => {
+    const threshold = window.innerHeight * 0.35;
+    let activeId = '';
+    for (const target of targets) {
+      if (target.getBoundingClientRect().top <= threshold) activeId = target.id;
+      else break;
+    }
+    for (const link of links) {
+      const active = link.dataset.reportTarget === activeId;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    }
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateActive);
+  }, { passive:true });
+  window.addEventListener('hashchange', updateActive);
+  updateActive();
+})();
+</script>
+</body>
+</html>
