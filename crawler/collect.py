@@ -42,6 +42,11 @@ KST = timezone(timedelta(hours=9))
 RETENTION_DAYS = int(__import__("os").environ.get("RETENTION_DAYS", "14"))
 COLLECTION_WINDOW_HOURS_OVERRIDE = __import__("os").environ.get("COLLECTION_WINDOW_HOURS")
 BRIEFING_HOUR_KST = int(__import__("os").environ.get("BRIEFING_HOUR_KST", "8"))
+# 마감 시각보다 이만큼 일찍 돌려도 '오늘 마감분'으로 본다.
+# GitHub 예약 실행이 몇 시간씩 밀려서 수집을 앞당겨 걸어두기 위한 여유값.
+BRIEFING_EARLY_GRACE_MINUTES = int(
+    __import__("os").environ.get("BRIEFING_EARLY_GRACE_MINUTES", "0")
+)
 MAX_ITEMS_TOTAL = int(__import__("os").environ.get("MAX_ITEMS_TOTAL", "3000"))
 MAX_ITEMS_PER_SOURCE = int(__import__("os").environ.get("MAX_ITEMS_PER_SOURCE", "20"))
 TIMEOUT_SECONDS = int(__import__("os").environ.get("REQUEST_TIMEOUT_SECONDS", "30"))
@@ -222,7 +227,7 @@ def collection_window_hours(window_end: datetime) -> int:
 def briefing_window(reference: datetime | None = None) -> tuple[datetime, datetime]:
     current = reference or now_kst()
     window_end = current.replace(hour=BRIEFING_HOUR_KST, minute=0, second=0, microsecond=0)
-    if current < window_end:
+    if current + timedelta(minutes=BRIEFING_EARLY_GRACE_MINUTES) < window_end:
         window_end -= timedelta(days=1)
     window_hours = collection_window_hours(window_end)
     return window_end - timedelta(hours=window_hours), window_end

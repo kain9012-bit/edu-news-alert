@@ -3,10 +3,11 @@ name: Collect education press releases
 on:
   workflow_dispatch:
   schedule:
-    # 예약을 여러 개 걸면 GitHub가 이 워크플로 우선순위를 낮춰 오히려 늦어진다(8/27~8/31 확인).
-    # 1회만 유지하고, 정시성은 외부 스케줄러의 workflow_dispatch 호출로 보완한다.
-    # UTC Sun-Thu 21:05 = KST Mon-Fri 06:05
-    - cron: "5 21 * * 0-4"
+    # GitHub 예약 실행은 부하에 따라 몇 시간까지 밀린다(8/27 이후 2~8시간 지연 확인).
+    # 우리 설정으로는 막을 수 없어 마감(06:00)보다 1시간 앞당겨 걸어 여유를 둔다.
+    # 이때 마감 시각 자체는 06:00 그대로이고, BRIEFING_EARLY_GRACE_MINUTES로 보정한다.
+    # UTC Sun-Thu 20:00 = KST Mon-Fri 05:00
+    - cron: "0 20 * * 0-4"
 
 permissions:
   contents: write
@@ -59,6 +60,8 @@ jobs:
         env:
           RETENTION_DAYS: "90"
           BRIEFING_HOUR_KST: "6"
+          # 05:00에 돌려도 '어제 06:00 ~ 오늘 06:00' 마감분으로 처리한다.
+          BRIEFING_EARLY_GRACE_MINUTES: "90"
           MAX_ITEMS_TOTAL: "5000"
           MAX_ITEMS_PER_SOURCE: "20"
         run: python crawler/collect.py
