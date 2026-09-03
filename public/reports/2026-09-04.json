@@ -1,0 +1,783 @@
+{
+  "metadata": {
+    "reportId": "20260903T224123Z-3e202d9b",
+    "title": "오늘의 교육동향",
+    "status": "completed",
+    "generatedAt": "2026-09-03T22:41:23+00:00",
+    "windowStart": "2026-09-03T06:00:00+09:00",
+    "windowEnd": "2026-09-04T06:00:00+09:00",
+    "windowHours": 24,
+    "selectionRunId": "20260903T221523Z-3440004b",
+    "sourceCount": 18,
+    "eligibleCount": 14,
+    "publishedCount": 14,
+    "omittedCount": 0,
+    "ownOfficeEligibleCount": 4,
+    "ownOfficePublishedCount": 4,
+    "qualityExcludedCount": 0,
+    "factModel": "gemini-3.1-flash-lite",
+    "analysisModel": "gemini-3.5-flash",
+    "verifierModel": "gemini-3.1-flash-lite",
+    "summaryOnlyCount": 0,
+    "ownOfficeReviewCount": 2,
+    "usage": {
+      "stages": {
+        "facts": {
+          "model": "gemini-3.1-flash-lite",
+          "requests": 5,
+          "promptTokenCount": 13358,
+          "candidatesTokenCount": 4239,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 17597
+        },
+        "analysis": {
+          "model": "gemini-3.5-flash",
+          "requests": 4,
+          "promptTokenCount": 5466,
+          "candidatesTokenCount": 2618,
+          "thoughtsTokenCount": 8912,
+          "totalTokenCount": 16996
+        },
+        "verification": {
+          "model": "gemini-3.1-flash-lite",
+          "requests": 5,
+          "promptTokenCount": 17043,
+          "candidatesTokenCount": 1235,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 18278
+        }
+      },
+      "total": {
+        "requests": 14,
+        "promptTokenCount": 35867,
+        "candidatesTokenCount": 8092,
+        "thoughtsTokenCount": 8912,
+        "totalTokenCount": 52871
+      }
+    },
+    "estimatedCostUsd": 0.12778
+  },
+  "items": [
+    {
+      "newsId": "ulsan-9e0cfcf008f51ccb",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "[울산교육청] 유치원 학부모에게 등·하원 정보 실시간 제공",
+      "date": "2026-09-03",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20260903075754430",
+      "category": "학생지원·복지",
+      "importance": 3,
+      "selectionReason": "교육청 차원에서 유아 안전 및 교원 업무 경감을 위해 도입한 시스템 시범 운영 정책임.",
+      "summaryPoints": [
+        "유치원생 등·하원 정보를 학부모에게 실시간 알림하는 서비스 시범 운영함",
+        "전용 단말기와 판독기를 활용해 출결 정보를 나이스 시스템에 자동 연계함",
+        "교원의 수기 출결 관리 업무 경감 및 행정 효율성 제고를 기대함",
+        "울산 내 10개 유치원을 대상으로 운영하며 향후 만족도 조사 및 기능 보완 예정임"
+      ],
+      "analysisPoints": [
+        "유치원생 등·하원 정보를 실시간으로 제공하여 학부모의 불안감을 해소하고 안전 관리를 강화하는 효과가 있음",
+        "전용 단말기와 나이스 시스템을 연계하여 교원의 수기 출결 관리 업무를 경감하고 행정 효율성을 높일 수 있음",
+        "시범 운영을 통한 만족도 조사 및 기능 보완을 거쳐 단계적으로 확대 적용할 수 있는 기반을 마련함"
+      ],
+      "applicationReviewPoints": [
+        "전북 지역 내 유치원의 출결 관리 업무 경감 및 안전 강화를 위해 나이스 연계형 등·하원 알림 서비스 도입을 검토할 수 있음",
+        "울산교육청의 시범 운영 사례와 만족도 조사 결과를 바탕으로 전용 단말기 도입의 실효성을 분석해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "울산광역시교육청 유아 등·하원 정보 서비스 시범 운영",
+        "내황유치원 등 10개 유치원 대상 운영",
+        "유아 나이스 교무 학사 출결 시스템 자동 연계",
+        "전용 단말기 및 판독기 인식 방식 사용",
+        "9월부터 출결 자동 연계 서비스 본격 지원"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongnam-0134df240db673f1",
+      "sourceId": "gyeongnam",
+      "source": "경상남도교육청",
+      "title": "경남교육청, 교육부-EBS 연계 학교안‧밖 자기주도학습센터 운영",
+      "date": "2026-09-03",
+      "url": "https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&q_bbsDocNo=20260903144752619",
+      "category": "학생지원·복지",
+      "importance": 3,
+      "selectionReason": "교육부 공모 사업과 연계하여 학생들의 자기주도학습 역량 강화를 위한 센터를 확대 운영하는 정책적 사업임.",
+      "summaryPoints": [
+        "사교육 부담 완화 및 자기주도학습 역량 강화를 위해 학습센터를 확대 운영함",
+        "2026년 6월 고성·통영교육지원청 및 창녕여고 3곳을 추가 선정함",
+        "학습 코디네이터를 배치하여 학습 계획 수립 및 진도·출결 관리를 지원함",
+        "10월부터 학교 밖 공간을 활용한 전용 학습 공간을 본격 운영할 예정임"
+      ],
+      "analysisPoints": [
+        "교육부 및 EBS와의 연계를 통해 공교육 내에서 자기주도학습을 체계적으로 지원하고 사교육 부담을 완화하는 모델임",
+        "교육지원청의 유휴 공간이나 학교 밖 공간을 활용하여 지역 밀착형 전용 학습 공간을 구축하는 방향성을 제시함",
+        "전담 학습 코디네이터를 배치하여 단순 공간 제공을 넘어 학습 계획 수립 및 진도 관리를 밀착 지원하는 체계를 갖춤"
+      ],
+      "applicationReviewPoints": [
+        "전북 내 교육지원청 유휴 공간이나 학교 밖 시설을 활용한 자기주도학습 공간 구축 가능성을 검토해 볼 수 있음",
+        "EBS 연계 프로그램 및 학습 코디네이터 배치를 통한 학생 맞춤형 학습 지원 체계 도입을 고려해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "교육부-EBS 연계 자기주도학습센터 운영",
+        "2026년 추가 선정 기관은 고성교육지원청, 통영교육지원청, 창녕여자고등학교임",
+        "고성교육지원청은 특수교육지원센터 1~2층 활용",
+        "통영교육지원청은 별관 3층 활용",
+        "10월부터 본격 운영 예정",
+        "전담 학습 코디네이터 배치"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "daejeon-a814549119c8eaa3",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "대전시교육청, ‘틈새봄‘ 현장 컨설팅 완료(유아특수교육과)",
+      "date": "2026-09-03",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3362520&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "category": "학생지원·복지",
+      "importance": 3,
+      "selectionReason": "교육청 차원의 돌봄 안전망 구축을 위한 거점형·연계형 돌봄 모델의 현장 안착 및 운영 지원 정책임.",
+      "summaryPoints": [
+        "대전형 거점·연계형 돌봄 서비스인 틈새봄 시범 운영 기관 대상 컨설팅을 완료함",
+        "유치원 3개원, 어린이집 4개소 등 총 7개 기관을 대상으로 운영함",
+        "인력 운영, 급·간식, 안전 관리 등 현장 안착을 위한 종합 점검을 실시함",
+        "현장 애로사항을 파악하고 맞춤형 지원을 통해 돌봄 체계를 정착시킬 예정임"
+      ],
+      "analysisPoints": [
+        "유치원과 어린이집을 연계한 거점·연계형 돌봄 모델을 통해 아침, 저녁, 토요일 등 틈새 돌봄 수요에 유연하게 대응함",
+        "시범 운영 초기 단계에서 현장 컨설팅을 실시하여 인력, 급·간식, 안전 관리 등 운영 전반의 안정성을 조기에 확보하고자 함"
+      ],
+      "applicationReviewPoints": [
+        "전북 지역의 돌봄 사각지대 해소를 위해 유치원 및 어린이집 연계형 틈새 돌봄 모델의 도입 타당성을 검토해 볼 수 있음",
+        "돌봄 서비스의 질적 제고와 현장 안착을 위한 맞춤형 컨설팅 및 종합 점검 체계 마련을 참고할 수 있음"
+      ],
+      "sourceFacts": [
+        "대전광역시교육청 틈새봄 시범 운영 7개 기관 대상 1차 현장 컨설팅 완료",
+        "거점형 6개 기관 및 연계형 1개 기관 운영",
+        "유치원 3개원 및 어린이집 4개소 참여",
+        "아침·저녁 및 토요 돌봄 등 다양한 모델 운영"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "busan-8797a40b4c1a0dab",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "부산교육청, 초·중학교에 ‘부산형 환경 교재’ 개발·보급",
+      "date": "2026-09-03",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1179387&bbsId=2286&mi=30397",
+      "category": "교육과정·수업",
+      "importance": 3,
+      "selectionReason": "교육과정 변화에 대응하여 지역 맞춤형 환경 교재를 개발하고 관내 모든 학교에 보급하는 정책적 지원 사업임.",
+      "summaryPoints": [
+        "부산 지역 환경 특성을 반영한 초·중학교용 환경교육 자료 2종을 개발·보급함",
+        "초등용은 방송 프로그램 연계 실천 꾸러미, 중등용은 지역화 교과서 도움 자료집으로 구성함",
+        "기후변화 및 지역 환경 문제를 탐구하고 실천하는 생태 시민 역량 함양을 목표로 함",
+        "학교 여건에 따라 동아리, 자유학기제, 프로젝트 수업 등에서 자유롭게 활용 가능함"
+      ],
+      "analysisPoints": [
+        "지역의 환경적 특성을 반영한 맞춤형 환경 교재를 개발하여 학생들의 실천적 생태 시민 역량을 강화하고자 함",
+        "초등용 실천 꾸러미와 중등용 지역화 자료집 등 학교급별 특성에 맞춘 차별화된 교육 자료를 제공함",
+        "2022 개정 교육과정의 취지를 반영하여 동아리 활동, 자유학기제, 프로젝트 수업 등 다양한 교육과정 내에서 유연하게 활용할 수 있도록 설계함"
+      ],
+      "applicationReviewPoints": [
+        "전북의 생태·환경적 특성을 반영한 지역화 환경 교육 교재 및 실천 중심의 교육 자료 개발 필요성을 검토해 볼 수 있음",
+        "2022 개정 교육과정과 연계하여 자유학기제나 프로젝트 수업에서 활용할 수 있는 환경 교육 콘텐츠 구성을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "부산광역시교육청 초·중학교용 환경교육 자료 2종 보급",
+        "초등 자료명: 환경을 푸는 언박싱과 함께하는 초등 환경 실천 꾸러미",
+        "중등 자료명: 부산의 환경과 미래 도움 자료집 Ⅱ",
+        "중등 자료집은 4개 영역 16개 주제로 구성",
+        "2022 개정 교육과정 취지 반영"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "seoul-1bf54eef1d32472f",
+      "sourceId": "seoul",
+      "source": "서울특별시교육청",
+      "title": "서울시교육청, 학부모 교통봉사 부담 덜어주는「등굣길 안전이음」사업 개선 ...",
+      "date": "2026-09-03",
+      "url": "https://enews.sen.go.kr/news/view.do?bbsSn=192080&step1=3&step2=1",
+      "category": "학생지원·복지",
+      "importance": 3,
+      "selectionReason": "학부모의 교통안전지도 부담을 완화하기 위해 기존 사업을 개선하고 온라인 플랫폼을 도입하여 교육청 차원의 학생 안전 지원 체계를 강화하는 정책입니다.",
+      "summaryPoints": [
+        "학부모 교통안전지도 부담 완화를 위한 등굣길 안전이음 사업 추진함",
+        "기존 전화 신청 방식을 온라인 플랫폼 기반으로 개선하여 편의성 및 신뢰성 강화함",
+        "당근마켓 앱을 통해 봉사자 매칭 신청 가능하며 봉사일 2일 전까지 신청해야 함",
+        "대체 봉사자 연결 결과는 봉사일 1일 전까지 문자 안내함"
+      ],
+      "analysisPoints": [
+        "민간 모바일 플랫폼을 활용하여 학부모의 등굣길 교통봉사 부담을 완화하고 신청 편의성을 높인 사례임",
+        "기존 전화 신청 방식을 온라인 기반으로 개선하여 봉사자 매칭의 신뢰성과 행정 편의성을 강화함"
+      ],
+      "applicationReviewPoints": [
+        "학부모 교통안전지도 부담 경감을 위해 민간 플랫폼 연계 매칭 서비스 도입을 검토할 수 있음",
+        "지역사회 봉사 인력을 활용한 등굣길 안전 확보 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "서울특별시교육청은 등굣길 안전이음 사업을 통해 학부모 대신 교통안전지도 봉사자를 연결함",
+        "기존 교통안전 모이자구 사업을 수요자 중심으로 개선함",
+        "신청 방법은 당근마켓 앱 내 서울시교육청 안전총괄담당관 검색 후 매칭신청 탭 이용임",
+        "봉사일 2일 전까지 신청 가능하며 1일 전까지 결과 안내함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "incheon-9a205c24114bcd92",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, ‘AI 교육행정혁신 추진단’ 출범",
+      "date": "2026-09-03",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3383485&bbsId=1519&mi=11620",
+      "category": "디지털·AI",
+      "importance": 3,
+      "selectionReason": "교육행정 업무 분석 및 AI 도입을 통한 조직적·제도적 업무 혁신 추진은 교육청 차원의 정책 변화에 해당합니다.",
+      "summaryPoints": [
+        "교사의 행정업무 경감을 위한 AI 교육행정혁신 추진단 출범함",
+        "교육전문직, 교사, 외부 AI 전문가 등 12명으로 구성됨",
+        "6개월간 학교 및 교육청 업무 분석을 통해 AI 기반 혁신 방안 마련 예정임",
+        "불필요 업무 폐지, 중복 업무 통합, 단순 반복 업무의 AI 적용 검토함"
+      ],
+      "analysisPoints": [
+        "교사의 행정업무 경감과 교육 집중도 향상을 위해 AI 기술을 행정 혁신에 도입하려는 시도임",
+        "교육전문직, 교사, 외부 전문가가 협력하여 학교 및 교육청 업무를 분석하고 단순 반복 업무의 AI 적용을 검토함"
+      ],
+      "applicationReviewPoints": [
+        "교무행정 경감을 위한 AI 기반 업무 자동화 및 혁신 추진 체계 구성을 검토할 수 있음",
+        "타 시도의 AI 교육행정혁신 추진단 운영 사례와 업무 분석 결과를 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "인천광역시교육청은 2026년 9월 2일 AI 교육행정혁신 추진단을 출범함",
+        "추진단은 정책분석팀, 학교업무분석팀, 행정재정분석팀, 기술자문, 운영지원팀으로 구성됨",
+        "비전은 교사의 시간을 학생에게, 행정의 역량을 교육에로 설정함",
+        "6개월간 운영하며 AI 적용 가능 업무를 검토함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungbuk-1a1adedb30b6a6a6",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "충북교육청, <독서교육도시, 충북> 비전 선포",
+      "date": "2026-09-03",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1578564&bbsId=1158&mi=10301",
+      "category": "정책·행정",
+      "importance": 3,
+      "selectionReason": "독서교육도시 비전 선포는 교육청 차원의 중장기 교육 정책 방향을 제시하는 사안임.",
+      "summaryPoints": [
+        "독서교육도시, 충북 비전 선포식을 개최함",
+        "학교, 가정, 지역사회가 연계된 지속가능한 독서교육 생태계 구축 목표임",
+        "독서교육을 일상과 지역사회로 확장하는 충북형 독서교육 추진함",
+        "독서 공동의제 구체화 및 독서 자원 연계를 통해 도내 전역으로 확산 예정임"
+      ],
+      "analysisPoints": [
+        "교육청, 지자체, 지역사회가 연계하여 도내 전역을 독서 공간으로 확장하는 지속가능한 독서 생태계 구축 모델임",
+        "실천적 독서와 AI 시대 비판적 독서를 중심으로 지역 연대 독서 공동의제를 구체화함"
+      ],
+      "applicationReviewPoints": [
+        "지자체 및 지역 도서관과의 협력을 통한 지역 연대 독서 생태계 조성 방안을 비교해 볼 수 있음",
+        "AI 시대에 대응하는 비판적 독서 교육 활성화 방안을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "충청북도교육청은 2026년 9월 3일 청주오스코에서 비전 선포식을 개최함",
+        "비전은 하늘 아래 모든 곳이 우리 아이들의 도서관임",
+        "충북교육청, 충청북도, 11개 시·군 및 지역사회 도서관이 협력함",
+        "독서교육 추진 방향은 실천적 독서, AI 시대 비판적 독서, 지역 연대 독서생태계임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongbuk-e758c5bfaff7a4c5",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[기획예산관]경북교육청, 2026년 주민참여예산위원회 개최",
+      "date": "2026-09-03",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1641190&bbsId=4744&mi=17643&searchCate=761",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "주민참여예산위원회를 통해 도 단위 교육 정책 및 예산 편성 방향을 심의하고 구체적인 사업 반영을 결정하는 정책적 사안임.",
+      "summaryPoints": [
+        "2027년도 본예산 편성을 위한 주민참여예산위원회 개최함",
+        "주민 제안 30건을 심의하여 8건을 예산 반영 대상으로 선정함",
+        "학생 진로체험 지원 확대 및 AI·디지털 활용 교육 확대 등이 포함됨",
+        "확정된 제안은 2027년도 본예산 편성안에 반영될 예정임"
+      ],
+      "analysisPoints": [
+        "주민참여예산위원회를 통해 지역 주민의 제안을 직접 심의하고 차년도 본예산에 반영하는 교육재정 민주성을 강화함",
+        "지역 전문가와 시군 대표가 참여하여 진로체험 및 AI·디지털 교육 등 현장 수요가 높은 사업을 예산안에 반영함"
+      ],
+      "applicationReviewPoints": [
+        "주민참여예산제 운영 시 주민 제안의 심의 및 예산 반영 프로세스를 비교해 볼 수 있음",
+        "주민 제안을 통한 AI·디지털 교육 및 진로체험 지원 확대 방안을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "경북교육청 주민참여예산위원회는 2026년 9월 2일 개최됨",
+        "위원회는 22개 시군 대표 및 전문가 등 30명으로 구성됨",
+        "심의 대상은 2025년 8월부터 2026년 7월까지 접수된 주민 제안 30건임",
+        "선정된 8건의 제안은 추후 누리집을 통해 공개될 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "ulsan-a67ddb8ce995bc59",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "[울산교육청] 울산 전체 학교, 석면 제거율 99% 달성",
+      "date": "2026-09-03",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20260903172830657",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "교육청 차원에서 추진해 온 학교 석면 제거 사업의 성과 및 정책적 완료 현황을 알리는 자료임.",
+      "summaryPoints": [
+        "울산 지역 전체 학교 석면 제거율 99% 달성함",
+        "가온중학교를 마지막으로 일반 석면 제거 대상 학교 공사 완료함",
+        "공간 재구조화 및 통폐합 등 별도 사업 진행 중인 학교는 일정에 맞춰 제거 예정임",
+        "학생 건강 보호를 위해 2015년부터 169개 학교 대상 순차적 공사 추진함"
+      ],
+      "analysisPoints": [
+        "장기적이고 체계적인 계획 수립을 통해 학교 내 석면 제거율을 극대화한 사례로 볼 수 있음",
+        "방학 기간을 활용한 공사 진행과 사후 공기 질 측정 등 안전조치 이행이 필수적임을 보여줌",
+        "공간 재구조화 등 타 사업과 연계하여 잔여 석면 제거 일정을 조정하는 유연성이 요구됨"
+      ],
+      "applicationReviewPoints": [
+        "전북 지역 학교의 석면 제거 현황 및 잔여 면적을 파악하고 울산의 추진 방식과 비교해 볼 수 있음",
+        "방학 중 공사 안전조치 및 사후 법정 검사 체계를 강화하는 방안을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "울산 지역 전체 학교 석면 제거율 99%임",
+        "전체 대상 면적 276만 ㎡ 중 2만 7,852㎡ 잔여함",
+        "2015년부터 올해까지 석면 보유 169개 학교 대상 공사 추진함",
+        "공사 시 방학 기간 활용 및 안전조치 시행함",
+        "작업 후 공기 중 석면 농도 측정 등 법정 검사 완료함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 1.0
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeju-fdeab99deb1a9412",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "“방학 중 초등돌봄 급식, 어떻게 운영할까?” 현장 의견 듣는다",
+      "date": "2026-09-03",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1478946",
+      "category": "학생지원·복지",
+      "importance": 2,
+      "selectionReason": "교육청 본청 차원에서 방학 중 급식 운영 제도 개선을 위해 현장 의견을 수렴하는 정책적 토론회임",
+      "summaryPoints": [
+        "초등돌봄 방학 중 급식 운영 방안 모색을 위한 토론회 개최함",
+        "타 지역 사례 공유 및 현장 의견 수렴을 통해 합리적 운영 방안 논의함",
+        "교직원, 학부모, 노조 관계자 등 160명 내외 참석 예정임"
+      ],
+      "analysisPoints": [
+        "방학 중 초등돌봄 급식 제공에 따른 갈등 요소를 해결하기 위해 다자간 소통 창구를 마련한 사례임",
+        "타 시도교육청의 우수 사례를 공유하고 현장 의견을 수렴하여 합리적인 운영 방안을 모색하는 접근이 필요함",
+        "급식 운영 방식뿐만 아니라 종사자 근무 환경과 관리 체계 공백 등 다각적인 쟁점 검토가 수반되어야 함"
+      ],
+      "applicationReviewPoints": [
+        "방학 중 돌봄교실 급식 제공과 관련한 현장 의견 수렴 및 토론회 개최 여부를 검토할 수 있음",
+        "타 시도의 방학 중 성장 지원 프로그램 사례를 벤치마킹하여 적용 가능성을 확인해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "토론회 일시 및 장소는 2026년 9월 4일 15시 제주교육박물관임",
+        "참관 대상은 도내 교직원 및 학부모 160명 내외임",
+        "세종시교육청의 방학 중 성장 지원 프로그램 사례 공유 예정임",
+        "주요 의제로 급식 운영 방식, 종사자 근무 환경, 관리 체계 공백 등을 논의함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 1.0
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongnam-7a4f93b94ef6eace",
+      "sourceId": "gyeongnam",
+      "source": "경상남도교육청",
+      "title": "경남교육청, 개학기 학교급식 식중독 예방 총력",
+      "date": "2026-09-03",
+      "url": "https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&q_bbsDocNo=20260903110643090",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "교육청 본청 주관으로 다수의 학교와 유치원에 공통 적용되는 안전 대책 및 합동 점검 활동임",
+      "summaryPoints": [
+        "개학기 학교급식 식중독 예방을 위한 합동점검 실시함",
+        "학교, 유치원 급식소 및 식재료 공급업체 총 353개소 대상임",
+        "조리장 위생, 식재료 보관, 조리·배식 과정 등 전 과정 점검함"
+      ],
+      "analysisPoints": [
+        "개학기에 맞춰 학교급식소와 식재료 공급업체를 동시에 점검함으로써 식중독 예방의 실효성을 높이고자 함",
+        "교육청, 지자체, 식약청 등 유관기관 간 협력 체계를 구축하여 점검의 전문성과 신뢰성을 확보함",
+        "조리 후 배식 시간 준수 등 구체적인 예방수칙 안내를 통해 현장의 실천력을 유도함"
+      ],
+      "applicationReviewPoints": [
+        "개학기 학교급식 및 식재료 공급업체 대상 유관기관 합동점검 체계를 비교해 볼 수 있음",
+        "식중독 예방을 위한 구체적인 현장 지도 수칙 및 점검 항목을 보완할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "점검 기간은 8월 24일부터 9월 11일까지 3주간임",
+        "점검 대상은 집단급식소 245개소와 식재료 공급업체 108개소임",
+        "도교육청, 교육지원청, 지자체, 부산식약청 등이 합동점검반 구성함",
+        "조리 완료 후 2시간 이내 배식 등 식중독 예방수칙 준수 안내함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 1.0
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "daejeon-813e6b7f0b5afcf6",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "대전시교육청, 특색 있는 학교 교육과정 운영 지원(중등교육과)",
+      "date": "2026-09-03",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3362523&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "category": "교육과정·수업",
+      "importance": 2,
+      "selectionReason": "2022 개정 교육과정의 학교자율시간 도입에 따른 단위학교 운영 지원 및 가이드라인 보급 정책임.",
+      "summaryPoints": [
+        "학교자율시간 운영 지원을 위한 안내 자료 개발 및 보급함",
+        "학교 현장에서 교육감 승인 과목 개설 절차를 쉽게 파악하도록 구성함",
+        "교육청 누리집 및 공문을 통해 자료 제공함"
+      ],
+      "analysisPoints": [
+        "2022 개정 교육과정 도입에 따른 학교자율시간의 안정적 안착을 지원하기 위한 선제적 조치임",
+        "과목 개설 절차, 질의응답, 업무 흐름도 등 실무 중심의 자료를 제공하여 교원의 업무 부담을 경감하고자 함",
+        "온라인 누리집 탑재 및 공문 발송 등 다각적인 경로로 자료의 접근성을 높임"
+      ],
+      "applicationReviewPoints": [
+        "학교자율시간 운영 지원을 위한 자체 안내 자료 개발 및 보급 현황을 점검해 볼 수 있음",
+        "교육감 승인 과목 개설 절차를 간소화하거나 시각화한 업무 흐름도 제공 방안을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "학교자율시간은 2022 개정 교육과정에 도입된 제도임",
+        "자료는 학교자율시간 이해, 질의응답, 업무 흐름도, 서식 등으로 구성됨",
+        "자료는 대전시교육청 누리집 교육청특성화 교육과정 자료실에 탑재됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 1.0
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungbuk-a639adc510fa52cf",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "윤건영 교육감, 다채움 기초학력 진단 현장 살펴",
+      "date": "2026-09-03",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1578556&bbsId=1158&mi=10301",
+      "category": "교육과정·수업",
+      "importance": 2,
+      "selectionReason": "도내 전 학교급을 대상으로 하는 기초학력 진단 집중 기간 운영 및 플랫폼 활용 정책은 교육청 차원의 주요 학생 지원 정책임.",
+      "summaryPoints": [
+        "충청북도교육청이 9월 3일부터 23일까지 다채움 기초학력 진단 집중 기간을 운영함",
+        "초등학교 1학년부터 고등학교 1학년까지 학생을 대상으로 1학기 성취기준 도달 여부를 진단함",
+        "도내 424개교가 참여하며 이 중 267개교는 다채움 플랫폼을 활용해 온라인으로 실시함",
+        "진단 결과를 바탕으로 학생별 맞춤형 학습 지원 및 피드백을 제공할 예정임"
+      ],
+      "analysisPoints": [
+        "자체 교육 플랫폼을 활용한 온라인 기초학력 진단평가 체계의 현장 적용을 강화하고 있음",
+        "초등학교 1학년부터 고등학교 1학년까지 폭넓은 대상을 설정하여 학기 초 성취기준 도달 여부를 체계적으로 점검함",
+        "진단 결과를 바탕으로 학생 맞춤형 피드백과 학습 지원을 연계하는 공교육 책임성 강화 모델을 제시함"
+      ],
+      "applicationReviewPoints": [
+        "전북 내 기초학력 진단 및 맞춤형 학습 지원을 위한 온라인 플랫폼 활용 현황과 비교해 볼 수 있음",
+        "학기 초 집중 진단 기간 운영 및 대상 학년 설정의 적절성을 검토해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "충청북도교육청은 2026년 9월 3일부터 9월 23일까지 기초학력 진단 집중 기간을 운영함",
+        "진단 대상은 초등학교 1학년부터 고등학교 1학년까지임",
+        "도내 총 424개교(초 257교, 중 131교, 고 36교)가 진단검사에 참여함",
+        "267개교는 다채움 플랫폼을 활용하여 온라인으로 검사를 실시함",
+        "옥산중학교 2학년 6학급 137명이 국어, 수학, 영어, 역사, 과학 5개 교과 진단검사에 참여함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jngj_s1n1-a5b922330743e7af",
+      "sourceId": "jngj_s1n1",
+      "source": "전남광주통합특별시교육청",
+      "title": "전남광주특별시교육청, ‘전남-광주 학교운영위’ 협력 논의",
+      "date": "2026-09-03",
+      "url": "https://www.jngjedu.kr/news/articleView.html?idxno=120514",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "지방교육재정교부금 개편 대응 등 교육청 차원의 주요 교육 현안에 대한 협의 및 대응 활동임.",
+      "summaryPoints": [
+        "전남광주통합특별시교육청이 제2기 학교운영위원장 정기회를 개최함",
+        "지방교육재정교부금 개편 움직임에 반대하는 성명서를 채택하고 공동 서명운동을 결의함",
+        "전남-광주 학교운영위원장협의회 간 단계적 교류 및 제도 일원화를 위한 단일조례 제정에 합의함"
+      ],
+      "analysisPoints": [
+        "통합 교육청 출범에 따른 학교운영위원회 간 단계적 교류와 제도 일원화를 위한 단일조례 제정을 추진함",
+        "지방교육재정교부금 축소 개편 움직임에 대응하여 교육공동체 차원의 공동 성명서 채택 및 서명운동 등 연대 활동을 전개함",
+        "소규모 학교 지원 대책 수립 및 별도 법정 재원 투자 확대 요구를 통해 교육 여건 개선을 도모함"
+      ],
+      "applicationReviewPoints": [
+        "지방교육재정 확보 및 소규모 학교 지원을 위한 교육공동체 의견 수렴 및 연대 방안을 검토할 수 있음",
+        "인근 지자체 또는 교육청 간의 학교운영위원회 교류 및 협력 사례를 참고해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "전남광주통합특별시교육청은 2026년 9월 3일 영암에서 제2기 학교운영위원장 정기회를 개최함",
+        "제2기 협의회 임원진은 허유인 회장과 이희진 부회장으로 구성됨",
+        "학교운영위원장들은 지방교육재정교부금 축소 개편 철회 촉구 성명서를 채택함",
+        "성명서에는 실질적 협의 절차 마련, 소규모 학교 지원 대책 수립, 별도 법정 재원을 통한 투자 확대 요구가 포함됨",
+        "전남-광주 학교운영위원장협의회는 향후 단일조례 제정을 통한 제도 일원화에 합의함",
+        "통합 초기에는 임원진 중심의 단계적 교류를 추진하기로 함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "ownOfficeItems": [
+    {
+      "newsId": "jeonbuk-9e6d9d9cbd45f911",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "어울소리 오케스트라 음악으로 장애의 벽 허물다",
+      "date": "2026-09-03",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1172688",
+      "summaryPoints": [
+        "전북특별자치도교육청 어울소리 오케스트라가 2026년 하반기 찾아가는 장애인식 개선 공연을 시작한다.",
+        "전북교육청은 장애에 대한 올바른 이해와 긍정적 인식 확산을 위해 2025년 6월 장애인 오케스트라 ‘어울소리’ 를 창단하고, 학교로 찾아가는 장애인식 개선 공연을 진행해 오고 있다."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "reviewRequired": true,
+      "reviewReason": "원문에서는 2026년 하반기 공연을 시작한다고 기재되어 있으나, 보고서에는 9월부터 12월까지 공연한다고 기재되어 있어 사실관계가 불일치함.",
+      "validation": {
+        "status": "REVIEW",
+        "issues": [],
+        "confidence": 0
+      }
+    },
+    {
+      "newsId": "jeonbuk-72f094c39ab75198",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "중3 학생, IB DP(고교과정) 탐구수업 미리 만난다",
+      "date": "2026-09-03",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1172651",
+      "summaryPoints": [
+        "전북특별자치도교육청(교육감 천호성) 이 중학교 3학년 학생들의 고교 진학 선택과 IB 교육과정에 대한 이해를 돕기 위해 ‘2026 IB DP 탐구수업 체험의 날’ 을 운영한다.",
+        "전북교육청은 오는 5일과 12일 오후 1시부터 4시 30분까지 전북대학교 사범대학에서 도내 중학교 3학년 학생과 학부모를 대상으로 IB DP 교과 기반 탐구수업 체험 프로그램을 진행한다고 3일 밝혔다."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "reviewRequired": true,
+      "reviewReason": "원문에서는 교육감 이름이 천호성으로 기재되어 있으나, 이는 원문 자체의 사실 오류일 가능성이 높음. 다만 검증 기준에 따라 원문과 보고서의 일치 여부를 확인해야 하는데, 보고서에는 교육감 이름이 생략되어 있으나 원문에는 천호성으로 기재되어 있어 보고서가 원문 내용을 충분히 반영하지 못함.",
+      "validation": {
+        "status": "REVIEW",
+        "issues": [],
+        "confidence": 0
+      }
+    },
+    {
+      "newsId": "jeonbuk-cb9bf643ff1220e2",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "청렴도 향상, 민관 동행으로 실행력 높인다",
+      "date": "2026-09-03",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1172892",
+      "summaryPoints": [
+        "교육 현장의 청렴도 향상을 위해 민관 청렴 거버넌스 점검단이 분야별 개선 과제 추진 성과를 최종 점검함."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeonbuk-cb44733b4d2e6725",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "전북 상업계고 학생 13명 전국상업경진대회 입상",
+      "date": "2026-09-03",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1172693",
+      "summaryPoints": [
+        "제16회 전국상업경진대회에 참가한 전북 상업계고 학생 13명이 교육부장관상을 포함해 금·은·동상을 수상함."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    }
+  ],
+  "omittedItems": [],
+  "validation": {
+    "status": "PASS",
+    "issues": [],
+    "checks": {
+      "ownOfficeExcludedFromTrendAnalysis": true,
+      "ownOfficeAllIncluded": true,
+      "ownOfficeSummariesVerified": false,
+      "publishedItemsVerified": true,
+      "sourceWindowMatches": true
+    }
+  },
+  "providerErrors": {
+    "facts": [],
+    "ownOfficeSummaries": [],
+    "analysis": [],
+    "verification": [],
+    "repairs": [],
+    "repairVerifications": []
+  },
+  "trace": [
+    {
+      "step": "extract_facts",
+      "status": "success",
+      "startedAt": "2026-09-03T22:40:13+00:00",
+      "durationMs": 15603
+    },
+    {
+      "step": "summarize_own_office",
+      "status": "success",
+      "startedAt": "2026-09-03T22:40:29+00:00",
+      "durationMs": 3121
+    },
+    {
+      "step": "analyze_trends",
+      "status": "success",
+      "startedAt": "2026-09-03T22:40:32+00:00",
+      "durationMs": 42903
+    },
+    {
+      "step": "verify_report",
+      "status": "success",
+      "startedAt": "2026-09-03T22:41:15+00:00",
+      "durationMs": 8720
+    }
+  ],
+  "rendering": {
+    "canonical": "json",
+    "html": "오늘의 교육동향 (20260904).html",
+    "hwpx": "오늘의 교육동향 (20260904).hwpx",
+    "hwpxValidation": {
+      "hardGates": {
+        "package_validation": "pass",
+        "document_errors": "pass",
+        "schema_lint": "pass",
+        "reopen": "pass",
+        "editor_open_safety": "pass",
+        "id_integrity": "pass"
+      },
+      "packageOk": true,
+      "documentOk": true,
+      "reopenedOk": true,
+      "visualReviewRequired": true
+    }
+  }
+}
