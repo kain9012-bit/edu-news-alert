@@ -1,0 +1,577 @@
+{
+  "metadata": {
+    "reportId": "20260906T223230Z-cae23598",
+    "title": "오늘의 교육동향",
+    "status": "completed",
+    "generatedAt": "2026-09-06T22:32:30+00:00",
+    "windowStart": "2026-09-04T06:00:00+09:00",
+    "windowEnd": "2026-09-07T06:00:00+09:00",
+    "windowHours": 72,
+    "selectionRunId": "20260906T220829Z-ab28ed7f",
+    "sourceCount": 12,
+    "eligibleCount": 9,
+    "publishedCount": 9,
+    "omittedCount": 0,
+    "ownOfficeEligibleCount": 3,
+    "ownOfficePublishedCount": 3,
+    "qualityExcludedCount": 0,
+    "factModel": "gemini-3.1-flash-lite",
+    "analysisModel": "gemini-3.5-flash",
+    "verifierModel": "gemini-3.1-flash-lite",
+    "summaryOnlyCount": 0,
+    "ownOfficeReviewCount": 0,
+    "usage": {
+      "stages": {
+        "facts": {
+          "model": "gemini-3.1-flash-lite",
+          "requests": 4,
+          "promptTokenCount": 15242,
+          "candidatesTokenCount": 3235,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 18477
+        },
+        "analysis": {
+          "model": "gemini-3.5-flash",
+          "requests": 4,
+          "promptTokenCount": 5532,
+          "candidatesTokenCount": 2158,
+          "thoughtsTokenCount": 8877,
+          "totalTokenCount": 16567
+        },
+        "verification": {
+          "model": "gemini-3.1-flash-lite",
+          "requests": 4,
+          "promptTokenCount": 19091,
+          "candidatesTokenCount": 833,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 19924
+        }
+      },
+      "total": {
+        "requests": 12,
+        "promptTokenCount": 39865,
+        "candidatesTokenCount": 6226,
+        "thoughtsTokenCount": 8877,
+        "totalTokenCount": 54968
+      }
+    },
+    "estimatedCostUsd": 0.122298
+  },
+  "items": [
+    {
+      "newsId": "jeju-4bf1984be28c3025",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "제주교육청, ‘학교 현장 지원 중심’ 조직으로 단계적 전환",
+      "date": "2026-09-04",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1479112",
+      "category": "정책·행정",
+      "importance": 4,
+      "selectionReason": "교육청 본청 차원의 조직 개편 및 학교 지원 체계 변화를 다루는 정책 자료임.",
+      "summaryPoints": [
+        "2028년 학교지원체계 완성을 목표로 1단계 조직개편 추진함",
+        "본청 조직을 1실 2국 3담당관 14과 1추진단 68담당 체제로 개편함",
+        "교육감 직속으로 교육활동보호담당관과 소통협력관을 신설함",
+        "학생통합지원과를 신설하여 학생 지원 기능을 일원화함",
+        "2027년 1월 1일 자로 조직개편을 적용할 예정임"
+      ],
+      "analysisPoints": [
+        "학교 현장 지원을 강화하기 위해 본청 조직을 단계적으로 개편하고 한시 조직을 활용하는 유연한 조직 운영 모델을 제시함",
+        "교육감 직속 기구 신설을 통해 교육활동 보호와 소통 기능을 강화하고 학생 지원 기능을 일원화하여 통합 지원 체계를 구축하려는 경향을 보임",
+        "안전 및 교육과정 부서의 재편을 통해 행정 효율성을 높이고 평화·인권 교육을 강화하려는 의도를 나타냄"
+      ],
+      "applicationReviewPoints": [
+        "학교 현장 지원 중심의 조직 개편 방향과 한시 조직 운영 사례를 참고하여 조직 효율화 방안을 비교해 볼 수 있음",
+        "교육활동 보호 및 학생 통합 지원을 위한 전담 기구 설치의 효과성과 타당성을 검토해 볼 수 있음",
+        "안전 업무 재배치 및 평화·인권 교육 관련 조직 재편 사례를 분석하여 적용 가능성을 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "제주특별자치도교육청 조직개편안 입법예고 기간은 9월 10일까지임",
+        "감사관 직급을 4급에서 3급으로 상향 조정함",
+        "학교지원정책추진단을 2027년 한시조직으로 설치함",
+        "안전국을 행정안전국으로 통합하고 학생안전 업무를 교육국으로 재배치함",
+        "조직개편으로 정원은 총 13명 증원될 예정임",
+        "4.3교육과를 재편하여 평화·인권교육 및 민주시민교육을 강화함",
+        "조직개편안은 제주특별자치도의회 심의 의결을 거쳐 확정됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "ulsan-551463a7bfa98077",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "[울산교육청] 울산형 공교육 모형 ‘외솔교육’ 본격 추진",
+      "date": "2026-09-06",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20260906154425851",
+      "category": "정책·행정",
+      "importance": 3,
+      "selectionReason": "교육감 공약사항인 울산형 공교육 모형 '외솔교육'을 본격 추진하며 부서 간 협력 체계를 구축하는 정책적 변화임.",
+      "summaryPoints": [
+        "울산의 큰 스승인 외솔 최현배 선생의 사상과 교육적 가치를 계승하는 울산형 공교육 모형인 외솔교육을 본격 추진함",
+        "문해력 교육, 자주성 교육, 민주시민교육, 외솔교육 실행 기반 마련 등 4대 추진 전략과 12개 핵심과제, 34개 세부 과제로 종합 추진안을 구성함",
+        "올해 실행 기반을 마련하고 2028년부터 2029년까지 확산 단계를 거쳐 2030년 정착을 목표로 단계적 사업을 추진할 계획임"
+      ],
+      "analysisPoints": [
+        "지역의 역사적 인물 정신을 계승한 독자적인 공교육 브랜드를 구축하여 공교육의 정체성과 책무성을 강화하려는 시도로 볼 수 있음",
+        "문해력, 자주성, 민주시민교육을 아우르는 중장기 로드맵을 설정하여 단계별로 확산 및 정착을 도모하는 정책 추진 방식을 보여줌"
+      ],
+      "applicationReviewPoints": [
+        "지역의 역사·문화적 자산이나 인물 정신을 연계한 독자적인 교육 모델 개발 가능성을 검토해 볼 수 있음",
+        "기초 학력과 민주시민교육을 융합한 중장기 교육과정 모델의 도입 여건을 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "외솔교육은 제11대 교육감 공약사항임",
+        "종합 추진안은 4대 전략, 12개 핵심과제, 34개 세부 과제로 구성됨",
+        "이달 중순 이후 종합 추진안을 확정할 예정임",
+        "2028년부터 2029년까지 확산 단계를 거칠 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9,
+        "repair": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeonggi-67e70bc3bbbec785",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "‘잠든 악기를 깨워 학교와 학교를 잇다’ 경기도교육청,‘소리이음 악기공유 지원사업’추진",
+      "date": "2026-09-07",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2368001&bbsId=1922&mi=10102",
+      "category": "기타",
+      "importance": 3,
+      "selectionReason": "도교육청 차원에서 플랫폼을 구축하여 학교 간 악기 공유 및 관리전환을 체계적으로 지원하는 정책 사업임.",
+      "summaryPoints": [
+        "학교 내 유휴악기를 발굴하여 필요한 학교에 공유하는 소리이음 악기공유 지원사업을 추진함",
+        "경기예술교육 통합 플랫폼 RAS 경기예술마루를 통해 악기 등록 및 공유 신청을 진행함",
+        "악기 점검, 수리, 운반 비용을 도교육청에서 지원하여 학교 부담을 완화함"
+      ],
+      "analysisPoints": [
+        "학교 내 유휴 자원을 발굴하고 통합 플랫폼을 통해 학교 간 공유를 활성화함으로써 자원 활용의 효율성을 극대화하는 공유경제 모델임",
+        "악기 점검, 수리, 운반 등 실무적·재정적 부담을 교육청이 직접 지원하여 학교의 참여 장벽을 낮추고 예술교육 기회를 확대함"
+      ],
+      "applicationReviewPoints": [
+        "통합 플랫폼을 활용한 학교 간 유휴 교구 및 악기 공유 체계 구축 방안을 비교해 볼 수 있음",
+        "악기 수리 및 운반비 지원 등 학교 부담 완화를 위한 행·재정적 지원 방식의 도입 가능성을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "악기 보유학교 등록 기간은 9월 9일부터 9월 16일까지임",
+        "수요학교 신청 기간은 9월 30일부터 10월 7일까지임",
+        "2차 사업은 11월 중 추가 운영할 예정임",
+        "RAS 경기예술마루 플랫폼은 소리이음마루, 예술피움마루, 배움나눔마루, 꿈펼침마루로 구성됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungbuk-ca03317a98d86ccc",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "윤건영 교육감, \"위기학생 조기에 돕고, 교실 안전 지키는 근본 대책 마련해야\"",
+      "date": "2026-09-04",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1578734&bbsId=1158&mi=10301",
+      "category": "학생지원·복지",
+      "importance": 3,
+      "selectionReason": "교육청 차원의 학교 위기상황 대응체계 전면 개편 및 제도 보완 의지를 담은 정책적 방향성 제시.",
+      "summaryPoints": [
+        "위기학생 조기 발견 및 치료 지원을 위한 학교 위기상황 대응체계를 보완함",
+        "교육활동 침해 행위에 단호히 대처하고 피해 교원 보호를 강화함",
+        "보호자의 치료 이행 책임 강화 및 제도적 개선 방안을 정부와 국회에 제안할 예정임"
+      ],
+      "analysisPoints": [
+        "위기학생 조기 발견과 치료 지원을 위해 학교 위기상황 대응체계를 강화하고 맞춤형 지원을 고도화하려는 흐름을 반영함",
+        "교육활동 침해 예방과 피해 교원 보호를 위해 보호자의 책임을 강화하는 법 제도적 개선을 대외적으로 제안하는 적극적인 행정 행보를 보여줌"
+      ],
+      "applicationReviewPoints": [
+        "위기학생 조기 발견 및 맞춤형 치료 지원을 위한 자체 대응체계를 점검하고 보완책을 검토해 볼 수 있음",
+        "보호자의 치료 이행 책임 강화 등 교권 보호를 위한 제도적 개선 건의안에 대해 타 시도와의 공동 대응 협력 여부를 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "윤건영 교육감은 9월 4일 기획회의에서 위기학생 대응체계 보완을 강조함",
+        "대한민국교육감협의회와 협력하여 법 제도 개선을 추진함",
+        "정서 행동 어려움이 있는 위기관리 학생을 위한 맞춤형 지원체계를 강화함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongbuk-dfcd10f38c963204",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[기획예산관]경북교육청, 지방교육재정교부금 개편에 우려 표명",
+      "date": "2026-09-04",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1641415&bbsId=4744&mi=17643&searchCate=761",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "지방교육재정교부금 제도 개편이라는 교육부 차원의 정책 변화에 대한 교육청의 공식 입장 및 대응을 다룸.",
+      "summaryPoints": [
+        "정부의 지방교육재정교부금 개편안에 따른 재정 기반 약화 우려 표명",
+        "개편 산식 적용 시 전국 약 31조 원, 경북교육청 약 2조 원의 교부금 감소 예상",
+        "내년도 공무원 보수 인상률보다 낮은 교부금 증가율로 교육수요 대응의 어려움 호소",
+        "미래대응기금의 초·중등교육 활용 한계 및 중앙정부 의존적 세입 구조의 문제점 지적",
+        "현행 내국세 연동 구조 유지 및 사회적 합의를 통한 제도 개편 논의 촉구"
+      ],
+      "analysisPoints": [
+        "지방교육재정교부금 개편에 따른 시도교육청의 재정적 불안정성 증대 우려를 보여줌",
+        "학령인구 감소 및 소규모 학교 비율이 높은 지역 교육청의 재정적 타격이 더 클 것으로 예상됨",
+        "세입 감소 요인의 다변화로 다각적인 재정 대응책 마련이 요구됨"
+      ],
+      "applicationReviewPoints": [
+        "정부의 교부금 개편안에 따른 전북 지역의 세입 감소 규모 및 재정적 영향력을 선제적으로 분석해 볼 수 있음",
+        "소규모 학교 비율 등 전북의 교육 여건을 고려한 중장기 재정 운용 계획의 적정성을 재검토할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2027년도 정부 예산안에 지방교육재정교부금 개편안 반영",
+        "현행 내국세 연동 방식에서 경상성장률과 학령인구 반영 방식으로 변경 추진",
+        "경북교육청 내 학생 60명 이하 소규모학교 비율 38% 이상",
+        "2027년도 정부안 기준 교부금 78조 9천억 원 산정",
+        "내년도 국세 교육세분 660억 원 및 담배소비세분 지방교육세 880억 원 감소 예정",
+        "2028년부터 고교무상교육 국고 및 지자체 지원 388억 원 감소 예정",
+        "2027년도 교부금 증가율 약 3.2%로 공무원 보수 인상률 3.9% 하회"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "moe-cffb6a2f42186b30",
+      "sourceId": "moe",
+      "source": "교육부",
+      "title": "교육부, 2027학년도 대입전형 기간에 맞춰 입시비리 집중신고 기간 운영",
+      "date": "2026-09-06",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107136&lev=0&m=020402&s=moe",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "교육부 차원에서 입시 공정성 확보를 위해 운영하는 공식적인 집중신고 기간 안내로 정책적 파급력이 있습니다.",
+      "summaryPoints": [
+        "2027학년도 대입 원서접수 시기에 맞춰 입시비리 집중신고 기간 운영",
+        "신고 대상은 입학 관련 법령 위반 및 공정한 경쟁을 침해하는 행위",
+        "교육부 누리집 내 입시비리 신고센터를 통해 상시 신고 가능",
+        "공익신고자 보호법에 따라 신고자 정보 철저 보호",
+        "부정행위 적발 시 징계 시효 10년 적용 및 입학허가 취소 근거 마련"
+      ],
+      "analysisPoints": [
+        "대입 전형의 공정성 강화를 위해 정부 차원의 입시비리 단속 및 처벌 기준이 대폭 강화되는 추세임",
+        "징계 시효 연장 및 입학허가 취소 근거 마련으로 입시 부정에 대한 법적 책임 범위가 확대됨"
+      ],
+      "applicationReviewPoints": [
+        "도내 고등학교 및 관련 기관을 대상으로 강화된 입시비리 처벌 기준과 신고 제도를 적극 안내할 필요가 있음",
+        "대입 전형의 공정성 확보를 위한 자체적인 모니터링 및 예방 교육 강화를 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "입시비리 집중신고 기간은 2026년 9월 7일부터 2027년 1월 7일까지임",
+        "입시비리 신고센터는 2023년부터 설치 및 운영 중",
+        "교육공무원법 및 사립학교법 개정으로 징계 시효 3년에서 10년으로 연장",
+        "고등교육법 시행령 개정으로 부정행위 이용 시 입학허가 취소 근거 신설"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "busan-c14ebae2b54a1075",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "부산교육청, 고2 등급평균 1.00 유지 학생 0.68%로 조사",
+      "date": "2026-09-04",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1179461&bbsId=2286&mi=30397",
+      "category": "교육과정·수업",
+      "importance": 2,
+      "selectionReason": "교육청 산하 학력개발원의 성적 분석 자료로, 향후 대입 제도 및 학력 평가 정책 수립에 참고할 수 있는 유의미한 데이터임",
+      "summaryPoints": [
+        "부산지역 고교 2학년 대상 누적 등급평균 1.00 유지 학생 비율 분석",
+        "전체 학생 중 누적 등급평균 1.00 유지 학생은 0.68%로 조사됨",
+        "직전 학기 1.00 유지 학생 중 이번 학기에도 유지한 비율은 52.3%임",
+        "5등급제 도입으로 인한 최상위권 경쟁 심화 우려와 차이가 있음을 확인",
+        "학기 누적에 따라 모든 과목 1등급 유지는 극소수일 것으로 전망"
+      ],
+      "analysisPoints": [
+        "실제 고등학교 내신 등급 누적 데이터를 통해 최상위권 등급 유지의 현실적 어려움을 객관적으로 규명함",
+        "대입 제도 변화에 따른 막연한 불안감이나 경쟁 심화 우려를 완화하기 위한 데이터 기반의 진학 정보 제공이 중요함을 시사함"
+      ],
+      "applicationReviewPoints": [
+        "전북 지역 고등학생들의 학기별 내신 등급 누적 추이를 분석하여 맞춤형 대입 상담 자료로 활용하는 방안을 검토할 수 있음",
+        "학생과 학부모의 대입 불안감 해소를 위해 객관적인 통계 자료에 기반한 진로·진학 설명회 개최를 고려해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "부산지역 고등학교 98개교 2학년 학생 15,978명 대상 분석",
+        "3학년 1학기까지 등급평균 1.00 유지 학생은 전체의 0.2~0.4% 수준 예상",
+        "전국 기준 3학년 1학기까지 1.00 유지 학생은 700~1,400명 수준으로 추정"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jngj_s1n1-c7860eb33b4fa2f5",
+      "sourceId": "jngj_s1n1",
+      "source": "전남광주통합특별시교육청",
+      "title": "전남광주특별시교육청, 공용물품 사적 유용 엄정대응 재발방지 추진",
+      "date": "2026-09-06",
+      "url": "https://www.jngjedu.kr/news/articleView.html?idxno=120534",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "공용물품 사적 유용 방지를 위한 관리 시스템 보완 및 현장 점검 강화 등 교육행정 체계의 제도적 개선을 포함함.",
+      "summaryPoints": [
+        "학교 공용물품 사적 유용 비위 행위에 대한 무관용 원칙 대응",
+        "공용물품 사적 유용 및 무단 처분 관련자 징계 처분 완료",
+        "재발 방지를 위한 공직기강 확립 및 특별 교육 실시",
+        "각급 기관 감사 시 공용물품 관리 적정성 필수 점검",
+        "공용물품 관리 시스템 보완 및 현장 관리 감독 강화"
+      ],
+      "analysisPoints": [
+        "공용물품의 사적 유용 및 무단 처분 등 공직기강 해이 사례에 대한 무관용 원칙과 엄정 대응 기조를 보여줌",
+        "단순 징계를 넘어 감사 필수 항목 지정, 관리 시스템 보완 등 제도적 재발 방지 대책 마련의 필요성을 강조함"
+      ],
+      "applicationReviewPoints": [
+        "전북 교육 현장의 공용물품 관리 실태를 점검하고 관련 감사 기준을 보완할 필요가 있음",
+        "교직원 대상의 공용물품 사적 유용 예방 교육 및 공직기강 확립을 위한 안내를 강화하는 방안을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "전남광주통합특별시교육청 소속 교직원의 공용물품 사적 유용 및 중고거래 적발",
+        "지난 6월 발생한 사안에 대해 감사 착수 및 조치 완료"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "moe-8dfabe2cbece490a",
+      "sourceId": "moe",
+      "source": "교육부",
+      "title": "데이터로 읽는 우리 교육 제13호 발간",
+      "date": "2026-09-06",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107138&lev=0&m=020402&s=moe",
+      "category": "기타",
+      "importance": 1,
+      "selectionReason": "학교복합시설의 현황과 정책적 확장 방향을 분석한 자료로 교육행정 판단에 참고할 가치가 있습니다.",
+      "summaryPoints": [
+        "학교복합시설은 학교 공간을 활용해 학생과 지역주민이 공공시설을 공동 이용하는 생활 인프라임",
+        "학령인구 감소에 따른 학교 유휴 공간 활용과 지역사회의 생활 서비스 수요 증가로 확충 필요성이 커짐",
+        "2021년 학교복합시설법 시행 이후 국가 차원의 공모사업을 통해 전국적으로 사업이 확대되고 있음",
+        "현재 전국 209개소가 운영 중이며 114개소가 개관을 준비하고 있음",
+        "수도권 중심에서 농산어촌 및 인구감소지역으로 서비스 권역이 확장되며 공간적 효율성과 형평성을 강화하고 있음"
+      ],
+      "analysisPoints": [
+        "학령인구 감소에 대응하여 학교 유휴 공간 및 폐교를 활용한 학교복합시설 확충이 전국적으로 활성화되는 추세임.",
+        "초등학교 중심(54.0%)의 시설 설치 비율이 높아 초등학생 및 인근 주민 대상의 생활 밀착형 서비스 제공에 유리함.",
+        "도시지역 편중(75.8%) 현상을 완화하고 농산어촌 및 인구감소지역으로의 서비스 권역 확장을 통한 지역 간 형평성 제고가 요구됨.",
+        "국가 차원의 공모사업 연계를 통해 재원 확보 및 사업 추진 동력을 마련하는 것이 중요함."
+      ],
+      "applicationReviewPoints": [
+        "전북 지역 내 학교복합시설의 설치 현황 및 도시와 농산어촌 간 분포 격차를 분석해 볼 수 있음.",
+        "유휴 공간이 상대적으로 많은 초등학교 및 폐교를 대상으로 지역 맞춤형 복합시설 모델 도입을 검토할 수 있음.",
+        "교육부 공모사업 선정 현황을 점검하고 향후 공모 참여를 위한 지자체와의 협력 체계 구축 방안을 확인할 필요가 있음."
+      ],
+      "sourceFacts": [
+        "학교복합시설은 학교 또는 폐교에 공공시설을 설치하여 학생과 지역주민이 공동 이용하는 시설임",
+        "현재 운영 중인 학교복합시설은 209개소이며, 개관 준비 중인 시설은 114개소임",
+        "전체 국민의 36.0%가 운영 중인 학교복합시설로부터 3.9km 이내에 거주함",
+        "학교복합시설 설치 및 운영 관리에 관한 법률이 2020년 3월 제정되어 2021년 3월부터 시행됨",
+        "교육부 공모사업을 통해 2023년 37개, 2024년 37개, 2025년 19개, 2026년 14개 사업이 선정됨",
+        "전국 229개 시군구 중 147개(64.2%)에서 학교복합시설을 보유하거나 조성을 추진 중임",
+        "전체 학교복합시설 중 75.8%는 도시지역, 24.2%는 농산어촌 지역에 위치함",
+        "학교급별로는 초등학교에 설치된 시설이 174개소로 전체의 54.0%를 차지함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "ownOfficeItems": [
+    {
+      "newsId": "jeonbuk-0b605e0ff6791b63",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "전북교육청·노동조합, 청렴 실천 한마음 한뜻",
+      "date": "2026-09-04",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1173542",
+      "summaryPoints": [
+        "전북교육청과 11개 노동조합이 청렴 실천 및 공정한 조직문화 조성을 위한 공동 협약 체결함.",
+        "법과 원칙 준수, 갑질 근절, 반부패 및 신고자 보호 등 실천과제 발굴을 위해 지속적으로 소통할 예정임."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-f3087ee235d016a7",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "‘행복한 한끼, 함께 만드는 미래’ 특별전 개최",
+      "date": "2026-09-04",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1173317",
+      "summaryPoints": [
+        "9월 7일부터 10월 8일까지 본청에서 제8회 행복한 학교급식 공모전 수상작 96점 전시함.",
+        "전시 종료 후 수상작을 영양 식생활 교육 자료로 활용하고 학교 신청을 받아 순회 전시할 예정임."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-120d5fdec6340c0d",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "전북교육청, 주민참여예산제 지역 중심으로 확대",
+      "date": "2026-09-04",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1173543",
+      "summaryPoints": [
+        "주민참여예산위원 역량 강화 워크숍을 개최하여 제도 이해도 제고 및 전문성 강화 도모함.",
+        "내년부터 지역 특성을 반영한 19억 원 규모의 교육지원청 주민참여 공모사업을 신설하여 운영할 예정임."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "omittedItems": [],
+  "validation": {
+    "status": "PASS",
+    "issues": [],
+    "checks": {
+      "ownOfficeExcludedFromTrendAnalysis": true,
+      "ownOfficeAllIncluded": true,
+      "ownOfficeSummariesVerified": true,
+      "publishedItemsVerified": true,
+      "sourceWindowMatches": true
+    }
+  },
+  "providerErrors": {
+    "facts": [],
+    "ownOfficeSummaries": [],
+    "analysis": [],
+    "verification": [],
+    "repairs": [],
+    "repairVerifications": []
+  },
+  "trace": [
+    {
+      "step": "extract_facts",
+      "status": "success",
+      "startedAt": "2026-09-06T22:31:32+00:00",
+      "durationMs": 10136
+    },
+    {
+      "step": "summarize_own_office",
+      "status": "success",
+      "startedAt": "2026-09-06T22:31:42+00:00",
+      "durationMs": 1529
+    },
+    {
+      "step": "analyze_trends",
+      "status": "success",
+      "startedAt": "2026-09-06T22:31:43+00:00",
+      "durationMs": 34679
+    },
+    {
+      "step": "verify_report",
+      "status": "success",
+      "startedAt": "2026-09-06T22:32:18+00:00",
+      "durationMs": 3686
+    },
+    {
+      "step": "repair_report_1",
+      "status": "success",
+      "startedAt": "2026-09-06T22:32:22+00:00",
+      "durationMs": 7367
+    },
+    {
+      "step": "verify_repair_1",
+      "status": "success",
+      "startedAt": "2026-09-06T22:32:29+00:00",
+      "durationMs": 652
+    }
+  ],
+  "rendering": {
+    "canonical": "json",
+    "html": "오늘의 교육동향 (20260907).html",
+    "hwpx": "오늘의 교육동향 (20260907).hwpx",
+    "hwpxValidation": {
+      "hardGates": {
+        "package_validation": "pass",
+        "document_errors": "pass",
+        "schema_lint": "pass",
+        "reopen": "pass",
+        "editor_open_safety": "pass",
+        "id_integrity": "pass"
+      },
+      "packageOk": true,
+      "documentOk": true,
+      "reopenedOk": true,
+      "visualReviewRequired": true
+    }
+  }
+}
