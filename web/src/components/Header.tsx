@@ -8,29 +8,40 @@ const TABS: { id: ActiveTab; label: string }[] = [
   { id: "coverage", label: "전북 언론 게재현황" },
 ];
 
-// GoatCounter 공개 카운터로 오늘·누적 방문자 수를 가져온다(응답은 최대 4시간 캐시).
+// GoatCounter 공개 카운터로 이번 주·누적 방문자 수를 가져온다.
+// 응답이 최대 4시간 캐시돼 '오늘'은 실시간성이 떨어지므로 주 단위로 표시한다.
 const GC_TOTAL = "https://jbe-edu-trends.goatcounter.com/counter/TOTAL.json";
+
+// 한국 시간 기준 이번 주(월~일) 범위. 오늘이 주 중이면 끝은 오늘로 둔다.
+function kstWeekRange(): { start: string; end: string } {
+  const ymd = (d: Date) => d.toISOString().slice(0, 10);
+  const now = new Date(Date.now() + 9 * 3600 * 1000);
+  // getUTCDay: 0=일 … 6=토 → 월요일까지 거슬러 갈 일수
+  const backToMonday = (now.getUTCDay() + 6) % 7;
+  const monday = new Date(now.getTime() - backToMonday * 86400000);
+  return { start: ymd(monday), end: ymd(now) };
+}
 
 function VisitorCounts() {
   const [total, setTotal] = useState<string | null>(null);
-  const [today, setToday] = useState<string | null>(null);
+  const [week, setWeek] = useState<string | null>(null);
 
   useEffect(() => {
-    // 한국 시간(KST) 기준 오늘 날짜
-    const kstToday = new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
+    const { start, end } = kstWeekRange();
     const get = (url: string) =>
       fetch(url)
         .then((r) => (r.ok ? r.json() : null))
         .then((d) => (d && typeof d.count === "string" ? d.count : null))
         .catch(() => null);
     get(GC_TOTAL).then(setTotal);
-    get(`${GC_TOTAL}?start=${kstToday}&end=${kstToday}`).then(setToday);
+    get(`${GC_TOTAL}?start=${start}&end=${end}`).then(setWeek);
   }, []);
 
-  if (total === null && today === null) return null;
+  if (total === null && week === null) return null;
   return (
     <span className="shrink-0 text-xs text-slate-500 whitespace-nowrap">
-      오늘 <b className="text-slate-700">{today ?? "-"}</b>
+      <span title="월요일부터 오늘까지">이번 주</span>{" "}
+      <b className="text-slate-700">{week ?? "-"}</b>
       <span className="mx-1.5 text-slate-300">·</span>
       누적 <b className="text-slate-700">{total ?? "-"}</b>
     </span>
