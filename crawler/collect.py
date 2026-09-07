@@ -187,7 +187,8 @@ CONTENT_SELECTORS = {
     "moe": ["#txt"],
 }
 
-PREFER_ATTACHMENT_SOURCES = {"gyeongbuk", "jeju", "moe"}
+# 대구는 상세 페이지에 본문이 없고 첨부 한글파일에만 내용이 있다.
+PREFER_ATTACHMENT_SOURCES = {"gyeongbuk", "jeju", "moe", "daegu"}
 DOCUMENT_EXTENSIONS = (".hwp", ".hwpx", ".pdf", ".docx")
 BOILERPLATE_PHRASES = [
     "본문 바로가기",
@@ -907,9 +908,32 @@ def extract_gyeongbuk_attachment_text(soup: BeautifulSoup, detail_url: str) -> s
         return ""
 
 
+def script_attachment_candidates(soup: BeautifulSoup, detail_url: str) -> list[tuple[str, str]]:
+    """<a href>가 아니라 스크립트 안에만 첨부 경로가 있는 게시판을 위한 보조 경로.
+
+    대구는 목록·상세 모두 fileView('해시') 형태라 링크에서 파일을 찾을 수 없고,
+    실제 경로는 '/upload/...hwpx' 문자열로만 남아 있다.
+    """
+    found: list[tuple[str, str]] = []
+    seen: set[str] = set()
+    for path in re.findall(r"['\"](/[^'\"\s]*?\.(?:hwpx|hwp|pdf|docx))['\"]", str(soup), re.I):
+        url = urljoin(detail_url, path)
+        if url in seen:
+            continue
+        seen.add(url)
+        found.append((url, path.rsplit("/", 1)[-1]))
+    return found[:3]
+
+
 def extract_direct_attachment_text(soup: BeautifulSoup, detail_url: str) -> str:
     best = ""
-    for file_url, filename in direct_attachment_candidates(soup, detail_url):
+    # 링크 후보가 있어도 대구처럼 '#none' 같은 껍데기일 수 있어 스크립트 경로도 함께 본다.
+    candidates = direct_attachment_candidates(soup, detail_url)
+    known = {url for url, _ in candidates}
+    candidates = candidates + [
+        c for c in script_attachment_candidates(soup, detail_url) if c[0] not in known
+    ]
+    for file_url, filename in candidates:
         try:
             response = SESSION.get(file_url, timeout=TIMEOUT_SECONDS)
             response.raise_for_status()
@@ -952,6 +976,21 @@ def choose_best_summary(title: str, html_text: str, attachment_text: str, source
     return html_clean[:5000], "html"
 
 
+def strip_title_prefix(source: dict[str, Any], title: str) -> str:
+    """제목 앞머리의 사이트 고유 표기를 걷어낸다.
+
+    강원은 게시판 제목에 '[안전복지과 윤세영]'처럼 담당부서·담당자를 붙여 둔다.
+    보고서에서는 잡음이므로 sources.json의 titleStripPrefix 규칙으로만 떼어낸다.
+    """
+    pattern = source.get("titleStripPrefix")
+    if not pattern:
+        return title
+    cleaned = re.sub(pattern, "", normalize_space(title or ""), count=1)
+    cleaned = normalize_space(cleaned).lstrip(" -·:|")
+    # 통째로 지워지는 제목은 원문을 그대로 둔다.
+    return cleaned if len(cleaned) >= 8 else title
+
+
 def collect_detail(source: dict[str, Any], link: dict[str, str]) -> dict[str, Any]:
     html = fetch_text(link["url"], source)
     soup = BeautifulSoup(html, "lxml")
@@ -965,6 +1004,7 @@ def collect_detail(source: dict[str, Any], link: dict[str, str]) -> dict[str, An
             title = list_title
         else:
             title = title[:90].rsplit(" ", 1)[0] + "…"
+    title = strip_title_prefix(source, title)
     date = parse_date(all_text + " " + link.get("listText", ""))
     html_summary = extract_summary(soup, source, title)
     attachment_summary = ""
