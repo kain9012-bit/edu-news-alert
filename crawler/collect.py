@@ -109,7 +109,25 @@ DATA_ID_ONLY_SOURCES = {
     "incheon",
     "chungbuk",
     "gyeongbuk",
+    # 세종·대구는 목록 <a>의 href가 javascript:라 데이터 속성에서만 글번호를 얻는다.
+    "sejong",
+    "daegu",
 }
+
+# 목록 앵커에서 글번호를 담고 있는 데이터 속성 후보.
+# 세종: <a class="nttInfoBtn" data-id="3072510">
+# 대구: <a data-nm="nttSn" data-param="2212832">
+SEQ_DATA_ATTRS = (
+    "data-id",
+    "data-param",
+    "data-ntt-sn",
+    "data-nttsn",
+    "data-seq",
+    "data-board-seq",
+)
+# 기본 선택자를 넓히면 좌측 메뉴의 data-id까지 글로 잡힌다(충북에서 확인).
+# 사이트별로 sources.json의 linkSelector로만 넓힌다.
+DEFAULT_SEQ_ANCHOR_SELECTOR = "a.nttInfoBtn[data-id]"
 
 RETIRED_SOURCE_IDS = {
     "gwangju",
@@ -348,7 +366,28 @@ def stable_id(source_id: str, url: str) -> str:
     return f"{source_id}-{hashlib.sha1(url.encode('utf-8')).hexdigest()[:16]}"
 
 
+# 예열 요청을 이미 마친 사이트(호스트 기준). 매 요청마다 반복하지 않는다.
+_WARMED_HOSTS: set[str] = set()
+
+
+def warm_up(source: dict[str, Any] | None) -> None:
+    """세션 쿠키가 없으면 SSO로 튕겨내는 사이트(대구)를 위해 먼저 몇 페이지를 훑는다."""
+    urls = (source or {}).get("warmupUrls") or []
+    if not urls:
+        return
+    host = urlparse(urls[0]).netloc
+    if host in _WARMED_HOSTS:
+        return
+    for url in urls:
+        try:
+            SESSION.get(url, timeout=TIMEOUT_SECONDS)
+        except requests.RequestException:
+            pass
+    _WARMED_HOSTS.add(host)
+
+
 def fetch_text(url: str, source: dict[str, Any] | None = None) -> str:
+    warm_up(source)
     verify = not (source or {}).get("verifySsl") is False
     res = SESSION.get(url, timeout=TIMEOUT_SECONDS, verify=verify)
     res.raise_for_status()
@@ -381,7 +420,8 @@ def detail_url_from_seq(source: dict[str, Any], seq: str) -> str | None:
         return None
     list_query = parse_qs(urlparse(source["listUrl"]).query)
     params = {seq_param: seq}
-    for key in ["bbsId", "mi", "boardID", "m", "s", "searchCate"]:
+    # "key"는 강원처럼 게시판 식별자를 base64로 넘기는 곳에서 상세 조회에도 필요하다.
+    for key in ["bbsId", "mi", "boardID", "m", "s", "searchCate", "key"]:
         if key in list_query:
             params[key] = list_query[key][0]
     params.update({str(key): str(value) for key, value in source.get("detailParams", {}).items()})
@@ -405,6 +445,8 @@ def clean_candidate_title(text: str) -> str:
     text = re.sub(r"\s+\d{2}[.-]\d{2}[.-]\d{2}.*$", "", text)
     text = re.sub(r"^\d+\s+", "", text)
     text = re.sub(r"\s*새글\s*$", "", text)
+    # 세종·강원처럼 제목 앞에 새글 표시(N/NEW/새글)가 붙는 목록을 정리한다.
+    text = re.sub(r"^(?:N|NEW|새글)\s+(?=\S)", "", text)
     return normalize_space(text).strip(" -|·")
 
 
@@ -528,9 +570,6 @@ def collect_links(source: dict[str, Any], html: str) -> list[dict[str, str]]:
     if source_id == "moe":
         return collect_moe_links(source, soup)
 
-    if source_id == "sejong":
-        return []
-
     if source_id not in DATA_ID_ONLY_SOURCES:
         for a in soup.find_all("a"):
             href = a.get("href") or ""
@@ -544,11 +583,14 @@ def collect_links(source: dict[str, Any], html: str) -> list[dict[str, str]]:
 
     seq_param = source.get("seqParam")
     if seq_param:
-        tags = soup.select("a.nttInfoBtn[data-id]") if source_id in DATA_ID_ONLY_SOURCES else soup.find_all(True)
+        if source_id in DATA_ID_ONLY_SOURCES:
+            tags = soup.select(source.get("linkSelector") or DEFAULT_SEQ_ANCHOR_SELECTOR)
+        else:
+            tags = soup.find_all(True)
         for tag in tags:
             attrs = tag.attrs
             seq = None
-            for name in ["data-id", "data-ntt-sn", "data-nttsn", "data-seq", "data-board-seq"]:
+            for name in SEQ_DATA_ATTRS:
                 if attrs.get(name):
                     seq = str(attrs.get(name))
                     break
@@ -560,7 +602,10 @@ def collect_links(source: dict[str, Any], html: str) -> list[dict[str, str]]:
                 if match:
                     seq = match.group(1)
             url = detail_url_from_seq(source, seq or "")
-            title = clean_candidate_title(tag.get_text(" ") or row_text(tag))
+            # 대구처럼 링크 텍스트에 부서·날짜가 섞이는 곳은 title 속성이 더 정확하다.
+            title = clean_candidate_title(
+                str(attrs.get("title") or "") or tag.get_text(" ") or row_text(tag)
+            )
             if is_notice_title(title):
                 continue
             if url and url_matches(url, source) and url not in seen:

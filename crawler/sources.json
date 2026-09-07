@@ -91,7 +91,12 @@
     "id": "daegu",
     "name": "대구광역시교육청",
     "baseUrl": "https://www.dge.go.kr",
-    "listUrl": "https://www.dge.go.kr/pr/main.do",
+    "listUrl": "https://www.dge.go.kr/pr/na/ntt/selectNttList.do?mi=9870&bbsId=2680",
+    "warmupUrls": [
+      "https://www.dge.go.kr/",
+      "https://www.dge.go.kr/main/main.do",
+      "https://www.dge.go.kr/main/sso/index.do"
+    ],
     "include": [
       "selectNttInfo.do",
       "nttSn="
@@ -104,6 +109,7 @@
     ],
     "detailPath": "/pr/na/ntt/selectNttInfo.do",
     "seqParam": "nttSn",
+    "linkSelector": "a[data-nm=\"nttSn\"][data-param]",
     "enabled": true
   },
   {
@@ -219,7 +225,7 @@
     "id": "gangwon",
     "name": "강원특별자치도교육청",
     "baseUrl": "https://gwe.go.kr",
-    "listUrl": "https://gwe.go.kr/promotion/bbs/list.do?key=m2411225294640",
+    "listUrl": "https://gwe.go.kr/promotion/bbs/list.do?key=bTI0MTEyMjUyOTQ2NDA=&bbsCtgrySn=154",
     "include": [
       "/promotion/bbs/view.do",
       "bbsSn="
@@ -230,6 +236,8 @@
       ".jpg",
       ".png"
     ],
+    "detailPath": "/promotion/bbs/view.do",
+    "seqParam": "bbsSn",
     "enabled": true
   },
   {
