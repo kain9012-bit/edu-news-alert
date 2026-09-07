@@ -1,0 +1,642 @@
+{
+  "metadata": {
+    "reportId": "20260907T220146Z-f78e0b68",
+    "title": "오늘의 교육동향",
+    "status": "completed",
+    "generatedAt": "2026-09-07T22:01:46+00:00",
+    "windowStart": "2026-09-07T06:00:00+09:00",
+    "windowEnd": "2026-09-08T06:00:00+09:00",
+    "windowHours": 24,
+    "selectionRunId": "20260907T211044Z-236dcdb8",
+    "sourceCount": 15,
+    "eligibleCount": 10,
+    "publishedCount": 10,
+    "omittedCount": 0,
+    "ownOfficeEligibleCount": 5,
+    "ownOfficePublishedCount": 5,
+    "qualityExcludedCount": 0,
+    "factModel": "gemini-3.1-flash-lite",
+    "analysisModel": "gemini-3.5-flash",
+    "verifierModel": "gemini-3.1-flash-lite",
+    "summaryOnlyCount": 0,
+    "ownOfficeReviewCount": 0,
+    "usage": {
+      "stages": {
+        "facts": {
+          "model": "gemini-3.1-flash-lite",
+          "requests": 5,
+          "promptTokenCount": 11032,
+          "candidatesTokenCount": 3586,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 14618
+        },
+        "analysis": {
+          "model": "gemini-3.5-flash",
+          "requests": 3,
+          "promptTokenCount": 4187,
+          "candidatesTokenCount": 2173,
+          "thoughtsTokenCount": 6604,
+          "totalTokenCount": 12964
+        },
+        "verification": {
+          "model": "gemini-3.1-flash-lite",
+          "requests": 4,
+          "promptTokenCount": 13890,
+          "candidatesTokenCount": 843,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 14733
+        }
+      },
+      "total": {
+        "requests": 12,
+        "promptTokenCount": 29109,
+        "candidatesTokenCount": 6602,
+        "thoughtsTokenCount": 6604,
+        "totalTokenCount": 42315
+      }
+    },
+    "estimatedCostUsd": 0.098147
+  },
+  "items": [
+    {
+      "newsId": "ulsan-8313066ded9ab6b1",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "[울산교육청] 조용식 울산교육감, 국회 찾아 교부금 개편 즉각 중단 촉구",
+      "date": "2026-09-07",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20260907170251477",
+      "category": "정책·행정",
+      "importance": 4,
+      "selectionReason": "지방교육재정교부금법 개편이라는 교육 재정 제도 변화에 대응하는 교육청의 정책적 활동입니다.",
+      "summaryPoints": [
+        "조용식 울산교육감 및 4개 시도 교육감이 국회를 방문하여 지방교육재정교부금법 개편안 반대 입장을 전달함",
+        "개편안은 내국세 연동제 폐지 및 경상성장률·학령인구 변화율 반영을 골자로 함",
+        "울산교육청은 개편 시 내년 보통교부금이 약 7,562억 원 감소할 것으로 추산함",
+        "재정 공백 발생 시 학교 교육과정 운영 및 교육환경 개선 등 학생 지원 예산 축소가 불가피함"
+      ],
+      "analysisPoints": [
+        "지방교육재정교부금법 개편안 추진에 따른 시도교육청의 재정적 위기 우려가 심화되고 있음",
+        "내국세 연동제 폐지 및 학령인구 반영 시 교육환경 개선 및 학생 지원 예산의 대폭적인 축소가 불가피할 것으로 전망됨",
+        "시도교육청 차원의 공동 대응 및 국회 대상 건의 활동이 강화되는 추세임"
+      ],
+      "applicationReviewPoints": [
+        "교부금 개편안 도입 시 전북교육청의 보통교부금 감소 규모 및 재정적 영향을 시뮬레이션해 볼 필요가 있음",
+        "재정 축소에 대비한 자체 교육사업의 우선순위 조정 및 효율화 방안을 선제적으로 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "지방교육재정교부금법 개편안은 내국세의 20.79%를 배분하는 연동제 폐지를 포함함",
+        "개편안은 전년도 교부금에 최근 3년 평균 경상성장률과 학령인구 변화율의 35%를 반영함",
+        "울산교육청은 개편 시 내년 보통교부금이 2조 6,756억 원에서 1조 9,195억 원으로 28.3% 감소할 것으로 예상함",
+        "전국 교부금 총액은 110조 7,804억 원에서 78조 8,383억 원으로 28.8% 감소할 것으로 전망됨",
+        "조용식 교육감은 국회 교육위원회 소속 의원들을 면담함",
+        "지방교육재정교부금 개편 대응 긴급 행동 단체는 374개임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongnam-29a91e248bed237a",
+      "sourceId": "gyeongnam",
+      "source": "경상남도교육청",
+      "title": "“권순기 교육감, 국회 찾아 지방교육자치 교육재정 보장 촉구”",
+      "date": "2026-09-07",
+      "url": "https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&q_bbsDocNo=20260907164752739",
+      "category": "정책·행정",
+      "importance": 4,
+      "selectionReason": "지방교육재정교부금 제도 개편이라는 교육 정책 및 재정 관련 현안에 대해 교육감이 국회에 공식적으로 의견을 전달하고 대응하는 활동으로 정책적 파급력이 있음.",
+      "summaryPoints": [
+        "권순기 경남교육감이 국회를 방문하여 지방교육재정교부금 개편에 대한 우려를 전달함",
+        "시도교육감들과 공동으로 교육현장의 의견 수렴 및 지방교육자치 보장을 요청함",
+        "지역 국회의원들과 면담하며 지역 소멸 대응 및 맞춤형 교육을 위한 재정 확보를 건의함"
+      ],
+      "analysisPoints": [
+        "지방교육재정 확보를 위해 여러 시도교육청이 연대하여 국회에 공동 대응하는 움직임이 나타남",
+        "지역 소멸 대응 및 맞춤형 교육 실현을 위한 안정적인 교육재정 보장의 필요성이 강조됨"
+      ],
+      "applicationReviewPoints": [
+        "타 시도교육청과의 연대를 통한 지방교육재정 확보 공동 대응 참여 여부를 검토할 수 있음",
+        "지역 소멸 대응을 위한 전북 맞춤형 교육재정 수요를 분석하고 대응 논리를 마련할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "권순기 경남교육감은 2026년 9월 7일 국회의원회관을 방문함",
+        "서울·충북·대구·울산·세종 교육감과 함께 국회 교육위원회 소속 의원들을 면담함",
+        "윤한홍, 박성민, 이인선 국회의원과 별도 면담을 진행함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeonggi-67e70bc3bbbec785",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "‘잠든 악기를 깨워 학교와 학교를 잇다’ 경기도교육청,‘소리이음 악기공유 지원사업’추진",
+      "date": "2026-09-07",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2368001&bbsId=1922&mi=10102",
+      "category": "정책·행정",
+      "importance": 3,
+      "selectionReason": "학교 간 악기 공유 및 관리전환을 지원하는 도교육청 차원의 신규 사업 및 플랫폼 구축 사례임.",
+      "summaryPoints": [
+        "경기도교육청이 학교 내 유휴악기를 발굴하여 필요한 학교에 공유하는 소리이음 악기공유 지원사업을 추진함",
+        "경기예술교육 통합 플랫폼인 RAS 경기예술마루를 통해 악기 등록 및 공유 신청을 진행함",
+        "도교육청은 악기 점검, 수리, 운반 비용을 지원하여 학교의 행정적·재정적 부담을 완화함"
+      ],
+      "analysisPoints": [
+        "학교 내 유휴 자원을 발굴하여 재활용함으로써 예산 절감 및 자원 순환 효과를 도모함",
+        "통합 플랫폼을 활용한 악기 등록 및 매칭 시스템을 통해 학교 현장의 행정 편의성을 높임",
+        "교육청이 점검, 수리, 운반 비용을 지원하여 일선 학교의 재정적·행정적 부담을 완화함"
+      ],
+      "applicationReviewPoints": [
+        "전북 내 학교 유휴 악기 및 교육 기자재의 현황을 파악하고 이를 공유할 수 있는 시스템 구축 가능성을 검토할 수 있음",
+        "예술교육 활성화를 위해 유휴 악기 수리 및 운반비 지원 사업의 도입 실익을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "악기 보유학교는 9월 9일부터 9월 16일까지 유휴악기를 등록함",
+        "수요학교는 9월 30일부터 10월 7일까지 공유 및 관리전환을 신청함",
+        "2차 사업은 11월 중 추가 운영될 예정임",
+        "RAS 경기예술마루 플랫폼은 소리이음마루, 예술피움마루, 배움나눔마루, 꿈펼침마루로 구성됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "busan-2e950631c514da75",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "부산교육청, 인력공백 막을‘학교급식 대체인력 거점제’확대",
+      "date": "2026-09-07",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1179573&bbsId=2286&mi=30397",
+      "category": "교원·인사",
+      "importance": 3,
+      "selectionReason": "학교급식 인력 공백 해소를 위한 거점제도 확대는 교육청 차원의 실질적인 지원 정책 변화에 해당함.",
+      "summaryPoints": [
+        "부산교육청이 학교급식 종사자 부재 시 인력 공백을 막기 위한 대체인력 거점제도를 확대 운영함",
+        "대체전담 조리실무사를 채용하여 거점학교에 배치하고 결원 발생 학교에 인력을 지원함",
+        "운영 인원을 기존 10명에서 15명으로 증원하여 지원을 강화함"
+      ],
+      "analysisPoints": [
+        "학교급식 종사자의 갑작스러운 공백에 대응하여 안정적인 급식 운영을 도모하는 상시 지원 체계임",
+        "대체전담 인력을 직접 채용하여 거점학교에 배치함으로써 개별 학교의 구인난과 행정 부담을 경감함",
+        "온라인 플랫폼을 통한 간편 신청 시스템으로 지원 절차의 신속성을 확보함"
+      ],
+      "applicationReviewPoints": [
+        "급식 종사자 부재 시 대체인력 확보에 어려움을 겪는 도내 학교들을 위해 거점형 대체인력 제도 도입을 검토할 수 있음",
+        "대체인력 신청 및 배치를 효율화하기 위한 온라인 지원 시스템 연계 방안을 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "부산교육청은 지난해 9월 대체인력 거점제도를 시범 도입함",
+        "지난 1년간 총 606회의 대체인력을 지원함",
+        "결원 발생 학교는 지원 희망일 하루 전까지 부산학교지원서비스(BSSS)를 통해 신청함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeonggi-50cf9ef5894fcb87",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "안민석 교육감, ‘AP Korean’ 도입으로 한국어 교육 세계화 전략 모색",
+      "date": "2026-09-07",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2369491&bbsId=1922&mi=10102",
+      "category": "교육과정·수업",
+      "importance": 3,
+      "selectionReason": "AP Korean 도입을 위한 전략 로드맵 수립 및 교육과정 연계 추진 등 제도적 변화를 모색하는 정책적 사안임.",
+      "summaryPoints": [
+        "경기도교육청이 국회의원회관에서 AP Korean 도입을 위한 전략 로드맵 세미나를 개최함",
+        "AP Korean은 해외 학생의 한국어 학습 성취를 대학 진학 및 학업 과정에서 인정받도록 하는 프로그램임",
+        "안민석 교육감은 AP Korean 도입을 위한 예산 지원 의지를 밝힘",
+        "경기도교육청은 AI 및 디지털 기반 한국어 교육 콘텐츠를 확대할 계획임"
+      ],
+      "analysisPoints": [
+        "해외 학생의 한국어 학습 성취를 대학 진학 시 인정받도록 하는 AP Korean 도입을 통해 한국어 교육의 세계화 및 위상 강화를 도모함",
+        "AI 및 디지털 기반의 한국어 교육 콘텐츠 확대를 통해 교육 접근성을 높이고 다변화된 학습 환경을 구축하고자 함",
+        "지자체, 국회, 추진위원회 등 유관 기관과의 협력을 통해 정책 추진 동력을 확보하고 예산 지원 체계를 마련함"
+      ],
+      "applicationReviewPoints": [
+        "해외 학생 대상 한국어 교육 지원 및 대학 연계 프로그램 도입 동향을 파악하고 관련 기초 자료로 활용해 볼 수 있음",
+        "AI 및 디지털 기반 한국어 교육 콘텐츠 개발 및 활용 사례를 분석하여 관련 교육과정 운영 시 참고할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2026년 9월 7일 국회의원회관에서 AP Korean 전략 로드맵 세미나 개최",
+        "경기도교육청, 김준혁 국회의원, AP Korean 추진위원회 공동 주최",
+        "AP Korean은 해외 학생의 한국어 학습 성취를 대학 진학 시 인정받는 프로그램임",
+        "안민석 경기도교육감은 AP Korean 도입을 위한 예산 지원을 약속함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "ulsan-ccf9c60bea9bb8d1",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "울산교육청, ‘학교 업무 경감’ 현장 소통회 열어",
+      "date": "2026-09-07",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20260907170104102",
+      "category": "정책·행정",
+      "importance": 3,
+      "selectionReason": "교육청 차원의 사업 정비 및 학교 업무 경감 정책 추진과 관련된 현장 소통 및 제도 개선 노력입니다.",
+      "summaryPoints": [
+        "울산교육청이 학교 현장의 업무 경감을 위한 교직원 소통회를 개최함",
+        "공개 토론 방식을 통해 불필요한 업무를 정비하고 개선 방안을 모색함",
+        "가정통신문 일괄 발송, CCTV 유지보수 통합 등 업무 개선 사례를 발굴함",
+        "향후 학교 현장의 의견을 반영하여 사업 정비와 업무 개선을 지속할 예정임"
+      ],
+      "analysisPoints": [
+        "학교 현장의 실질적인 업무 경감을 위해 교직원과의 직접적인 소통을 바탕으로 불필요한 행정 절차를 정비함",
+        "가정통신문 일괄 발송, CCTV 통합 유지보수, 퇴직급여 업무 본청 통합 등 이관 및 위탁 중심의 행정 효율화 방안을 제시함",
+        "학교가 교육 활동에 집중할 수 있도록 교육지원청과 본청의 역할을 재정립하고 지원 체계를 강화함"
+      ],
+      "applicationReviewPoints": [
+        "가정통신문 일괄 발송 체계 구축 및 CCTV 임대·통합 유지보수 등 구체적인 업무 경감 사례의 효과성을 비교해 볼 수 있음",
+        "배움터지킴이 위촉 절차 이관 및 퇴직급여 업무 통합 운영 사례를 검토하여 행정 효율화 방안으로 참고할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2026년 9월 7일 울산교육청 외솔회의실에서 학교 업무 경감 현장 소통회 개최",
+        "교육청 안내 사항을 학교에서 가정통신문으로 재작성하지 않고 일괄 발송 체계로 개선",
+        "학교 CCTV를 임대 방식으로 전환하고 교육청이 통합 유지보수 관리",
+        "배움터지킴이 위촉 절차를 교육지원청으로 이관",
+        "교육공무직 퇴직급여 업무를 본청에서 통합 운영",
+        "대표적인 정비 사례 55선을 추후 안내할 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongbuk-cb7a08069aae7b62",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[학생생활과]경북교육청, 마음성장학년제‧마음EASY검사 현장 안착 지원",
+      "date": "2026-09-07",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1641860&bbsId=4744&mi=17643&searchCate=761",
+      "category": "학생지원·복지",
+      "importance": 2,
+      "selectionReason": "교육부의 학생 마음건강 통합지원방안과 연계된 정책 사업의 현장 안착을 위한 설명회로, 교육 정책의 실행 및 확산 과정에 해당함.",
+      "summaryPoints": [
+        "경북교육청이 마음성장학년제 및 마음EASY검사 활성화를 위한 선도학교 중간설명회를 개최함",
+        "학생 마음건강 정책 이해도를 높이고 학교 현장 적용 방안을 공유함",
+        "마음건강교육 우수사례와 위기 대응 체계를 논의함",
+        "학교 중심의 학생 마음건강 예방 및 지원 체계를 강화할 계획임"
+      ],
+      "analysisPoints": [
+        "학생의 마음건강 위기 징후를 조기에 발견하기 위해 표준화된 검사 도구와 학년제 중심의 예방 체계를 연계함",
+        "선도학교 및 연구학교 운영을 통해 우수사례를 발굴하고 학교 중심의 맞춤형 사회정서역량 강화 프로젝트를 추진함",
+        "설명회와 현장 소통을 통해 정책의 안착을 지원하고 학교 현장의 위기 대응력을 높이고자 함"
+      ],
+      "applicationReviewPoints": [
+        "학생 마음건강 조기 발견을 위한 검사 도구 도입 및 학년제 단위의 예방 프로그램 운영 사례를 비교해 볼 수 있음",
+        "사회정서역량 강화를 위한 프로젝트 운영 방식과 위기 대응 체계를 분석하여 관련 정책 수립 시 참고할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2026년 9월 4일부터 5일까지 경주 코모도호텔에서 중간설명회 개최",
+        "2026학년도 마음성장학년제 중점운영교 27교 및 연구학교 2교 관계자 29명 참석",
+        "마음EASY검사는 학생 마음건강 위기 징후 조기 발견을 위한 도구임",
+        "도·화·지 프로젝트를 통해 학생의 사회정서역량과 위기 대응력 강화 추진"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "sejong-bc8d745458b82d9e",
+      "sourceId": "sejong",
+      "source": "세종특별자치시교육청",
+      "title": "“학부모 목소리부터 듣는다” 세종시교육청, 글로벌 진로 탐험대 학부모 간담회 개최(중등교육과)",
+      "date": "2026-09-07",
+      "url": "https://www.sje.go.kr/sje/na/ntt/selectNttInfo.do?nttSn=3072510&bbsId=1039263&mi=52234",
+      "category": "진로·직업교육",
+      "importance": 2,
+      "selectionReason": "교육청 본청 차원에서 추진하는 대규모 진로교육 사업의 운영 체계와 예산 지원 원칙을 안내하는 정책성 자료입니다.",
+      "summaryPoints": [
+        "세종시교육청이 중학교 3학년 대상 글로벌 진로 탐험대 사업 관련 학부모 간담회를 개최함",
+        "사업 예산 구조, 안전 관리 계획 등을 설명하고 학부모 의견을 청취함",
+        "학부모 부담 완화 및 안전 대책 마련 등 제기된 의견을 사업 계획에 반영할 예정임",
+        "향후 설문과 설명회를 통해 학부모와 지속적으로 소통할 계획임"
+      ],
+      "analysisPoints": [
+        "중학교 3학년 전체를 대상으로 하는 대규모 국외 체험 사업 추진 시 학부모 간담회를 통해 예산 구조와 안전 대책에 대한 신뢰도를 높임",
+        "취약계층 전액 지원 및 소규모 팀 구성, 전문 인력 동행 등 안전과 형평성을 동시에 고려한 운영 모델을 제시함",
+        "설문조사와 설명회 등 지속적인 소통 채널을 통해 학부모의 의견을 사업 계획에 유연하게 반영하는 환류 체계를 구축함"
+      ],
+      "applicationReviewPoints": [
+        "학생 대상 글로벌 진로 체험 프로그램의 재원 분담 구조 및 취약계층 지원 방안을 비교해 볼 수 있음",
+        "소규모 팀 운영 및 간호사 동행 등 안전 관리 대책의 실효성을 검토하여 유사 사업 계획 수립 시 참고할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2026년 8월 27일 세종시교육청 본청에서 학부모 간담회 개최",
+        "글로벌 진로 탐험대는 중학교 3학년 전원을 대상으로 추진",
+        "총 경비의 70% 내외를 교육청이 지원하고 30% 이내를 자부담하는 구조",
+        "취약계층은 자부담 전액 지원",
+        "팀당 15명 단위 소규모 운영 및 간호사 동행 등 안전 대책 수립"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "seoul-5cc8b5f00144ebed",
+      "sourceId": "seoul",
+      "source": "서울특별시교육청",
+      "title": "서울시교육청, 학생스포츠 응원문화 개선 ‘응원의 품격’ 교육자료 개발 및 ...",
+      "date": "2026-09-07",
+      "url": "https://enews.sen.go.kr/news/view.do?bbsSn=192098&step1=3&step2=1",
+      "category": "학생지원·복지",
+      "importance": 2,
+      "selectionReason": "학생 인권 및 스포츠 응원 문화 개선을 위한 교육 자료 개발 및 전국 단위 공유 정책으로 파급력이 있음.",
+      "summaryPoints": [
+        "서울특별시교육청과 학교체육진흥회가 학생스포츠 응원문화 개선을 위한 '응원의 품격' 교육자료를 개발함",
+        "스포츠 현장의 혐오·차별·조롱 응원을 근절하고 스포츠인권 감수성을 증진하는 것이 목적임",
+        "영상 콘텐츠 3편과 카드뉴스 형태의 교재 3종으로 구성되어 학생 및 지도자 교육에 활용될 예정임",
+        "서울시교육청 TV 유튜브 채널 및 서울학교체육포털을 통해 전국 시·도 교육청에 자료를 공유함"
+      ],
+      "analysisPoints": [
+        "학생스포츠 현장의 혐오·차별·조롱 문화를 근절하고 스포츠인권 감수성을 높이기 위한 맞춤형 교육자료 개발의 필요성을 보여줌",
+        "초등, 중·고등, 지도자 등 대상별로 세분화된 카드뉴스 교재와 영상 콘텐츠를 통해 교육의 실효성을 높이고자 함",
+        "학교스포츠클럽 대회 등 실제 스포츠 활동과 연계한 사전 교육 체계를 구축하여 건전한 응원문화를 확산하려는 시도로 볼 수 있음"
+      ],
+      "applicationReviewPoints": [
+        "서울시교육청이 배포한 교육자료를 확보하여 전북 지역 학교스포츠클럽 및 체육 활동 사전 교육에 활용하는 방안을 검토할 수 있음",
+        "전북 내 학생스포츠 대회 및 학교스포츠클럽 운영 시 스포츠인권 감수성 증진을 위한 자체 교육자료 개발 필요성을 검토해 볼 수 있음",
+        "학생 및 지도자 대상 맞춤형 스포츠 윤리 교육 프로그램의 도입 여부를 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "서울특별시교육청과 학교체육진흥회가 공동 개발함",
+        "영상 콘텐츠는 선수답게 생각하기, 품격있게 말하기, 정정당당하게 경기하기 3편으로 구성됨",
+        "교재는 초등용, 중·고등용, 지도자용으로 구분된 카드뉴스 형태임",
+        "학교스포츠클럽 대회 등 각종 학생스포츠 활동 사전 교육자료로 활용할 방침임",
+        "서울시교육청 TV 유튜브 채널과 서울학교체육포털을 통해 자료를 배포함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "sejong-a8a01423576441fe",
+      "sourceId": "sejong",
+      "source": "세종특별자치시교육청",
+      "title": "세종시교육청, 제5대 교육감 제1기 공약이행평가단 공개 모집(미래기획관)",
+      "date": "2026-09-07",
+      "url": "https://www.sje.go.kr/sje/na/ntt/selectNttInfo.do?nttSn=3072486&bbsId=1039263&mi=52234",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "교육감 공약 이행 평가단 구성은 교육청의 주요 정책 추진 및 관리 체계와 관련된 행정 사항입니다.",
+      "summaryPoints": [
+        "세종특별자치시교육청이 제5대 교육감 제1기 공약이행평가단을 공개 모집함",
+        "평가단은 시민과 교육전문가 30여 명으로 구성되어 공약 이행 과정을 점검하고 평가함",
+        "임기는 위촉일부터 2028년 6월 30일까지이며 이후 한 차례 더 평가단을 구성할 예정임",
+        "평가 결과와 의견은 공약사업 추진 과정에 반영하고 교육청 누리집을 통해 공개함"
+      ],
+      "analysisPoints": [
+        "교육감 공약 이행 과정에 시민과 교육전문가를 참여시켜 정책의 투명성과 신뢰성을 확보하려는 시도로 평가됨",
+        "평가단이 단순 모니터링을 넘어 공약 이행계획 점검, 실적 평가, 변경 사항 심의 등 실질적인 역할을 수행하도록 권한을 부여함",
+        "평가 결과와 의견을 공약 추진 과정에 반영하고 누리집에 공개함으로써 교육행정의 민주성과 책임성을 강화하는 방향임"
+      ],
+      "applicationReviewPoints": [
+        "전북교육청의 기존 공약이행평가단 구성 및 운영 방식과 세종시교육청의 시민·전문가 참여형 평가단 운영 방식을 비교해 볼 수 있음",
+        "공약 이행 평가 결과의 공개 범위 및 도민 의견 수렴·반영 절차의 적절성을 점검해 볼 필요가 있음",
+        "평가단의 임기 설정 및 후속 평가단 구성 계획 등 지속 가능한 공약 관리 체계를 검토해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "모집 인원은 시민과 교육전문가 등 30여 명임",
+        "지원 자격은 세종교육에 관심 있는 교육전문가 또는 세종시 거주 시민임",
+        "모집 기간은 2026년 8월 26일부터 9월 4일까지였음",
+        "평가단은 공약 이행계획 점검, 실적 평가, 변경 사항 심의, 개선 방안 제시 등의 역할을 수행함",
+        "제5대 교육감 공약은 총 37개임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "ownOfficeItems": [
+    {
+      "newsId": "jeonbuk-59b3f4e30d43a238",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "일반직공무원, ‘빛나는 도전, 새로운 모험’ 다짐",
+      "date": "2026-09-07",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1174514",
+      "summaryPoints": [
+        "전북교육청 소속 일반직공무원 1,200여 명이 참여한 2026년 어울림 한마당이 5일 전주화산체육관에서 개최됨",
+        "조직문화 확산을 위해 동료 간 소통과 화합을 다지는 체육행사 및 체험 프로그램이 운영됨"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-b861c78e721ceb71",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "천호성 교육감, 14개 시군과 교육협력 해법 찾는다",
+      "date": "2026-09-07",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1174673",
+      "summaryPoints": [
+        "전북교육청이 9월부터 11월까지 도내 14개 시군을 순회하며 교육협력 정책간담회를 개최할 예정임",
+        "지자체와 협력해 지역 맞춤형 교육과제를 발굴하고 상생 발전 기반을 마련할 계획임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-f86b08fc0fda5cdf",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "천호성 교육감 “급식종사자 건강관리 신경써달라”",
+      "date": "2026-09-07",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1174609",
+      "summaryPoints": [
+        "천호성 교육감이 급식종사자 폐암 건강검진 지원 현황을 점검하고 철저한 건강관리를 당부함",
+        "교복 지원 사업의 실효성을 점검하고 활용 방안 및 계약 과정 전반에 대한 개선을 지시함"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeonbuk-1d17927c86f4f76e",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "전북 장애학생 20명, 전국 e페스티벌서 실력 겨뤄",
+      "date": "2026-09-07",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1174574",
+      "summaryPoints": [
+        "전북 지역 특수교육대상 및 통합학급 학생 20명이 8일부터 9일까지 열리는 2026 전국 장애학생 e페스티벌에 참가함",
+        "학생들은 e스포츠대회와 정보경진대회 등 다양한 종목에 출전해 기량을 펼칠 예정임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeonbuk-3924b0e5395217a2",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "“학생맞춤통합지원 민관협력 기반 내실화”",
+      "date": "2026-09-07",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1174780",
+      "summaryPoints": [
+        "전북교육청이 7일 도 단위 유관기관 및 14개 교육지원청 담당자와 학생맞춤통합지원 민관협의체 실무협의회를 개최함",
+        "현장 의견을 바탕으로 지역과 광역기관 간 학생 지원 자원 공유 및 지속적인 공동 협력 방안을 모색할 예정임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    }
+  ],
+  "omittedItems": [],
+  "validation": {
+    "status": "PASS",
+    "issues": [],
+    "checks": {
+      "ownOfficeExcludedFromTrendAnalysis": true,
+      "ownOfficeAllIncluded": true,
+      "ownOfficeSummariesVerified": true,
+      "publishedItemsVerified": true,
+      "sourceWindowMatches": true
+    }
+  },
+  "providerErrors": {
+    "facts": [],
+    "ownOfficeSummaries": [],
+    "analysis": [],
+    "verification": [],
+    "repairs": [],
+    "repairVerifications": []
+  },
+  "trace": [
+    {
+      "step": "extract_facts",
+      "status": "success",
+      "startedAt": "2026-09-07T22:00:54+00:00",
+      "durationMs": 11231
+    },
+    {
+      "step": "summarize_own_office",
+      "status": "success",
+      "startedAt": "2026-09-07T22:01:05+00:00",
+      "durationMs": 3218
+    },
+    {
+      "step": "analyze_trends",
+      "status": "success",
+      "startedAt": "2026-09-07T22:01:09+00:00",
+      "durationMs": 31915
+    },
+    {
+      "step": "verify_report",
+      "status": "success",
+      "startedAt": "2026-09-07T22:01:41+00:00",
+      "durationMs": 5047
+    }
+  ],
+  "rendering": {
+    "canonical": "json",
+    "html": "오늘의 교육동향 (20260908).html",
+    "hwpx": "오늘의 교육동향 (20260908).hwpx",
+    "hwpxValidation": {
+      "hardGates": {
+        "package_validation": "pass",
+        "document_errors": "pass",
+        "schema_lint": "pass",
+        "reopen": "pass",
+        "editor_open_safety": "pass",
+        "id_integrity": "pass"
+      },
+      "packageOk": true,
+      "documentOk": true,
+      "reopenedOk": true,
+      "visualReviewRequired": true
+    }
+  }
+}
