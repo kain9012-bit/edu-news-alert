@@ -5,6 +5,7 @@ import { Header } from "./components/Header";
 import { ReportsTab } from "./components/ReportsTab";
 import { ArchiveTab } from "./components/ArchiveTab";
 import { CoverageTab } from "./components/CoverageTab";
+import { countTabEvent } from "./lib/analytics";
 
 function initialTab(): ActiveTab {
   const params = new URLSearchParams(window.location.search);
@@ -23,6 +24,8 @@ export default function App() {
     const url = new URL(window.location.href);
     url.searchParams.set("tab", activeTab);
     window.history.replaceState(null, "", url);
+    // 어느 탭을 보는지는 이벤트로만 남긴다(방문자 수와 분리).
+    countTabEvent(activeTab);
   }, [activeTab]);
 
   return (

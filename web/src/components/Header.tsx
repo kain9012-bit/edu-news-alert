@@ -8,33 +8,56 @@ const TABS: { id: ActiveTab; label: string }[] = [
   { id: "coverage", label: "전북 언론 게재현황" },
 ];
 
-// GoatCounter 공개 카운터로 이번 주·누적 방문자 수를 가져온다.
-// 응답이 최대 4시간 캐시돼 '오늘'은 실시간성이 떨어지므로 주 단위로 표시한다.
-const GC_TOTAL = "https://jbe-edu-trends.goatcounter.com/counter/TOTAL.json";
+// 방문자 수는 서버 함수(/api/visits)로 읽는다. GoatCounter 공개 카운터는 응답을
+// 최대 4시간 캐시해 오늘 수치가 늦게 반영되기 때문이다. 함수가 없거나 실패하면
+// 공개 카운터로 대체한다(로컬 개발·토큰 미설정 상황).
+const GC_ROOT = "https://jbe-edu-trends.goatcounter.com/counter//.json";
 
-// 한국 시간 기준 이번 주(월~일) 범위. 오늘이 주 중이면 끝은 오늘로 둔다.
-function kstWeekRange(): { start: string; end: string } {
-  const ymd = (d: Date) => d.toISOString().slice(0, 10);
+// 한국 시간 기준 이번 주 월요일 날짜(YYYY-MM-DD).
+function kstMonday(): string {
   const now = new Date(Date.now() + 9 * 3600 * 1000);
-  // getUTCDay: 0=일 … 6=토 → 월요일까지 거슬러 갈 일수
-  const backToMonday = (now.getUTCDay() + 6) % 7;
-  const monday = new Date(now.getTime() - backToMonday * 86400000);
-  return { start: ymd(monday), end: ymd(now) };
+  const backToMonday = (now.getUTCDay() + 6) % 7; // getUTCDay: 0=일 … 6=토
+  return new Date(now.getTime() - backToMonday * 86400000).toISOString().slice(0, 10);
 }
+
+const format = (value: number | null) =>
+  typeof value === "number" ? value.toLocaleString("ko-KR") : null;
 
 function VisitorCounts() {
   const [total, setTotal] = useState<string | null>(null);
   const [week, setWeek] = useState<string | null>(null);
 
   useEffect(() => {
-    const { start, end } = kstWeekRange();
-    const get = (url: string) =>
-      fetch(url)
-        .then((r) => (r.ok ? r.json() : null))
-        .then((d) => (d && typeof d.count === "string" ? d.count : null))
-        .catch(() => null);
-    get(GC_TOTAL).then(setTotal);
-    get(`${GC_TOTAL}?start=${start}&end=${end}`).then(setWeek);
+    let alive = true;
+    const apply = (w: string | null, t: string | null) => {
+      if (!alive) return;
+      setWeek(w);
+      setTotal(t);
+    };
+
+    // 1) 서버 함수 — 캐시 지연 없음
+    fetch("/api/visits")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((live) => {
+        if (live && typeof live.total === "number") {
+          apply(format(live.week ?? null), format(live.total));
+          return;
+        }
+        // 2) 공개 카운터 — '/' 경로만 읽어 탭 주소가 섞이지 않게 한다
+        const read = (query: string) =>
+          fetch(`${GC_ROOT}${query}`)
+            .then((r) => (r.ok ? r.json() : null))
+            .then((d) => (d && typeof d.count === "string" ? d.count : null))
+            .catch(() => null);
+        return Promise.all([read(""), read(`?start=${kstMonday()}`)]).then(([t, w]) =>
+          apply(w, t),
+        );
+      })
+      .catch(() => {});
+
+    return () => {
+      alive = false;
+    };
   }, []);
 
   if (total === null && week === null) return null;

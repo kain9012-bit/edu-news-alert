@@ -14,7 +14,13 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- GoatCounter 방문자 통계 (사이트: jbe-edu-trends) -->
+    <!-- 방문 통계(GoatCounter). 쿠키·개인식별자를 쓰지 않습니다.
+         경로를 전부 '/'로 통일해 보내므로 같은 세션의 한 사람은 1로 셉니다.
+         (기본값은 경로+쿼리라 ?tab=reports 같은 주소가 따로 세어져 부풀려집니다.)
+         탭별 구분은 이벤트로 따로 보냅니다 — src/lib/analytics.ts -->
+    <script>
+      window.goatcounter = { path: function () { return "/"; } };
+    </script>
     <script
       data-goatcounter="https://jbe-edu-trends.goatcounter.com/count"
       async
