@@ -13,11 +13,9 @@ const TABS: { id: ActiveTab; label: string }[] = [
 // 공개 카운터로 대체한다(로컬 개발·토큰 미설정 상황).
 const GC_ROOT = "https://jbe-edu-trends.goatcounter.com/counter//.json";
 
-// 한국 시간 기준 이번 주 월요일 날짜(YYYY-MM-DD).
-function kstMonday(): string {
-  const now = new Date(Date.now() + 9 * 3600 * 1000);
-  const backToMonday = (now.getUTCDay() + 6) % 7; // getUTCDay: 0=일 … 6=토
-  return new Date(now.getTime() - backToMonday * 86400000).toISOString().slice(0, 10);
+// 한국 시간 기준 오늘 날짜(YYYY-MM-DD).
+function kstToday(): string {
+  return new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
 }
 
 const format = (value: number | null) =>
@@ -25,32 +23,34 @@ const format = (value: number | null) =>
 
 function VisitorCounts() {
   const [total, setTotal] = useState<string | null>(null);
-  const [week, setWeek] = useState<string | null>(null);
+  const [today, setToday] = useState<string | null>(null);
 
   useEffect(() => {
     let alive = true;
-    const apply = (w: string | null, t: string | null) => {
+    const apply = (d: string | null, t: string | null) => {
       if (!alive) return;
-      setWeek(w);
+      setToday(d);
       setTotal(t);
     };
 
-    // 1) 서버 함수 — 캐시 지연 없음
+    // 1) 서버 함수 — 캐시 지연이 없어 오늘 수치가 바로 반영된다
     fetch("/api/visits")
       .then((r) => (r.ok ? r.json() : null))
       .then((live) => {
         if (live && typeof live.total === "number") {
-          apply(format(live.week ?? null), format(live.total));
+          apply(format(live.today ?? null), format(live.total));
           return;
         }
         // 2) 공개 카운터 — '/' 경로만 읽어 탭 주소가 섞이지 않게 한다
+        // (최대 4시간 캐시라 오늘 수치는 늦게 반영된다)
         const read = (query: string) =>
           fetch(`${GC_ROOT}${query}`)
             .then((r) => (r.ok ? r.json() : null))
             .then((d) => (d && typeof d.count === "string" ? d.count : null))
             .catch(() => null);
-        return Promise.all([read(""), read(`?start=${kstMonday()}`)]).then(([t, w]) =>
-          apply(w, t),
+        const day = kstToday();
+        return Promise.all([read(""), read(`?start=${day}&end=${day}`)]).then(([t, d]) =>
+          apply(d, t),
         );
       })
       .catch(() => {});
@@ -60,11 +60,10 @@ function VisitorCounts() {
     };
   }, []);
 
-  if (total === null && week === null) return null;
+  if (total === null && today === null) return null;
   return (
     <span className="shrink-0 text-xs text-slate-500 whitespace-nowrap">
-      <span title="월요일부터 오늘까지">이번 주</span>{" "}
-      <b className="text-slate-700">{week ?? "-"}</b>
+      오늘 <b className="text-slate-700">{today ?? "-"}</b>
       <span className="mx-1.5 text-slate-300">·</span>
       누적 <b className="text-slate-700">{total ?? "-"}</b>
     </span>
