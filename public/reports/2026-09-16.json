@@ -1,0 +1,618 @@
+{
+  "metadata": {
+    "reportId": "20260915T220144Z-aa023bb1",
+    "title": "오늘의 교육동향",
+    "status": "completed",
+    "generatedAt": "2026-09-15T22:01:44+00:00",
+    "windowStart": "2026-09-15T06:00:00+09:00",
+    "windowEnd": "2026-09-16T06:00:00+09:00",
+    "windowHours": 24,
+    "selectionRunId": "20260915T211132Z-eeadabd9",
+    "sourceCount": 14,
+    "eligibleCount": 11,
+    "publishedCount": 11,
+    "omittedCount": 0,
+    "ownOfficeEligibleCount": 3,
+    "ownOfficePublishedCount": 3,
+    "qualityExcludedCount": 0,
+    "factModel": "gemini-3.1-flash-lite",
+    "analysisModel": "gemini-3.5-flash",
+    "verifierModel": "gemini-3.1-flash-lite",
+    "summaryOnlyCount": 0,
+    "ownOfficeReviewCount": 0,
+    "usage": {
+      "stages": {
+        "facts": {
+          "model": "gemini-3.1-flash-lite",
+          "requests": 4,
+          "promptTokenCount": 10630,
+          "candidatesTokenCount": 3218,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 13848
+        },
+        "analysis": {
+          "model": "gemini-3.5-flash",
+          "requests": 3,
+          "promptTokenCount": 4096,
+          "candidatesTokenCount": 2089,
+          "thoughtsTokenCount": 7107,
+          "totalTokenCount": 13292
+        },
+        "verification": {
+          "model": "gemini-3.1-flash-lite",
+          "requests": 4,
+          "promptTokenCount": 13469,
+          "candidatesTokenCount": 801,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 14270
+        }
+      },
+      "total": {
+        "requests": 11,
+        "promptTokenCount": 28195,
+        "candidatesTokenCount": 6108,
+        "thoughtsTokenCount": 7107,
+        "totalTokenCount": 41410
+      }
+    },
+    "estimatedCostUsd": 0.100961
+  },
+  "items": [
+    {
+      "newsId": "ulsan-55701ce19e212a96",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "[울산교육청] 초등 영어 수업에 ‘다듣영어+ 10분’ 더한다",
+      "date": "2026-09-15",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20260915171518085",
+      "category": "교육과정·수업",
+      "importance": 3,
+      "selectionReason": "교육청 차원에서 관내 초등학교 영어 수업의 질 제고를 위해 교과서 연계 교육자료를 개발하여 보급하는 정책적 지원 활동임.",
+      "summaryPoints": [
+        "울산교육청이 초등 영어 수업 지원을 위한 '다듣영어+ 10분' 활용 지도를 개발함",
+        "초등 3~6학년 검정 교과서 단원과 다듣영어+ 자료를 연계하여 도표화함",
+        "교사가 수업 상황에 맞춰 자료를 선택할 수 있도록 3단계 활용법을 제시함"
+      ],
+      "analysisPoints": [
+        "검정 교과서와 자체 개발 교육 자료를 연계하여 교사의 수업 준비 부담을 완화하고 공교육 영어 교육의 내실화를 도모함",
+        "교과서 단원별 맞춤형 자료 매핑 및 단계별 활용법 제시를 통해 현장 교사의 디지털·미디어 자료 활용 편의성을 높임"
+      ],
+      "applicationReviewPoints": [
+        "초등 영어 수업 활성화를 위해 기존 검정 교과서와 연계할 수 있는 보조 학습 자료 및 디지털 콘텐츠 매핑 가이드라인 개발을 검토할 수 있음",
+        "교과 수업 중 단시간 내에 효과적으로 적용할 수 있는 단계별 수업 모델 도입 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "울산광역시교육청이 초등 영어 수업용 활용 지도 보급",
+        "초등 3~6학년 검정 교과서와 다듣영어+ 자료 연계",
+        "활용 지도에 리슨 업+, 다듣 영상, 교육모형, AI 펭톡 자료 포함",
+        "3단계 활용법은 교과서 찾기, 연계 자료 확인, 수업 10분 적용으로 구성"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongbuk-c2a546e4fe8917d3",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[유초등교육과]경북교육청, 전국 최초 장애‧이주배경 유아 참여형 예술치유 프로젝트 운영",
+      "date": "2026-09-15",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1644286&bbsId=4744&mi=17643&searchCate=761",
+      "category": "학생지원·복지",
+      "importance": 3,
+      "selectionReason": "유보통합 정책의 일환으로 장애 및 이주배경 유아를 위한 교육 지원 사업이 확대 운영되는 사례임.",
+      "summaryPoints": [
+        "경북교육청이 장애 및 이주배경 유아를 위한 예술치유 프로젝트를 운영함",
+        "공연 관람 위주에서 벗어나 유아가 직접 악기를 연주하는 참여형 프로그램으로 구성함",
+        "음악심리상담사 등 전문 인력이 참여하여 맞춤형 활동을 지원함"
+      ],
+      "analysisPoints": [
+        "단순 관람형에서 벗어나 유아가 직접 참여하는 예술치유 프로그램을 통해 취약계층 유아의 정서적 안정과 사회성 발달을 도모함",
+        "음악심리상담사, 음악치료사 등 전문 인력과의 협업을 통해 비언어적 소통 중심의 포용적 교육 환경을 구축함"
+      ],
+      "applicationReviewPoints": [
+        "장애 및 이주배경 유아를 대상으로 하는 참여형 예술치유 프로그램 및 전문 인력 연계 운영 방안을 검토할 수 있음",
+        "비언어적 소통 요소를 활용한 다문화·특수 유아 통합 지원 프로그램의 도입 가능성을 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2026년 9월 15일부터 장애 및 이주배경 유아 대상 모樂모樂 온(溫)맘놀이터 운영",
+        "융합예술 힐링 음악극, 세계 타악기 체험, 뮤직&매직 콘서트 등으로 구성",
+        "음악심리상담사, 음악치료사, 문화예술교육사, 전문 연주자 참여",
+        "비언어적 소통 요소를 활용하여 포용적 환경 조성"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "daejeon-d39b91f446482e30",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "대전시교육청, 영유아 ‘일상적 마음돌봄 지원’사업 본격 추진(유아특수교육과)",
+      "date": "2026-09-15",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3363401&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "category": "학생지원·복지",
+      "importance": 3,
+      "selectionReason": "영유아 대상 마음돌봄 지원 사업은 교육청 차원에서 추진하는 신규 학생 지원 정책으로 파급력이 있습니다.",
+      "summaryPoints": [
+        "대전시교육청이 영유아 정서 심리 지원을 위한 마음돌봄 사업을 추진함",
+        "2~5세 영유아 2,000명을 대상으로 마음 체크업 검사를 실시함",
+        "검사 결과에 따라 심층 평가, 개별 상담, 맞춤형 심리지원을 제공함"
+      ],
+      "analysisPoints": [
+        "대학 산학협력단 등 지역 전문기관과의 협력을 통해 영유아기 정서·행동 문제를 조기에 발견하고 예방하는 체계를 마련함",
+        "QR 코드를 활용한 간편 신청 및 전문가 방문형 맞춤형 지원을 통해 학부모의 접근성과 지원의 실효성을 높임"
+      ],
+      "applicationReviewPoints": [
+        "지역 대학 및 전문기관과 연계한 영유아 마음돌봄 선별 검사 및 맞춤형 심리지원 체계 구축 방안을 비교해 볼 수 있음",
+        "모바일 QR 코드 등을 활용한 영유아 정서 검사 신청 방식의 편의성 개선안을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "건양대학교 산학협력단과 협력하여 영유아 마음돌봄 사업 추진",
+        "대상은 관내 유치원 및 어린이집 재원 영유아 2,000명",
+        "학부모는 기관 전용 QR 코드를 통해 온라인 신청 가능",
+        "전문가 방문을 통한 긍정적 행동 지원 및 예술치료 프로그램 운영"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeonggi-103c4b7872555b7b",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "안민석 경기도교육감, ‘학교 현장 대전환을 위한 교사 100대 요구안’ 적극 수용 의지 밝혀",
+      "date": "2026-09-15",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2373758&bbsId=1922&mi=10102",
+      "category": "교원·인사",
+      "importance": 3,
+      "selectionReason": "교육감과 교원단체 간의 학교 현장 과제 개선 및 교권보호, 행정업무 간소화 등 교육 정책 방향과 직결된 사안임.",
+      "summaryPoints": [
+        "경기도교육청이 경기교사노조로부터 학교 현장 개선을 위한 100대 요구안을 전달받음",
+        "요구안은 교권 보호, 행정업무 간소화 등 5개 영역으로 구성됨",
+        "교육청은 교권보호단 조례 제정 및 행정 지원 확대를 약속함"
+      ],
+      "analysisPoints": [
+        "교사 설문조사를 기반으로 현장 밀착형 요구사항을 도출하고 교권 보호 및 행정업무 경감을 위한 제도적 개선을 추진함",
+        "시범교육지원청 운영을 통해 학교 현장의 행정 부담을 실질적으로 경감하려는 다각적 지원 체계를 모색함"
+      ],
+      "applicationReviewPoints": [
+        "교사의 행정업무 경감을 위해 기자재 관리 및 전입학 관리 등 특정 행정 업무의 분리 및 이관 방안을 검토할 수 있음",
+        "교육지원청 중심의 학교 행정 지원 확대 모델 및 시범 운영 사례를 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "경기교사노조가 현장 교사 800여 명 설문조사를 바탕으로 100대 요구안 도출",
+        "요구안 영역은 교권 보호, 행정업무 간소화, 처우 개선, 학교민주주의, 교육 환경 개선",
+        "교권보호 3법 개정 및 교권보호단 통합 책임 체제 구축 요구",
+        "행정업무 간소화 과제로 기자재 관리 및 전입학 관리 업무 분리 제시",
+        "경기도교육청은 시범교육지원청 운영을 통해 행정 지원 확대 예정"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungbuk-f2a7262205035cd5",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "윤건영 교육감, 학교 정수기 지원 위해 현장 소통 이어가",
+      "date": "2026-09-15",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1579285&bbsId=1158&mi=10301",
+      "category": "안전·시설",
+      "importance": 3,
+      "selectionReason": "교육청 차원에서 학교 정수기 지원 정책을 구체화하기 위한 현장 의견 수렴 및 제도 개선 과정임.",
+      "summaryPoints": [
+        "충북교육청이 학교급별 현장 여건에 맞는 정수기 지원 방안을 마련하기 위해 현장 소통 간담회를 실시함",
+        "2027년부터 학교 정수기 설치를 지원하고 청소, 소독, 필터 교체 등 유지관리를 교육지원청 중심으로 추진할 계획임"
+      ],
+      "analysisPoints": [
+        "학교 현장의 위생 관리 및 행정 부담 경감을 위해 교육지원청 중심의 통합 유지관리 체계로 전환하는 흐름을 보여줌",
+        "현장 간담회를 통해 정수기 이용 편의성과 위생 상태를 점검하고 실질적인 지원 방안을 모색하는 소통 중심의 정책 수립 방식임"
+      ],
+      "applicationReviewPoints": [
+        "학교 정수기 관리 업무의 효율화와 위생 강화를 위해 교육지원청 중심의 통합 유지관리 체계 도입 가능성을 검토해 볼 수 있음",
+        "정수기 지원 및 관리 방안 수립 시 학교급별 현장 여건을 반영하기 위한 소통 채널 운영 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "충북교육청은 오송중학교 등에서 세 차례 현장 간담회를 개최함",
+        "간담회에서 정수기 이용 편의성, 위생, 학교의 관리 업무 부담 등이 논의됨",
+        "2027년부터 학교 정수기 설치 지원 및 교육지원청 중심의 유지관리 체계 도입 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "ulsan-522d3f51a6f03222",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "[울산교육청] 안전한 근무 환경 조성으로 산업재해 예방",
+      "date": "2026-09-15",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20260915171042768",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "교육청 차원에서 산하 모든 학교와 기관을 대상으로 실시하는 산업안전보건 관리 체계 강화 및 법정 의무교육 운영 소식임.",
+      "summaryPoints": [
+        "울산교육청이 학교 및 기관 관리감독자 270여 명을 대상으로 산업 안전 보건 정기교육을 실시함",
+        "중대재해 예방을 위해 교육감 중심의 중대재해 대책본부 가동 훈련을 도입함",
+        "연간 16시간의 법정 의무교육(집합 8시간, 원격 8시간)을 운영함"
+      ],
+      "analysisPoints": [
+        "교육감과 부교육감이 직접 참여하는 중대재해 대책본부 가동 훈련을 통해 재해 예방의 책임성과 실행력을 강화함",
+        "법정 의무교육을 집합과 원격으로 병행 운영하여 관리감독자의 안전 보건 역량을 체계적으로 제고함",
+        "실질적인 훈련과 교육을 통해 노동자 대비 재해율을 감소시키는 가시적인 안전 관리 성과를 도출함"
+      ],
+      "applicationReviewPoints": [
+        "중대재해 예방 및 대응 역량 강화를 위해 교육감 중심의 대책본부 가동 훈련 도입 여부를 검토해 볼 수 있음",
+        "관리감독자 대상 안전보건 교육의 효과성을 높이기 위해 집합 및 원격 병행 방식의 교육 과정을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "관리감독자 대상 정기교육은 9월 14일과 15일 양일간 진행됨",
+        "울산교육청 노동자 대비 재해율은 2023년 2.31%에서 2025년 1.51%로 감소함",
+        "중대재해 대책본부는 교육감이 경영 책임자, 부교육감이 안전 보건 관리 책임자를 맡음",
+        "중대재해 대책본부 가동 훈련은 이달 말 처음 실시될 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "daegu-b3ede80135139627",
+      "sourceId": "daegu",
+      "source": "대구광역시교육청",
+      "title": "대구시교육청, 2027년 학교‘희망드림’공간 구축 사업 대상학교 지원",
+      "date": "2026-09-15",
+      "url": "https://www.dge.go.kr/pr/na/ntt/selectNttInfo.do?nttSn=2214093&bbsId=2680&mi=9870",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "교육청 본청 차원에서 대규모 예산을 투입하여 추진하는 학교 공간 혁신 정책 및 공모 사업임.",
+      "summaryPoints": [
+        "대구시교육청이 미래형 학교 공간 조성을 위한 '희망드림' 공간구축사업 대상 학교를 공모함",
+        "총 250억 원의 사업비를 투입하여 4개 유형으로 나누어 공간 개선을 지원함"
+      ],
+      "analysisPoints": [
+        "미래형 학교 공간 조성을 위해 학교 주도형, 외부공간, 셉테드(CPTED) 적용 등 다각적인 공간 개선 유형을 제시하여 맞춤형 지원을 도모함",
+        "단순 예산 지원을 넘어 사전기획부터 설계, 공사까지 단계별 밀착 지원 체계를 구축하여 사업의 완성도를 높임"
+      ],
+      "applicationReviewPoints": [
+        "학교 공간 개선 사업 추진 시 셉테드(CPTED) 적용이나 학교 주도 맞춤형 등 다양한 유형화 방안을 비교해 볼 수 있음",
+        "선정 학교에 대한 사전기획부터 공사까지의 단계별 지원 프로세스 구축 방안을 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "공모 기간은 2026년 8월 31일부터 9월 18일까지임",
+        "사업 유형은 학교 주도 맞춤형, 교육공간 재배치, 외부공간 조성, 셉테드 적용 등 4가지임",
+        "선정된 학교에는 사전기획부터 설계, 공사까지 단계별 지원이 제공됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "daegu-c4caead8979a2762",
+      "sourceId": "daegu",
+      "source": "대구광역시교육청",
+      "title": "대구시교육청, 추석 연휴 학교(기관)주차장 무료 개방",
+      "date": "2026-09-15",
+      "url": "https://www.dge.go.kr/pr/na/ntt/selectNttInfo.do?nttSn=2214096&bbsId=2680&mi=9870",
+      "category": "기타",
+      "importance": 2,
+      "selectionReason": "교육청 차원에서 관내 다수의 학교 및 기관 주차장을 개방하는 공통 지원 대책입니다.",
+      "summaryPoints": [
+        "대구시교육청이 추석 연휴 기간 관내 학교 및 교육행정기관 주차장을 무료로 개방함",
+        "이용자는 긴급 연락처를 남기고 안전사고 예방에 유의해야 함"
+      ],
+      "analysisPoints": [
+        "명절 연휴 기간 학교와 교육행정기관의 주차 공간을 개방하여 지역 주민과 귀성객의 편의를 증진하고 상생 협력을 실천함",
+        "공유누리 플랫폼을 활용하여 개방 정보를 투명하게 제공하고 이용자 안전 수칙을 안내하여 효율적인 관리를 도모함"
+      ],
+      "applicationReviewPoints": [
+        "명절 연휴 기간 지역 주민 편의 제공을 위한 학교 및 기관 주차장 개방 범위와 공유 플랫폼 활용 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "개방 기간은 2026년 9월 24일부터 27일까지 4일간임",
+        "개방 대상은 교육행정기관 22곳과 학교 356곳 등 총 378곳임",
+        "주차장 정보는 공유누리 사이트에서 확인 가능함",
+        "연휴 마지막 날인 9월 27일 개방 종료 시간 내 출차해야 함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "daejeon-9b4991a9da7a17bf",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "대전 교육발전특구, 2025년 교육부 평가서 최고 ‘A등급’ 달성(혁신정책과)",
+      "date": "2026-09-15",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3363422&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "교육발전특구 평가 결과 및 향후 교육혁신 모델 구축 계획은 교육청의 주요 정책 방향과 연관된 중요한 행정 정보입니다.",
+      "summaryPoints": [
+        "대전시교육청이 2025년 교육발전특구 시범지역 운영 연차점검에서 최고 등급인 A등급을 획득함",
+        "협력 거버넌스 구축, 예산 집행 관리, 지역 자원 연계 등 5개 영역에서 우수한 성과를 인정받음",
+        "대덕연구개발특구 등 지역 자원을 활용한 과학·AI·SW 교육 및 대학 연계 프로그램이 주요 성과로 꼽힘",
+        "교육발전특구 성과를 바탕으로 후속 사업인 교육혁신선도지역 지정을 준비 중임"
+      ],
+      "analysisPoints": [
+        "지자체와의 협력 거버넌스 구축 및 예산 집행 관리의 체계성이 교육발전특구 평가의 핵심 요인으로 작용함.",
+        "지역 특화 자원을 활용한 과학·AI·SW 교육 및 고교-대학 연계 프로그램이 우수 사례로 인정받음.",
+        "교육발전특구 성과를 후속 사업인 교육혁신선도지역 지정 준비로 연계하는 선순환 구조를 보여줌."
+      ],
+      "applicationReviewPoints": [
+        "지역 특화 자원 및 대학 연계 프로그램을 활용한 교육발전특구 운영 모델을 비교해 볼 수 있음.",
+        "교육발전특구 성과 평가 지표인 거버넌스 구축 및 예산 집행 관리 방안을 참고할 필요가 있음.",
+        "후속 사업인 교육혁신선도지역 지정을 위한 준비 과정을 모니터링할 필요가 있음."
+      ],
+      "sourceFacts": [
+        "대전시교육청은 2025년 교육발전특구 시범지역 운영 연차점검에서 A등급을 받음",
+        "평가 영역은 협력 거버넌스 구축, 특별교부금 집행관리, 지방비 집행관리, 자체 성과관리, 우수사례 등 5개임",
+        "대전시와 협력하여 과학체험, AI·SW 교육, 고교-대학 연계 전공체험 등을 추진함",
+        "대전시교육청과 대전시는 교육혁신선도지역 지정을 준비하고 있음"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "busan-fd165fed0bc2ef4d",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "부산교육청, 2027 대학수학능력시험 준비 박차",
+      "date": "2026-09-15",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1180135&bbsId=2286&mi=30397",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "지역 내 수능 시험장 신규 지정이라는 교육 행정 환경의 실질적인 변화를 담고 있습니다.",
+      "summaryPoints": [
+        "2027학년도 대학수학능력시험 부산 지역 응시자는 전년 대비 298명 증가한 29,181명으로 집계됨",
+        "강서구 명지 지역에 수능 시험장 2곳을 신규 지정하여 수험생의 이동 불편을 해소함",
+        "시험장 신설에 따른 교통 혼잡 및 항공기 소음 대응을 위해 관계기관과 협의할 예정임"
+      ],
+      "analysisPoints": [
+        "특정 지역의 수험생 증가 및 원거리 이동 불편 해소를 위해 선제적으로 시험장을 신설·지정함.",
+        "시험장 신설에 따른 교통 혼잡 및 소음 문제를 해결하기 위해 유관기관과의 다각적 협의가 수반됨."
+      ],
+      "applicationReviewPoints": [
+        "도내 원거리 통학 수험생의 불편 해소를 위한 시험장 신규 지정 및 배치 기준을 검토해 볼 수 있음.",
+        "시험장 신설 시 발생할 수 있는 소음 및 교통 문제 해결을 위한 유관기관 협의 체계를 확인할 필요가 있음."
+      ],
+      "sourceFacts": [
+        "2027학년도 수능 부산 지역 응시자는 29,181명임",
+        "부산교육청은 강서구 명지 지역에 수능 시험장 2곳을 신규 설치함",
+        "강서구 시험장 신설로 수험생의 원거리 이동 불편이 개선됨",
+        "수능 당일 교통 혼잡 및 김해공항 항공기 소음 대책을 마련 중임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "busan-b5d8a525426bdab8",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "부산교육청, 교육부 교육특구 성과평가 2년 연속 ‘최고등급 A’",
+      "date": "2026-09-15",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1180189&bbsId=2286&mi=30397",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "교육부 주관 교육특구 성과평가 결과 및 교육청의 주요 정책 추진 성과를 다루고 있습니다.",
+      "summaryPoints": [
+        "부산광역시교육청이 2025년 교육특구 시범사업 성과평가에서 2년 연속 A등급을 획득함",
+        "협력 거버넌스 운영 및 예산 집행 계획 대비 성과 달성도 등에서 높은 평가를 받음",
+        "SW·AI 교육 거점센터를 통한 체험 중심의 상시 운영체계 구축이 우수 사례로 선정됨"
+      ],
+      "analysisPoints": [
+        "지자체와의 공동 선정을 바탕으로 한 협력 거버넌스 운영과 예산 집행 계획 대비 성과 달성도가 우수 평가의 기반이 됨.",
+        "학력, 디지털, AI, 직업계고 체제 개편 등 다각적인 교육 혁신 과제를 연계하여 추진함.",
+        "SW·AI 교육 거점센터 구축을 통한 체험 중심의 상시 운영체계가 핵심 우수 사례로 부각됨."
+      ],
+      "applicationReviewPoints": [
+        "교육특구 성과평가에서 우수 사례로 선정된 SW·AI 교육 거점센터의 상시 운영 모델을 비교해 볼 수 있음.",
+        "지자체 협력 기반의 학력 및 디지털 교육, 직업계고 체제 개편 등 종합적인 교육특구 운영 방안을 참고할 필요가 있음."
+      ],
+      "sourceFacts": [
+        "부산교육청은 2024년과 2025년 교육특구 시범사업 성과평가에서 2년 연속 A등급을 받음",
+        "2024년 2월 부산시와 공동으로 교육특구 시범지역에 선정됨",
+        "주요 추진 사업으로 학력, 디지털, AI, 직업계고 체제 개편, 방과후학교 등이 있음",
+        "SW·AI 교육 거점센터가 교육부로부터 우수한 성과로 평가받음"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    }
+  ],
+  "ownOfficeItems": [
+    {
+      "newsId": "jeonbuk-bcecd091ebb0500c",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "내일을 위한 오늘의 혁신! AI농업으로 비상",
+      "date": "2026-09-15",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1178293",
+      "summaryPoints": [
+        "도내 10개교 학생 99명이 9월 15일부터 17일까지 대구에서 열리는 제55년차 전국영농학생축제에 참가함.",
+        "전공경진 및 실무능력경진 등 5개 분야 20개 종목에서 농업 관련 지식과 기술 역량을 겨룰 예정임."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeonbuk-d6b1e8ec90ce2582",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "전북과학고 ‘영재학교’추진… 과학영재교육 속도",
+      "date": "2026-09-15",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1178165",
+      "summaryPoints": [
+        "전북과학고를 카이스트 부설 영재학교로 전환하기 위해 10월 14일까지 공모계획서를 제출할 예정임.",
+        "영재학교 전환과 함께 도내 과학·수학 우수 학생 교육을 위한 전북과학고 이전 설립도 추진함."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeonbuk-8264bb73598a0036",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "학습결손 예방·교육격차 해소 ‘머리맞대’",
+      "date": "2026-09-15",
+      "url": "https://news.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1178308",
+      "summaryPoints": [
+        "기초학력 선도학교 운영 담당자 300여 명을 대상으로 정책 방향 공유 및 우수사례 연수를 실시함.",
+        "올해 358개교로 확대된 기초학력 선도학교의 안정적 운영과 협력수업 노하우 공유를 지원함."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    }
+  ],
+  "omittedItems": [],
+  "validation": {
+    "status": "PASS",
+    "issues": [],
+    "checks": {
+      "ownOfficeExcludedFromTrendAnalysis": true,
+      "ownOfficeAllIncluded": true,
+      "ownOfficeSummariesVerified": true,
+      "publishedItemsVerified": true,
+      "sourceWindowMatches": true
+    }
+  },
+  "providerErrors": {
+    "facts": [],
+    "ownOfficeSummaries": [],
+    "analysis": [],
+    "verification": [],
+    "repairs": [],
+    "repairVerifications": []
+  },
+  "trace": [
+    {
+      "step": "extract_facts",
+      "status": "success",
+      "startedAt": "2026-09-15T22:00:49+00:00",
+      "durationMs": 10323
+    },
+    {
+      "step": "summarize_own_office",
+      "status": "success",
+      "startedAt": "2026-09-15T22:00:59+00:00",
+      "durationMs": 1817
+    },
+    {
+      "step": "analyze_trends",
+      "status": "success",
+      "startedAt": "2026-09-15T22:01:01+00:00",
+      "durationMs": 37965
+    },
+    {
+      "step": "verify_report",
+      "status": "success",
+      "startedAt": "2026-09-15T22:01:39+00:00",
+      "durationMs": 4916
+    }
+  ],
+  "rendering": {
+    "canonical": "json",
+    "html": "오늘의 교육동향 (20260916).html",
+    "hwpx": "오늘의 교육동향 (20260916).hwpx",
+    "hwpxValidation": {
+      "hardGates": {
+        "package_validation": "pass",
+        "document_errors": "pass",
+        "schema_lint": "pass",
+        "reopen": "pass",
+        "editor_open_safety": "pass",
+        "id_integrity": "pass"
+      },
+      "packageOk": true,
+      "documentOk": true,
+      "reopenedOk": true,
+      "visualReviewRequired": true
+    }
+  }
+}
