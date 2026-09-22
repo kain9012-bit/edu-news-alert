@@ -298,12 +298,27 @@ def strip_repeated_title(text: str, title: str) -> str:
         if updated == cleaned:
             break
         cleaned = updated
-    if has_repeated_title(cleaned, title):
-        title_core = re.sub(r"^\[[^\]]+\]", "", title or "").strip()
-        chars = semantic_comparison_key(title_core)
+    title_core = re.sub(r"^\[[^\]]+\]", "", title or "").strip()
+    chars = semantic_comparison_key(title_core)
+    if chars:
         separator = r"[^0-9A-Za-z가-힣]*"
-        semantic_pattern = r"^\s*" + separator.join(re.escape(char) for char in chars) + r"(?:\s+|$)"
-        cleaned = re.sub(semantic_pattern, "", cleaned, count=1, flags=re.DOTALL).lstrip()
+        # 강원처럼 본문이 '□ 제목 □'로 시작하면 선행 기호 때문에 제목이 안 떨어져
+        # has_repeated_title에 걸려 자료가 통째로 버려졌다. 앞머리 기호도 함께 먹는다.
+        semantic_pattern = (
+            r"^"
+            + separator
+            + separator.join(re.escape(char) for char in chars)
+            # 제목 바로 뒤에 공백 없이 괄호·기호가 붙는 자료가 있어 공백만 기대하면 안 된다.
+            + r"(?:[^0-9A-Za-z가-힣]|$)"
+        )
+        # 머리글과 본문 첫 문단에 제목이 두 번 나오는 자료가 있어 반복해서 떼어낸다.
+        for _ in range(3):
+            if not has_repeated_title(cleaned, title):
+                break
+            updated = re.sub(semantic_pattern, "", cleaned, count=1, flags=re.DOTALL).lstrip()
+            if updated == cleaned:
+                break
+            cleaned = updated
     return cleaned
 
 
