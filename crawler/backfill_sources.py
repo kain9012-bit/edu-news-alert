@@ -37,6 +37,7 @@ PAGE_PARAM = {
     "daegu": "currPage",
     "sejong": "currPage",
     "gangwon": "pageIndex",
+    "jeonbuk": "startPage",
 }
 REQUEST_INTERVAL = 1.0
 
