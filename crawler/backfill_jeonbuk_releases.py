@@ -20,13 +20,14 @@ from typing import Any
 import requests
 from bs4 import BeautifulSoup
 
+# 2026-09 개편으로 news.jbe.go.kr → www.jbe.go.kr/news 로 옮겨졌다.
 LIST_URL = (
-    "https://news.jbe.go.kr/board/list.jbe"
+    "https://www.jbe.go.kr/news/board/list.jbe"
     "?boardId=BBS_0000222&menuCd=DOM_000001201001000000"
     "&paging=ok&searchOperation=AND&startPage={page}"
 )
 VIEW_URL = (
-    "https://news.jbe.go.kr/board/view.jbe"
+    "https://www.jbe.go.kr/news/board/view.jbe"
     "?boardId=BBS_0000222&menuCd=DOM_000001201001000000"
     "&paging=ok&startPage=1&searchOperation=AND&dataSid={sid}"
 )

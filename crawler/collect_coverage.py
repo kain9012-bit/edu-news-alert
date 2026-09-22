@@ -331,8 +331,10 @@ def fetch_release_meta(session: requests.Session, detail_url: str) -> tuple[str 
         return None, None
 
 
+# 2026-09 전북교육소식 개편으로 news.jbe.go.kr → www.jbe.go.kr/news 로 옮겨졌다.
+# 옛 주소는 오류 없이 메인 화면을 돌려주므로 목록이 0건이 되고도 조용히 지나간다.
 BOARD_LIST_URL = (
-    "https://news.jbe.go.kr/board/list.jbe"
+    "https://www.jbe.go.kr/news/board/list.jbe"
     "?boardId=BBS_0000222&menuCd=DOM_000001201001000000"
     "&paging=ok&searchOperation=AND&startPage={page}"
 )

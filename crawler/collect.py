@@ -1281,8 +1281,18 @@ def main() -> None:
     collected_at = now_kst().isoformat(timespec="seconds")
     window_hours = int((window_end - window_start).total_seconds() // 3600)
 
+    # 게시판 주소가 바뀌어도 서버가 오류 없이 메인 화면을 돌려주는 곳이 있다.
+    # (2026-09 전북 개편 때 나흘간 조용히 0건이었다.) 목록이 비면 눈에 띄게 알린다.
+    empty = [run for run in runs if not run.get("foundLinks")]
+    for run in empty:
+        print(
+            f"::warning::{run['source']}({run['sourceId']}) 목록이 0건입니다. "
+            "게시판 주소가 바뀌었을 수 있습니다."
+        )
+
     status = {
-        "ok": all(run["status"] == "success" for run in runs),
+        "ok": all(run["status"] == "success" for run in runs) and not empty,
+        "emptySources": [run["sourceId"] for run in empty],
         "retentionDays": RETENTION_DAYS,
         "collectionWindowHours": window_hours,
         "briefingWindowStart": window_start.isoformat(timespec="seconds"),
