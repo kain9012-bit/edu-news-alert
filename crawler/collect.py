@@ -167,7 +167,8 @@ TITLE_SELECTORS = {
 
 CONTENT_SELECTORS = {
     "jeonbuk": [".bbs_con", ".board_view"],
-    "seoul": ["#view_txt", ".news_view", ".view_cont"],
+    # 2026-09 개편으로 .board-content-inner 로 바뀌었다. 옛 선택자도 남겨 둔다.
+    "seoul": [".board-content-inner", "#view_txt", ".news_view", ".view_cont"],
     "gyeonggi": [".bbsV_cont", "#contents", ".board_view", ".view_cont"],
     "busan": [".bbsV_cont"],
     "daegu": [".bbsV_cont"],

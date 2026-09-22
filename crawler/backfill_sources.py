@@ -38,6 +38,7 @@ PAGE_PARAM = {
     "sejong": "currPage",
     "gangwon": "pageIndex",
     "jeonbuk": "startPage",
+    "seoul": "pageIndex",
 }
 REQUEST_INTERVAL = 1.0
 
