@@ -315,7 +315,11 @@ def strip_repeated_title(text: str, title: str) -> str:
         for _ in range(3):
             if not has_repeated_title(cleaned, title):
                 break
-            updated = re.sub(semantic_pattern, "", cleaned, count=1, flags=re.DOTALL).lstrip()
+            # semantic_comparison_key가 소문자로 바꾸므로 대소문자를 무시해야 한다.
+            # (KAIST·AI·FFK처럼 본문이 대문자인 자료가 안 잡혀 통째로 버려졌다.)
+            updated = re.sub(
+                semantic_pattern, "", cleaned, count=1, flags=re.DOTALL | re.IGNORECASE
+            ).lstrip()
             if updated == cleaned:
                 break
             cleaned = updated
