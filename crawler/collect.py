@@ -4,6 +4,7 @@ import hashlib
 import html as html_lib
 import io
 import json
+import os
 import re
 import struct
 import zipfile
@@ -11,7 +12,7 @@ import zlib
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
-from urllib.parse import parse_qs, urlencode, urljoin, urlparse, urlunparse
+from urllib.parse import parse_qs, quote, urlencode, urljoin, urlparse, urlunparse
 from xml.etree import ElementTree as ET
 
 import requests
@@ -407,10 +408,24 @@ def warm_up(source: dict[str, Any] | None) -> None:
     _WARMED_HOSTS.add(host)
 
 
+def apply_proxy(url: str, source: dict[str, Any] | None) -> str:
+    """해외 IP를 막는 게시판은 서울에서 도는 중계를 거쳐 받는다.
+
+    세종교육청은 GitHub Actions(미국)에서 접속 자체가 안 된다. 중계는 Vercel의
+    서울 리전 함수(web/api/fetch-board.mjs)이고, 주소는 BOARD_PROXY_URL로 넘긴다.
+    설정이 없으면 평소대로 직접 받는다(로컬·한국에서 돌릴 때).
+    """
+    proxy = (source or {}).get("proxy")
+    base = os.environ.get("BOARD_PROXY_URL", "").strip()
+    if not proxy or not base:
+        return url
+    return f"{base.rstrip('/')}?url={quote(url, safe='')}"
+
+
 def fetch_text(url: str, source: dict[str, Any] | None = None) -> str:
     warm_up(source)
     verify = not (source or {}).get("verifySsl") is False
-    res = SESSION.get(url, timeout=TIMEOUT_SECONDS, verify=verify)
+    res = SESSION.get(apply_proxy(url, source), timeout=TIMEOUT_SECONDS, verify=verify)
     res.raise_for_status()
     if not res.encoding or res.encoding.lower() == "iso-8859-1":
         res.encoding = res.apparent_encoding or "utf-8"

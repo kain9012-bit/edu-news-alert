@@ -60,6 +60,9 @@ jobs:
         env:
           RETENTION_DAYS: "90"
           BRIEFING_HOUR_KST: "6"
+          # 세종교육청은 해외 IP를 막아 러너에서 직접 못 받는다.
+          # 서울 리전에서 도는 중계를 거친다(web/api/fetch-board.mjs).
+          BOARD_PROXY_URL: "https://jbe-edu-trends.vercel.app/api/fetch-board"
           MAX_ITEMS_TOTAL: "5000"
           MAX_ITEMS_PER_SOURCE: "20"
         run: python crawler/collect.py
