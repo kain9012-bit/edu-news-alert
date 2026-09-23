@@ -9,7 +9,7 @@ import re
 import struct
 import zipfile
 import zlib
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qs, quote, urlencode, urljoin, urlparse, urlunparse
@@ -239,10 +239,40 @@ def now_kst() -> datetime:
     return datetime.now(KST)
 
 
+try:  # 한국 공휴일(음력·대체공휴일 포함). 없으면 주말만 쉬는 것으로 본다.
+    import holidays as _holidays
+
+    _KR_HOLIDAYS = _holidays.KR()
+except Exception:  # noqa: BLE001
+    _KR_HOLIDAYS = None
+
+
+def is_business_day(day: date) -> bool:
+    """주말·공휴일이 아닌 날. 보도자료가 올라오는 날을 뜻한다."""
+    if day.weekday() >= 5:
+        return False
+    return not (_KR_HOLIDAYS is not None and day in _KR_HOLIDAYS)
+
+
+def previous_business_day(day: date) -> date:
+    cur = day - timedelta(days=1)
+    for _ in range(30):  # 연휴가 아무리 길어도 30일은 넘지 않는다
+        if is_business_day(cur):
+            return cur
+        cur -= timedelta(days=1)
+    return cur
+
+
 def collection_window_hours(window_end: datetime) -> int:
+    """직전 영업일 마감부터 이번 마감까지를 모두 담는다.
+
+    주말은 물론 추석·설 연휴도 자동으로 포함된다. 예를 들어 2026년 추석
+    연휴(9/24~9/26) 뒤 첫 출근일인 9/28(월)은 9/23(수) 06:00부터 모은다.
+    """
     if COLLECTION_WINDOW_HOURS_OVERRIDE:
         return max(1, int(COLLECTION_WINDOW_HOURS_OVERRIDE))
-    return 72 if window_end.weekday() == 0 else 24
+    previous = previous_business_day(window_end.date())
+    return max(24, (window_end.date() - previous).days * 24)
 
 
 def briefing_window(reference: datetime | None = None) -> tuple[datetime, datetime]:
