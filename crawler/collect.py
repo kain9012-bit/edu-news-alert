@@ -7,6 +7,7 @@ import json
 import os
 import re
 import struct
+import time
 import zipfile
 import zlib
 from datetime import date, datetime, timedelta, timezone
@@ -1301,6 +1302,60 @@ def normalize_source_names(items: list[dict[str, Any]], source_names: dict[str, 
     return items
 
 
+# 한 기관이 붙지 않아 그날 보도자료가 통째로 빠지는 일을 줄인다.
+# 07:00 보고서 시각을 놓치면 안 되므로 횟수와 시간을 모두 묶어 둔다.
+RETRY_ROUNDS = 2
+RETRY_WAIT_SECONDS = (30, 60)
+RETRY_BUDGET_SECONDS = 300
+
+
+def retry_failed_sources(
+    sources: list[dict[str, Any]],
+    runs: list[dict[str, Any]],
+    all_new: list[dict[str, Any]],
+    existing_by_id: dict[str, dict[str, Any]],
+    window_start: datetime,
+    window_end: datetime,
+) -> None:
+    """접속에 실패한 기관만 잠시 뒤 다시 시도한다.
+
+    러너에서 한국 공공기관 사이트로 붙을 때 하루 한두 곳이 무작위로 실패한다.
+    06:05 수집에서 빠지면 그 기관 자료는 그날 보고서에 아예 들어가지 못하므로,
+    다른 기관을 다 돈 뒤에 실패한 곳만 다시 두드린다. 계속 안 되면 포기하고
+    failed로 남겨 알림이 나가게 둔다.
+    """
+    by_id = {s["id"]: s for s in sources}
+    started = time.monotonic()
+
+    for attempt in range(RETRY_ROUNDS):
+        pending = [r for r in runs if r["status"] != "success" or not r.get("foundLinks")]
+        if not pending:
+            return
+        if time.monotonic() - started > RETRY_BUDGET_SECONDS:
+            print(f"재시도 시간({RETRY_BUDGET_SECONDS}초)을 넘겨 중단합니다.")
+            return
+
+        wait = RETRY_WAIT_SECONDS[min(attempt, len(RETRY_WAIT_SECONDS) - 1)]
+        names = ", ".join(r["source"] for r in pending)
+        print(f"재시도 {attempt + 1}/{RETRY_ROUNDS} — {wait}초 뒤 {names}")
+        time.sleep(wait)
+
+        for run in pending:
+            source = by_id.get(run["sourceId"])
+            if not source:
+                continue
+            items, fresh = collect_source(source, existing_by_id, window_start, window_end)
+            if fresh["status"] != "success" or not fresh.get("foundLinks"):
+                print(f"  {run['source']} 재시도 실패")
+                continue
+            print(f"  {run['source']} 재시도 성공 (목록 {fresh['foundLinks']}건)")
+            all_new.extend(items)
+            for item in items:
+                existing_by_id[item["id"]] = item
+            fresh["retriedAttempt"] = attempt + 1
+            runs[runs.index(run)] = fresh
+
+
 def public_sources(sources: list[dict[str, Any]]) -> list[dict[str, Any]]:
     seen_names: set[str] = set()
     output = []
@@ -1329,6 +1384,8 @@ def main() -> None:
         for item in items:
             existing_by_id[item["id"]] = item
         runs.append(run)
+
+    retry_failed_sources(sources, runs, all_new, existing_by_id, window_start, window_end)
 
     merged: dict[str, dict[str, Any]] = {item.get("id", ""): item for item in old_items if item.get("id")}
     for item in all_new:
