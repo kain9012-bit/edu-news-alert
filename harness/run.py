@@ -8,6 +8,7 @@ from typing import Any
 
 from harness.gemini_client import GeminiClient
 from harness.llm_client import OllamaClient
+from harness.openrouter_client import OpenRouterClient
 from harness.orchestrator import EducationTrendHarness
 from harness.renderer import render_markdown
 from harness.utils import read_json, write_json
@@ -62,7 +63,14 @@ def main() -> int:
         if args.max_output_tokens is not None
         else int(config.get("maxOutputTokens", 1536))
     )
-    if provider == "gemini":
+    if provider == "openrouter":
+        llm = OpenRouterClient(
+            api_key=os.environ.get("OPENROUTER_API_KEY", ""),
+            model=model,
+            timeout_seconds=int(config.get("requestTimeoutSeconds", 240)),
+            max_output_tokens=max_output_tokens,
+        )
+    elif provider == "gemini":
         llm = GeminiClient(
             api_key=os.environ.get("GEMINI_API_KEY", ""),
             model=model,

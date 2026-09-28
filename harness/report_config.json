@@ -1,7 +1,7 @@
 {
-  "factModel": "gemini-3.1-flash-lite",
-  "analysisModel": "gemini-3.5-flash",
-  "verifierModel": "gemini-3.1-flash-lite",
+  "factModel": "google/gemini-3.1-flash-lite",
+  "analysisModel": "google/gemini-3.5-flash",
+  "verifierModel": "google/gemini-3.1-flash-lite",
   "batchSize": 4,
   "maxBodyChars": 6000,
   "minBodyChars": 200,
@@ -11,11 +11,30 @@
   "routineClusterMinSize": 3,
   "routineClusterImportanceMax": 3,
   "routineClusterMinSharedTokens": 2,
-  "ownOfficeSourceIds": ["jeonbuk"],
-  "ownOfficeNames": ["전북특별자치도교육청"],
+  "ownOfficeSourceIds": [
+    "jeonbuk"
+  ],
+  "ownOfficeNames": [
+    "전북특별자치도교육청"
+  ],
   "artifactRetentionDays": 14,
   "pricingPerMillionTokensUsd": {
-    "gemini-3.1-flash-lite": {"input": 0.25, "output": 1.5},
-    "gemini-3.5-flash": {"input": 1.5, "output": 9.0}
-  }
+    "gemini-3.1-flash-lite": {
+      "input": 0.25,
+      "output": 1.5
+    },
+    "gemini-3.5-flash": {
+      "input": 1.5,
+      "output": 9.0
+    },
+    "google/gemini-3.1-flash-lite": {
+      "input": 0.25,
+      "output": 1.5
+    },
+    "google/gemini-3.5-flash": {
+      "input": 1.5,
+      "output": 9.0
+    }
+  },
+  "provider": "openrouter"
 }

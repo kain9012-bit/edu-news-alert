@@ -91,9 +91,9 @@ jobs:
       - name: Select and classify education trends
         if: steps.bizday.outputs.run == 'true' && (steps.done.outputs.briefing != 'true')
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          LLM_PROVIDER: gemini
-          LLM_MODEL: gemini-3.1-flash-lite
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          LLM_PROVIDER: openrouter
+          LLM_MODEL: google/gemini-3.1-flash-lite
         run: python -m harness.run
 
       - name: Commit collected data

@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from harness.gemini_client import GeminiClient
+from harness.openrouter_client import OpenRouterClient
 from harness.reporting import DailyReportHarness
 from harness.reporting.renderers import render_html, write_hwpx
 from harness.utils import read_json, write_json
@@ -38,25 +39,32 @@ def ensure_private_output(path: Path) -> Path:
     return resolved
 
 
-def create_client(api_key: str, model: str, config: dict[str, Any]) -> GeminiClient:
-    return GeminiClient(
-        api_key=api_key,
-        model=model,
-        timeout_seconds=int(config.get("requestTimeoutSeconds", 240)),
-        max_output_tokens=int(config.get("maxOutputTokens", 4096)),
-    )
+def create_client(
+    api_key: str, model: str, config: dict[str, Any], provider: str = "gemini"
+) -> GeminiClient | OpenRouterClient:
+    """공급자만 갈아 끼운다. 모델·프롬프트·스키마는 그대로 쓴다."""
+    kwargs = {
+        "api_key": api_key,
+        "model": model,
+        "timeout_seconds": int(config.get("requestTimeoutSeconds", 240)),
+        "max_output_tokens": int(config.get("maxOutputTokens", 4096)),
+    }
+    return OpenRouterClient(**kwargs) if provider == "openrouter" else GeminiClient(**kwargs)
 
 
 def main() -> int:
     args = parse_args()
     config = read_json(resolve_path(args.config))
-    api_key = os.environ.get("GEMINI_API_KEY", "")
+    provider = os.environ.get("LLM_PROVIDER") or config.get("provider", "gemini")
+    api_key = os.environ.get(
+        "OPENROUTER_API_KEY" if provider == "openrouter" else "GEMINI_API_KEY", ""
+    )
     fact_model = os.environ.get("REPORT_FACT_MODEL") or config["factModel"]
     analysis_model = os.environ.get("REPORT_ANALYSIS_MODEL") or config["analysisModel"]
     verifier_model = os.environ.get("REPORT_VERIFIER_MODEL") or config["verifierModel"]
-    fact_llm = create_client(api_key, fact_model, config)
-    analysis_llm = create_client(api_key, analysis_model, config)
-    verifier_llm = create_client(api_key, verifier_model, config)
+    fact_llm = create_client(api_key, fact_model, config, provider)
+    analysis_llm = create_client(api_key, analysis_model, config, provider)
+    verifier_llm = create_client(api_key, verifier_model, config, provider)
     if not args.skip_model_check:
         checked: set[str] = set()
         for client in (fact_llm, analysis_llm, verifier_llm):
