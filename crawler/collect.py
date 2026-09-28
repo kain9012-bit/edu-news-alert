@@ -439,28 +439,44 @@ def warm_up(source: dict[str, Any] | None) -> None:
     _WARMED_HOSTS.add(host)
 
 
-def apply_proxy(url: str, source: dict[str, Any] | None) -> str:
-    """해외 IP를 막는 게시판은 서울에서 도는 중계를 거쳐 받는다.
+def apply_proxy(url: str, source: dict[str, Any] | None = None) -> str:
+    """서울에서 도는 중계를 거치는 주소로 바꾼다.
 
-    세종교육청은 GitHub Actions(미국)에서 접속 자체가 안 된다. 중계는 Vercel의
-    서울 리전 함수(web/api/fetch-board.mjs)이고, 주소는 BOARD_PROXY_URL로 넘긴다.
-    설정이 없으면 평소대로 직접 받는다(로컬·한국에서 돌릴 때).
+    한국 공공기관 사이트 상당수가 해외 IP를 막아서, 미국에서 도는 GitHub
+    Actions로는 기관이 하나씩 차례로 끊긴다(세종·인천·충북에서 확인).
+    중계는 Vercel 서울 리전 함수(web/api/fetch-board.mjs)이고
+    BOARD_PROXY_URL로 주소를 넘긴다. 설정이 없으면 직접 받는다(로컬·한국).
     """
-    proxy = (source or {}).get("proxy")
     base = os.environ.get("BOARD_PROXY_URL", "").strip()
-    if not proxy or not base:
+    if not base or (source or {}).get("proxy") is False:
         return url
     return f"{base.rstrip('/')}?url={quote(url, safe='')}"
 
 
-def fetch_text(url: str, source: dict[str, Any] | None = None) -> str:
-    warm_up(source)
+def _get_text(url: str, source: dict[str, Any] | None) -> str:
     verify = not (source or {}).get("verifySsl") is False
-    res = SESSION.get(apply_proxy(url, source), timeout=TIMEOUT_SECONDS, verify=verify)
+    res = SESSION.get(url, timeout=TIMEOUT_SECONDS, verify=verify)
     res.raise_for_status()
     if not res.encoding or res.encoding.lower() == "iso-8859-1":
         res.encoding = res.apparent_encoding or "utf-8"
     return res.text
+
+
+def fetch_text(url: str, source: dict[str, Any] | None = None) -> str:
+    """중계를 우선 쓰고, 중계가 말썽이면 직접 받는 것으로 되돌린다.
+
+    중계 한 곳에 모든 기관이 걸리므로, 중계가 죽었을 때 전부 멈추지 않도록
+    직접 요청을 남겨 둔다. 한국에서 돌릴 때는 애초에 중계를 타지 않는다.
+    """
+    warm_up(source)
+    proxied = apply_proxy(url, source)
+    if proxied == url:
+        return _get_text(url, source)
+    try:
+        return _get_text(proxied, source)
+    except requests.RequestException as exc:
+        print(f"중계 실패({type(exc).__name__}) — 직접 요청으로 대체: {url[:90]}", file=sys.stderr)
+        return _get_text(url, source)
 
 
 def url_matches(url: str, source: dict[str, Any]) -> bool:
