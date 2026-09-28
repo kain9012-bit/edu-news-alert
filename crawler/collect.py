@@ -453,6 +453,29 @@ def apply_proxy(url: str, source: dict[str, Any] | None = None) -> str:
     return f"{base.rstrip('/')}?url={quote(url, safe='')}"
 
 
+def fetch_bytes(url: str, source: dict[str, Any] | None = None) -> bytes:
+    """첨부파일도 게시판과 같은 길(서울 중계)로 받는다.
+
+    교육부·경북·제주·대구는 본문이 웹페이지에 없고 첨부 한글파일에만 있어서,
+    첨부만 직접 받다가 그 사이트가 막히면 '제목은 멀쩡한데 본문만 비는' 상태가
+    된다. 중계가 말썽이면 직접 받는 것으로 되돌린다.
+    """
+    proxied = apply_proxy(url, source)
+    if proxied != url:
+        try:
+            res = SESSION.get(proxied, timeout=TIMEOUT_SECONDS)
+            res.raise_for_status()
+            return res.content
+        except requests.RequestException as exc:
+            print(
+                f"첨부 중계 실패({type(exc).__name__}) — 직접 요청으로 대체: {url[:80]}",
+                file=sys.stderr,
+            )
+    res = SESSION.get(url, timeout=TIMEOUT_SECONDS)
+    res.raise_for_status()
+    return res.content
+
+
 def _get_text(url: str, source: dict[str, Any] | None) -> str:
     verify = not (source or {}).get("verifySsl") is False
     res = SESSION.get(url, timeout=TIMEOUT_SECONDS, verify=verify)
@@ -983,9 +1006,7 @@ def extract_gyeongbuk_attachment_text(soup: BeautifulSoup, detail_url: str) -> s
         if info.get("resultAt") != "Y" or not info.get("filePath"):
             return ""
         file_url = urljoin(detail_url, info["filePath"])
-        file_response = SESSION.get(file_url, timeout=TIMEOUT_SECONDS)
-        file_response.raise_for_status()
-        return extract_attachment_document_text(file_response.content, file_url)
+        return extract_attachment_document_text(fetch_bytes(file_url), file_url)
     except Exception:
         return ""
 
@@ -1017,9 +1038,7 @@ def extract_direct_attachment_text(soup: BeautifulSoup, detail_url: str) -> str:
     ]
     for file_url, filename in candidates:
         try:
-            response = SESSION.get(file_url, timeout=TIMEOUT_SECONDS)
-            response.raise_for_status()
-            text = extract_attachment_document_text(response.content, filename)
+            text = extract_attachment_document_text(fetch_bytes(file_url), filename)
         except Exception:
             continue
         if len(normalize_space(text)) > len(normalize_space(best)):

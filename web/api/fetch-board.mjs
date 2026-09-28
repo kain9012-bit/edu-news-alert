@@ -29,8 +29,52 @@ const ALLOWED_HOSTS = new Set([
   "www.jje.go.kr", // 제주
 ]);
 
+// 쿠키가 없으면 SSO 화면으로 튕겨내는 사이트. 본 요청 전에 같은 호출 안에서
+// 아래 주소들을 먼저 훑어 세션을 만든 뒤, 받은 쿠키를 그대로 붙여 보낸다.
+// (수집기 쪽 예열은 직접 나가므로 중계를 거치면 쿠키가 따로 놀아 소용이 없다.)
+const WARMUP = {
+  "www.dge.go.kr": [
+    "https://www.dge.go.kr/",
+    "https://www.dge.go.kr/main/main.do",
+    "https://www.dge.go.kr/main/sso/index.do",
+  ],
+};
+
 const FETCH_TIMEOUT_MS = 25_000;
 const MAX_BYTES = 8_000_000;
+
+function collectCookies(response, jar) {
+  const raw = response.headers.getSetCookie?.() ?? [];
+  for (const line of raw) {
+    const [pair] = line.split(";");
+    const index = pair.indexOf("=");
+    if (index > 0) jar.set(pair.slice(0, index).trim(), pair.slice(index + 1).trim());
+  }
+}
+
+async function warmUp(hostname, headers, signal) {
+  const urls = WARMUP[hostname];
+  if (!urls) return "";
+  const jar = new Map();
+  for (const url of urls) {
+    try {
+      const res = await fetch(url, {
+        headers: { ...headers, ...(jar.size ? { Cookie: cookieHeader(jar) } : {}) },
+        redirect: "follow",
+        signal,
+      });
+      collectCookies(res, jar);
+      await res.arrayBuffer(); // 연결을 확실히 닫는다
+    } catch {
+      // 예열 실패는 치명적이지 않다. 본 요청에서 판가름난다.
+    }
+  }
+  return cookieHeader(jar);
+}
+
+function cookieHeader(jar) {
+  return [...jar].map(([k, v]) => `${k}=${v}`).join("; ");
+}
 
 export const config = { maxDuration: 40 };
 
@@ -60,15 +104,17 @@ export async function GET(request) {
 
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+  const baseHeaders = {
+    "User-Agent":
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36",
+    "Accept-Language": "ko-KR,ko;q=0.9",
+  };
   try {
+    const cookie = await warmUp(target.hostname, baseHeaders, controller.signal);
     const upstream = await fetch(target, {
       signal: controller.signal,
       redirect: "follow",
-      headers: {
-        "User-Agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36",
-        "Accept-Language": "ko-KR,ko;q=0.9",
-      },
+      headers: cookie ? { ...baseHeaders, Cookie: cookie } : baseHeaders,
     });
     const buffer = await upstream.arrayBuffer();
     if (buffer.byteLength > MAX_BYTES) return text("응답이 너무 큽니다.", 502);
