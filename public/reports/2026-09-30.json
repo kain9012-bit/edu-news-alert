@@ -1,0 +1,569 @@
+{
+  "metadata": {
+    "reportId": "20260929T220456Z-8cb1b3bc",
+    "title": "오늘의 교육동향",
+    "status": "completed",
+    "generatedAt": "2026-09-29T22:04:56+00:00",
+    "windowStart": "2026-09-29T06:00:00+09:00",
+    "windowEnd": "2026-09-30T06:00:00+09:00",
+    "windowHours": 24,
+    "selectionRunId": "20260929T212048Z-750b642a",
+    "sourceCount": 11,
+    "eligibleCount": 9,
+    "publishedCount": 9,
+    "omittedCount": 0,
+    "ownOfficeEligibleCount": 2,
+    "ownOfficePublishedCount": 2,
+    "qualityExcludedCount": 0,
+    "factModel": "google/gemini-3.1-flash-lite",
+    "analysisModel": "google/gemini-3.5-flash",
+    "verifierModel": "google/gemini-3.1-flash-lite",
+    "summaryOnlyCount": 0,
+    "ownOfficeReviewCount": 0,
+    "usage": {
+      "stages": {
+        "facts": {
+          "model": "google/gemini-3.1-flash-lite",
+          "requests": 4,
+          "promptTokenCount": 12156,
+          "candidatesTokenCount": 2809,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 14965
+        },
+        "analysis": {
+          "model": "google/gemini-3.5-flash",
+          "requests": 12,
+          "promptTokenCount": 24286,
+          "candidatesTokenCount": 46110,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 70396
+        },
+        "verification": {
+          "model": "google/gemini-3.1-flash-lite",
+          "requests": 4,
+          "promptTokenCount": 16956,
+          "candidatesTokenCount": 917,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 17873
+        }
+      },
+      "total": {
+        "requests": 20,
+        "promptTokenCount": 53398,
+        "candidatesTokenCount": 49836,
+        "thoughtsTokenCount": 0,
+        "totalTokenCount": 103234
+      }
+    },
+    "estimatedCostUsd": 0.464286
+  },
+  "items": [
+    {
+      "newsId": "gyeongbuk-91b75c59bfe8e8b4",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[유초등교육과]경북교육청, '경북학생성장지원평가' 하반기 본격 운영",
+      "date": "2026-09-29",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1648148&bbsId=4744&mi=17643&searchCate=761",
+      "category": "교육과정·수업",
+      "importance": 3,
+      "selectionReason": "도 단위 교육청에서 시행하는 학생 성장 지원 평가 시스템의 운영 및 기능 개선 사항으로, 교육과정 평가 체계의 변화를 포함함.",
+      "summaryPoints": [
+        "초등학교 3·6학년 대상 2026경북학생성장지원평가 하반기 운영",
+        "국어·수학 형성평가 및 12월 사회·정서역량검사 실시",
+        "CBT 시스템 개선 및 서·논술형 문항 확대 제공",
+        "자동 채점 및 일괄 채점 지원으로 교사 업무 부담 경감",
+        "평가 결과의 누적 관리 및 맞춤형 피드백 활용"
+      ],
+      "analysisPoints": [
+        "초등학생의 기초학력 및 사회·정서적 성장을 다각도로 지원하기 위해 컴퓨터 기반 평가와 다차원적 역량 검사를 결합하여 운영하는 흐름임",
+        "평가 문항을 수준별로 세분화하여 제공하고 자동 채점 및 일괄 채점 시스템을 통해 교사의 평가 업무 부담을 경감하고자 함",
+        "평가 결과를 누적 관리하여 학생 맞춤형 피드백을 상시 제공할 수 있는 체계를 구축하는 방향임"
+      ],
+      "applicationReviewPoints": [
+        "초등학생 대상 컴퓨터 기반 형성평가 및 사회·정서역량검사 도입 사례를 분석하여 학생 맞춤형 학업성취도 평가 체계 개선에 참고해 볼 수 있음",
+        "수준별 문항 제공 및 채점 지원 시스템을 통한 교사 업무 경감 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "운영 기간은 2026년 9월부터 12월까지임",
+        "평가 대상은 초등학교 3학년과 6학년임",
+        "국어와 수학은 월 1회 컴퓨터 기반 형성평가 실시",
+        "12월 사회·정서역량검사는 5개 영역을 평가함",
+        "평가 문항은 씨앗·새싹·나무 3단계로 제공됨",
+        "선택형 문항은 자동 채점, 서술형 문항은 일괄 채점 지원함",
+        "평가 결과는 학생별·영역별·성취기준별로 누적 관리함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "daegu-11b7a07e7cf6c726",
+      "sourceId": "daegu",
+      "source": "대구광역시교육청",
+      "title": "대구시교육청, 6개 사이버대학교와 첫 산업체 위탁교육 협약",
+      "date": "2026-09-29",
+      "url": "https://www.dge.go.kr/pr/na/ntt/selectNttInfo.do?nttSn=2215675&bbsId=2680&mi=9870",
+      "category": "교원·인사",
+      "importance": 3,
+      "selectionReason": "교직원 대상 복지 및 전문성 강화 지원 정책으로, 교육청 차원의 공식적인 협약 및 지원 체계 변화에 해당함.",
+      "summaryPoints": [
+        "6개 사이버대학교와 산업체 위탁교육 협약 체결",
+        "교직원 전문성 강화 및 글로벌 교육수도 비전 실현",
+        "2027학년도부터 신·편입학 시 장학 혜택 제공",
+        "온라인 수업을 통한 학사 및 석·박사 학위 취득 지원"
+      ],
+      "analysisPoints": [
+        "교육청 소속 공무원뿐만 아니라 교육공무직원과 사립학교 교직원까지 대상을 넓혀 평생학습 및 전문성 신장 기회를 제공하는 정책적 방향임",
+        "사이버대학교와의 협약을 통해 시공간적 제약이 적은 온라인 학위 취득 과정을 지원하고 장학 혜택을 연계하여 자발적 역량 강화를 유도함"
+      ],
+      "applicationReviewPoints": [
+        "교육청 소속 다양한 직종의 교직원을 대상으로 사이버대학 연계 위탁교육 및 장학 혜택을 제공하는 방안의 실효성을 검토해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "협약 대상은 서울사이버대, 사이버한국외대, 대구사이버대, 한양사이버대, 고려사이버대, 경희사이버대임",
+        "협약 체결일은 2026년 9월 30일임",
+        "대상자는 대구시교육청 소속 공무원, 교육공무직원, 사립학교 교직원임",
+        "2027학년도부터 장학 혜택 적용 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "incheon-cff85ba158679b6e",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 인천미래유아교육 및 유치원 무상교육 협의회 개최",
+      "date": "2026-09-29",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3385497&bbsId=1519&mi=11620",
+      "category": "정책·행정",
+      "importance": 3,
+      "selectionReason": "유치원 무상교육 확대 및 유아모집 기준 등 교육 정책의 구체적인 추진 계획과 제도 개선을 논의하는 협의체 활동임.",
+      "summaryPoints": [
+        "유아교육 공공성 강화를 위한 협의회 개최",
+        "2027 유아모집 기준 및 3·4세 무상교육 확대 논의",
+        "주민직선 5기 임기 내 무상교육 단계별 추진 계획 모색"
+      ],
+      "analysisPoints": [
+        "유아교육의 공공성 강화를 위해 민관 협의체를 구성하고 단계별 무상교육 대상을 확대해 나가는 정책적 흐름임",
+        "지역 여건에 맞춘 유아 모집 기준 마련과 무상교육 재원 확보 방안 등을 다각도로 논의하는 거버넌스 구축이 요구됨"
+      ],
+      "applicationReviewPoints": [
+        "타 시도의 유치원 무상교육 단계적 확대 추진 과정과 협의회 운영 사례를 모니터링하여 관련 정책 수립 시 참고할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "인천미래유아교육협의회는 42명으로 구성됨",
+        "유치원 무상교육 협의회는 20명으로 구성됨",
+        "2022년 전국 최초로 사립유치원 5세 무상교육 시행함",
+        "주민직선 5기 교육감 공약으로 무상교육 3·4세 확대 추진 중임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jngj_s1n1-b2ce78b528a58553",
+      "sourceId": "jngj_s1n1",
+      "source": "전남광주통합특별시교육청",
+      "title": "전남광주특별시교육청 K-서･논술형 평가 ‘200 선도교원’이 이끈다",
+      "date": "2026-09-29",
+      "url": "https://www.jngjedu.kr/news/articleView.html?idxno=122091",
+      "category": "교육과정·수업",
+      "importance": 3,
+      "selectionReason": "2027학년도 K-서·논술형 평가 도입이라는 교육과정 및 평가 제도 변화를 위한 선도교원 양성 및 시스템 구축 계획을 포함함.",
+      "summaryPoints": [
+        "K-서·논술형 평가 안착을 위한 선도교원 200명 양성",
+        "평가 문항 개발 및 교원 실습 연수 운영",
+        "평가기획전담팀 및 평가개발팀 구성·운영",
+        "AI 기반 평가 시스템 도입으로 채점 부담 완화",
+        "교사의 평가권 보장을 위한 학업성적관리지침 개정"
+      ],
+      "analysisPoints": [
+        "서·논술형 평가의 현장 안착을 위해 대규모 선도교원을 양성하고 체계적인 실습 연수를 제공하는 전문성 강화 방향임",
+        "평가 기획과 개발을 전담하는 조직을 분리 운영하여 전문성을 높이고 AI 기반 평가 시스템을 도입하여 교사의 채점 부담을 완화하려는 시도임"
+      ],
+      "applicationReviewPoints": [
+        "서·논술형 평가 확대를 위한 선도교원 양성 규모 및 연수 과정 설계 방안을 비교해 볼 수 있음",
+        "AI 기반 서·논술형 평가 시스템 도입을 통한 채점 지원 및 교사 업무 경감 효과를 분석하여 시범 적용을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "선도교원은 초·중학교 교과별 20명 내외 총 200명으로 구성함",
+        "10월부터 선도교원 공모 실시 예정임",
+        "2027학년도 상반기부터 초 5~6 및 중 1 담당 교원 대상 대면 실습 연수 실시함",
+        "연수는 총 16기에 걸쳐 운영됨",
+        "평가기획전담팀과 평가개발팀을 별도로 구성함",
+        "AI 기반 서·논술형 평가 시스템을 도입함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "ulsan-d5d8208fd8541e3d",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "[울산교육청] 조용식 울산교육감, 학교 관리자 만나 울산교육 현장 목소리 듣는다",
+      "date": "2026-09-29",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20260929175154630",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "교육감의 주요 공약인 종합계획 및 기본계획 수립 과정에서 학교 현장의 의견을 수렴하고 정책 실효성을 논의하는 과정이 포함되어 있음.",
+      "summaryPoints": [
+        "울산교육청이 10월 7일까지 학교 관리자 대상 주요 교육정책 현장 소통 대화를 6차례 운영함",
+        "교육공동체 신뢰 회복 종합계획 및 학교 공간 개방 사업인 울산교육누리 계획을 공유함",
+        "학교 현장의 행정 부담 완화와 유사 중복 사업 통폐합 등 업무 효율화 방안을 논의함"
+      ],
+      "analysisPoints": [
+        "학교 관리자와의 소통을 통해 교육정책의 현장 수용성을 높이고 신뢰를 회복하려는 시도로 볼 수 있음",
+        "학교 시설을 지역사회와 공유하는 공공 공간 조성을 통해 지역사회와의 연계를 강화하고자 함",
+        "유사 중복 사업 정비 및 행정 부담 완화를 통해 학교 업무 효율화를 도모하는 방향성을 보여줌"
+      ],
+      "applicationReviewPoints": [
+        "학교 관리자 대상의 정책 소통 방식 및 의견 수렴 채널 운영 현황을 비교해 볼 수 있음",
+        "학교 시설의 지역사회 개방 및 공공 공간 조성 사업의 타당성을 검토할 수 있음",
+        "유사 중복 사업 정비 및 학교 업무 경감 방안 마련 시 참고할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "울산광역시교육청은 9월 28일부터 10월 7일까지 총 6회에 걸쳐 학교 관리자 대상 정책 대화를 진행함",
+        "정책 대화 대상은 단설유치원장, 초·중·고등학교장, 특수 및 각종학교장임",
+        "교육공동체 신뢰 회복 1차 종합계획은 4대 전략 12개 과제로 구성됨",
+        "울산교육누리 사업은 학교 시설을 지역사회와 공유하는 공공 공간 조성 사업임",
+        "교육청은 학교 업무 경감을 위해 유사 중복 사업을 정비할 계획임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jngj_s1n1-6e26c9fccfd72c2c",
+      "sourceId": "jngj_s1n1",
+      "source": "전남광주통합특별시교육청",
+      "title": "전남광주특별시교육청, ‘찾아가는 인사정책 공감설명회’ 개최",
+      "date": "2026-09-29",
+      "url": "https://www.jngjedu.kr/news/articleView.html?idxno=122128",
+      "category": "교원·인사",
+      "importance": 2,
+      "selectionReason": "2027년 주요 인사제도 변경사항 안내를 포함하고 있어 인사 정책의 변화를 다루고 있음.",
+      "summaryPoints": [
+        "전남광주특별시교육청이 일반직공무원 대상 찾아가는 인사정책 공감설명회를 개최함",
+        "인사 현안 안내와 2027년 주요 인사제도 변경사항을 공유하고 질의응답을 진행함",
+        "설명회와 연계하여 맞춤형 인사 상담 및 고충 해소를 위한 인사상담센터를 운영함"
+      ],
+      "analysisPoints": [
+        "일반직 공무원을 대상으로 찾아가는 설명회를 개최하여 인사 행정의 투명성과 이해도를 높이려는 노력으로 평가됨",
+        "인사 제도 변경 사항을 선제적으로 공유하고 맞춤형 상담을 연계하여 인사 고충을 해소하려는 현장 밀착형 지원 방식임"
+      ],
+      "applicationReviewPoints": [
+        "일반직 공무원 대상의 찾아가는 인사 설명회 및 맞춤형 인사 상담 센터 운영 사례를 비교해 볼 수 있음",
+        "향후 인사 제도 변경 시 구성원들의 수용성을 높이기 위한 선제적 의견 수렴 방안으로 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "9월 29일 전남청사 대회의실에서 서부권역 일반직공무원 250여 명이 참석함",
+        "10월 6일 순천만생태문화교육원에서 동부권 일반직공무원 대상 설명회가 예정됨",
+        "설명회는 인사행정 이해도 제고와 현장 의견 수렴을 목적으로 함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95,
+        "repair": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungbuk-9ecfe1fce127435e",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "충북교육청, 교육활동 침해 현장 대응·지원에 힘쓴다",
+      "date": "2026-09-29",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1579895&bbsId=1158&mi=10301",
+      "category": "학생지원·복지",
+      "importance": 2,
+      "selectionReason": "교육활동 침해 대응 및 피해 교원 보호를 위한 상시적 지원 체계와 현장 대응 시스템을 안내하는 정책 자료임.",
+      "summaryPoints": [
+        "충북교육청이 교육활동 침해 사안 발생 시 학교 현장 대응 및 피해 교원 지원을 강화함",
+        "현장 119 긴급지원팀을 통해 법률 상담과 심리 치료 등 맞춤형 지원을 제공함",
+        "위기 학생 관리 및 교직원 대상 위기 대응 연수와 컨설팅을 운영함"
+      ],
+      "analysisPoints": [
+        "교육활동 침해 사안 발생 시 신속한 현장 대응을 위해 긴급지원팀을 통한 맞춤형 원스톱 지원 체계를 강화하는 추세임",
+        "피해 교원 지원뿐만 아니라 고위험 학생에 대한 집중 사례 관리를 병행하여 근본적인 예방과 관리를 도모함"
+      ],
+      "applicationReviewPoints": [
+        "교육활동 침해 사안 발생 시 즉각적인 현장 방문 및 법률 심리 지원을 제공하는 긴급 대응 체계를 비교해 볼 수 있음",
+        "위기 학생 관리 및 교직원 대상 위기 대응 연수 프로그램의 연계 운영 방안을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "충북교육청은 9월 29일 교육활동 보호 업무 담당자 긴급 워크숍을 개최함",
+        "현장 119는 사안 발생 현장을 방문하여 법률 자문 및 심리 상담을 지원함",
+        "마음건강증진센터를 통해 고위험 학생 대상 집중 사례 관리를 수행함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeju-f92ca8290654ebb2",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "학교와 함께하는 교육활동보호센터, 예방부터 회복까지 지원",
+      "date": "2026-09-29",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1482355",
+      "category": "학생지원·복지",
+      "importance": 2,
+      "selectionReason": "교육활동 보호를 위한 통합 지원 체계 구축 및 안심콜센터 운영 등 교육청 차원의 제도적 대응 방안을 담고 있어 정책적 파급력이 큼.",
+      "summaryPoints": [
+        "제주교육청이 안심콜센터를 통한 교육활동 침해 통합 지원 체계를 구축함",
+        "피해 교원에게 심리 상담, 진료비 지원, 법률 상담 및 소송 비용을 지원함",
+        "디지털 성범죄 피해 시 전문 기관 연계를 통해 상담 및 법률 지원을 제공함"
+      ],
+      "analysisPoints": [
+        "전담 콜센터 구축 및 전담 조직 신설을 통해 교육활동 보호 지원 체계를 체계화하고 전문성을 강화하는 방향임",
+        "지역 변호사 협회와의 협력을 통한 전담 변호사 위촉 및 구체적인 소송 비용 지원 기준 마련으로 실질적인 교원 보호를 도모함",
+        "디지털 성범죄 등 다변화되는 침해 유형에 대응하기 위해 전문 기관과의 연계 지원을 강화함"
+      ],
+      "applicationReviewPoints": [
+        "교육활동 침해 통합 지원을 위한 전담 콜센터 및 전담 기구 설치 방안을 비교해 볼 수 있음",
+        "지역 변호사 단체와 연계한 학교별 전담 변호사 제도 및 소송비 지원 기준을 확인할 필요가 있음",
+        "디지털 성범죄 피해 교원에 대한 전문 기관 연계 지원 체계 구축 여부를 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "안심콜센터 번호는 064-1395임",
+        "교원보호공제사업을 통해 민·형사 소송비용을 심급별 최대 660만 원까지 지원함",
+        "반복적 침해 행위 대응을 위한 소송비용은 1건당 330만 원까지 지원함",
+        "제주지방변호사회가 추천한 변호사 25명을 우리학교 변호사로 위촉함",
+        "2026년 1월 1일 교육활동보호담당관이 출범할 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeju-78107bd89ed65716",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "학생의 작은 위기 신호, 학교가 먼저 알아챈다",
+      "date": "2026-09-29",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1482342",
+      "category": "학생지원·복지",
+      "importance": 2,
+      "selectionReason": "학생 자살 예방 및 생명존중 대응 체계 강화는 교육청 차원의 학생 안전 및 지원 정책에 해당함.",
+      "summaryPoints": [
+        "제주특별자치도교육청이 30일 ‘2026년 하반기 자살 예방 및 생명존중 관리자 업무 담당자 연수’를 개최함",
+        "학교 관리자와 업무 담당 교사 250여 명을 대상으로 학생 정서 위기 대응 역량 강화 교육을 실시함",
+        "학교급별 발달 특성을 고려하여 초등과 중·고·특수학교로 나누어 맞춤형 대응 방법을 안내함",
+        "정신건강의학과 전문의가 위기 신호 발견, 초기 대응, 보호자 소통, 전문기관 연계 등 단계별 대응 방안을 교육함"
+      ],
+      "analysisPoints": [
+        "학생 정서 위기 및 자살 예방을 위해 학교 관리자와 담당 교사의 초기 대응 역량을 강화하는 연수 프로그램의 필요성이 증대됨",
+        "학교급별 발달 특성을 고려하여 초등과 중·고·특수학교로 구분한 맞춤형 분반 운영을 통해 연수의 실효성을 높임",
+        "정신건강의학과 전문의 등 외부 전문가를 초빙하여 위기 신호 파악, 보호자 소통, 전문기관 연계 등 단계별 실무 중심 교육을 제공함"
+      ],
+      "applicationReviewPoints": [
+        "전북 지역 학교 관리자 및 담당 교사 대상의 생명존중 및 정서 위기 대응 연수 프로그램 구성 현황을 비교해 볼 수 있음",
+        "학교급별 발달 특성에 따른 맞춤형 분반 연수 방식의 도입 가능성을 검토할 수 있음",
+        "지역 의료기관의 정신건강의학과 전문의 등 외부 전문가와 연계한 단계별 대응 교육 프로그램의 적용을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "일시: 2026년 9월 30일",
+        "장소: 탐라교육원 연수관 대강당",
+        "대상: 도내 초·중·고·특수학교 관리자 및 업무 담당 교사 250여 명",
+        "주최: 제주특별자치도교육청",
+        "강사진: 제주대학교병원 강나리 전문의, 서귀포의료원 손긍정 전문의",
+        "주요 내용: 위기 신호 파악, 초기 대응, 보호자 소통, 전문기관 연계 방법",
+        "운영 방식: 학교급별(초등, 중·고·특수) 맞춤형 분반 운영"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95,
+        "repair": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "ownOfficeItems": [
+    {
+      "newsId": "jeonbuk-b4c42816aa34e382",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "AI 챔피언, 정부 역량 평가 17명 스타 배출",
+      "date": "2026-09-29",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1183549",
+      "summaryPoints": [
+        "전북교육청 소속 직원 17명이 행정안전부 주관 공공부문 AI 역량평가에서 AI 챔피언 인증을 획득함",
+        "그린 등급 4명과 블루 등급 13명으로 구성되어 실무 중심의 인공지능 행정 역량을 입증함"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeonbuk-771d3bcbd7c62da7",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "사립 유치원·학교 갑질 직장 괴롭힘 누구나 신고를!",
+      "date": "2026-09-29",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1183562",
+      "summaryPoints": [
+        "전북특별자치도의회에서 갑질 및 직장 내 괴롭힘 금지 조례 개정안이 가결됨",
+        "적용 대상을 사립유치원과 사립학교까지 확대하고 신고자 및 피해자 보호 조치를 강화함"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    }
+  ],
+  "omittedItems": [],
+  "validation": {
+    "status": "PASS",
+    "issues": [],
+    "checks": {
+      "ownOfficeExcludedFromTrendAnalysis": true,
+      "ownOfficeAllIncluded": true,
+      "ownOfficeSummariesVerified": true,
+      "publishedItemsVerified": true,
+      "sourceWindowMatches": true
+    }
+  },
+  "providerErrors": {
+    "facts": [],
+    "ownOfficeSummaries": [],
+    "analysis": [],
+    "verification": [],
+    "repairs": [
+      {
+        "newsIds": [
+          "jeju-78107bd89ed65716",
+          "jngj_s1n1-6e26c9fccfd72c2c"
+        ],
+        "errors": [
+          "LLM JSON 해석 실패: [\n  {\n    \"newsId\": \"jngj_s1n1-6e26c9fccfd72c2c\",\n    \"summaryPoints\": [\n      \"전남광주특별시교육청에서 일반직공무원을 대상으로 찾아가는 인사정책 공감설명회를 개최함\",\n      \"인사 주요 현안 및 2027년 주요 인사제도 변경사항을 안내하고 질의응답 시간을 가짐\",\n      \"설명회 종료 후 맞춤형 인사 상담과 고충 해소를 지원하는 인사상담센터를 운영함\"\n    ],\n    \"analysisPoints\": [\n      \"일반직공무원 대상의 찾아가는 설명회를 통해 "
+        ]
+      }
+    ],
+    "repairVerifications": []
+  },
+  "trace": [
+    {
+      "step": "extract_facts",
+      "status": "success",
+      "startedAt": "2026-09-29T22:00:54+00:00",
+      "durationMs": 10921
+    },
+    {
+      "step": "summarize_own_office",
+      "status": "success",
+      "startedAt": "2026-09-29T22:01:05+00:00",
+      "durationMs": 1595
+    },
+    {
+      "step": "analyze_trends",
+      "status": "success",
+      "startedAt": "2026-09-29T22:01:07+00:00",
+      "durationMs": 95477
+    },
+    {
+      "step": "verify_report",
+      "status": "success",
+      "startedAt": "2026-09-29T22:02:42+00:00",
+      "durationMs": 4722
+    },
+    {
+      "step": "repair_report_1",
+      "status": "success",
+      "startedAt": "2026-09-29T22:02:47+00:00",
+      "durationMs": 76047
+    },
+    {
+      "step": "repair_report_2",
+      "status": "success",
+      "startedAt": "2026-09-29T22:04:03+00:00",
+      "durationMs": 52006
+    },
+    {
+      "step": "verify_repair_2",
+      "status": "success",
+      "startedAt": "2026-09-29T22:04:55+00:00",
+      "durationMs": 1292
+    }
+  ],
+  "rendering": {
+    "canonical": "json",
+    "html": "오늘의 교육동향 (20260930).html",
+    "hwpx": "오늘의 교육동향 (20260930).hwpx",
+    "hwpxValidation": {
+      "hardGates": {
+        "package_validation": "pass",
+        "document_errors": "pass",
+        "schema_lint": "pass",
+        "reopen": "pass",
+        "editor_open_safety": "pass",
+        "id_integrity": "pass"
+      },
+      "packageOk": true,
+      "documentOk": true,
+      "reopenedOk": true,
+      "visualReviewRequired": true
+    }
+  }
+}
