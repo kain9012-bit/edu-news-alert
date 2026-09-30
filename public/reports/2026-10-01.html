@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>오늘의 교육동향 2026. 10. 1. (목)</title>
+<style>
+:root { color-scheme: light; --ink:#17202a; --muted:#5d6875; --line:#d7dde3; --teal:#087f73; --teal-soft:#e9f6f3; --amber:#a96800; --amber-soft:#fff6df; --paper:#ffffff; --page:#eef1f3; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--page); color:var(--ink); font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; line-height:1.72; letter-spacing:0; }
+a { color:inherit; }
+.report { width:min(960px,100%); margin:0 auto; background:var(--paper); min-height:100vh; box-shadow:0 0 28px rgba(18,31,43,.08); }
+header { padding:52px 64px 40px; border-top:7px solid var(--teal); border-bottom:1px solid var(--line); }
+.kicker { margin:0 0 8px; color:var(--teal); font-weight:700; font-size:14px; }
+h1 { margin:0; font-family:"Nanum Myeongjo","Batang",serif; font-size:42px; line-height:1.25; letter-spacing:0; }
+.report-date { margin:16px 0 0; font-size:18px; font-weight:700; }
+.period { margin:4px 0 0; color:var(--muted); font-size:13px; overflow-wrap:anywhere; }
+.summary-strip { display:flex; gap:24px; padding:18px 64px; border-bottom:1px solid var(--line); font-size:14px; color:var(--muted); }
+.summary-strip strong { color:var(--ink); margin-left:5px; }
+nav { padding:34px 64px 44px; border-bottom:1px solid var(--line); }
+nav h2 { margin:0 0 15px; font-size:18px; }
+.toc-group + .toc-group { margin-top:24px; padding-top:20px; border-top:1px solid var(--line); }
+nav h3 { margin:0 0 10px; font-size:15px; }
+nav h3 a { text-decoration:none; }
+nav ol { columns:2; column-gap:40px; margin:0; padding:0; list-style:none; }
+nav li { break-inside:avoid; margin:0 0 10px; font-size:14px; line-height:1.45; }
+nav a { text-decoration:none; }
+nav a:hover { color:var(--teal); text-decoration:underline; }
+nav li span { color:var(--teal); font-weight:800; margin-right:5px; }
+.toc-region { color:var(--muted); font-weight:700; }
+.toc-controller { display:none; }
+@media (min-width:1700px) {
+  .toc-controller { position:fixed; z-index:40; top:24px; bottom:24px; left:calc(50% - 828px); width:324px; display:flex; flex-direction:column; overflow:hidden; background:rgba(255,255,255,.98); border:1px solid var(--line); border-radius:8px; box-shadow:0 8px 24px rgba(18,31,43,.10); }
+  .toc-controller-home { display:block; flex:0 0 auto; padding:15px 16px 13px; border-bottom:1px solid var(--line); color:var(--teal); font-size:14px; font-weight:800; text-decoration:none; }
+  .toc-controller-home:hover { background:var(--teal-soft); }
+  .toc-controller-scroll { min-height:0; overflow-y:auto; padding:12px 0 16px; scrollbar-color:#aab5bd transparent; scrollbar-width:thin; }
+  .toc-controller section + section { margin-top:15px; padding-top:13px; border-top:1px solid var(--line); }
+  .toc-controller h2 { margin:0; padding:0 14px 7px; color:var(--muted); font-size:12px; line-height:1.4; }
+  .toc-controller ol { margin:0; padding:0; list-style:none; }
+  .toc-controller li { margin:0; padding:0; }
+  .toc-controller li a { display:grid; grid-template-columns:38px minmax(0,1fr); gap:6px; align-items:start; min-height:38px; padding:7px 12px 7px 11px; border-left:3px solid transparent; color:var(--ink); font-size:12px; line-height:1.35; text-decoration:none; }
+  .toc-controller li a:hover { background:#f3f7f7; color:var(--teal); }
+  .toc-controller li a.active { border-left-color:var(--teal); background:var(--teal-soft); }
+  .controller-number { color:var(--teal); font-weight:800; white-space:nowrap; }
+  .controller-label { min-width:0; overflow:hidden; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow-wrap:anywhere; }
+  .controller-label strong { color:var(--muted); font-weight:700; }
+}
+article { position:relative; padding:52px 64px 58px; border-bottom:10px solid var(--page); scroll-margin-top:12px; }
+.article-number { position:absolute; top:51px; left:19px; color:#9aa5af; font-size:13px; font-weight:800; }
+.eyebrow { margin:0 0 8px; color:var(--teal); font-size:13px; font-weight:800; }
+.article-head h2 { margin:0; font-size:25px; line-height:1.45; letter-spacing:0; overflow-wrap:anywhere; }
+.article-meta { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:14px; color:var(--muted); font-size:13px; }
+.stars { color:var(--amber); letter-spacing:0; font-size:17px; }
+.source-link { color:var(--teal); font-weight:700; text-underline-offset:3px; }
+.report-section { margin-top:34px; padding-top:22px; border-top:1px solid var(--line); }
+.report-section h3 { margin:0 0 12px; font-size:16px; }
+ul { margin:0; padding-left:1.35em; }
+li { margin:7px 0; padding-left:3px; }
+.application { border-top-color:#ead9b3; }
+.application h3 { color:#805200; }
+.review-note { border-top-color:#ead9b3; }
+.review-note h3 { color:#a13d00; }
+.review-note p { margin:0; color:#7a4a1e; }
+.review-badge { display:inline-block; padding:2px 9px; border-radius:11px; background:var(--amber-soft); color:#8a4b00; font-size:12px; font-weight:800; }
+.empty-note { margin:0; color:var(--muted); }
+.empty-report { padding:70px 64px; text-align:center; color:var(--muted); }
+.own-office-section { border-top:12px solid var(--page); scroll-margin-top:12px; }
+.own-office-heading { padding:42px 64px 30px; background:var(--teal-soft); border-bottom:1px solid #c8e5de; }
+.own-office-heading .kicker { margin-bottom:4px; }
+.own-office-heading h2 { margin:0; font-size:28px; line-height:1.4; }
+.own-office-heading p:last-child { margin:8px 0 0; color:var(--muted); font-size:14px; }
+.own-office-article { border-bottom:1px solid var(--line); }
+.own-empty { padding-top:48px; padding-bottom:48px; }
+footer { padding:34px 64px 50px; color:var(--muted); font-size:12px; }
+footer p { margin:4px 0; }
+@media (max-width:700px) {
+  header, nav, article, footer, .own-office-heading { padding-left:24px; padding-right:24px; }
+  h1 { font-size:34px; }
+  .summary-strip { padding-left:24px; padding-right:24px; gap:12px; flex-wrap:wrap; }
+  nav ol { columns:1; }
+  .article-number { position:static; margin-bottom:10px; }
+  .article-head h2 { font-size:21px; }
+}
+.toolbar { position:fixed; top:18px; right:18px; z-index:50; display:flex; gap:8px; }
+.toolbar button { display:inline-flex; align-items:center; gap:6px; padding:9px 14px; border:1px solid var(--teal); border-radius:8px; background:var(--teal); color:#fff; font:inherit; font-size:13px; font-weight:700; cursor:pointer; box-shadow:0 2px 8px rgba(18,31,43,.16); }
+.toolbar button.secondary, .toolbar .tool-link.secondary { background:#fff; color:var(--teal); }
+.toolbar button:hover, .toolbar .tool-link:hover { opacity:.92; }
+.toolbar button, .toolbar .tool-link { white-space:nowrap; }
+.toolbar .tool-link { display:inline-flex; align-items:center; gap:6px; padding:9px 14px; border:1px solid var(--teal); border-radius:8px; background:var(--teal); color:#fff; font:inherit; font-size:13px; font-weight:700; text-decoration:none; cursor:pointer; box-shadow:0 2px 8px rgba(18,31,43,.16); }
+@media (max-width:700px) {
+  .toolbar { top:10px; right:10px; }
+  .toolbar button, .toolbar .tool-link { padding:8px 11px; font-size:12px; }
+  .toolbar .print-tool { display:none !important; }
+}
+@media print {
+  @page { margin:0; }
+  .toolbar { display:none !important; }
+  body { background:#fff; } .report { width:100%; box-shadow:none; }
+  .toc-controller { display:none !important; }
+  header { padding-top:24mm; }
+  article { break-before:page; border-bottom:0; padding-top:18mm; padding-bottom:16mm; }
+  article:first-of-type { break-before:auto; } nav a { text-decoration:none; }
+  nav { break-after:page; page-break-after:always; }
+  nav.toc-compact { padding-top:26px; padding-bottom:30px; }
+  nav.toc-compact h2 { margin-bottom:11px; font-size:17px; }
+  nav.toc-compact .toc-group + .toc-group { margin-top:16px; padding-top:12px; }
+  nav.toc-compact h3 { margin-bottom:7px; font-size:14px; }
+  nav.toc-compact li { margin-bottom:7px; font-size:13px; line-height:1.38; }
+  nav.toc-tight { padding-top:20px; padding-bottom:24px; }
+  nav.toc-tight h2 { margin-bottom:8px; font-size:16px; }
+  nav.toc-tight .toc-group + .toc-group { margin-top:12px; padding-top:10px; }
+  nav.toc-tight h3 { margin-bottom:5px; font-size:13px; }
+  nav.toc-tight li { margin-bottom:5px; font-size:12px; line-height:1.35; }
+  .own-office-section { break-before:page; border-top:0; }
+  .own-office-section article { break-before:auto; }
+  .own-office-heading { break-after:avoid; page-break-after:avoid; }
+  .own-office-page { break-inside:avoid; page-break-inside:avoid; }
+  .own-office-page + .own-office-page { break-before:page; page-break-before:always; }
+  .own-office-article { break-inside:avoid; page-break-inside:avoid; padding-top:10mm; padding-bottom:10mm; }
+  footer { padding-bottom:18mm; }
+}
+</style>
+</head>
+<body>
+<div class="toolbar" role="toolbar" aria-label="문서 도구">
+  <a class="tool-link secondary" href="https://jbe-edu-trends.vercel.app/?tab=reports" target="_blank" rel="noopener noreferrer" title="지난 오늘의 교육동향을 날짜별로 봅니다">🗂 지난 호</a><a class="tool-link secondary" href="https://jbe-edu-trends.vercel.app/?tab=archive" target="_blank" rel="noopener noreferrer" title="교육동향으로 선정되지 않은 자료까지 수집한 전체 보도자료를 봅니다">📰 전체 보도자료</a>
+  <button type="button" class="secondary print-tool" onclick="window.print()" title="인쇄 대화상자를 엽니다">🖨 인쇄</button>
+  <button type="button" class="print-tool" onclick="window.print()" title="인쇄 대화상자에서 '대상'을 'PDF로 저장'으로 선택하세요">📄 PDF 저장</button>
+</div>
+<main class="report">
+<aside class="toc-controller" aria-label="빠른 목차"><a class="toc-controller-home" href="#report-toc">목차</a><div class="toc-controller-scroll"><section><h2>전국 교육동향</h2><ol><li><a href="#item-1" data-report-target="item-1"><span class="controller-number">1</span><span class="controller-label"><strong>(부산)</strong> 부산교육청,‘지역을 잇는 배움’으로 부산교육혁신 이끈다</span></a></li><li><a href="#item-2" data-report-target="item-2"><span class="controller-number">2</span><span class="controller-label"><strong>(전남광주)</strong> 전남광주특별시교육청, 2027학년도 공‧사립 중등교사 임용시험 시행계획 공고</span></a></li><li><a href="#item-3" data-report-target="item-3"><span class="controller-number">3</span><span class="controller-label"><strong>(강원)</strong> 강원특별자치도 중등학교교사, 보건·사서·전문상담·영양· 특수(중등)교사 임용후보자 선정경쟁시험 시행 계획 공고</span></a></li><li><a href="#item-4" data-report-target="item-4"><span class="controller-number">4</span><span class="controller-label"><strong>(경기)</strong> 경기도교육청, 한정면허 안심에듀버스 경기 전역 확대를 위한 벽깨기 추진</span></a></li><li><a href="#item-5" data-report-target="item-5"><span class="controller-number">5</span><span class="controller-label"><strong>(경남)</strong> 경남교육청, 2027학년도 중등교사 670명 선발</span></a></li><li><a href="#item-6" data-report-target="item-6"><span class="controller-number">6</span><span class="controller-label"><strong>(강원)</strong> 도민과 함께 만드는 강원교육 제8기 주민참여예산위원 정기회 개최</span></a></li><li><a href="#item-7" data-report-target="item-7"><span class="controller-number">7</span><span class="controller-label"><strong>(서울)</strong> 서울시교육청, 2027년 생활임금 시급 1만 2,760원 결정</span></a></li><li><a href="#item-8" data-report-target="item-8"><span class="controller-number">8</span><span class="controller-label"><strong>(경기)</strong> 정답 외우기 아닌 ‘생각하는 힘’ 키운다! 경기도교육청, AI 시대 논술형 평가 대전환 모색</span></a></li><li><a href="#item-9" data-report-target="item-9"><span class="controller-number">9</span><span class="controller-label"><strong>(제주)</strong> 제주 공립 중등교사 87명 뽑는다</span></a></li><li><a href="#item-10" data-report-target="item-10"><span class="controller-number">10</span><span class="controller-label"><strong>(충북)</strong> 충북교육청, 학생 마음건강 지원 컨설팅·사례회의 운영</span></a></li></ol></section><section><h2>전북교육청</h2><ol><li><a href="#own-item-1" data-report-target="own-item-1"><span class="controller-number">1</span><span class="controller-label">2027학년도 공립 중등교사 267명 선발</span></a></li><li><a href="#own-item-2" data-report-target="own-item-2"><span class="controller-number">2</span><span class="controller-label">“전북유학 어때?” 시애틀 청소년들 전북행 ‘손짓’</span></a></li><li><a href="#own-item-3" data-report-target="own-item-3"><span class="controller-number">3</span><span class="controller-label">전북에서의 시간 소중 어디에 있는 응원할 것</span></a></li><li><a href="#own-item-4" data-report-target="own-item-4"><span class="controller-number">4</span><span class="controller-label">교육활동 침해 당한 교원 ‘원스톱 지원단’ 가동</span></a></li><li><a href="#own-item-5" data-report-target="own-item-5"><span class="controller-number">5</span><span class="controller-label">전북유학 힘 모은다…교육청-지자체 담당자 ‘한자리’</span></a></li><li><a href="#own-item-6" data-report-target="own-item-6"><span class="controller-number">6</span><span class="controller-label">임대형 민간투자 사업 학교 관리 운영권 철저 대비</span></a></li></ol></section></div></aside>
+<header>
+  <p class="kicker">전국 교육정책 및 교육행정 동향</p>
+  <h1>오늘의 교육동향</h1>
+  <p class="report-date">2026. 10. 1. (목)</p>
+  <p class="period">분석 대상: 2026. 9. 30. 06:00 ~ 2026. 10. 1. 06:00</p>
+</header>
+<div class="summary-strip">
+  <span>전국 교육동향<strong>10건</strong></span>
+  <span>전북 보도자료<strong>6건</strong></span>
+  <span>작성<strong>google/gemini-3.5-flash</strong></span>
+  <span>검증<strong>PASS</strong></span>
+</div>
+<nav id="report-toc" class="toc-compact" aria-label="목차"><h2>목차</h2><div class="toc-group"><h3>전국 교육동향</h3><ol><li><a href="#item-1"><span>1.</span> <strong class="toc-region">(부산)</strong> 부산교육청,‘지역을 잇는 배움’으로 부산교육혁신 이끈다</a></li><li><a href="#item-2"><span>2.</span> <strong class="toc-region">(전남광주)</strong> 전남광주특별시교육청, 2027학년도 공‧사립 중등교사 임용시험 시행계획 공고</a></li><li><a href="#item-3"><span>3.</span> <strong class="toc-region">(강원)</strong> 강원특별자치도 중등학교교사, 보건·사서·전문상담·영양· 특수(중등)교사 임용후보자 선정경쟁시험 시행 계획 공고</a></li><li><a href="#item-4"><span>4.</span> <strong class="toc-region">(경기)</strong> 경기도교육청, 한정면허 안심에듀버스 경기 전역 확대를 위한 벽깨기 추진</a></li><li><a href="#item-5"><span>5.</span> <strong class="toc-region">(경남)</strong> 경남교육청, 2027학년도 중등교사 670명 선발</a></li><li><a href="#item-6"><span>6.</span> <strong class="toc-region">(강원)</strong> 도민과 함께 만드는 강원교육 제8기 주민참여예산위원 정기회 개최</a></li><li><a href="#item-7"><span>7.</span> <strong class="toc-region">(서울)</strong> 서울시교육청, 2027년 생활임금 시급 1만 2,760원 결정</a></li><li><a href="#item-8"><span>8.</span> <strong class="toc-region">(경기)</strong> 정답 외우기 아닌 ‘생각하는 힘’ 키운다! 경기도교육청, AI 시대 논술형 평가 대전환 모색</a></li><li><a href="#item-9"><span>9.</span> <strong class="toc-region">(제주)</strong> 제주 공립 중등교사 87명 뽑는다</a></li><li><a href="#item-10"><span>10.</span> <strong class="toc-region">(충북)</strong> 충북교육청, 학생 마음건강 지원 컨설팅·사례회의 운영</a></li></ol></div><div class="toc-group"><h3><a href="#own-office">전북교육청 보도자료</a></h3><ol><li><a href="#own-item-1"><span>1.</span> 2027학년도 공립 중등교사 267명 선발</a></li><li><a href="#own-item-2"><span>2.</span> “전북유학 어때?” 시애틀 청소년들 전북행 ‘손짓’</a></li><li><a href="#own-item-3"><span>3.</span> 전북에서의 시간 소중 어디에 있는 응원할 것</a></li><li><a href="#own-item-4"><span>4.</span> 교육활동 침해 당한 교원 ‘원스톱 지원단’ 가동</a></li><li><a href="#own-item-5"><span>5.</span> 전북유학 힘 모은다…교육청-지자체 담당자 ‘한자리’</a></li><li><a href="#own-item-6"><span>6.</span> 임대형 민간투자 사업 학교 관리 운영권 철저 대비</a></li></ol></div></nav>
+
+<article id="item-1">
+  <div class="article-number">01</div>
+  <div class="article-head">
+    <p class="eyebrow">부산광역시교육청 · 지역협력·행사</p>
+    <h2>부산교육청,‘지역을 잇는 배움’으로 부산교육혁신 이끈다</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-09-30</span>
+      <a class="source-link" href="https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1181057&amp;bbsId=2286&amp;mi=30397" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>부산시교육청과 5개 기초지자체가 교육부 주관 교육혁신선도지역 공모사업에 신청함</li><li>2027년부터 2031년까지 지역 간 교육격차 해소 및 맞춤형 교육혁신모델 구축을 추진함</li><li>교육격차 해소와 대학·산업 연계 강화를 위해 6개 핵심 과제를 운영할 예정임</li><li>학교와 지역, 대학과 산업 자원을 연결하여 학생 성장 과정을 지원하는 교육체계를 마련함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>교육발전특구 개편에 따른 신규 교육혁신선도지역 사업의 선제적 대응 사례임</li><li>기초지자체와의 협력을 통해 지역 간 교육격차 해소 및 맞춤형 교육혁신모델을 구축하고자 함</li><li>작은학교 혁신 및 대학·산업 연계 등 다각적인 핵심 과제를 통해 학생 성장 과정을 지원하는 체계임</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>교육발전특구 개편 동향에 대응하여 기초지자체와의 협력을 통한 교육혁신선도지역 공모 신청 가능성을 검토할 수 있음</li><li>작은학교 혁신 및 대학·산업 연계 모델 등 타 시도의 핵심 과제 운영 사례를 비교 분석해 볼 수 있음</li></ul></section>
+</article><article id="item-2">
+  <div class="article-number">02</div>
+  <div class="article-head">
+    <p class="eyebrow">전남광주통합특별시교육청 · 교원·인사</p>
+    <h2>전남광주특별시교육청, 2027학년도 공‧사립 중등교사 임용시험 시행계획 공고</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-09-30</span>
+      <a class="source-link" href="https://www.jngjedu.kr/news/articleView.html?idxno=122171" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>전남광주통합특별시교육청이 2027학년도 공·사립 중등교사 임용시험 시행계획을 공고함</li><li>이번 임용시험을 통해 전남 428명, 광주 121명을 최종 선발할 예정임</li><li>공립학교 최종 합격자는 최초 임용일로부터 8년간 종전 관할구역에서 근무하게 되며 이후 통합 전보가 실시됨</li><li>응시원서 접수는 10월 12일부터 10월 16일까지 온라인 교직원 채용시스템을 통해 진행됨</li><li>1차 시험은 11월 28일에 치러지며 최종 합격자는 2027년 2월 5일에 발표될 예정임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>통합 교육청 출범에 따른 교원 수급 안정과 교육 현장의 혼선을 방지하기 위해 지역별 선발 및 근무 규정을 마련함</li><li>합격자에게 최초 임용 후 일정 기간 종전 관할구역 근무 의무를 부여하여 급격한 교원 이동을 방지하고 안정적인 교육 환경을 유지하고자 함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>향후 행정구역 개편이나 통합 상황에 대비하여 교원 수급 안정 및 장기 근무 유도를 위한 관할구역 내 의무 근무 기간 설정 사례로 참고해 볼 수 있음</li></ul></section>
+</article><article id="item-3">
+  <div class="article-number">03</div>
+  <div class="article-head">
+    <p class="eyebrow">강원특별자치도교육청 · 교원·인사</p>
+    <h2>강원특별자치도 중등학교교사, 보건·사서·전문상담·영양· 특수(중등)교사 임용후보자 선정경쟁시험 시행 계획 공고</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-09-30</span>
+      <a class="source-link" href="https://gwe.go.kr/promotion/bbs/view.do?bbsSn=56501&amp;key=bTI0MTEyMjUyOTQ2NDA%3D" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>강원특별자치도교육청이 2027학년도 중등교사 임용시험 시행계획을 공고함</li><li>공립 240명, 사립 18명 등 총 258명을 선발할 예정임</li><li>공립 선발 인원은 전년 대비 50명 증가하였고 사립은 4명 감소함</li><li>원서 접수는 10월 12일부터 16일까지 온라인으로 진행함</li><li>1차 시험은 11월 28일, 최종 합격자 발표는 2027년 2월 5일임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>사립학교법 개정 취지에 맞추어 사립학교 신규 채용 1차 시험을 교육감에게 위탁하여 채용의 공정성을 강화함</li><li>교원 수급 계획에 따른 공·사립 선발 인원의 변동 추이를 반영하여 임용시험을 시행함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>사립학교 신규 채용 1차 시험의 교육감 위탁 운영 현황과 절차를 비교해 볼 수 있음</li></ul></section>
+</article><article id="item-4">
+  <div class="article-number">04</div>
+  <div class="article-head">
+    <p class="eyebrow">경기도교육청 · 정책·행정</p>
+    <h2>경기도교육청, 한정면허 안심에듀버스 경기 전역 확대를 위한 벽깨기 추진</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-09-30</span>
+      <a class="source-link" href="https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2375912&amp;bbsId=1922&amp;mi=10102" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>경기도교육청이 한정면허 순환버스형 안심에듀버스 운영 확대를 추진함</li><li>신도시 개발 및 학교 배치 불균형으로 인한 통학 사각지대 해소를 목표로 함</li><li>AI 기반 노선 설계 프로세스를 도입하여 최적화된 순환 노선을 선제적으로 설계할 예정임</li><li>경기도 31개 시·군 전역으로 사업을 확대하여 보편적 통학권을 보장할 계획임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>지자체와의 협력을 통해 한정면허를 활용한 순환버스형 통학 지원 모델을 구축하여 통학 사각지대를 해소하고자 함</li><li>AI 기반 노선 설계 프로세스를 도입하여 최적화된 순환 노선을 선제적으로 도출하는 기술 융합형 행정을 추진함</li><li>개별 학교 단위가 아닌 권역 내 여러 학교를 통합 운행함으로써 통학 버스 운영의 효율성을 높임</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>통학 여건이 열악한 지역의 사각지대 해소를 위해 지자체 협력형 한정면허 순환버스 도입 방안을 검토할 수 있음</li><li>통학 노선 최적화를 위한 AI 기반 노선 설계 기술의 적용 가능성을 확인할 필요가 있음</li></ul></section>
+</article><article id="item-5">
+  <div class="article-number">05</div>
+  <div class="article-head">
+    <p class="eyebrow">경상남도교육청 · 교원·인사</p>
+    <h2>경남교육청, 2027학년도 중등교사 670명 선발</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-09-30</span>
+      <a class="source-link" href="https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&amp;q_bbsDocNo=20260930133742862" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>2027학년도 중등교사 임용후보자 선정 경쟁시험을 통해 총 670명을 선발함</li><li>공립학교는 31개 과목에서 501명을 선발하고 사립학교는 21개 과목에서 169명을 위탁 선발함</li><li>응시원서는 10월 12일부터 16일까지 온라인으로 접수함</li><li>제1차 시험은 11월 28일에 실시하며 최종 합격자는 2027년 2월 5일에 발표할 예정임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>사립학교 교원 채용의 공정성과 투명성을 높이기 위해 사립 위탁 선발을 적극 활용하는 추세임</li><li>중등교사 임용시험의 안정적 운영을 위해 구체적인 전형 일정과 선발 규모를 사전 예고함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>전북 지역 사립학교 위탁 선발 비율 및 운영 현황을 비교해 볼 수 있음</li><li>임용시험 일정 및 선발 규모 수립 시 타 시도교육청의 선발 추이를 참고할 필요가 있음</li></ul></section>
+</article><article id="item-6">
+  <div class="article-number">06</div>
+  <div class="article-head">
+    <p class="eyebrow">강원특별자치도교육청 · 정책·행정</p>
+    <h2>도민과 함께 만드는 강원교육 제8기 주민참여예산위원 정기회 개최</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-09-30</span>
+      <a class="source-link" href="https://gwe.go.kr/promotion/bbs/view.do?bbsSn=56500&amp;key=bTI0MTEyMjUyOTQ2NDA%3D" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>강원특별자치도교육청이 2026년 주민참여예산위원회 정기회를 개최함</li><li>제8기 위원회가 수렴한 도민 의견을 공유하고 2027년 예산편성 방향을 논의함</li><li>논의된 의견과 제안사항을 향후 예산편성 및 운영에 반영할 계획임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>교육재정 운영의 민주성과 투명성을 제고하기 위해 주민참여예산위원회를 활성화하고 의견 수렴을 정례화함</li><li>차년도 예산편성 방향 설정에 도민의 실질적인 요구를 반영하려는 노력이 지속됨</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>주민참여예산위원회의 정기회 운영 방식 및 도민 의견 수렴 채널을 비교해 볼 수 있음</li><li>예산편성 과정에서 주민 제안 의견의 실질적 반영 비율을 높이는 방안을 검토할 수 있음</li></ul></section>
+</article><article id="item-7">
+  <div class="article-number">07</div>
+  <div class="article-head">
+    <p class="eyebrow">서울특별시교육청 · 정책·행정</p>
+    <h2>서울시교육청, 2027년 생활임금 시급 1만 2,760원 결정</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-09-30</span>
+      <a class="source-link" href="https://enews.sen.go.kr/news/view.do?bbsSn=192242&amp;step1=3&amp;step2=1" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>서울시교육청이 2027년 생활임금을 시간당 1만 2,760원으로 결정함</li><li>올해 대비 1.5% 인상된 금액이며 정부 고시 최저임금보다 높음</li><li>적용 대상은 공립학교 및 교육행정기관 소속 단시간·단기간 교육공무직원임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>최저임금 대비 높은 수준의 생활임금을 보장하여 단시간 및 단기간 근로자의 처우 개선을 도모함</li><li>교육청 재정 여건과 경제지표를 종합적으로 고려하여 합리적인 생활임금 기준을 마련함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>전북교육청의 생활임금 책정 기준 및 적용 대상 범위를 서울시교육청 사례와 비교해 볼 수 있음</li><li>단시간 및 단기간 근로자의 처우 개선을 위한 생활임금 인상률 산정 방식을 참고할 필요가 있음</li></ul></section>
+</article><article id="item-8">
+  <div class="article-number">08</div>
+  <div class="article-head">
+    <p class="eyebrow">경기도교육청 · 교육과정·수업</p>
+    <h2>정답 외우기 아닌 ‘생각하는 힘’ 키운다! 경기도교육청, AI 시대 논술형 평가 대전환 모색</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-09-30</span>
+      <a class="source-link" href="https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2375930&amp;bbsId=1922&amp;mi=10102" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>경기도교육청이 AI 시대 논술형 평가의 내실화와 확대 방안을 논의하는 포럼을 개최함</li><li>교원, 학부모, 전문가 등 150여 명이 참석하여 논술형 평가의 가치와 실천 사례를 공유함</li><li>포럼에서 도출된 의견을 향후 평가 정책 추진 및 현장 지원에 활용할 계획임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>AI 시대에 부합하는 학생들의 생각하는 힘을 기르기 위해 객관식 위주에서 논술형 평가로의 전환을 모색함</li><li>교원, 학부모, 전문가 등 다양한 교육 주체와의 소통을 통해 논술형 평가의 현장 안착을 도모함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>논술형 평가 내실화 및 확대를 위한 교원과 학부모 대상 포럼 운영 방안을 비교해 볼 수 있음</li><li>AI 시대 평가 패러다임 변화에 대응하는 논술형 평가 지원 정책을 검토할 수 있음</li></ul></section>
+</article><article id="item-9">
+  <div class="article-number">09</div>
+  <div class="article-head">
+    <p class="eyebrow">제주특별자치도교육청 · 교원·인사</p>
+    <h2>제주 공립 중등교사 87명 뽑는다</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-09-30</span>
+      <a class="source-link" href="https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&amp;menuCd=DOM_000000203000000000&amp;paging=ok&amp;startPage=1&amp;dataSid=1482538" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>제주특별자치도교육청이 2027학년도 공립 중등교사 87명을 선발할 예정임</li><li>공립 선발 인원은 일반 80명과 장애 7명으로 구성되며 18개 과목을 대상으로 함</li><li>사립학교 법인 6곳에서 위탁받아 12개 과목 총 25명을 추가로 선발함</li><li>원서 접수는 10월 12일부터 16일까지 온라인교직원채용시스템을 통해 진행함</li><li>1차 시험은 11월 28일에 실시하며 최종 합격자는 2027년 2월 5일에 발표함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>사립학교 법인의 교원 채용 공정성 및 투명성 제고를 위해 교육청 위탁 선발을 추진하는 흐름임</li><li>1차 필기시험에 그치지 않고 2차 시험 전 과정까지 위탁 범위를 확대하여 채용 절차의 객관성을 확보하고자 함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>사립학교 법인의 교원 채용 위탁 범위를 2차 시험 전 과정까지 확대하는 방안에 대해 타 시도 운영 현황과 비교해 볼 수 있음</li><li>사립학교 위탁 선발 참여율을 높이기 위한 유인책이나 행·재정적 지원 방안이 있는지 확인할 필요가 있음</li></ul></section>
+</article><article id="item-10">
+  <div class="article-number">10</div>
+  <div class="article-head">
+    <p class="eyebrow">충청북도교육청 · 학생지원·복지</p>
+    <h2>충북교육청, 학생 마음건강 지원 컨설팅·사례회의 운영</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-09-30</span>
+      <a class="source-link" href="https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1579990&amp;bbsId=1158&amp;mi=10301" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>충청북도교육청이 9월 30일부터 10월 13일까지 권역별 학생 마음건강 지원 컨설팅 및 사례회의를 개최함</li><li>학교장과 업무담당자를 대상으로 위기학생 대응 역량 강화 및 상담 사례 공유를 추진함</li><li>회의는 청주·진천, 충주·제천·괴산·증평·음성·단양, 보은·옥천·영동 등 3개 권역으로 나누어 운영함</li><li>오전에는 학교장 대상 위기학생 대응 방안 안내, 오후에는 전문상담인력 대상 상담 사례 공유 및 전문가 질의응답을 진행함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>학생 마음건강 위기 상황에 신속히 대응하기 위해 지역별 접근성을 고려한 권역별 컨설팅 체계를 구축·운영함</li><li>학교장 대상의 위기 대응 관리 역량 강화와 전문상담인력 대상의 실무 사례 공유 및 전문가 자문을 구분하여 맞춤형으로 지원함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>학교 관리자와 상담 실무자의 역할을 구분하여 맞춤형 위기 대응 역량을 강화하는 권역별 연수 프로그램 도입을 검토할 수 있음</li><li>임상심리전문가 등 외부 전문가와 연계한 실제 사례 중심의 질의응답 및 컨설팅 운영 방식을 비교해 볼 수 있음</li></ul></section>
+</article>
+<section class="own-office-section" id="own-office">
+  <div class="own-office-heading">
+    <p class="kicker">우리 교육청 주요 발표</p>
+    <h2>전북교육청 보도자료</h2>
+    <p>같은 기간 전북특별자치도교육청 본청에서 발표한 보도자료 전체입니다.</p>
+  </div>
+  
+  <div class="own-office-page"><article class="own-office-article" id="own-item-1">
+  <div class="article-number">01</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>2027학년도 공립 중등교사 267명 선발</h2>
+    <div class="article-meta">
+      <span>2026-09-30</span>
+      <a class="source-link" href="https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1184129" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>2027학년도 공립 중등교사 등 임용후보자 선정 경쟁시험을 통해 총 267명을 선발할 예정임.</li><li>10월 12일부터 16일까지 원서 접수를 진행하며 11월 28일 1차 시험을 실시할 예정임.</li></ul>
+  </section>
+</article><article class="own-office-article" id="own-item-2">
+  <div class="article-number">02</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>“전북유학 어때?” 시애틀 청소년들 전북행 ‘손짓’</h2>
+    <div class="article-meta">
+      <span>2026-09-30</span>
+      <a class="source-link" href="https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1184135" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>미국 시애틀을 방문해 현지 교육기관과 국제교육 협력망을 구축하고 전북유학 단기캠프를 홍보함.</li><li>해외 청소년의 전북유학 참여 확대를 위해 시애틀한국교육원 등과 교육 교류 협력을 강화할 예정임.</li></ul>
+  </section>
+</article></div><div class="own-office-page"><article class="own-office-article" id="own-item-3">
+  <div class="article-number">03</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>전북에서의 시간 소중 어디에 있는 응원할 것</h2>
+    <div class="article-meta">
+      <span>2026-09-30</span>
+      <a class="source-link" href="https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1184160" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>유정기 전북특별자치도교육청 부교육감이 2년 6개월의 임기를 마치고 이임함.</li><li>이임식은 약력 소개와 공로패 증정, 송별사 및 이임사 순으로 진행됨.</li></ul>
+  </section>
+</article><article class="own-office-article" id="own-item-4">
+  <div class="article-number">04</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>교육활동 침해 당한 교원 ‘원스톱 지원단’ 가동</h2>
+    <div class="article-meta">
+      <span>2026-09-30</span>
+      <a class="source-link" href="https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1184140" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>중대한 교육활동 침해를 당한 교원을 보호하기 위해 초기 대응부터 사안 종결까지 지원하는 원스톱 지원단을 가동함.</li><li>현안관리 책임자를 지정해 법률·심리·행정 지원을 통합 제공하고 중대사안 대응 협의회를 운영할 예정임.</li></ul>
+  </section>
+</article></div><div class="own-office-page"><article class="own-office-article" id="own-item-5">
+  <div class="article-number">05</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>전북유학 힘 모은다…교육청-지자체 담당자 ‘한자리’</h2>
+    <div class="article-meta">
+      <span>2026-09-30</span>
+      <a class="source-link" href="https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1184172" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>전북교육청과 지자체 담당자가 전북유학 활성화를 위한 공동 대응체계 강화 및 특화사업 발굴 회의를 개최함</li><li>유학생 가족의 안정적인 정주 여건 마련을 위한 거주시설 조성과 지역 특색 교육과정 운영 방안을 논의함</li></ul>
+  </section>
+</article><article class="own-office-article" id="own-item-6">
+  <div class="article-number">06</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>임대형 민간투자 사업 학교 관리 운영권 철저 대비</h2>
+    <div class="article-meta">
+      <span>2026-09-30</span>
+      <a class="source-link" href="https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1184175" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>2028년부터 순차적으로 만료되는 BTL 학교 관리운영권의 교육청 직접 관리체계 전환을 위한 인계인수 협의회를 개최함</li><li>시설물 점검 및 보수, 인력 운영 등 관리체계 전환을 위한 단계별 준비사항을 점검하고 기관별 역할을 안내함</li></ul>
+  </section>
+</article></div>
+</section>
+<footer>
+  <p>이 문서는 공개 보도자료를 AI로 요약·분석한 내부 검토 자료입니다.</p>
+  <p>전북교육청 보도자료는 내용 요약만 제공하며, 원문은 각 항목의 링크에서 확인할 수 있습니다.</p>
+  <p>적용 검토안은 확정된 정책이나 업무 지시가 아닙니다.</p>
+</footer>
+</main>
+<script>
+(() => {
+  const links = Array.from(document.querySelectorAll('.toc-controller [data-report-target]'));
+  const targets = links.map(link => document.getElementById(link.dataset.reportTarget)).filter(Boolean);
+  if (!links.length || !targets.length) return;
+  let ticking = false;
+  const updateActive = () => {
+    const threshold = window.innerHeight * 0.35;
+    let activeId = '';
+    for (const target of targets) {
+      if (target.getBoundingClientRect().top <= threshold) activeId = target.id;
+      else break;
+    }
+    for (const link of links) {
+      const active = link.dataset.reportTarget === activeId;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    }
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateActive);
+  }, { passive:true });
+  window.addEventListener('hashchange', updateActive);
+  updateActive();
+})();
+</script>
+</body>
+</html>
