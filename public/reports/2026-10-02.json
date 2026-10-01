@@ -1,0 +1,1098 @@
+{
+  "metadata": {
+    "reportId": "20261001T221702Z-481c28b1",
+    "title": "오늘의 교육동향",
+    "status": "completed",
+    "generatedAt": "2026-10-01T22:17:02+00:00",
+    "windowStart": "2026-10-01T06:00:00+09:00",
+    "windowEnd": "2026-10-02T06:00:00+09:00",
+    "windowHours": 24,
+    "selectionRunId": "20261001T212309Z-4206aa0f",
+    "sourceCount": 24,
+    "eligibleCount": 19,
+    "publishedCount": 19,
+    "omittedCount": 0,
+    "ownOfficeEligibleCount": 5,
+    "ownOfficePublishedCount": 5,
+    "qualityExcludedCount": 0,
+    "factModel": "google/gemini-3.1-flash-lite",
+    "analysisModel": "google/gemini-3.5-flash",
+    "verifierModel": "google/gemini-3.1-flash-lite",
+    "summaryOnlyCount": 4,
+    "ownOfficeReviewCount": 0,
+    "usage": {
+      "stages": {
+        "facts": {
+          "model": "google/gemini-3.1-flash-lite",
+          "requests": 7,
+          "promptTokenCount": 20659,
+          "candidatesTokenCount": 6135,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 26794
+        },
+        "analysis": {
+          "model": "google/gemini-3.5-flash",
+          "requests": 30,
+          "promptTokenCount": 108294,
+          "candidatesTokenCount": 115595,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 223889
+        },
+        "verification": {
+          "model": "google/gemini-3.1-flash-lite",
+          "requests": 8,
+          "promptTokenCount": 31551,
+          "candidatesTokenCount": 1717,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 33268
+        }
+      },
+      "total": {
+        "requests": 45,
+        "promptTokenCount": 160504,
+        "candidatesTokenCount": 123447,
+        "thoughtsTokenCount": 0,
+        "totalTokenCount": 283951
+      }
+    },
+    "estimatedCostUsd": 1.227627
+  },
+  "items": [
+    {
+      "newsId": "ulsan-4fe811fb23f17ea9",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "울산교육청, 장애 학생 인권 보호 더 강화한다",
+      "date": "2026-10-01",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20261001101735809",
+      "category": "학생지원·복지",
+      "importance": 4,
+      "selectionReason": "장애 학생 학교폭력 대응 체계 개편 및 시스템 권한 확대 등 실질적인 정책 및 제도 변화를 포함함.",
+      "summaryPoints": [
+        "학교폭력 특수교육 담당 부서 협업으로 대응 전문성 높여 울산광역시교육청(교육감 조용식) 은 장애 학생을 대상으로 발생하는 학교폭력 사안의 접수부터 조사, 심의, 피해 회복에 이르는 전 과정의 지원 체계를 전면 개편해 학생의 인권 보호를 한층 강화한다.",
+        "이번 대책은 장애 학생 관련 학교폭력이 학생 개개인의 장애 유형과 특성을 세심하게 고려해야 하는 만큼, 사안 처리 과정의 전문성을 높이고 피해 학생과 보호자에게 실질적인 맞춤형 도움을 제공하고자 추진됐다."
+      ],
+      "analysisPoints": [],
+      "applicationReviewPoints": [],
+      "sourceFacts": [
+        "울산광역시교육청 장애 학생 학교폭력 대응 체계 개편",
+        "내년부터 온라인 학교폭력 사안 처리 시스템 접속 권한 인권지원단까지 확대",
+        "10월 12일 심의위원 및 전담 조사관 대상 장애인식개선 교육 실시",
+        "장애 학생 학급 대상 찾아가는 회복적 생활교육 프로그램 지원",
+        "장애인 관련 단체 간담회 및 관계 부서 실무 협의회 의견 수렴"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "summaryOnly": true,
+      "validation": {
+        "status": "SUMMARY_ONLY",
+        "issues": [
+          {
+            "code": "DEPARTMENT_ASSIGNMENT",
+            "field": "summaryPoints",
+            "pointIndex": 1,
+            "message": "관련 부서 또는 담당 업무를 임의로 지정한 표현이 있습니다."
+          },
+          {
+            "code": "DEPARTMENT_ASSIGNMENT",
+            "field": "analysisPoints",
+            "pointIndex": 0,
+            "message": "관련 부서 또는 담당 업무를 임의로 지정한 표현이 있습니다."
+          },
+          {
+            "code": "DEPARTMENT_ASSIGNMENT",
+            "field": "applicationReviewPoints",
+            "pointIndex": 1,
+            "message": "관련 부서 또는 담당 업무를 임의로 지정한 표현이 있습니다."
+          }
+        ],
+        "confidence": 0
+      }
+    },
+    {
+      "newsId": "jngj_s1n1-b0038176c12127c7",
+      "sourceId": "jngj_s1n1",
+      "source": "전남광주통합특별시교육청",
+      "title": "전남광주특별시교육청, 교육감 직속 ‘교육활동보호담당관’ 신설한다",
+      "date": "2026-10-01",
+      "url": "https://www.jngjedu.kr/news/articleView.html?idxno=122240",
+      "category": "교원·인사",
+      "importance": 4,
+      "selectionReason": "교육감 직속 조직 신설 및 교육활동 보호를 위한 통합 지원체계 구축이라는 교육청 차원의 조직 및 정책 변화임.",
+      "summaryPoints": [
+        "교육감 직속 교육활동보호담당관 신설 및 통합 지원체계 구축",
+        "중대 사안 및 아동학대 피신고 사안 발생 시 24시간 이내 현장 출동 조사",
+        "교권 침해 사안 발생 시 법률 상담, 심리 치료 등 책임형 밀착지원서비스 제공",
+        "교육활동 보호 현장 ON 상황판 설치 및 화해중재단 운영",
+        "AI 챗봇 상담 서비스 개발 및 지역별 교육활동보호센터 설치"
+      ],
+      "analysisPoints": [
+        "교육감 직속 전담 기구 신설을 통해 교육활동 보호를 위한 신속하고 책임 있는 통합 지원 체계를 마련함",
+        "중대 사안 및 아동학대 피신고 발생 시 신속한 현장 출동 조사를 통해 초기 대응력을 극대화함",
+        "AI 기술을 활용한 상담 서비스 및 권역별 교육활동보호센터 설치를 통해 밀착형 지원의 접근성을 높임"
+      ],
+      "applicationReviewPoints": [
+        "교육활동 침해 및 아동학대 피신고 사안에 대한 신속한 현장 대응 및 조사 체계를 강화하는 방안을 검토할 수 있음",
+        "권역별 교육활동보호센터 운영 및 AI 기반 상담 서비스 도입의 실효성을 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "전남광주통합특별시교육청 교육활동보호담당관 2027년 3월 신설",
+        "통합 지원체계 3단계 추진 준비 2026년 10~12월 시행 2027년 1~6월 고도화 2027년 7~12월",
+        "중대 사안 1시간 이내 일반 아동학대 및 악성민원 24시간 이내 출동",
+        "교권보호관 외부 전문가 채용 및 현장 조사 지원",
+        "전남동부권 및 서부권 교육활동보호센터 설치"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongbuk-32c7dbda34f955d1",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[창의인재과]경북교육청·경상북도·DGIST, 'AI시대 이공계 인재 양성' 손잡았다",
+      "date": "2026-10-01",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1648805&bbsId=4744&mi=17643&searchCate=761",
+      "category": "디지털·AI",
+      "importance": 3,
+      "selectionReason": "영재학교 전환 및 이공계 인재 양성을 위한 교육과정 구축과 제도적 기반 마련을 포함한 정책적 협약임.",
+      "summaryPoints": [
+        "경상북도교육청(교육감 임종식)은 1일 11시 경상북도청 접견실에서 경상북도(도지사 이철우), 대구경북과학기술원(DGIST, 총장 이건우)과 함께 ‘인공지능(AI) 시대를 이끌 경상북도 이공계 인재 양성을 위한 업무협약’​을 체결했다.",
+        "이번 협약은 세 기관이 공동협의체를 구성해 지역 이공계 인재 양성을 위한 교육과정과 지원체계를 구축하고, 경산과학고의 DGIST 부설 영재학교 전환을 위해 상호 협력하고자 추진됐다."
+      ],
+      "analysisPoints": [],
+      "applicationReviewPoints": [],
+      "sourceFacts": [
+        "2026년 과학기술원 부설 영재학교 지정·전환 공모 대응",
+        "경상북도 영재학교 연간 운영비 지역분담금 절반 부담",
+        "11월 서류 및 현장 검토 12월 중앙영재교육진흥위원회 심의",
+        "신입생 정원 최대 50% 지역인재 우선 선발",
+        "9월 28일 지역 설명회 개최 및 10월 8일 학부모 설명회 예정"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "summaryOnly": true,
+      "validation": {
+        "status": "SUMMARY_ONLY",
+        "issues": [
+          {
+            "code": "UNSUPPORTED_NUMBER",
+            "field": "summaryPoints",
+            "pointIndex": 3,
+            "message": "원문에서 확인되지 않는 수치가 있습니다: ['10']"
+          }
+        ],
+        "confidence": 0
+      }
+    },
+    {
+      "newsId": "gyeongbuk-639c1598ecae4071",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[학교지원과]경북교육청, 장애인 고용률 5.0%...법정 의무고용률 웃돌아",
+      "date": "2026-10-01",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1648810&bbsId=4744&mi=17643&searchCate=761",
+      "category": "진로·직업교육",
+      "importance": 3,
+      "selectionReason": "법정 의무고용률 준수 및 장애인 고용 정책의 성과와 지속 가능한 일자리 모델 구축이라는 교육행정적 변화를 담고 있음.",
+      "summaryPoints": [
+        "경북교육청(교육감 임종식)은 올해 상반기 기준 비공무원 장애인 근로자 고용률이 5.0%를 기록해 법정 의무고용률 3.8%를 웃돌았다고 1일 밝혔다.",
+        "경북교육청은 장애인 고용 확대와 함께 장애인이 실제 일터에서 직무 경험을 쌓고 자신의 재능을 발휘할 수 있도록 고용과 자립 지원 영역을 지속적으로 넓혀가고 있다."
+      ],
+      "analysisPoints": [],
+      "applicationReviewPoints": [],
+      "sourceFacts": [
+        "2025년 장애인 고용률 4.41% 달성으로 고용부담금 0원 기록",
+        "최근 3년간 납부한 고용부담금 약 2억 4천만 원 환급",
+        "상희학교 카페 감나무 및 본청 에듀카페 운영",
+        "2024년 장애인예술단 온울림 창단",
+        "2026년 4월 발달장애인 미술단 온그림 창단"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "summaryOnly": true,
+      "validation": {
+        "status": "SUMMARY_ONLY",
+        "issues": [
+          {
+            "code": "UNSUPPORTED_NUMBER",
+            "field": "summaryPoints",
+            "pointIndex": 0,
+            "message": "원문에서 확인되지 않는 수치가 있습니다: ['2026']"
+          },
+          {
+            "field": "summaryPoints",
+            "pointIndex": 0,
+            "code": "OTHER",
+            "message": "원문은 '올해 상반기'라고 명시했으나 보고서는 '2026년 상반기'로 잘못 기재함"
+          }
+        ],
+        "confidence": 0
+      }
+    },
+    {
+      "newsId": "gyeongbuk-fd31e32caa17eca3",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[학생생활과]경북교육청, 학생 간 갈등 '처분보다 관계개선' 교육적 해결 강화",
+      "date": "2026-10-01",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1648811&bbsId=4744&mi=17643&searchCate=761",
+      "category": "교원·인사",
+      "importance": 3,
+      "selectionReason": "학생 간 갈등 해결을 위한 교육청 차원의 관계개선 프로그램 도입 및 지원체계 강화 정책으로 교육적 파급력이 큼.",
+      "summaryPoints": [
+        "학생 간 갈등의 교육적 해결을 위한 관계개선 프로그램 '함께+' 운영함",
+        "학교 내 관계개선지원팀 구성 및 교육지원청의 전문 지원체계 강화함",
+        "초등 1~3학년 경미 사안 대상 '관계회복 숙려기간' 시범 도입함",
+        "프로그램 참여와 별개로 학교폭력 사안 조사는 원칙대로 진행함"
+      ],
+      "analysisPoints": [
+        "학교폭력대책심의위원회 개최 비율 증가 등 갈등의 사법화 경향에 대응하여 처분보다 교육적 해결과 관계 개선을 강화하는 방향으로의 전환이 필요함을 시사함",
+        "초등 저학년의 경미한 사안에 대해 관계회복 숙려기간을 도입하여 갈등 초기 단계에서의 신속한 개입과 회복을 도모함",
+        "학교 내 자체 지원팀 구성과 교육지원청의 전문 지원체계를 연계하여 학교 현장의 갈등 해결 역량을 다각도로 지원함"
+      ],
+      "applicationReviewPoints": [
+        "초등 저학년 대상의 경미한 학교폭력 사안에 대해 초기 관계회복 숙려기간을 운영하는 방안을 검토해 볼 수 있음",
+        "학교 내 교원 중심의 관계개선지원팀 구성 및 교육지원청 전문 인력과의 연계 지원 체계를 비교 분석해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "경북교육청 학교폭력대책심의위원회 개최 비율 2023년 38.4%에서 2025년 49.4%로 증가함",
+        "학교장 자체해결 비율 2023년 61.6%에서 2025년 50.6%로 감소함",
+        "관계개선 프로그램 '함께+'는 멈춰서-듣고-이해하고-해결한다 과정으로 운영됨",
+        "학교 관계개선지원팀은 교원 3~5명으로 구성함",
+        "교육지원청은 학교폭력전담지원관과 관계개선지원단으로 학교를 지원함",
+        "초등 1~3학년 경미 사안 발생 시 48시간 이내 프로그램 안내함",
+        "프로그램 종료 후 1개월 이상 사후 관리 실시함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "daegu-4cd7699b1557d076",
+      "sourceId": "daegu",
+      "source": "대구광역시교육청",
+      "title": "대구시교육청, 진로와 진학을 연계한 원스톱 ‘진로·학업설계 플랫폼’ 오픈",
+      "date": "2026-10-01",
+      "url": "https://www.dge.go.kr/pr/na/ntt/selectNttInfo.do?nttSn=2216277&bbsId=2680&mi=9870",
+      "category": "진로·직업교육",
+      "importance": 3,
+      "selectionReason": "교육청 차원에서 학생들의 진로와 학업 설계를 지원하는 디지털 플랫폼을 구축하여 정책적으로 운영하는 사례임.",
+      "summaryPoints": [
+        "학생 스스로 학업과 진로를 설계하는 '대구 진로 학업 설계 플랫폼' 운영 시작함",
+        "별도 구축 비용 없이 교육청 장학사가 직접 개발한 웹앱 형태임",
+        "고교 유형별 비교, 진로 검사, 상담 연계, 디지털 포트폴리오 기능 제공함",
+        "직업 멘토링, 대입 정보, 2022 개정 교육과정 안내 등 진학 정보 포함함"
+      ],
+      "analysisPoints": [
+        "교육청 소속 전문 인력이 직접 웹앱 형태의 플랫폼을 개발하여 예산 절감과 현장 맞춤형 기능 구현을 동시에 달성한 사례임",
+        "진로 검사, 고교학점제 학업 설계, 디지털 포트폴리오 관리, 대입 정보 등을 연계한 원스톱 진로·진학 설계 지원의 방향성을 제시함"
+      ],
+      "applicationReviewPoints": [
+        "예산 절감 및 현장 적합성 제고를 위해 교육청 자체 인력을 활용한 웹앱 형태의 진로·학업 설계 플랫폼 개발 가능성을 검토해 볼 수 있음",
+        "고교학점제 및 대입 제도 개편에 대응하여 학생 스스로 학업을 설계하고 포트폴리오를 관리할 수 있는 원스톱 시스템 구축 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "플랫폼 주소는 https://dgcareer.vercel.app 임",
+        "최근 2년간 진로교육 분야 제안 16건을 바탕으로 개발됨",
+        "중3 학생 대상 고교 유형별 특화 교육과정 및 통학 경로 확인 가능함",
+        "커리어넷 진로심리검사 7종 및 1:1 상담 연계 기능 제공함",
+        "디지털 진로 포트폴리오는 조사-준비-행동-성찰-입증 단계로 기록함",
+        "고교학점제 졸업 기준 192학점 설계 지원함",
+        "미래 유망 직업 80선 및 직업 사전 500선 정보 제공함",
+        "전국 500개 대학 학과 정보 및 2028 대입 시행계획 포함함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "incheon-f06e2f8515fb65f8",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 2027 ~ 2028 난독증·경계선지능 학생 지원 ‘전문협약기관’ 공개 모집",
+      "date": "2026-10-01",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3385723&bbsId=1519&mi=11620",
+      "category": "학생지원·복지",
+      "importance": 3,
+      "selectionReason": "난독증 및 경계선 지능 학생 지원을 위한 전문기관 공모 및 성과 기반 관리 체계 강화는 교육청 차원의 학생 지원 정책 변화에 해당함.",
+      "summaryPoints": [
+        "난독증 및 경계선지능 학생 지원을 위한 전문협약기관 공개 모집함",
+        "협약 기간은 2027년 1월부터 2028년 12월까지 2년임",
+        "기관 방문형과 학교 찾아가는 유형으로 구분하여 모집함",
+        "선정 시 성범죄 및 아동학대 관련 범죄경력 조회 의무화함"
+      ],
+      "analysisPoints": [
+        "난독증 및 경계선지능 학생 지원을 위해 전문협약기관을 다년 단위로 공모하여 안정적인 지원 기반을 마련하고자 함",
+        "기관 방문형과 학교로 찾아가는 유형을 병행하여 학생의 접근성과 맞춤형 지원의 실효성을 높이고자 함",
+        "기존 기관에 대한 운영평가 결과를 차기 지정 심사에 반영하고 범죄경력 조회를 의무화하여 서비스의 질적 수준과 안전성을 확보함"
+      ],
+      "applicationReviewPoints": [
+        "난독증 및 경계선지능 학생 지원을 위한 전문기관 위탁 및 협약 시 다년 단위 계약 및 운영평가 환류 체계 도입을 검토해 볼 수 있음",
+        "학생의 편의성을 고려하여 기관 방문형과 찾아가는 지원 유형을 다각화하여 운영하는 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "모집 기간은 2026년 10월 1일부터 10월 23일까지임",
+        "전문협약기관은 심층진단검사 및 개인별 맞춤지원 제공함",
+        "기존 기관은 2025~2026년 운영평가 결과를 지정 심사에 반영함",
+        "신규 및 기존 기관 모두 서류평가와 현장평가를 거쳐 선정함",
+        "사업 참여 인력은 사업 개시 전 범죄경력 조회를 완료해야 함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jngj_s1n1-4b5f3c744308ab97",
+      "sourceId": "jngj_s1n1",
+      "source": "전남광주통합특별시교육청",
+      "title": "전남광주특별시교육청, 공직자 이해충돌 방지 ‘청렴 생활 봇’ 개발",
+      "date": "2026-10-01",
+      "url": "https://www.jngjedu.kr/news/articleView.html?idxno=122265",
+      "category": "디지털·AI",
+      "importance": 3,
+      "selectionReason": "생성형 AI를 활용한 업무 지원 시스템을 자체 개발하여 교육행정의 디지털 전환 및 예방적 감사 체계를 구축한 사례로 정책적 가치가 있음.",
+      "summaryPoints": [
+        "교직원 업무 착수 전 이해충돌 여부 점검을 위한 '슬기로운 청렴 생활 봇' 개발함",
+        "생성형 AI를 활용하여 법령, 훈령, 유권해석 등 278건 자료화함",
+        "일상적인 문장 입력으로 이해충돌 여부 및 관련 조문 확인 가능함",
+        "사후 처분 중심에서 예방 중심의 청렴 행정으로 전환 기대함"
+      ],
+      "analysisPoints": [
+        "생성형 AI 기술을 활용하여 복잡한 이해충돌방지법 및 관련 규정을 교직원이 일상 언어로 쉽게 검색할 수 있도록 지원함",
+        "자체 기획 및 웹 구현을 통해 예산 효율성을 높이고 사후 처분 중심에서 사전 예방 중심으로 청렴 행정 패러다임을 전환함"
+      ],
+      "applicationReviewPoints": [
+        "교직원의 이해충돌 방지 및 청렴도 제고를 위해 생성형 AI 기반의 자체 청렴 질의응답 도구 개발 및 도입 가능성을 검토해 볼 수 있음",
+        "사후 적발 위주의 감사에서 벗어나 일상적 업무 수행 중 자가 진단이 가능한 예방 중심의 디지털 지원 도구 활용 방안을 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "본청 감사관실에서 자체 기획 및 웹 구현함",
+        "이용자는 누리집에서 상황을 입력하여 이해충돌 여부를 검색함",
+        "검색 결과는 관련 조문, 사례, 훈령, 제출 서식 등으로 제공됨",
+        "향후 청탁금지법 등 다른 청렴 분야로 지원 도구 확대 검토 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungnam-f56284ceb7b83e44",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, 중등학교 교사 임용 후보자 선정 경쟁시험 시행 계획 공고",
+      "date": "2026-10-01",
+      "url": "http://news.cne.go.kr/boardCnts/view.do?boardSeq=2374946&boardID=1003&m=0401&s=news&lev=0&searchType=null&statusYN=W&page=1&opType=N",
+      "category": "교원·인사",
+      "importance": 3,
+      "selectionReason": "교사 선발 규모의 변화와 임용 시험 계획을 공고하는 자료로, 교육 인력 수급 정책의 변화를 포함하고 있음.",
+      "summaryPoints": [
+        "2027학년도 공립 465명, 국립 5명, 사립 88명 선발 충남교육청(교육감 이병도)은 2027학년도 중등학교 교사, 특수(중등) 보건 사서 전문상담 영양교사(이하 중등학교 교사) 임용 후보자 선정 경쟁시험 시행 계획을 충남교육청 누리집을 통해...",
+        "이번 공립 중등학교 교사 선발 예정 인원은 35개 과목 465명(일반 405명, 지역제한 21명, 장애 39명) 규모로, 지난해 575명보다 110명(19%) 감소했다."
+      ],
+      "analysisPoints": [],
+      "applicationReviewPoints": [],
+      "sourceFacts": [
+        "2027학년도 중등학교 교사 임용 후보자 선정 경쟁시험 시행 계획 공고함",
+        "공립 선발 인원은 35개 과목 465명임",
+        "국립학교 5명, 사립학교 24개 법인 88명 위탁 채용함",
+        "공립과 사립 동시 지원 가능함",
+        "원서 접수 기간은 10월 12일부터 10월 16일까지임",
+        "제1차 시험일은 11월 28일임",
+        "최종 합격자 발표일은 2027년 2월 5일임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "summaryOnly": true,
+      "validation": {
+        "status": "SUMMARY_ONLY",
+        "issues": [
+          {
+            "code": "UNSUPPORTED_NUMBER",
+            "field": "summaryPoints",
+            "pointIndex": 1,
+            "message": "원문에서 확인되지 않는 수치가 있습니다: ['558']"
+          }
+        ],
+        "confidence": 0
+      }
+    },
+    {
+      "newsId": "chungnam-cc86efb5aa27fd85",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청-충남경찰청, 안전과 존중이 함께하는 교육공동체 조성 위해 힘 모은다",
+      "date": "2026-10-01",
+      "url": "http://news.cne.go.kr/boardCnts/view.do?boardSeq=2374947&boardID=1003&m=0401&s=news&lev=0&searchType=null&statusYN=W&page=1&opType=N",
+      "category": "학생지원·복지",
+      "importance": 3,
+      "selectionReason": "교권 보호 및 학교폭력 예방을 위한 유관기관 협력체계 구축 및 제도적 대응 강화 정책임.",
+      "summaryPoints": [
+        "충남교육청과 충남경찰청이 교권 보호 및 학교폭력 예방을 위한 업무협약을 체결함",
+        "양 기관은 교육공동체 보호와 관계 회복을 위한 협력체계를 강화함",
+        "공동 연수를 통해 현장 사례 중심의 대응 방안을 논의함",
+        "실무자 간 상시 소통 체계를 구축하여 지속적인 협력을 추진함"
+      ],
+      "analysisPoints": [
+        "교육청의 교육적 대응 및 관계 회복 역할과 경찰청의 치안·수사 전문성을 결합하여 학교 안전망을 강화함",
+        "공동 연수와 실무자 간 상시 소통 체계 구축을 통해 지속 가능한 협력 모델을 지향함"
+      ],
+      "applicationReviewPoints": [
+        "경찰 등 유관 기관과의 협력을 통한 학교폭력 예방 및 교권 보호 공동 연수 운영 방안을 검토할 수 있음",
+        "실무자 간 상시 소통 체계 및 관계 회복 프로그램 지원 체계를 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "충남교육청과 충남경찰청이 9월 30일부터 10월 1일까지 업무협약 및 공동 연수를 개최함",
+        "충남교육청은 교육적 대응 및 관계 회복 프로그램 지원을 담당함",
+        "충남경찰청은 치안 수사 전문성을 바탕으로 현장 대응 및 안전 확보를 지원함",
+        "회복적 정의 특강 및 아동 학대·학교폭력 사례 토의를 진행함",
+        "실무자 간 상시 소통 체계를 구축할 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "gyeongbuk-cf7bb7f6e0994d6b",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[교육안전과]경북교육청, 노사 협력으로 현업업무종사자 안전․보건 챙긴다",
+      "date": "2026-10-01",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1648683&bbsId=4744&mi=17643&searchCate=761",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "산업안전보건위원회를 통한 현업업무종사자의 안전·보건 정책 및 작업환경 개선 대책은 교육청 차원의 안전 관리 체계 변화에 해당합니다.",
+      "summaryPoints": [
+        "경북교육청이 제16회 산업안전보건위원회를 개최하여 현업업무종사자의 안전을 논의함",
+        "조리실 후드 및 덕트 청소 대행을 통한 작업 부담 완화 방안을 검토함",
+        "현업업무종사자의 응급상황 대비 구급용품 관리 방안을 협의함",
+        "노사 소통과 예방 중심의 안전관리 체계를 강화할 예정임"
+      ],
+      "analysisPoints": [
+        "노사 동수 위원회를 통해 현업업무종사자의 실질적인 작업 환경 개선과 안전 확보 방안을 도출함",
+        "조리실 청소 대행, 편의 장비 도입 등 구체적인 노동 강도 완화 및 안전사고 예방 조치를 추진함"
+      ],
+      "applicationReviewPoints": [
+        "조리실 후드 및 덕트 청소 대행 등 현업업무종사자의 작업 환경 개선 과제를 발굴하고 지원하는 방안을 검토할 수 있음",
+        "노사 협의를 통한 예방 중심의 안전보건 관리 체계 구축 사례를 참고할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "산업안전보건위원회는 사용자위원 10명과 근로자위원 10명으로 구성됨",
+        "제16회 위원회에서 조리실 후드·덕트 청소 대행 안건을 논의함",
+        "현업업무종사자 의약외품 사용 및 관리 방안을 협의함",
+        "이전 회의에서 잔반통 덤핑리프트 및 청소용 걸레 세탁기 설치를 논의한 바 있음",
+        "위험성평가 및 현장 점검을 통해 예방 중심 안전관리를 강화할 계획임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "gyeonggi-ec1f6aa688d004f8",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "경기도교육청 중·고등학생 인플루엔자 예방접종 무료 지원!",
+      "date": "2026-10-01",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2375956&bbsId=1922&mi=10102",
+      "category": "학생지원·복지",
+      "importance": 2,
+      "selectionReason": "교육청 차원에서 도내 중·고등학생 전체를 대상으로 시행하는 보건 복지 지원 사업으로 공통 적용되는 정책임.",
+      "summaryPoints": [
+        "경기도교육청이 중·고등학생 대상 인플루엔자 예방접종 무료 지원 사업을 실시함",
+        "접종 기간은 10월 5일부터 11월 21일까지임",
+        "지원 대상은 2008~2011년생 도내 중·고등학생임",
+        "지정 의료기관 방문 시 재학생 증빙서류와 보호자 동의서 등이 필요함"
+      ],
+      "analysisPoints": [
+        "학생들의 단체 생활로 인한 인플루엔자 확산을 방지하고 학부모의 경제적 부담을 경감하기 위한 복지 정책임",
+        "나이스플러스 앱 등 디지털 증빙서류를 활용하여 접종 대상자 확인 절차의 편의성을 도모함"
+      ],
+      "applicationReviewPoints": [
+        "중·고등학생 대상 감염병 예방접종 지원 범위와 예산 확보 가능성을 검토해 볼 수 있음",
+        "예방접종 시 나이스플러스 앱 등 모바일 재학생 증빙서류를 활용하는 방안의 도입 여부를 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "인플루엔자 예방접종 지원 기간은 10월 5일부터 11월 21일까지임",
+        "지원 대상은 2008년 1월 1일부터 2011년 12월 31일 출생자임",
+        "3가 백신 접종비 3만 원을 지원함",
+        "지정 의료기관 명단은 관할 교육지원청 홈페이지에서 확인 가능함",
+        "방문 시 나이스플러스 앱 등 재학생 증빙서류 지참이 필요함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "chungnam-13c924a3aab064df",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, 찾아가는 특수학교 고교학점제 현장 지원 강화",
+      "date": "2026-10-01",
+      "url": "http://news.cne.go.kr/boardCnts/view.do?boardSeq=2374945&boardID=1003&m=0401&s=news&lev=0&searchType=null&statusYN=W&page=1&opType=N",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "특수학교 고교학점제 안착을 위한 교육과정 운영 및 현장 지원 체계 강화 정책으로 교육행정적 가치가 있음.",
+      "summaryPoints": [
+        "충남교육청이 9월 29일부터 11월 4일까지 공사립 특수학교 10교를 대상으로 고교학점제 현장 지원을 운영함",
+        "전문가로 구성된 현장 지원단이 교육과정 편성, 과목 선택, 예산 집행 등 학교별 맞춤형 자문을 제공함",
+        "현장 질의응답 사례집을 제작·배포하고 11월 24일 성과공유회를 개최할 예정임"
+      ],
+      "analysisPoints": [
+        "특수학교 대상의 맞춤형 고교학점제 안착을 위해 전문가 현장 지원단을 통한 다각적 컨설팅이 효과적일 수 있음",
+        "교육과정 편성, 과목 선택, 예산 집행 등 학교별 실무 중심의 밀착 지원이 현장 혼란을 최소화하는 데 기여함",
+        "질의응답 사례집 제작 및 성과공유회 개최를 통해 우수 사례의 확산과 지속 가능한 운영 기반을 마련함"
+      ],
+      "applicationReviewPoints": [
+        "전북 지역 내 특수학교의 고교학점제 운영 현황을 점검하고 맞춤형 컨설팅 체계 구축 방안을 비교해 볼 수 있음",
+        "특수학교 고교학점제 관련 현장 질의응답 자료집 제작 및 배포 사례를 참고하여 자체 지원 자료 개발을 검토할 수 있음",
+        "특수학교 간 고교학점제 운영 성과와 우수 사례를 공유하는 나눔의 장 마련 필요성을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "지원 대상은 공사립 특수학교 10교임",
+        "운영 기간은 2026년 9월 29일부터 11월 4일까지임",
+        "현장 지원단은 교육과정 편성, 과목 선택, 예산 집행 등을 자문함",
+        "특수학교 고교학점제 묻고 답하기 자료를 제작하여 배포함",
+        "11월 24일에 고교학점제 나눔 자리와 성과공유회를 개최함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungnam-a2fefcbc9d43b510",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, 탕정고등학교 신축공사 본격화... 2028년 3월 개교 예정",
+      "date": "2026-10-01",
+      "url": "http://news.cne.go.kr/boardCnts/view.do?boardSeq=2374950&boardID=1003&m=0401&s=news&lev=0&searchType=null&statusYN=W&page=1&opType=N",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "신규 학교 설립 및 교육 시설 확충은 교육청의 주요 정책 사업이자 예산이 투입되는 인프라 구축임.",
+      "summaryPoints": [
+        "충남교육청이 아산시 탕정면에 탕정고등학교 신축공사를 착공함",
+        "해당 학교는 45학급, 1,169명 규모로 2028년 3월 개교할 예정임"
+      ],
+      "analysisPoints": [
+        "대규모 신도시 개발 등에 따른 학령인구 유입에 대응하기 위해 적기 학교 신설 추진이 필요함",
+        "일반학급과 특수학급을 통합 고려한 학교 규모 설계를 통해 특수교육 대상 학생의 교육 기회를 보장함"
+      ],
+      "applicationReviewPoints": [
+        "전북 내 신도시 및 개발 지구의 학령인구 추이를 분석하고 학교 신설 시 특수학급 배치 비율 등을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "위치는 아산시 탕정면 갈산리 957번지 일원임",
+        "규모는 45학급(일반 42학급, 특수 3학급)으로 총 1,169명 수용 예정임",
+        "건물 규모는 지하 1층, 지상 5층임",
+        "2028년 3월 개교 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungbuk-dcf5a310f29434a3",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "충북교육청, <2026 충북 EduData & AI 포럼> 개최",
+      "date": "2026-10-01",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1580081&bbsId=1158&mi=10301",
+      "category": "디지털·AI",
+      "importance": 2,
+      "selectionReason": "AI 및 데이터 기반 미래교육 정책 추진을 위한 유관기관 업무협약 및 교육감의 정책 전략 발표는 교육청의 디지털 교육 정책 방향을 담고 있습니다.",
+      "summaryPoints": [
+        "충북교육청이 교육연구정보원에서 2026 충북 EduData & AI 포럼을 개최함",
+        "한국교육학술정보원과 인공지능 및 디지털 교육 대전환을 위한 업무협약을 체결함",
+        "AI 및 데이터 기반 미래교육 방향과 학교 현장의 프롬프팅, 바이브 코딩 등 수업 실천 사례를 공유함"
+      ],
+      "analysisPoints": [
+        "전문 기관과의 협력을 통해 교육데이터 연계 및 디지털 교육서비스 활용체계를 구축하고 데이터 기반 맞춤형 교육의 기반을 마련함",
+        "단순 기술 소개를 넘어 실제 수업에서의 구체적인 실천 사례를 공유함으로써 교사의 디지털 수업 역량 강화와 현장 확산을 도모함"
+      ],
+      "applicationReviewPoints": [
+        "AI 및 데이터 기반 미래교육의 현장 안착을 위해 전문 기관과의 협력 체계를 구축하고 실제 수업 사례를 공유하는 포럼 운영 방안을 검토할 수 있음",
+        "교사와 학생이 안심하고 AI와 데이터를 활용할 수 있도록 가이드라인이나 기준을 마련하는 방안을 고려해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "포럼은 2026년 10월 1일 교육연구정보원에서 개최됨",
+        "충북교육청과 한국교육학술정보원이 디지털 교육 대전환 업무협약을 체결함",
+        "포럼 주제는 AI와 데이터가 여는 미래교육임",
+        "주요 내용으로 AI 교육 정책 발표, 생성형 교과서 가능성 제시, 수업 사례 공유 등이 포함됨",
+        "포럼 전 과정은 유튜브로 생중계됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95,
+        "repair": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungbuk-12d1a42e0ab16db7",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "교육연구정보원, SW·AI 교구 대여로 디지털 수업 지원",
+      "date": "2026-10-01",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1580085&bbsId=1158&mi=10301",
+      "category": "디지털·AI",
+      "importance": 2,
+      "selectionReason": "디지털·AI 교육 활성화를 위해 도내 학교에 공통으로 적용되는 교구 대여 및 수업 지원 사업임.",
+      "summaryPoints": [
+        "충북교육연구정보원이 학교 현장의 SW·AI 교육 지원을 위해 소프트웨어 교육용 교구 대여 사업을 운영함",
+        "코딩, 로봇, 드론 등 총 25종 539개의 교구를 도내 초·중·고 교원에게 대여하며 상반기에만 총 340건의 대여가 이루어짐",
+        "매월 1일부터 5일까지 충북디지털교육플랫폼을 통해 신청을 받아 무작위 추첨을 통해 대여 학교를 선정함"
+      ],
+      "analysisPoints": [
+        "학교의 개별 교구 구입 부담을 완화하고 학생들에게 체험 및 실습 중심의 SW·AI 교육 기회를 균등하게 제공하는 효과가 있음",
+        "플랫폼을 통한 체계적인 신청 및 대여 관리 시스템을 구축하여 교원의 행정 부담을 줄이고 교구 활용의 효율성을 높임"
+      ],
+      "applicationReviewPoints": [
+        "학교 현장의 SW·AI 교구 구입 예산 부담을 줄이고 다양한 교구 체험 기회를 확대하기 위해 교구 대여 서비스 및 온라인 신청 시스템 구축 방안을 검토할 수 있음"
+      ],
+      "generationReason": "교육동향 분석 결과가 JSON 계약을 통과하지 못했습니다.",
+      "confidence": {
+        "repair": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "seoul-dfb6797bd4499af1",
+      "sourceId": "seoul",
+      "source": "서울특별시교육청",
+      "title": "미래를 향한 글로벌 교육 파트너십, 서울시교육청-일드프랑스교육청 MOU 체결",
+      "date": "2026-10-01",
+      "url": "https://enews.sen.go.kr/news/view.do?bbsSn=192248&step1=3&step2=1",
+      "category": "지역협력·행사",
+      "importance": 2,
+      "selectionReason": "교육청 간의 국제 교육협력 업무협약 체결은 디지털·AI 교육 및 국제 교류 정책의 확대와 연관됨.",
+      "summaryPoints": [
+        "서울시교육청이 프랑스 일드프랑스교육청과 교육협력 업무협약(MOU)을 체결하여 미래교육 분야로 협력을 확장함",
+        "양 기관은 학생 교류, 국제자매결연, 디지털 AI 교육 및 직업 교육 등 다양한 분야에서 협력하기로 합의함",
+        "프랑스 방문 기간 중 유럽권 한국어채택교 교원을 대상으로 한국어 교수 학습법 및 에듀테크 활용법 연수를 운영함"
+      ],
+      "analysisPoints": [
+        "기존의 인적 교류 중심 협력을 디지털 AI 교육 및 직업 교육 등 미래 교육 분야로 다변화하여 글로벌 교육 파트너십을 강화함",
+        "해외 한국어 채택교 교원 연수를 통해 한국어 교육의 전문성을 높이고 글로벌 교육 네트워크를 확장하는 계기를 마련함"
+      ],
+      "applicationReviewPoints": [
+        "글로벌 교육 환경 변화에 대응하여 해외 교육당국과의 협력 범위를 디지털 및 미래 교육 분야로 확대하고 국제 공동 수업을 활성화하는 방안을 검토할 수 있음"
+      ],
+      "generationReason": "교육동향 분석 결과가 JSON 계약을 통과하지 못했습니다.",
+      "confidence": {
+        "repair": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "sejong-d4589c669a3bb616",
+      "sourceId": "sejong",
+      "source": "세종특별자치시교육청",
+      "title": "세종시교육청, 'AI를 배우는 교사에서, AI와 함께 수업을 설계하는 교사'로(학교정책과)",
+      "date": "2026-10-01",
+      "url": "https://www.sje.go.kr/sje/na/ntt/selectNttInfo.do?nttSn=3073088&bbsId=1039263&mi=52234",
+      "category": "교원·인사",
+      "importance": 2,
+      "selectionReason": "교육청 차원에서 관내 교원을 대상으로 AI·디지털 역량 강화를 위해 추진하는 대규모 연수 정책임.",
+      "summaryPoints": [
+        "세종시교육청이 9월부터 11월까지 관내 교원과 교육전문직원을 대상으로 AI 디지털 기반 교육혁신 역량강화 연수를 운영함",
+        "단순 도구 활용을 넘어 AI 기반 수업·평가 설계, 서·논술형 문항 작성, 학생 맞춤형 피드백 등 실습 중심 과정으로 구성함",
+        "생성형 AI를 활용한 수업 자료 제작 및 자연어로 웹앱을 만드는 바이브코딩 등 현장 밀착형 프로그램을 제공함"
+      ],
+      "analysisPoints": [
+        "교사가 AI를 단순 활용하는 수준을 넘어 수업 설계와 평가, 피드백 등 교육과정 전반에 주도적으로 적용할 수 있도록 전문성을 강화함",
+        "학교급과 교과 특성, 교원의 디지털 활용 수준을 고려한 맞춤형 연수 설계를 통해 연수의 실효성과 현장 적용도를 높임"
+      ],
+      "applicationReviewPoints": [
+        "교원의 AI 디지털 역량이 실제 수업과 평가의 변화로 이어질 수 있도록 실습 중심의 단계별 맞춤형 연수 프로그램을 설계하는 방안을 검토할 수 있음"
+      ],
+      "generationReason": "교육동향 분석 결과가 JSON 계약을 통과하지 못했습니다.",
+      "confidence": {
+        "repair": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungnam-b3a9eadedb2613fe",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, 제3차 유보통합 소통협의체 운영",
+      "date": "2026-10-01",
+      "url": "http://news.cne.go.kr/boardCnts/view.do?boardSeq=2374944&boardID=1003&m=0401&s=news&lev=0&searchType=null&statusYN=W&page=1&opType=N",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "유보통합이라는 국가적·교육청 차원의 핵심 정책 추진을 위한 현장 의견 수렴 및 협의체 운영 소식임.",
+      "summaryPoints": [
+        "충남교육청이 유치원과 어린이집 교사의 전문성 향상 및 현장 의견 수렴을 위해 제3차 유보통합 소통협의체를 운영함",
+        "공사립 유치원 및 어린이집 교사, 학부모, 연합회 대표, 지자체 및 교육청 관계자 등 21명이 참석하여 협력 방안을 모색함",
+        "현재 유치원 교원 대상 4대 분야 역량 강화 연수와 유치원 및 어린이집 교사가 공동 참여하는 직무 연수를 운영 중임"
+      ],
+      "analysisPoints": [
+        "유보통합의 안정적 추진을 위해 교사 전문성 향상과 유치원 및 어린이집 간 상호 이해를 돕는 공동 연수 및 소통 채널의 중요성이 강조됨",
+        "교육청과 지자체, 현장 관계자가 함께 참여하는 협의체를 통해 현장 밀착형 유보통합 정책 수립을 도모할 수 있음"
+      ],
+      "applicationReviewPoints": [
+        "전북 지역의 안정적인 유보통합 추진을 위해 유치원과 어린이집 교사가 공동으로 참여하는 연수 프로그램 및 소통 협의체 운영 방안을 검토해 볼 수 있음"
+      ],
+      "generationReason": "교육동향 분석 결과가 JSON 계약을 통과하지 못했습니다.",
+      "confidence": {
+        "repair": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "ownOfficeItems": [
+    {
+      "newsId": "jeonbuk-7b55496ca916d24d",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "갑질 상담부터 신고·조사 피해자 보호까지 ‘한눈에’",
+      "date": "2026-10-01",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1184694",
+      "summaryPoints": [
+        "학교 및 교육행정기관의 갑질 민원 대응을 위한 실무 안내서 '갑질 NO 트' 제작 및 배부함.",
+        "갑질전담책임관의 사안 처리 역량 강화와 신고자 보호 및 2차 피해 예방 절차를 안내함."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-8fc560410447fbf3",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "원어민과 함께하는 화상영어、글로벌 미래 인재로 ‘발돋움’",
+      "date": "2026-10-01",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1184689",
+      "summaryPoints": [
+        "초3부터 고3 및 학교 밖 청소년 대상 '원어민 화상영어 토킹 클래스' 4기 참여자 모집함.",
+        "10월 7일부터 20일까지 온라인으로 신청하며 10월 26일부터 9주간 수업 운영 예정임."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeonbuk-298011d103d5f5e7",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "고3 수시모집 면접 실천처럼…모의 프로그램 운영",
+      "date": "2026-10-01",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1184700",
+      "summaryPoints": [
+        "고3 수험생 대상 수시모집 면접 대비 모의면접 컨설팅 및 온라인 특강을 10월 한 달간 운영함.",
+        "학교 방문 컨설팅과 제시문 기반 및 의대 MMI 모의면접을 통해 실전 면접 역량 강화를 지원함."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeonbuk-28eee9f2192c1240",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "교육혁신선도지역 14개 시군교육지원청 도전",
+      "date": "2026-10-01",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1184720",
+      "summaryPoints": [
+        "전북 14개 시군교육지원청이 교육부 주관 '교육혁신선도지역' 공모에 운영기획서 제출을 완료함.",
+        "지역 특화 교육모델 구축을 통해 최대 5년간 재정 지원을 받는 공모 사업에 최종 5개 지역 선정을 목표로 함."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeonbuk-215cc5b06fed4b26",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "특수교육은 배려가 아닌 모든 아이에게 배울 권리",
+      "date": "2026-10-01",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1184713",
+      "summaryPoints": [
+        "전북 특수교육 정책 수립 및 중장기 발전 방향 논의를 위한 민관 거버넌스 위원회 구성 및 운영함",
+        "10월 29일 위촉식과 첫 회의를 시작으로 현장 의견 수렴 및 정책 실효성 제고를 추진할 예정임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    }
+  ],
+  "omittedItems": [],
+  "validation": {
+    "status": "PASS",
+    "issues": [],
+    "checks": {
+      "ownOfficeExcludedFromTrendAnalysis": true,
+      "ownOfficeAllIncluded": true,
+      "ownOfficeSummariesVerified": true,
+      "publishedItemsVerified": true,
+      "sourceWindowMatches": true
+    }
+  },
+  "providerErrors": {
+    "facts": [],
+    "ownOfficeSummaries": [],
+    "analysis": [
+      {
+        "newsIds": [
+          "chungbuk-12d1a42e0ab16db7",
+          "chungnam-b3a9eadedb2613fe",
+          "sejong-d4589c669a3bb616",
+          "seoul-dfb6797bd4499af1"
+        ],
+        "errors": [
+          "chungbuk-12d1a42e0ab16db7: confidence 범위가 잘못됐습니다.",
+          "seoul-dfb6797bd4499af1: confidence 범위가 잘못됐습니다.",
+          "sejong-d4589c669a3bb616: confidence 범위가 잘못됐습니다.",
+          "chungnam-b3a9eadedb2613fe: confidence 범위가 잘못됐습니다."
+        ]
+      }
+    ],
+    "verification": [],
+    "repairs": [
+      {
+        "newsIds": [
+          "chungnam-f56284ceb7b83e44",
+          "gyeongbuk-32c7dbda34f955d1",
+          "gyeongbuk-639c1598ecae4071",
+          "ulsan-4fe811fb23f17ea9"
+        ],
+        "errors": [
+          "LLM JSON 해석 실패: [\n  {\n    \"newsId\": \"ulsan-4fe811fb23f17ea9\",\n    \"source\": \"울산광역시교육청\",\n    \"title\": \"울산교육청, 장애 학생 인권 보호 더 강화한다\",\n    \"currentReport\": {\n      \"summaryPoints\": [\n        \"장애 학생 대상 학교폭력 사안 처리 전 과정의 지원 체계를 전면 개편함\",\n        \"사안 초기부터 유관 기구 간 정보를 신속히 공유하고 진술 조력 등 협업을 강화함\",\n        \"학교폭력 전담 조사관 위촉 시 장애 특수"
+        ]
+      },
+      {
+        "newsIds": [
+          "chungbuk-12d1a42e0ab16db7",
+          "chungbuk-dcf5a310f29434a3",
+          "sejong-d4589c669a3bb616",
+          "seoul-dfb6797bd4499af1"
+        ],
+        "errors": [
+          "LLM JSON 해석 실패: [\n  {\n    \"newsId\": \"chungbuk-dcf5a310f29434a3\",\n    \"currentReport\": {\n      \"summaryPoints\": [\n        \"충북교육청이 1일 교육연구정보원 시청각실에서 '2026 충북 EduData & AI 포럼'을 개최함\",\n        \"한국교육학술정보원과 인공지능·디지털 교육 대전환 및 학생 맞춤형 미래교육 실현을 위한 업무협약을 체결함\",\n        \"AI 및 데이터 기반 미래교육 방향과 학교 현장의 수업 실천 사례를 공유함\"\n      ],\n      "
+        ]
+      },
+      {
+        "newsIds": [
+          "chungnam-f56284ceb7b83e44",
+          "gyeongbuk-32c7dbda34f955d1",
+          "gyeongbuk-639c1598ecae4071",
+          "ulsan-4fe811fb23f17ea9"
+        ],
+        "errors": [
+          "LLM JSON 해석 실패: [\n  {\n    \"newsId\": \"ulsan-4fe811fb23f17ea9\",\n    \"source\": \"울산광역시교육청\",\n    \"title\": \"울산교육청, 장애 학생 인권 보호 더 강화한다\",\n    \"currentReport\": {\n      \"summaryPoints\": [\n        \"장애 학생 대상 학교폭력 사안 처리 전 과정의 지원 체계를 개편함\",\n        \"인권지원단과 사안을 신속히 공유하고 진술 조력 참여 등 협업 체계를 구축함\",\n        \"온라인 사안 처리 시스템의 접속 권한을 확대하여 초"
+        ]
+      },
+      {
+        "newsIds": [
+          "chungbuk-12d1a42e0ab16db7",
+          "chungbuk-dcf5a310f29434a3",
+          "sejong-d4589c669a3bb616",
+          "seoul-dfb6797bd4499af1"
+        ],
+        "errors": [
+          "LLM JSON 해석 실패: [\n  {\n    \"newsId\": \"chungbuk-dcf5a310f29434a3\",\n    \"summaryPoints\": [\n      \"충북교육청이 교육연구정보원에서 교직원, 학생, 학부모, 도민 등이 참석한 가운데 '2026 충북 EduData & AI 포럼'을 개최함\",\n      \"한국교육학술정보원(KERIS)과 인공지능·디지털 교육 대전환 및 학생 맞춤형 미래교육 실현을 위한 업무협약을 체결함\",\n      \"포럼을 통해 AI 및 데이터 기반 미래교육 정책, 개인 맞춤"
+        ]
+      },
+      {
+        "newsIds": [
+          "chungnam-f56284ceb7b83e44",
+          "gyeongbuk-32c7dbda34f955d1",
+          "gyeongbuk-639c1598ecae4071",
+          "ulsan-4fe811fb23f17ea9"
+        ],
+        "errors": [
+          "LLM JSON 해석 실패: [\n  {\n    \"newsId\": \"ulsan-4fe811fb23f17ea9\",\n    \"currentReport\": {\n      \"summaryPoints\": [\n        \"장애 학생 대상 학교폭력 사안 처리 전 과정의 지원 체계를 개편함\",\n        \"사안 조사 과정에 전문가가 직접 참여하는 협업 체계를 구축하고 온라인 시스템 권한을 확대함\",\n        \"학교폭력 전담 조사관 위촉 시 장애 특수교육 전문가를 영입하고 심의위원 대상 인식개선 교육을 실시함\",\n        \"학급별 대면 체험 중심 실천 교육과 "
+        ]
+      }
+    ],
+    "repairVerifications": []
+  },
+  "trace": [
+    {
+      "step": "extract_facts",
+      "status": "success",
+      "startedAt": "2026-10-01T22:00:55+00:00",
+      "durationMs": 21556
+    },
+    {
+      "step": "summarize_own_office",
+      "status": "success",
+      "startedAt": "2026-10-01T22:01:16+00:00",
+      "durationMs": 3261
+    },
+    {
+      "step": "analyze_trends",
+      "status": "success",
+      "startedAt": "2026-10-01T22:01:20+00:00",
+      "durationMs": 179055
+    },
+    {
+      "step": "verify_report",
+      "status": "success",
+      "startedAt": "2026-10-01T22:04:19+00:00",
+      "durationMs": 8915
+    },
+    {
+      "step": "repair_report_1",
+      "status": "success",
+      "startedAt": "2026-10-01T22:04:28+00:00",
+      "durationMs": 169862
+    },
+    {
+      "step": "verify_repair_1",
+      "status": "success",
+      "startedAt": "2026-10-01T22:07:17+00:00",
+      "durationMs": 820
+    },
+    {
+      "step": "repair_report_2",
+      "status": "success",
+      "startedAt": "2026-10-01T22:07:18+00:00",
+      "durationMs": 491823
+    },
+    {
+      "step": "repair_report_3",
+      "status": "success",
+      "startedAt": "2026-10-01T22:15:30+00:00",
+      "durationMs": 91004
+    },
+    {
+      "step": "verify_repair_3",
+      "status": "success",
+      "startedAt": "2026-10-01T22:17:01+00:00",
+      "durationMs": 1348
+    }
+  ],
+  "rendering": {
+    "canonical": "json",
+    "html": "오늘의 교육동향 (20261002).html",
+    "hwpx": "오늘의 교육동향 (20261002).hwpx",
+    "hwpxValidation": {
+      "hardGates": {
+        "package_validation": "pass",
+        "document_errors": "pass",
+        "schema_lint": "pass",
+        "reopen": "pass",
+        "editor_open_safety": "pass",
+        "id_integrity": "pass"
+      },
+      "packageOk": true,
+      "documentOk": true,
+      "reopenedOk": true,
+      "visualReviewRequired": true
+    }
+  }
+}
