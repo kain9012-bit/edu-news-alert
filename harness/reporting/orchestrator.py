@@ -13,7 +13,13 @@ from harness.reporting.agents import (
     ReportVerificationAgent,
     TrendAnalysisAgent,
 )
-from harness.reporting.repair import ReportRepairCoordinator, clean_body, source_summary, verification_input
+from harness.reporting.repair import (
+    ReportRepairCoordinator,
+    clean_body,
+    is_hallucinated_source_claim,
+    source_summary,
+    verification_input,
+)
 from harness.reporting.validators import body_quality_issues, validate_summary_item
 from harness.utils import normalize_space
 
@@ -243,12 +249,24 @@ class DailyReportHarness:
         for item in own_office_drafts:
             news_id = item["newsId"]
             verification = verification_map.get(news_id)
-            local_issues = validate_summary_item(item, candidate_map[news_id]["body"])
-            combined_issues = [*local_issues, *(verification or {}).get("issues", [])]
+            source_body = candidate_map[news_id]["body"]
+            local_issues = validate_summary_item(item, source_body)
+            # 전북도 2026년 7월 교육감이 바뀌었다. 검증 모델이 옛 이름을 '원문'이라고
+            # 지어내 멀쩡한 요약을 검토 대상으로 돌리지 않도록 같은 기준으로 거른다.
+            raw_issues = (verification or {}).get("issues", [])
+            verifier_issues = [
+                issue for issue in raw_issues
+                if not (
+                    isinstance(issue, dict)
+                    and is_hallucinated_source_claim(str(issue.get("message", "")), source_body)
+                )
+            ]
+            all_hallucinated = bool(raw_issues) and not verifier_issues
+            combined_issues = [*local_issues, *verifier_issues]
             if (
                 item.get("reviewRequired")
                 or verification is None
-                or verification.get("status") != "PASS"
+                or (verification.get("status") != "PASS" and not all_hallucinated)
                 or combined_issues
             ):
                 reason = "; ".join(

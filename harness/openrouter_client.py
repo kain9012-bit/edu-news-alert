@@ -50,6 +50,7 @@ class OpenRouterClient:
         self.title = title
         # OpenRouter가 실제로 어느 모델로 처리했는지. 라우팅 확인용.
         self.served_model = ""
+        self.last_finish_reason = ""
         # Gemini 쪽과 같은 이름으로 모아 두어 기존 집계·단가 계산을 그대로 쓴다.
         self.usage = {
             "requests": 0,
@@ -108,11 +109,18 @@ class OpenRouterClient:
         choices = payload.get("choices") or []
         if not choices:
             raise OpenRouterError(f"OpenRouter 응답 후보가 없습니다: {str(payload)[:300]}")
+        self.last_finish_reason = str(choices[0].get("finish_reason") or "")
         text = str((choices[0].get("message") or {}).get("content") or "")
         if not text.strip():
-            finish = choices[0].get("finish_reason")
-            raise OpenRouterError(f"OpenRouter 응답에 텍스트가 없습니다 (finish_reason={finish}).")
+            raise OpenRouterError(
+                f"OpenRouter 응답에 텍스트가 없습니다 (finish_reason={self.last_finish_reason})."
+            )
         return text
+
+    # 잘렸을 때 한도를 늘려 다시 부를 상한. OpenRouter는 추론 토큰을 출력에
+    # 합쳐 세므로, 제미나이 직접 호출 때와 같은 한도로는 JSON이 잘릴 수 있다
+    # (2026-10-02·06 보고서에서 수정 단계 응답이 잘려 7건이 요약만으로 강등).
+    MAX_TOKENS_CEILING = 32768
 
     def generate_json(self, prompt: str, schema: dict[str, Any] | None = None) -> Any:
         body: dict[str, Any] = {
@@ -130,7 +138,7 @@ class OpenRouterClient:
             body["response_format"] = {"type": "json_object"}
 
         response = self._post(body)
-        # 스키마를 아예 못 받는 모델은 HTTP 오류로 알려 준다.
+        # 스키마를 아예 못 받는 모델만 HTTP 오류로 알려 준다. 이때만 스키마를 뺀다.
         if not response.ok and schema and response.status_code in (400, 404, 422):
             body["response_format"] = {"type": "json_object"}
             body["messages"] = [{"role": "user", "content": prompt + self.JSON_ONLY}]
@@ -140,16 +148,30 @@ class OpenRouterClient:
         try:
             return parse_json_response(text)
         except Exception:
-            # 200을 주면서 말머리를 붙이는 모델이 있다. 한 번만 더, 더 강하게 요구한다.
-            body["response_format"] = {"type": "json_object"}
-            body["messages"] = [{"role": "user", "content": prompt + self.JSON_ONLY}]
-            return parse_json_response(self._read(self._post(body)))
+            pass
+
+        # 해석 실패. 스키마는 그대로 두고 다시 부른다 — 스키마를 빼면 모델이
+        # 형식을 제멋대로 바꿔 오류가 더 커진다("배열이 아닙니다" 등).
+        # 잘려서 실패한 것이면 한도를 두 배로 늘린다.
+        if self.last_finish_reason == "length":
+            body["max_tokens"] = min(self.MAX_TOKENS_CEILING, int(body["max_tokens"]) * 2)
+        body["messages"] = [{"role": "user", "content": prompt + self.JSON_ONLY}]
+        return parse_json_response(self._read(self._post(body)))
 
     def _record_usage(self, usage: dict[str, Any]) -> None:
+        """제미나이 직접 호출 때와 같은 칸으로 모은다.
+
+        OpenRouter는 추론 토큰을 completion_tokens에 합쳐 주고, 따로
+        completion_tokens_details.reasoning_tokens로도 알려 준다. 둘을 갈라
+        담아야 '본문 출력'과 '추론'을 예전 기록과 나란히 비교할 수 있다.
+        """
         self.usage["requests"] += 1
         prompt = int(usage.get("prompt_tokens", 0) or 0)
         completion = int(usage.get("completion_tokens", 0) or 0)
+        details = usage.get("completion_tokens_details") or {}
+        reasoning = int(details.get("reasoning_tokens", 0) or 0)
         total = int(usage.get("total_tokens", 0) or 0) or (prompt + completion)
         self.usage["promptTokenCount"] += prompt
-        self.usage["candidatesTokenCount"] += completion
+        self.usage["candidatesTokenCount"] += max(0, completion - reasoning)
+        self.usage["thoughtsTokenCount"] += reasoning
         self.usage["totalTokenCount"] += total

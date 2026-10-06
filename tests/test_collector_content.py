@@ -22,10 +22,24 @@ from crawler.collect import (
 
 class CollectorContentTest(unittest.TestCase):
     def test_monday_briefing_covers_previous_72_hours(self) -> None:
-        window_start, window_end = briefing_window(datetime(2026, 7, 20, 8, 5, tzinfo=KST))
+        # 휴일이 끼지 않은 주의 월요일은 금요일 마감부터 72시간을 담는다.
+        window_start, window_end = briefing_window(datetime(2026, 7, 27, 8, 5, tzinfo=KST))
 
-        self.assertEqual(window_start, datetime(2026, 7, 17, 8, 0, tzinfo=KST))
-        self.assertEqual(window_end, datetime(2026, 7, 20, 8, 0, tzinfo=KST))
+        self.assertEqual(window_start, datetime(2026, 7, 24, 8, 0, tzinfo=KST))
+        self.assertEqual(window_end, datetime(2026, 7, 27, 8, 0, tzinfo=KST))
+
+    def test_window_skips_back_over_public_holidays(self) -> None:
+        # 제헌절은 2026년 5월 11일 시행 개정법으로 공휴일에 다시 들었다.
+        # 7/17(금)이 휴일이므로 7/20(월)은 7/16(목) 마감부터 담는다.
+        start, end = briefing_window(datetime(2026, 7, 20, 8, 5, tzinfo=KST))
+        self.assertEqual(start, datetime(2026, 7, 16, 8, 0, tzinfo=KST))
+        self.assertEqual(end, datetime(2026, 7, 20, 8, 0, tzinfo=KST))
+        # 추석 연휴(9/24~26) 뒤 첫 출근일은 9/23 마감부터 120시간.
+        start, _ = briefing_window(datetime(2026, 9, 28, 8, 5, tzinfo=KST))
+        self.assertEqual(start, datetime(2026, 9, 23, 8, 0, tzinfo=KST))
+        # 개천절 대체공휴일(10/5 월) 다음 날은 10/2(금) 마감부터.
+        start, _ = briefing_window(datetime(2026, 10, 6, 8, 5, tzinfo=KST))
+        self.assertEqual(start, datetime(2026, 10, 2, 8, 0, tzinfo=KST))
 
     def test_weekday_briefing_covers_previous_24_hours(self) -> None:
         window_start, window_end = briefing_window(datetime(2026, 7, 24, 8, 5, tzinfo=KST))
@@ -34,10 +48,10 @@ class CollectorContentTest(unittest.TestCase):
         self.assertEqual(window_end, datetime(2026, 7, 24, 8, 0, tzinfo=KST))
 
     def test_before_eight_uses_previous_briefing_day_rule(self) -> None:
-        window_start, window_end = briefing_window(datetime(2026, 7, 21, 7, 30, tzinfo=KST))
+        window_start, window_end = briefing_window(datetime(2026, 7, 28, 7, 30, tzinfo=KST))
 
-        self.assertEqual(window_start, datetime(2026, 7, 17, 8, 0, tzinfo=KST))
-        self.assertEqual(window_end, datetime(2026, 7, 20, 8, 0, tzinfo=KST))
+        self.assertEqual(window_start, datetime(2026, 7, 24, 8, 0, tzinfo=KST))
+        self.assertEqual(window_end, datetime(2026, 7, 27, 8, 0, tzinfo=KST))
 
     def test_rss_collector_reads_section_feed_items(self) -> None:
         feed = (

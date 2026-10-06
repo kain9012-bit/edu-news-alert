@@ -81,16 +81,59 @@ def _is_korean_body(text: str) -> bool:
     return hangul >= 10 and hangul * 2 >= non_space
 
 
+def _numbers_supported(text: str, compact_source: str) -> bool:
+    """문장 속 숫자가 모두 원문에 있는지. 계산해서 만든 숫자(90%→10%)를 거른다."""
+    for number in re.findall(r"\d[\d,\.]*", text or ""):
+        token = number.rstrip(".,").replace(",", "")
+        if token and token not in compact_source.replace(",", ""):
+            return False
+    return True
+
+
+def fallback_summary(
+    item: dict[str, Any], issues: list[dict[str, Any]], source: dict[str, Any]
+) -> list[str]:
+    """분석을 못 살려 요약만 남길 때, 원문 조각 대신 이미 만든 요약에서 성한 줄만 쓴다.
+
+    예전엔 원문을 줄바꿈·마침표로 잘라 썼는데, "<2026. 난치병…>"처럼 연도 뒤
+    마침표에서도 잘려 "…위해 <2026." / "…> 을 추진한다고 밝혔다." 같은 깨진 문장이
+    보고서에 그대로 실렸다(2026-10-06). 사실 추출 단계의 요약은 원문을 근거로 이미
+    다듬어져 있으므로, 지적받은 줄과 원문에 없는 숫자가 든 줄만 빼고 쓴다.
+    """
+    current = [p for p in (item.get("summaryPoints") or []) if isinstance(p, str)]
+    if any(
+        issue.get("field") == "summaryPoints" and int(issue.get("pointIndex", -1)) == -1
+        for issue in issues
+    ):
+        current = []  # 요약 전체를 문제 삼았으면 쓰지 않는다
+    flagged = {
+        int(issue.get("pointIndex", -1))
+        for issue in issues
+        if issue.get("field") == "summaryPoints"
+    }
+    compact = re.sub(r"\s+", "", str(source.get("body") or ""))
+    kept = [
+        point.strip()
+        for index, point in enumerate(current)
+        if index not in flagged
+        and len(point.strip()) >= 8
+        and _numbers_supported(re.sub(r"\s+", "", point), compact)
+    ]
+    return kept[:5] if kept else source_summary(source)
+
+
 def source_summary(source: dict[str, Any]) -> list[str]:
     """AI 요약이 없을 때 원문에서 읽을 만한 한글 요약 두 줄을 뽑는다.
 
     개조식(부제·불릿·마침표 없는 머리말) 보도자료도 줄바꿈과 불릿 기호로 조각내고
     깨진 띄어쓰기와 영문 각주를 정리해 사람이 읽기 좋은 형태로 만든다.
     """
-    body = str(source.get("body") or "")
+    # 줄바꿈으로 쪼개진 숫자·문장을 먼저 이어 붙인 뒤 문장 단위로 자른다.
+    body = clean_body(source.get("body") or "")
     title = normalize_space(str(source.get("title") or "보도자료"))
+    # 마침표 앞이 숫자면 자르지 않는다("2026. 9. 21." 같은 날짜, "<2026. 사업명>").
     fragments = re.split(
-        r"[\n\r]+|(?<=[.!?])\s+|\s*" + _BULLET_MARKERS + r"\s*",
+        r"(?<=[가-힣A-Za-z\)\]’”][.!?])\s+|\s*" + _BULLET_MARKERS + r"\s*",
         body,
     )
     points: list[str] = []
@@ -112,6 +155,44 @@ def source_summary(source: dict[str, Any]) -> list[str]:
     return points
 
 
+# 검증 모델이 "원문에서 경기도교육감은 임태희이나 보고서에는 안민석으로 잘못 기재됨"처럼
+# 원문에 없는 내용을 원문이라고 지어내는 일이 있다(2026-10-06). 2026년 7월 교육감이
+# 대거 바뀌었는데 모델은 그전 이름을 기억하고 있어서다. 프롬프트로 막아도 새어 나오므로
+# 코드로 거른다. 인명에 관한 지적만 대상으로 삼아, 숫자·표현 지적은 건드리지 않는다.
+_PERSON_HINT = re.compile(r"교육감|교육장|장관|차관|원장|청장|위원장|총장|시장|도지사|인명|이름|성명")
+_SOURCE_CLAIM = re.compile(
+    r"원문(?:에서|에는|에|은|는|상)?\s*(?P<src>.{1,40}?)"
+    r"(?:이나|인데|이지만|으나|지만|이고|이며)\s*보고서(?:에는|에서|는|에|가)?\s*(?P<rep>.{1,30}?)(?:으로|로|라고|이라고)"
+)
+_PARTICLES = re.compile(r"(?:은|는|이|가|을|를|의|과|와|라고|이라고|으로|로)$")
+
+
+def _claimed_value(segment: str) -> str:
+    quoted = re.findall(r"['\"‘“]([^'\"’”]{1,30})['\"’”]", segment)
+    if quoted:
+        return quoted[-1].strip()
+    words = re.findall(r"[가-힣A-Za-z0-9]+", segment)
+    return _PARTICLES.sub("", words[-1]) if words else ""
+
+
+def is_hallucinated_source_claim(message: str, source_body: str) -> bool:
+    """검증 모델이 원문에 없는 인명을 '원문 내용'이라고 내세운 지적인지 가린다."""
+    if not message or not _PERSON_HINT.search(message):
+        return False
+    match = _SOURCE_CLAIM.search(message)
+    if not match:
+        return False
+    claimed = _claimed_value(match.group("src"))
+    reported = _claimed_value(match.group("rep"))
+    if not re.fullmatch(r"[가-힣]{2,4}", claimed or ""):
+        return False  # 사람 이름 꼴이 아니면 판단하지 않는다
+    compact = re.sub(r"\s+", "", source_body or "")
+    if claimed in compact:
+        return False  # 원문에 정말 있으면 정당한 지적이다
+    # 원문에 없는 이름을 내세우고, 보고서 쪽 이름은 원문에 있으면 지어낸 지적이다.
+    return not reported or reported in compact
+
+
 def validation_issues(
     item: dict[str, Any],
     source_body: str,
@@ -126,8 +207,12 @@ def validation_issues(
             "message": "근거 검증 결과가 없어 전체 항목을 다시 작성해야 합니다.",
         })
         return issues
+    dropped = 0
     for issue in verification.get("issues", []):
         if not isinstance(issue, dict):
+            continue
+        if is_hallucinated_source_claim(str(issue.get("message", "")), source_body):
+            dropped += 1
             continue
         issues.append({
             "field": issue.get("field", "item"),
@@ -135,7 +220,9 @@ def validation_issues(
             "code": issue.get("code", "OTHER"),
             "message": issue.get("message", "근거에 맞게 수정해야 합니다."),
         })
-    if verification.get("status") != "PASS" and not verification.get("issues"):
+    # 지적이 전부 지어낸 것이라 걸러졌다면, REVISE 판정도 근거가 없으므로 통과로 본다.
+    real_issues = len(verification.get("issues") or []) - dropped
+    if verification.get("status") != "PASS" and real_issues <= 0 and not dropped:
         issues.append({
             "field": "item",
             "pointIndex": -1,
@@ -241,7 +328,7 @@ class ReportRepairCoordinator:
             news_id = item["newsId"]
             issues = current_issues[news_id]
             if issues:
-                item["summaryPoints"] = source_summary(candidate_map[news_id])
+                item["summaryPoints"] = fallback_summary(item, issues, candidate_map[news_id])
                 item["analysisPoints"] = []
                 item["applicationReviewPoints"] = []
                 item["summaryOnly"] = True
