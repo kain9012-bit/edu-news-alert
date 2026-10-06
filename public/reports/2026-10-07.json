@@ -1,0 +1,585 @@
+{
+  "metadata": {
+    "reportId": "20261006T220212Z-a2599176",
+    "title": "오늘의 교육동향",
+    "status": "completed",
+    "generatedAt": "2026-10-06T22:02:12+00:00",
+    "windowStart": "2026-10-06T06:00:00+09:00",
+    "windowEnd": "2026-10-07T06:00:00+09:00",
+    "windowHours": 24,
+    "selectionRunId": "20261006T211231Z-9c4ca42e",
+    "sourceCount": 12,
+    "eligibleCount": 10,
+    "publishedCount": 10,
+    "omittedCount": 0,
+    "ownOfficeEligibleCount": 2,
+    "ownOfficePublishedCount": 2,
+    "qualityExcludedCount": 0,
+    "factModel": "google/gemini-3.1-flash-lite",
+    "analysisModel": "google/gemini-3.5-flash",
+    "verifierModel": "google/gemini-3.1-flash-lite",
+    "summaryOnlyCount": 0,
+    "ownOfficeReviewCount": 0,
+    "usage": {
+      "stages": {
+        "facts": {
+          "model": "google/gemini-3.1-flash-lite",
+          "requests": 4,
+          "promptTokenCount": 10409,
+          "candidatesTokenCount": 3153,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 13562
+        },
+        "analysis": {
+          "model": "google/gemini-3.5-flash",
+          "requests": 3,
+          "promptTokenCount": 4850,
+          "candidatesTokenCount": 1941,
+          "thoughtsTokenCount": 7581,
+          "totalTokenCount": 14372
+        },
+        "verification": {
+          "model": "google/gemini-3.1-flash-lite",
+          "requests": 3,
+          "promptTokenCount": 13419,
+          "candidatesTokenCount": 685,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 14104
+        }
+      },
+      "total": {
+        "requests": 10,
+        "promptTokenCount": 28678,
+        "candidatesTokenCount": 5779,
+        "thoughtsTokenCount": 7581,
+        "totalTokenCount": 42038
+      }
+    },
+    "estimatedCostUsd": 0.104687
+  },
+  "items": [
+    {
+      "newsId": "daegu-7cfca1fc4946d952",
+      "sourceId": "daegu",
+      "source": "대구광역시교육청",
+      "title": "대구시-대구시교육청, ‘교육혁신선도지역’ 지정 공동신청",
+      "date": "2026-10-06",
+      "url": "https://www.dge.go.kr/pr/na/ntt/selectNttInfo.do?nttSn=2217384&bbsId=2680&mi=9870",
+      "category": "지역협력·행사",
+      "importance": 4,
+      "selectionReason": "교육부 주관 교육혁신선도지역 지정 신청은 지자체와 교육청이 협력하는 대규모 교육 정책 사업으로 교육행정의 중요한 변화에 해당합니다.",
+      "summaryPoints": [
+        "대구시와 대구시교육청이 교육부 주관 교육혁신선도지역 사업을 공동 신청함",
+        "군위군은 1유형(인구감소지역)으로 교육클러스터 모델 개발 등을 추진함",
+        "대구시(군위군 제외)는 2유형(비수도권)으로 지역 인재 성장 및 정주 경로 구축을 추진함",
+        "10월 중 위원회 심의를 거쳐 11월 최종 지정될 예정임"
+      ],
+      "analysisPoints": [
+        "지자체와 교육청의 공동 협력을 통한 지역 맞춤형 교육 모델 구축의 필요성이 증대됨",
+        "인구감소지역과 비수도권 일반지역으로 구분하여 지역 특성에 맞는 차별화된 발전 전략을 수립하는 방향성을 보여줌",
+        "특별교부금 지원 및 규제개선 특례 등 제도적 인센티브를 활용한 지역 교육 활성화 방안으로 볼 수 있음"
+      ],
+      "applicationReviewPoints": [
+        "전북 지역 내 인구감소지역과 일반지역의 특성을 고려한 지자체 협력형 교육 모델 공동 신청 가능성을 검토할 수 있음",
+        "규제개선 특례 및 재정 지원을 활용한 지역 인재 정주 경로 구축 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "대구시와 대구시교육청이 교육혁신선도지역 사업을 공동 신청함",
+        "1유형은 인구감소지역인 군위군이 참여함",
+        "2유형은 군위를 제외한 대구시 8개 구·군과 대구시교육청 4개 교육지원청이 참여함",
+        "지정 시 특별교부금 교부 및 규제개선 특례가 부여됨",
+        "11월 최종 지정 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jngj_s1n1-842eafd464093e9a",
+      "sourceId": "jngj_s1n1",
+      "source": "전남광주통합특별시교육청",
+      "title": "전남광주특별시교육청, 교원 악성민원전화 응대 차단한다",
+      "date": "2026-10-06",
+      "url": "https://www.jngjedu.kr/news/articleView.html?idxno=200147",
+      "category": "교원·인사",
+      "importance": 4,
+      "selectionReason": "교원 보호를 위한 민원 대응 체계 구축이라는 교육청 차원의 제도적 변화 및 안전 대책을 포함함.",
+      "summaryPoints": [
+        "전남광주통합특별시교육청이 10월부터 민원전화 대응체계를 구축함",
+        "학교 대표번호 ARS를 통해 민원인이 부서를 선택하는 방식으로 운영함",
+        "교실 직통 전화는 대표번호로 전환되며 발신자표시제한 전화는 자동 종료됨",
+        "광주지역 초·중·고·특수학교 및 공립단설유치원 324개교에 적용함"
+      ],
+      "analysisPoints": [
+        "교원의 교육활동 보호를 위해 학교 단위의 일원화된 민원 대응 체계 구축이 강조되는 추세임",
+        "ARS 대표번호 전환 및 발신자표시제한 전화 자동 종료 등을 통해 교실 직통 전화 노출을 방지하고 악성 민원을 사전 차단하는 효과가 있음",
+        "유치원부터 고등학교, 특수학교까지 폭넓은 학교급에 일괄 적용하여 교원 보호의 사각지대를 최소화하려는 시도로 볼 수 있음"
+      ],
+      "applicationReviewPoints": [
+        "학교 대표번호 ARS 전환 및 발신자표시제한 전화 자동 종료 시스템 도입의 타당성을 검토할 수 있음",
+        "교실 직통 전화번호 노출 방지를 통한 교원 보호 대책의 실효성을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "10월부터 민원전화 대응체계가 운영됨",
+        "외부에서 학교로 전화 시 대표번호 ARS로 연결됨",
+        "적용 대상은 광주지역 324개교임",
+        "교실 전화번호 노출을 방지하고 일관된 응대 체계를 운영함",
+        "발신자표시제한 전화는 안내 후 자동 종료됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "ulsan-9a7f99ce2e010a77",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "[울산교육청] 사학 업무 정보, 쉽고 빠르게 찾는다",
+      "date": "2026-10-06",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20261006165532657",
+      "category": "정책·행정",
+      "importance": 3,
+      "selectionReason": "생성형 AI를 활용한 행정 업무 효율화 시스템 도입으로 교육행정 방식의 실질적인 변화를 포함함.",
+      "summaryPoints": [
+        "울산교육청이 생성형 AI 기반 사학기관 업무편람 대화형 검색 서비스를 도입함",
+        "법령, 판례, 업무 지침 등 현장 자료를 분석해 질문에 답변을 제공함",
+        "답변 시 근거가 되는 업무편람 쪽수와 법 조항을 함께 제시함",
+        "전국 시도교육청 중 사학 행정 분야 최초로 구축된 서비스임"
+      ],
+      "analysisPoints": [
+        "생성형 AI 기술을 행정 업무에 접목하여 복잡한 법령 및 지침 검색의 효율성을 극대화하는 방향을 제시함",
+        "답변의 출처와 근거 법령을 명확히 제시함으로써 AI의 신뢰성을 확보하고 행정 오류를 예방하는 장치를 마련함",
+        "인터넷 주소 및 QR 코드를 활용해 현장 접근성을 높이고 사학 행정 업무의 편의성을 제고함"
+      ],
+      "applicationReviewPoints": [
+        "생성형 AI 기반의 대화형 업무편람 검색 서비스를 사학 행정 또는 타 행정 분야에 도입하는 방안을 검토할 수 있음",
+        "감사 사례 및 판례 등 복잡한 행정 자료의 접근성 향상을 위해 모바일 및 QR 코드 연계 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "구글의 노트북 엘엠(NotebookLM)을 활용함",
+        "사학기관 업무편람, 감사 사례, 판례 등을 시스템에 탑재함",
+        "답변의 출처와 근거를 함께 제시하여 신뢰성을 높임",
+        "인터넷 주소 및 QR 코드를 통해 접속 가능함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongbuk-d3159e7106e6b2f3",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[창의인재과]경북교육청, 우즈베키스탄에 K-직업교육 모델 확산 나선다",
+      "date": "2026-10-06",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1649897&bbsId=4744&mi=17643&searchCate=761",
+      "category": "진로·직업교육",
+      "importance": 3,
+      "selectionReason": "K-직업교육 모델의 체계적 수출 및 시스템 전반의 적용을 추진하는 사업으로 교육 정책의 확산 사례에 해당합니다.",
+      "summaryPoints": [
+        "경북교육청이 우즈베키스탄 직업교육청의 요청으로 K-직업교육 모델 수출을 추진함",
+        "교육과정, 교원 역량 강화, 학교 운영 등 시스템 전반을 현지에 적용함",
+        "특별전담조직을 구성하여 맞춤형 교육과정 개발 및 협력체계 구축을 지원함"
+      ],
+      "analysisPoints": [
+        "지역 직업교육 모델의 우수성을 바탕으로 해외 교육 기관과의 협력을 통한 교육 영토 확장 및 국제적 위상 제고를 도모함",
+        "단순 인력 교류를 넘어 교육과정, 교원 역량 강화, 학교 운영 등 시스템 전반을 패키지 형태로 수출하는 고도화된 협력 모델임",
+        "특별전담조직 구성을 통해 현지 맞춤형 교육과정 개발 및 산학협력 체계 구축을 체계적으로 지원하는 구조임"
+      ],
+      "applicationReviewPoints": [
+        "전북형 직업교육 모델의 해외 수출 가능성 및 국제 협력 네트워크 구축 방안을 검토할 수 있음",
+        "해외 교육기관 대상 맞춤형 교육과정 전수 및 교원 연수 지원 체계 마련 여부를 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "우즈베키스탄 직업교육청과 사업 추진 방향에 합의함",
+        "경북 직업교육 모델을 현지 교육환경에 맞게 적용하는 것이 목표임",
+        "현지 교원 역량 강화 및 학교-산업체 협력체계 구축을 지원함",
+        "경북교육청은 특별전담조직을 구성하여 운영함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "busan-c30d7379f0a4e18a",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "부산교육청, AI 서·논술형 평가지원시스템 도입 착수",
+      "date": "2026-10-06",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1181318&bbsId=2286&mi=30397",
+      "category": "디지털·AI",
+      "importance": 3,
+      "selectionReason": "AI 기반 평가 시스템 도입은 교육과정 평가 체제의 변화를 수반하는 정책적 사안입니다.",
+      "summaryPoints": [
+        "AI 서·논술형 평가지원시스템 도입을 위한 용역사업 착수보고회 개최함",
+        "출제부터 채점, 피드백까지 통합 지원하는 시스템 개발 추진함",
+        "교사의 평가 부담 완화 및 채점의 일관성과 공정성 확보를 목표로 함",
+        "수업 과정의 보조도구로 활용하며 점진적으로 학교 현장에 안착시킬 예정임",
+        "2027년까지 실천교사 및 실천학교 운영 규모를 단계적으로 확대할 계획임"
+      ],
+      "analysisPoints": [
+        "AI 기술을 활용하여 출제, 채점, 피드백을 통합 지원함으로써 교사의 평가 부담을 완화하고 채점의 공정성을 확보하려는 흐름임",
+        "전면 도입 대신 수업 보조도구로 우선 활용하여 학교 현장의 혼란을 최소화하고 단계적으로 안착시키는 방식을 취함",
+        "타 시·도 교육청과의 공통 표준 프레임워크 기반 평가 자원 공유를 통해 시스템 구축 및 운영의 효율성을 도모함"
+      ],
+      "applicationReviewPoints": [
+        "타 시·도 교육청과의 공통 표준 프레임워크를 활용한 평가 자원 공유 및 협력 방안을 검토할 수 있음",
+        "AI 서·논술형 평가지원시스템의 수업 보조도구 활용 방식과 교사 대상 문항 개발 연수 사례를 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "부산시교육청 AI 서·논술형 평가지원시스템 도입 용역 착수보고회 2026년 10월 6일 개최",
+        "디지털 평가 전문기업 및 IT 전문 기업과 협력하여 시스템 개발 진행",
+        "지난 7월 고교 교사 287명 대상 학생평가 전문가 기본 과정 연수 실시",
+        "8월 31일 실천교사 20명 선발하여 문항 개발 착수",
+        "시스템은 전면 도입이 아닌 수업 보조도구로 활용 권장",
+        "타 시·도 교육청과 공통 표준 프레임워크에 따른 평가 자원 공유 계획"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "incheon-01ae34948944f8b8",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 고교학점제 학점 이수 관리 프로그램 2 종 개발·배포",
+      "date": "2026-10-06",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3385988&bbsId=1519&mi=11620",
+      "category": "교육과정·수업",
+      "importance": 3,
+      "selectionReason": "고교학점제 전면 시행에 따른 학점 이수 관리 체계 구축 및 지원 프로그램 개발이라는 정책적 변화를 담고 있음.",
+      "summaryPoints": [
+        "고교학점제 학점 이수 관리 프로그램 및 과목 선택 실습 프로그램 개발·배포함",
+        "교사용 프로그램은 학생별 학점 이수 현황 및 필수 이수 학점 점검 기능 제공함",
+        "학생·학부모용 프로그램은 진로에 따른 과목 선택 실습 기능을 제공함",
+        "인천 고교학점제 누리집을 통해 누구나 이용 가능하며 모바일 환경도 지원함"
+      ],
+      "analysisPoints": [
+        "고교학점제 전면 시행에 대비하여 교사의 행정 부담을 줄하고 학생·학부모의 과목 선택 편의성을 높이기 위한 맞춤형 디지털 도구 개발 사례임",
+        "학교별 실제 교육과정을 반영한 실습 프로그램과 모바일 환경 지원을 통해 사용자 접근성과 실효성을 강화함"
+      ],
+      "applicationReviewPoints": [
+        "학생별 학점 이수 현황 관리 및 과목 선택 실습을 지원하는 모바일 연계 프로그램의 도입 필요성을 검토할 수 있음",
+        "실제 학교 교육과정 기반의 과목 선택 실습 프로그램 설계 방식을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "인천광역시교육청 고교학점제 관련 프로그램 2종 2026년 10월 6일 배포",
+        "교사용 프로그램은 학생별 학점 이수 현황 관리 및 과목 간 위계 확인 기능 포함",
+        "과목 선택 실습 프로그램은 각 고등학교 실제 교육과정 기반으로 개발",
+        "인천 고교학점제 누리집을 통해 컴퓨터 및 스마트폰으로 접속 가능"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungbuk-1e946ef5930e3e5b",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "충북교육청, 학교안전보안관 운영 22교로 확대",
+      "date": "2026-10-06",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1580306&bbsId=1158&mi=10301",
+      "category": "안전·시설",
+      "importance": 3,
+      "selectionReason": "학교 안전 지원을 위한 학교안전보안관 제도의 운영 범위 확대는 교육청 차원의 정책적 변화임.",
+      "summaryPoints": [
+        "학교안전보안관 운영 학교를 총 22교로 확대함",
+        "하반기 추가 배치된 학교안전보안관 9명에게 위촉장을 수여함",
+        "학교안전보안관은 등·하교 순찰 및 위기 상황 초기 대응 등을 지원함",
+        "퇴직 경찰관, 소방관, 군인 등 전문 인력을 자원봉사자로 활용함"
+      ],
+      "analysisPoints": [
+        "퇴직 경찰, 소방관, 군인 등 전문성을 갖춘 지역 사회 인력을 자원봉사자로 활용하여 학교 안전망을 강화하는 방안임",
+        "단순 순찰을 넘어 학교 조직문화 및 폭력 대응 연수를 통해 보안관의 실무 역량과 현장 적응력을 높이고자 함"
+      ],
+      "applicationReviewPoints": [
+        "퇴직 전문 인력을 활용한 학교안전보안관 제도의 운영 규모 및 자원봉사자 활용 방식을 비교해 볼 수 있음",
+        "보안관 대상의 학교 조직문화 및 폭력 대응 연수 프로그램을 벤치마킹할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "충북교육청 학교안전보안관 운영 학교 22교로 확대",
+        "하반기 추가 배치 인원 9명은 퇴직 경찰관 2명, 소방관 4명, 군인 3명으로 구성",
+        "현재 청주 16교, 충주 2교, 옥천 1교, 진천 2교, 단양 1교에서 운영 중",
+        "학교안전보안관 대상 학교 조직문화 및 폭력 대응 관련 연수 실시"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongbuk-e208e06350bf887a",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[유초등교육과]경북교육청, 초등 서․논술형 평가 현장 안착 속도 낸다",
+      "date": "2026-10-06",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1649900&bbsId=4744&mi=17643&searchCate=761",
+      "category": "교육과정·수업",
+      "importance": 2,
+      "selectionReason": "초등 서·논술형 평가 체계의 현장 안착 및 평가 전문성 강화는 교육과정 및 평가 제도와 직결된 정책적 변화입니다.",
+      "summaryPoints": [
+        "초등 서·논술형 평가의 안정적 현장 정착을 위해 평가 체계 강화함",
+        "질문 중심 수업과 연계한 서·논술형 평가 및 CBT 기반 평가 추진함",
+        "평가 전문성 향상을 위해 한국교육과정평가원 주관 연수에 25명 참여함",
+        "평가 결과를 학생 맞춤형 피드백으로 연결하는 선순환 체계를 구축할 계획임"
+      ],
+      "analysisPoints": [
+        "질문 중심 수업과 연계한 서·논술형 평가 및 CBT 기반 평가를 통해 학생 맞춤형 피드백 선순환 체계를 구축하려는 움직임임",
+        "한국교육과정평가원 및 타 시·도 교육청과의 공동 연수를 통해 평가 전문성을 강화하고 협력적 네트워크를 활용함"
+      ],
+      "applicationReviewPoints": [
+        "CBT 기반의 초등 서·논술형 평가 체계 구축 및 질문 중심 수업과의 연계 방안을 검토할 수 있음",
+        "타 시·도 및 전문기관과의 공동 연수를 통한 평가 전문성 향상 프로그램 참여를 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "경북교육청 초등 서·논술형 평가 현장 안착 추진",
+        "상반기 서·논술형 평가 강사진 및 선도교원 85명 양성",
+        "12월 18일부터 20일까지 CBT Plus 참여 시·도 대상 평가 전문성 향상 연수 실시",
+        "연수 참여 인원은 교육전문직 2명, 국어 교원 12명, 수학 교원 11명 등 총 25명",
+        "연수 주관은 한국교육과정평가원이며 경북, 대구, 세종, 충북교육청 공동 참여"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gangwon-da80a48d2d3d7b30",
+      "sourceId": "gangwon",
+      "source": "강원특별자치도교육청",
+      "title": "강릉, 원주 유아놀이체험장 개원 준비‘착착’",
+      "date": "2026-10-06",
+      "url": "https://gwe.go.kr/promotion/bbs/view.do?bbsSn=56653&key=bTI0MTEyMjUyOTQ2NDA%3D",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "교육청 차원에서 추진하는 대규모 유아놀이체험장 조성 및 인프라 구축 정책으로, 지역 내 교육 환경 변화를 포함함.",
+      "summaryPoints": [
+        "강원특별자치도교육청이 강릉과 원주에 유아놀이체험장을 2027년 3월 개원할 예정임",
+        "강릉은 해담체험관, 원주는 온담체험관으로 명칭을 확정하고 폐교 부지를 활용하여 조성함",
+        "강릉은 안전·디지털 체험, 원주는 물놀이 및 상상 체험 중심의 특화 공간으로 운영함",
+        "지역별 유아 인구 비율을 고려하여 권역별 체험 기회 불균형을 해소하고자 함"
+      ],
+      "analysisPoints": [
+        "폐교 부지를 활용하여 권역별 유아 맞춤형 체험 인프라를 구축하는 사례임",
+        "지역별 유아 인구 분포를 고려하여 권역별 체험 기회의 불균형을 해소하고자 함",
+        "안전, 디지털, 물놀이 등 지역별로 차별화된 특화 콘텐츠를 제공하여 운영의 다양성을 도모함"
+      ],
+      "applicationReviewPoints": [
+        "전북 지역 내 폐교 부지를 활용한 유아 놀이 및 체험 공간 조성 현황과 비교해 볼 수 있음",
+        "권역별 유아 인구 비율 및 접근성을 고려한 체험 시설의 균형 배치 방안을 검토할 수 있음",
+        "디지털, 안전 등 지역 특성에 맞춘 특화 체험 콘텐츠 도입 가능성을 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "강릉 해담체험관은 사천면 옛 사기막분교 부지에 조성함",
+        "원주 온담체험관은 지정면 옛 지정초 송암분교 부지에 조성함",
+        "원주와 강릉 체험장 모두 건축연면적 3,269㎡ 규모임",
+        "원주권 유아는 도내 전체의 37.2%, 강릉권 및 인근 지역은 30.6%를 차지함",
+        "2026년 말까지 실내외 전시 체험시설물 제작 및 설치를 완료할 계획임",
+        "2027년 초 준공 및 사용 승인 절차를 거칠 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongnam-35f110863c5d4a5f",
+      "sourceId": "gyeongnam",
+      "source": "경상남도교육청",
+      "title": "헷갈리는 산업재해 발생 보고 ‘4컷 만화’로 쉽게 알린다",
+      "date": "2026-10-06",
+      "url": "https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&q_bbsDocNo=20261006092024917",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "학교 현장의 산업안전보건 업무 매뉴얼을 제작하여 도내 모든 학교에 공통 적용하는 안전 대책임.",
+      "summaryPoints": [
+        "경상남도교육청이 산업재해 발생 보고 절차를 안내하는 4컷 만화 자료 23편을 제작하여 배포함",
+        "산업재해 해당 여부, 휴업 일수 계산 등 학교 현장에서 자주 묻는 사례를 중심으로 구성함",
+        "모든 교직원이 산업재해 발생 시 조사표 제출 여부와 절차를 쉽게 확인하도록 지원함",
+        "자료 활용도 제고를 위해 만족도 조사 및 개선 의견 수렴을 병행함"
+      ],
+      "analysisPoints": [
+        "복잡한 산업재해 보고 절차를 4컷 만화라는 시각적 매체로 전달하여 학교 현장의 업무 이해도를 높임",
+        "휴업 일수 계산, 특수 상황 등 현장에서 자주 묻는 사례 중심으로 구성하여 실무 적용성을 극대화함",
+        "만족도 조사 및 의견 수렴을 통해 콘텐츠를 지속적으로 보완하는 환류 체계를 마련함"
+      ],
+      "applicationReviewPoints": [
+        "학교 현장의 신속하고 정확한 산업재해 보고를 돕기 위한 시각 자료 제작 및 배포 방안을 검토할 수 있음",
+        "산업안전보건 교육 및 연수 시 가독성이 높은 홍보 콘텐츠의 활용 가능성을 확인할 필요가 있음",
+        "현장 맞춤형 산재 대처 가이드라인 마련을 위해 자주 발생하는 질의 사항을 분석해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "산업재해조사표는 사망자 발생 또는 3일 이상의 휴업이 필요한 부상·질병 발생 시 제출함",
+        "자료는 사고 산재 판단, 휴업 일수 판단, 특수 근무 상황, 실무 등 4개 분야로 구성됨",
+        "도내 모든 학교와 기관에 배포하여 산업안전보건 교육 및 연수 자료로 활용함",
+        "만족도 조사를 통해 향후 추가 사례 제작 및 콘텐츠 개선에 반영할 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "ownOfficeItems": [
+    {
+      "newsId": "jeonbuk-2b2a30c94c726108",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "“학생부 기록이 곧 경쟁력” 일반고 대상 학생부 컨설팅 운영",
+      "date": "2026-10-06",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1186267",
+      "summaryPoints": [
+        "2028학년도 대입제도 개편 대비 도내 일반고 20개교 대상 학생부 컨설팅 운영 예정임",
+        "입학사정관 및 대입지원관이 학교를 방문하여 교육과정 편성 및 학생부 기록의 구체성 진단함"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-63a9c1a2d7d6085e",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "전국 체전 출전 고등부 선수 땀과 노력에 박수 보내요",
+      "date": "2026-10-06",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1186428",
+      "summaryPoints": [
+        "제107회 전국체육대회에 출전하는 도내 고등부 선수단 격려회 개최함",
+        "도내 59개교 471명의 학생 선수가 41개 종목에 참가하여 기량을 겨룰 예정임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "omittedItems": [],
+  "validation": {
+    "status": "PASS",
+    "issues": [],
+    "checks": {
+      "ownOfficeExcludedFromTrendAnalysis": true,
+      "ownOfficeAllIncluded": true,
+      "ownOfficeSummariesVerified": true,
+      "publishedItemsVerified": true,
+      "sourceWindowMatches": true
+    }
+  },
+  "providerErrors": {
+    "facts": [],
+    "ownOfficeSummaries": [],
+    "analysis": [],
+    "verification": [],
+    "repairs": [],
+    "repairVerifications": []
+  },
+  "trace": [
+    {
+      "step": "extract_facts",
+      "status": "success",
+      "startedAt": "2026-10-06T22:00:47+00:00",
+      "durationMs": 12848
+    },
+    {
+      "step": "summarize_own_office",
+      "status": "success",
+      "startedAt": "2026-10-06T22:01:00+00:00",
+      "durationMs": 1533
+    },
+    {
+      "step": "analyze_trends",
+      "status": "success",
+      "startedAt": "2026-10-06T22:01:01+00:00",
+      "durationMs": 66365
+    },
+    {
+      "step": "verify_report",
+      "status": "success",
+      "startedAt": "2026-10-06T22:02:07+00:00",
+      "durationMs": 4479
+    }
+  ],
+  "rendering": {
+    "canonical": "json",
+    "html": "오늘의 교육동향 (20261007).html",
+    "hwpx": "오늘의 교육동향 (20261007).hwpx",
+    "hwpxValidation": {
+      "hardGates": {
+        "package_validation": "pass",
+        "document_errors": "pass",
+        "schema_lint": "pass",
+        "reopen": "pass",
+        "editor_open_safety": "pass",
+        "id_integrity": "pass"
+      },
+      "packageOk": true,
+      "documentOk": true,
+      "reopenedOk": true,
+      "visualReviewRequired": true
+    }
+  }
+}
