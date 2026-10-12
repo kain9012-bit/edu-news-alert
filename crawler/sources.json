@@ -264,11 +264,12 @@
   {
     "id": "chungnam",
     "name": "충청남도교육청",
-    "baseUrl": "http://news.cne.go.kr",
-    "listUrl": "http://news.cne.go.kr/boardCnts/list.do?boardID=1003&m=0401&s=news&page=1",
+    "baseUrl": "https://news.cne.go.kr",
+    "listUrl": "https://news.cne.go.kr/news/list.do?bbs_id=S2N1&m=0201&s=news",
     "include": [
-      "boardCnts/view.do",
-      "boardSeq="
+      "/news/view.do",
+      "bbs_id=S2N1",
+      "bbs_seq="
     ],
     "exclude": [
       "fileDown.do",
@@ -276,16 +277,11 @@
       ".jpg",
       ".png"
     ],
-    "detailPath": "/boardCnts/view.do",
-    "seqParam": "boardSeq",
-    "detailParams": {
-      "lev": "0",
-      "searchType": "null",
-      "statusYN": "W",
-      "page": "1",
-      "opType": "N"
-    },
-    "enabled": true
+    "enabled": true,
+    "canonicalParams": [
+      "bbs_id",
+      "bbs_seq"
+    ]
   },
   {
     "id": "gyeongbuk",

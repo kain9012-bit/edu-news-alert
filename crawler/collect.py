@@ -102,7 +102,8 @@ PREFER_LIST_TITLE = {
     "incheon",
     "sejong",
     "gyeongbuk",
-    "chungnam",
+    # chungnam은 2026-10 '본청소식' 게시판으로 옮긴 뒤 목록 링크에 본문 미리보기가
+    # 붙어 나와 목록 제목을 쓰면 제목이 오염된다. 상세 페이지 og:title을 쓴다.
     "jeju",
 }
 
@@ -182,7 +183,8 @@ CONTENT_SELECTORS = {
     "sejong": [".bbsV_cont"],
     "gangwon": [".bo_con"],
     "chungbuk": [".bbsV_cont"],
-    "chungnam": [".viewBox"],
+    # .article_body: 2026-10 '본청소식'(news/view.do) / .viewBox: 옛 '언론보도' 게시판
+    "chungnam": [".article_body", ".viewBox"],
     "jeonnam": ["#article-view-content-div"],
     "jngj_s1n1": ["#article-view-content-div"],
     "gyeongbuk": [],
@@ -668,6 +670,23 @@ def collect_rss_links(source: dict[str, Any]) -> list[dict[str, str]]:
     return links[:MAX_ITEMS_PER_SOURCE]
 
 
+def canonical_url(url: str, source: dict[str, Any]) -> str:
+    """글 주소를 정해진 쿼리만 남긴 한 가지 꼴로 맞춘다.
+
+    충남 본청소식은 같은 글이 머리기사 자리에서는 m=0201 없이, 목록에서는 붙여서
+    나온다. 주소가 다르면 글 고유번호(stable_id)도 달라져 같은 글이 두 번 쌓이므로,
+    sources.json의 canonicalParams에 적힌 쿼리만 그 순서대로 남긴다.
+    """
+    keep = source.get("canonicalParams")
+    if not keep:
+        return url
+    parsed = urlparse(url)
+    query = parse_qs(parsed.query)
+    if not all(query.get(name) for name in keep):
+        return url
+    return urlunparse(parsed._replace(query=urlencode([(n, query[n][0]) for n in keep])))
+
+
 def collect_links(source: dict[str, Any], html: str) -> list[dict[str, str]]:
     soup = BeautifulSoup(html, "lxml")
     seen: set[str] = set()
@@ -683,7 +702,7 @@ def collect_links(source: dict[str, Any], html: str) -> list[dict[str, str]]:
             title = clean_candidate_title(a.get_text(" ") or row_text(a))
             if not href or is_notice_title(title):
                 continue
-            url = urljoin(source["listUrl"], href)
+            url = canonical_url(urljoin(source["listUrl"], href), source)
             if url_matches(url, source) and url not in seen:
                 seen.add(url)
                 links.append({"url": url, "title": title, "listText": row_text(a)})

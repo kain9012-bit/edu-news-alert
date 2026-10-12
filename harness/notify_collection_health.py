@@ -37,11 +37,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--stale-days",
         type=int,
-        default=10,
+        default=4,
         help=(
-            "이 기간 동안 자료가 없으면 이상으로 본다(일). 기본 10. "
-            "연휴나 게시판이 조용한 시기에 헛경보가 나지 않을 만큼 넉넉히 잡았다. "
-            "주소 변경처럼 급한 고장은 '목록 0건' 쪽에서 당일에 잡힌다."
+            "이 영업일 수 동안 자료가 없으면 이상으로 본다. 기본 4. "
+            "달력 일수로 세면 연휴가 낄 때 경보가 늦어지거나(2026-10 충남) 일찍 울려서 "
+            "주말·공휴일을 뺀 영업일로 센다. 2026-08~10 기록 기준 정상 기관의 "
+            "헛경보는 2.4개월에 2번이었고, 충남 게시판 이전(10/1)은 10/12에 잡힌다."
         ),
     )
     parser.add_argument(
@@ -78,7 +79,10 @@ def check_empty_and_failed(status: dict[str, Any]) -> list[str]:
     names = {str(r.get("sourceId")): str(r.get("source") or r.get("sourceId")) for r in runs}
 
     for source_id in status.get("emptySources") or []:
-        problems.append(f"목록 0건 — {names.get(str(source_id), source_id)} (게시판 주소 변경 의심)")
+        problems.append(
+            f"목록 0건 — {names.get(str(source_id), source_id)} "
+            "(게시판 주소 변경·게시판 이전·접속 차단 중 하나)"
+        )
 
     for run in runs:
         if run.get("status") == "failed":
@@ -107,7 +111,7 @@ def check_stale_sources(
         if source_id and date > latest.get(source_id, ""):
             latest[source_id] = date
 
-    cutoff = (datetime.now(KST).date() - timedelta(days=stale_days)).isoformat()
+    today = datetime.now(KST).date()
     already = {str(s) for s in (status.get("emptySources") or [])}
     problems: list[str] = []
     for run in runs:
@@ -117,9 +121,32 @@ def check_stale_sources(
         last = latest.get(source_id)
         if not last:
             problems.append(f"자료 없음 — {run.get('source')}")
-        elif last < cutoff:
-            problems.append(f"{stale_days}일 넘게 자료 없음 — {run.get('source')} (마지막 {last})")
+            continue
+        silent = business_days_between(datetime.fromisoformat(last).date(), today)
+        if silent >= stale_days:
+            # 목록은 정상으로 받아지는데 새 글만 없다 → 옛 게시판이 멈춘 채 남아 있는 경우가 많다.
+            problems.append(
+                f"영업일 {silent}일째 새 자료 없음 — {run.get('source')} (마지막 {last}) "
+                "· 기관이 게시판을 옮겼는지 홈페이지에서 확인 필요"
+            )
     return problems
+
+
+def business_days_between(last: "date", today: "date") -> int:
+    """last 다음 날부터 today 전날까지의 영업일 수. 오늘 자료는 아직 수집 전이라 뺀다."""
+    try:
+        import holidays
+
+        kr = holidays.KR()
+    except Exception:  # noqa: BLE001
+        kr = {}
+    count = 0
+    day = last + timedelta(days=1)
+    while day < today:
+        if day.weekday() < 5 and day not in kr:
+            count += 1
+        day += timedelta(days=1)
+    return count
 
 
 def build_message(problems: list[str], status: dict[str, Any]) -> str:
@@ -133,7 +160,7 @@ def build_message(problems: list[str], status: dict[str, Any]) -> str:
     lines += [f"• {p}" for p in problems]
     lines += [
         "",
-        "게시판 주소가 바뀌었을 수 있습니다.",
+        "흔한 원인: 게시판 주소 변경(전북 9월), 새 게시판으로 이전(충남 10월), 해외 접속 차단(세종·인천·충북).",
         "https://github.com/kain9012-bit/edu-news-alert/actions",
     ]
     return "\n".join(lines)
