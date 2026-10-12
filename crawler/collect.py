@@ -537,33 +537,71 @@ def detail_url_from_seq(source: dict[str, Any], seq: str) -> str | None:
     return add_query(urljoin(source["listUrl"], detail_path), params)
 
 
+# '제목 - 사이트명', '제목 | 기관명' 꼴에서 뒤쪽이 사이트·메뉴 이름이라는 단서.
+TITLE_SUFFIX_HINTS = (
+    "교육청", "교육부", "누리집", "홈페이지", "홍보관", "보도자료", "교육소식",
+    "뉴스", "소식", "Office", "OFFICE", "Education", "EDUCATION",
+)
+# 앞쪽이 기관·학교 이름 하나뿐이면 '사이트명'을 뗀 게 아니라 제목을 자른 것이다
+# (예: '대전시교육청 - IBO, 대전 IB 교육지구 협력 강화' → '대전시교육청').
+ENTITY_ONLY = re.compile(
+    r"^[가-힣A-Za-z0-9·\s]{0,20}(?:교육청|교육부|교육지원청|학교|고등학교|중학교|초등학교|고|중|초|대학교|대학|센터|교육원|연구원)$"
+)
+
+
+def strip_site_suffix(text: str) -> str:
+    """끝에 붙은 사이트·메뉴 이름만 떼고, 제목 안의 붙임표는 건드리지 않는다."""
+    for delimiter in [" < ", " | ", " - "]:
+        if delimiter not in text:
+            continue
+        left, right = (part.strip() for part in text.split(delimiter, 1))
+        if (
+            len(left) >= 5
+            and len(right) <= 30
+            and any(hint in right for hint in TITLE_SUFFIX_HINTS)
+            and not ENTITY_ONLY.match(left)
+        ):
+            return left
+    return text
+
+
 def clean_candidate_title(text: str) -> str:
     text = normalize_space(text or "")
     text = re.sub(r"^(닫기\s+)+", "", text)
-    for delimiter in [" < ", " | ", " - "]:
-        if delimiter in text:
-            left = text.split(delimiter, 1)[0].strip()
-            if len(left) >= 5:
-                text = left
-                break
+    text = strip_site_suffix(text)
     for marker in ["작성자", "등록일", "조회수", "담당부서", "▢", "□", "○"]:
         idx = text.find(marker)
         if idx > 8:
             text = text[:idx]
     text = re.sub(r"\s+\d{4}[.-]\d{2}[.-]\d{2}.*$", "", text)
     text = re.sub(r"\s+\d{2}[.-]\d{2}[.-]\d{2}.*$", "", text)
-    text = re.sub(r"^\d+\s+", "", text)
+    # 목록 번호('38505 제목')를 뗀다. '2027 수능…'처럼 연도로 시작하는 제목은 남긴다.
+    text = re.sub(r"^(?!20[2-4]\d\s)\d+\s+", "", text)
     text = re.sub(r"\s*새글\s*$", "", text)
     # 세종·강원처럼 제목 앞에 새글 표시(N/NEW/새글)가 붙는 목록을 정리한다.
     text = re.sub(r"^(?:N|NEW|새글)\s+(?=\S)", "", text)
     return normalize_space(text).strip(" -|·")
 
 
+# 메뉴·사이트 이름. 제목 '전체'가 이것일 때만 버린다. 예전엔 '보도자료'가 들어가기만
+# 해도 버려서 "…우수 보도자료 첫 시상" 같은 진짜 제목이 사이트 이름으로 바뀌었다.
+GENERIC_TITLE_EXACT = {
+    "보도자료", "뉴스/소식", "경남교육홍보관", "교육홍보관", "서울교육소식",
+    "충남에듀있슈", "민원/참여", "대구교육홍보관", "강원교육홍보관",
+}
+
+
 def is_generic_title(text: str) -> bool:
     title = normalize_space(text or "")
-    if len(title) < 5:
+    if len(title) < 5 and title not in {"보도자료"}:
         return True
-    return any(phrase in title for phrase in GENERIC_TITLE_PHRASES)
+    bare = re.sub(r"[\s|>:·\-]+", "", title)
+    if title in GENERIC_TITLE_EXACT or bare in {re.sub(r"[\s|>:·\-]+", "", g) for g in GENERIC_TITLE_EXACT}:
+        return True
+    # 사이트 이름 뒤에 메뉴 경로가 붙은 꼴('경남교육홍보관 : HOME > 보도자료')
+    if any(title.startswith(g) and re.search(r"HOME|>|:", title) for g in GENERIC_TITLE_EXACT):
+        return True
+    return any(phrase in title for phrase in GENERIC_TITLE_PHRASES if phrase not in GENERIC_TITLE_EXACT)
 
 
 def needs_refetch(item: dict[str, Any]) -> bool:

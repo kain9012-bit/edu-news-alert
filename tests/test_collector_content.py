@@ -157,3 +157,33 @@ class CollectorContentTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TitleCleaningTest(unittest.TestCase):
+    """2026-10-13 보고서 6번 '대전시교육청'처럼 제목이 잘리지 않는지 본다."""
+
+    def test_keeps_hyphen_inside_title(self) -> None:
+        from crawler.collect import clean_candidate_title
+        for title in [
+            "대전시교육청 - IBO, ‘대전 IB 교육지구’안정적 운영 위한 협력 강화(교육정책과)",
+            "한국모빌리티고 - 두산로보틱스, 미래 모빌리티 인재 양성 업무협약 체결",
+            "AI 교육 확대 - 학교 현장 지원 방안 마련",
+        ]:
+            self.assertEqual(clean_candidate_title(title), title)
+
+    def test_strips_site_name_suffix(self) -> None:
+        from crawler.collect import clean_candidate_title
+        self.assertEqual(clean_candidate_title("학생 안전 강화 대책 발표 - 대전광역시교육청"), "학생 안전 강화 대책 발표")
+        self.assertEqual(clean_candidate_title("교권 보호 종합대책 | 경기도교육청"), "교권 보호 종합대책")
+
+    def test_keeps_leading_year_but_drops_row_number(self) -> None:
+        from crawler.collect import clean_candidate_title
+        self.assertEqual(clean_candidate_title("2027 수능 응시원서 접수"), "2027 수능 응시원서 접수")
+        self.assertEqual(clean_candidate_title("38505 세종시교육청, 추석 맞아 위문"), "세종시교육청, 추석 맞아 위문")
+
+    def test_title_mentioning_press_release_is_not_generic(self) -> None:
+        from crawler.collect import is_generic_title
+        self.assertFalse(is_generic_title("경남교육 공보 유공 교육감 표창 신설…우수 보도자료 첫 시상"))
+        self.assertFalse(is_generic_title("울산교육청, 보도자료 외국어 사용 지적 ‘0건’"))
+        for name in ["보도자료", "경남교육홍보관", "교육홍보관", "서울교육소식", "경남교육홍보관 : HOME > 보도자료"]:
+            self.assertTrue(is_generic_title(name), name)
