@@ -1,0 +1,3154 @@
+{
+  "metadata": {
+    "runId": "20261012T211808Z-d3310f73",
+    "status": "completed",
+    "provider": "openrouter",
+    "model": "google/gemini-3.1-flash-lite",
+    "generatedAt": "2026-10-12T21:18:57+00:00",
+    "windowStart": "2026-10-12T06:00:00+09:00",
+    "windowEnd": "2026-10-13T06:00:00+09:00",
+    "windowHours": 24,
+    "inputCount": 96,
+    "candidateCount": 96,
+    "relevantCount": 20,
+    "filteredOutCount": 76,
+    "processedCount": 20,
+    "relevanceFallbackCount": 0,
+    "deterministicGuardCount": 17,
+    "educationSupportOfficeGuardCount": 17,
+    "institutionGuardCount": 0,
+    "personnelAppointmentGuardCount": 0,
+    "classificationFallbackCount": 0,
+    "validationStatus": "PASS",
+    "usage": {
+      "requests": 20,
+      "promptTokenCount": 58763,
+      "candidatesTokenCount": 14522,
+      "thoughtsTokenCount": 0,
+      "totalTokenCount": 73285
+    }
+  },
+  "categorySummary": [
+    {
+      "category": "정책·행정",
+      "count": 9
+    },
+    {
+      "category": "교원·인사",
+      "count": 3
+    },
+    {
+      "category": "교육과정·수업",
+      "count": 3
+    },
+    {
+      "category": "학생지원·복지",
+      "count": 3
+    },
+    {
+      "category": "기타",
+      "count": 1
+    },
+    {
+      "category": "안전·시설",
+      "count": 1
+    }
+  ],
+  "selectedItems": [
+    {
+      "newsId": "jeju-1a6b29af6092a420",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "교육활동보호의 새로운 출발, 함께 길을 찾다",
+      "date": "2026-10-12",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1483401",
+      "category": "교원·인사",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "교육활동보호센터를 과 단위 조직으로 개편하기 위한 준비 과정으로, 조직 체계의 실질적 변화를 예고하고 있다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "교육활동보호",
+        "조직개편",
+        "회복적정의",
+        "학교갈등"
+      ],
+      "summary": "제주특별자치도교육청은 교육활동보호센터를 과 단위 조직인 교육활동보호담당관으로 개편하기 앞서 학교 현장의 의견을 수렴하는 토론회를 개최한다.",
+      "selectionReason": "교육활동보호센터의 과 단위 조직 개편 및 역할 강화라는 교육청 차원의 조직 및 정책 변화를 다루고 있습니다.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.95,
+      "classificationConfidence": 0.9
+    },
+    {
+      "newsId": "gyeongnam-1f70d439d3b80ea3",
+      "sourceId": "gyeongnam",
+      "source": "경상남도교육청",
+      "title": "권순기 교육감 “100일의 경청, 학교 일상의 변화로”",
+      "date": "2026-10-12",
+      "url": "https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&q_bbsDocNo=20261012133954477",
+      "category": "정책·행정",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "교권 보호를 위한 '원스톱 지원 체계' 구축 등 신규 지원 방식을 도입하여 현장 대응력을 강화하고 있다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "교권보호",
+        "책임교육",
+        "민원대응",
+        "원스톱지원"
+      ],
+      "summary": "경상남도교육청은 교권 보호 전담 부서 기능을 강화하고 48시간 이내 초기 개입을 포함한 '교권보호 118, 원스톱 지원 체계'를 구축한다.",
+      "selectionReason": "교육감 취임 100일 기자간담회를 통해 교권 보호 전담 부서 강화 및 원스톱 지원 체계 구축 등 구체적인 교육 정책 방향을 제시하고 있습니다.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.95,
+      "classificationConfidence": 0.9
+    },
+    {
+      "newsId": "gyeongbuk-1dd1cad562e03b45",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[중등교육과]경북교육청, '학생평가 대전환' 현장 중심 지원 강화",
+      "date": "2026-10-12",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1651301&bbsId=4744&mi=17643&searchCate=761",
+      "category": "교육과정·수업",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "서·논술형 평가 문항 개발 및 AI 시스템 도입을 통해 평가 체제의 실질적인 운영 방식을 개선하고 있다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "학생평가",
+        "서논술형평가",
+        "AI평가시스템",
+        "평가대전환"
+      ],
+      "summary": "경북교육청은 서·논술형 평가 문항 개발 및 AI 기반 평가 지원시스템 구축을 통해 학생평가 체제를 전환하고 있다.",
+      "selectionReason": "학생평가 대전환을 위한 서·논술형 평가 문항 개발 및 AI 기반 평가 지원시스템 구축 등 교육과정 및 평가 제도 변화를 포함하고 있습니다.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.95,
+      "classificationConfidence": 0.9
+    },
+    {
+      "newsId": "gyeongbuk-11860908f45f1395",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[유초등교육과]경북교육청, 도 단위 교과교육연구회 운영체계 전면 정비",
+      "date": "2026-10-12",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1651302&bbsId=4744&mi=17643&searchCate=761",
+      "category": "정책·행정",
+      "changeLevel": "project_change",
+      "importance": 2,
+      "importanceReason": "기존 연구회 운영의 비효율을 개선하기 위한 정비 사업으로, 운영 체계의 내실화를 도모하고 있다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "교과교육연구회",
+        "운영체계정비",
+        "조직개편"
+      ],
+      "summary": "경북교육청은 유사·중복 연구회를 통합하고 공동 연구와 수업 실천 중심으로 도 단위 교과교육연구회 운영체계를 전면 정비한다.",
+      "selectionReason": "도 단위 교과교육연구회의 운영체계 전면 정비는 교육청 차원의 조직 운영 및 지원 방식의 변화에 해당합니다.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.9,
+      "classificationConfidence": 0.9
+    },
+    {
+      "newsId": "chungbuk-e8b37edec573857f",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "윤건영 교육감,“건강한 몸과 마음이 성장의 기반... AI 시대 인간다움 키워야”",
+      "date": "2026-10-12",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1580667&bbsId=1158&mi=10301",
+      "category": "기타",
+      "changeLevel": "routine_operation",
+      "importance": 2,
+      "importanceReason": "교육감의 주간정책회의 발언으로, 기존 정책의 내실 있는 추진을 당부하는 통상적인 업무 지시 성격이다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "학생선수",
+        "학교체육",
+        "AI교육",
+        "정책회의"
+      ],
+      "summary": "충청북도교육청은 학생선수의 심리적 지원과 AI 시대 인간 고유 역량 강화를 위한 교육 정책을 내실 있게 추진할 것을 강조했다.",
+      "selectionReason": "교육감의 주간정책회의를 통해 학생선수 지원체계 점검 및 AI 교육 정책 추진 방향을 공식적으로 지시한 내용입니다.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.9,
+      "classificationConfidence": 0.9
+    },
+    {
+      "newsId": "ulsan-ac9896c81585f0d8",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "울산교육청-울산시체육회, 조리실무사 체력 검정 측정 업무 협약",
+      "date": "2026-10-12",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20261012175550970",
+      "category": "교원·인사",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "조리실무사 채용 시 체력 검정을 의무화하는 새로운 선발 기준을 도입하여 채용 방식을 개선했다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "조리실무사",
+        "채용시험",
+        "체력검정",
+        "업무협약"
+      ],
+      "summary": "울산광역시교육청은 2027년부터 조리실무사 채용 시 직무 수행에 필요한 근력과 심폐지구력을 측정하는 체력 검정을 도입한다.",
+      "selectionReason": "교육공무직 채용 시 체력 검정 제도를 신규 도입하는 것으로 채용 평가 제도 변경에 해당함.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.95,
+      "classificationConfidence": 0.9
+    },
+    {
+      "newsId": "ulsan-e7ac4548c5752c84",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "울산교육청, 학교 가정통신문 반복 업무 줄인다",
+      "date": "2026-10-12",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20261012175818362",
+      "category": "정책·행정",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "학교 행정 업무 경감을 위해 가정통신문 일괄 발송 시스템을 도입하여 운영 방식을 개선하였다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "가정통신문",
+        "업무경감",
+        "행정절차",
+        "일괄발송"
+      ],
+      "summary": "울산교육청이 학교의 반복적인 가정통신문 기안 및 게시 업무를 줄이기 위해 일괄 발송 시스템을 구축하고 시범 운영에 들어갔다.",
+      "selectionReason": "교육청 차원에서 학교 행정 업무 경감을 위해 시스템을 구축하고 전 학교로 확대하는 정책적 변화입니다.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.95,
+      "classificationConfidence": 0.9
+    },
+    {
+      "newsId": "ulsan-e3ef132f5c582bd9",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "울산교육청·울산시, 교육 현안 해결에 협력 강화",
+      "date": "2026-10-12",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20261012180056358",
+      "category": "정책·행정",
+      "changeLevel": "routine_operation",
+      "importance": 2,
+      "importanceReason": "교육청과 지자체 간의 정기적인 교육행정협의회 개최 및 현안 논의는 통상적인 협력 업무에 해당한다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "교육행정협의회",
+        "교육현안",
+        "지자체협력"
+      ],
+      "summary": "울산교육청과 울산시가 2026년 교육행정협의회 정기회를 열고 협약형 특성화고 지원 및 급식비 인상 등 8개 교육 현안을 논의했다.",
+      "selectionReason": "교육청과 지자체 간의 교육행정협의회를 통해 특성화고 지원, 급식비 인상 등 주요 교육 정책 및 예산 현안을 조정하는 내용입니다.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.95,
+      "classificationConfidence": 0.9
+    },
+    {
+      "newsId": "daejeon-ea2bb9a5412d695c",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "대전시교육청",
+      "date": "2026-10-12",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3365179&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "category": "교육과정·수업",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "IB 교육지구 운영을 위한 IBO와의 협력 체계 강화는 지역 단위의 교육과정 혁신을 위한 실질적인 사업 확대에 해당한다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "IB교육",
+        "국제바칼로레아",
+        "교육지구",
+        "수업혁신"
+      ],
+      "summary": "대전시교육청이 IBO 한국본부와 협력하여 대전 IB 교육지구의 안정적 운영과 교원 전문성 강화 및 AI 시대 사고역량 함양을 추진한다.",
+      "selectionReason": "IB 교육지구 운영 및 학교 인증, 교원 전문성 강화 등 교육청 차원의 중장기적 교육과정 및 정책 운영에 관한 협력 사항임.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.9,
+      "classificationConfidence": 0.9
+    },
+    {
+      "newsId": "incheon-3b1d7e3936b3ead8",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, ‘늘봄허브’ 에서 초등 방과후·돌봄 개인강사 프로그램 모집",
+      "date": "2026-10-12",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3386316&bbsId=1519&mi=11620",
+      "category": "학생지원·복지",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "전국 공통 플랫폼인 '늘봄허브'를 활용한 강사 모집 방식 도입은 방과후·돌봄 운영 체계의 의미 있는 개선이다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "늘봄허브",
+        "방과후학교",
+        "돌봄",
+        "강사모집"
+      ],
+      "summary": "인천시교육청이 2027학년도 초등 방과후·돌봄 프로그램 운영을 위해 전국 공통 온라인 플랫폼인 '늘봄허브'를 통해 개인강사를 처음 모집한다.",
+      "selectionReason": "전국 시도교육청 공동 플랫폼을 활용한 초등 방과후·돌봄 강사 모집 및 심사 체계 도입은 교육행정 운영 방식의 변화임.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.9,
+      "classificationConfidence": 0.9
+    },
+    {
+      "newsId": "daegu-1e77f596186b5ef4",
+      "sourceId": "daegu",
+      "source": "대구광역시교육청",
+      "title": "2027학년도 대구시교육청 유치원·초등·특수(유·초)교사 임용후보자 선정경쟁시험 원서접수 결과",
+      "date": "2026-10-12",
+      "url": "https://www.dge.go.kr/pr/na/ntt/selectNttInfo.do?nttSn=2218148&bbsId=2680&mi=9870",
+      "category": "교원·인사",
+      "changeLevel": "routine_operation",
+      "importance": 2,
+      "importanceReason": "교사 임용후보자 선정경쟁시험 원서접수 결과 발표는 매년 반복되는 연례적인 행정 절차이다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "임용시험",
+        "교원선발",
+        "경쟁률"
+      ],
+      "summary": "대구시교육청이 2027학년도 유치원·초등·특수교사 임용시험 원서접수 결과 평균 3.5대 1의 경쟁률을 기록했다고 발표했다.",
+      "selectionReason": "교원 선발 규모의 뚜렷한 변화(전년 대비 대폭 증가)가 명시되어 있어 교육행정 판단에 참고할 가치가 있습니다.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.9,
+      "classificationConfidence": 0.9
+    },
+    {
+      "newsId": "daegu-b4d0054987080cf2",
+      "sourceId": "daegu",
+      "source": "대구광역시교육청",
+      "title": "대구시교육청, ‘제12대 대구광역시교육감 공약이행주민평가단’ 공모",
+      "date": "2026-10-12",
+      "url": "https://www.dge.go.kr/pr/na/ntt/selectNttInfo.do?nttSn=2218150&bbsId=2680&mi=9870",
+      "category": "정책·행정",
+      "changeLevel": "routine_operation",
+      "importance": 2,
+      "importanceReason": "교육감 공약이행평가단 구성 및 운영은 교육청의 통상적인 공약 관리 및 소통 활동이다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "공약이행",
+        "주민평가단",
+        "교육감공약"
+      ],
+      "summary": "대구시교육청이 제12대 교육감 공약 이행 상황을 점검하고 보완 방안을 제안할 주민평가단 36명을 공개 모집한다.",
+      "selectionReason": "교육감 공약 이행 평가단 구성은 교육 정책의 추진 현황을 점검하고 보완하는 제도적 절차로 정책 관리의 일환입니다.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.85,
+      "classificationConfidence": 0.9
+    },
+    {
+      "newsId": "jeonbuk-5a8871c64fb80952",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "천호성 교육감“학교급식 차질 없도록 인력난 대책 마련해야”",
+      "date": "2026-10-12",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1188740",
+      "category": "학생지원·복지",
+      "changeLevel": "routine_operation",
+      "importance": 2,
+      "importanceReason": "학교 급식 인력난 해소를 위한 기존 인력 운영 및 채용 방식의 개선을 당부하는 통상적인 정책 점검 활동이다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "학교급식",
+        "조리실무사",
+        "인력운영",
+        "교육현안"
+      ],
+      "summary": "천호성 전북특별자치도교육감이 학교 급식 인력 부족 문제 해결을 위해 지역 여건에 맞는 채용과 인력 운영 방안 마련을 당부했다.",
+      "selectionReason": "학교 급식 인력난 해소를 위한 채용 및 인력 운영 개선 등 교육청 차원의 정책적 대응 방안을 다루고 있음.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.9,
+      "classificationConfidence": 0.9
+    },
+    {
+      "newsId": "jeonbuk-ec9beb1e4f9ee6e0",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "학교폭력 상담·특별교육 ‘우리온-에듀’로 간편히",
+      "date": "2026-10-12",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1188739",
+      "category": "학생지원·복지",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "기존 수기 방식의 학교폭력 상담 및 특별교육 신청 절차를 온라인 시스템으로 전면 전환하여 행정 효율성을 높이는 신규 사업이다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "학교폭력",
+        "우리온-에듀",
+        "상담",
+        "특별교육",
+        "온라인시스템"
+      ],
+      "summary": "전북특별자치도교육청이 학교폭력 상담 및 특별교육 신청과 관리를 온라인으로 처리하는 '우리온-에듀' 시스템을 11월부터 전면 운영한다.",
+      "selectionReason": "학교폭력 상담 및 특별교육 행정 절차를 온라인 시스템으로 전환하는 제도적 변화를 담고 있음.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.95,
+      "classificationConfidence": 0.95
+    },
+    {
+      "newsId": "moe-e5932ab66a2dfb7d",
+      "sourceId": "moe",
+      "source": "교육부",
+      "title": "새로운 행정으로 변화를 이끌어 내는 적극행정 우수공무원 시상",
+      "date": "2026-10-12",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107395&lev=0&m=020402&s=moe",
+      "category": "정책·행정",
+      "changeLevel": "routine_operation",
+      "importance": 2,
+      "importanceReason": "적극행정 우수사례를 발굴하고 포상하는 연례적인 공직문화 혁신 행사이다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "적극행정",
+        "우수공무원",
+        "경진대회",
+        "공직문화"
+      ],
+      "summary": "교육부가 2026년 상반기 적극행정 우수사례 경진대회 시상식을 개최하여 현장 변화를 이끈 우수공무원 20명을 선정했다.",
+      "selectionReason": "적극행정 우수사례를 통해 교복 가격 상한제 등 교육 현장의 실질적인 제도 개선과 정책 변화를 도출한 사례입니다.",
+      "scope": "national",
+      "relevanceConfidence": 0.9,
+      "classificationConfidence": 0.9
+    },
+    {
+      "newsId": "moe-cd3c446c4280d860",
+      "sourceId": "moe",
+      "source": "교육부",
+      "title": "사립대학 특성화에 집중 투자, 2026년 특성화 선도대학 33개교 선정",
+      "date": "2026-10-12",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107396&lev=0&m=020402&s=moe",
+      "category": "정책·행정",
+      "changeLevel": "policy_change",
+      "importance": 4,
+      "importanceReason": "대학 혁신을 위해 신규 사업을 도입하고 특성화 지방대학 지정 및 규제 특례를 적용하는 대규모 정책 개편이다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "특성화선도대학",
+        "사립대학",
+        "대학혁신",
+        "규제특례",
+        "재정지원"
+      ],
+      "summary": "교육부가 사립대학의 특성화를 위해 33개교를 선도대학으로 선정하고 5년간 약 6,000억 원을 지원하며 규제 특례를 적용한다.",
+      "selectionReason": "대학 특성화 지원 사업 신설 및 규제 특례 적용 등 고등교육 정책 및 예산 지원 체계의 변화를 담고 있습니다.",
+      "scope": "national",
+      "relevanceConfidence": 0.95,
+      "classificationConfidence": 0.95
+    },
+    {
+      "newsId": "chungnam-50a69fe68c84a726",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, 6개 부서 ‘원팀’ 정례회로 위기 학교 통합 지원 나서",
+      "date": "2026-10-12",
+      "url": "https://news.cne.go.kr/news/view.do?bbs_id=S2N1&bbs_seq=827248",
+      "category": "정책·행정",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "부서별 개별 대응 방식을 '학교회복지원단' 중심의 통합 지원 체계로 전환하여 학교 현장 지원 방식을 개선하였다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "학교회복지원단",
+        "통합지원",
+        "교권보호",
+        "민원대응"
+      ],
+      "summary": "충남교육청이 위기 학교를 통합 지원하기 위해 6개 부서가 참여하는 '학교회복지원단'을 구성하고 정례회를 운영한다.",
+      "selectionReason": "위기 학교 지원을 위해 여러 부서가 협력하는 통합 지원 체계를 구축하고 운영 방식을 개선한 정책적 변화입니다.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.9,
+      "classificationConfidence": 0.9
+    },
+    {
+      "newsId": "chungnam-5aba784182e6452d",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, ‘사전 예방’ 중심으로 감사 패러다임 전환",
+      "date": "2026-10-12",
+      "url": "https://news.cne.go.kr/news/view.do?bbs_id=S2N1&bbs_seq=827253",
+      "category": "정책·행정",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "지적 위주의 감사에서 예방 및 자문 중심의 감사로 패러다임을 전환하여 학교 현장 지원을 강화하는 제도 개선이다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "감사",
+        "예방감사",
+        "자문감사",
+        "업무개선"
+      ],
+      "summary": "충남교육청이 감사 업무 담당자 협의회를 열고 지적 위주에서 학교 현장 지원을 돕는 예방·자문 중심의 감사로 패러다임을 전환한다.",
+      "selectionReason": "감사 패러다임의 전환 및 예방 감사 시스템 개선 등 교육행정 운영 방식의 변화를 다루고 있음.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.9,
+      "classificationConfidence": 0.9
+    },
+    {
+      "newsId": "jngj_s1n1-c9bdc634ac658d99",
+      "sourceId": "jngj_s1n1",
+      "source": "전남광주통합특별시교육청",
+      "title": "전남광주특별시교육청, ‘통합형 학교체육 모델’ 구축한다",
+      "date": "2026-10-12",
+      "url": "https://www.jngjedu.kr/news/articleView.html?idxno=200268",
+      "category": "교육과정·수업",
+      "changeLevel": "policy_change",
+      "importance": 4,
+      "importanceReason": "광역 단위의 체육 인재 육성 체계와 학교 운영 모델을 근본적으로 재편하는 정책적 변화를 담고 있다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "학교체육",
+        "체육고등학교",
+        "통합모델",
+        "인재육성"
+      ],
+      "summary": "전남광주통합특별시교육청이 전남과 광주의 체육 자원을 연결하고 체육고등학교 운영 모델을 재편하는 통합형 학교체육 모델 구축을 추진한다.",
+      "selectionReason": "교육청 차원에서 학교체육 운영 체계와 인프라를 재편하는 통합 모델 구축 정책을 추진하고 있음",
+      "scope": "provincial",
+      "relevanceConfidence": 0.95,
+      "classificationConfidence": 0.9
+    },
+    {
+      "newsId": "busan-ec58d3cf710b6051",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "부산교육청, 신설학교 공사현장 특별점검 실시",
+      "date": "2026-10-12",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1181582&bbsId=2286&mi=30397",
+      "category": "안전·시설",
+      "changeLevel": "routine_operation",
+      "importance": 2,
+      "importanceReason": "신설학교 개교를 앞두고 진행하는 통상적인 공사 현장 안전 점검 및 품질 관리 활동이다.",
+      "importanceAdjusted": false,
+      "keywords": [
+        "신설학교",
+        "공사현장",
+        "특별점검",
+        "안전관리"
+      ],
+      "summary": "부산광역시교육청이 2027년 개교 예정인 신설학교 3곳을 대상으로 공사 진행 상황과 안전 관리 상태를 확인하는 특별현장점검을 실시했다.",
+      "selectionReason": "교육청 차원의 신설학교 공사 현장 안전 점검 및 시설 관리 정책에 관한 내용임.",
+      "scope": "provincial",
+      "relevanceConfidence": 0.9,
+      "classificationConfidence": 0.95
+    }
+  ],
+  "excludedItems": [
+    {
+      "newsId": "jeju-5bc7a0e23922d979",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "우리의 연주가 마을 축제의 선율이 됐어요",
+      "date": "2026-10-12",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1483394",
+      "reason": "개별 학교의 동아리 활동 및 지역 축제 참여 소식으로 일회성 행사에 해당함.",
+      "scope": "institution",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "jeju-38f002a49b9ad178",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "배움의 결과물, 지역 기념관의 교육 자료가 되다",
+      "date": "2026-10-12",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1483395",
+      "reason": "개별 학교의 학습 결과물 기증 및 체험 활동 사례로 정책적 파급력이 없는 일반 사업임.",
+      "scope": "institution",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "jeju-91db811ecaafa6b1",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "새롭게 바뀐 학과, 중학생의 진로 선택을 넓히다",
+      "date": "2026-10-12",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1483396",
+      "reason": "개별 학교의 학과 개편 및 전공 탐색 프로그램 운영 소식으로 학교 단위의 홍보성 자료임.",
+      "scope": "institution",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "jeju-4ee1d55a2ac6f23d",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "웹툰 작가를 만나고, 나만의 네 컷 만화를 그려본다",
+      "date": "2026-10-12",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1483397",
+      "reason": "직속기관인 도서관에서 운영하는 일회성 문화 프로그램 안내임.",
+      "scope": "institution",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "jeju-56094d809cd030c3",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "객석이 무대가 되는 ‘제주꿈새미 상상극장’",
+      "date": "2026-10-12",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1483399",
+      "reason": "직속기관에서 운영하는 유아 대상 문화예술 체험 프로그램으로 일회성 행사에 해당함.",
+      "scope": "institution",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "jeju-8e6aff7c0ce44fb8",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "제주 초등돌봄…이용은 편리하게, 학생 지원은 맞춤형으로",
+      "date": "2026-10-12",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1483400",
+      "reason": "교육청 주관이나 특정 직종(돌봄전담사) 대상의 일반적인 직무 연수 안내로 정책 변화가 아닌 내부 활동임.",
+      "scope": "provincial",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "gyeongnam-c10561b83f2a9363",
+      "sourceId": "gyeongnam",
+      "source": "경상남도교육청",
+      "title": "‘한글과 토박이말, 뜻을 잇다’…580돌 한글날 기림 잔치 개최",
+      "date": "2026-10-12",
+      "url": "https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&q_bbsDocNo=20261012125420744",
+      "reason": "한글날을 기념하는 일회성 행사 및 전시 소식으로 정책적 변화가 없습니다.",
+      "scope": "provincial",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "gyeongnam-5760f286f12521cd",
+      "sourceId": "gyeongnam",
+      "source": "경상남도교육청",
+      "title": "경남교육 상징 문구·이미지를 만들어 주세요",
+      "date": "2026-10-12",
+      "url": "https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&q_bbsDocNo=20261012125757388",
+      "reason": "교육청 브랜드 슬로건 공모전은 단순 홍보성 행사로 정책적 파급력이 없습니다.",
+      "scope": "provincial",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "gyeongbuk-6e491526004d8119",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[미래교육정보과]경북교육청, '경북형 웍스 인공지능(AI)' 활용 우수 사례 공모전 개최",
+      "date": "2026-10-12",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1651303&bbsId=4744&mi=17643&searchCate=761",
+      "reason": "단순 공모전 개최 소식으로 교육 정책의 변화나 제도적 확산과는 거리가 먼 일회성 행사입니다.",
+      "scope": "provincial",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "gyeongbuk-42df8abcce89b3b7",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[미래교육정보과]경북교육청, 낙동강 생태탐방 700 프로젝트 대장정 마무리",
+      "date": "2026-10-12",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1651306&bbsId=4744&mi=17643&searchCate=761",
+      "reason": "특정 프로젝트의 종료를 알리는 일회성 행사 소식입니다.",
+      "scope": "provincial",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "chungbuk-7d9c97623ab2b17c",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "제천여고 체조부, 제107회 전국체전 단체전 은메달·개인전 동메달",
+      "date": "2026-10-12",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1580653&bbsId=1158&mi=10301",
+      "reason": "개별 학교 체조부의 대회 수상 소식으로 교육행정적 변화와 무관합니다.",
+      "scope": "institution",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "gangwon-3eb4d97602394d95",
+      "sourceId": "gangwon",
+      "source": "강원특별자치도교육청",
+      "title": "강원특별자치도교육청, 제107회 전국체육대회에 499명 고등부 학생선수 41개 종목 출전",
+      "date": "2026-10-12",
+      "url": "https://gwe.go.kr/promotion/bbs/view.do?bbsSn=56800&key=bTI0MTEyMjUyOTQ2NDA%3D",
+      "reason": "전국체육대회 참가 및 수상 소식은 일회성 행사 및 대회 결과에 해당합니다.",
+      "scope": "provincial",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "gangwon-04b98311862634f9",
+      "sourceId": "gangwon",
+      "source": "강원특별자치도교육청",
+      "title": "강원특별자치도교육청, 기술계고 졸업자(졸업예정자) 지방공무원 경력경쟁임용 필기시험 장소 및 응시자 유의사항 공고",
+      "date": "2026-10-12",
+      "url": "https://gwe.go.kr/promotion/bbs/view.do?bbsSn=56804&key=bTI0MTEyMjUyOTQ2NDA%3D",
+      "reason": "채용 시험의 단순 시행 안내(일시, 장소, 유의사항)에 해당하여 DROP 기준에 부합합니다.",
+      "scope": "provincial",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "ulsan-fe77346c328074f1",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "울산교육연수원, 윤가은 영화감독 명사 특강 열어",
+      "date": "2026-10-12",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20261012173037656",
+      "reason": "교육연수원에서 주관하는 일회성 명사 초청 특강 행사로 정책적 변화와 무관함.",
+      "scope": "institution",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "ulsan-4a1834d172ba8b44",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "울산 학생들, 전국 과학전람회 13개 참가팀 전원 입상",
+      "date": "2026-10-12",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20261012173200321",
+      "reason": "학생들의 대회 수상 실적을 알리는 일회성 홍보성 자료임.",
+      "scope": "provincial",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "ulsan-a3458a820ac246b4",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "강북·강남교육지원청, 달라지는 중학교 입학 배정 학부모 설명회 열어",
+      "date": "2026-10-12",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20261012173449373",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "scope": "local",
+      "confidence": 1.0
+    },
+    {
+      "newsId": "ulsan-e92ae3afab90feb3",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "강북·강남교육지원청, 초등학교 통학구역 조정 의견 수렴",
+      "date": "2026-10-12",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20261012173610298",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "scope": "local",
+      "confidence": 1.0
+    },
+    {
+      "newsId": "ulsan-864328ee0830dfa8",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "[울산교육청] 장애 학생 학교폭력 조사·심의 전문성 강화",
+      "date": "2026-10-12",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20261012173906191",
+      "reason": "심의위원 및 조사관 대상의 일반적인 역량 강화 연수 행사로 정책 제도 변화가 아님.",
+      "scope": "provincial",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "ulsan-cce52ff00f810092",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "[울산교육청] “다양한 언어와 문화, 놀이로 함께 배워요”",
+      "date": "2026-10-12",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20261012175657770",
+      "reason": "특정 유치원 및 어린이집을 대상으로 하는 시범 사업 운영 소식으로, 일반적인 교육 정책 변화로 보기 어렵습니다.",
+      "scope": "institution",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "daejeon-e7cc433a5d60a245",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "대전 디지털 교육 나눔 1010 개최(대전교육정보원)",
+      "date": "2026-10-12",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3365173&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "reason": "직속기관인 교육정보원에서 주관하는 일회성 체험 행사 및 교육 주간 운영 소식입니다.",
+      "scope": "institution",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "daejeon-d9c92f1fa8f2165f",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "대전 학생선수들, 전국체전 사이클에서 힘찬 메달 질주(체육예술건강과, 동서부교육지원청)",
+      "date": "2026-10-12",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3365175&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "scope": "local",
+      "confidence": 1.0
+    },
+    {
+      "newsId": "daejeon-d81a30be015e6e61",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "대전시교육청, 울릉도·독도에서 우리 영토 역사 배운다(미래생활교육과)",
+      "date": "2026-10-12",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3365176&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "reason": "일부 학생과 교사를 대상으로 하는 일회성 현장 체험 및 역사 캠프 운영 소식입니다.",
+      "scope": "institution",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "daejeon-19ee4b695989bcc3",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "교사가 이끄는 수업혁신, 초등 수업나눔 문화를 만들다!(초등교육과, 동서부교육지원청)",
+      "date": "2026-10-12",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3365177&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "scope": "local",
+      "confidence": 1.0
+    },
+    {
+      "newsId": "daejeon-d7cb78477ad38f53",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "나눔으로 깊어지는 수업, 함께 성장하는 교사(중등교육과)",
+      "date": "2026-10-12",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3365178&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "reason": "교원의 수업 전문성 향상을 위한 일회성 행사 및 수업 나눔 한마당 개최 소식으로 정책적 변화가 아닌 일반적인 프로그램 운영에 해당함.",
+      "scope": "provincial",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "daejeon-a28a17c0087e1871",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "대전시교육청, 학교 태양광발전 확대친환경 에너지로 전기요금 절감(시설과, 동서부교육지원청)",
+      "date": "2026-10-12",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3365180&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "scope": "local",
+      "confidence": 1.0
+    },
+    {
+      "newsId": "daejeon-cb08dad44e9e1ec3",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "대전시교육청, 제15회 교육감배 장애학생수영대회 성료(체육예술건강과, 동서부교육지원청)",
+      "date": "2026-10-12",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3365181&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "scope": "local",
+      "confidence": 1.0
+    },
+    {
+      "newsId": "daejeon-85e93d65cbb32e56",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "대전 학생 탁구대표팀, 실력도 인성도 ‘금메달’!(체육예술건강과, 동서부교육지원청)",
+      "date": "2026-10-12",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3365199&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "scope": "local",
+      "confidence": 1.0
+    },
+    {
+      "newsId": "daejeon-ab4bfbdce8f51974",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "대전시교육청, NH농협은행 대전본부로부터 학교발전기금 기탁받아(재정과)",
+      "date": "2026-10-12",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3365200&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "reason": "학교발전기금 기탁 및 시설 개방에 따른 인센티브 지원은 일회성 행사 및 개별 학교 지원 성격이 강함.",
+      "scope": "provincial",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "incheon-e86a240d8cf1e108",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "도성훈 인천광역시교육감, 제 580 돌 한글날 축제 공동 주최...“한글은 한류의 핵심이자 모두의 생각을 잇는 힘”",
+      "date": "2026-10-12",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3386316&bbsId=1519&mi=11620",
+      "reason": "한글날 기념 축제 및 체험 행사는 일회성 행사로 정책적 변화를 포함하지 않음.",
+      "scope": "provincial",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "incheon-2772b014bb0832d7",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 2026 송도 굿마켓에서 읽걷쓰 AI 소개",
+      "date": "2026-10-12",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3386316&bbsId=1519&mi=11620",
+      "reason": "시민 대상 홍보 부스 운영 및 체험 프로그램은 일회성 행사임.",
+      "scope": "provincial",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "incheon-884d2ef1dd0a0977",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 학교 관리자 140 여 명 대상 ‘노동인권 연수’ 개최",
+      "date": "2026-10-12",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3386316&bbsId=1519&mi=11620",
+      "reason": "학교 관리자 대상의 일반적인 연수는 내부 활동에 해당함.",
+      "scope": "provincial",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "incheon-0332fb4e83f75065",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 관계성 기반 유아 디지털 미디어 지도 교원 연수 개최",
+      "date": "2026-10-12",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3386316&bbsId=1519&mi=11620",
+      "reason": "교원 대상의 일반적인 연수 및 교육 프로그램 운영은 내부 활동에 해당함.",
+      "scope": "provincial",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "incheon-74ffe8ccc4512cf0",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 고 3 수험생 대상 대학·전형별 1:1 맞춤형 심층구술모의면접 운영",
+      "date": "2026-10-12",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3386316&bbsId=1519&mi=11620",
+      "reason": "특정 학생 대상의 일회성 입시 지원 프로그램 운영 소식으로 정책적 변화가 없음.",
+      "scope": "institution",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "incheon-e55649492eec99bb",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청 5개 교육지원청, ‘현장 사례 중심’ 기초학력 지도 연수",
+      "date": "2026-10-12",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3386316&bbsId=1519&mi=11620",
+      "reason": "교육지원청 단위에서 운영하는 교원 대상 연수 및 사례 나눔 활동임.",
+      "scope": "institution",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "daegu-92c8f8dd0922bf30",
+      "sourceId": "daegu",
+      "source": "대구광역시교육청",
+      "title": "대구삼국유사군위도서관, 독서나무 동화구연 「혹부리 영감」 성료",
+      "date": "2026-10-12",
+      "url": "https://www.dge.go.kr/pr/na/ntt/selectNttInfo.do?nttSn=2218140&bbsId=2680&mi=9870",
+      "reason": "직속기관인 도서관에서 운영하는 일회성 문화·체험 행사임.",
+      "scope": "institution",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "daegu-74a243c155b749cd",
+      "sourceId": "daegu",
+      "source": "대구광역시교육청",
+      "title": "대구남부도서관, 지역주민 디지털 역량 강화를 위한 구글 자격증 취득 지원 프로그램 운영",
+      "date": "2026-10-12",
+      "url": "https://www.dge.go.kr/pr/na/ntt/selectNttInfo.do?nttSn=2218142&bbsId=2680&mi=9870",
+      "reason": "직속기관인 도서관에서 지역주민을 대상으로 운영하는 일반 교육 프로그램임.",
+      "scope": "institution",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "daegu-706951b7a976d52c",
+      "sourceId": "daegu",
+      "source": "대구광역시교육청",
+      "title": "대구달성교육지원청, ‘제27회 달성국악한마당’ 개최",
+      "date": "2026-10-12",
+      "url": "https://www.dge.go.kr/pr/na/ntt/selectNttInfo.do?nttSn=2218143&bbsId=2680&mi=9870",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "scope": "local",
+      "confidence": 1.0
+    },
+    {
+      "newsId": "daegu-fe035b20143b3d17",
+      "sourceId": "daegu",
+      "source": "대구광역시교육청",
+      "title": "대구남부교육지원청, 사립유치원장 대상 맞춤형 직무연수 운영",
+      "date": "2026-10-12",
+      "url": "https://www.dge.go.kr/pr/na/ntt/selectNttInfo.do?nttSn=2218145&bbsId=2680&mi=9870",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "scope": "local",
+      "confidence": 1.0
+    },
+    {
+      "newsId": "daegu-4ce1df69ffac5a28",
+      "sourceId": "daegu",
+      "source": "대구광역시교육청",
+      "title": "대구서부교육지원청 제2Wee(위)센터, 찾아가는 마음건강 증진 프로그램 운영",
+      "date": "2026-10-12",
+      "url": "https://www.dge.go.kr/pr/na/ntt/selectNttInfo.do?nttSn=2218146&bbsId=2680&mi=9870",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "scope": "local",
+      "confidence": 1.0
+    },
+    {
+      "newsId": "daegu-b2e9cbb940a9753b",
+      "sourceId": "daegu",
+      "source": "대구광역시교육청",
+      "title": "대구시교육청, 어린이·가족오페라 ‘투란도트’ 체험 운영",
+      "date": "2026-10-12",
+      "url": "https://www.dge.go.kr/pr/na/ntt/selectNttInfo.do?nttSn=2218147&bbsId=2680&mi=9870",
+      "reason": "일회성 문화예술 체험 행사로 교육 정책의 변화나 제도적 파급력이 없는 단순 행사 소식입니다.",
+      "scope": "provincial",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "daegu-8ff1cf09fea6df8d",
+      "sourceId": "daegu",
+      "source": "대구광역시교육청",
+      "title": "대구시교육청, 독도교육 주간 찾아가는 수업 운영",
+      "date": "2026-10-12",
+      "url": "https://www.dge.go.kr/pr/na/ntt/selectNttInfo.do?nttSn=2218149&bbsId=2680&mi=9870",
+      "reason": "특정 학교 대상의 찾아가는 수업 및 이벤트 운영으로 일회성 교육 활동에 해당합니다.",
+      "scope": "provincial",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "gyeonggi-d2e91583ad57dabf",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "경기도교육청, 지역별 멘토링 성과 공유로 신규·저경력 교사 지원 내실화",
+      "date": "2026-10-12",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2376961&bbsId=1922&mi=10102",
+      "reason": "기존에 운영 중인 멘토링 사업의 성과 공유 및 내부 협의회 성격의 행사로 새로운 정책 변화가 없습니다.",
+      "scope": "provincial",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "gyeonggi-6980e0d59ea206b5",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "경기도특수교육원,‘경기특수교육대전환’이끌 특수교육지원센터 교직원 역량강화 연수",
+      "date": "2026-10-12",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2376963&bbsId=1922&mi=10102",
+      "reason": "직속기관에서 주관하는 교직원 대상의 일회성 역량 강화 연수 및 프로그램 운영 사례에 해당합니다.",
+      "scope": "institution",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "gyeonggi-3997107adeca6958",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "경민IT고등학교, 경기도교육청 ‘2027년 장영실 모델학교’선정 … 경기 북부 창업교육 선도",
+      "date": "2026-10-12",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2376976&bbsId=1922&mi=10102",
+      "reason": "개별 학교가 주체가 되어 운영하는 특정 사업 선정 및 프로그램 운영 소식으로, 정책적 확산보다는 학교 단위의 활동에 해당합니다.",
+      "scope": "institution",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "gyeonggi-1c91b085a384ced6",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "구리고등학교, 프랑스 뱅센시와 연례 학생 교류 추진",
+      "date": "2026-10-12",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2376978&bbsId=1922&mi=10102",
+      "reason": "개별 학교 단위에서 추진하는 국제 교류 및 방문 행사로, 교육행정 전반에 영향을 미치는 정책적 변화가 아닙니다.",
+      "scope": "institution",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "gyeonggi-7bc7085d05fea298",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "동두천양주교육지원청, 온동네 돌봄·교육 프로그램 「가족과 함께하는 도자기체험」 운영",
+      "date": "2026-10-12",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2376980&bbsId=1922&mi=10102",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "scope": "local",
+      "confidence": 1.0
+    },
+    {
+      "newsId": "gyeonggi-a0aba97a582b3893",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "연천교육지원청-연천고등학교, 지역 초등학생 대상“RAS 연계 흡연 예방 뮤지컬”개최",
+      "date": "2026-10-12",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2376982&bbsId=1922&mi=10102",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "scope": "local",
+      "confidence": 1.0
+    },
+    {
+      "newsId": "gyeonggi-c606210b140c5b8f",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "의정부교육지원청, 2026 하반기 관계기관 합동 어린이 통학버스 안전점검 실시",
+      "date": "2026-10-12",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2376985&bbsId=1922&mi=10102",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "scope": "local",
+      "confidence": 1.0
+    },
+    {
+      "newsId": "gyeonggi-bc11d911229aa446",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "의정부부용초등학교, ‘방과후·돌봄 프로그램 학부모 공개수업주간’ 운영",
+      "date": "2026-10-12",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2376988&bbsId=1922&mi=10102",
+      "reason": "개별 학교 단위에서 운영하는 일회성 학부모 공개수업 행사로 정책적 파급력이 없음.",
+      "scope": "institution",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "gyeonggi-e237b2b8ac217459",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "전곡초등학교,「RAS×STEAM+발명탐험 페스타」 개최",
+      "date": "2026-10-12",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2376990&bbsId=1922&mi=10102",
+      "reason": "개별 학교에서 개최한 과학·발명 체험 행사로 일반적인 학교 프로그램 운영에 해당함.",
+      "scope": "institution",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "seoul-8e6f7eb5fd1a571a",
+      "sourceId": "seoul",
+      "source": "서울특별시교육청",
+      "title": "서울시교육청 개청 70주년 기념 ‘서울교육 기록주간’운영",
+      "date": "2026-10-12",
+      "url": "https://enews.sen.go.kr/news/view.do?bbsSn=192318&step1=3&step2=1",
+      "reason": "교육청 개청 70주년 기념 기록주간 운영은 일회성 행사 및 기념 사업에 해당함.",
+      "scope": "provincial",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "jeonbuk-b8d030cc9a89c6ca",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "제107회 전국체육대회 사전경기서 메달 ‘풍년’",
+      "date": "2026-10-12",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1188735",
+      "reason": "전국체육대회 사전경기 결과 및 메달 획득 소식은 단순 대회 성과 알림에 해당함.",
+      "scope": "provincial",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "jeonbuk-27341883613d6f6f",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "“열린회의 생중계 업무 수행에 긍정적”65.9%",
+      "date": "2026-10-12",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1188742",
+      "reason": "교육청 내부의 회의 운영 방식에 대한 설문조사 결과로, 정책적 변화나 제도 개선과는 거리가 먼 내부 운영 소식입니다.",
+      "scope": "provincial",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "chungnam-cce5d37648ac1fa5",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, 교권보호 해법 교실 가까이에서 찾는다",
+      "date": "2026-10-12",
+      "url": "https://news.cne.go.kr/news/view.do?bbs_id=S2N1&bbs_seq=827249",
+      "reason": "교육지원청 단위에서 진행된 간담회 및 현장 의견 수렴 행사로, 정책의 직접적인 변화보다는 일회성 소통 활동에 해당합니다.",
+      "scope": "local",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "chungnam-125c4adace1c7492",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, 질문 중심 수업 연계 서·논술형 평가 도움 자료 보급",
+      "date": "2026-10-12",
+      "url": "https://news.cne.go.kr/news/view.do?bbs_id=S2N1&bbs_seq=827250",
+      "reason": "교육과정 연계 평가 자료 보급은 일선 학교의 수업 및 평가 지원을 위한 일반적인 교육 자료 배포 활동입니다.",
+      "scope": "provincial",
+      "confidence": 0.85
+    },
+    {
+      "newsId": "chungnam-aea065564146e629",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, 제30회 노인의 날 기념 대한노인회 충남연합회 초청 간담회 개최",
+      "date": "2026-10-12",
+      "url": "https://news.cne.go.kr/news/view.do?bbs_id=S2N1&bbs_seq=827251",
+      "reason": "일회성 간담회 개최 및 인성교육 홍보성 행사로 정책적 변화가 명시되지 않음.",
+      "scope": "provincial",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "chungnam-fe55f8a7d8bdcef7",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, 소통과 배려의 조직문화 확산",
+      "date": "2026-10-12",
+      "url": "https://news.cne.go.kr/news/view.do?bbs_id=S2N1&bbs_seq=827256",
+      "reason": "학교장 대상의 일반적인 직무 연수 운영 소식으로 정책적 변화가 없음.",
+      "scope": "provincial",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "chungnam-b415d763552b7196",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, “관내 52개교 찾아가는 연수로 교원 마음 건강·교육활동 보호 총력”",
+      "date": "2026-10-12",
+      "url": "https://news.cne.go.kr/news/view.do?bbs_id=S2N1&bbs_seq=827257",
+      "reason": "교원 대상의 일회성 찾아가는 연수 프로그램 운영 소식임.",
+      "scope": "provincial",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "chungnam-fc82e2d8dd93411a",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, 청양고등학교 ‘맞춤형 교육활동 침해 예방 교육’ 실시",
+      "date": "2026-10-12",
+      "url": "https://news.cne.go.kr/news/view.do?bbs_id=S2N1&bbs_seq=827259",
+      "reason": "특정 학교를 대상으로 한 일회성 예방 교육 및 방문 행사임.",
+      "scope": "local",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "chungnam-44081b177d2f2152",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, 질문 수업으로 생각을 키우고 평가로 성장을 잇다",
+      "date": "2026-10-12",
+      "url": "https://news.cne.go.kr/news/view.do?bbs_id=S2N1&bbs_seq=827261",
+      "reason": "교원 대상의 수업 및 평가 역량 강화 연수 프로그램 운영 소식임.",
+      "scope": "provincial",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "chungnam-112e9de44fc380b7",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, ‘상담자의 회복에서 학생의 회복으로’...지속 가능한 학생 마음 건강 안전망 강화",
+      "date": "2026-10-12",
+      "url": "https://news.cne.go.kr/news/view.do?bbs_id=S2N1&bbs_seq=827262",
+      "reason": "상담 인력을 대상으로 하는 일회성 연수 및 소진 예방 프로그램 운영 소식으로 정책적 변화가 아님.",
+      "scope": "provincial",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "chungbuk-326ffbd42ac71f12",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "충북교육청, 학교로 찾아가는 대입 진학 컨설팅 운영",
+      "date": "2026-10-12",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1580620&bbsId=1158&mi=10301",
+      "reason": "특정 학교를 대상으로 하는 대입 진학 컨설팅 지원 활동으로 일반적인 학교 지원 사업에 해당함.",
+      "scope": "provincial",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "chungbuk-0775c7291f75de73",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "충북교육청, 충북대학교병원과 학생 건강증진 위해 맞손",
+      "date": "2026-10-12",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1580619&bbsId=1158&mi=10301",
+      "reason": "기관 간 업무협약 체결 및 보건교사 대상 실무 연수 지원은 일반적인 사업 운영 사례임.",
+      "scope": "provincial",
+      "confidence": 0.9
+    },
+    {
+      "newsId": "chungbuk-7d1ef7e8073d2d3a",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "특수교육원, 학교 관리자와 함께 통합교육 실천 역량 높인다",
+      "date": "2026-10-12",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1580624&bbsId=1158&mi=10301",
+      "reason": "직속기관인 특수교육원에서 주관하는 학교 관리자 대상 일회성 연수 행사임.",
+      "scope": "institution",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "chungbuk-df3b4db69cccae7d",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "충주예성여고, 학생·지역사회와 함께 학교폭력 예방 나서",
+      "date": "2026-10-12",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1580625&bbsId=1158&mi=10301",
+      "reason": "개별 학교에서 진행하는 학교폭력 예방 캠페인 행사임.",
+      "scope": "institution",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "chungbuk-12f722df0b5d8277",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "한국교원대부설고, 변화하는 대입제도에 맞춘 학습전략 제시",
+      "date": "2026-10-12",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1580626&bbsId=1158&mi=10301",
+      "reason": "개별 학교에서 주최한 학생 및 학부모 대상 학습코칭 특강 행사임.",
+      "scope": "institution",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "gangwon-5b9a1558601fc67e",
+      "sourceId": "gangwon",
+      "source": "강원특별자치도교육청",
+      "title": "2027학년도 대학수학능력시험 대비 강원 모의평가 문제지 배부",
+      "date": "2026-10-12",
+      "url": "https://gwe.go.kr/promotion/bbs/view.do?bbsSn=56816&key=bTI0MTEyMjUyOTQ2NDA%3D",
+      "reason": "도내 고등학교 대상의 단순 모의평가 문제지 배부 및 일회성 학습 지원 활동으로 정책적 변화가 없음",
+      "scope": "provincial",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "busan-689652d13ad23723",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "해운대교육지원청, 교육활동보호 캠페인 실시",
+      "date": "2026-10-12",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1181571&bbsId=2286&mi=30397",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "scope": "local",
+      "confidence": 1.0
+    },
+    {
+      "newsId": "busan-bb511e0d1165ec8e",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "부산서부교육지원청, 하반기 학교폭력예방 협의회 개최",
+      "date": "2026-10-12",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1181574&bbsId=2286&mi=30397",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "scope": "local",
+      "confidence": 1.0
+    },
+    {
+      "newsId": "busan-ce8677e36d7f9cef",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "부산북부교육지원청, 교육공동체 역량강화 워크숍",
+      "date": "2026-10-12",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1181573&bbsId=2286&mi=30397",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "scope": "local",
+      "confidence": 1.0
+    },
+    {
+      "newsId": "busan-cc30be29523fce16",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "부산북부교육지원청, 하반기 초등 동행장학",
+      "date": "2026-10-12",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1181572&bbsId=2286&mi=30397",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "scope": "local",
+      "confidence": 1.0
+    },
+    {
+      "newsId": "busan-b6211cd885ab6486",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "부산영재교육진흥원, 영재교육 학부모 특강 개최",
+      "date": "2026-10-12",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1181576&bbsId=2286&mi=30397",
+      "reason": "직속기관에서 주관하는 일회성 학부모 특강 행사로 교육행정적 파급력이 낮음.",
+      "scope": "institution",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "busan-1f90f1fbb57676dc",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "부산시민도서관,‘가을 청소년 인문학교실’운영",
+      "date": "2026-10-12",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1181579&bbsId=2286&mi=30397",
+      "reason": "직속기관인 도서관에서 운영하는 학생 대상 일회성 인문학 프로그램임.",
+      "scope": "institution",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "busan-685d12049a1590a4",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "부산서동도서관, 만들며 배우는 환경 특강 운영",
+      "date": "2026-10-12",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1181578&bbsId=2286&mi=30397",
+      "reason": "직속기관에서 운영하는 학생 대상 체험형 환경 특강으로 일회성 행사에 해당함.",
+      "scope": "institution",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "busan-ff3b72955892acce",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "부산교육연수원, 지웅배 교수 초청 명사특강 개최",
+      "date": "2026-10-12",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1181581&bbsId=2286&mi=30397",
+      "reason": "직속기관에서 교직원을 대상으로 개최하는 일회성 명사 초청 특강임.",
+      "scope": "institution",
+      "confidence": 0.95
+    },
+    {
+      "newsId": "busan-ffb6e7cfa7fb5610",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "부산교육청, 제107회 전국체전 고등부 선수단 확정",
+      "date": "2026-10-12",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1181583&bbsId=2286&mi=30397",
+      "reason": "전국체전 선수단 구성 및 출전 소식은 일회성 대회 참가 행사로 정책적 변화가 없음.",
+      "scope": "provincial",
+      "confidence": 0.9
+    }
+  ],
+  "relevance": [
+    {
+      "newsId": "jeju-5bc7a0e23922d979",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "개별 학교의 동아리 활동 및 지역 축제 참여 소식으로 일회성 행사에 해당함.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "jeju-5bc7a0e23922d979"
+      ],
+      "source": "제주특별자치도교육청",
+      "title": "우리의 연주가 마을 축제의 선율이 됐어요",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "jeju-38f002a49b9ad178",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "개별 학교의 학습 결과물 기증 및 체험 활동 사례로 정책적 파급력이 없는 일반 사업임.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "jeju-38f002a49b9ad178"
+      ],
+      "source": "제주특별자치도교육청",
+      "title": "배움의 결과물, 지역 기념관의 교육 자료가 되다",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "jeju-91db811ecaafa6b1",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "개별 학교의 학과 개편 및 전공 탐색 프로그램 운영 소식으로 학교 단위의 홍보성 자료임.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "jeju-91db811ecaafa6b1"
+      ],
+      "source": "제주특별자치도교육청",
+      "title": "새롭게 바뀐 학과, 중학생의 진로 선택을 넓히다",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "jeju-4ee1d55a2ac6f23d",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "직속기관인 도서관에서 운영하는 일회성 문화 프로그램 안내임.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "jeju-4ee1d55a2ac6f23d"
+      ],
+      "source": "제주특별자치도교육청",
+      "title": "웹툰 작가를 만나고, 나만의 네 컷 만화를 그려본다",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "jeju-56094d809cd030c3",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "직속기관에서 운영하는 유아 대상 문화예술 체험 프로그램으로 일회성 행사에 해당함.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "jeju-56094d809cd030c3"
+      ],
+      "source": "제주특별자치도교육청",
+      "title": "객석이 무대가 되는 ‘제주꿈새미 상상극장’",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "jeju-8e6aff7c0ce44fb8",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "교육청 주관이나 특정 직종(돌봄전담사) 대상의 일반적인 직무 연수 안내로 정책 변화가 아닌 내부 활동임.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "jeju-8e6aff7c0ce44fb8"
+      ],
+      "source": "제주특별자치도교육청",
+      "title": "제주 초등돌봄…이용은 편리하게, 학생 지원은 맞춤형으로",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "jeju-1a6b29af6092a420",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "교육활동보호센터의 과 단위 조직 개편 및 역할 강화라는 교육청 차원의 조직 및 정책 변화를 다루고 있습니다.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "jeju-1a6b29af6092a420"
+      ],
+      "source": "제주특별자치도교육청",
+      "title": "교육활동보호의 새로운 출발, 함께 길을 찾다",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "gyeongnam-c10561b83f2a9363",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "한글날을 기념하는 일회성 행사 및 전시 소식으로 정책적 변화가 없습니다.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "gyeongnam-c10561b83f2a9363"
+      ],
+      "source": "경상남도교육청",
+      "title": "‘한글과 토박이말, 뜻을 잇다’…580돌 한글날 기림 잔치 개최",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "gyeongnam-1f70d439d3b80ea3",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "교육감 취임 100일 기자간담회를 통해 교권 보호 전담 부서 강화 및 원스톱 지원 체계 구축 등 구체적인 교육 정책 방향을 제시하고 있습니다.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "gyeongnam-1f70d439d3b80ea3"
+      ],
+      "source": "경상남도교육청",
+      "title": "권순기 교육감 “100일의 경청, 학교 일상의 변화로”",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "gyeongnam-5760f286f12521cd",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "교육청 브랜드 슬로건 공모전은 단순 홍보성 행사로 정책적 파급력이 없습니다.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "gyeongnam-5760f286f12521cd"
+      ],
+      "source": "경상남도교육청",
+      "title": "경남교육 상징 문구·이미지를 만들어 주세요",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "gyeongbuk-1dd1cad562e03b45",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "학생평가 대전환을 위한 서·논술형 평가 문항 개발 및 AI 기반 평가 지원시스템 구축 등 교육과정 및 평가 제도 변화를 포함하고 있습니다.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "gyeongbuk-1dd1cad562e03b45"
+      ],
+      "source": "경상북도교육청",
+      "title": "[중등교육과]경북교육청, '학생평가 대전환' 현장 중심 지원 강화",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "gyeongbuk-11860908f45f1395",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "도 단위 교과교육연구회의 운영체계 전면 정비는 교육청 차원의 조직 운영 및 지원 방식의 변화에 해당합니다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "gyeongbuk-11860908f45f1395"
+      ],
+      "source": "경상북도교육청",
+      "title": "[유초등교육과]경북교육청, 도 단위 교과교육연구회 운영체계 전면 정비",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "gyeongbuk-6e491526004d8119",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "단순 공모전 개최 소식으로 교육 정책의 변화나 제도적 확산과는 거리가 먼 일회성 행사입니다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "gyeongbuk-6e491526004d8119"
+      ],
+      "source": "경상북도교육청",
+      "title": "[미래교육정보과]경북교육청, '경북형 웍스 인공지능(AI)' 활용 우수 사례 공모전 개최",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "gyeongbuk-42df8abcce89b3b7",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "특정 프로젝트의 종료를 알리는 일회성 행사 소식입니다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "gyeongbuk-42df8abcce89b3b7"
+      ],
+      "source": "경상북도교육청",
+      "title": "[미래교육정보과]경북교육청, 낙동강 생태탐방 700 프로젝트 대장정 마무리",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "chungbuk-e8b37edec573857f",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "교육감의 주간정책회의를 통해 학생선수 지원체계 점검 및 AI 교육 정책 추진 방향을 공식적으로 지시한 내용입니다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "chungbuk-e8b37edec573857f"
+      ],
+      "source": "충청북도교육청",
+      "title": "윤건영 교육감,“건강한 몸과 마음이 성장의 기반... AI 시대 인간다움 키워야”",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "chungbuk-7d9c97623ab2b17c",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "개별 학교 체조부의 대회 수상 소식으로 교육행정적 변화와 무관합니다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "chungbuk-7d9c97623ab2b17c"
+      ],
+      "source": "충청북도교육청",
+      "title": "제천여고 체조부, 제107회 전국체전 단체전 은메달·개인전 동메달",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "gangwon-3eb4d97602394d95",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "전국체육대회 참가 및 수상 소식은 일회성 행사 및 대회 결과에 해당합니다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "gangwon-3eb4d97602394d95"
+      ],
+      "source": "강원특별자치도교육청",
+      "title": "강원특별자치도교육청, 제107회 전국체육대회에 499명 고등부 학생선수 41개 종목 출전",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "gangwon-04b98311862634f9",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "채용 시험의 단순 시행 안내(일시, 장소, 유의사항)에 해당하여 DROP 기준에 부합합니다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "gangwon-04b98311862634f9"
+      ],
+      "source": "강원특별자치도교육청",
+      "title": "강원특별자치도교육청, 기술계고 졸업자(졸업예정자) 지방공무원 경력경쟁임용 필기시험 장소 및 응시자 유의사항 공고",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "ulsan-fe77346c328074f1",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "교육연수원에서 주관하는 일회성 명사 초청 특강 행사로 정책적 변화와 무관함.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "ulsan-fe77346c328074f1"
+      ],
+      "source": "울산광역시교육청",
+      "title": "울산교육연수원, 윤가은 영화감독 명사 특강 열어",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "ulsan-4a1834d172ba8b44",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "학생들의 대회 수상 실적을 알리는 일회성 홍보성 자료임.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "ulsan-4a1834d172ba8b44"
+      ],
+      "source": "울산광역시교육청",
+      "title": "울산 학생들, 전국 과학전람회 13개 참가팀 전원 입상",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "ulsan-a3458a820ac246b4",
+      "decision": "DROP",
+      "scope": "local",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "confidence": 1.0,
+      "evidenceIds": [
+        "ulsan-a3458a820ac246b4"
+      ],
+      "source": "울산광역시교육청",
+      "title": "강북·강남교육지원청, 달라지는 중학교 입학 배정 학부모 설명회 열어",
+      "date": "2026-10-12",
+      "guarded": true,
+      "guardType": "education_support_office"
+    },
+    {
+      "newsId": "ulsan-e92ae3afab90feb3",
+      "decision": "DROP",
+      "scope": "local",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "confidence": 1.0,
+      "evidenceIds": [
+        "ulsan-e92ae3afab90feb3"
+      ],
+      "source": "울산광역시교육청",
+      "title": "강북·강남교육지원청, 초등학교 통학구역 조정 의견 수렴",
+      "date": "2026-10-12",
+      "guarded": true,
+      "guardType": "education_support_office"
+    },
+    {
+      "newsId": "ulsan-864328ee0830dfa8",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "심의위원 및 조사관 대상의 일반적인 역량 강화 연수 행사로 정책 제도 변화가 아님.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "ulsan-864328ee0830dfa8"
+      ],
+      "source": "울산광역시교육청",
+      "title": "[울산교육청] 장애 학생 학교폭력 조사·심의 전문성 강화",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "ulsan-ac9896c81585f0d8",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "교육공무직 채용 시 체력 검정 제도를 신규 도입하는 것으로 채용 평가 제도 변경에 해당함.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "ulsan-ac9896c81585f0d8"
+      ],
+      "source": "울산광역시교육청",
+      "title": "울산교육청-울산시체육회, 조리실무사 체력 검정 측정 업무 협약",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "ulsan-cce52ff00f810092",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "특정 유치원 및 어린이집을 대상으로 하는 시범 사업 운영 소식으로, 일반적인 교육 정책 변화로 보기 어렵습니다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "ulsan-cce52ff00f810092"
+      ],
+      "source": "울산광역시교육청",
+      "title": "[울산교육청] “다양한 언어와 문화, 놀이로 함께 배워요”",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "ulsan-e7ac4548c5752c84",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "교육청 차원에서 학교 행정 업무 경감을 위해 시스템을 구축하고 전 학교로 확대하는 정책적 변화입니다.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "ulsan-e7ac4548c5752c84"
+      ],
+      "source": "울산광역시교육청",
+      "title": "울산교육청, 학교 가정통신문 반복 업무 줄인다",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "ulsan-e3ef132f5c582bd9",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "교육청과 지자체 간의 교육행정협의회를 통해 특성화고 지원, 급식비 인상 등 주요 교육 정책 및 예산 현안을 조정하는 내용입니다.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "ulsan-e3ef132f5c582bd9"
+      ],
+      "source": "울산광역시교육청",
+      "title": "울산교육청·울산시, 교육 현안 해결에 협력 강화",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "daejeon-e7cc433a5d60a245",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "직속기관인 교육정보원에서 주관하는 일회성 체험 행사 및 교육 주간 운영 소식입니다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "daejeon-e7cc433a5d60a245"
+      ],
+      "source": "대전광역시교육청",
+      "title": "대전 디지털 교육 나눔 1010 개최(대전교육정보원)",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "daejeon-d9c92f1fa8f2165f",
+      "decision": "DROP",
+      "scope": "local",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "confidence": 1.0,
+      "evidenceIds": [
+        "daejeon-d9c92f1fa8f2165f"
+      ],
+      "source": "대전광역시교육청",
+      "title": "대전 학생선수들, 전국체전 사이클에서 힘찬 메달 질주(체육예술건강과, 동서부교육지원청)",
+      "date": "2026-10-12",
+      "guarded": true,
+      "guardType": "education_support_office"
+    },
+    {
+      "newsId": "daejeon-d81a30be015e6e61",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "일부 학생과 교사를 대상으로 하는 일회성 현장 체험 및 역사 캠프 운영 소식입니다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "daejeon-d81a30be015e6e61"
+      ],
+      "source": "대전광역시교육청",
+      "title": "대전시교육청, 울릉도·독도에서 우리 영토 역사 배운다(미래생활교육과)",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "daejeon-19ee4b695989bcc3",
+      "decision": "DROP",
+      "scope": "local",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "confidence": 1.0,
+      "evidenceIds": [
+        "daejeon-19ee4b695989bcc3"
+      ],
+      "source": "대전광역시교육청",
+      "title": "교사가 이끄는 수업혁신, 초등 수업나눔 문화를 만들다!(초등교육과, 동서부교육지원청)",
+      "date": "2026-10-12",
+      "guarded": true,
+      "guardType": "education_support_office"
+    },
+    {
+      "newsId": "daejeon-d7cb78477ad38f53",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "교원의 수업 전문성 향상을 위한 일회성 행사 및 수업 나눔 한마당 개최 소식으로 정책적 변화가 아닌 일반적인 프로그램 운영에 해당함.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "daejeon-d7cb78477ad38f53"
+      ],
+      "source": "대전광역시교육청",
+      "title": "나눔으로 깊어지는 수업, 함께 성장하는 교사(중등교육과)",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "daejeon-ea2bb9a5412d695c",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "IB 교육지구 운영 및 학교 인증, 교원 전문성 강화 등 교육청 차원의 중장기적 교육과정 및 정책 운영에 관한 협력 사항임.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "daejeon-ea2bb9a5412d695c"
+      ],
+      "source": "대전광역시교육청",
+      "title": "대전시교육청",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "daejeon-a28a17c0087e1871",
+      "decision": "DROP",
+      "scope": "local",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "confidence": 1.0,
+      "evidenceIds": [
+        "daejeon-a28a17c0087e1871"
+      ],
+      "source": "대전광역시교육청",
+      "title": "대전시교육청, 학교 태양광발전 확대친환경 에너지로 전기요금 절감(시설과, 동서부교육지원청)",
+      "date": "2026-10-12",
+      "guarded": true,
+      "guardType": "education_support_office"
+    },
+    {
+      "newsId": "daejeon-cb08dad44e9e1ec3",
+      "decision": "DROP",
+      "scope": "local",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "confidence": 1.0,
+      "evidenceIds": [
+        "daejeon-cb08dad44e9e1ec3"
+      ],
+      "source": "대전광역시교육청",
+      "title": "대전시교육청, 제15회 교육감배 장애학생수영대회 성료(체육예술건강과, 동서부교육지원청)",
+      "date": "2026-10-12",
+      "guarded": true,
+      "guardType": "education_support_office"
+    },
+    {
+      "newsId": "daejeon-85e93d65cbb32e56",
+      "decision": "DROP",
+      "scope": "local",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "confidence": 1.0,
+      "evidenceIds": [
+        "daejeon-85e93d65cbb32e56"
+      ],
+      "source": "대전광역시교육청",
+      "title": "대전 학생 탁구대표팀, 실력도 인성도 ‘금메달’!(체육예술건강과, 동서부교육지원청)",
+      "date": "2026-10-12",
+      "guarded": true,
+      "guardType": "education_support_office"
+    },
+    {
+      "newsId": "daejeon-ab4bfbdce8f51974",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "학교발전기금 기탁 및 시설 개방에 따른 인센티브 지원은 일회성 행사 및 개별 학교 지원 성격이 강함.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "daejeon-ab4bfbdce8f51974"
+      ],
+      "source": "대전광역시교육청",
+      "title": "대전시교육청, NH농협은행 대전본부로부터 학교발전기금 기탁받아(재정과)",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "incheon-e86a240d8cf1e108",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "한글날 기념 축제 및 체험 행사는 일회성 행사로 정책적 변화를 포함하지 않음.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "incheon-e86a240d8cf1e108"
+      ],
+      "source": "인천광역시교육청",
+      "title": "도성훈 인천광역시교육감, 제 580 돌 한글날 축제 공동 주최...“한글은 한류의 핵심이자 모두의 생각을 잇는 힘”",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "incheon-2772b014bb0832d7",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "시민 대상 홍보 부스 운영 및 체험 프로그램은 일회성 행사임.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "incheon-2772b014bb0832d7"
+      ],
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 2026 송도 굿마켓에서 읽걷쓰 AI 소개",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "incheon-3b1d7e3936b3ead8",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "전국 시도교육청 공동 플랫폼을 활용한 초등 방과후·돌봄 강사 모집 및 심사 체계 도입은 교육행정 운영 방식의 변화임.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "incheon-3b1d7e3936b3ead8"
+      ],
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, ‘늘봄허브’ 에서 초등 방과후·돌봄 개인강사 프로그램 모집",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "incheon-884d2ef1dd0a0977",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "학교 관리자 대상의 일반적인 연수는 내부 활동에 해당함.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "incheon-884d2ef1dd0a0977"
+      ],
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 학교 관리자 140 여 명 대상 ‘노동인권 연수’ 개최",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "incheon-0332fb4e83f75065",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "교원 대상의 일반적인 연수 및 교육 프로그램 운영은 내부 활동에 해당함.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "incheon-0332fb4e83f75065"
+      ],
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 관계성 기반 유아 디지털 미디어 지도 교원 연수 개최",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "incheon-74ffe8ccc4512cf0",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "특정 학생 대상의 일회성 입시 지원 프로그램 운영 소식으로 정책적 변화가 없음.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "incheon-74ffe8ccc4512cf0"
+      ],
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 고 3 수험생 대상 대학·전형별 1:1 맞춤형 심층구술모의면접 운영",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "incheon-e55649492eec99bb",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "교육지원청 단위에서 운영하는 교원 대상 연수 및 사례 나눔 활동임.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "incheon-e55649492eec99bb"
+      ],
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청 5개 교육지원청, ‘현장 사례 중심’ 기초학력 지도 연수",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "daegu-92c8f8dd0922bf30",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "직속기관인 도서관에서 운영하는 일회성 문화·체험 행사임.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "daegu-92c8f8dd0922bf30"
+      ],
+      "source": "대구광역시교육청",
+      "title": "대구삼국유사군위도서관, 독서나무 동화구연 「혹부리 영감」 성료",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "daegu-74a243c155b749cd",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "직속기관인 도서관에서 지역주민을 대상으로 운영하는 일반 교육 프로그램임.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "daegu-74a243c155b749cd"
+      ],
+      "source": "대구광역시교육청",
+      "title": "대구남부도서관, 지역주민 디지털 역량 강화를 위한 구글 자격증 취득 지원 프로그램 운영",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "daegu-706951b7a976d52c",
+      "decision": "DROP",
+      "scope": "local",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "confidence": 1.0,
+      "evidenceIds": [
+        "daegu-706951b7a976d52c"
+      ],
+      "source": "대구광역시교육청",
+      "title": "대구달성교육지원청, ‘제27회 달성국악한마당’ 개최",
+      "date": "2026-10-12",
+      "guarded": true,
+      "guardType": "education_support_office"
+    },
+    {
+      "newsId": "daegu-fe035b20143b3d17",
+      "decision": "DROP",
+      "scope": "local",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "confidence": 1.0,
+      "evidenceIds": [
+        "daegu-fe035b20143b3d17"
+      ],
+      "source": "대구광역시교육청",
+      "title": "대구남부교육지원청, 사립유치원장 대상 맞춤형 직무연수 운영",
+      "date": "2026-10-12",
+      "guarded": true,
+      "guardType": "education_support_office"
+    },
+    {
+      "newsId": "daegu-4ce1df69ffac5a28",
+      "decision": "DROP",
+      "scope": "local",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "confidence": 1.0,
+      "evidenceIds": [
+        "daegu-4ce1df69ffac5a28"
+      ],
+      "source": "대구광역시교육청",
+      "title": "대구서부교육지원청 제2Wee(위)센터, 찾아가는 마음건강 증진 프로그램 운영",
+      "date": "2026-10-12",
+      "guarded": true,
+      "guardType": "education_support_office"
+    },
+    {
+      "newsId": "daegu-b2e9cbb940a9753b",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "일회성 문화예술 체험 행사로 교육 정책의 변화나 제도적 파급력이 없는 단순 행사 소식입니다.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "daegu-b2e9cbb940a9753b"
+      ],
+      "source": "대구광역시교육청",
+      "title": "대구시교육청, 어린이·가족오페라 ‘투란도트’ 체험 운영",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "daegu-1e77f596186b5ef4",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "교원 선발 규모의 뚜렷한 변화(전년 대비 대폭 증가)가 명시되어 있어 교육행정 판단에 참고할 가치가 있습니다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "daegu-1e77f596186b5ef4"
+      ],
+      "source": "대구광역시교육청",
+      "title": "2027학년도 대구시교육청 유치원·초등·특수(유·초)교사 임용후보자 선정경쟁시험 원서접수 결과",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "daegu-8ff1cf09fea6df8d",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "특정 학교 대상의 찾아가는 수업 및 이벤트 운영으로 일회성 교육 활동에 해당합니다.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "daegu-8ff1cf09fea6df8d"
+      ],
+      "source": "대구광역시교육청",
+      "title": "대구시교육청, 독도교육 주간 찾아가는 수업 운영",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "daegu-b4d0054987080cf2",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "교육감 공약 이행 평가단 구성은 교육 정책의 추진 현황을 점검하고 보완하는 제도적 절차로 정책 관리의 일환입니다.",
+      "confidence": 0.85,
+      "evidenceIds": [
+        "daegu-b4d0054987080cf2"
+      ],
+      "source": "대구광역시교육청",
+      "title": "대구시교육청, ‘제12대 대구광역시교육감 공약이행주민평가단’ 공모",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "gyeonggi-d2e91583ad57dabf",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "기존에 운영 중인 멘토링 사업의 성과 공유 및 내부 협의회 성격의 행사로 새로운 정책 변화가 없습니다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "gyeonggi-d2e91583ad57dabf"
+      ],
+      "source": "경기도교육청",
+      "title": "경기도교육청, 지역별 멘토링 성과 공유로 신규·저경력 교사 지원 내실화",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "gyeonggi-6980e0d59ea206b5",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "직속기관에서 주관하는 교직원 대상의 일회성 역량 강화 연수 및 프로그램 운영 사례에 해당합니다.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "gyeonggi-6980e0d59ea206b5"
+      ],
+      "source": "경기도교육청",
+      "title": "경기도특수교육원,‘경기특수교육대전환’이끌 특수교육지원센터 교직원 역량강화 연수",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "gyeonggi-3997107adeca6958",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "개별 학교가 주체가 되어 운영하는 특정 사업 선정 및 프로그램 운영 소식으로, 정책적 확산보다는 학교 단위의 활동에 해당합니다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "gyeonggi-3997107adeca6958"
+      ],
+      "source": "경기도교육청",
+      "title": "경민IT고등학교, 경기도교육청 ‘2027년 장영실 모델학교’선정 … 경기 북부 창업교육 선도",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "gyeonggi-1c91b085a384ced6",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "개별 학교 단위에서 추진하는 국제 교류 및 방문 행사로, 교육행정 전반에 영향을 미치는 정책적 변화가 아닙니다.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "gyeonggi-1c91b085a384ced6"
+      ],
+      "source": "경기도교육청",
+      "title": "구리고등학교, 프랑스 뱅센시와 연례 학생 교류 추진",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "gyeonggi-7bc7085d05fea298",
+      "decision": "DROP",
+      "scope": "local",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "confidence": 1.0,
+      "evidenceIds": [
+        "gyeonggi-7bc7085d05fea298"
+      ],
+      "source": "경기도교육청",
+      "title": "동두천양주교육지원청, 온동네 돌봄·교육 프로그램 「가족과 함께하는 도자기체험」 운영",
+      "date": "2026-10-12",
+      "guarded": true,
+      "guardType": "education_support_office"
+    },
+    {
+      "newsId": "gyeonggi-a0aba97a582b3893",
+      "decision": "DROP",
+      "scope": "local",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "confidence": 1.0,
+      "evidenceIds": [
+        "gyeonggi-a0aba97a582b3893"
+      ],
+      "source": "경기도교육청",
+      "title": "연천교육지원청-연천고등학교, 지역 초등학생 대상“RAS 연계 흡연 예방 뮤지컬”개최",
+      "date": "2026-10-12",
+      "guarded": true,
+      "guardType": "education_support_office"
+    },
+    {
+      "newsId": "gyeonggi-c606210b140c5b8f",
+      "decision": "DROP",
+      "scope": "local",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "confidence": 1.0,
+      "evidenceIds": [
+        "gyeonggi-c606210b140c5b8f"
+      ],
+      "source": "경기도교육청",
+      "title": "의정부교육지원청, 2026 하반기 관계기관 합동 어린이 통학버스 안전점검 실시",
+      "date": "2026-10-12",
+      "guarded": true,
+      "guardType": "education_support_office"
+    },
+    {
+      "newsId": "gyeonggi-bc11d911229aa446",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "개별 학교 단위에서 운영하는 일회성 학부모 공개수업 행사로 정책적 파급력이 없음.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "gyeonggi-bc11d911229aa446"
+      ],
+      "source": "경기도교육청",
+      "title": "의정부부용초등학교, ‘방과후·돌봄 프로그램 학부모 공개수업주간’ 운영",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "gyeonggi-e237b2b8ac217459",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "개별 학교에서 개최한 과학·발명 체험 행사로 일반적인 학교 프로그램 운영에 해당함.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "gyeonggi-e237b2b8ac217459"
+      ],
+      "source": "경기도교육청",
+      "title": "전곡초등학교,「RAS×STEAM+발명탐험 페스타」 개최",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "seoul-8e6f7eb5fd1a571a",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "교육청 개청 70주년 기념 기록주간 운영은 일회성 행사 및 기념 사업에 해당함.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "seoul-8e6f7eb5fd1a571a"
+      ],
+      "source": "서울특별시교육청",
+      "title": "서울시교육청 개청 70주년 기념 ‘서울교육 기록주간’운영",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "jeonbuk-b8d030cc9a89c6ca",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "전국체육대회 사전경기 결과 및 메달 획득 소식은 단순 대회 성과 알림에 해당함.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "jeonbuk-b8d030cc9a89c6ca"
+      ],
+      "source": "전북특별자치도교육청",
+      "title": "제107회 전국체육대회 사전경기서 메달 ‘풍년’",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "jeonbuk-5a8871c64fb80952",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "학교 급식 인력난 해소를 위한 채용 및 인력 운영 개선 등 교육청 차원의 정책적 대응 방안을 다루고 있음.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "jeonbuk-5a8871c64fb80952"
+      ],
+      "source": "전북특별자치도교육청",
+      "title": "천호성 교육감“학교급식 차질 없도록 인력난 대책 마련해야”",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "jeonbuk-ec9beb1e4f9ee6e0",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "학교폭력 상담 및 특별교육 행정 절차를 온라인 시스템으로 전환하는 제도적 변화를 담고 있음.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "jeonbuk-ec9beb1e4f9ee6e0"
+      ],
+      "source": "전북특별자치도교육청",
+      "title": "학교폭력 상담·특별교육 ‘우리온-에듀’로 간편히",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "jeonbuk-27341883613d6f6f",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "교육청 내부의 회의 운영 방식에 대한 설문조사 결과로, 정책적 변화나 제도 개선과는 거리가 먼 내부 운영 소식입니다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "jeonbuk-27341883613d6f6f"
+      ],
+      "source": "전북특별자치도교육청",
+      "title": "“열린회의 생중계 업무 수행에 긍정적”65.9%",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "moe-e5932ab66a2dfb7d",
+      "decision": "KEEP",
+      "scope": "national",
+      "reason": "적극행정 우수사례를 통해 교복 가격 상한제 등 교육 현장의 실질적인 제도 개선과 정책 변화를 도출한 사례입니다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "moe-e5932ab66a2dfb7d"
+      ],
+      "source": "교육부",
+      "title": "새로운 행정으로 변화를 이끌어 내는 적극행정 우수공무원 시상",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "moe-cd3c446c4280d860",
+      "decision": "KEEP",
+      "scope": "national",
+      "reason": "대학 특성화 지원 사업 신설 및 규제 특례 적용 등 고등교육 정책 및 예산 지원 체계의 변화를 담고 있습니다.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "moe-cd3c446c4280d860"
+      ],
+      "source": "교육부",
+      "title": "사립대학 특성화에 집중 투자, 2026년 특성화 선도대학 33개교 선정",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "chungnam-50a69fe68c84a726",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "위기 학교 지원을 위해 여러 부서가 협력하는 통합 지원 체계를 구축하고 운영 방식을 개선한 정책적 변화입니다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "chungnam-50a69fe68c84a726"
+      ],
+      "source": "충청남도교육청",
+      "title": "충남교육청, 6개 부서 ‘원팀’ 정례회로 위기 학교 통합 지원 나서",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "chungnam-cce5d37648ac1fa5",
+      "decision": "DROP",
+      "scope": "local",
+      "reason": "교육지원청 단위에서 진행된 간담회 및 현장 의견 수렴 행사로, 정책의 직접적인 변화보다는 일회성 소통 활동에 해당합니다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "chungnam-cce5d37648ac1fa5"
+      ],
+      "source": "충청남도교육청",
+      "title": "충남교육청, 교권보호 해법 교실 가까이에서 찾는다",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "chungnam-125c4adace1c7492",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "교육과정 연계 평가 자료 보급은 일선 학교의 수업 및 평가 지원을 위한 일반적인 교육 자료 배포 활동입니다.",
+      "confidence": 0.85,
+      "evidenceIds": [
+        "chungnam-125c4adace1c7492"
+      ],
+      "source": "충청남도교육청",
+      "title": "충남교육청, 질문 중심 수업 연계 서·논술형 평가 도움 자료 보급",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "chungnam-aea065564146e629",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "일회성 간담회 개최 및 인성교육 홍보성 행사로 정책적 변화가 명시되지 않음.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "chungnam-aea065564146e629"
+      ],
+      "source": "충청남도교육청",
+      "title": "충남교육청, 제30회 노인의 날 기념 대한노인회 충남연합회 초청 간담회 개최",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "chungnam-5aba784182e6452d",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "감사 패러다임의 전환 및 예방 감사 시스템 개선 등 교육행정 운영 방식의 변화를 다루고 있음.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "chungnam-5aba784182e6452d"
+      ],
+      "source": "충청남도교육청",
+      "title": "충남교육청, ‘사전 예방’ 중심으로 감사 패러다임 전환",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "chungnam-fe55f8a7d8bdcef7",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "학교장 대상의 일반적인 직무 연수 운영 소식으로 정책적 변화가 없음.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "chungnam-fe55f8a7d8bdcef7"
+      ],
+      "source": "충청남도교육청",
+      "title": "충남교육청, 소통과 배려의 조직문화 확산",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "chungnam-b415d763552b7196",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "교원 대상의 일회성 찾아가는 연수 프로그램 운영 소식임.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "chungnam-b415d763552b7196"
+      ],
+      "source": "충청남도교육청",
+      "title": "충남교육청, “관내 52개교 찾아가는 연수로 교원 마음 건강·교육활동 보호 총력”",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "chungnam-fc82e2d8dd93411a",
+      "decision": "DROP",
+      "scope": "local",
+      "reason": "특정 학교를 대상으로 한 일회성 예방 교육 및 방문 행사임.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "chungnam-fc82e2d8dd93411a"
+      ],
+      "source": "충청남도교육청",
+      "title": "충남교육청, 청양고등학교 ‘맞춤형 교육활동 침해 예방 교육’ 실시",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "chungnam-44081b177d2f2152",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "교원 대상의 수업 및 평가 역량 강화 연수 프로그램 운영 소식임.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "chungnam-44081b177d2f2152"
+      ],
+      "source": "충청남도교육청",
+      "title": "충남교육청, 질문 수업으로 생각을 키우고 평가로 성장을 잇다",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "chungnam-112e9de44fc380b7",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "상담 인력을 대상으로 하는 일회성 연수 및 소진 예방 프로그램 운영 소식으로 정책적 변화가 아님.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "chungnam-112e9de44fc380b7"
+      ],
+      "source": "충청남도교육청",
+      "title": "충남교육청, ‘상담자의 회복에서 학생의 회복으로’...지속 가능한 학생 마음 건강 안전망 강화",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "chungbuk-326ffbd42ac71f12",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "특정 학교를 대상으로 하는 대입 진학 컨설팅 지원 활동으로 일반적인 학교 지원 사업에 해당함.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "chungbuk-326ffbd42ac71f12"
+      ],
+      "source": "충청북도교육청",
+      "title": "충북교육청, 학교로 찾아가는 대입 진학 컨설팅 운영",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "chungbuk-0775c7291f75de73",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "기관 간 업무협약 체결 및 보건교사 대상 실무 연수 지원은 일반적인 사업 운영 사례임.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "chungbuk-0775c7291f75de73"
+      ],
+      "source": "충청북도교육청",
+      "title": "충북교육청, 충북대학교병원과 학생 건강증진 위해 맞손",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "chungbuk-7d1ef7e8073d2d3a",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "직속기관인 특수교육원에서 주관하는 학교 관리자 대상 일회성 연수 행사임.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "chungbuk-7d1ef7e8073d2d3a"
+      ],
+      "source": "충청북도교육청",
+      "title": "특수교육원, 학교 관리자와 함께 통합교육 실천 역량 높인다",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "chungbuk-df3b4db69cccae7d",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "개별 학교에서 진행하는 학교폭력 예방 캠페인 행사임.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "chungbuk-df3b4db69cccae7d"
+      ],
+      "source": "충청북도교육청",
+      "title": "충주예성여고, 학생·지역사회와 함께 학교폭력 예방 나서",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "chungbuk-12f722df0b5d8277",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "개별 학교에서 주최한 학생 및 학부모 대상 학습코칭 특강 행사임.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "chungbuk-12f722df0b5d8277"
+      ],
+      "source": "충청북도교육청",
+      "title": "한국교원대부설고, 변화하는 대입제도에 맞춘 학습전략 제시",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "gangwon-5b9a1558601fc67e",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "도내 고등학교 대상의 단순 모의평가 문제지 배부 및 일회성 학습 지원 활동으로 정책적 변화가 없음",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "gangwon-5b9a1558601fc67e"
+      ],
+      "source": "강원특별자치도교육청",
+      "title": "2027학년도 대학수학능력시험 대비 강원 모의평가 문제지 배부",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "jngj_s1n1-c9bdc634ac658d99",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "교육청 차원에서 학교체육 운영 체계와 인프라를 재편하는 통합 모델 구축 정책을 추진하고 있음",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "jngj_s1n1-c9bdc634ac658d99"
+      ],
+      "source": "전남광주통합특별시교육청",
+      "title": "전남광주특별시교육청, ‘통합형 학교체육 모델’ 구축한다",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "busan-689652d13ad23723",
+      "decision": "DROP",
+      "scope": "local",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "confidence": 1.0,
+      "evidenceIds": [
+        "busan-689652d13ad23723"
+      ],
+      "source": "부산광역시교육청",
+      "title": "해운대교육지원청, 교육활동보호 캠페인 실시",
+      "date": "2026-10-12",
+      "guarded": true,
+      "guardType": "education_support_office"
+    },
+    {
+      "newsId": "busan-bb511e0d1165ec8e",
+      "decision": "DROP",
+      "scope": "local",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "confidence": 1.0,
+      "evidenceIds": [
+        "busan-bb511e0d1165ec8e"
+      ],
+      "source": "부산광역시교육청",
+      "title": "부산서부교육지원청, 하반기 학교폭력예방 협의회 개최",
+      "date": "2026-10-12",
+      "guarded": true,
+      "guardType": "education_support_office"
+    },
+    {
+      "newsId": "busan-ce8677e36d7f9cef",
+      "decision": "DROP",
+      "scope": "local",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "confidence": 1.0,
+      "evidenceIds": [
+        "busan-ce8677e36d7f9cef"
+      ],
+      "source": "부산광역시교육청",
+      "title": "부산북부교육지원청, 교육공동체 역량강화 워크숍",
+      "date": "2026-10-12",
+      "guarded": true,
+      "guardType": "education_support_office"
+    },
+    {
+      "newsId": "busan-cc30be29523fce16",
+      "decision": "DROP",
+      "scope": "local",
+      "reason": "교육지원청 단위에서 작성한 자료는 교육동향 선별 범위에서 제외했습니다.",
+      "confidence": 1.0,
+      "evidenceIds": [
+        "busan-cc30be29523fce16"
+      ],
+      "source": "부산광역시교육청",
+      "title": "부산북부교육지원청, 하반기 초등 동행장학",
+      "date": "2026-10-12",
+      "guarded": true,
+      "guardType": "education_support_office"
+    },
+    {
+      "newsId": "busan-b6211cd885ab6486",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "직속기관에서 주관하는 일회성 학부모 특강 행사로 교육행정적 파급력이 낮음.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "busan-b6211cd885ab6486"
+      ],
+      "source": "부산광역시교육청",
+      "title": "부산영재교육진흥원, 영재교육 학부모 특강 개최",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "busan-1f90f1fbb57676dc",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "직속기관인 도서관에서 운영하는 학생 대상 일회성 인문학 프로그램임.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "busan-1f90f1fbb57676dc"
+      ],
+      "source": "부산광역시교육청",
+      "title": "부산시민도서관,‘가을 청소년 인문학교실’운영",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "busan-685d12049a1590a4",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "직속기관에서 운영하는 학생 대상 체험형 환경 특강으로 일회성 행사에 해당함.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "busan-685d12049a1590a4"
+      ],
+      "source": "부산광역시교육청",
+      "title": "부산서동도서관, 만들며 배우는 환경 특강 운영",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "busan-ff3b72955892acce",
+      "decision": "DROP",
+      "scope": "institution",
+      "reason": "직속기관에서 교직원을 대상으로 개최하는 일회성 명사 초청 특강임.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "busan-ff3b72955892acce"
+      ],
+      "source": "부산광역시교육청",
+      "title": "부산교육연수원, 지웅배 교수 초청 명사특강 개최",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "busan-ffb6e7cfa7fb5610",
+      "decision": "DROP",
+      "scope": "provincial",
+      "reason": "전국체전 선수단 구성 및 출전 소식은 일회성 대회 참가 행사로 정책적 변화가 없음.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "busan-ffb6e7cfa7fb5610"
+      ],
+      "source": "부산광역시교육청",
+      "title": "부산교육청, 제107회 전국체전 고등부 선수단 확정",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "busan-ec58d3cf710b6051",
+      "decision": "KEEP",
+      "scope": "provincial",
+      "reason": "교육청 차원의 신설학교 공사 현장 안전 점검 및 시설 관리 정책에 관한 내용임.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "busan-ec58d3cf710b6051"
+      ],
+      "source": "부산광역시교육청",
+      "title": "부산교육청, 신설학교 공사현장 특별점검 실시",
+      "date": "2026-10-12"
+    }
+  ],
+  "classifications": [
+    {
+      "newsId": "jeju-1a6b29af6092a420",
+      "category": "교원·인사",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "교육활동보호센터를 과 단위 조직으로 개편하기 위한 준비 과정으로, 조직 체계의 실질적 변화를 예고하고 있다.",
+      "keywords": [
+        "교육활동보호",
+        "조직개편",
+        "회복적정의",
+        "학교갈등"
+      ],
+      "summary": "제주특별자치도교육청은 교육활동보호센터를 과 단위 조직인 교육활동보호담당관으로 개편하기 앞서 학교 현장의 의견을 수렴하는 토론회를 개최한다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "jeju-1a6b29af6092a420"
+      ],
+      "importanceModelScore": 3,
+      "importanceAdjusted": false,
+      "source": "제주특별자치도교육청",
+      "title": "교육활동보호의 새로운 출발, 함께 길을 찾다",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "gyeongnam-1f70d439d3b80ea3",
+      "category": "정책·행정",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "교권 보호를 위한 '원스톱 지원 체계' 구축 등 신규 지원 방식을 도입하여 현장 대응력을 강화하고 있다.",
+      "keywords": [
+        "교권보호",
+        "책임교육",
+        "민원대응",
+        "원스톱지원"
+      ],
+      "summary": "경상남도교육청은 교권 보호 전담 부서 기능을 강화하고 48시간 이내 초기 개입을 포함한 '교권보호 118, 원스톱 지원 체계'를 구축한다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "gyeongnam-1f70d439d3b80ea3"
+      ],
+      "importanceModelScore": 3,
+      "importanceAdjusted": false,
+      "source": "경상남도교육청",
+      "title": "권순기 교육감 “100일의 경청, 학교 일상의 변화로”",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "gyeongbuk-1dd1cad562e03b45",
+      "category": "교육과정·수업",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "서·논술형 평가 문항 개발 및 AI 시스템 도입을 통해 평가 체제의 실질적인 운영 방식을 개선하고 있다.",
+      "keywords": [
+        "학생평가",
+        "서논술형평가",
+        "AI평가시스템",
+        "평가대전환"
+      ],
+      "summary": "경북교육청은 서·논술형 평가 문항 개발 및 AI 기반 평가 지원시스템 구축을 통해 학생평가 체제를 전환하고 있다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "gyeongbuk-1dd1cad562e03b45"
+      ],
+      "importanceModelScore": 3,
+      "importanceAdjusted": false,
+      "source": "경상북도교육청",
+      "title": "[중등교육과]경북교육청, '학생평가 대전환' 현장 중심 지원 강화",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "gyeongbuk-11860908f45f1395",
+      "category": "정책·행정",
+      "changeLevel": "project_change",
+      "importance": 2,
+      "importanceReason": "기존 연구회 운영의 비효율을 개선하기 위한 정비 사업으로, 운영 체계의 내실화를 도모하고 있다.",
+      "keywords": [
+        "교과교육연구회",
+        "운영체계정비",
+        "조직개편"
+      ],
+      "summary": "경북교육청은 유사·중복 연구회를 통합하고 공동 연구와 수업 실천 중심으로 도 단위 교과교육연구회 운영체계를 전면 정비한다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "gyeongbuk-11860908f45f1395"
+      ],
+      "importanceModelScore": 2,
+      "importanceAdjusted": false,
+      "source": "경상북도교육청",
+      "title": "[유초등교육과]경북교육청, 도 단위 교과교육연구회 운영체계 전면 정비",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "chungbuk-e8b37edec573857f",
+      "category": "기타",
+      "changeLevel": "routine_operation",
+      "importance": 2,
+      "importanceReason": "교육감의 주간정책회의 발언으로, 기존 정책의 내실 있는 추진을 당부하는 통상적인 업무 지시 성격이다.",
+      "keywords": [
+        "학생선수",
+        "학교체육",
+        "AI교육",
+        "정책회의"
+      ],
+      "summary": "충청북도교육청은 학생선수의 심리적 지원과 AI 시대 인간 고유 역량 강화를 위한 교육 정책을 내실 있게 추진할 것을 강조했다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "chungbuk-e8b37edec573857f"
+      ],
+      "importanceModelScore": 2,
+      "importanceAdjusted": false,
+      "source": "충청북도교육청",
+      "title": "윤건영 교육감,“건강한 몸과 마음이 성장의 기반... AI 시대 인간다움 키워야”",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "ulsan-ac9896c81585f0d8",
+      "category": "교원·인사",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "조리실무사 채용 시 체력 검정을 의무화하는 새로운 선발 기준을 도입하여 채용 방식을 개선했다.",
+      "keywords": [
+        "조리실무사",
+        "채용시험",
+        "체력검정",
+        "업무협약"
+      ],
+      "summary": "울산광역시교육청은 2027년부터 조리실무사 채용 시 직무 수행에 필요한 근력과 심폐지구력을 측정하는 체력 검정을 도입한다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "ulsan-ac9896c81585f0d8"
+      ],
+      "importanceModelScore": 3,
+      "importanceAdjusted": false,
+      "source": "울산광역시교육청",
+      "title": "울산교육청-울산시체육회, 조리실무사 체력 검정 측정 업무 협약",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "ulsan-e7ac4548c5752c84",
+      "category": "정책·행정",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "학교 행정 업무 경감을 위해 가정통신문 일괄 발송 시스템을 도입하여 운영 방식을 개선하였다.",
+      "keywords": [
+        "가정통신문",
+        "업무경감",
+        "행정절차",
+        "일괄발송"
+      ],
+      "summary": "울산교육청이 학교의 반복적인 가정통신문 기안 및 게시 업무를 줄이기 위해 일괄 발송 시스템을 구축하고 시범 운영에 들어갔다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "ulsan-e7ac4548c5752c84"
+      ],
+      "importanceModelScore": 3,
+      "importanceAdjusted": false,
+      "source": "울산광역시교육청",
+      "title": "울산교육청, 학교 가정통신문 반복 업무 줄인다",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "ulsan-e3ef132f5c582bd9",
+      "category": "정책·행정",
+      "changeLevel": "routine_operation",
+      "importance": 2,
+      "importanceReason": "교육청과 지자체 간의 정기적인 교육행정협의회 개최 및 현안 논의는 통상적인 협력 업무에 해당한다.",
+      "keywords": [
+        "교육행정협의회",
+        "교육현안",
+        "지자체협력"
+      ],
+      "summary": "울산교육청과 울산시가 2026년 교육행정협의회 정기회를 열고 협약형 특성화고 지원 및 급식비 인상 등 8개 교육 현안을 논의했다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "ulsan-e3ef132f5c582bd9"
+      ],
+      "importanceModelScore": 2,
+      "importanceAdjusted": false,
+      "source": "울산광역시교육청",
+      "title": "울산교육청·울산시, 교육 현안 해결에 협력 강화",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "daejeon-ea2bb9a5412d695c",
+      "category": "교육과정·수업",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "IB 교육지구 운영을 위한 IBO와의 협력 체계 강화는 지역 단위의 교육과정 혁신을 위한 실질적인 사업 확대에 해당한다.",
+      "keywords": [
+        "IB교육",
+        "국제바칼로레아",
+        "교육지구",
+        "수업혁신"
+      ],
+      "summary": "대전시교육청이 IBO 한국본부와 협력하여 대전 IB 교육지구의 안정적 운영과 교원 전문성 강화 및 AI 시대 사고역량 함양을 추진한다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "daejeon-ea2bb9a5412d695c"
+      ],
+      "importanceModelScore": 3,
+      "importanceAdjusted": false,
+      "source": "대전광역시교육청",
+      "title": "대전시교육청",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "incheon-3b1d7e3936b3ead8",
+      "category": "학생지원·복지",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "전국 공통 플랫폼인 '늘봄허브'를 활용한 강사 모집 방식 도입은 방과후·돌봄 운영 체계의 의미 있는 개선이다.",
+      "keywords": [
+        "늘봄허브",
+        "방과후학교",
+        "돌봄",
+        "강사모집"
+      ],
+      "summary": "인천시교육청이 2027학년도 초등 방과후·돌봄 프로그램 운영을 위해 전국 공통 온라인 플랫폼인 '늘봄허브'를 통해 개인강사를 처음 모집한다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "incheon-3b1d7e3936b3ead8"
+      ],
+      "importanceModelScore": 3,
+      "importanceAdjusted": false,
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, ‘늘봄허브’ 에서 초등 방과후·돌봄 개인강사 프로그램 모집",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "daegu-1e77f596186b5ef4",
+      "category": "교원·인사",
+      "changeLevel": "routine_operation",
+      "importance": 2,
+      "importanceReason": "교사 임용후보자 선정경쟁시험 원서접수 결과 발표는 매년 반복되는 연례적인 행정 절차이다.",
+      "keywords": [
+        "임용시험",
+        "교원선발",
+        "경쟁률"
+      ],
+      "summary": "대구시교육청이 2027학년도 유치원·초등·특수교사 임용시험 원서접수 결과 평균 3.5대 1의 경쟁률을 기록했다고 발표했다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "daegu-1e77f596186b5ef4"
+      ],
+      "importanceModelScore": 2,
+      "importanceAdjusted": false,
+      "source": "대구광역시교육청",
+      "title": "2027학년도 대구시교육청 유치원·초등·특수(유·초)교사 임용후보자 선정경쟁시험 원서접수 결과",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "daegu-b4d0054987080cf2",
+      "category": "정책·행정",
+      "changeLevel": "routine_operation",
+      "importance": 2,
+      "importanceReason": "교육감 공약이행평가단 구성 및 운영은 교육청의 통상적인 공약 관리 및 소통 활동이다.",
+      "keywords": [
+        "공약이행",
+        "주민평가단",
+        "교육감공약"
+      ],
+      "summary": "대구시교육청이 제12대 교육감 공약 이행 상황을 점검하고 보완 방안을 제안할 주민평가단 36명을 공개 모집한다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "daegu-b4d0054987080cf2"
+      ],
+      "importanceModelScore": 2,
+      "importanceAdjusted": false,
+      "source": "대구광역시교육청",
+      "title": "대구시교육청, ‘제12대 대구광역시교육감 공약이행주민평가단’ 공모",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "jeonbuk-5a8871c64fb80952",
+      "category": "학생지원·복지",
+      "changeLevel": "routine_operation",
+      "importance": 2,
+      "importanceReason": "학교 급식 인력난 해소를 위한 기존 인력 운영 및 채용 방식의 개선을 당부하는 통상적인 정책 점검 활동이다.",
+      "keywords": [
+        "학교급식",
+        "조리실무사",
+        "인력운영",
+        "교육현안"
+      ],
+      "summary": "천호성 전북특별자치도교육감이 학교 급식 인력 부족 문제 해결을 위해 지역 여건에 맞는 채용과 인력 운영 방안 마련을 당부했다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "jeonbuk-5a8871c64fb80952"
+      ],
+      "importanceModelScore": 2,
+      "importanceAdjusted": false,
+      "source": "전북특별자치도교육청",
+      "title": "천호성 교육감“학교급식 차질 없도록 인력난 대책 마련해야”",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "jeonbuk-ec9beb1e4f9ee6e0",
+      "category": "학생지원·복지",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "기존 수기 방식의 학교폭력 상담 및 특별교육 신청 절차를 온라인 시스템으로 전면 전환하여 행정 효율성을 높이는 신규 사업이다.",
+      "keywords": [
+        "학교폭력",
+        "우리온-에듀",
+        "상담",
+        "특별교육",
+        "온라인시스템"
+      ],
+      "summary": "전북특별자치도교육청이 학교폭력 상담 및 특별교육 신청과 관리를 온라인으로 처리하는 '우리온-에듀' 시스템을 11월부터 전면 운영한다.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "jeonbuk-ec9beb1e4f9ee6e0"
+      ],
+      "importanceModelScore": 3,
+      "importanceAdjusted": false,
+      "source": "전북특별자치도교육청",
+      "title": "학교폭력 상담·특별교육 ‘우리온-에듀’로 간편히",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "moe-e5932ab66a2dfb7d",
+      "category": "정책·행정",
+      "changeLevel": "routine_operation",
+      "importance": 2,
+      "importanceReason": "적극행정 우수사례를 발굴하고 포상하는 연례적인 공직문화 혁신 행사이다.",
+      "keywords": [
+        "적극행정",
+        "우수공무원",
+        "경진대회",
+        "공직문화"
+      ],
+      "summary": "교육부가 2026년 상반기 적극행정 우수사례 경진대회 시상식을 개최하여 현장 변화를 이끈 우수공무원 20명을 선정했다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "moe-e5932ab66a2dfb7d"
+      ],
+      "importanceModelScore": 2,
+      "importanceAdjusted": false,
+      "source": "교육부",
+      "title": "새로운 행정으로 변화를 이끌어 내는 적극행정 우수공무원 시상",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "moe-cd3c446c4280d860",
+      "category": "정책·행정",
+      "changeLevel": "policy_change",
+      "importance": 4,
+      "importanceReason": "대학 혁신을 위해 신규 사업을 도입하고 특성화 지방대학 지정 및 규제 특례를 적용하는 대규모 정책 개편이다.",
+      "keywords": [
+        "특성화선도대학",
+        "사립대학",
+        "대학혁신",
+        "규제특례",
+        "재정지원"
+      ],
+      "summary": "교육부가 사립대학의 특성화를 위해 33개교를 선도대학으로 선정하고 5년간 약 6,000억 원을 지원하며 규제 특례를 적용한다.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "moe-cd3c446c4280d860"
+      ],
+      "importanceModelScore": 4,
+      "importanceAdjusted": false,
+      "source": "교육부",
+      "title": "사립대학 특성화에 집중 투자, 2026년 특성화 선도대학 33개교 선정",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "chungnam-50a69fe68c84a726",
+      "category": "정책·행정",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "부서별 개별 대응 방식을 '학교회복지원단' 중심의 통합 지원 체계로 전환하여 학교 현장 지원 방식을 개선하였다.",
+      "keywords": [
+        "학교회복지원단",
+        "통합지원",
+        "교권보호",
+        "민원대응"
+      ],
+      "summary": "충남교육청이 위기 학교를 통합 지원하기 위해 6개 부서가 참여하는 '학교회복지원단'을 구성하고 정례회를 운영한다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "chungnam-50a69fe68c84a726"
+      ],
+      "importanceModelScore": 3,
+      "importanceAdjusted": false,
+      "source": "충청남도교육청",
+      "title": "충남교육청, 6개 부서 ‘원팀’ 정례회로 위기 학교 통합 지원 나서",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "chungnam-5aba784182e6452d",
+      "category": "정책·행정",
+      "changeLevel": "project_change",
+      "importance": 3,
+      "importanceReason": "지적 위주의 감사에서 예방 및 자문 중심의 감사로 패러다임을 전환하여 학교 현장 지원을 강화하는 제도 개선이다.",
+      "keywords": [
+        "감사",
+        "예방감사",
+        "자문감사",
+        "업무개선"
+      ],
+      "summary": "충남교육청이 감사 업무 담당자 협의회를 열고 지적 위주에서 학교 현장 지원을 돕는 예방·자문 중심의 감사로 패러다임을 전환한다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "chungnam-5aba784182e6452d"
+      ],
+      "importanceModelScore": 3,
+      "importanceAdjusted": false,
+      "source": "충청남도교육청",
+      "title": "충남교육청, ‘사전 예방’ 중심으로 감사 패러다임 전환",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "jngj_s1n1-c9bdc634ac658d99",
+      "category": "교육과정·수업",
+      "changeLevel": "policy_change",
+      "importance": 4,
+      "importanceReason": "광역 단위의 체육 인재 육성 체계와 학교 운영 모델을 근본적으로 재편하는 정책적 변화를 담고 있다.",
+      "keywords": [
+        "학교체육",
+        "체육고등학교",
+        "통합모델",
+        "인재육성"
+      ],
+      "summary": "전남광주통합특별시교육청이 전남과 광주의 체육 자원을 연결하고 체육고등학교 운영 모델을 재편하는 통합형 학교체육 모델 구축을 추진한다.",
+      "confidence": 0.9,
+      "evidenceIds": [
+        "jngj_s1n1-c9bdc634ac658d99"
+      ],
+      "importanceModelScore": 4,
+      "importanceAdjusted": false,
+      "source": "전남광주통합특별시교육청",
+      "title": "전남광주특별시교육청, ‘통합형 학교체육 모델’ 구축한다",
+      "date": "2026-10-12"
+    },
+    {
+      "newsId": "busan-ec58d3cf710b6051",
+      "category": "안전·시설",
+      "changeLevel": "routine_operation",
+      "importance": 2,
+      "importanceReason": "신설학교 개교를 앞두고 진행하는 통상적인 공사 현장 안전 점검 및 품질 관리 활동이다.",
+      "keywords": [
+        "신설학교",
+        "공사현장",
+        "특별점검",
+        "안전관리"
+      ],
+      "summary": "부산광역시교육청이 2027년 개교 예정인 신설학교 3곳을 대상으로 공사 진행 상황과 안전 관리 상태를 확인하는 특별현장점검을 실시했다.",
+      "confidence": 0.95,
+      "evidenceIds": [
+        "busan-ec58d3cf710b6051"
+      ],
+      "importanceModelScore": 2,
+      "importanceAdjusted": false,
+      "source": "부산광역시교육청",
+      "title": "부산교육청, 신설학교 공사현장 특별점검 실시",
+      "date": "2026-10-12"
+    }
+  ],
+  "validation": {
+    "status": "PASS",
+    "issues": [],
+    "checks": {
+      "candidateCoverage": true,
+      "classificationCoverage": true,
+      "evidenceIntegrity": true,
+      "importanceIntegrity": true,
+      "supportOfficeExclusion": true
+    }
+  },
+  "providerErrors": {
+    "relevance": [],
+    "classification": []
+  },
+  "trace": [
+    {
+      "step": "filter_relevance",
+      "status": "success",
+      "startedAt": "2026-10-12T21:18:08+00:00",
+      "durationMs": 35721
+    },
+    {
+      "step": "classify",
+      "status": "success",
+      "startedAt": "2026-10-12T21:18:43+00:00",
+      "durationMs": 13770
+    },
+    {
+      "step": "validate_selection",
+      "status": "success",
+      "startedAt": "2026-10-12T21:18:57+00:00",
+      "durationMs": 0
+    }
+  ]
+}
