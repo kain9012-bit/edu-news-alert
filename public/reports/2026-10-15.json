@@ -1,0 +1,562 @@
+{
+  "metadata": {
+    "reportId": "20261014T220241Z-2f0050e9",
+    "title": "오늘의 교육동향",
+    "status": "completed",
+    "generatedAt": "2026-10-14T22:02:41+00:00",
+    "windowStart": "2026-10-14T06:00:00+09:00",
+    "windowEnd": "2026-10-15T06:00:00+09:00",
+    "windowHours": 24,
+    "selectionRunId": "20261014T211846Z-2eeb45a3",
+    "sourceCount": 12,
+    "eligibleCount": 9,
+    "publishedCount": 9,
+    "omittedCount": 0,
+    "ownOfficeEligibleCount": 3,
+    "ownOfficePublishedCount": 3,
+    "qualityExcludedCount": 0,
+    "factModel": "google/gemini-3.1-flash-lite",
+    "analysisModel": "google/gemini-3.5-flash",
+    "verifierModel": "google/gemini-3.1-flash-lite",
+    "summaryOnlyCount": 0,
+    "ownOfficeReviewCount": 0,
+    "usage": {
+      "stages": {
+        "facts": {
+          "model": "google/gemini-3.1-flash-lite",
+          "requests": 4,
+          "promptTokenCount": 13061,
+          "candidatesTokenCount": 2813,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 15874
+        },
+        "analysis": {
+          "model": "google/gemini-3.5-flash",
+          "requests": 4,
+          "promptTokenCount": 6793,
+          "candidatesTokenCount": 2304,
+          "thoughtsTokenCount": 9504,
+          "totalTokenCount": 18601
+        },
+        "verification": {
+          "model": "google/gemini-3.1-flash-lite",
+          "requests": 4,
+          "promptTokenCount": 18594,
+          "candidatesTokenCount": 797,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 19391
+        }
+      },
+      "total": {
+        "requests": 12,
+        "promptTokenCount": 38448,
+        "candidatesTokenCount": 5914,
+        "thoughtsTokenCount": 9504,
+        "totalTokenCount": 53866
+      }
+    },
+    "estimatedCostUsd": 0.12979
+  },
+  "items": [
+    {
+      "newsId": "moe-6b38b948cc85d0f1",
+      "sourceId": "moe",
+      "source": "교육부",
+      "title": "교육부는 유아 대상 레벨테스트 금지 제도가 현장에서 실효성 있게 작동하도록 점검 및 조치를 강화하겠습니다",
+      "date": "2026-10-14",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107424&lev=0&m=020402&s=moe",
+      "category": "정책·행정",
+      "importance": 4,
+      "selectionReason": "학원법 개정에 따른 유아 대상 레벨테스트 금지 제도의 실효성을 확보하기 위한 교육부 차원의 점검 및 관리 체계 강화는 중요한 교육 정책 집행 사항입니다.",
+      "summaryPoints": [
+        "유아 대상 학원의 레벨테스트 금지 제도 안착을 위해 점검 및 조치를 강화함",
+        "모집 및 분반을 위한 시험·평가는 금지하되 관찰·면담 방식의 진단은 예외적으로 허용함",
+        "제도 시행 직후 2개월간 홍보를 실시하고, 모집 및 분반이 집중되는 시기에 집중 점검을 계획함",
+        "위반 시 과태료를 부과하며 신고포상금 제도를 활용하여 편법 운영을 단속함",
+        "일부 시도교육청의 조례 개정을 독려하고 제도 해설서를 배포하여 현장 혼선을 방지함"
+      ],
+      "analysisPoints": [
+        "유아 대상 학원의 레벨테스트 금지 제도 안착 및 관찰·면담 중심 진단 허용 기준 명확화 추진임",
+        "집중 점검, 과태료 및 신고포상금제 활용, 조례 개정 독려를 통한 학원 편법 운영 단속 강화 기조임"
+      ],
+      "applicationReviewPoints": [
+        "지역 내 유아 대상 학원의 입학·분반 시험 실태 모니터링 및 지도 점검 체계를 점검할 필요가 있음",
+        "교육부 해설서 안내 및 현장 혼선 방지를 위한 홍보 방안을 검토해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "학원법 개정에 따라 유아 대상 레벨테스트가 금지됨",
+        "정답이 정해진 구술시험 형식의 진단은 학원법 위반임",
+        "위반 시 1차 100만 원, 2차 200만 원, 3차 이상 300만 원의 과태료가 부과됨",
+        "신고포상금 지급 상한을 200만 원 이내로 정하는 학원법 시행규칙 개정안이 입법예고 중임",
+        "정규교육과정과 연계된 사전 교육은 가능하나 이를 근거로 입학을 거부할 수 없음"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95,
+        "repair": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "ulsan-fd1cbd99f8176dc0",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "[울산교육청] 조용식 울산교육감, 특수교육 현장 목소리 듣고 촘촘한 지원 체계 마련",
+      "date": "2026-10-14",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20261014191033601",
+      "category": "학생지원·복지",
+      "importance": 3,
+      "selectionReason": "교육감이 특수교육 현장의 의견을 수렴하여 특수교육 지원 체계 및 학교폭력 대응 절차 개선을 논의하는 정책적 행보를 담고 있음.",
+      "summaryPoints": [
+        "울산교육청이 장애인부모회와 소통하며 특수교육 지원 체계 개선을 논의함",
+        "특수교육 대상 학생의 학교폭력 대응을 위한 전문 조사 체계 구축을 검토함",
+        "장애 학생의 특성을 고려한 치유 및 회복 지원 확대를 추진함",
+        "통학 여건 개선 및 학생 맞춤형 보조 인력 확대 배치를 건의받음"
+      ],
+      "analysisPoints": [
+        "특수교육 대상 학생의 특성을 고려한 학교폭력 전문 조사 및 지원 체계 개선 모색임",
+        "장애 학생 치유·회복 지원 및 통학·보조 인력 확대 등 현장 수요 기반 지원 추진임"
+      ],
+      "applicationReviewPoints": [
+        "학교폭력 사안 처리 시 특수교육 전문가 참여 및 맞춤형 조사 체계 도입 여부를 확인할 필요가 있음",
+        "특수교육 대상 학생 맞춤형 회복 지원 및 인력 지원 여건을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "울산교육청은 매월 2회 시민과 만나는 교육감 행사를 운영함",
+        "장애 학생 대상 학교폭력 지원 체계 개편을 지난달 추진함",
+        "학교폭력대책심의위원회 심의 시 특수교육 전문가 참여가 요청됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "gyeongnam-147278196d1dae3e",
+      "sourceId": "gyeongnam",
+      "source": "경상남도교육청",
+      "title": "경남교육청, 현장 교원과 함께 인공지능(AI)·디지털 교육 미래 방향 모색",
+      "date": "2026-10-14",
+      "url": "https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&q_bbsDocNo=20261014154702139",
+      "category": "디지털·AI",
+      "importance": 3,
+      "selectionReason": "향후 교육 정책 수립 및 방향 모색을 위한 교육지원단과의 공식적인 정책 논의 과정입니다.",
+      "summaryPoints": [
+        "경남교육청이 인공지능·디지털 교육 정책 방향 모색을 위한 타운홀 미팅을 개최함",
+        "배움, 교사, 지원의 3개 영역으로 나누어 현장 경험을 바탕으로 토론함",
+        "논의된 의견을 2027년 이후 교육 정책에 반영할 계획임"
+      ],
+      "analysisPoints": [
+        "현장 교원 대상 타운홀 미팅을 통해 중장기 AI·디지털 교육 정책 방향을 도출하는 현장 참여형 수렴 방식임",
+        "지원단 운영, 심포지엄, 전략추진위원회를 연계하여 도출된 의견을 향후 정책에 단계적으로 반영하는 구조임"
+      ],
+      "applicationReviewPoints": [
+        "디지털·AI 교육 정책 수립을 위한 현장 교원과의 다각적 소통 및 의견 수렴 체계를 참고해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "인공지능 디지털 교육지원단은 2026년 4월부터 2027년 2월까지 운영됨",
+        "토론 결과는 10월 30일 심포지엄 및 12월 초 전략추진위원회 자료로 활용됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "gyeongnam-9b4e4172409d127f",
+      "sourceId": "gyeongnam",
+      "source": "경상남도교육청",
+      "title": "경남교육청-서울교육청, 농어촌유학으로 교육과 지역의 상생 잇는다",
+      "date": "2026-10-14",
+      "url": "https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&q_bbsDocNo=20261014131831626",
+      "category": "진로·직업교육",
+      "importance": 3,
+      "selectionReason": "시·도교육청 간 협약을 통한 농어촌유학 제도 도입 및 운영 체계 구축 등 교육 정책적 변화를 담고 있음.",
+      "summaryPoints": [
+        "경남교육청과 서울교육청이 농어촌유학 운영을 위한 업무협약을 체결함",
+        "2027년 3월부터 가족체류형 및 단기체험형 농어촌유학을 본격 시행함",
+        "학생 모집 및 배정 등 사업 전반에서 두 교육청이 협력함"
+      ],
+      "analysisPoints": [
+        "수도권 교육청과의 광역 업무협약을 통해 농어촌유학 및 지역-교육 상생 모델을 넓히는 협력 구조임",
+        "단기체험형 시범 운영 후 가족체류형 등으로 다양화하여 단계적으로 확대 추진하는 유학 정책임"
+      ],
+      "applicationReviewPoints": [
+        "타 시도교육청과의 협력 모델 및 단기체험형·가족체류형 농어촌유학 운영 방식을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "업무협약 체결일은 10월 16일임",
+        "올해 하반기 단기체험형 농어촌유학을 시범 운영함",
+        "11월 중 2027학년도 참여학교를 모집할 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "seoul-85116fd2b2923b3b",
+      "sourceId": "seoul",
+      "source": "서울특별시교육청",
+      "title": "서울 학생, 내년에는 경상남도로도 농촌유학 간다!",
+      "date": "2026-10-14",
+      "url": "https://enews.sen.go.kr/news/view.do?bbsSn=192340&step1=3&step2=1",
+      "category": "지역협력·행사",
+      "importance": 3,
+      "selectionReason": "농촌유학 대상 지역 확대라는 교육청 차원의 주요 사업 범위 변화를 다루고 있음.",
+      "summaryPoints": [
+        "서울시교육청과 경상남도교육청이 농촌유학 활성화를 위한 업무협약을 체결함",
+        "2027학년도 1학기부터 서울 학생의 경남 농촌유학을 시작할 예정임",
+        "양 교육청은 유학 운영학교 선정, 거주시설 확보, 교육 프로그램 개발 등에 상호 협력함",
+        "서울시교육청은 유학생 모집과 행·재정적 지원을 담당하고, 경남교육청은 현지 운영과 생활 여건 조성을 지원함"
+      ],
+      "analysisPoints": [
+        "타 시도교육청과의 협력을 통한 농촌유학 대상 지역의 지속적인 확대 추세를 보여줌",
+        "도시 학생들에게 다양한 농촌 유학 기회를 제공하고 지역 소멸 위기 극복에 기여하려는 정책적 연대임",
+        "유학생 모집, 행·재정적 지원, 현지 운영 및 생활 여건 조성 등 교육청 간 명확한 역할 분담이 필요함"
+      ],
+      "applicationReviewPoints": [
+        "전북교육청이 이미 서울시교육청과 농촌유학 협력을 진행 중인 상황에서 타 시도의 운영 사례 및 협력 모델을 비교 분석해 볼 수 있음",
+        "경남교육청의 거주시설 확보 및 교육 프로그램 개발 등 세부 운영 계획 수립 과정을 모니터링하여 전북 농촌유학 활성화 방안에 참고할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "서울시교육청-경상남도교육청 업무협약 체결일은 2026년 10월 16일임",
+        "농촌유학 지역 확대는 2027학년도 1학기부터 적용됨",
+        "서울시교육청은 2021년부터 전남, 전북, 강원, 제주, 인천으로 농촌유학 지역을 확대해 왔음",
+        "양 교육청은 실무 협의체를 구성하여 세부 운영 계획을 마련할 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "moe-4c604cf55e10ec77",
+      "sourceId": "moe",
+      "source": "교육부",
+      "title": "학교 태양광 설비 안전관리 강화를 위해 교육부-한국전기안전공사 손 맞잡는다",
+      "date": "2026-10-14",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107422&lev=0&m=020402&s=moe",
+      "category": "안전·시설",
+      "importance": 3,
+      "selectionReason": "교육부와 유관기관의 협약을 통해 학교 태양광 설비의 안전관리 기준(법정검사 주기 단축 등)을 강화하는 것은 전국 단위의 안전 대책 변화입니다.",
+      "summaryPoints": [
+        "교육부와 한국전기안전공사가 학교 태양광 설비 안전관리 강화를 위한 업무협약을 체결함",
+        "햇빛이음학교 사업 대상 학교의 태양광 설비 법정검사 주기를 4년에서 1년으로 단축함",
+        "법정검사 항목에 열화상 측정을 추가하여 화재 위험 등을 선제적으로 점검함",
+        "한국전기안전공사는 학교 관계자 대상 전기안전 교육 및 기술 지원을 제공함"
+      ],
+      "analysisPoints": [
+        "학교 내 신재생에너지 설비의 안전성 확보를 위해 전문 공공기관과의 협업 체계를 구축한 사례임",
+        "법정검사 주기를 대폭 단축하고 열화상 측정 등 정밀 검사항목을 추가하여 화재 등 재난을 선제적으로 예방하려는 조치임",
+        "학교 관계자 대상의 실무 교육과 기술 지원을 병행하여 현장의 안전관리 역량을 강화하고자 함"
+      ],
+      "applicationReviewPoints": [
+        "전북 관내 학교의 태양광 설비 현황 및 안전점검 주기를 파악하고 전문기관과의 협력을 통한 선제적 안전점검 강화 방안을 검토할 수 있음",
+        "학교 관계자 대상 전기안전 교육 프로그램 도입 및 기술 지원 연계 가능성을 확인해 볼 필요가 있음"
+      ],
+      "sourceFacts": [
+        "업무협약 체결일은 2026년 10월 15일임",
+        "현행 전기안전관리법상 태양광 설비 법정검사 주기는 4년임",
+        "햇빛이음학교 태양광 설비 검사 비용은 연간 20만 원 내외임",
+        "협약의 유효기간은 5년이며, 별도 해지 의사가 없으면 3년씩 자동 연장됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongbuk-96012b0c1eab72d9",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[시설과]경북교육청, 교육시설 공사현장 22곳 점검...안전‧품질관리 강화",
+      "date": "2026-10-14",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1653987&bbsId=4744&mi=17643&searchCate=761",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "교육시설 안전 및 품질 관리를 위한 정기적인 점검 체계와 안전 대책을 다루고 있습니다.",
+      "summaryPoints": [
+        "경북교육청이 2026년 3분기 시설공사 현장점검을 실시함",
+        "총공사금액 30억 원 이상의 시설공사 현장 중 22곳을 대상으로 점검함",
+        "시공 품질, 안전관리체계, 산업안전보건관리비 집행 등을 중점 확인함",
+        "점검 결과 경미한 사항은 즉시 보완하고 주요 지적 사항은 이행 결과를 지속 관리할 예정임"
+      ],
+      "analysisPoints": [
+        "대규모 교육시설 공사현장의 안전사고 예방과 시공 품질 확보를 위해 정기적인 현장점검을 실시함",
+        "건축, 토목, 기계, 전기 등 분야별 전문인력으로 구성된 합동점검반을 통해 점검의 전문성을 높임",
+        "공사금액이 크거나 공사가 지연되는 취약 현장을 집중 관리하여 부실시공 및 안전 공백을 방지하고자 함"
+      ],
+      "applicationReviewPoints": [
+        "전북 관내 대규모 교육시설 공사현장의 분기별 점검 체계 및 합동점검반 구성 방식을 비교해 볼 수 있음",
+        "공사 지연 현장 등 취약 사업장을 집중 점검 대상에 포함하여 관리하는 방안을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "점검 기간은 2026년 9월 28일부터 10월 8일까지임",
+        "점검 대상은 신축, 증축, 개축 등 시설공사 현장임",
+        "건축, 토목, 기계, 전기 분야 전문인력으로 합동점검반을 구성함",
+        "공사금액 100억 원 이상의 대규모 사업과 공사 지연 현장을 중점 점검함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongbuk-2c058d8638598e66",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[유초등교육과]경북교육청, 초등학교 학적 업무 매뉴얼 현장 중심 개선 추진",
+      "date": "2026-10-14",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1653988&bbsId=4744&mi=17643&searchCate=761",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "교육청 차원에서 초등학교 학적 업무 매뉴얼을 개선하고 현장 의견을 수렴하여 행정 업무 체계를 정비하는 정책적 성격의 자료입니다.",
+      "summaryPoints": [
+        "경북교육청이 초등학교 학적 업무 매뉴얼 개선을 위해 현장 의견을 수렴함",
+        "학적 관련 법령 변경 사항과 학교 현장의 복잡한 처리 사례를 매뉴얼에 반영함",
+        "다양한 학생 유형별 학적 처리 절차와 유의 사항을 구체화할 계획임",
+        "교직원의 행정업무 부담을 줄이고 학적 처리의 정확성과 일관성을 높일 예정임"
+      ],
+      "analysisPoints": [
+        "법령 개정 사항과 현장의 복잡한 처리 사례를 반영하여 초등학교 학적 업무의 정확성과 일관성을 제고하려는 노력임",
+        "다문화, 탈북, 특수, 학교폭력 등 다양한 학생 유형별 맞춤형 처리 절차를 구체화하여 현장 대응력을 높이고자 함",
+        "현장 의견 수렴을 통해 교직원의 행정업무 부담을 경감하고 실무 중심의 가이드를 제공하는 방향임"
+      ],
+      "applicationReviewPoints": [
+        "전북 지역 초등학교 학적 업무 매뉴얼의 최신 법령 반영 여부 및 현장 적합성을 검토해 볼 수 있음",
+        "다양한 학생 유형별 학적 처리 절차를 구체화하여 교직원의 업무 편의성을 높이는 방안을 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "의견 수렴 대상은 도내 초등학교 및 교육지원청 업무 담당자임",
+        "다문화, 탈북, 특수, 영재, 보건, 학교폭력 등 관련 부서가 의견 수렴에 참여함",
+        "주요 검토 사항은 취학, 전학, 재취학 절차 및 장기결석 관리 등임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeju-8682e117cb3bfff5",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "제주에 모이는 전국 시·도교육감, 교육 현안과 협력 방안 논의",
+      "date": "2026-10-14",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1483590",
+      "category": "지역협력·행사",
+      "importance": 2,
+      "selectionReason": "전국 시·도교육감협의회 간담회를 통한 교육 현안 논의 및 교육자치 활성화 관련 정책적 교류 소식임.",
+      "summaryPoints": [
+        "제주특별자치도교육청이 15일에 2026년 대한민국교육감협의회 간담회를 개최함",
+        "전국체육대회 성공 개최를 위한 시·도교육청 간 협력 방안을 논의함",
+        "주요 교육 현안 공유 및 교육자치 활성화를 위한 공동 대응 방안을 모색함"
+      ],
+      "analysisPoints": [
+        "시·도교육감 협의회를 통해 전국 단위 주요 교육 현안 공유 및 교육자치 활성화를 위한 공동 대응 기반을 마련함",
+        "전국체육대회 등 대규모 전국 행사의 성공적 운영을 위한 시·도교육청 간 연계 및 협력 체계를 강화함"
+      ],
+      "applicationReviewPoints": [
+        "타 시·도 개최 전국 단위 행사 참여 및 주요 교육 현안 관련 교육청 간 협력 방안을 지속적으로 검토할 수 있음",
+        "전국규모 행사와 연계한 시·도교육청 간 협력 방안을 참고하여 모범 사례 파악 및 교류 활성화를 검토할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "일시: 2026년 10월 15일 오후 5시",
+        "장소: 그랜드조선 제주",
+        "참석 인원: 전국 시·도교육감, 업무관계자, 협의회 사무처 관계자 등 총 110명",
+        "주요 참석자: 제주특별자치도지사, 제주특별자치도의회 의장",
+        "주요 목적: 제107회 전국체육대회 운영 협력 및 교육 현안 논의",
+        "행사 구성: 사전 환담, 간담회, 만찬",
+        "후속 일정: 전국체육대회 참가 선수단 격려"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95,
+        "repair": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "ownOfficeItems": [
+    {
+      "newsId": "jeonbuk-e3b9e603e193c5ca",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "‘온(ON)마을 부모학교’에서 가족과 함께 배우고 소통",
+      "date": "2026-10-14",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1189753",
+      "summaryPoints": [
+        "학부모 공동체 대상 찾아가는 온(ON)마을 공동체 부모학교 운영함",
+        "10월 말부터 11월까지 11개 공동체 선정해 가족 체험 프로그램 지원 예정임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-8ed1c12f10e1d079",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "1차 지역교육 현안 특별교부금 390억 원 확보",
+      "date": "2026-10-14",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1189755",
+      "summaryPoints": [
+        "2027년 제1차 지역교육현안 특별교부금 390억 원 확보함",
+        "확보된 재원으로 수소에너지고 기숙사 신축 등 29개 교육 현안 사업 추진 예정임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-32f3ddeed65768d8",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "교육환경 변화와 수요 반영한 ‘정책 유효성 첫 검증’",
+      "date": "2026-10-14",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1189756",
+      "summaryPoints": [
+        "교육정책 성과와 실효성 점검을 위한 정책 유효성 검증 제도 시행함",
+        "10억 원 이상 주요 정책사업을 대상으로 정책 유지 및 폐지 여부 심의 예정임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "omittedItems": [],
+  "validation": {
+    "status": "PASS",
+    "issues": [],
+    "checks": {
+      "ownOfficeExcludedFromTrendAnalysis": true,
+      "ownOfficeAllIncluded": true,
+      "ownOfficeSummariesVerified": true,
+      "publishedItemsVerified": true,
+      "sourceWindowMatches": true
+    }
+  },
+  "providerErrors": {
+    "facts": [],
+    "ownOfficeSummaries": [],
+    "analysis": [],
+    "verification": [],
+    "repairs": [],
+    "repairVerifications": []
+  },
+  "trace": [
+    {
+      "step": "extract_facts",
+      "status": "success",
+      "startedAt": "2026-10-14T22:00:53+00:00",
+      "durationMs": 9902
+    },
+    {
+      "step": "summarize_own_office",
+      "status": "success",
+      "startedAt": "2026-10-14T22:01:03+00:00",
+      "durationMs": 1595
+    },
+    {
+      "step": "analyze_trends",
+      "status": "success",
+      "startedAt": "2026-10-14T22:01:04+00:00",
+      "durationMs": 66089
+    },
+    {
+      "step": "verify_report",
+      "status": "success",
+      "startedAt": "2026-10-14T22:02:10+00:00",
+      "durationMs": 3881
+    },
+    {
+      "step": "repair_report_1",
+      "status": "success",
+      "startedAt": "2026-10-14T22:02:14+00:00",
+      "durationMs": 25457
+    },
+    {
+      "step": "verify_repair_1",
+      "status": "success",
+      "startedAt": "2026-10-14T22:02:40+00:00",
+      "durationMs": 992
+    }
+  ],
+  "rendering": {
+    "canonical": "json",
+    "html": "오늘의 교육동향 (20261015).html",
+    "hwpx": "오늘의 교육동향 (20261015).hwpx",
+    "hwpxValidation": {
+      "hardGates": {
+        "package_validation": "pass",
+        "document_errors": "pass",
+        "schema_lint": "pass",
+        "reopen": "pass",
+        "editor_open_safety": "pass",
+        "id_integrity": "pass"
+      },
+      "packageOk": true,
+      "documentOk": true,
+      "reopenedOk": true,
+      "visualReviewRequired": true
+    }
+  }
+}
