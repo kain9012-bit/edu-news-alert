@@ -1,0 +1,734 @@
+{
+  "metadata": {
+    "reportId": "20261018T220220Z-36ad14df",
+    "title": "오늘의 교육동향",
+    "status": "completed",
+    "generatedAt": "2026-10-18T22:02:20+00:00",
+    "windowStart": "2026-10-16T06:00:00+09:00",
+    "windowEnd": "2026-10-19T06:00:00+09:00",
+    "windowHours": 72,
+    "selectionRunId": "20261018T212220Z-4f2ae253",
+    "sourceCount": 17,
+    "eligibleCount": 12,
+    "publishedCount": 12,
+    "omittedCount": 0,
+    "ownOfficeEligibleCount": 5,
+    "ownOfficePublishedCount": 5,
+    "qualityExcludedCount": 0,
+    "factModel": "google/gemini-3.1-flash-lite",
+    "analysisModel": "google/gemini-3.5-flash",
+    "verifierModel": "google/gemini-3.1-flash-lite",
+    "summaryOnlyCount": 0,
+    "ownOfficeReviewCount": 1,
+    "usage": {
+      "stages": {
+        "facts": {
+          "model": "google/gemini-3.1-flash-lite",
+          "requests": 5,
+          "promptTokenCount": 20158,
+          "candidatesTokenCount": 4133,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 24291
+        },
+        "analysis": {
+          "model": "google/gemini-3.5-flash",
+          "requests": 4,
+          "promptTokenCount": 7447,
+          "candidatesTokenCount": 2578,
+          "thoughtsTokenCount": 12169,
+          "totalTokenCount": 22194
+        },
+        "verification": {
+          "model": "google/gemini-3.1-flash-lite",
+          "requests": 6,
+          "promptTokenCount": 27222,
+          "candidatesTokenCount": 1141,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 28363
+        }
+      },
+      "total": {
+        "requests": 15,
+        "promptTokenCount": 54827,
+        "candidatesTokenCount": 7852,
+        "thoughtsTokenCount": 12169,
+        "totalTokenCount": 74848
+      }
+    },
+    "estimatedCostUsd": 0.16365
+  },
+  "items": [
+    {
+      "newsId": "gyeongbuk-5abb73b2d207e11b",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[중등교육과]경북교육청, 4개 시도교육청 손잡고 인공지능(AI) 기반 학생평가 혁신 나선다",
+      "date": "2026-10-16",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1655755&bbsId=4744&mi=17643&searchCate=761",
+      "category": "디지털·AI",
+      "importance": 3,
+      "selectionReason": "여러 시도교육청이 공동으로 AI 기반 평가 시스템을 구축하고 평가 체계를 혁신하는 정책적 협력 사업입니다.",
+      "summaryPoints": [
+        "경북·서울·충남·세종교육청이 인공지능 기반 서·논술형 평가지원시스템 공동운영 업무협약을 체결함",
+        "학생의 사고력과 문제해결력을 기르는 평가 체제로의 전환을 추진함",
+        "2027학년도부터 초등학교 5~6학년과 중학교 1학년을 대상으로 서·논술형 평가를 단계적으로 확대할 예정임",
+        "AI를 평가 효율성과 전문성을 높이는 지원 도구로 활용하여 교사의 최종 검토를 거쳐 평가의 신뢰성을 확보함"
+      ],
+      "analysisPoints": [
+        "다수 시도교육청 간 협력을 통한 인공지능(AI) 기반 서·논술형 평가지원시스템 공동 구축 및 운영 사례임",
+        "학생의 사고력과 문제해결력 신장을 위한 평가 체제 전환의 일환임",
+        "AI를 교사의 평가를 보조하는 지원 도구로 활용하여 평가의 신뢰성과 효율성을 동시에 도모함",
+        "2027학년도부터 초등 5~6학년 및 중1 대상 서·논술형 평가의 단계적 확대를 목표로 함"
+      ],
+      "applicationReviewPoints": [
+        "타 시도교육청의 AI 기반 서·논술형 평가지원시스템 공동운영 사례를 참고하여 전북교육의 평가 체제 개선 방안을 검토해 볼 수 있음",
+        "AI를 평가 지원 도구로 활용하여 교사의 평가 부담을 경감하고 신뢰성을 확보하는 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "2026년 10월 16일 제주 그랜드 조선에서 4개 시도교육청 업무협약 체결",
+        "협약 내용에는 AI 서·논술형 평가지원시스템 및 채점시스템 공동운영 포함",
+        "서·논술형 평가 문항 공동 개발 및 검토, 교원 연수 협의체 구성",
+        "2027학년도 초5~6 및 중1 대상 서·논술형 평가 단계적 확대",
+        "AI는 교사의 평가를 대신하는 것이 아니라 지원 도구로 활용함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongnam-0812617280cd56e5",
+      "sourceId": "gyeongnam",
+      "source": "경상남도교육청",
+      "title": "경남교육청-서울교육청, 농어촌유학으로 도농 교육 상생의 길 연다",
+      "date": "2026-10-16",
+      "url": "https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&q_bbsDocNo=20261016103332236",
+      "category": "지역협력·행사",
+      "importance": 3,
+      "selectionReason": "두 교육청 간의 농어촌유학 활성화를 위한 업무협약 및 정책적 협력 체계 구축은 교육 정책의 변화로 판단합니다.",
+      "summaryPoints": [
+        "경상남도교육청과 서울특별시교육청이 농어촌유학 활성화를 위한 업무협약을 체결함",
+        "도시와 농어촌 학생의 상생 성장을 지원하고 작은학교의 특색 있는 교육과정을 활성화하고자 함",
+        "주민등록상 주소를 이전하여 거주하는 가족체류형을 기본으로 하며 단기체험형을 병행하여 운영함",
+        "올해 하반기 단기체험형 시범 운영을 거쳐 2027년 3월부터 본격적으로 운영할 예정임"
+      ],
+      "analysisPoints": [
+        "타 시도 교육청 간의 협력을 통해 도농 교육 상생 및 농어촌유학 활성화를 도모하는 사례로 볼 수 있음",
+        "지역의 자연, 문화, 역사 자원과 작은학교 교육과정을 연계하여 특색 있는 교육 모델을 구축하고자 함",
+        "가족체류형과 단기체험형을 병행하여 유학 형태를 다양화하고 수요자의 선택권을 넓히는 방안으로 평가됨",
+        "시범 운영을 통해 경험을 축적한 후 본격적인 운영에 나서는 단계적 추진 방식을 취하고 있음"
+      ],
+      "applicationReviewPoints": [
+        "타 시도의 농어촌유학 운영 형태 및 추진 일정을 참고하여 전북형 농어촌유학 활성화 방안을 검토해 볼 수 있음",
+        "가족체류형 외에 단기체험형 등 다양한 유학 모델의 도입 가능성과 지역 교육자원 연계 방안을 살펴볼 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2026년 10월 16일 제주 그랜드조선에서 업무협약 체결",
+        "경남형 농어촌유학은 가족체류형을 기본으로 함",
+        "2026년 하반기 단기체험형 시범 운영 예정",
+        "2027년 3월 농어촌유학 본격 운영 예정"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95,
+        "repair": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "seoul-fae9883a71401cff",
+      "sourceId": "seoul",
+      "source": "서울특별시교육청",
+      "title": "서울시교육청의 채움 AI, 이번엔 세종·충남·경북에서 사용된다!",
+      "date": "2026-10-16",
+      "url": "https://enews.sen.go.kr/news/view.do?bbsSn=192362&step1=3&step2=1",
+      "category": "디지털·AI",
+      "importance": 3,
+      "selectionReason": "교육청 간 협력을 통해 AI 기반 평가 시스템을 타 시·도로 확산하는 정책적 변화를 담고 있음.",
+      "summaryPoints": [
+        "서울시교육청이 개발한 AI 서·논술형 평가지원시스템 '채움AI'를 세종·충남·경북교육청과 공동 운영함",
+        "이번 협약으로 총 7개 시도교육청이 '채움AI' 공동 운영 협력체계를 구축함",
+        "AI 채점 엔진을 통해 서·논술형 평가의 채점 보조 및 피드백 기능을 제공함",
+        "2026년 기준 실천학교 135개교를 운영하며 시스템 고도화를 추진 중임"
+      ],
+      "analysisPoints": [
+        "서울시교육청이 개발한 '채움AI' 시스템을 타 시도교육청과 공동 운영함으로써 시스템 고도화 및 협력 체계를 확장함",
+        "AI 채점 엔진을 활용한 서·논술형 평가의 채점 보조 및 피드백 기능 제공을 통해 평가의 효율성을 높임",
+        "실천학교 운영을 단계적으로 확대하며 시스템의 현장 적합성을 검증하고 있음"
+      ],
+      "applicationReviewPoints": [
+        "타 시도교육청들이 공동 운영하는 '채움AI' 시스템의 기능과 현장 적용 사례를 분석하여 전북교육의 AI 기반 평가 도구 도입 여건을 비교해 볼 수 있음",
+        "실천학교 운영을 통한 시스템 고도화 방식 및 교원 연수 협의체 운영 사례를 참고할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2026년 10월 16일 제주에서 4개 교육청 업무협약 체결",
+        "서울시교육청은 2025년부터 채움AI 개발 중",
+        "2025년 66개 실천학교 운영, 2026년 135개교로 확대",
+        "현재까지 총 7개 시도교육청과 채움AI 공동 운영 협력체계 구축"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungnam-dba33e0624f513d2",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, 서울·세종·경북교육청과 미래형 평가 혁신 위한 ‘인공지능 서·논술형 평가 시스템’ 공동 운영 맞손",
+      "date": "2026-10-16",
+      "url": "https://news.cne.go.kr/news/view.do?bbs_id=S2N1&bbs_seq=827550",
+      "category": "디지털·AI",
+      "importance": 3,
+      "selectionReason": "여러 시도교육청이 공동으로 인공지능 기반 평가 시스템을 구축하고 운영하기로 한 정책적 협약으로 교육과정 및 평가 체제 변화에 해당함.",
+      "summaryPoints": [
+        "충남교육청이 서울·세종·경북교육청과 미래형 학생 평가 체제 전환을 위한 업무협약을 체결함",
+        "AI 기술을 활용한 서·논술형 평가 및 채점 지원 시스템을 공동 운영함",
+        "교사의 채점 결과에 AI 기술을 보완하여 평가의 신뢰도와 공정성을 확보할 계획임",
+        "2027년 충남교육 중점과제로 수업 평가 혁신을 추진함"
+      ],
+      "analysisPoints": [
+        "미래형 학생 평가 체제 전환을 위해 다수 교육청이 협력하여 AI 서·논술형 평가 및 채점 지원 시스템을 공동 운영함",
+        "교사의 채점 결과에 AI 기술을 보완적으로 적용하여 평가의 공정성과 신뢰도를 확보하고자 함",
+        "수업 평가 혁신을 교육청의 중점과제로 연계하여 추진하는 방향성을 보여줌"
+      ],
+      "applicationReviewPoints": [
+        "타 시도의 수업 평가 혁신 중점과제 추진 방향과 AI 기반 평가 시스템 도입 사례를 비교해 볼 수 있음",
+        "AI 기술을 활용한 서·논술형 평가의 공정성 확보 방안 및 교사 지원 체계를 검토해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "2026년 10월 16일 제주 그랜드 조선 호텔에서 업무협약 체결",
+        "협약 참여 기관은 충남·서울·세종·경북교육청",
+        "AI 기반 서·논술형 평가 및 채점 지원 시스템 공동 운영",
+        "2027년 충남교육 중점과제로 수업 평가 혁신 추진"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungbuk-bc4567227df638f5",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "충북온라인학교, 학교에 없는 과목도 배운다... 학생 선택권 확대",
+      "date": "2026-10-18",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1580970&bbsId=1158&mi=10301",
+      "category": "교육과정·수업",
+      "importance": 3,
+      "selectionReason": "온라인학교를 통한 학생 과목 선택권 확대 및 교육과정 운영 방식의 변화를 다루고 있음.",
+      "summaryPoints": [
+        "충북온라인학교가 소속 학교에서 개설하기 어려운 과목을 실시간 쌍방향 온라인 수업으로 지원함",
+        "2026학년도 157개 강좌를 운영하며 진로·심화 과목을 통해 학생의 과목 선택권을 보장함",
+        "2027학년도 1학기부터 한국기초과학지원연구원과 협력하여 융합과학 탐구 과목을 신설할 예정임",
+        "2027학년도 1·2학기 수강신청을 11월 2일까지 소속 학교를 통해 접수함"
+      ],
+      "analysisPoints": [
+        "온라인학교를 통해 개별 학교에서 개설하기 어려운 진로·융합·전문교과를 개설하여 학생의 과목 선택권을 보장하는 대안적 교육과정 모델임",
+        "외부 전문 연구기관과의 협력을 통해 융합과학 탐구 등 전문성 높은 과목을 신설·운영하는 다각적 교육 협력 모델을 제시함"
+      ],
+      "applicationReviewPoints": [
+        "온라인학교 운영을 통한 진로·융합·전문교과 개설 및 학생 선택권 확대 방안을 비교해 볼 수 있음",
+        "외부 전문 연구기관과의 협력을 통한 온라인 공동교육과정 과목 개설 및 운영 방식을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "충북온라인학교는 2024년 9월 개교한 공립 각종학교임",
+        "2026학년도 1학기 92개, 2학기 65개 등 총 157개 강좌 운영함",
+        "2026년 1학기 수강생은 658명, 2학기 수강생은 480명임",
+        "전체 강좌의 79.6%가 진로선택, 융합선택, 전문교과 등으로 구성됨",
+        "2027학년도 1학기 한국기초과학지원연구원과 협력 수업 개설 예정임",
+        "2027학년도 1·2학기 수강신청 마감일은 2026년 11월 2일임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 1.0
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongbuk-b6bd624f8e817af3",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[행정과]경북교육청, 2027학년도 중학교 학교군 및 중학구 고시 개정",
+      "date": "2026-10-16",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1655751&bbsId=4744&mi=17643&searchCate=761",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "중학교 학교군 및 중학구 고시 개정은 교육행정의 제도적 변화 및 학생 배치 정책에 해당합니다.",
+      "summaryPoints": [
+        "경북교육청이 2027학년도 중학교 학교군 및 중학구 고시를 개정함",
+        "학교 신설, 통폐합, 분교장 개편 등 교육여건 변화를 반영하여 학구를 조정함",
+        "호명중학교 개교에 맞춰 경북도청신도시중학교군을 신설함",
+        "작은 학교 자유학구제 운영 사항을 반영하여 학생의 학교 선택권을 확대함"
+      ],
+      "analysisPoints": [
+        "학교 신설, 통폐합, 분교장 개편 등 지역 내 교육여건 변화를 반영하여 학교군 및 중학구를 유연하게 조정하는 행정적 조치임",
+        "작은 학교 자유학구제를 통해 주소지 기준과 졸업학교 기준 중 선택할 수 있도록 하여 학생의 학교 선택권을 넓히고 작은 학교 활성화를 도모함"
+      ],
+      "applicationReviewPoints": [
+        "지역 여건 변화에 따른 중학교 학교군 및 중학구 조정 사례를 비교해 볼 수 있음",
+        "작은 학교 활성화를 위한 자유학구제 선택권 부여 방식을 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2027년 3월 1일 호명중학교가 개교할 예정임",
+        "교명 추가 대상은 포항펜타초, 화천초, 지품천초, 호명중 등 4개교임",
+        "교명 삭제 대상은 구성초 등 16개 학교 및 분교장임",
+        "경북도청신도시중학교군 신설로 기존 풍천중학구는 삭제됨",
+        "포항지역 포항펜타초 졸업생은 2027~2028학년도 동지중·동지여중 선배정 가능함",
+        "작은 학교 자유학구제는 주소지 기준 학구와 졸업학교 기준 학구 중 선택 가능함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 1.0
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "seoul-98cc4c02424595df",
+      "sourceId": "seoul",
+      "source": "서울특별시교육청",
+      "title": "서울시교육청, 2027학년도 일반고 직업교육 위탁과정 모집",
+      "date": "2026-10-16",
+      "url": "https://enews.sen.go.kr/news/view.do?bbsSn=192363&step1=3&step2=1",
+      "category": "진로·직업교육",
+      "importance": 2,
+      "selectionReason": "일반고 직업교육 위탁과정은 교육청 차원의 공식적인 교육과정 운영 및 학생 지원 정책으로 판단됨.",
+      "summaryPoints": [
+        "서울시교육청이 일반고 3학년 진학 예정자를 대상으로 직업교육 위탁과정 학생을 모집함",
+        "위탁과정 이수 시 소속 학교 졸업장 취득과 직업교육 경력을 동시에 인정받음",
+        "교육비는 서울시교육청에서 전액 지원함",
+        "원서 접수는 2026년 10월 26일부터 28일까지 교데통을 통해 진행함"
+      ],
+      "analysisPoints": [
+        "일반고 학생 중 직업교육을 희망하는 학생에게 전문 교육 기회를 제공하고 소속 학교 졸업장과 직업교육 경력을 동시에 인정하는 진로 다변화 정책임",
+        "산업정보학교 등 전문 위탁운영 기관을 활용하여 체계적인 직업교육 과정을 지원하는 체계임"
+      ],
+      "applicationReviewPoints": [
+        "일반고 학생 대상 직업교육 위탁과정 운영 및 지원 방식을 비교해 볼 수 있음",
+        "산업정보학교 등 전문 위탁기관을 활용한 직업교육 연계 체계를 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "위탁운영 기관은 금천·서울·서초·아현·은평·종로 산업(문화예술)정보학교 6개교임",
+        "원서 접수 기간은 2026년 10월 26일~28일 16시까지임",
+        "면접 및 관찰평가는 2026년 11월 2일에 실시함",
+        "합격자 발표는 2026년 11월 6일임",
+        "예비소집은 2026년 12월 7일 14시에 진행함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 1.0
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeonggi-952344ae1fab8d84",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "유아가 작가로!! 독서에서 시작된 상상, 자신의 이야기로 다시 피어나다",
+      "date": "2026-10-16",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2377603&bbsId=1922&mi=10102",
+      "category": "교육과정·수업",
+      "importance": 2,
+      "selectionReason": "경기도교육청의 독서교육 대전환 정책과 연계된 온라인 플랫폼 운영 및 유아 독서문화 조성 사업으로 정책적 파급력이 있습니다.",
+      "summaryPoints": [
+        "경기도교육청이 유아 독서교육 확산을 위해 온라인 플랫폼 방과후 상상책방을 운영함",
+        "유아가 일상과 놀이에서 발견한 이야기를 그림책으로 제작하고 공유할 수 있음",
+        "상상창작소 기능을 통해 그림책 제작을 지원하며 참여와 공유에 가치를 둠",
+        "10월 30일까지 그림책 제작을 위한 이야기를 집중 접수함"
+      ],
+      "analysisPoints": [
+        "온라인 플랫폼을 활용하여 유아가 주도적으로 그림책을 제작하고 공유하는 참여형 독서교육 모델을 제시함",
+        "유치원 방과후과정 교직원 연수와 연계하여 현장의 실행력을 높이고 온라인 공개 및 인쇄 지원을 통해 유아의 성취감을 고취함"
+      ],
+      "applicationReviewPoints": [
+        "온라인 플랫폼을 활용한 유아 그림책 제작 및 공유 지원 방안을 비교해 볼 수 있음",
+        "방과후과정 교직원 연수와 연계한 독서교육 활성화 방안의 시범 적용을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "방과후 상상책방은 경기 독서교육 대전환 사업과 연계됨",
+        "역량 강화 연수에 유치원 방과후과정 교직원 약 1,500명이 참여함",
+        "그림책 제작 이야기 집중 접수 기간은 2026년 10월 30일까지임",
+        "제작된 그림책은 온라인 상상책장에 공개되며 인쇄를 지원함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 1.0
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jngj_s1n1-affcc6efa2f73e8a",
+      "sourceId": "jngj_s1n1",
+      "source": "전남광주통합특별시교육청",
+      "title": "전남광주특별시교육청, 전국체전 기간 학교운동부 특별점검",
+      "date": "2026-10-18",
+      "url": "https://www.jngjedu.kr/news/articleView.html?idxno=200725",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "학교운동부 운영의 청렴성 및 인권 보호를 위한 특별점검은 교육청 차원의 안전 대책 및 관리 정책에 해당함.",
+      "summaryPoints": [
+        "제107회 전국체육대회 기간 학교운동부 대상 청렴 특별점검 실시함",
+        "학생선수 인권 보호 및 부당 경비 집행 등 예방 중심 점검 진행함",
+        "위법 행위 적발 시 엄정 조치하고 지적 사례는 재발 방지를 위해 안내할 예정임"
+      ],
+      "analysisPoints": [
+        "전국체전 등 대규모 체육행사 기간 중 발생할 수 있는 학생선수 인권 침해 및 부당 경비 집행을 예방하기 위한 현장 중심의 특별점검 체계 구축이 필요함",
+        "감사담당공무원으로 구성된 점검반을 통해 현장 점검의 실효성과 전문성을 확보하려는 경향을 보임"
+      ],
+      "applicationReviewPoints": [
+        "전북 지역 학생선수단이 참가하는 대규모 체육대회 기간 중 인권 보호 및 부당 경비 예방을 위한 특별점검 운영 방안을 비교해 볼 수 있음",
+        "감사 부서와 연계한 현장 점검반 구성 및 운영 사례를 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "점검 기간은 2026년 10월 16일부터 18일까지임",
+        "점검 대상은 제주특별자치도 일원 주요 종목 경기장 및 선수단 숙소임",
+        "점검반은 감사담당공무원으로 구성됨",
+        "주요 점검 사항은 학생선수 인권 보호, 부당 찬조금 수수, 지도자 복무 위반 등임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungnam-af1a9fe93055e8ae",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, 유치원과 어린이집이 함께 활용하는 유아 보건교육 자료 개발·보급",
+      "date": "2026-10-16",
+      "url": "https://news.cne.go.kr/news/view.do?bbs_id=S2N1&bbs_seq=827548",
+      "category": "학생지원·복지",
+      "importance": 2,
+      "selectionReason": "유치원과 어린이집에 공통으로 적용되는 보건교육 교수·학습 자료를 개발하여 보급하는 교육 지원 정책입니다.",
+      "summaryPoints": [
+        "유치원과 어린이집에서 활용 가능한 보건교육 과정안 개발 및 보급함",
+        "보건교사 미배치 기관에서도 약물 오남용 및 응급처치 교육이 가능하도록 지원함",
+        "유아 발달 수준에 맞춘 놀이 중심의 보건교육 자료로 구성함"
+      ],
+      "analysisPoints": [
+        "유보통합 추진 과정에서 유치원과 어린이집이 공동으로 활용할 수 있는 표준화된 교육 자료 개발의 필요성이 증대됨",
+        "보건교사가 배치되지 않은 소규모 교육·보육 기관에서도 체계적인 보건교육이 가능하도록 지원하는 보편적 교육 복지 성격을 띰",
+        "유아의 발달 수준에 맞춘 놀이 중심 및 누리과정 연계 교육을 통해 학습 효과를 극대화하려는 시도로 볼 수 있음"
+      ],
+      "applicationReviewPoints": [
+        "유치원과 어린이집에서 공동 활용 가능한 보건교육 자료 개발 및 보급 여부를 비교해 볼 수 있음",
+        "보건교사 미배치 기관을 위한 약물 오남용 및 응급처치 교육 지원 방안을 확인할 필요가 있음",
+        "누리과정과 연계한 놀이 중심 보건교육 콘텐츠의 시범 적용을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "교육 자료는 2019개정 누리과정과 연계된 7차시 과정안임",
+        "주요 주제는 약물 이해, 비타민 안전, 폐의약품 배출, 카페인 중독 예방, 응급처치 등임",
+        "유아의 흥미와 참여를 높이기 위해 놀이 활동을 포함함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeju-a8a7106030bd4261",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "학생·교직원·도민이 함께 만드는 2027 제주교육",
+      "date": "2026-10-16",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1483777",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "차기 교육 정책 수립을 위한 의견 수렴 과정으로 교육청 차원의 정책 방향 설정과 관련된 자료임.",
+      "summaryPoints": [
+        "2027 제주교육 정책 수립을 위해 교직원 및 학생 대상 설문조사 실시함",
+        "조사 결과는 향후 제주교육 정책 수립의 기초자료로 활용될 예정임",
+        "교직원은 교육활동 보호와 행정부담 경감을 주요 과제로 제안함"
+      ],
+      "analysisPoints": [
+        "차기 교육정책 수립 과정에서 교직원과 학생 등 교육 주체의 의견을 체계적으로 수렴하여 기초자료로 활용하는 민주적 의사결정 모델임",
+        "교직원과 학생의 요구사항 분석을 통해 교육활동 보호, 학력 향상, 안전한 학교생활 등 현장 밀착형 과제를 도출하는 흐름을 보여줌"
+      ],
+      "applicationReviewPoints": [
+        "교육정책 수립을 위한 교직원 및 학생 대상 설문조사 문항 구성과 의견 수렴 방식을 비교해 볼 수 있음",
+        "현장에서 제기된 교육활동 보호 및 학력·문해력 향상 요구사항을 전북 교육정책 수립 시 반영하는 방안을 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "설문 기간은 2026년 9월 22일부터 10월 2일까지 7일간임",
+        "참여 인원은 교직원 1,308명 및 학생대표 714명임",
+        "교직원 응답자 중 교사가 51.91%로 가장 높은 비중을 차지함",
+        "교직원 최우선 해결과제로 학력 문해력, 교육활동 보호, 민주시민교육 순으로 응답함",
+        "학생 최우선 해결과제로 안전하고 건강한 학교생활, 맞춤형 교육 등이 포함됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "moe-f5dcce99af404e5d",
+      "sourceId": "moe",
+      "source": "교육부",
+      "title": "데이터로 읽는 우리 교육 제16호 발간",
+      "date": "2026-10-18",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107440&lev=0&m=020402&s=moe",
+      "category": "기타",
+      "importance": 1,
+      "selectionReason": "교육부에서 발간한 교육 통계 및 지표 분석 자료로 교육 정책 수립의 기초 자료가 됩니다.",
+      "summaryPoints": [
+        "데이터로 읽는 우리 교육 제16호 발간함",
+        "우리나라 청년층 고등교육 이수율이 OECD 최고 수준임을 확인함",
+        "석·박사 학위 취득률 및 국·공립대학 졸업자 비율은 OECD 평균을 밑돎"
+      ],
+      "analysisPoints": [
+        "국제 비교 데이터를 활용하여 국내 교육의 강점과 약점을 객관적으로 진단하는 계기를 제공함",
+        "OECD 교육지표 분석을 통해 국가 및 지역 수준의 교육 정책 방향성을 점검하고 보완하는 기초자료로 활용할 수 있음"
+      ],
+      "applicationReviewPoints": [
+        "OECD 교육지표 분석 결과를 바탕으로 지역 내 고등교육 및 진로 교육 정책의 방향성을 비교해 볼 수 있음",
+        "발간된 교육 데이터 분석 자료를 전북 교육 정책 수립 및 성과 분석의 참고자료로 활용할 수 있는지 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2025년 기준 우리나라 25~34세 고등교육 이수율은 71.1%임",
+        "OECD 교육지표(EAG)는 매년 9월 발표되며 한국어 편역본은 12월에 간행됨",
+        "OECD 교육지표는 교육기관 산출, 접근성, 재정, 교사 및 학교조직 등 4개 파트로 구성됨",
+        "우리나라는 1995년부터 OECD 교육지표사업에 참여함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "ownOfficeItems": [
+    {
+      "newsId": "jeonbuk-de3df41606f2c984",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "교육공동체 구성원 서로 존중받고 함께 빛나게",
+      "date": "2026-10-16",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1200174",
+      "summaryPoints": [
+        "전북교육인권센터가 15~16일 도내 학교 관리자 35명을 대상으로 인권리더십 역량강화 연수를 운영함",
+        "역사, 기후, 법, 문화 등 다각적 관점에서 인권 감수성을 높이고 인권 친화적 학교 문화 조성을 도모함"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-f77702ae97abb9a1",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "“나사 글로벌 캠프에서 미래 우주과학자 꿈 키워요”",
+      "date": "2026-10-16",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1200173",
+      "summaryPoints": [
+        "전북교육청이 18일부터 26일까지 중학교 3학년 학생 16명을 대상으로 미국 나사 글로벌 캠프를 운영함",
+        "미국 헌츠빌 스페이스 아카데미 체험과 워싱턴 D.C. 박물관 탐방을 통해 우주과학 분야 진로 탐색을 지원함"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-0482690a6b4170f5",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "질문하고 비판적 사고력 키우는 수업...교원 연수 운영",
+      "date": "2026-10-16",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1200177",
+      "summaryPoints": [
+        "전북교육청이 16~17일 전주대에서 중학교 교사 86명을 대상으로 질문 중심 수업 평가 역량 강화 연수를 실시함",
+        "5개 교육지원청이 교과별로 역할을 분담하여 실습 중심의 수업 설계 및 서·논술형 평가 문항 개발을 지원함"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-d2ba1a8241f855ed",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "미륵사지부터 전라감영 탐방하며 역사와 문화 ‘만끽’",
+      "date": "2026-10-16",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1200175",
+      "summaryPoints": [
+        "전북특별자치도교육청(교육감 천호성) 이 학교 교육과정의 지역화 특성화 다양화를 위해 지역의 역사문화 자원을 활용한 교원 역사교육 역량 강화에 나선다.",
+        "전북교육청은 16일 지역사 특강을 시작으로 17일 역사체험 탐방, 30~31일 백범 김구 탄생 150주년 기념 역사테마캠프를 잇달아 운영한다."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "reviewRequired": true,
+      "reviewReason": "원문에서 확인되지 않는 수치가 있습니다: ['10']",
+      "validation": {
+        "status": "REVIEW",
+        "issues": [],
+        "confidence": 0
+      }
+    },
+    {
+      "newsId": "jeonbuk-ba2128e59ab63712",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "폐교 교육·문화·공동체 거점으로.. 활용 공모 사업 추진",
+      "date": "2026-10-16",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1200178",
+      "summaryPoints": [
+        "군산·정읍·무주·고창·부안 지역 폐교 10개교를 대상으로 교육·문화·공동체 거점 활용을 위한 공모사업 추진함",
+        "11월 20일까지 주민단체 및 지방자치단체 신청을 받아 심사 후 2년간 무상 대부할 예정임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    }
+  ],
+  "omittedItems": [],
+  "validation": {
+    "status": "PASS",
+    "issues": [],
+    "checks": {
+      "ownOfficeExcludedFromTrendAnalysis": true,
+      "ownOfficeAllIncluded": true,
+      "ownOfficeSummariesVerified": false,
+      "publishedItemsVerified": true,
+      "sourceWindowMatches": true
+    }
+  },
+  "providerErrors": {
+    "facts": [],
+    "ownOfficeSummaries": [],
+    "analysis": [],
+    "verification": [],
+    "repairs": [],
+    "repairVerifications": []
+  },
+  "trace": [
+    {
+      "step": "extract_facts",
+      "status": "success",
+      "startedAt": "2026-10-18T22:00:47+00:00",
+      "durationMs": 11214
+    },
+    {
+      "step": "summarize_own_office",
+      "status": "success",
+      "startedAt": "2026-10-18T22:00:58+00:00",
+      "durationMs": 3206
+    },
+    {
+      "step": "analyze_trends",
+      "status": "success",
+      "startedAt": "2026-10-18T22:01:01+00:00",
+      "durationMs": 58533
+    },
+    {
+      "step": "verify_report",
+      "status": "success",
+      "startedAt": "2026-10-18T22:02:00+00:00",
+      "durationMs": 6236
+    },
+    {
+      "step": "repair_report_1",
+      "status": "success",
+      "startedAt": "2026-10-18T22:02:06+00:00",
+      "durationMs": 13194
+    },
+    {
+      "step": "verify_repair_1",
+      "status": "success",
+      "startedAt": "2026-10-18T22:02:19+00:00",
+      "durationMs": 891
+    }
+  ],
+  "rendering": {
+    "canonical": "json",
+    "html": "오늘의 교육동향 (20261019).html",
+    "hwpx": "오늘의 교육동향 (20261019).hwpx",
+    "hwpxValidation": {
+      "hardGates": {
+        "package_validation": "pass",
+        "document_errors": "pass",
+        "schema_lint": "pass",
+        "reopen": "pass",
+        "editor_open_safety": "pass",
+        "id_integrity": "pass"
+      },
+      "packageOk": true,
+      "documentOk": true,
+      "reopenedOk": true,
+      "visualReviewRequired": true
+    }
+  }
+}
