@@ -1,0 +1,877 @@
+{
+  "metadata": {
+    "reportId": "20261101T220238Z-54fe24cb",
+    "title": "오늘의 교육동향",
+    "status": "completed",
+    "generatedAt": "2026-11-01T22:02:38+00:00",
+    "windowStart": "2026-10-30T06:00:00+09:00",
+    "windowEnd": "2026-11-02T06:00:00+09:00",
+    "windowHours": 72,
+    "selectionRunId": "20261101T212316Z-3f889872",
+    "sourceCount": 20,
+    "eligibleCount": 16,
+    "publishedCount": 16,
+    "omittedCount": 0,
+    "ownOfficeEligibleCount": 4,
+    "ownOfficePublishedCount": 4,
+    "qualityExcludedCount": 0,
+    "factModel": "google/gemini-3.1-flash-lite",
+    "analysisModel": "google/gemini-3.5-flash",
+    "verifierModel": "google/gemini-3.1-flash-lite",
+    "summaryOnlyCount": 0,
+    "ownOfficeReviewCount": 1,
+    "usage": {
+      "stages": {
+        "facts": {
+          "model": "google/gemini-3.1-flash-lite",
+          "requests": 5,
+          "promptTokenCount": 21463,
+          "candidatesTokenCount": 5062,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 26525
+        },
+        "analysis": {
+          "model": "google/gemini-3.5-flash",
+          "requests": 5,
+          "promptTokenCount": 8739,
+          "candidatesTokenCount": 3433,
+          "thoughtsTokenCount": 12872,
+          "totalTokenCount": 25044
+        },
+        "verification": {
+          "model": "google/gemini-3.1-flash-lite",
+          "requests": 6,
+          "promptTokenCount": 28870,
+          "candidatesTokenCount": 1213,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 30083
+        }
+      },
+      "total": {
+        "requests": 16,
+        "promptTokenCount": 59072,
+        "candidatesTokenCount": 9708,
+        "thoughtsTokenCount": 12872,
+        "totalTokenCount": 81652
+      }
+    },
+    "estimatedCostUsd": 0.181849
+  },
+  "items": [
+    {
+      "newsId": "gyeongbuk-3c67a4cc3c323184",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[유초등교육과]경북교육청, 보결수업 운영 내실화로 안정적인 교육과정 지원",
+      "date": "2026-10-30",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1660381&bbsId=4744&mi=17643&searchCate=761",
+      "category": "교원·인사",
+      "importance": 3,
+      "selectionReason": "보결수업 수당 단가를 도내 전체 학교급에 대해 통일하고 인상하는 등 교원 처우 및 인사 관련 제도적 기준의 변경이 명시되어 있습니다.",
+      "summaryPoints": [
+        "교원의 휴가 및 출장으로 발생하는 수업 공백 최소화 및 교원 부담 완화 추진",
+        "2027년 3월 1일부터 보결수업 수당을 시간당 1만 6천 원으로 인상",
+        "학교별 보결수업 수당 지급 단가 통일 및 내부 규정 정비 지원",
+        "유치원 및 초등학교 수업지원강사 69명 운영 및 중등학교 시간·전일제강사 활용"
+      ],
+      "analysisPoints": [
+        "교원의 휴가 및 출장으로 인한 수업 공백을 최소화하고 교원 부담을 완화하기 위한 보결수업 운영 내실화 정책임",
+        "보결수업 수당의 단가 인상 및 학교별 지급 기준 통일을 통해 안정적인 교육과정 운영을 도모함",
+        "유치원 및 초등학교 대상 수업지원강사 제도를 통해 현장 밀착형 수업 지원 체계를 구축함"
+      ],
+      "applicationReviewPoints": [
+        "전북 관내 학교의 보결수업 수당 지급 기준 및 운영 현황을 파악하고 경북의 인상 사례와 비교해 볼 수 있음",
+        "유치원 및 초등학교 대상 수업지원강사 운영 규모와 방식의 적정성을 검토해 볼 수 있음",
+        "학교별 내부 규정 정비를 통한 보결수업 운영 체계화 방안을 참고할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "경상북도교육청 보결수업 수당 시간당 1만 6천 원으로 인상",
+        "2027년 3월 1일부터 변경된 수당 기준 적용",
+        "유치원 20명, 초등학교 49명 등 총 69명의 수업지원강사 운영",
+        "학교운영위원회 심의를 거쳐 학교별 세부 내부 규정 정비 예정"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "daejeon-dd27984c34bcf8b4",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "대전시교육청, 현장체험학습 지원 강화로 교실 밖 배움 넓힌다(미래생활교육과)",
+      "date": "2026-10-30",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3366101&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "category": "교육과정·수업",
+      "importance": 3,
+      "selectionReason": "교육부 선도교육청 사업과 연계하여 직속기관 프로그램 개선 및 체험처 통합 안내 시스템을 구축하는 등 교육 지원 체계의 변화를 포함함.",
+      "summaryPoints": [
+        "교육부 현장체험학습 선도교육청 사업과 연계하여 지원 강화",
+        "직속기관 체험 인프라 개선 및 프로그램 확대",
+        "현장체험학습 체험처 통합 안내자료 제작 및 보급",
+        "2027년 직속기관 프로그램 확충 계획"
+      ],
+      "analysisPoints": [
+        "교육부 선도교육청 사업과 연계하여 직속기관의 체험 인프라를 개선하고 프로그램을 확충하는 방향임",
+        "인근 권역의 체험처 및 국공립 수련시설 정보를 통합한 안내자료를 제작·보급하여 학교 현장의 편의성을 높임"
+      ],
+      "applicationReviewPoints": [
+        "전북 내 직속기관의 체험 인프라 및 프로그램 현황을 점검하고 대전의 통합 안내자료 제작 사례를 벤치마킹할 필요가 있음",
+        "인근 권역 및 국공립 청소년수련시설과의 연계 프로그램 개발 가능성을 검토해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "대전시교육청 교육부 선정 현장체험학습 선도교육청 운영",
+        "대전학생해양수련원, 대전교육연수원 등 직속기관 체험 인프라 개선",
+        "통합 안내자료에 직속기관 프로그램, 충청권 체험처, 국공립 청소년수련시설 정보 포함",
+        "2027년 직속기관 체험 프로그램 확충 예정"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "busan-0cc21e64f228a541",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "부산교육청, 인간 중심 피지컬 AI 교육 본격화",
+      "date": "2026-10-30",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1182796&bbsId=2286&mi=30397",
+      "category": "디지털·AI",
+      "importance": 3,
+      "selectionReason": "교육청 차원에서 피지컬 AI 연구학교를 지정하고 미래형 교육 모델을 도입하는 정책적 변화를 담고 있습니다.",
+      "summaryPoints": [
+        "부산광역시교육청이 내년부터 전국 최초로 '피지컬 AI 연구학교' 5곳을 지정하여 운영할 계획임",
+        "교원과 교육전문직 300여 명을 대상으로 피지컬 AI 교육의 개념 이해와 수업 설계 역량 강화를 위한 워크숍을 개최함",
+        "피지컬 AI 교육은 단순 코딩을 넘어 로봇 센서 등 물리적 장치와 결합한 인공지능을 활용해 학생 스스로 문제를 해결하는 힘을 기르는 데 중점을 둠"
+      ],
+      "analysisPoints": [
+        "화면 속 정보 처리에 머물던 AI 교육을 현실 세계와 상호작용하는 피지컬 AI 영역으로 확장하여 미래형 교육모델을 선도하려는 시도로 볼 수 있음",
+        "연구학교 지정과 교원 워크숍을 병행함으로써 정책 추진의 동력을 확보하고 현장 교사들의 실천 사례를 확산하려는 전략으로 분석됨",
+        "단순 기술 습득 위주의 코딩 교육에서 벗어나 토론과 문제 해결 중심의 인간 중심 AI 교육으로 패러다임이 전환되고 있음을 보여줌"
+      ],
+      "applicationReviewPoints": [
+        "피지컬 AI 교육의 개념과 교육적 효과성을 검토하고 향후 도내 연구학교 지정 및 시범 운영 방안을 모색해 볼 수 있음",
+        "교원들의 미래형 수업 설계 역량을 높이기 위해 피지컬 AI 관련 연수 프로그램 및 워크숍 개설을 검토할 필요가 있음",
+        "초·중·고 학교급별 피지컬 AI 수업 실천 사례를 수집하여 도내 교육 현장에 적합한 교육자료 개발에 활용하는 방안을 고려할 수 있음"
+      ],
+      "sourceFacts": [
+        "부산광역시교육청 전국 최초 피지컬 AI 연구학교 5곳 운영",
+        "2026년 11월 2일 부산교육연구정보원에서 피지컬 AI 교육 워크숍 개최",
+        "워크숍 대상은 교원 및 교육전문직 300여 명",
+        "피지컬 AI는 인공지능과 물리적 장치가 결합된 기술임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9,
+        "repair": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "seoul-bbeb6ffee75bbdad",
+      "sourceId": "seoul",
+      "source": "서울특별시교육청",
+      "title": "서울시교육청, 서울학생체육관을 미래형 스포츠·문화 복합 공간으로 이전·신축 추진",
+      "date": "2026-10-31",
+      "url": "https://enews.sen.go.kr/news/view.do?bbsSn=192448&step1=3&step2=1",
+      "category": "안전·시설",
+      "importance": 3,
+      "selectionReason": "교육청 차원의 대규모 시설 이전 및 신축을 통한 교육 인프라 확충 정책으로 판단됨.",
+      "summaryPoints": [
+        "서울학생체육관을 미래형 스포츠·문화 복합공간으로 이전 신축 추진",
+        "현대자동차그룹 GBC 공공기여 활용",
+        "잠실종합운동장 주경기장 남서측에 조성 예정",
+        "2027년 상반기 개관 목표",
+        "신축 체육관에 다목적 체육관, 수영장, 다이빙장 등 시설 도입"
+      ],
+      "analysisPoints": [
+        "민간 기업의 공공기여를 활용하여 학생체육관을 미래형 스포츠·문화 복합 공간으로 이전·신축하는 대규모 인프라 개선 사업임",
+        "다목적 체육관, 수영장, 다이빙장 등 다양한 체육 시설을 통합 구축하여 학생과 지역사회의 활용도를 극대화하고자 함",
+        "종합계획 수립을 위한 전담 TF를 구성하여 체계적인 이전 및 신축 과정을 관리함"
+      ],
+      "applicationReviewPoints": [
+        "전북 내 노후화된 학생 체육 시설의 이전·신축 또는 리모델링 시 민간 공공기여나 지역 개발 연계 방안을 벤치마킹할 수 있음",
+        "단순 체육관을 넘어 스포츠와 문화가 결합된 복합 공간 형태의 인프라 구축 타당성을 검토해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "서울학생체육관 이전 신축 사업 추진",
+        "현대자동차그룹 글로벌비즈니스센터(GBC) 공공기여 활용",
+        "잠실종합운동장 주경기장 남서측(야구장 북측) 부지 선정",
+        "2027년 상반기 개관 목표",
+        "신축 이전 종합계획 마련 TF 구성 및 운영 중"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "moe-2e41086a1d09628f",
+      "sourceId": "moe",
+      "source": "교육부",
+      "title": "인공지능시대사이버보안영재교육지원을위한 교육부.LG유플러스.티오리한국 업무협약 체결",
+      "date": "2026-10-30",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107526&lev=0&m=020402&s=moe",
+      "category": "디지털·AI",
+      "importance": 3,
+      "selectionReason": "교육부 차원에서 민간 기업과 협력하여 AI 및 정보보호 영재교육과정 전문화와 인재 육성 정책을 추진하는 내용임.",
+      "summaryPoints": [
+        "교육부와 LG유플러스, 티오리한국이 AI 정보보호 영재교육원 운영 지원을 위한 업무협약을 체결함",
+        "민간 기업의 기술과 인프라를 활용해 영재교육과정 전문화 및 경진대회 운영을 지원할 예정임",
+        "경진대회 운영 시 AI 활용 기준을 마련하고 전문가 특강 및 진로체험 프로그램을 제공함",
+        "10월 31일 LG사이언스파크에서 제12회 정보보안 경진대회 단체전 본선이 개최됨"
+      ],
+      "analysisPoints": [
+        "민간 기업의 전문 기술 및 인프라를 활용한 AI 정보보호 영재교육의 전문성 강화 방안으로 볼 수 있음",
+        "경진대회 운영 시 AI 활용 기준 설계 등 새로운 디지털 환경에 부합하는 교육 기준 마련의 필요성을 시사함",
+        "민·관 협력을 통한 실습 인프라 제공 및 전문가 특강 등 다각적인 진로체험 프로그램 제공 모델로 평가됨"
+      ],
+      "applicationReviewPoints": [
+        "민간 전문 기관과의 협력을 통한 정보보호 및 AI 분야 영재교육과정 내실화 방안을 검토할 수 있음",
+        "정보보안 경진대회 등 관련 행사 운영 시 AI 활용 기준 수립 및 인프라 지원 협력 체계 구축 가능성을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "교육부, LG유플러스, 티오리한국 간 업무협약 체결",
+        "협약 목적은 AI 정보보호 영재교육원 교육과정 전문화 및 경진대회 운영 지원임",
+        "LG유플러스는 경진대회 장소 및 네트워크 실습 인프라를 제공함",
+        "티오리한국은 경진대회 문제 출제, 운영 기술 지원, AI 활용 기준 설계를 담당함",
+        "제12회 정보보안 경진대회 단체전 본선에 4개 권역 12개 팀 48명 참가함"
+      ],
+      "confidence": {
+        "facts": 1.0,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "ulsan-e2aeb78d26777422",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "[울산교육청] 수능 시험장에 지능형 안경 전담 요원 추가 배치",
+      "date": "2026-11-01",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20261101181538096",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "수능 부정행위 예방을 위한 전담 요원 배치 및 대응 체계 강화는 시험 관리 제도 및 안전 대책의 구체적인 변화임.",
+      "summaryPoints": [
+        "울산교육청이 2027학년도 수능 부정행위 예방을 위해 3중 대응 체계를 가동함",
+        "시험장별 지능형 안경 전담 요원 배치 및 정밀 탐지 장비 1대씩을 도입함",
+        "교육청 종합상황실에 지능형 안경 전담 관리관을 지정하여 실시간 대응함"
+      ],
+      "analysisPoints": [
+        "첨단 전자기기를 활용한 수능 부정행위를 예방하기 위해 다중 대응 체계를 구축한 사례임",
+        "시험장별 전담 요원 배치 및 정밀 탐지 장비 도입을 통해 시험의 공정성과 신뢰도를 높이고자 함",
+        "종합상황실 내 전담 관리관 지정 및 사전 실습 교육을 통해 실시간 대응력을 강화함"
+      ],
+      "applicationReviewPoints": [
+        "수능 등 주요 시험에서 지능형 안경 등 첨단 기기를 활용한 부정행위를 예방하기 위한 탐지 장비 도입 및 전담 요원 배치 방안을 검토할 수 있음",
+        "시험장 학교 관계자를 대상으로 한 첨단 기기 탐지 방법 실습 및 대응 요령 교육의 필요성을 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "울산교육청은 지능형 안경 등 첨단 전자기기 부정행위 예방 체계를 구축함",
+        "모든 시험장 운영본부에 지능형 안경 전담 요원을 추가 배치함",
+        "모든 시험장에 정밀 탐지 지원 장비를 1대씩 배치함",
+        "11월 3일 시험장 학교 업무처리 요령 설명회에서 탐지 방법 실습 예정임",
+        "교육청 종합상황실에 지능형 안경 전담 관리관을 둠"
+      ],
+      "confidence": {
+        "facts": 1.0,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jngj_s1n1-a34c26e869291955",
+      "sourceId": "jngj_s1n1",
+      "source": "전남광주통합특별시교육청",
+      "title": "[전남광주통합특별시교육청] 전남광주통합특별시청 학교 무상급식 추경예산 반영 방침에 대한 교육청 입장",
+      "date": "2026-10-31",
+      "url": "https://www.jngjedu.kr/news/articleView.html?idxno=201709",
+      "category": "학생지원·복지",
+      "importance": 2,
+      "selectionReason": "교육청의 예산 편성 및 재정 운영 방침에 관한 정책적 결정 사항으로 교육행정의 주요 사안임.",
+      "summaryPoints": [
+        "전남광주통합특별시교육청이 학교 무상급식 미지급액 169억 원 중 100억 원을 올해 추경에 반영하기로 함",
+        "나머지 69억 원은 내년도 예산에 편성하여 연초에 전출할 계획임",
+        "시교육청은 자체 사업비 조정을 통해 급식 운영에 차질이 없도록 할 방침임"
+      ],
+      "analysisPoints": [
+        "지자체와의 무상급식 미지급액 분담 및 추경 반영을 통해 학교 급식 운영의 안정성을 도모한 사례임",
+        "교육청 자체 사업비 조정을 통해 부족한 재원을 마련하는 등 유연한 재정 운용의 필요성을 보여줌"
+      ],
+      "applicationReviewPoints": [
+        "지자체와의 무상급식 등 교육복지 예산 분담 갈등 발생 시, 추경 편성 및 자체 사업비 조정을 통한 재원 확보 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "전남광주통합특별시가 학교 무상급식 미지급액 169억 원 중 100억 원을 제2회 추경에 반영함",
+        "나머지 69억 원은 내년도 예산에 편성하여 연초에 전출할 예정임",
+        "시교육청은 재정 여건을 고려하여 특별시의 결정을 수용함",
+        "시교육청은 자체 사업비 조정을 통해 부족한 재원을 마련함"
+      ],
+      "confidence": {
+        "facts": 1.0,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongbuk-3486a68f744252ef",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[창의인재과]경북교육청, 2027학년도 영재교육대상자 선발 본격 추진",
+      "date": "2026-10-30",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1660366&bbsId=4744&mi=17643&searchCate=761",
+      "category": "교육과정·수업",
+      "importance": 2,
+      "selectionReason": "영재교육 대상자 선발 전형에서 사회통합 및 학교 밖 청소년 전형을 도입하여 교육 기회 확대라는 제도적 변화를 포함함.",
+      "summaryPoints": [
+        "경북교육청이 2027학년도 영재교육대상자 선발전형을 추진함",
+        "도내 115개 영재교육기관에서 약 3,000명을 선발할 예정임",
+        "일반, 사회통합, 학교 밖 청소년 전형으로 구분하여 기회 형평성을 높임",
+        "영재교육종합데이터베이스(GED)를 통해 온라인으로 지원함"
+      ],
+      "analysisPoints": [
+        "다양한 분야의 영재교육대상자 선발을 통해 창의인재 육성을 도모함",
+        "사회통합전형 및 학교 밖 청소년 전형을 별도로 운영하여 영재교육 기회의 형평성을 제고함",
+        "영재교육종합데이터베이스(GED)를 활용한 온라인 접수 및 다단계 선발 절차를 통해 선발의 객관성을 확보함"
+      ],
+      "applicationReviewPoints": [
+        "영재교육대상자 선발 시 사회통합대상자 및 학교 밖 청소년을 위한 전형 운영 현황을 비교해 볼 수 있음",
+        "다양한 영역의 영재성 검증을 위한 다단계 선발 절차 및 온라인 시스템 활용 방안을 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2027학년도 경상북도교육청 영재교육대상자 선발전형을 추진함",
+        "도내 115개 영재교육기관에서 약 3,000명을 선발함",
+        "모집 분야는 수학, 과학, 정보, 인문사회, AI, 융합, 예술 등임",
+        "일반전형, 사회통합전형, 학교 밖 청소년 전형으로 운영함",
+        "영재교육종합데이터베이스(GED)를 통해 온라인으로 접수함",
+        "선발 절차는 교사관찰추천, 영재성검사, 영역별 검사, 심층 면접, 창의적 문제해결력 평가 등으로 구성됨"
+      ],
+      "confidence": {
+        "facts": 1.0,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "daegu-4a11b745768b65f7",
+      "sourceId": "daegu",
+      "source": "대구광역시교육청",
+      "title": "대구시교육청, 2027학년도 유치원 유아모집 실시",
+      "date": "2026-10-30",
+      "url": "https://www.dge.go.kr/pr/na/ntt/selectNttInfo.do?nttSn=2220799&bbsId=2680&mi=9870",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "유보통합포털을 통한 유아모집 시스템 도입 및 공공 마이데이터 연계 등 입학 제도 및 행정 절차의 변화를 포함하고 있습니다.",
+      "summaryPoints": [
+        "2027학년도 유치원 유아모집을 11월 2일부터 유보통합포털을 통해 실시함",
+        "공공 마이데이터 연계로 증빙서류 온라인 제출이 가능해져 학부모 편의성 제고함",
+        "모집 대상은 2021년생부터 2023년생까지이며 희망 유치원 3곳까지 지원 가능함",
+        "우선모집, 일반모집, 추가모집의 3단계로 나누어 순차적으로 진행함"
+      ],
+      "analysisPoints": [
+        "유보통합포털과 공공 마이데이터 연계를 통한 유치원 입학 행정의 디지털화 및 학부모 편의성 제고 흐름임",
+        "원서 접수부터 최종 등록까지 원스톱 서비스를 제공하여 행정 절차를 간소화하는 방향임"
+      ],
+      "applicationReviewPoints": [
+        "전북 지역의 유치원 유아모집 시 유보통합포털 및 공공 마이데이터 연계 활용 현황을 점검하고 학부모 편의성 제고 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "유보통합포털을 통해 원서 접수부터 최종 등록까지 원스톱 서비스 제공함",
+        "우선모집 기간은 11월 2일부터 4일까지이며 11월 9일 결과 발표함",
+        "일반모집 기간은 11월 17일부터 23일까지이며 11월 26일 결과 발표함",
+        "추가모집은 12월 1일부터 2027년 2월 12일까지 진행함",
+        "2024년 1월~2월생은 희망 유치원 문의 후 현장 접수를 통해 조기입학 신청 가능함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "daegu-f3ace51ea2d21dac",
+      "sourceId": "daegu",
+      "source": "대구광역시교육청",
+      "title": "대구시교육청, 이주배경학생 맞춤형 한국어교육으로 학교 적응 지원",
+      "date": "2026-10-30",
+      "url": "https://www.dge.go.kr/pr/na/ntt/selectNttInfo.do?nttSn=2220800&bbsId=2680&mi=9870",
+      "category": "학생지원·복지",
+      "importance": 2,
+      "selectionReason": "이주배경학생을 위한 맞춤형 한국어교육 지원 체계 및 센터 운영 등 교육청 차원의 정책적 지원 사업임.",
+      "summaryPoints": [
+        "이주배경학생의 학교 적응을 위해 한국어학급, 예비과정, 찾아가는 한국어교육 등을 운영함",
+        "한국어 수준과 체류 기간에 따라 맞춤형 교육 방식을 다르게 적용함",
+        "2027년부터 편입학 준비 학생 대상 예비과정 위탁운영을 추진할 계획임"
+      ],
+      "analysisPoints": [
+        "이주배경학생의 한국어 수준과 체류 기간을 고려한 다각적 맞춤형 교육 지원 체계 구축의 필요성이 증대됨",
+        "한국어학급 운영, 예비과정 위탁, 찾아가는 교육 등 다각적 경로를 통한 학교 적응 지원 모델임"
+      ],
+      "applicationReviewPoints": [
+        "이주배경학생 대상 한국어학급 및 찾아가는 한국어교육 운영 방식을 검토하고 맞춤형 교육 지원 방안을 비교해 볼 수 있음",
+        "편입학 준비 학생을 위한 예비과정 위탁운영 방안의 타당성을 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2026년 기준 대구 지역 이주배경학생은 총 6,711명임",
+        "2025년 한국어교육센터를 개소하여 한국어 예비과정을 운영 중임",
+        "현재 초등학교 14교, 중학교 3교, 고등학교 2교에서 한국어학급을 운영함",
+        "찾아가는 한국어교육은 2026년 기준 102교 262명 학생에게 지원됨",
+        "고등학교 한국어학급은 한국어능력시험(TOPIK) 3급 이상 취득을 목표로 함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungbuk-891701a855529596",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "윤건영 교육감, “교사의 교육활동 보호는 모든 학생의 학습권을 지키는 일”",
+      "date": "2026-10-30",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1581518&bbsId=1158&mi=10301",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "상위 법령 개정에 따른 교육청 차원의 대응 체계 마련 및 학교 현장의 실질적 적용을 위한 정책적 지침을 담고 있습니다.",
+      "summaryPoints": [
+        "개정 초·중등교육법 시행에 따라 학교장 중심의 교육활동 보호체계 강화를 주문함",
+        "악성 민원에 대해 학교장이 법령에 따라 전화 면담 종료, 퇴거 요청 등 적극 대응할 것을 강조함",
+        "교육청 차원에서 대응 매뉴얼 정비 및 학교 현장 지원을 확대할 예정임"
+      ],
+      "analysisPoints": [
+        "개정 초·중등교육법 시행에 따라 학교장 중심의 적극적인 교육활동 보호 및 민원 대응 체계 강화가 요구됨",
+        "악성 민원에 대한 법적 대응 권한 구체화 및 교육청 차원의 현장 지원 매뉴얼 정비가 중요해짐"
+      ],
+      "applicationReviewPoints": [
+        "학교장 중심의 교육활동 보호 조치 및 악성 민원 대응 매뉴얼의 현장 적용 실태를 점검하고 보완책을 비교해 볼 수 있음",
+        "교원 지원 프로그램과의 연계 강화를 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "개정 법령에 따라 학교장은 교육활동 침해 민원인에게 행위 중지를 요청할 수 있음",
+        "민원인이 중지 요청에 불응할 경우 수사기관 신고 등 필요한 조치가 가능함",
+        "충북교육청은 교원 119, 마음클리닉, 학교안전공제회 등을 통해 교육활동을 지원함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "incheon-873f81295a436e1a",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 인천광역시체육회와 학교체육시설 개방 확대 업무협약 체결",
+      "date": "2026-10-30",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3387801&bbsId=1519&mi=11620",
+      "category": "지역협력·행사",
+      "importance": 2,
+      "selectionReason": "학교체육시설 개방 확대 및 행·재정적 지원 방안 마련을 포함하고 있어, 지역 내 학교 운영 및 시설 활용 정책의 변화로 판단됨.",
+      "summaryPoints": [
+        "인천시교육청과 인천시체육회가 학교체육시설 개방 확대를 위한 업무협약을 체결함",
+        "교육활동과 학생 안전을 보호하는 범위 내에서 지역 주민의 시설 이용 기회를 확대함",
+        "양 기관은 실무협의회를 구성하여 구체적인 이행 방안을 마련할 계획임"
+      ],
+      "analysisPoints": [
+        "학생 안전 및 교육활동 보호를 전제로 지역 체육회와의 협력을 통한 학교 체육시설 개방 확대 추세임",
+        "개방 학교에 대한 행·재정적 지원 및 안전 관리 방안 마련이 시설 개방 활성화의 선결 조건임"
+      ],
+      "applicationReviewPoints": [
+        "지역 체육회 등 유관기관과의 협력을 통한 학교 체육시설 개방 확대 및 개방 학교에 대한 지원 방안을 비교해 볼 수 있음",
+        "시설 이용 안전 관리 및 민원 예방을 위한 실무협의회 구성 방안을 검토할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "협약 내용에는 시설 이용 안전 관리 방안 및 개방 학교에 대한 행·재정적 지원이 포함됨",
+        "지역 주민과 체육 동호회에 공정하고 동등한 이용 기회를 보장함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "incheon-e7e08778e9441f0b",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 전문상담인력 확충·상담 환경 개선으로 학생 마음건강 지원 강화",
+      "date": "2026-10-30",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3387801&bbsId=1519&mi=11620",
+      "category": "학생지원·복지",
+      "importance": 2,
+      "selectionReason": "교육청 차원에서 전문상담인력 확충 및 상담 환경 개선을 통해 학생 마음건강 지원체계를 실질적으로 확대하는 정책적 변화를 담고 있습니다.",
+      "summaryPoints": [
+        "전문상담인력 확충 및 학교 상담환경 개선을 통한 학생 마음건강 지원체계 강화함",
+        "2026학년도 기준 518개교에 전문상담인력을 배치하여 전체 학교의 92.7%를 지원함",
+        "미배치 41개교는 교육지원청 위(Wee) 센터를 통해 순회 및 긴급 상담을 제공함",
+        "하반기 38개교 대상 신규 상담공간 구축 및 노후 시설 개선 추진 중임",
+        "2027학년도에는 상담 취약지역 거점학교 운영 및 제2병원형 위(Wee) 센터 개소를 계획함"
+      ],
+      "analysisPoints": [
+        "정원 외 기간제 교사 확보를 통한 전문상담인력 배치율 제고 및 학생 마음건강 지원체계 강화 방안임",
+        "상담 인력 미배치 학교에 대한 교육지원청 위(Wee) 센터 중심의 순회 및 긴급 상담 지원 체계 구축임",
+        "상담공간 신설 및 노후 시설 개선을 통한 학교 내 상담 환경의 질적 개선 도모임",
+        "상담 취약지역 거점학교 및 병원형 위(Wee) 센터 등 다각적인 맞춤형 상담 인프라 확충 계획임"
+      ],
+      "applicationReviewPoints": [
+        "정원 외 기간제 전문상담교사 확보를 통한 도내 학교 상담인력 배치율 제고 방안을 비교해 볼 수 있음",
+        "상담 미배치 학교를 위한 교육지원청 위(Wee) 센터의 순회 및 긴급 상담 지원 방식을 검토할 수 있음",
+        "상담 취약지역 거점학교 및 병원형 위(Wee) 센터 운영 사례를 참고하여 도내 상담 인프라 다양화 방안을 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "인천광역시교육청은 2026년 10월 30일 학생 마음건강 지원체계 확대 계획을 발표함",
+        "한시적 정원 외 기간제 전문상담교사 95명을 추가 확보함",
+        "2026학년도 기준 전문상담인력 배치율은 전체 학교의 92.7%임",
+        "교육지원청 소속 10개 위(Wee) 센터가 상담 공백을 지원함",
+        "상반기 위(Wee) 클래스 모델학교 3개교를 마련함",
+        "2027학년도 신설학교 6개교 및 상담 수요 높은 학교 인력 확충 검토 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jngj_s1n1-93e67081ca567784",
+      "sourceId": "jngj_s1n1",
+      "source": "전남광주통합특별시교육청",
+      "title": "전남광주특별시교육청, 영유아교육 협력 포럼 개최",
+      "date": "2026-10-30",
+      "url": "https://www.jngjedu.kr/news/articleView.html?idxno=201669",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "유보통합 정책의 안정적 정착을 위한 현장 의견 수렴 및 연구 성과 공유 등 교육행정 체계 변화와 관련된 포럼임.",
+      "summaryPoints": [
+        "전남광주통합특별시교육청이 영유아교육 협력 포럼을 개최함",
+        "유보통합의 안정적 정착을 위한 현장 의견 수렴 및 협력 방안을 논의함",
+        "12개 연구협의체의 연구 성과를 공유하고 정책 반영 방안을 모색함",
+        "유치원과 어린이집 간 격차 완화 및 교육 보육 환경 개선 과제를 제시함"
+      ],
+      "analysisPoints": [
+        "유보통합의 안정적 정착을 위해 현장 의견 수렴 및 다각적 협력 방안을 모색하는 포럼 개최임",
+        "연구협의체 운영을 통해 유치원과 어린이집 간 격차 완화 및 교육·보육 환경 개선 과제를 도출함",
+        "연구 성과를 바탕으로 실효성 있는 유보통합 정책 수립 및 사업 추진의 기초 자료로 활용함"
+      ],
+      "applicationReviewPoints": [
+        "유보통합 대비 유치원과 어린이집 간 격차 완화 및 환경 개선을 위한 연구협의체 운영 방식을 비교해 볼 수 있음",
+        "현장 의견 수렴을 위한 협력 포럼 개최 및 연구 성과의 정책 반영 프로세스를 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2026년 10월 29일 광주교육연수원에서 포럼이 개최됨",
+        "유치원 어린이집 관계자 및 대학 교수 등 200여 명이 참석함",
+        "지난 4월부터 10월까지 12개 연구협의체가 연구를 수행함",
+        "전남대학교 김영옥 명예교수가 기조강연을 진행함",
+        "연구 결과는 향후 유보통합 정책 수립 및 사업 추진에 활용될 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jngj_s1n1-6e94553ffb47e472",
+      "sourceId": "jngj_s1n1",
+      "source": "전남광주통합특별시교육청",
+      "title": "전남광주특별시교육청, 차기 교육금고 NH농협은행 지정",
+      "date": "2026-10-31",
+      "url": "https://www.jngjedu.kr/news/articleView.html?idxno=201713",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "교육금고 지정은 교육비특별회계의 안정적 관리와 직결된 교육행정의 제도적 운영 사항임.",
+      "summaryPoints": [
+        "전남광주통합특별시교육청이 차기 교육금고로 NH농협은행을 지정함",
+        "2027년부터 2030년까지 4년간 교육비특별회계 자금을 관리함",
+        "일반경쟁 공고 후 단독 응찰에 따른 수의방법으로 금고를 지정함"
+      ],
+      "analysisPoints": [
+        "경쟁 입찰 유찰에 따른 수의방법 지정을 통해 차기 교육금고를 안정적으로 확보함",
+        "금고지정심의위원회의 적격성 평가를 거쳐 교육비특별회계 자금 관리의 투명성과 안정성을 도모함"
+      ],
+      "applicationReviewPoints": [
+        "교육금고 약정 만료에 따른 경쟁 입찰 및 유찰 시 수의계약 진행 절차와 심의위원회 운영 기준을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "2026년 10월 30일 NH농협은행을 차기 교육금고로 지정함",
+        "기존 교육금고 약정기간은 2026년 말 만료됨",
+        "9월 21일 및 10월 7일 두 차례 일반경쟁 공고를 실시함",
+        "10월 29일 금고지정심의위원회를 통해 적격 판정을 받음"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "moe-ec8a45193c6f308e",
+      "sourceId": "moe",
+      "source": "교육부",
+      "title": "데이터로 읽는 우리 교육 제17호 발간",
+      "date": "2026-11-01",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107533&lev=0&m=020402&s=moe",
+      "category": "기타",
+      "importance": 1,
+      "selectionReason": "외국인 유학생 현황 및 중도탈락률 데이터를 분석하여 대학 유형과 지역별 여건을 고려한 정책적 지원 방향을 제시하고 있어 교육행정 참고 자료로 적합함.",
+      "summaryPoints": [
+        "교육부와 한국교육개발원이 외국인 유학생 현황을 분석한 보고서를 발간함",
+        "2026년 외국인 유학생 30만 명 유치 목표를 조기 달성함",
+        "전문대학의 외국인 유학생 증가세가 일반 산업대학보다 가파름",
+        "대학 유형 및 지역별 여건을 고려한 학업 지속 지원이 요구됨"
+      ],
+      "analysisPoints": [
+        "외국인 유학생 유치 목표 조기 달성에 따른 대학 유형별, 지역별 맞춤형 학업 지속 지원 필요성 증대임",
+        "전문대학 중심의 가파른 외국인 유학생 증가세와 특정 국가 편중 현상에 대응한 다변화 및 관리 체계 요구임",
+        "유학생 중도탈락률 하락 추세를 유지하기 위한 체계적인 학업 및 적응 지원 방안 마련 필요임"
+      ],
+      "applicationReviewPoints": [
+        "도내 전문대학 및 대학의 외국인 유학생 증가 추세와 중도탈락률 현황을 확인할 필요가 있음",
+        "지역 여건에 맞춘 외국인 유학생의 학업 지속 및 지역 정주 지원 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "2026년 11월 1일 데이터로 읽는 우리 교육 제17호를 발간함",
+        "2026년 9월 기준 외국인 유학생 수는 약 307,000명임",
+        "2017~2025년 일반 산업대학 유학생은 70.4%, 전문대학은 504.6% 증가함",
+        "2025년 전문대학 외국인 유학생 중 베트남 출신 비중은 60.0%임",
+        "2023~2025년 외국인 유학생 중도탈락률은 전반적으로 하락함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    }
+  ],
+  "ownOfficeItems": [
+    {
+      "newsId": "jeonbuk-ee84d6e741c536be",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "“특수교육대상학생의 배움 세계로 넓혀”",
+      "date": "2026-10-30",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1205896",
+      "summaryPoints": [
+        "전북특별자치도교육청(교육감 천호성) 은 지난 26일부터 30일까지 싱가포르에서 진행한 ‘2026년 하반기 특수교육대상학생 해외문화체험학습’ 을 성공적으로 마무리했다고 밝혔다.",
+        "이번 체험학습은 특수교육대상학생들에게 다양한 해외문화를 직접 경험할 기회를 제공하고, 새로운 환경에서 도전과 배움을 통해 자립에 대한 자신감과 사회 적응력을 키워주기 위해 마련됐다."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "reviewRequired": true,
+      "reviewReason": "원문에서 확인되지 않는 수치가 있습니다: ['10']",
+      "validation": {
+        "status": "REVIEW",
+        "issues": [],
+        "confidence": 0
+      }
+    },
+    {
+      "newsId": "jeonbuk-97198d23315961c7",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "부패·비리 근절… 교육행정 투명·공정성 강화",
+      "date": "2026-10-30",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1205900",
+      "summaryPoints": [
+        "인사 및 계약 비리 근절을 위해 12월 31일까지 부패 비리 집중신고 기간을 운영함.",
+        "익명제보시스템을 통해 접수된 비위 의혹에 대해 특별감사를 실시하고 위법 사항 적발 시 엄정 조치할 예정임."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-df188e5e6e0513fe",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "학교 관리자 대응 역량 강화로 학생 생명 지킨다",
+      "date": "2026-10-30",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1205899",
+      "summaryPoints": [
+        "학생 마음건강 위기 대응 역량 강화를 위해 10월 30일 학교 관리자 1,360여 명 대상 연수를 실시함.",
+        "위기 징후 조기 발견 및 단계별 대응 절차를 공유하고 학교와 가정, 전문기관의 협력체계 구축을 강조함."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-f0dfea94d0a876e7",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "전북교육청-전주시, 수학으로 교육도시 브랜드 키운다",
+      "date": "2026-10-30",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1206019",
+      "summaryPoints": [
+        "전북교육청과 전주시가 수학문화 활성화 및 어린이·청소년 100원 버스 도입 등 교육협력 과제를 논의함.",
+        "2027년 수학산책 특별전 추진과 단계적인 교통비 지원 방안을 협의하고 지역 교육 여건 개선을 도모함."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "omittedItems": [],
+  "validation": {
+    "status": "PASS",
+    "issues": [],
+    "checks": {
+      "ownOfficeExcludedFromTrendAnalysis": true,
+      "ownOfficeAllIncluded": true,
+      "ownOfficeSummariesVerified": false,
+      "publishedItemsVerified": true,
+      "sourceWindowMatches": true
+    }
+  },
+  "providerErrors": {
+    "facts": [],
+    "ownOfficeSummaries": [],
+    "analysis": [],
+    "verification": [],
+    "repairs": [],
+    "repairVerifications": []
+  },
+  "trace": [
+    {
+      "step": "extract_facts",
+      "status": "success",
+      "startedAt": "2026-11-01T22:00:58+00:00",
+      "durationMs": 15552
+    },
+    {
+      "step": "summarize_own_office",
+      "status": "success",
+      "startedAt": "2026-11-01T22:01:13+00:00",
+      "durationMs": 2139
+    },
+    {
+      "step": "analyze_trends",
+      "status": "success",
+      "startedAt": "2026-11-01T22:01:15+00:00",
+      "durationMs": 66310
+    },
+    {
+      "step": "verify_report",
+      "status": "success",
+      "startedAt": "2026-11-01T22:02:22+00:00",
+      "durationMs": 7688
+    },
+    {
+      "step": "repair_report_1",
+      "status": "success",
+      "startedAt": "2026-11-01T22:02:29+00:00",
+      "durationMs": 8129
+    },
+    {
+      "step": "verify_repair_1",
+      "status": "success",
+      "startedAt": "2026-11-01T22:02:37+00:00",
+      "durationMs": 831
+    }
+  ],
+  "rendering": {
+    "canonical": "json",
+    "html": "오늘의 교육동향 (20261102).html",
+    "hwpx": "오늘의 교육동향 (20261102).hwpx",
+    "hwpxValidation": {
+      "hardGates": {
+        "package_validation": "pass",
+        "document_errors": "pass",
+        "schema_lint": "pass",
+        "reopen": "pass",
+        "editor_open_safety": "pass",
+        "id_integrity": "pass"
+      },
+      "packageOk": true,
+      "documentOk": true,
+      "reopenedOk": true,
+      "visualReviewRequired": true
+    }
+  }
+}
