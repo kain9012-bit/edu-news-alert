@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>오늘의 교육동향 2026. 11. 3. (화)</title>
+<style>
+:root { color-scheme: light; --ink:#17202a; --muted:#5d6875; --line:#d7dde3; --teal:#087f73; --teal-soft:#e9f6f3; --amber:#a96800; --amber-soft:#fff6df; --paper:#ffffff; --page:#eef1f3; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--page); color:var(--ink); font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; line-height:1.72; letter-spacing:0; }
+a { color:inherit; }
+.report { width:min(960px,100%); margin:0 auto; background:var(--paper); min-height:100vh; box-shadow:0 0 28px rgba(18,31,43,.08); }
+header { padding:52px 64px 40px; border-top:7px solid var(--teal); border-bottom:1px solid var(--line); }
+.kicker { margin:0 0 8px; color:var(--teal); font-weight:700; font-size:14px; }
+h1 { margin:0; font-family:"Nanum Myeongjo","Batang",serif; font-size:42px; line-height:1.25; letter-spacing:0; }
+.report-date { margin:16px 0 0; font-size:18px; font-weight:700; }
+.period { margin:4px 0 0; color:var(--muted); font-size:13px; overflow-wrap:anywhere; }
+.summary-strip { display:flex; gap:24px; padding:18px 64px; border-bottom:1px solid var(--line); font-size:14px; color:var(--muted); }
+.summary-strip strong { color:var(--ink); margin-left:5px; }
+nav { padding:34px 64px 44px; border-bottom:1px solid var(--line); }
+nav h2 { margin:0 0 15px; font-size:18px; }
+.toc-group + .toc-group { margin-top:24px; padding-top:20px; border-top:1px solid var(--line); }
+nav h3 { margin:0 0 10px; font-size:15px; }
+nav h3 a { text-decoration:none; }
+nav ol { columns:2; column-gap:40px; margin:0; padding:0; list-style:none; }
+nav li { break-inside:avoid; margin:0 0 10px; font-size:14px; line-height:1.45; }
+nav a { text-decoration:none; }
+nav a:hover { color:var(--teal); text-decoration:underline; }
+nav li span { color:var(--teal); font-weight:800; margin-right:5px; }
+.toc-region { color:var(--muted); font-weight:700; }
+.toc-controller { display:none; }
+@media (min-width:1700px) {
+  .toc-controller { position:fixed; z-index:40; top:24px; bottom:24px; left:calc(50% - 828px); width:324px; display:flex; flex-direction:column; overflow:hidden; background:rgba(255,255,255,.98); border:1px solid var(--line); border-radius:8px; box-shadow:0 8px 24px rgba(18,31,43,.10); }
+  .toc-controller-home { display:block; flex:0 0 auto; padding:15px 16px 13px; border-bottom:1px solid var(--line); color:var(--teal); font-size:14px; font-weight:800; text-decoration:none; }
+  .toc-controller-home:hover { background:var(--teal-soft); }
+  .toc-controller-scroll { min-height:0; overflow-y:auto; padding:12px 0 16px; scrollbar-color:#aab5bd transparent; scrollbar-width:thin; }
+  .toc-controller section + section { margin-top:15px; padding-top:13px; border-top:1px solid var(--line); }
+  .toc-controller h2 { margin:0; padding:0 14px 7px; color:var(--muted); font-size:12px; line-height:1.4; }
+  .toc-controller ol { margin:0; padding:0; list-style:none; }
+  .toc-controller li { margin:0; padding:0; }
+  .toc-controller li a { display:grid; grid-template-columns:38px minmax(0,1fr); gap:6px; align-items:start; min-height:38px; padding:7px 12px 7px 11px; border-left:3px solid transparent; color:var(--ink); font-size:12px; line-height:1.35; text-decoration:none; }
+  .toc-controller li a:hover { background:#f3f7f7; color:var(--teal); }
+  .toc-controller li a.active { border-left-color:var(--teal); background:var(--teal-soft); }
+  .controller-number { color:var(--teal); font-weight:800; white-space:nowrap; }
+  .controller-label { min-width:0; overflow:hidden; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow-wrap:anywhere; }
+  .controller-label strong { color:var(--muted); font-weight:700; }
+}
+article { position:relative; padding:52px 64px 58px; border-bottom:10px solid var(--page); scroll-margin-top:12px; }
+.article-number { position:absolute; top:51px; left:19px; color:#9aa5af; font-size:13px; font-weight:800; }
+.eyebrow { margin:0 0 8px; color:var(--teal); font-size:13px; font-weight:800; }
+.article-head h2 { margin:0; font-size:25px; line-height:1.45; letter-spacing:0; overflow-wrap:anywhere; }
+.article-meta { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:14px; color:var(--muted); font-size:13px; }
+.stars { color:var(--amber); letter-spacing:0; font-size:17px; }
+.source-link { color:var(--teal); font-weight:700; text-underline-offset:3px; }
+.report-section { margin-top:34px; padding-top:22px; border-top:1px solid var(--line); }
+.report-section h3 { margin:0 0 12px; font-size:16px; }
+ul { margin:0; padding-left:1.35em; }
+li { margin:7px 0; padding-left:3px; }
+.application { border-top-color:#ead9b3; }
+.application h3 { color:#805200; }
+.review-note { border-top-color:#ead9b3; }
+.review-note h3 { color:#a13d00; }
+.review-note p { margin:0; color:#7a4a1e; }
+.review-badge { display:inline-block; padding:2px 9px; border-radius:11px; background:var(--amber-soft); color:#8a4b00; font-size:12px; font-weight:800; }
+.empty-note { margin:0; color:var(--muted); }
+.empty-report { padding:70px 64px; text-align:center; color:var(--muted); }
+.own-office-section { border-top:12px solid var(--page); scroll-margin-top:12px; }
+.own-office-heading { padding:42px 64px 30px; background:var(--teal-soft); border-bottom:1px solid #c8e5de; }
+.own-office-heading .kicker { margin-bottom:4px; }
+.own-office-heading h2 { margin:0; font-size:28px; line-height:1.4; }
+.own-office-heading p:last-child { margin:8px 0 0; color:var(--muted); font-size:14px; }
+.own-office-article { border-bottom:1px solid var(--line); }
+.own-empty { padding-top:48px; padding-bottom:48px; }
+footer { padding:34px 64px 50px; color:var(--muted); font-size:12px; }
+footer p { margin:4px 0; }
+@media (max-width:700px) {
+  header, nav, article, footer, .own-office-heading { padding-left:24px; padding-right:24px; }
+  h1 { font-size:34px; }
+  .summary-strip { padding-left:24px; padding-right:24px; gap:12px; flex-wrap:wrap; }
+  nav ol { columns:1; }
+  .article-number { position:static; margin-bottom:10px; }
+  .article-head h2 { font-size:21px; }
+}
+.toolbar { position:fixed; top:18px; right:18px; z-index:50; display:flex; gap:8px; }
+.toolbar button { display:inline-flex; align-items:center; gap:6px; padding:9px 14px; border:1px solid var(--teal); border-radius:8px; background:var(--teal); color:#fff; font:inherit; font-size:13px; font-weight:700; cursor:pointer; box-shadow:0 2px 8px rgba(18,31,43,.16); }
+.toolbar button.secondary, .toolbar .tool-link.secondary { background:#fff; color:var(--teal); }
+.toolbar button:hover, .toolbar .tool-link:hover { opacity:.92; }
+.toolbar button, .toolbar .tool-link { white-space:nowrap; }
+.toolbar .tool-link { display:inline-flex; align-items:center; gap:6px; padding:9px 14px; border:1px solid var(--teal); border-radius:8px; background:var(--teal); color:#fff; font:inherit; font-size:13px; font-weight:700; text-decoration:none; cursor:pointer; box-shadow:0 2px 8px rgba(18,31,43,.16); }
+@media (max-width:700px) {
+  .toolbar { top:10px; right:10px; }
+  .toolbar button, .toolbar .tool-link { padding:8px 11px; font-size:12px; }
+  .toolbar .print-tool { display:none !important; }
+}
+@media print {
+  @page { margin:0; }
+  .toolbar { display:none !important; }
+  body { background:#fff; } .report { width:100%; box-shadow:none; }
+  .toc-controller { display:none !important; }
+  header { padding-top:24mm; }
+  article { break-before:page; border-bottom:0; padding-top:18mm; padding-bottom:16mm; }
+  article:first-of-type { break-before:auto; } nav a { text-decoration:none; }
+  nav { break-after:page; page-break-after:always; }
+  nav.toc-compact { padding-top:26px; padding-bottom:30px; }
+  nav.toc-compact h2 { margin-bottom:11px; font-size:17px; }
+  nav.toc-compact .toc-group + .toc-group { margin-top:16px; padding-top:12px; }
+  nav.toc-compact h3 { margin-bottom:7px; font-size:14px; }
+  nav.toc-compact li { margin-bottom:7px; font-size:13px; line-height:1.38; }
+  nav.toc-tight { padding-top:20px; padding-bottom:24px; }
+  nav.toc-tight h2 { margin-bottom:8px; font-size:16px; }
+  nav.toc-tight .toc-group + .toc-group { margin-top:12px; padding-top:10px; }
+  nav.toc-tight h3 { margin-bottom:5px; font-size:13px; }
+  nav.toc-tight li { margin-bottom:5px; font-size:12px; line-height:1.35; }
+  .own-office-section { break-before:page; border-top:0; }
+  .own-office-section article { break-before:auto; }
+  .own-office-heading { break-after:avoid; page-break-after:avoid; }
+  .own-office-page { break-inside:avoid; page-break-inside:avoid; }
+  .own-office-page + .own-office-page { break-before:page; page-break-before:always; }
+  .own-office-article { break-inside:avoid; page-break-inside:avoid; padding-top:10mm; padding-bottom:10mm; }
+  footer { padding-bottom:18mm; }
+}
+</style>
+</head>
+<body>
+<div class="toolbar" role="toolbar" aria-label="문서 도구">
+  <a class="tool-link secondary" href="https://jbe-edu-trends.vercel.app/?tab=reports" target="_blank" rel="noopener noreferrer" title="지난 오늘의 교육동향을 날짜별로 봅니다">🗂 지난 호</a><a class="tool-link secondary" href="https://jbe-edu-trends.vercel.app/?tab=archive" target="_blank" rel="noopener noreferrer" title="교육동향으로 선정되지 않은 자료까지 수집한 전체 보도자료를 봅니다">📰 전체 보도자료</a>
+  <button type="button" class="secondary print-tool" onclick="window.print()" title="인쇄 대화상자를 엽니다">🖨 인쇄</button>
+  <button type="button" class="print-tool" onclick="window.print()" title="인쇄 대화상자에서 '대상'을 'PDF로 저장'으로 선택하세요">📄 PDF 저장</button>
+</div>
+<main class="report">
+<aside class="toc-controller" aria-label="빠른 목차"><a class="toc-controller-home" href="#report-toc">목차</a><div class="toc-controller-scroll"><section><h2>전국 교육동향</h2><ol><li><a href="#item-1" data-report-target="item-1"><span class="controller-number">1</span><span class="controller-label"><strong>(경기)</strong> 안민석 교육감, 찾아가는 교육감실 31개 시·군 타운홀미팅 대장정 현장에서 찾은 ‘10대 교육 해법</span></a></li><li><a href="#item-2" data-report-target="item-2"><span class="controller-number">2</span><span class="controller-label"><strong>(충남)</strong> 충남교육청, ‘충청남도평가관리센터’ 운영으로 미래형 학생 평가 혁신 본격화</span></a></li><li><a href="#item-3" data-report-target="item-3"><span class="controller-number">3</span><span class="controller-label"><strong>(경북)</strong> [중등교육과]경북교육청, &#x27;관계회복 조정단&#x27; 운영으로 학교 갈등 해결 지원</span></a></li><li><a href="#item-4" data-report-target="item-4"><span class="controller-number">4</span><span class="controller-label"><strong>(강원)</strong> 강원특별자치도교육청·강원앵커센터 ‘지역인재 발굴부터 정주까지’ 함께 키운다</span></a></li><li><a href="#item-5" data-report-target="item-5"><span class="controller-number">5</span><span class="controller-label"><strong>(충북)</strong> 교육연구정보원, 충북교육 중장기 발전 방향 제시</span></a></li><li><a href="#item-6" data-report-target="item-6"><span class="controller-number">6</span><span class="controller-label"><strong>(대전)</strong> 대전시교육청·대전지방고용노동청 ‘직업계고 졸업생 취업지원’업무협약 체결(과학직업정보과)</span></a></li><li><a href="#item-7" data-report-target="item-7"><span class="controller-number">7</span><span class="controller-label"><strong>(전남광주)</strong> 전남광주특별시교육청, 학생독립운동 계기 전국 교육연대 구축한다</span></a></li><li><a href="#item-8" data-report-target="item-8"><span class="controller-number">8</span><span class="controller-label"><strong>(경북)</strong> [중등교육과]경북교육청, 학생평가 대전환으로 생각하는 힘 키운다</span></a></li><li><a href="#item-9" data-report-target="item-9"><span class="controller-number">9</span><span class="controller-label"><strong>(경기)</strong> 경기도교육청, 2027년도 경기교육 대전환을 위한 본예산안 24조 7,772억 원 편성</span></a></li><li><a href="#item-10" data-report-target="item-10"><span class="controller-number">10</span><span class="controller-label"><strong>(경기)</strong> 경기도교육청, 평택 학생통학 순환버스 꿈타GO 개통으로 통학 편의 확대</span></a></li><li><a href="#item-11" data-report-target="item-11"><span class="controller-number">11</span><span class="controller-label"><strong>(경남)</strong> 경남교육청, 사학기관 경영평가 우수 법인 5곳 시상</span></a></li><li><a href="#item-12" data-report-target="item-12"><span class="controller-number">12</span><span class="controller-label"><strong>(경남)</strong> 산청 삼장초·덕산초와 통합으로 지역 상생 잇는다</span></a></li><li><a href="#item-13" data-report-target="item-13"><span class="controller-number">13</span><span class="controller-label"><strong>(충남)</strong> 충남교육청, 교육부 시도교육청 평가 전 지표 통과로 특별교부금 2억 5천만 원 확보</span></a></li><li><a href="#item-14" data-report-target="item-14"><span class="controller-number">14</span><span class="controller-label"><strong>(충남)</strong> 충남교육청, 유치원교육과정위원회 개최</span></a></li></ol></section><section><h2>전북교육청</h2><ol><li><a href="#own-item-1" data-report-target="own-item-1"><span class="controller-number">1</span><span class="controller-label">전주효문중, IB MYP 월드스쿨 공식 인증</span></a></li><li><a href="#own-item-2" data-report-target="own-item-2"><span class="controller-number">2</span><span class="controller-label">성취기준 중심 정기시험 문항 출제 역량 강화</span></a></li><li><a href="#own-item-3" data-report-target="own-item-3"><span class="controller-number">3</span><span class="controller-label">천호성 교육감 “불필요한 사업 줄이고 학교 지원 집중”</span></a></li><li><a href="#own-item-4" data-report-target="own-item-4"><span class="controller-number">4</span><span class="controller-label">유아 대상 레벨테스트 금지 위반 행정처분 기준 마련</span></a></li><li><a href="#own-item-5" data-report-target="own-item-5"><span class="controller-number">5</span><span class="controller-label">한우급식으로 학생 건강 지키고, 한우 촉진 돕는다</span></a></li><li><a href="#own-item-6" data-report-target="own-item-6"><span class="controller-number">6</span><span class="controller-label">학교 민원대응 역량 강화로 교육활동 보호 앞장</span></a></li></ol></section></div></aside>
+<header>
+  <p class="kicker">전국 교육정책 및 교육행정 동향</p>
+  <h1>오늘의 교육동향</h1>
+  <p class="report-date">2026. 11. 3. (화)</p>
+  <p class="period">분석 대상: 2026. 11. 2. 06:00 ~ 2026. 11. 3. 06:00</p>
+</header>
+<div class="summary-strip">
+  <span>전국 교육동향<strong>14건</strong></span>
+  <span>전북 보도자료<strong>6건</strong></span>
+  <span>작성<strong>google/gemini-3.5-flash</strong></span>
+  <span>검증<strong>PASS</strong></span>
+</div>
+<nav id="report-toc" class="toc-compact" aria-label="목차"><h2>목차</h2><div class="toc-group"><h3>전국 교육동향</h3><ol><li><a href="#item-1"><span>1.</span> <strong class="toc-region">(경기)</strong> 안민석 교육감, 찾아가는 교육감실 31개 시·군 타운홀미팅 대장정 현장에서 찾은 ‘10대 교육 해법</a></li><li><a href="#item-2"><span>2.</span> <strong class="toc-region">(충남)</strong> 충남교육청, ‘충청남도평가관리센터’ 운영으로 미래형 학생 평가 혁신 본격화</a></li><li><a href="#item-3"><span>3.</span> <strong class="toc-region">(경북)</strong> [중등교육과]경북교육청, &#x27;관계회복 조정단&#x27; 운영으로 학교 갈등 해결 지원</a></li><li><a href="#item-4"><span>4.</span> <strong class="toc-region">(강원)</strong> 강원특별자치도교육청·강원앵커센터 ‘지역인재 발굴부터 정주까지’ 함께 키운다</a></li><li><a href="#item-5"><span>5.</span> <strong class="toc-region">(충북)</strong> 교육연구정보원, 충북교육 중장기 발전 방향 제시</a></li><li><a href="#item-6"><span>6.</span> <strong class="toc-region">(대전)</strong> 대전시교육청·대전지방고용노동청 ‘직업계고 졸업생 취업지원’업무협약 체결(과학직업정보과)</a></li><li><a href="#item-7"><span>7.</span> <strong class="toc-region">(전남광주)</strong> 전남광주특별시교육청, 학생독립운동 계기 전국 교육연대 구축한다</a></li><li><a href="#item-8"><span>8.</span> <strong class="toc-region">(경북)</strong> [중등교육과]경북교육청, 학생평가 대전환으로 생각하는 힘 키운다</a></li><li><a href="#item-9"><span>9.</span> <strong class="toc-region">(경기)</strong> 경기도교육청, 2027년도 경기교육 대전환을 위한 본예산안 24조 7,772억 원 편성</a></li><li><a href="#item-10"><span>10.</span> <strong class="toc-region">(경기)</strong> 경기도교육청, 평택 학생통학 순환버스 꿈타GO 개통으로 통학 편의 확대</a></li><li><a href="#item-11"><span>11.</span> <strong class="toc-region">(경남)</strong> 경남교육청, 사학기관 경영평가 우수 법인 5곳 시상</a></li><li><a href="#item-12"><span>12.</span> <strong class="toc-region">(경남)</strong> 산청 삼장초·덕산초와 통합으로 지역 상생 잇는다</a></li><li><a href="#item-13"><span>13.</span> <strong class="toc-region">(충남)</strong> 충남교육청, 교육부 시도교육청 평가 전 지표 통과로 특별교부금 2억 5천만 원 확보</a></li><li><a href="#item-14"><span>14.</span> <strong class="toc-region">(충남)</strong> 충남교육청, 유치원교육과정위원회 개최</a></li></ol></div><div class="toc-group"><h3><a href="#own-office">전북교육청 보도자료</a></h3><ol><li><a href="#own-item-1"><span>1.</span> 전주효문중, IB MYP 월드스쿨 공식 인증</a></li><li><a href="#own-item-2"><span>2.</span> 성취기준 중심 정기시험 문항 출제 역량 강화</a></li><li><a href="#own-item-3"><span>3.</span> 천호성 교육감 “불필요한 사업 줄이고 학교 지원 집중”</a></li><li><a href="#own-item-4"><span>4.</span> 유아 대상 레벨테스트 금지 위반 행정처분 기준 마련</a></li><li><a href="#own-item-5"><span>5.</span> 한우급식으로 학생 건강 지키고, 한우 촉진 돕는다</a></li><li><a href="#own-item-6"><span>6.</span> 학교 민원대응 역량 강화로 교육활동 보호 앞장</a></li></ol></div></nav>
+
+<article id="item-1">
+  <div class="article-number">01</div>
+  <div class="article-head">
+    <p class="eyebrow">경기도교육청 · 정책·행정</p>
+    <h2>안민석 교육감, 찾아가는 교육감실 31개 시·군 타운홀미팅 대장정 현장에서 찾은 ‘10대 교육 해법</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 4점">★★★★☆</span>
+      <span>2026-11-02</span>
+      <a class="source-link" href="https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2379931&amp;bbsId=1922&amp;mi=10102" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>경기도교육청이 31개 시·군 타운홀미팅을 통해 수렴한 의견을 바탕으로 10대 교육 해법을 발표함</li><li>교육격차 해소, 과밀학급 대응, 교사 행정업무 경감, 학생 통학 지원 등 10가지 실천 과제를 추진함</li><li>2027년 체험학습 재개를 추진하고 지역별 여건에 맞춘 정책 반영을 계획함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>지역 주민 및 교육 주체와의 대규모 타운홀미팅을 통해 현장 밀착형 교육 현안을 발굴하고 정책화하는 소통 중심의 행정 모델임.</li><li>교사 행정업무 경감을 위해 특정 지역의 우수 모델을 발굴하고 이를 타 지역으로 확산하는 단계적 정책 추진 방식을 보여줌.</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>지역별 교육 현안 수렴을 위한 대규모 현장 소통 방식 및 의견 수렴 체계를 비교해 볼 수 있음.</li><li>교사 행정업무 경감을 위한 지역별 우수 모델 발굴 및 확산 방안을 검토할 수 있음.</li></ul></section>
+</article><article id="item-2">
+  <div class="article-number">02</div>
+  <div class="article-head">
+    <p class="eyebrow">충청남도교육청 · 교육과정·수업</p>
+    <h2>충남교육청, ‘충청남도평가관리센터’ 운영으로 미래형 학생 평가 혁신 본격화</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 4점">★★★★☆</span>
+      <span>2026-11-02</span>
+      <a class="source-link" href="https://news.cne.go.kr/news/view.do?bbs_id=S2N1&amp;bbs_seq=828612" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>충남교육청이 학생 평가의 신뢰도와 전문성을 높이기 위해 충청남도평가관리센터를 설치함</li><li>중등 성취 평가 지원, 평가 전문가 양성, 서·논술형 평가 체계 구축 등 4대 과제를 추진함</li><li>2027학년도에 인공지능 서·논술형 평가 채점 지원 체계를 시범 운영할 예정임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>학생 평가의 신뢰도와 전문성을 높이기 위해 전담 기구인 평가관리센터를 설치하여 체계적인 지원 기반을 마련함.</li><li>타 시도교육청과의 공동 협약을 통해 인공지능 기반의 서·논술형 평가 시스템을 공동으로 구축하고 운영하는 협력적 플랫폼 모델을 제시함.</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>학생 평가의 전문성 제고를 위한 전담 지원 기구 설치 및 운영 사례를 비교해 볼 수 있음.</li><li>타 시도와의 협력을 통한 인공지능 기반 서·논술형 평가 채점 지원 시스템 공동 활용 가능성을 검토할 수 있음.</li></ul></section>
+</article><article id="item-3">
+  <div class="article-number">03</div>
+  <div class="article-head">
+    <p class="eyebrow">경상북도교육청 · 학생지원·복지</p>
+    <h2>[중등교육과]경북교육청, &#x27;관계회복 조정단&#x27; 운영으로 학교 갈등 해결 지원</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-11-02</span>
+      <a class="source-link" href="https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1660997&amp;bbsId=4744&amp;mi=17643&amp;searchCate=761" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>경북교육청이 학교 내 갈등 해결과 교육공동체 신뢰 회복을 위해 관계회복 조정단을 운영함</li><li>2026년 하반기 11개 교육지원청에서 22명 규모로 시범 운영 중임</li><li>2027년에는 22개 교육지원청으로 확대하여 총 44명 규모로 전면 운영할 계획임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>학교 내 갈등과 분쟁을 사법적 절차 대신 회복적 대화와 조정을 통해 해결하려는 교육적 접근을 강화함.</li><li>시범 운영을 거쳐 전면 확대로 나아가는 단계적 도입 방식을 통해 정책의 안정성과 실효성을 확보하고자 함.</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>학교 내 갈등 조정을 위한 전문 조정단 구성 및 교육지원청 단위의 운영 방식을 비교해 볼 수 있음.</li><li>회복적 대화 모임을 통한 분쟁 해결 지원 체계의 시범 적용을 검토할 수 있음.</li></ul></section>
+</article><article id="item-4">
+  <div class="article-number">04</div>
+  <div class="article-head">
+    <p class="eyebrow">강원특별자치도교육청 · 지역협력·행사</p>
+    <h2>강원특별자치도교육청·강원앵커센터 ‘지역인재 발굴부터 정주까지’ 함께 키운다</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-11-02</span>
+      <a class="source-link" href="https://gwe.go.kr/promotion/bbs/view.do?bbsSn=57417&amp;key=bTI0MTEyMjUyOTQ2NDA%3D" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>강원특별자치도교육청과 강원앵커센터가 지역인재 양성 및 정주 생태계 구축을 위한 업무협약을 체결함</li><li>대학의 자원을 활용하여 진로체험, 늘봄학교, 고교학점제 등 학교 교육활동을 지원함</li><li>실무협의체를 구성하여 공동 협력과제 발굴 및 성과 점검을 추진할 계획임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>지역 전담기관과의 협력을 통해 대학의 인적·물적 자원을 초·중등 교육활동에 연계하는 지역 밀착형 교육 모델임.</li><li>실무협의체 구성을 통해 일회성 행사에 그치지 않고 지속 가능한 협력 체계와 공동 과제를 발굴하려는 제도적 장치를 마련함.</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>지역 전담기관 및 대학 자원을 활용한 진로체험, 늘봄학교, 고교학점제 지원 연계 방안을 비교해 볼 수 있음.</li><li>지속적인 협력을 위한 실무협의체 구성 및 공동 과제 발굴 방식을 확인할 필요가 있음.</li></ul></section>
+</article><article id="item-5">
+  <div class="article-number">05</div>
+  <div class="article-head">
+    <p class="eyebrow">충청북도교육청 · 정책·행정</p>
+    <h2>교육연구정보원, 충북교육 중장기 발전 방향 제시</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-11-02</span>
+      <a class="source-link" href="https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1581565&amp;bbsId=1158&amp;mi=10301" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>충북교육 중장기 발전 방안 연구 최종보고회 개최함</li><li>2027년부터 2030년까지의 교육 정책 방향과 실행 과제 제시함</li><li>AI 대전환 및 학령인구 감소 등 교육 환경 변화에 대응하는 10대 정책과제 도출함</li><li>연구 결과를 향후 4년간의 주요 정책 및 실행계획 수립의 기초자료로 활용할 예정임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>학령인구 감소 및 AI 대전환 등 미래 교육 환경 변화에 대응하기 위한 중장기 교육 정책 방향 설정의 필요성을 보여줌</li><li>교육철학을 기반으로 공약 사업과 10대 정책과제를 연계하여 정책의 일관성과 실행력을 확보하고자 함</li><li>배움 안전망, 경험, 교육행정, 학교, 지역 등 다차원적 영역 설정을 통해 종합적인 교육 발전 방안을 도출함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>전북교육의 중장기 발전 계획 수립 시 타 시도의 영역 설정 및 정책 연계 방식을 비교해 볼 수 있음</li><li>지역 특색을 반영한 교육철학 기반의 중장기 정책 과제 도출 과정을 참고할 필요가 있음</li></ul></section>
+</article><article id="item-6">
+  <div class="article-number">06</div>
+  <div class="article-head">
+    <p class="eyebrow">대전광역시교육청 · 진로·직업교육</p>
+    <h2>대전시교육청·대전지방고용노동청 ‘직업계고 졸업생 취업지원’업무협약 체결(과학직업정보과)</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-11-02</span>
+      <a class="source-link" href="https://www.dje.go.kr/boardCnts/view.do?boardSeq=3366238&amp;boardID=8&amp;m=040201&amp;s=dje&amp;lev=0&amp;searchType=null&amp;statusYN=W&amp;page=1&amp;opType=N&amp;prntBoardID=0&amp;prntBoardSeq=0&amp;prntLev=0" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>대전시교육청과 대전지방고용노동청이 직업계고 졸업생 취업지원 업무협약을 체결함</li><li>졸업 후에도 끊김 없는 맞춤형 고용서비스 지원 체계를 구축함</li><li>교육청이 취업 희망 졸업생 정보를 고용센터에 연계하고 고용센터가 상담 및 취업을 지원함</li><li>교사 역량 강화 연수 및 노동인권 교육 등 협력 사업을 추진함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>교육청과 고용노동청 간 협력을 통해 직업계고 졸업생에 대한 사후 관리 및 맞춤형 고용서비스 지원 체계를 강화함</li><li>개인정보 제공 동의를 기반으로 미취업 졸업생 정보를 고용센터와 연계하여 선제적이고 지속적인 취업 지원을 도모함</li><li>졸업생 계속지원센터 등 전용 공간 운영을 통해 취업 지원의 접근성을 높임</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>지역 고용노동청과의 협업을 통한 직업계고 졸업생 사후 관리 체계 구축 방안을 검토할 수 있음</li><li>미취업 졸업생 대상 선제적 맞춤형 서비스 제공을 위한 정보 연계 프로세스를 비교해 볼 수 있음</li></ul></section>
+</article><article id="item-7">
+  <div class="article-number">07</div>
+  <div class="article-head">
+    <p class="eyebrow">전남광주통합특별시교육청 · 지역협력·행사</p>
+    <h2>전남광주특별시교육청, 학생독립운동 계기 전국 교육연대 구축한다</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-11-02</span>
+      <a class="source-link" href="https://www.jngjedu.kr/news/articleView.html?idxno=201873" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>전남광주통합특별시교육청이 학생독립운동 100주년을 대비한 4대 추진과제를 발표함</li><li>전국 교육연대망 구축 및 의 역사 체험벨트 조성을 추진함</li><li>민주주의역사누리터를 개관하여 실감형 콘텐츠를 통한 역사 교육을 강화함</li><li>학생독립운동 기록물의 유네스코 세계기록유산 등재를 추진함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>학생독립운동 100주년을 대비하여 전국 단위 교육 연대망을 구축하고 역사 교육의 범위를 확장하고자 함</li><li>실감형 콘텐츠를 활용한 역사 체험 공간 조성 및 디지털 아카이브 구축을 통해 역사 교육의 현대화를 도모함</li><li>역사적 사건을 매개로 한 지역 간 협력 및 유네스코 세계기록유산 등재 추진 등 글로벌 가치 확산을 시도함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>역사 교육 활성화를 위한 디지털 아카이브 구축 및 실감형 콘텐츠 활용 방안을 참고할 필요가 있음</li><li>전국 단위 역사 교육 연대망 참여 및 지역 연계 역사 체험 프로그램 개발 가능성을 검토할 수 있음</li></ul></section>
+</article><article id="item-8">
+  <div class="article-number">08</div>
+  <div class="article-head">
+    <p class="eyebrow">경상북도교육청 · 교육과정·수업</p>
+    <h2>[중등교육과]경북교육청, 학생평가 대전환으로 생각하는 힘 키운다</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-11-02</span>
+      <a class="source-link" href="https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1660991&amp;bbsId=4744&amp;mi=17643&amp;searchCate=761" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>경북교육청이 서·논술형 평가 중심의 학생평가 대전환 포럼을 개최함</li><li>AI 기반 서·논술형 평가지원시스템 도입 및 활용 방안을 논의함</li><li>서·논술형 평가 문항 및 채점기준 개발을 위한 교원 개발단을 운영함</li><li>2027년부터 서·논술형 평가를 단계적으로 확대하여 2029년 전 학년 적용할 예정임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>AI 기술을 접목한 서·논술형 평가지원시스템 도입을 통해 학생평가의 패러다임 전환을 추진함</li><li>타 시도교육청과의 공동 운영 및 문항 개발 협약을 통해 시스템 구축의 효율성을 높이고자 함</li><li>교원 개발단을 통한 문항 및 채점기준 개발과 단계적 적용을 통해 현장 안착을 도모함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>타 시도교육청과의 AI 기반 서·논술형 평가지원시스템 공동 활용 및 협업 참여 여부를 검토할 수 있음</li><li>서·논술형 평가 확대를 위한 교원 개발단 운영 및 단계적 적용 로드맵을 비교해 볼 수 있음</li></ul></section>
+</article><article id="item-9">
+  <div class="article-number">09</div>
+  <div class="article-head">
+    <p class="eyebrow">경기도교육청 · 정책·행정</p>
+    <h2>경기도교육청, 2027년도 경기교육 대전환을 위한 본예산안 24조 7,772억 원 편성</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-11-02</span>
+      <a class="source-link" href="https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2379970&amp;bbsId=1922&amp;mi=10102" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>2027년도 경기도교육비특별회계 본예산안 24조 7,772억 원 편성함</li><li>AX 교육대전환, 교권보호 등 5대 정책 과제에 집중 투자함</li><li>고강도 지출구조조정을 통해 재정 효율화를 추진함</li><li>교육지원청의 예산 권한 확대 및 학교 현장의 재정 자율성을 강화함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>세입 여건 변화에 대응하기 위해 운영비성 경비 감액 및 사업 일몰 등 고강도 지출구조조정을 통한 재정 효율화를 도모함</li><li>AX 교육대전환 및 교권보호 등 핵심 정책 과제에 재원을 집중 투자하여 교육 혁신의 동력을 확보하고자 함</li><li>교육지원청의 예산 권한을 확대하고 학교 현장의 재정 자율성을 강화하여 현장 중심의 교육 재정 운영을 지향함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>재정 운영의 효율성을 높이기 위해 불요불급한 사업의 일몰 및 경비 감액 등 지출구조조정 방안을 비교해 볼 수 있음</li><li>학교 현장의 재정 자율성 및 교육지원청의 예산 권한 확대를 위한 제도적 지원 방안을 검토할 필요가 있음</li></ul></section>
+</article><article id="item-10">
+  <div class="article-number">10</div>
+  <div class="article-head">
+    <p class="eyebrow">경기도교육청 · 안전·시설</p>
+    <h2>경기도교육청, 평택 학생통학 순환버스 꿈타GO 개통으로 통학 편의 확대</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-11-02</span>
+      <a class="source-link" href="https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2379929&amp;bbsId=1922&amp;mi=10102" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>평택 지역 학생통학 순환버스 꿈타GO 운행을 개시함</li><li>학생 이동권 보장 및 통학 환경 개선을 목적으로 함</li><li>향후 31개 시·군 전역으로 확대할 예정임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>학생들의 이동권을 보장하고 통학 환경을 개선하기 위해 지자체 협력을 통한 한정면허 순환버스 도입을 추진함</li><li>시범 운영 성과를 바탕으로 도내 전역으로 순환버스 사업을 단계적으로 확대하는 모델을 제시함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>통학 여건이 취약한 지역을 대상으로 지자체 협력형 학생통학 순환버스 도입 가능성을 검토할 필요가 있음</li><li>한정면허 순환버스 도입에 따른 학생 통학 편의성 및 안전성 확보 방안을 비교해 볼 수 있음</li></ul></section>
+</article><article id="item-11">
+  <div class="article-number">11</div>
+  <div class="article-head">
+    <p class="eyebrow">경상남도교육청 · 정책·행정</p>
+    <h2>경남교육청, 사학기관 경영평가 우수 법인 5곳 시상</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-11-02</span>
+      <a class="source-link" href="https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&amp;q_bbsDocNo=20261102135727079" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>2026년 사학기관 경영평가 우수 법인 5곳에 표창을 수여함</li><li>평가 결과에 따라 포상금 지급 및 법인필요경비 한도 확대 혜택을 제공함</li><li>사학의 공공성과 책무성 강화를 위해 2년마다 경영평가를 실시함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>사학기관의 공공성과 책무성을 강화하기 위해 주기적인 경영평가를 실시하고 우수 법인에 인센티브를 제공함</li><li>평가 결과에 따라 포상금 지급뿐만 아니라 법인필요경비 한도 확대, 차기 평가 면제 등 실질적인 혜택을 부여하여 자발적 개선을 유도함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>사학기관의 책무성 강화를 위해 경영평가 지표 및 우수 법인에 대한 인센티브 제공 방식을 비교해 볼 수 있음</li><li>연속 우수 법인에 대한 평가 면제 등 평가 부담 완화 제도의 도입 여부를 검토할 필요가 있음</li></ul></section>
+</article><article id="item-12">
+  <div class="article-number">12</div>
+  <div class="article-head">
+    <p class="eyebrow">경상남도교육청 · 정책·행정</p>
+    <h2>산청 삼장초·덕산초와 통합으로 지역 상생 잇는다</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-11-02</span>
+      <a class="source-link" href="https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&amp;q_bbsDocNo=20261102113748215" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>산청 삼장초등학교를 2028년 3월 1일 자로 덕산초등학교와 통합함</li><li>학부모 전원 찬성으로 통합을 결정함</li><li>통합 전 사전 이음 교육과정을 운영하고 전용 통학버스를 배치함</li><li>삼장초 부지는 지역민을 위한 공간으로 활용할 예정임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>학령인구 감소에 대응하여 학부모 전원 찬성을 바탕으로 소규모 학교 간의 원활한 통합을 추진함</li><li>통합 과정에서 사전 이음 교육과정 운영, 전용 통학버스 배치 등 학생 적응을 돕는 다각적 지원책을 마련함</li><li>폐교 부지를 지역민을 위한 공간으로 환원하여 지역사회와의 상생을 도모함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>소규모 학교 통합 추진 시 학부모 동의 확보 방안 및 사전 이음 교육과정 운영 사례를 비교해 볼 수 있음</li><li>통합 학교 학생들을 위한 전용 통학버스 배치 및 폐교 부지의 지역사회 환원 방안을 검토할 필요가 있음</li></ul></section>
+</article><article id="item-13">
+  <div class="article-number">13</div>
+  <div class="article-head">
+    <p class="eyebrow">충청남도교육청 · 정책·행정</p>
+    <h2>충남교육청, 교육부 시도교육청 평가 전 지표 통과로 특별교부금 2억 5천만 원 확보</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-11-02</span>
+      <a class="source-link" href="https://news.cne.go.kr/news/view.do?bbs_id=S2N1&amp;bbs_seq=828615" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>2026년 시도교육청 평가에서 4개 영역 17개 지표 전 항목 통과함</li><li>평가 방식 변경에 따라 지표별 통과 여부 중심으로 실적 평가함</li><li>평가 결과에 따른 재정 인센티브로 특별교부금 2억 5천만 원 확보함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>교육부 시도교육청 평가 방식이 등급제에서 지표별 통과 여부 확인 방식으로 변경됨에 따라 전 지표의 균형 있는 실적 관리가 중요해짐</li><li>인공지능 미래인재 양성 및 국가책임 공교육 강화 등 주요 정책 영역에 대한 체계적 대비가 재정 인센티브 확보로 이어짐</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>변경된 평가 방식에 대응하여 전 지표 통과를 위한 자체 대비 현황을 비교해 볼 수 있음</li><li>평가 영역별 세부 지표 달성 가능성을 선제적으로 확인할 필요가 있음</li></ul></section>
+</article><article id="item-14">
+  <div class="article-number">14</div>
+  <div class="article-head">
+    <p class="eyebrow">충청남도교육청 · 교육과정·수업</p>
+    <h2>충남교육청, 유치원교육과정위원회 개최</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-11-02</span>
+      <a class="source-link" href="https://news.cne.go.kr/news/view.do?bbs_id=S2N1&amp;bbs_seq=828610" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>유치원 교육과정 및 유아교육 정책 자문·심의를 위한 위원회 개최함</li><li>2027학년도 충남 유치원 교육과정 편성 및 운영 기준 심의함</li><li>심의된 교육과정은 11월 중 교원 대상 배움 자리를 통해 안내할 예정임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>유치원 교육과정 편성 및 운영 기준의 객관성 확보를 위해 전문 위원회의 자문과 심의 과정을 거치는 것이 필요함</li><li>심의된 교육과정 기준을 교원 대상 설명회나 배움 자리를 통해 조기에 공유하여 현장 혼란을 최소화함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>차기 유치원 교육과정 편성 및 운영 기준 수립을 위한 심의 기구 운영 방식을 비교해 볼 수 있음</li><li>개정된 교육과정의 현장 안착을 위한 교원 대상 안내 및 소통 과정을 확인할 필요가 있음</li></ul></section>
+</article>
+<section class="own-office-section" id="own-office">
+  <div class="own-office-heading">
+    <p class="kicker">우리 교육청 주요 발표</p>
+    <h2>전북교육청 보도자료</h2>
+    <p>같은 기간 전북특별자치도교육청 본청에서 발표한 보도자료 전체입니다.</p>
+  </div>
+  
+  <div class="own-office-page"><article class="own-office-article" id="own-item-1">
+  <div class="article-number">01</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>전주효문중, IB MYP 월드스쿨 공식 인증</h2>
+    <div class="article-meta">
+      <span>2026-11-02</span>
+      <a class="source-link" href="https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1207093" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>전주효문중학교가 국제바칼로레아 본부로부터 IB MYP 월드스쿨 공식 인증을 획득함.</li><li>개념 기반 탐구 수업과 성장 중심 평가를 통해 학생 주도의 교육과정을 운영할 예정임.</li></ul>
+  </section>
+</article><article class="own-office-article" id="own-item-2">
+  <div class="article-number">02</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>성취기준 중심 정기시험 문항 출제 역량 강화</h2>
+    <div class="article-meta">
+      <span>2026-11-02</span>
+      <a class="source-link" href="https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1207089" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>도내 중등 교원 138명을 대상으로 성취기준 중심의 정기시험 문항 출제 역량 강화 연수를 운영함.</li><li>문항 설계부터 채점 기준 작성까지 실습 위주로 진행하며 11월 14일까지 총 2회 실시함.</li></ul>
+  </section>
+</article></div><div class="own-office-page"><article class="own-office-article" id="own-item-3">
+  <div class="article-number">03</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>천호성 교육감 “불필요한 사업 줄이고 학교 지원 집중”</h2>
+    <div class="article-meta">
+      <span>2026-11-02</span>
+      <a class="source-link" href="https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1207191" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>천호성 교육감이 2027년 예산 편성 시 불필요한 사업을 정비하고 학교 현장 지원에 집중할 것을 강조함.</li><li>내년 3월 조직개편을 통해 본청은 정책 총괄, 교육지원청은 학교 직접 지원 기능을 강화할 예정임.</li></ul>
+  </section>
+</article><article class="own-office-article" id="own-item-4">
+  <div class="article-number">04</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>유아 대상 레벨테스트 금지 위반 행정처분 기준 마련</h2>
+    <div class="article-meta">
+      <span>2026-11-02</span>
+      <a class="source-link" href="https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1207095" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>유아 대상 레벨테스트 금지 규정 위반 시 경고, 교습정지, 등록말소 등 행정처분 기준을 신설함.</li><li>학원법 개정에 따른 후속 조치로 유아 대상 교습시설의 건전한 운영을 유도할 계획임.</li></ul>
+  </section>
+</article></div><div class="own-office-page"><article class="own-office-article" id="own-item-5">
+  <div class="article-number">05</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>한우급식으로 학생 건강 지키고, 한우 촉진 돕는다</h2>
+    <div class="article-meta">
+      <span>2026-11-02</span>
+      <a class="source-link" href="https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1207218" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>전북교육청과 전국한우협회 전북도지회가 도내 80개교 학생 1만 35명을 대상으로 한우 1,470kg을 지원함</li><li>한우의 날을 맞아 학생들에게 우리 한우의 우수성을 알리고 건강한 식생활을 지원하기 위해 추진함</li></ul>
+  </section>
+</article><article class="own-office-article" id="own-item-6">
+  <div class="article-number">06</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>학교 민원대응 역량 강화로 교육활동 보호 앞장</h2>
+    <div class="article-meta">
+      <span>2026-11-02</span>
+      <a class="source-link" href="https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1207249" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>도내 유·초·중·고 및 특수학교 민원대응 담당자 1,000여 명 대상 역량 강화 연수 실시</li><li>개정 법령에 따른 학교 민원대응팀 운영 절차와 특이 민원 대응 실무 사례 중심으로 교육함</li></ul>
+  </section>
+</article></div>
+</section>
+<footer>
+  <p>이 문서는 공개 보도자료를 AI로 요약·분석한 내부 검토 자료입니다.</p>
+  <p>전북교육청 보도자료는 내용 요약만 제공하며, 원문은 각 항목의 링크에서 확인할 수 있습니다.</p>
+  <p>적용 검토안은 확정된 정책이나 업무 지시가 아닙니다.</p>
+</footer>
+</main>
+<script>
+(() => {
+  const links = Array.from(document.querySelectorAll('.toc-controller [data-report-target]'));
+  const targets = links.map(link => document.getElementById(link.dataset.reportTarget)).filter(Boolean);
+  if (!links.length || !targets.length) return;
+  let ticking = false;
+  const updateActive = () => {
+    const threshold = window.innerHeight * 0.35;
+    let activeId = '';
+    for (const target of targets) {
+      if (target.getBoundingClientRect().top <= threshold) activeId = target.id;
+      else break;
+    }
+    for (const link of links) {
+      const active = link.dataset.reportTarget === activeId;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    }
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateActive);
+  }, { passive:true });
+  window.addEventListener('hashchange', updateActive);
+  updateActive();
+})();
+</script>
+</body>
+</html>
