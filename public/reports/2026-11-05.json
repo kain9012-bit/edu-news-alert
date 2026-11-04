@@ -1,0 +1,594 @@
+{
+  "metadata": {
+    "reportId": "20261104T220207Z-08b999c1",
+    "title": "오늘의 교육동향",
+    "status": "completed",
+    "generatedAt": "2026-11-04T22:02:07+00:00",
+    "windowStart": "2026-11-04T06:00:00+09:00",
+    "windowEnd": "2026-11-05T06:00:00+09:00",
+    "windowHours": 24,
+    "selectionRunId": "20261104T212042Z-231dbece",
+    "sourceCount": 14,
+    "eligibleCount": 9,
+    "publishedCount": 9,
+    "omittedCount": 0,
+    "ownOfficeEligibleCount": 5,
+    "ownOfficePublishedCount": 5,
+    "qualityExcludedCount": 0,
+    "factModel": "google/gemini-3.1-flash-lite",
+    "analysisModel": "google/gemini-3.5-flash",
+    "verifierModel": "google/gemini-3.1-flash-lite",
+    "summaryOnlyCount": 0,
+    "ownOfficeReviewCount": 0,
+    "usage": {
+      "stages": {
+        "facts": {
+          "model": "google/gemini-3.1-flash-lite",
+          "requests": 5,
+          "promptTokenCount": 15463,
+          "candidatesTokenCount": 3403,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 18866
+        },
+        "analysis": {
+          "model": "google/gemini-3.5-flash",
+          "requests": 3,
+          "promptTokenCount": 4712,
+          "candidatesTokenCount": 1556,
+          "thoughtsTokenCount": 7779,
+          "totalTokenCount": 14047
+        },
+        "verification": {
+          "model": "google/gemini-3.1-flash-lite",
+          "requests": 4,
+          "promptTokenCount": 18710,
+          "candidatesTokenCount": 797,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 19507
+        }
+      },
+      "total": {
+        "requests": 12,
+        "promptTokenCount": 38885,
+        "candidatesTokenCount": 5756,
+        "thoughtsTokenCount": 7779,
+        "totalTokenCount": 52420
+      }
+    },
+    "estimatedCostUsd": 0.105926
+  },
+  "items": [
+    {
+      "newsId": "moe-ee86f8e61d8d51c0",
+      "sourceId": "moe",
+      "source": "교육부",
+      "title": "의대 신설 지역/대학 선정 및 정원 배정",
+      "date": "2026-11-04",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107562&lev=0&m=020402&s=moe",
+      "category": "정책·행정",
+      "importance": 5,
+      "selectionReason": "국가 차원의 의대 신설 및 정원 배정이라는 교육부의 주요 정책 결정 사항임.",
+      "summaryPoints": [
+        "전남광주통합특별시 국립순천대학교와 경상북도 국립경국대학교를 지역의대 신설 대학으로 선정함",
+        "국립순천대학교에 정원 60명, 국립경국대학교에 정원 40명을 배정함",
+        "지역의대 설립 기획단을 통해 후보 지역 선정 및 추진 계획서를 검토함",
+        "2032년 이후 추가 정원 배정 방안을 논의할 예정임",
+        "시도-대학 지역의대 설립 추진단 및 교육부-복지부 공동 지원단을 구성하여 운영함"
+      ],
+      "analysisPoints": [
+        "지역 의료 여건 개선을 위한 정부 주도의 지역의대 신설 및 정원 배정 추진임",
+        "지자체와 대학 간의 협력 체계 구축 및 공동 지원단 운영을 통한 체계적인 설립 추진 방식임",
+        "의사 인력 수급 추계에 기반한 중장기적 정원 조정 및 배정 계획 수립 흐름임"
+      ],
+      "applicationReviewPoints": [
+        "지역 내 의료 인력 수급 상황 및 대학과의 협력 체계를 점검하고 타 시도의 의대 신설 추진 방식을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "교육부와 보건복지부가 2026년 11월 4일 지역의대 신설 지역 및 대학을 발표함",
+        "국립순천대학교 정원 60명, 국립경국대학교 정원 40명 배정함",
+        "지역의대 설립 기획단이 후보 지역의 의료여건 및 정책효과를 정량평가함",
+        "전남광주통합특별시의 후보대학 추천 과정에 대해 외부 법률자문을 거쳐 하자가 없음을 확인함",
+        "정원 배정은 보건의료정책심의위원회의 100명 정원 규모 내에서 결정됨",
+        "2032년~2036년 정원 적용을 위해 2029년 의사 인력 수급추계를 실시할 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "ulsan-4a8929bad52e2c74",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "[울산교육청] 조용식 울산교육감, 교육재정 합리적 개편 촉구",
+      "date": "2026-11-04",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20261104174521461",
+      "category": "정책·행정",
+      "importance": 4,
+      "selectionReason": "지방교육재정교부금법 개정이라는 국가 교육재정 제도와 직결된 정책적 대응 및 대안 제시를 다루고 있어 교육행정 판단에 중요한 참고 자료입니다.",
+      "summaryPoints": [
+        "울산광역시교육감을 포함한 7개 시도교육감이 지방교육재정교부금법 개편 대안 마련을 촉구함",
+        "현행 내국세 연동 방식 유지를 제안함",
+        "세수 변동에 따른 교부금 증감 폭 조정 방안을 제시함",
+        "미래대응기금의 초중등교육 지원 근거 명시 및 학교 환경 개선 사업 포함을 요구함"
+      ],
+      "analysisPoints": [
+        "정부의 지방교육재정교부금 개편 움직임에 대응하여 시도교육청 차원의 공동 대안 마련 및 대응 필요성 증대임",
+        "학령인구 감소 및 경제 성장률 반영 방식에 대비한 안정적인 교육재정 확보 방안 모색 흐름임"
+      ],
+      "applicationReviewPoints": [
+        "지방교육재정교부금법 개편 논의 동향을 모니터링하고 재정 안정화 기금 등 자체 재원 확보 방안을 검토할 필요가 있음",
+        "타 시도교육청과의 공동 대응 방안 및 재정 운용 효율화 대책을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "조용식 울산광역시교육감이 2026년 11월 4일 국회에서 기자회견을 개최함",
+        "현행 지방교육재정교부금은 내국세의 20.79%를 배분함",
+        "교육감협의회는 교부금 증가액이 5% 초과 시 초과분의 3분의 2를 기금 출연, 감소액 5% 초과 시 3분의 1을 국가 보전하는 방안을 제시함",
+        "정부는 내국세 연동 방식을 폐지하고 경상성장률과 학령인구 변화율을 반영하는 개편을 추진 중임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongbuk-9c999cad31e88c17",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[미래교육정보과]경북교육청, 교육혁신선도지역 5개 시․군 선정",
+      "date": "2026-11-04",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1661773&bbsId=4744&mi=17643&searchCate=761",
+      "category": "지역협력·행사",
+      "importance": 3,
+      "selectionReason": "교육부 공모 사업 선정에 따른 지역 맞춤형 교육혁신 모델 추진 및 재정 지원이 포함된 정책적 사안임.",
+      "summaryPoints": [
+        "경북교육청 소속 5개 시·군이 교육부 교육혁신선도지역으로 선정됨",
+        "선정 지역은 최대 5년간 총 100억 원 규모의 재정 지원을 받음",
+        "지역 특성을 반영한 교육혁신 모델을 추진할 예정임",
+        "미선정 지역에 대해서도 지역 맞춤형 교육혁신 과제를 지원할 계획임"
+      ],
+      "analysisPoints": [
+        "교육특구 후속 사업으로서 지역 맞춤형 교육혁신 모델 개발을 위한 재정 지원 및 지역 특화 과제 추진임",
+        "소규모 학교 혁신, 공동 교육과정, 거점학교 등 지역 소멸 위기 대응을 위한 다양한 교육 모델의 다변화 흐름임",
+        "선정 지역의 성과를 도내 전역으로 확산하기 위한 체계적인 환류 시스템 구축 필요성임"
+      ],
+      "applicationReviewPoints": [
+        "경북의 소규모 학교 혁신 및 공동 교육과정 등 지역 맞춤형 교육 모델 사례를 분석하여 전북 지역 적용 가능성을 검토할 수 있음",
+        "교육혁신선도지역 미선정 지역에 대한 자체 지원 방안 수립 여부를 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "교육혁신선도지역으로 봉화, 상주, 영주, 청도(1유형), 구미(2유형)가 선정됨",
+        "교육혁신선도지역은 교육특구의 후속 사업임",
+        "상주는 소규모 학교 혁신, 봉화는 공동교육과정, 영주는 거점학교 운영, 청도는 온마을교육, 구미는 미래인재 성장트랙을 추진함",
+        "경북교육청은 선정 지역의 성과를 도내 전역으로 확산할 방침임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeonggi-0263ac28fbd2d33f",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "경기도교육청, ‘교육혁신선도지역’ 선정된 연천·양주에서 지역특화 교육사업 본격 추진",
+      "date": "2026-11-04",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2380303&bbsId=1922&mi=10102",
+      "category": "지역협력·행사",
+      "importance": 3,
+      "selectionReason": "교육부 공모를 통한 교육혁신선도지역 선정 및 지역특화 교육사업 추진이라는 정책적 변화를 담고 있음.",
+      "summaryPoints": [
+        "경기도 연천군과 양주시가 교육부 교육혁신선도지역으로 선정됨",
+        "2027년부터 지역특화 교육혁신 사업을 본격 추진함",
+        "연천군은 소규모 학교 혁신, 양주시는 공동교육과정 및 진로교육 강화를 추진함",
+        "미선정 지역에 대해서도 지자체 및 교육지원청과 협력하여 지원할 예정임"
+      ],
+      "analysisPoints": [
+        "지자체 및 교육지원청과의 협력을 통한 지역 특화 교육사업의 본격적인 추진 및 지역 교육력 제고 흐름임",
+        "공모 미선정 지역에 대한 소외 방지 및 균형 발전을 위한 지자체 협력 지원 체계 마련의 중요성임"
+      ],
+      "applicationReviewPoints": [
+        "경기도의 연천·양주 지역특화 교육사업 모델을 참고하여 전북 내 유사 여건 지역의 교육 활성화 방안을 비교해 볼 수 있음",
+        "미선정 지역에 대한 지자체 및 교육지원청 간 협력 지원 체계 구축 사례를 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "경기도교육청은 2026년 11월 3일 교육혁신선도지역 선정 결과를 발표함",
+        "연천군은 1유형, 양주시는 2유형으로 선정됨",
+        "이번 공모에는 전국 130개 지역이 신청하여 43개 지역이 선정됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongnam-0b40f84687c2cd1b",
+      "sourceId": "gyeongnam",
+      "source": "경상남도교육청",
+      "title": "경남교육청,‘학생 통학마당’으로 현장 목소리 들어",
+      "date": "2026-11-04",
+      "url": "https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&q_bbsDocNo=20261104161056796",
+      "category": "학생지원·복지",
+      "importance": 3,
+      "selectionReason": "학생 통학 지원을 위한 신규 정책(100원 버스, 에듀라인 통학버스) 추진 및 제도적 지원책 마련을 다루고 있음.",
+      "summaryPoints": [
+        "경남교육청이 학생 통학 불편 해소와 안전한 환경 조성을 위해 학생 의견 수렴에 나섬",
+        "10월 26일부터 11월 26일까지 학생 간담회인 '학생 통학마당'을 총 4회 운영함",
+        "중학생 대상 '경남 배움길 100원 버스'와 고등학생 대상 '에듀라인 통학버스' 도입을 추진함"
+      ],
+      "analysisPoints": [
+        "학생들의 실질적인 통학 불편을 해소하기 위해 당사자인 학생들의 의견을 직접 수렴하는 소통 채널을 운영함",
+        "지자체와의 연계를 통해 거주지에서 학교까지의 통학 노선을 확보하고 중학생 대상 교통비 지원을 추진하는 등 맞춤형 복지를 강화함"
+      ],
+      "applicationReviewPoints": [
+        "학생 대상 간담회를 통해 통학 환경에 대한 현장의 목소리를 직접 청취하는 방안을 검토할 수 있음",
+        "지자체 협력형 통학버스 운영 및 교통비 지원 사업의 타 시도 사례를 분석하여 전북 지역 적용 가능성을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "경남교육청은 10월 26일부터 11월 26일까지 학생 통학마당을 진행함",
+        "사송고, 서창중, 김해·양산 지역 학생 의장단 등과 간담회를 실시함",
+        "경남 배움길 100원 버스는 도내 중학생 버스비 지원 사업임",
+        "에듀라인 통학버스는 지자체와 연계해 거주지에서 학교까지 통학버스를 운영하는 사업임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 1.0
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "daejeon-8e5cf96ce1531a33",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "대전시교육청, “배움도 일도 삶도, 대전에서 FIT” 직업교육 혁신지구 출발 선포(과학직업정보과)",
+      "date": "2026-11-04",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3366563&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "category": "진로·직업교육",
+      "importance": 3,
+      "selectionReason": "교육부 공모 사업인 직업교육 혁신지구 운영 및 거버넌스 구축에 관한 정책적 사업임.",
+      "summaryPoints": [
+        "대전시교육청이 직업교육 혁신지구 비전선포식을 개최하고 본격적인 사업 시작을 알림",
+        "지역 산업 맞춤형 인재 양성을 위해 지자체·대학·기업과 협력 체계를 구축함",
+        "2028년까지 총 37억 5,000만 원을 투입해 교육부터 취업·정주까지 지원하는 성장사다리를 마련함"
+      ],
+      "analysisPoints": [
+        "지자체, 대학, 기업과의 협력을 통해 지역 주력산업 맞춤형 인재를 양성하고 정주까지 지원하는 직업교육 생태계를 구축함",
+        "전용 교육센터 및 브리지센터 등 거점 인프라를 활용하고 조례 제정을 추진하여 사업의 지속 가능성과 제도적 기반을 마련함"
+      ],
+      "applicationReviewPoints": [
+        "지역 주력산업과 연계한 직업계고 교육과정 운영 및 지자체·대학·기업 협력 체계 구축 사례를 비교해 볼 수 있음",
+        "직업교육 혁신지구의 안정적 운영을 위한 조례 제정 추진 과정을 모니터링할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "대전 직업교육 혁신지구는 7월 8일 교육부 공모에 선정됨",
+        "2028년까지 3년간 총 37억 5,000만 원의 예산이 투입됨",
+        "나노 반도체 등 지역 주력산업 맞춤형 교육과정을 직업계고 12교와 운영함",
+        "미래직업 교육센터와 BI 브리지센터를 거점으로 활용함",
+        "2027년 혁신지구 조례 제정을 추진할 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 1.0
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "chungnam-ba05aca9ac839dbd",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, 금산·논산·부여·아산 4개 지역 ‘교육혁신선도지역’ 지정",
+      "date": "2026-11-04",
+      "url": "https://news.cne.go.kr/news/view.do?bbs_id=S2N1&bbs_seq=828799",
+      "category": "지역협력·행사",
+      "importance": 3,
+      "selectionReason": "교육부의 교육혁신선도지역 지정에 따른 지역 교육 생태계 조성 및 예산 지원 등 교육 정책 변화를 다루고 있습니다.",
+      "summaryPoints": [
+        "충남교육청 소속 금산·논산·부여·아산 4개 지역이 교육혁신선도지역으로 지정됨",
+        "지정 지역은 연간 최대 20억 원을 지원받으며 최대 5년간 사업을 수행함",
+        "지역별 특성에 맞춰 소규모 학교 통합, 공동 교육과정 운영, 정주 여건 개선 등을 추진함"
+      ],
+      "analysisPoints": [
+        "인구 감소 지역과 비수도권 기초·광역지자체 유형을 구분하여 지역 맞춤형 교육 혁신 모델을 발굴하고 지원함",
+        "소규모 학교 통합, 공동 교육과정 운영, 정주 여건 개선 등 지역 소멸 위기에 대응하는 다각적 해결책을 모색함"
+      ],
+      "applicationReviewPoints": [
+        "인구 감소 및 지역 소멸 위기에 대응하기 위한 교육혁신선도지역 지정 및 운영 모델을 비교해 볼 수 있음",
+        "소규모 학교 통합 및 공동 교육과정 운영 등 지역 맞춤형 정주 여건 개선 방안을 검토할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "교육혁신선도지역은 1유형(인구 감소 지역)과 2유형(비수도권 기초·광역지자체)으로 구분됨",
+        "금산군은 1유형 평가 우수 사례로 선정됨",
+        "지정 지역은 2027년 1월부터 본격적으로 사업을 추진할 예정임",
+        "충남 내 13개 신청 지역 중 4개 지역이 최종 선정됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 1.0
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "chungnam-863dbe3bfc5556e8",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, 안경형 전자기기(스마트안경) 이용 시험 부정행위 차단 나선다",
+      "date": "2026-11-04",
+      "url": "https://news.cne.go.kr/news/view.do?bbs_id=S2N1&bbs_seq=828797",
+      "category": "정책·행정",
+      "importance": 3,
+      "selectionReason": "교육청 주관 각종 선발시험의 부정행위 예방을 위한 관리 기준 및 탐지 장비 도입 등 제도적 대응 방안을 포함함.",
+      "summaryPoints": [
+        "충남교육청이 스마트안경을 이용한 시험 부정행위 예방 대책을 마련함",
+        "각종 선발시험에서 스마트안경 착용을 차단하기 위한 관리 기준을 논의함",
+        "시험장 내 탐지 장비 비치 및 전문인력 교육을 실시할 계획임"
+      ],
+      "analysisPoints": [
+        "스마트안경 등 첨단 전자기기를 악용한 신종 시험 부정행위에 선제적으로 대응하기 위한 관리 기준을 마련함",
+        "시험장 내 탐지 장비 도입, 판별 전문인력 교육, 관계 기관 협력 등 다각적인 차단 체계를 구축함"
+      ],
+      "applicationReviewPoints": [
+        "수능 및 임용시험 등 주요 시험에서 첨단 기기를 활용한 부정행위를 방지하기 위한 탐지 장비 도입 및 관리 기준을 비교해 볼 수 있음",
+        "부정행위 방지를 위한 전문인력 교육 및 관계 기관 협력 체계 구축 방안을 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "충남교육청은 수능, 교사 임용, 공무원 채용 등 주관 시험 전반에 대책을 적용함",
+        "시험장 학교에 탐지 장비를 비치할 예정임",
+        "스마트안경 착용 여부 판별을 위한 전문인력 교육을 실시함",
+        "경찰청 등 관계 기관과 협의하여 시험 운영을 관리함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 1.0
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "daejeon-763dc50458e99eb0",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "대전시교육청,‘IB 교육지구’현장 소통 넓히며 실행 준비 본격화(교육정책과)",
+      "date": "2026-11-04",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3366560&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "category": "교육과정·수업",
+      "importance": 2,
+      "selectionReason": "교육청 차원에서 추진하는 IB 교육지구 정책의 실행 준비 및 현장 소통 과정은 주요 교육 정책 변화에 해당합니다.",
+      "summaryPoints": [
+        "대전광역시교육청이 IB 교육지구 추진을 위해 동·서부권 학부모 및 교원 대상 권역별 정책설명회를 총 4회 운영함",
+        "학부모에게는 IB 교육을 통한 학생 성장과 학교 변화를 안내하고, 교원에게는 교육과정 및 수업·평가 체계를 설명함",
+        "온라인 소통 공간인 '대전 IB 학부모 공감마당'을 개설하여 정책 정보 공유 및 소통 창구를 확대함",
+        "2027년 IB 교육지구 운영 예정인 동부권 학교급별 교원을 대상으로 11월 중 후속 설명회를 개최할 예정임"
+      ],
+      "analysisPoints": [
+        "IB 교육지구 도입을 위해 학부모와 교원을 대상으로 권역별 맞춤형 설명회를 추진하여 정책 이해도를 높이고자 함",
+        "온라인 소통 채널을 병행 구축하여 지속적인 정보 공유와 양방향 소통 체계를 마련함",
+        "도입 예정 지역의 학교급별 교원을 대상으로 수업 설계 및 평가 실제에 관한 후속 설명회를 기획하여 실행 역량을 단계적으로 강화함"
+      ],
+      "applicationReviewPoints": [
+        "IB 교육 프로그램 도입 및 확산을 위해 학부모와 교원 대상의 권역별 설명회 운영 방식을 비교해 볼 수 있음",
+        "온라인 소통 플랫폼을 활용한 학부모 대상 정보 공유 및 의견 수렴 채널 구축 방안을 검토할 수 있음",
+        "도입 예정 학교의 교원을 대상으로 학교급별 맞춤형 수업 및 평가 설계 연수 과정을 시범 적용하는 방안을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "대전광역시교육청이 10월 12일부터 11월 3일까지 동·서부권 학부모와 교원 대상 총 4회의 정책설명회를 완료함",
+        "정책설명회는 IB 교육지구 기본 구상 및 추진계획 안내와 의견 수렴을 목적으로 함",
+        "학부모 대상 설명회는 학생 성장과 학교 교육 변화를 중심으로 진행됨",
+        "교원 대상 설명회는 IB 프로그램의 교육과정, 수업, 평가 체계 및 학교 운영 사례를 중심으로 진행됨",
+        "대전 IB 학부모 공감마당을 통해 정책 관련 정보와 행사 소식을 공유함",
+        "2027년 IB 교육지구 운영 예정 지역은 동부권 초·중·고교임",
+        "11월 중 동부권 교원을 대상으로 학교급별 수업 설계와 평가 실제에 관한 후속 설명회를 진행할 계획임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "ownOfficeItems": [
+    {
+      "newsId": "jeonbuk-00c9e0fbe25939dd",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "AI 리터러시 교육 가이드라인 현장 적용 돕는다",
+      "date": "2026-11-04",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1208192",
+      "summaryPoints": [
+        "학교 현장의 AI 리터러시 교육을 지원하기 위해 조문별 해설과 실무 서식 8종을 담은 활용집을 제작하여 배포함.",
+        "학생·교사·학부모 등 교육공동체가 AI를 책임 있게 활용하도록 돕는 구체적인 적용 사례와 가이드라인을 제공함."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-e927948c4003443d",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "대학과 손잡고 편하고 실용적인 교복 만든다",
+      "date": "2026-11-04",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1208337",
+      "summaryPoints": [
+        "전북교육청과 국립군산대가 협력하여 중·고교 7개교의 특색을 반영한 생활형 교복 디자인 개발을 추진함.",
+        "대학생들이 3D 디자인 프로그램을 활용해 교복 시안을 제작하고 내년 2월 샘플 검수까지 참여할 예정임."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-2d0e7fa61a0b7b66",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "전북교육청·남원시, 국립의전원 연계 지역 미래발전 ‘청사진’",
+      "date": "2026-11-04",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1208343",
+      "summaryPoints": [
+        "전북교육청과 남원시가 국립의학전문대학원 설립과 연계한 교육혁신 및 지역 인재 양성 방안을 논의함.",
+        "남원 지역의 전북유학 활성화를 위한 정주 여건 개선과 바이오 보건의료 분야 공동교육과정 개발에 협력할 예정임."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-312c6470b15a2c2c",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "순창고, 전북 네 번째 IB DP 월드스쿨 인증",
+      "date": "2026-11-04",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1208189",
+      "summaryPoints": [
+        "순창고등학교가 전북 도내 고등학교 중 네 번째로 IB DP 월드스쿨 최종 인증을 획득함.",
+        "2027학년도 입학생부터 IB DP 참여 학생을 선발하고 2028학년도부터 본격적인 교육과정을 운영할 예정임."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-9d112dd527fcadb0",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "2027년 공립 중등 진로진학상담교사 20명 선발",
+      "date": "2026-11-04",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1208191",
+      "summaryPoints": [
+        "2027년 공립 중등 진로진학상담교사 20명을 선발하며 11월 9일부터 12일까지 지원서 접수 예정임",
+        "자격 요건을 갖춘 교사를 대상으로 서류 및 역량평가를 거쳐 11월 27일 최종 합격자를 발표할 계획임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "omittedItems": [],
+  "validation": {
+    "status": "PASS",
+    "issues": [],
+    "checks": {
+      "ownOfficeExcludedFromTrendAnalysis": true,
+      "ownOfficeAllIncluded": true,
+      "ownOfficeSummariesVerified": true,
+      "publishedItemsVerified": true,
+      "sourceWindowMatches": true
+    }
+  },
+  "providerErrors": {
+    "facts": [],
+    "ownOfficeSummaries": [],
+    "analysis": [],
+    "verification": [],
+    "repairs": [],
+    "repairVerifications": []
+  },
+  "trace": [
+    {
+      "step": "extract_facts",
+      "status": "success",
+      "startedAt": "2026-11-04T22:01:02+00:00",
+      "durationMs": 10619
+    },
+    {
+      "step": "summarize_own_office",
+      "status": "success",
+      "startedAt": "2026-11-04T22:01:13+00:00",
+      "durationMs": 3717
+    },
+    {
+      "step": "analyze_trends",
+      "status": "success",
+      "startedAt": "2026-11-04T22:01:17+00:00",
+      "durationMs": 44258
+    },
+    {
+      "step": "verify_report",
+      "status": "success",
+      "startedAt": "2026-11-04T22:02:01+00:00",
+      "durationMs": 5690
+    }
+  ],
+  "rendering": {
+    "canonical": "json",
+    "html": "오늘의 교육동향 (20261105).html",
+    "hwpx": "오늘의 교육동향 (20261105).hwpx",
+    "hwpxValidation": {
+      "hardGates": {
+        "package_validation": "pass",
+        "document_errors": "pass",
+        "schema_lint": "pass",
+        "reopen": "pass",
+        "editor_open_safety": "pass",
+        "id_integrity": "pass"
+      },
+      "packageOk": true,
+      "documentOk": true,
+      "reopenedOk": true,
+      "visualReviewRequired": true
+    }
+  }
+}
