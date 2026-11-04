@@ -84,7 +84,8 @@ jobs:
           # 세종교육청은 해외 IP를 막아 러너에서 직접 못 받는다.
           # 서울 리전에서 도는 중계를 거친다(web/api/fetch-board.mjs).
           BOARD_PROXY_URL: "https://jbe-edu-trends.vercel.app/api/fetch-board"
-          MAX_ITEMS_TOTAL: "5000"
+          # 본문이 든 news.json은 90일 보관이 기준이다. 상한은 90일치가 잘리지 않을 만큼 넉넉히.
+          MAX_ITEMS_TOTAL: "10000"
           MAX_ITEMS_PER_SOURCE: "20"
         run: python crawler/collect.py
 
@@ -95,6 +96,12 @@ jobs:
           LLM_PROVIDER: openrouter
           LLM_MODEL: google/gemini-3.1-flash-lite
         run: python -m harness.run
+
+      # '전국 보도자료' 탭용 가벼운 목록. 본문을 빼고 선정 여부를 미리 넣어
+      # 웹이 news.json(4MB대)과 briefing 수십 개 대신 이것 하나(0.3MB 안팎)만 받게 한다.
+      - name: Build lightweight news index for the web
+        if: steps.bizday.outputs.run == 'true'
+        run: python crawler/build_news_index.py
 
       - name: Commit collected data
         if: steps.bizday.outputs.run == 'true'

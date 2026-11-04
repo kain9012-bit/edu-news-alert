@@ -43,6 +43,31 @@ export function fetchCoverage(): Promise<Coverage | null> {
   return coverageCache;
 }
 
+// '전국 보도자료' 탭용 가벼운 목록. 본문 없이 제목·날짜·기관·링크와 선정일만 담는다.
+// 예전엔 news.json(압축 4MB대)과 briefing 수십 개를 받아 탭이 느렸다.
+// 만드는 곳: crawler/build_news_index.py
+export interface NewsIndexRow {
+  id: string;
+  sid: string;
+  date: string;
+  title: string;
+  url?: string;
+  sel?: string; // 처음 선정된 보고서 날짜
+}
+
+export interface NewsIndex {
+  generatedAt?: string;
+  sources: Record<string, string>;
+  items: NewsIndexRow[];
+}
+
+let newsIndexCache: Promise<NewsIndex | null> | null = null;
+
+export function fetchNewsIndex(): Promise<NewsIndex | null> {
+  if (!newsIndexCache) newsIndexCache = getJson<NewsIndex>("news-index.json");
+  return newsIndexCache;
+}
+
 export async function fetchNews(): Promise<NewsItem[]> {
   if (!newsCache) {
     newsCache = getJson<NewsItem[] | { items: NewsItem[] }>("news.json").then((data) =>

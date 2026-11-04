@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { ExternalLink, Search } from "lucide-react";
 import type { NewsItem } from "../types";
-import { dateLabel, fetchNews, fetchReportIndex, fetchSelectedIds } from "../lib/data";
+import { dateLabel, fetchNews, fetchNewsIndex, fetchReportIndex, fetchSelectedIds } from "../lib/data";
 import { DateRange } from "./DateRange";
 
 interface Row {
@@ -49,6 +49,28 @@ export function ArchiveTab() {
 
   useEffect(() => {
     (async () => {
+      // 가벼운 목록 하나로 목록과 선정 표시를 함께 받는다.
+      const index = await fetchNewsIndex();
+      if (index && Array.isArray(index.items)) {
+        const names = index.sources || {};
+        setRows(
+          index.items
+            .map((n) => ({
+              id: String(n.id || ""),
+              sid: String(n.sid || ""),
+              source: String(names[n.sid] || "기타"),
+              title: String(n.title || ""),
+              date: String(n.date || "").slice(0, 10),
+              url: n.url,
+            }))
+            .filter((r) => r.title && r.date)
+        );
+        setSelected(new Set(index.items.filter((n) => n.sel).map((n) => String(n.id))));
+        setLoading(false);
+        return;
+      }
+
+      // 목록 파일이 아직 없을 때(첫 배포 직후 등)만 예전 방식으로 받는다.
       const news = await fetchNews();
       const cleaned: Row[] = news
         .map((n: NewsItem) => ({
@@ -62,7 +84,6 @@ export function ArchiveTab() {
         .filter((r) => r.title && r.date);
       setRows(cleaned);
       setLoading(false);
-      // 발행된 모든 보고서의 briefing을 합쳐 선정 여부를 집계한다.
       const idx = await fetchReportIndex();
       const reportDates = (idx?.reports || []).map((r) => r.date);
       fetchSelectedIds(reportDates).then(setSelected);
