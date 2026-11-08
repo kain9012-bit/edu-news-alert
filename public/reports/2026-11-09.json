@@ -1,0 +1,636 @@
+{
+  "metadata": {
+    "reportId": "20261108T220204Z-45fb8e72",
+    "title": "오늘의 교육동향",
+    "status": "completed",
+    "generatedAt": "2026-11-08T22:02:04+00:00",
+    "windowStart": "2026-11-06T06:00:00+09:00",
+    "windowEnd": "2026-11-09T06:00:00+09:00",
+    "windowHours": 72,
+    "selectionRunId": "20261108T211831Z-a4d8f53d",
+    "sourceCount": 15,
+    "eligibleCount": 10,
+    "publishedCount": 10,
+    "omittedCount": 0,
+    "ownOfficeEligibleCount": 5,
+    "ownOfficePublishedCount": 5,
+    "qualityExcludedCount": 0,
+    "factModel": "google/gemini-3.1-flash-lite",
+    "analysisModel": "google/gemini-3.5-flash",
+    "verifierModel": "google/gemini-3.1-flash-lite",
+    "summaryOnlyCount": 0,
+    "ownOfficeReviewCount": 0,
+    "usage": {
+      "stages": {
+        "facts": {
+          "model": "google/gemini-3.1-flash-lite",
+          "requests": 5,
+          "promptTokenCount": 16562,
+          "candidatesTokenCount": 3469,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 20031
+        },
+        "analysis": {
+          "model": "google/gemini-3.5-flash",
+          "requests": 3,
+          "promptTokenCount": 4831,
+          "candidatesTokenCount": 1931,
+          "thoughtsTokenCount": 7946,
+          "totalTokenCount": 14708
+        },
+        "verification": {
+          "model": "google/gemini-3.1-flash-lite",
+          "requests": 4,
+          "promptTokenCount": 20145,
+          "candidatesTokenCount": 858,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 21003
+        }
+      },
+      "total": {
+        "requests": 12,
+        "promptTokenCount": 41538,
+        "candidatesTokenCount": 6258,
+        "thoughtsTokenCount": 7946,
+        "totalTokenCount": 55742
+      }
+    },
+    "estimatedCostUsd": 0.111807
+  },
+  "items": [
+    {
+      "newsId": "gyeonggi-330bfe2f8aa7f37e",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "경기도교육청, 국회서 교육활동 보호 위한 4대 입법과제 토론회...교권보호 3법 개정 촉구",
+      "date": "2026-11-06",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2380746&bbsId=1922&mi=10102",
+      "category": "교원·인사",
+      "importance": 4,
+      "selectionReason": "교육활동 보호를 위한 법률 개정 및 제도 개선이라는 정책적 의제를 다루고 있어 교육행정 판단에 참고할 가치가 있습니다.",
+      "summaryPoints": [
+        "경기도교육청이 국회에서 교육활동 보호를 위한 4대 입법과제 토론회를 개최함",
+        "정서적 아동학대 판단 기준 명확화 및 교권보호 3법 개정을 촉구함",
+        "교원 3단체와 함께 현장의 목소리를 반영한 법률 및 제도 개선 방안을 논의함",
+        "교육청은 토론회 의견을 법률 개정안에 반영하고 국회와 후속 논의를 이어갈 예정임"
+      ],
+      "analysisPoints": [
+        "국회 및 교원 단체와의 협력을 통한 실효성 있는 교육활동 보호 입법 추진의 필요성을 보여줌",
+        "정서적 아동학대 판단 기준 명확화 및 소송 국가책임 강화 등 교권 보호를 위한 구체적 법률 개정 방향을 제시함",
+        "교원 단체와의 공동 논의를 통해 현장 중심의 제도 개선안을 도출하려는 시도로 평가됨"
+      ],
+      "applicationReviewPoints": [
+        "타 시도교육청의 교육활동 보호 입법 제안 내용을 분석하고 관련 법률 개정 동향을 모니터링할 필요가 있음",
+        "교원 단체와의 소통을 통한 교육활동 보호 방안 마련 방식을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "경기도교육청이 2026년 11월 6일 국회에서 교육활동 보호 토론회를 개최함",
+        "논의된 4대 입법과제는 정서적 아동학대 판단기준 명확화, 수사 종결권 및 교육감 의견서 실효성 강화, 기록 관리 체계 보완, 소송 국가책임 강화임",
+        "참여 교원단체는 경기교총, 경기교사노조, 전교조 경기지부임",
+        "논의 대상 법률은 아동복지법, 아동학대처벌법, 교원지위법임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jngj_s1n1-34aba8af1ef9529b",
+      "sourceId": "jngj_s1n1",
+      "source": "전남광주통합특별시교육청",
+      "title": "디지털 교육환경 대응 ‘2030교실’ 광주에도 조성된다",
+      "date": "2026-11-06",
+      "url": "https://www.jngjedu.kr/news/articleView.html?idxno=202266",
+      "category": "디지털·AI",
+      "importance": 3,
+      "selectionReason": "디지털 교육환경 대응을 위한 미래형 교실 조성 사업의 구체적인 운영 계획 및 확대 적용 사례임.",
+      "summaryPoints": [
+        "전남광주통합특별시교육청이 광주지역에 미래형 교실인 2030교실을 조성함",
+        "2030교실은 학습 공간 유연화와 AI 활용 맞춤형 수업을 지원하는 미래형 교육 환경임",
+        "광주지역에 총 70실을 조성하며 기본형, 맞춤형, 전환형 3개 유형으로 운영함",
+        "11월 하순까지 공모를 진행하고 12월 현장 방문 등을 거쳐 연말까지 대상을 확정함"
+      ],
+      "analysisPoints": [
+        "디지털 교육환경 변화에 대응하기 위해 AI 활용 및 공간 유연화를 결합한 미래형 교실 모델을 제시함",
+        "학교급별 특성을 고려하여 유치원부터 특수학교까지 맞춤형으로 미래형 교실을 다각화하여 조성함",
+        "교실 구축에 그치지 않고 교사의 수업 사례 공유 및 개선 활동을 연계하여 내실화를 도모함"
+      ],
+      "applicationReviewPoints": [
+        "공간 유연화와 AI 맞춤형 수업을 결합한 미래형 교실 구축 및 운영 모델을 비교해 볼 수 있음",
+        "학교급별 교실 조성 유형 및 교사 참여형 수업 개선 방안을 검토할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2026년 11월 6일 광주교육연수원에서 2027학년도 중등 2030교실 설명회를 개최함",
+        "광주지역 조성 규모는 유치원 6실, 초등학교 26실, 중·고등학교 36실, 특수학교 2실 등 총 70실임",
+        "전남지역은 2027년에 130실을 추가 조성할 계획임",
+        "2030수업교사는 수업 사례 공유 및 개선 활동에 참여함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "gangwon-b2fe58a6edb4dd52",
+      "sourceId": "gangwon",
+      "source": "강원특별자치도교육청",
+      "title": "강원특별자치도교육청 학교복합시설 사업설명회 개최",
+      "date": "2026-11-06",
+      "url": "https://gwe.go.kr/promotion/bbs/view.do?bbsSn=57607&key=bTI2MTEwMjkzMzg2NjA%3D",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "학교복합시설 활성화 정책 추진을 위한 지자체 및 유관기관 협력 사업 설명회로 정책적 중요도가 높음.",
+      "summaryPoints": [
+        "강원특별자치도교육청이 학교복합시설 사업설명회를 개최함",
+        "학교복합시설에 대한 이해도를 높이고 교육청, 지자체, 학교 간 협력 체계를 구축함",
+        "사업 안내와 함께 홍천복합문화센터 시설 견학을 진행함"
+      ],
+      "analysisPoints": [
+        "학교복합시설 활성화를 위해 교육청, 학교, 지자체 간의 협력 체계를 강화하려는 노력을 보여줌",
+        "설명회와 우수 시설 견학을 병행하여 사업에 대한 이해도와 참여 의지를 높이고자 함"
+      ],
+      "applicationReviewPoints": [
+        "지자체 및 학교 관계자가 참여하는 학교복합시설 설명회 및 현장 견학 프로그램 구성을 참고해 볼 수 있음",
+        "유관기관 간 협력 체계 구축을 통한 학교복합시설 활성화 방안을 검토할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2026년 11월 6일 홍천복합문화센터에서 사업설명회를 개최함",
+        "참석 대상은 도내 학교장, 행정실장, 교육지원청 관계자, 지자체 공무원 등 110여 명임",
+        "한국교육개발원 교육시설 환경연구센터 강건해 팀장이 학교복합시설 활성화 정책을 발표함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "daegu-4d1f78cb71af0c59",
+      "sourceId": "daegu",
+      "source": "대구광역시교육청",
+      "title": "대구시교육청, 2026 대구미래교육정책자문위원회 개최",
+      "date": "2026-11-06",
+      "url": "https://www.dge.go.kr/pr/na/ntt/selectNttInfo.do?nttSn=2222073&bbsId=2680&mi=9870",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "교육감 공약 이행 계획 및 미래교육 정책 방향을 논의하는 자문위원회 개최 소식으로 교육청의 주요 정책 수립 과정에 해당합니다.",
+      "summaryPoints": [
+        "대구시교육청이 2026 대구미래교육정책자문위원회를 개최함",
+        "민선 3기 교육감 공약이행계획과 2027 대구미래역량교육 추진 방안을 논의함",
+        "전문가 및 시민사회 의견을 수렴하여 교육 정책의 완성도를 높일 계획임",
+        "KB플랫폼, AI-able 2030프로젝트, 서·논구술형 평가 플랫폼 등 핵심 정책을 검토함"
+      ],
+      "analysisPoints": [
+        "교육감 공약 이행과 미래 교육 정책 수립 과정에서 외부 전문가 및 시민사회의 다각적인 의견을 수렴함",
+        "AI 프로젝트 및 서·논구술형 평가 플랫폼 등 미래 역량 강화를 위한 핵심 정책의 타당성을 검토함"
+      ],
+      "applicationReviewPoints": [
+        "미래 교육 정책 수립을 위한 자문위원회 운영 방식 및 외부 의견 수렴 체계를 비교해 볼 수 있음",
+        "AI 기반 교육 프로젝트 및 평가 플랫폼 등 주요 미래 교육 정책 과제를 검토할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2026년 11월 6일 시교육청 대회의실에서 개최함",
+        "자문위원회는 전문가, 시민대표, 교육원로 등 총 80명으로 구성됨",
+        "자문위원회 위원장은 배병일 명예교수임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "daegu-d0badafe97bccf36",
+      "sourceId": "daegu",
+      "source": "대구광역시교육청",
+      "title": "대구시교육청, 2026년 직업계고 취업률 68.7% 2년 연속 전국 1위!",
+      "date": "2026-11-06",
+      "url": "https://www.dge.go.kr/pr/na/ntt/selectNttInfo.do?nttSn=2221939&bbsId=2680&mi=9870",
+      "category": "진로·직업교육",
+      "importance": 2,
+      "selectionReason": "직업계고 취업률 성과와 이를 뒷받침하는 교육청 차원의 취업지원 체계 및 미래형 직업교육 정책 방향을 담고 있어 교육행정 참고 가치가 있음.",
+      "summaryPoints": [
+        "2026년 대구 직업계고 졸업자 취업률 68.7%로 2년 연속 전국 1위 달성함",
+        "전국 평균 55.8% 대비 12.9%p 높은 수치이며 전년 대비 0.9%p 상승함",
+        "직속 취업지원센터 운영 및 학교별 취업지원관 배치 등 맞춤형 지원 체계 강화함",
+        "미래형 직업교육시스템 고도화를 통해 신산업 및 지역 산업 수요에 대응함"
+      ],
+      "analysisPoints": [
+        "직속 취업지원센터 운영과 학교별 취업지원관 배치를 통한 맞춤형 지원 체계가 취업률 제고에 기여함",
+        "산업 수요를 반영한 학과 개편 및 과정평가형 자격 확대를 통해 직업교육의 현장 적합성을 높임",
+        "산학일체형 도제학교 및 직업교육혁신지구 운영 등 지역 산업과의 연계 강화가 미취업률 감소에 효과적임"
+      ],
+      "applicationReviewPoints": [
+        "직속 취업지원센터 및 학교별 취업지원관 배치 등 맞춤형 취업 지원 체계의 세부 운영 방식을 비교해 볼 수 있음",
+        "산업 수요 반영 학과 개편 및 과정평가형 자격 확대 추진 사례를 참고하여 직업계고 교육과정 개선 방안을 검토할 수 있음",
+        "산학일체형 도제학교 및 직업교육혁신지구 운영 현황을 확인하고 지역 산업 연계 강화 방안을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "2026년 대구 직업계고 졸업자 3,651명 중 취업자 1,124명임",
+        "대구 직업계고 미취업자 비율 14.0%로 전국 최저 수준임",
+        "산업 수요 반영 학과 개편 및 과정평가형 자격 확대 추진함",
+        "산학일체형 도제학교 및 직업교육혁신지구 운영 중임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "busan-d3292a960cb13e07",
+      "sourceId": "busan",
+      "source": "부산광역시교육청",
+      "title": "부산교육청, 유보통합 시범사업 참여 어린이집 계약·회계 역량 강화",
+      "date": "2026-11-06",
+      "url": "https://www.pen.go.kr/main/na/ntt/selectNttInfo.do?nttSn=1183388&bbsId=2286&mi=30397",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "유보통합 시범사업의 일환으로 어린이집 회계 투명성 확보를 위한 실무 지원 및 제도적 기반 강화 내용임.",
+      "summaryPoints": [
+        "유보통합 시범사업 참여 어린이집 대상 계약 및 회계 실무 연수 실시함",
+        "학교장터(S2B) 이용 활성화 및 투명한 사업비 집행 관리 지원함",
+        "어린이집 교직원 400여 명 대상 증빙서류 관리 및 정산보고서 작성법 안내함"
+      ],
+      "analysisPoints": [
+        "유보통합 시범사업의 안정적 정착을 위해 어린이집 교직원의 행정 및 회계 역량 강화 지원이 필수적임",
+        "학교장터 S2B 이용 활성화 및 실무 연수를 통해 사업비 집행의 투명성과 효율성을 제고함",
+        "교육청과 유관기관 및 어린이집연합회 간의 협업 체계 구축을 통해 지원의 실효성을 높임"
+      ],
+      "applicationReviewPoints": [
+        "유보통합 시범사업 참여 기관을 대상으로 한 계약 및 회계 실무 연수 프로그램 도입을 검토할 수 있음",
+        "한국교직원공제회 등 유관기관과의 협약을 통한 학교장터 S2B 활용 지원 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "2026년 11월 3일 교육연구정보원에서 연수 개최함",
+        "부산교육청, 한국교직원공제회, 부산광역시어린이집연합회 업무협약 기반임",
+        "유보통합 실행기반 강화사업 추진 현황 공유함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "seoul-aca2e682c3425990",
+      "sourceId": "seoul",
+      "source": "서울특별시교육청",
+      "title": "서울시교육청, 교육시설 재난 예방 넘어 피해 회복까지...학교 안전지원 강화",
+      "date": "2026-11-06",
+      "url": "https://enews.sen.go.kr/news/view.do?bbsSn=192523&step1=3&step2=1",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "교육시설 안전 지원체계 강화 및 공제업무 운영계획 변경 등 제도적 변화를 포함하고 있습니다.",
+      "summaryPoints": [
+        "교육시설 재난 예방부터 피해 복구까지 지원하는 안전지원체계 강화함",
+        "피해학교 대상 단계별 지원체계 마련 및 공제급여 신청 절차 안내함",
+        "물품 공제 보장 범위 확대 및 미가입 물품 포괄 특별담보 도입함",
+        "간편 매뉴얼 제공 및 실무교육을 통해 담당자 업무 부담 완화함"
+      ],
+      "analysisPoints": [
+        "재난 예방을 넘어 신속한 피해 복구와 회복을 지원하는 단계별 안전지원체계 구축이 요구됨",
+        "물품 공제 가입 기준 완화 및 포괄 특별담보 도입을 통해 학교 자산 보호 범위를 넓히고 예산을 절감함",
+        "간편 매뉴얼 제공과 실무교육을 통해 학교 현장 담당자의 행정 부담을 경감함"
+      ],
+      "applicationReviewPoints": [
+        "교육시설 재난 피해 학교를 위한 단계별 지원체계 및 공제급여 신청 안내 절차 개선안을 비교해 볼 수 있음",
+        "물품 공제 보장 범위 확대 및 물품포괄 특별담보 도입을 통한 예산 절감 및 자산 보호 효과를 검토할 수 있음",
+        "학교 담당자 업무 경감을 위한 간편 매뉴얼 제작 및 실무교육 운영 방안을 참고할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "최근 5년간 서울 학교 재난피해 공제급여 신청액 대비 지급액 비율 61.8%임",
+        "물품 개별 가입 기준을 취득단가 500만 원 이상에서 300만 원 이상으로 조정함",
+        "물품포괄 특별담보 도입으로 연간 공제회비 약 1억 원 절감 예상함",
+        "2027년도 교육시설공제 정기가입은 11월 16일부터 추진함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "moe-9865e5b3c31863a8",
+      "sourceId": "moe",
+      "source": "교육부",
+      "title": "폐교의 새로운 시작, 지역의 가능성을 열다",
+      "date": "2026-11-08",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107592&lev=0&m=020402&s=moe",
+      "category": "지역협력·행사",
+      "importance": 2,
+      "selectionReason": "교육부와 행정안전부가 공동으로 추진하는 폐교 활용 정책의 우수사례를 선정하고 재정 지원을 연계하는 정책성 자료입니다.",
+      "summaryPoints": [
+        "교육부와 행정안전부 공동 주관 2026년 폐교 활용 우수사례 7건 선정함",
+        "최우수상은 경남 통영의 공공형 고양이 보호 분양센터가 수상함",
+        "선정 사례에 특별교부금 및 특별교부세 등 재정 지원 예정임",
+        "폐교를 지역 교육·문화·복지 거점으로 재탄생시키는 모델 확산 추진함"
+      ],
+      "analysisPoints": [
+        "폐교를 지역의 교육, 문화, 복지 거점으로 재탄생시켜 지역 소멸 위기에 대응하는 다각적 활용 모델이 확산되는 추세임",
+        "부처 간 공동 주관 경진대회 및 재정 지원을 통해 지자체와 교육청의 협력적 폐교 활용을 유도함",
+        "폐교활용법 개정 등 제도적 정비를 통해 폐교 활용 특례 대상을 확대하고 규제를 완화하는 방향으로 나아가고 있음"
+      ],
+      "applicationReviewPoints": [
+        "타 시도의 폐교 활용 우수사례를 분석하여 지역 맞춤형 교육, 문화, 복지 거점 공간 조성 방안을 검토할 수 있음",
+        "폐교활용법 개정에 따른 특례 대상 확대 내용을 확인하고 지자체와의 협력 사업 발굴 가능성을 검토할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "경진대회 심사는 노력도, 독창성, 협력성, 효과성, 확산 가능성 5개 항목 평가함",
+        "국무총리상 1억 원, 장관상 각 4천만 원의 인센티브 지원함",
+        "총 62건의 사례가 접수되었으며 전문가 심사 및 국민 현장 평가 반영함",
+        "폐교활용법 개정을 통해 폐교 활용 특례 대상 확대함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "daejeon-24574fa825983461",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "학교에서 지역까지, AI 미래인재 성장길 연다, 대전시교육청·충남대학교 공동 ‘AI 미래교육 포럼’ 개최(과학직업정보과)",
+      "date": "2026-11-06",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3366835&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "category": "디지털·AI",
+      "importance": 2,
+      "selectionReason": "교육청의 AI 미래교육 정책 방향과 지역 연계 생태계 구축을 논의하는 포럼으로 교육 정책적 맥락을 포함함.",
+      "summaryPoints": [
+        "대전광역시교육청과 충남대학교가 공동으로 AI 미래교육 포럼을 개최함",
+        "초·중등교육부터 대학, 지역으로 이어지는 AI 인재 성장 체계 구축 방안을 모색함",
+        "대전형 AI 교육 생태계 조성을 위한 4대 추진과제와 5단계 성장 경로를 제시함",
+        "충남대학교는 AI 거점대학으로서 교육청과 6가지 협력 과제를 제안함"
+      ],
+      "analysisPoints": [
+        "지역 대학과의 공동 포럼 개최를 통해 초·중등교육부터 대학, 지역으로 이어지는 AI 인재 양성 거버넌스 구축의 필요성을 보여줌.",
+        "인프라 구축, 맞춤형 학습, 학교 역량 강화, 지역 연계 등 다각적인 추진과제와 단계별 성장 경로 설정을 통한 체계적인 AI 교육 생태계 조성 방향을 제시함.",
+        "고교학점제 협력 및 교원 연수 등 대학의 전문성을 활용한 교육청-대학 간 구체적인 협력 모델의 중요성을 시사함."
+      ],
+      "applicationReviewPoints": [
+        "지역 거점 대학과의 협력을 통한 AI 교육 생태계 조성 및 고교학점제 협력 방안을 비교해 볼 수 있음.",
+        "AI 기초학력 책임제부터 기업 연계까지의 단계별 AI 인재 성장 경로 모델 도입을 검토할 수 있음.",
+        "교원 AI 역량 강화를 위한 대학 연계 연수 프로그램 운영 방안을 확인할 필요가 있음."
+      ],
+      "sourceFacts": [
+        "대전시교육청과 충남대학교가 2026년 11월 6일 AI 미래교육 포럼을 공동 개최함",
+        "포럼 주제는 대전형 AI 교육 생태계와 지역미래인재 성장체계 구축임",
+        "대전시교육청은 인프라 데이터 기반, AI 맞춤형 학습, 학교 AI 역량, 지역 연계 인재양성 등 4대 추진과제를 발표함",
+        "대전시교육청은 AI 기초학력 책임제부터 기업 연계까지 5단계 성장 경로를 제시함",
+        "충남대학교는 고교학점제 협력, 교원 AI 역량 연수 등 6가지 교육청 협력 과제를 제안함",
+        "종합토론은 사전 접수된 질문 45건을 바탕으로 진행됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeju-b2801ef2c700bc9a",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "학교와 교육청 잇는 소통관, 현장 지원 역량 높인다",
+      "date": "2026-11-06",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1485606",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "교육청의 학교 지원 제도인 '소통관' 운영 및 교육전문직원 역량 강화 정책과 관련된 본청 주관 워크숍임.",
+      "summaryPoints": [
+        "제주특별자치도교육청이 교육전문직원 대상 소통관 워크숍을 개최함",
+        "학교-교육청 소통관 제도를 통해 현장 지원 역량을 강화하고 소통을 활성화함",
+        "교육감 특강과 토크콘서트를 통해 교육 정책 방향을 공유하고 현장 의견을 수렴함"
+      ],
+      "analysisPoints": [
+        "학교와 교육전문직원을 1:1로 매칭하는 소통관 제도를 통해 교육청과 학교 현장 간의 밀착형 지원 체계를 강화함.",
+        "워크숍, 사례 공유, 토크콘서트 등을 활용하여 교육전문직원의 현장 소통 역량을 높이고 교육 정책의 현장 수용성을 제고함."
+      ],
+      "applicationReviewPoints": [
+        "학교와 교육전문직원을 매칭하여 현장 밀착형 소통을 돕는 1:1 소통관 제도 도입 가능성을 검토할 수 있음.",
+        "교육전문직원의 현장 지원 역량 강화를 위한 워크숍 및 사례 공유 프로그램 운영 방안을 비교해 볼 수 있음."
+      ],
+      "sourceFacts": [
+        "제주특별자치도교육청은 2026년 11월 6일 하반기 학교-교육청 소통관 워크숍을 개최함",
+        "대상은 본청 및 교육지원청 소속 교육전문직원임",
+        "학교-교육청 소통관 제도는 학교와 교육전문직원을 1:1로 연결하여 현장 지원을 돕는 제도임",
+        "워크숍 주제는 공감과 소통으로 이어가는 모두가 주인공, 함께 성장하는 제주교육임",
+        "주요 프로그램은 부서별 정책 안내, 사례 공유, 교육감 특강, 토크콘서트로 구성됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "ownOfficeItems": [
+    {
+      "newsId": "jeonbuk-583723ad88011ed8",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "“인공지능 올바른 활용법 교사와 학생 함께 배워요",
+      "date": "2026-11-06",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1209104",
+      "summaryPoints": [
+        "도내 42개교 교원과 학생을 대상으로 AI 리터러시 사제동행 교육을 12월까지 운영함",
+        "전문 강사가 학교를 방문해 AI 활용 원칙 안내 및 체험·실습 중심의 맞춤형 교육을 진행할 예정임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-7864804b31481387",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "직업계고 취업률 54.8%...전년보다 3.2%p 상승",
+      "date": "2026-11-06",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1209120",
+      "summaryPoints": [
+        "2026년 직업계고 졸업자 취업률이 54.8%로 전년 대비 3.2%p 상승함",
+        "산학공동교육 및 지역 정착형 계약학과 운영 등 진로·취업 지원체계를 강화함"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-7af51692ce1383d5",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "직업계고 학생 국가직 9급 공무원 합격 자신감",
+      "date": "2026-11-06",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1209106",
+      "summaryPoints": [
+        "지역인재 9급 공무원 필기시험 합격자 15명을 대상으로 면접 대비 특강을 운영함",
+        "직렬별 맞춤형 실습과 1:1 컨설팅을 통해 면접 대응 역량 및 자신감을 높일 예정임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-d9c7235ba69865dd",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "”학생 기초학력 보장” 전북기초학력지원센터 문 활짝",
+      "date": "2026-11-06",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1209228",
+      "summaryPoints": [
+        "학생 기초학력 보장 및 학교 현장 지원을 위한 전북기초학력지원센터가 개소함",
+        "기초학력 정책 연구, 교원 연수, 맞춤형 지도자료 개발 등 광역 단위 지원 거점 역할을 수행할 예정임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-d7d93e526a384bdd",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "해외 우리 학생들도 한국어 어휘력 ‘탄탄히’",
+      "date": "2026-11-06",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1209182",
+      "summaryPoints": [
+        "인도네시아 자카르타한국학교에 기초학력 교재인 초등어휘사전 1600 총 140권 전달함",
+        "재외국민 학생의 한국어 어휘력 및 교과 문해력 향상을 위해 2026학년도 2학기 학습 자료로 활용할 예정임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "omittedItems": [],
+  "validation": {
+    "status": "PASS",
+    "issues": [],
+    "checks": {
+      "ownOfficeExcludedFromTrendAnalysis": true,
+      "ownOfficeAllIncluded": true,
+      "ownOfficeSummariesVerified": true,
+      "publishedItemsVerified": true,
+      "sourceWindowMatches": true
+    }
+  },
+  "providerErrors": {
+    "facts": [],
+    "ownOfficeSummaries": [],
+    "analysis": [],
+    "verification": [],
+    "repairs": [],
+    "repairVerifications": []
+  },
+  "trace": [
+    {
+      "step": "extract_facts",
+      "status": "success",
+      "startedAt": "2026-11-08T22:00:59+00:00",
+      "durationMs": 10145
+    },
+    {
+      "step": "summarize_own_office",
+      "status": "success",
+      "startedAt": "2026-11-08T22:01:09+00:00",
+      "durationMs": 2947
+    },
+    {
+      "step": "analyze_trends",
+      "status": "success",
+      "startedAt": "2026-11-08T22:01:12+00:00",
+      "durationMs": 46688
+    },
+    {
+      "step": "verify_report",
+      "status": "success",
+      "startedAt": "2026-11-08T22:01:59+00:00",
+      "durationMs": 5662
+    }
+  ],
+  "rendering": {
+    "canonical": "json",
+    "html": "오늘의 교육동향 (20261109).html",
+    "hwpx": "오늘의 교육동향 (20261109).hwpx",
+    "hwpxValidation": {
+      "hardGates": {
+        "package_validation": "pass",
+        "document_errors": "pass",
+        "schema_lint": "pass",
+        "reopen": "pass",
+        "editor_open_safety": "pass",
+        "id_integrity": "pass"
+      },
+      "packageOk": true,
+      "documentOk": true,
+      "reopenedOk": true,
+      "visualReviewRequired": true
+    }
+  }
+}
