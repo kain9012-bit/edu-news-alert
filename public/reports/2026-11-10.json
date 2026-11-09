@@ -1,0 +1,828 @@
+{
+  "metadata": {
+    "reportId": "20261109T220305Z-8e967ae9",
+    "title": "오늘의 교육동향",
+    "status": "completed",
+    "generatedAt": "2026-11-09T22:03:05+00:00",
+    "windowStart": "2026-11-09T06:00:00+09:00",
+    "windowEnd": "2026-11-10T06:00:00+09:00",
+    "windowHours": 24,
+    "selectionRunId": "20261109T210928Z-cff3b290",
+    "sourceCount": 19,
+    "eligibleCount": 14,
+    "publishedCount": 14,
+    "omittedCount": 0,
+    "ownOfficeEligibleCount": 5,
+    "ownOfficePublishedCount": 5,
+    "qualityExcludedCount": 0,
+    "factModel": "google/gemini-3.1-flash-lite",
+    "analysisModel": "google/gemini-3.5-flash",
+    "verifierModel": "google/gemini-3.1-flash-lite",
+    "summaryOnlyCount": 0,
+    "ownOfficeReviewCount": 1,
+    "usage": {
+      "stages": {
+        "facts": {
+          "model": "google/gemini-3.1-flash-lite",
+          "requests": 6,
+          "promptTokenCount": 23174,
+          "candidatesTokenCount": 4937,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 28111
+        },
+        "analysis": {
+          "model": "google/gemini-3.5-flash",
+          "requests": 6,
+          "promptTokenCount": 16777,
+          "candidatesTokenCount": 3430,
+          "thoughtsTokenCount": 15221,
+          "totalTokenCount": 35428
+        },
+        "verification": {
+          "model": "google/gemini-3.1-flash-lite",
+          "requests": 7,
+          "promptTokenCount": 38379,
+          "candidatesTokenCount": 1222,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 39601
+        }
+      },
+      "total": {
+        "requests": 19,
+        "promptTokenCount": 78330,
+        "candidatesTokenCount": 9589,
+        "thoughtsTokenCount": 15221,
+        "totalTokenCount": 103140
+      }
+    },
+    "estimatedCostUsd": 0.217651
+  },
+  "items": [
+    {
+      "newsId": "gangwon-21bf01a722c31d59",
+      "sourceId": "gangwon",
+      "source": "강원특별자치도교육청",
+      "title": "강삼영 강원특별자치도교육감, 행정사무감사 지적 사항에 대한‘강도 높은 진상 규명과 엄정 대응’특별지시",
+      "date": "2026-11-09",
+      "url": "https://gwe.go.kr/promotion/bbs/view.do?bbsSn=57687&key=bTI2MTEwMjkzMzg2NjA%3D",
+      "category": "정책·행정",
+      "importance": 3,
+      "selectionReason": "행정사무감사 지적에 따른 계약 제도 전반의 전수조사 및 실질적인 제도 개선을 추진하는 교육청 차원의 행정 조치입니다.",
+      "summaryPoints": [
+        "강원특별자치도교육청이 행정사무감사 지적 사항에 대해 고강도 전수조사 및 엄정 대응을 지시함",
+        "최근 5년 치 계약 전반을 대상으로 수의계약 편중 의혹 및 계약 적정성을 조사할 예정임",
+        "지방자치단체 입찰 및 계약집행기준 개정에 따라 1인 견적 수의계약 총량제를 도입함"
+      ],
+      "analysisPoints": [
+        "행정사무감사 지적 사항에 대응하여 계약의 공정성과 투명성을 강화하려는 조치로 볼 수 있음",
+        "지방자치단체 입찰 및 계약집행기준 개정에 맞춘 제도적 보완의 필요성을 시사함"
+      ],
+      "applicationReviewPoints": [
+        "타 시도의 수의계약 총량제 도입 사례를 참고하여 관련 계약 집행 기준의 적정성을 비교해 볼 수 있음",
+        "계약 과정의 투명성 제고를 위한 자체 점검 체계 마련 여부를 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "강원특별자치도교육청은 최근 5년 치 계약 전반에 대한 전수조사를 실시함",
+        "조사 대상은 도교육청, 직속기관, 교육지원청 및 각급 학교임",
+        "수의계약의 법적 근거, 업체 선정 과정, 계약 금액 적정성, 납품 이행 여부 등을 확인함",
+        "행정안전부의 지방자치단체 입찰 및 계약집행기준 개정에 따라 1인 견적 수의계약 총량제를 도입함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "gyeongnam-40342f58450446ac",
+      "sourceId": "gyeongnam",
+      "source": "경상남도교육청",
+      "title": "경남교육청, 수능 104개 시험장에 ‘스마트안경 전담 요원’ 배치",
+      "date": "2026-11-09",
+      "url": "https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&q_bbsDocNo=20261109111029337",
+      "category": "정책·행정",
+      "importance": 3,
+      "selectionReason": "교육부의 수능 부정행위 방지 방안에 따라 도교육청 차원에서 전담 요원을 배치하는 등 제도적 대응을 강화하는 내용입니다.",
+      "summaryPoints": [
+        "경남교육청이 2027학년도 수능 시험장에 스마트안경 부정행위 방지를 위한 전담 요원을 배치함",
+        "도내 104개 시험장에 본부 요원을 1명씩 증원하여 총 104명의 전담 요원을 운영함",
+        "전담 요원은 스마트안경 실물 확인 및 대응 지침 연수를 거쳐 부정행위를 감시함"
+      ],
+      "analysisPoints": [
+        "정보기술 기기 발달에 따른 새로운 유형의 부정행위 방지를 위한 선제적 대응 체계 구축 사례임",
+        "교육부 지침에 따른 시험장별 전담 인력 배치 및 사전 연수를 통한 실효성 확보 노력이 요구됨"
+      ],
+      "applicationReviewPoints": [
+        "수능 시험장 내 신종 기기 활용 부정행위 방지를 위한 전담 요원 배치 및 운영 방안을 비교해 볼 수 있음",
+        "시험 감독관 및 전담 요원 대상의 실물 확인 및 점검 연수 프로그램 도입 필요성을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "2027학년도 대학수학능력시험은 2026년 11월 19일에 실시됨",
+        "교육부의 2027학년도 대학수학능력시험 스마트안경 대응 방안에 따라 전담 요원을 배치함",
+        "경남 도내 104개 시험장에 스마트안경 전담 요원 104명을 배치함",
+        "전담 요원은 11월 17일 실물 확인 및 점검 방법 연수를 진행함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "incheon-55bafcaaafbf7b7d",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 기초학력 교재 371 학급 지원 … 현장 교사 93.6% 만족",
+      "date": "2026-11-09",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3388386&bbsId=1519&mi=11620",
+      "category": "교육과정·수업",
+      "importance": 3,
+      "selectionReason": "기초학력 보장을 위한 교재 개발 및 지원 사업의 성과와 운영 방식이 명시되어 있어 타 교육행정기관의 참고 사례로 적합함.",
+      "summaryPoints": [
+        "인천광역시교육청이 운영한 기초학력 교재 지원 사업에 대해 현장 교사의 93.6%가 만족함",
+        "초·중·고 371학급에 문해력 및 수리력 교재를 지원하여 학습 수준별 맞춤형 교육을 실시함",
+        "운영 결과를 바탕으로 내년에도 교재 지원 사업 지속 여부를 검토할 예정임"
+      ],
+      "analysisPoints": [
+        "기초학력 보장을 위해 학교급별 맞춤형 교재를 직접 지원하여 현장 만족도를 높인 사례임",
+        "문해력 및 수리력 향상을 위한 구체적인 교재 제공이 기초학력 지원 사업의 실효성을 높이는 요인으로 작용함"
+      ],
+      "applicationReviewPoints": [
+        "기초학력 향상을 위한 맞춤형 교재 지원 방식과 현장 만족도 조사 결과를 비교해 볼 수 있음",
+        "초·중·고 학급 대상의 문해력 및 수리력 교재 지원 사업의 확대 적용 가능성을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "인천광역시교육청은 5월부터 기초학력 교재 지원 사업을 운영함",
+        "지원 대상은 초등학교 312학급, 중학교 50학급, 고등학교 9학급 등 총 371학급임",
+        "지원 교재는 알맹이, 토닥토닥, 모두의 분수 등임",
+        "현장 교사 대상 설문조사 결과 93.6%가 만족 이상으로 응답함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "chungnam-fbb9049f691e12b8",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, ‘교권 보호 갈등조정관’, 학교 현장에 더 가까이 다가간다",
+      "date": "2026-11-09",
+      "url": "https://news.cne.go.kr/news/view.do?bbs_id=S2N1&bbs_seq=829006",
+      "category": "교원·인사",
+      "importance": 3,
+      "selectionReason": "교권 보호 갈등조정관 운영 확대 및 현장 밀착형 지원 강화라는 교원 정책 및 제도 운영의 변화를 담고 있음.",
+      "summaryPoints": [
+        "충남교육청이 교권 침해 및 특이 민원 해결을 위해 교권 보호 갈등조정관의 현장 지원을 강화함",
+        "현재 교육, 상담, 행정 등 분야별 전문가 99명을 갈등조정관으로 위촉하여 운영 중임",
+        "9월 1일 출범 이후 총 84회의 현장 지원 실적을 기록함"
+      ],
+      "analysisPoints": [
+        "교권 침해 및 특이 민원 발생 초기 단계에 전문가를 투입하여 갈등을 중재하는 현장 밀착형 지원 체계임",
+        "다양한 분야의 전문가로 구성된 인력풀을 활용하여 중재의 전문성을 높인 사례임"
+      ],
+      "applicationReviewPoints": [
+        "교권 보호 및 민원 해결을 위한 외부 전문가 활용 갈등조정관 제도의 운영 현황을 비교해 볼 수 있음",
+        "초기 단계 갈등 중재를 위한 현장 지원단 구성 및 운영 방안의 도입 필요성을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "충남교육청은 교권 보호 갈등조정관 99명을 위촉하여 운영함",
+        "10월부터 시군별 교권 보호 갈등조정관 협의회를 운영함",
+        "갈등조정관은 교권 침해 및 특이 민원 초기 단계에 투입되어 중재 역할을 수행함",
+        "9월 1일 이후 총 84회의 현장 지원 실적을 달성함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "chungnam-d2c26ec894b10036",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, 충청권 국립청소년디딤센터 설립 추진 본격화",
+      "date": "2026-11-09",
+      "url": "https://news.cne.go.kr/news/view.do?bbs_id=S2N1&bbs_seq=829011",
+      "category": "학생지원·복지",
+      "importance": 3,
+      "selectionReason": "충청권 국립청소년디딤센터 설립을 위한 교육청 차원의 실무 추진단 구성 및 정책적 협력 체계 구축은 교육 정책 및 제도 변화에 해당합니다.",
+      "summaryPoints": [
+        "충남교육청이 충청권 국립청소년디딤센터 설립을 위한 실무 추진단을 구성함",
+        "실무 추진단은 정책연구, 관계 기관 협력체계 구축, 국가사업 반영 등을 추진할 예정임",
+        "격주 수요일 정기 회의를 통해 설립 타당성 확보 및 운영 모형을 검토함"
+      ],
+      "analysisPoints": [
+        "정서 행동 위기 청소년을 위한 전문 통합 시설 설립을 위해 실무 추진단을 구성하여 체계적으로 대응하고 있음",
+        "인근 시도교육청 간의 정책협의회 후속 조치로서 광역 단위 협력 체계를 구축하여 국가사업 반영을 도모함",
+        "정기적인 회의 운영을 통해 설립 타당성 확보 및 운영 모형을 검토함"
+      ],
+      "applicationReviewPoints": [
+        "전북 지역 내 정서 행동 위기 청소년을 위한 전문 상담, 치료, 보호, 교육 통합 시설의 필요성을 검토해 볼 수 있음",
+        "타 시도와의 협력을 통한 광역 단위의 청소년 지원 시설 유치 및 설립 추진 사례를 참고할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "충남교육청이 2026년 11월 5일 실무 추진단 첫 회의를 개최함",
+        "실무 추진단은 10월 26일 충청권 교육감 정책협의회 후속 조치로 구성됨",
+        "국립청소년디딤센터는 정서 행동 위기 청소년을 위한 상담·치료·보호·교육 통합 시설임",
+        "실무 추진단은 격주 수요일 정기 회의를 운영할 계획임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "gyeongnam-3bc80f436a75cab8",
+      "sourceId": "gyeongnam",
+      "source": "경상남도교육청",
+      "title": "경남교육청, 겨울철 대설·한파 대비 학교 안전망 가동",
+      "date": "2026-11-09",
+      "url": "https://www.gne.go.kr/pr/user/bbs/BD_selectBbs.do?q_bbsSn=1350&q_bbsDocNo=20261109132418682",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "겨울철 자연재난 대비를 위한 도교육청 차원의 종합적인 안전 관리 계획 및 대응 체계 수립에 관한 내용입니다.",
+      "summaryPoints": [
+        "경남교육청이 겨울철 대설 및 한파 대비 자연재난 추진 계획을 수립함",
+        "11월 15일부터 내년 3월 15일까지 종합상황실을 운영하고 비상대응체계를 가동함",
+        "기상특보 발효 시 학교장 판단에 따라 학사 조정 및 원격수업 전환이 가능함",
+        "재난 상황을 주의·경계·심각 3단계로 구분하여 대응함"
+      ],
+      "analysisPoints": [
+        "겨울철 자연재난에 대비하여 선제적으로 대응 계획을 수립하고 비상대응체계를 가동함",
+        "기상 상황에 따른 학사 조정 안내 시점을 구체적인 시간 단위로 매뉴얼화하여 학교 현장의 혼선을 최소화함",
+        "재난 상황을 단계별로 구분하고 도교육청 차원의 신속한 의사결정 체계를 마련함"
+      ],
+      "applicationReviewPoints": [
+        "겨울철 대설 및 한파 대비 학사 조정 안내 시점에 대한 구체적인 가이드라인을 비교해 볼 수 있음",
+        "재난 상황 발생 시 도교육청과 학교 간의 신속한 의사결정 및 전파 체계를 점검할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2026년 11월 9일 도내 전 기관 및 학교에 대응 계획을 안내함",
+        "교육시설 안전점검은 11월 16일부터 12월 18일까지 실시함",
+        "학사 조정 시 전날 하교 1시간 전까지 안내하는 것이 원칙임",
+        "갑작스러운 기상 변화 시 당일 오전 6시까지 학사 조정 내용을 안내함",
+        "광범위한 피해 예상 시 도교육청이 오전 5시까지 대응 방향을 결정함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "moe-91f172ceaa9ae278",
+      "sourceId": "moe",
+      "source": "교육부",
+      "title": "교육부, 맞춤형 현장 자문으로 학생 마음건강 안전망 강화",
+      "date": "2026-11-09",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107597&lev=0&m=020402&s=moe",
+      "category": "학생지원·복지",
+      "importance": 2,
+      "selectionReason": "학생 마음건강 안전망 강화를 위한 교육부 차원의 현장 자문 및 다층적 지원체계 구축 정책입니다.",
+      "summaryPoints": [
+        "교육부가 학생 마음건강 위기 대응 역량 강화를 위해 맞춤형 현장 자문을 실시함",
+        "위기 사안 발생 및 징후가 있는 9개 기관을 우선 선정하여 전문가 자문을 제공함",
+        "모방 위험 방지, 보호자 소통, 전문기관 연계 등 실질적인 대응 방안을 모색함"
+      ],
+      "analysisPoints": [
+        "학생 마음건강 위기 대응을 위해 다학제적 전문가로 구성된 자문단을 통해 맞춤형 현장 자문을 실시함",
+        "SNS 모방 위험, 보호자 소통, 의료기관 연계 부족 등 현장의 실질적인 애로사항에 초점을 맞춘 대응 방안을 모색함",
+        "교육청, 교육지원청, 학교 등 다각적 층위의 기관을 대상으로 자문을 제공하여 다층적 안전망을 강화함"
+      ],
+      "applicationReviewPoints": [
+        "학생 마음건강 위기 사안 발생 시 전문가 자문단을 활용한 맞춤형 현장 지원 체계 구축 방안을 검토해 볼 수 있음",
+        "SNS 모방 위험 및 보호자 협조 어려움 등 현장 애로사항에 대응하기 위한 가이드라인 마련을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "현장 자문 기간은 2026년 11월 10일부터 11월 30일까지임",
+        "자문 대상은 시도교육청 3개, 교육지원청 3개, 학교 3개 등 총 9개 기관임",
+        "자문단은 교육부, 한국교육환경보호원, 순천향대 연구센터, 정신건강의학과 전문의 등으로 구성됨",
+        "현장 애로사항으로 SNS 모방 위험, 보호자 협조 어려움, 의료기관 연계 부족 등이 제기됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "gangwon-489b7685a2cf3513",
+      "sourceId": "gangwon",
+      "source": "강원특별자치도교육청",
+      "title": "도교육청, 2027년도 예산안 3조 9,653억 원 편성",
+      "date": "2026-11-09",
+      "url": "https://gwe.go.kr/promotion/bbs/view.do?bbsSn=57684&key=bTI2MTEwMjkzMzg2NjA%3D",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "교육청 차원의 예산 편성 및 정책 추진 방향을 담고 있어 교육행정 담당자가 확인해야 할 주요 자료입니다.",
+      "summaryPoints": [
+        "강원특별자치도교육청이 2027년도 예산안 3조 9,653억 원을 편성하여 도의회에 제출함",
+        "학생 성장 지원을 위한 5대 정책 추진에 중점을 두고 예산을 배분함",
+        "교권 보호, 학력 신장, 진로 교육, 돌봄 및 안전망 강화 사업을 포함함"
+      ],
+      "analysisPoints": [
+        "세입 감소 상황에서 부족 재원을 기금으로 충당하여 주요 교육 정책의 연속성을 유지하고자 함",
+        "포용교육, 학력 신장, 미래교육 등 핵심 정책 분야에 재원을 집중 배분함",
+        "교권 보호 및 피해 교원 심리회복 지원을 위한 예산을 별도로 편성하여 교육활동 보호를 강화함"
+      ],
+      "applicationReviewPoints": [
+        "재정 여건 악화 시 기금을 활용한 재원 보전 방식 및 예산 편성 기조를 비교해 볼 수 있음",
+        "교권 보호 및 교원 심리회복 지원을 위한 예산 편성 규모와 세부 사업 내용을 참고할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2027년 예산안은 전년 대비 318억 원 감소한 규모임",
+        "부족 재원 1,663억 원은 기금에서 충당함",
+        "주요 정책별 예산은 포용교육 1,653억 원, 강한학력 582억 원, 미래교육 518억 원 등임",
+        "교권보호지원단 운영 및 피해 교원 심리회복 지원에 2억 원을 편성함",
+        "예산안은 제350회 도의회 정례회 심의를 거쳐 최종 확정될 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "moe-9d203e5fa12c123a",
+      "sourceId": "moe",
+      "source": "교육부",
+      "title": "스마트 안경 관련 내신평가 부정행위 전수조사 결과",
+      "date": "2026-11-09",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107600&lev=0&m=020402&s=moe",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "전국 단위의 부정행위 전수조사 결과 및 학생평가 관리 강화 방침은 교육부 차원의 정책적 대응으로 판단됩니다.",
+      "summaryPoints": [
+        "전국 중·고등학교 대상 스마트 안경 부정행위 전수조사 결과 총 4건 확인됨",
+        "적발된 부정행위는 2026학년도 1학기 기말고사 3건, 2학기 중간고사 1건임",
+        "부정행위 학생은 학업성적관리규정에 따라 0점 처리되었으며 일부는 징계 처분됨",
+        "교육부는 스마트 안경 예방 교육자료 배포 및 현장 유의사항 안내를 강화할 예정임"
+      ],
+      "analysisPoints": [
+        "스마트 안경 등 신종 IT 기기를 활용한 내신평가 부정행위 사례가 실제로 확인되어 이에 대한 대비가 필요함을 시사함",
+        "안경테를 반복해서 만지는 행동 등 구체적인 부정행위 유형 분석을 통한 감독 교사의 주의 깊은 관찰이 중요해짐",
+        "학생 제보 및 감독교사 발견 등 다각적인 적발 경로가 존재하므로 예방 교육과 신고 체계 마련이 요구됨"
+      ],
+      "applicationReviewPoints": [
+        "전북 지역에서도 부정행위 사례가 발생한 만큼 배포 예정인 스마트 안경 예방 교육자료와 현장 유의사항을 학교 현장에 신속히 안내할 필요가 있음",
+        "학업성적관리규정 내 신종 기기를 활용한 부정행위 처리 기준 및 징계 규정을 점검해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "조사 기간은 2026년 10월 27일부터 11월 3일까지임",
+        "부정행위 발생 지역은 서울 2건, 전북 1건, 제주 1건임",
+        "적발 경위는 안경테를 만지는 행동 반복 3건, 일반 안경을 스마트 안경으로 교체 1건임",
+        "부정행위 확인은 감독교사 발견 3건, 학생 제보 1건임",
+        "고등학교 3개교에서 학칙에 따른 별도 징계 처분 실시함",
+        "2026년 11월 3주에 학생용 교육자료 및 현장 유의사항 안내 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 1.0
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeju-2ca21a6a42d6678c",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "어려운 재정 여건 속 세출구조조정으로 학생 성장․안전 지원에 집중",
+      "date": "2026-11-09",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1485759",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "교육청 본청의 차년도 예산 편성안은 교육 정책의 방향과 예산 배분을 결정하는 핵심적인 교육행정 자료입니다.",
+      "summaryPoints": [
+        "2027년도 교육비특별회계 본예산안을 전년 대비 증가한 1조 6,170억 원 규모로 편성함",
+        "보통교부금은 증가하였으나 담배소비세분 등 한시 재원의 일몰로 지방자치단체 이전수입이 감소함",
+        "인건비 등 경직성 경비 증가에 대응하여 기존 사업을 원점에서 재검토하는 세출구조조정을 추진함",
+        "기초학력 제고, 정서위기 학생 지원, 학생 안전, 특수교육 강화 등 주요 교육정책에 예산을 집중 편성함"
+      ],
+      "analysisPoints": [
+        "한시적 재원의 일몰과 경직성 경비 증가로 인해 교육청의 재정 여건이 악화되는 상황에서 강력한 세출구조조정의 필요성이 커지고 있음",
+        "관행적·중복 사업을 정비하고 모든 사업을 원점에서 재검토하는 예산 효율화 및 건전재정 기조 강화 흐름으로 볼 수 있음",
+        "재정 압박 속에서도 기초학력, 정서위기 학생 지원, 안전 등 핵심 교육 분야에 재원을 집중하는 선택과 집중 전략이 강조됨"
+      ],
+      "applicationReviewPoints": [
+        "세입 여건 변화에 대응하여 관행적·유사 사업을 원점에서 재검토하고 세출 구조를 조정하는 방안을 검토할 수 있음",
+        "한시적 사업의 일몰 기준을 점검하고 예산 편성 시 기초학력 및 학생 안전 등 필수 교육 분야에 우선순위를 두는 방안을 참고할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2027년도 본예산 규모는 1조 6,170억 원임",
+        "2026년 본예산 대비 382억 원(2.4%) 증가함",
+        "담배소비세분 등 한시재원 일몰로 지방자치단체 이전수입이 감소함",
+        "인건비 계는 9,334억 원으로 전체 예산의 57.7%를 차지함",
+        "모든 사업을 원점에서 재검토하여 관행적·중복 사업을 폐지 및 통합함",
+        "2026년 12월 31일부로 일부 한시적 사업이 일몰됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 1.0,
+        "repair": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "incheon-34c725bea6cfde66",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 2026년 을지연습 평가 ‘전국 최우수 교육행정기관’ 선정",
+      "date": "2026-11-09",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3388386&bbsId=1519&mi=11620",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "을지연습 평가 결과 및 위기 대응 역량 강화 사례로서 교육행정기관의 재난 대응 체계 개선 및 운영 성과를 담고 있음.",
+      "summaryPoints": [
+        "인천광역시교육청이 2026년 을지연습 평가에서 전국 시·도교육청 중 최우수 기관으로 선정됨",
+        "실전 같은 훈련 운영과 접경지역 특성을 반영한 위기 대응 역량 강화가 높은 평가를 받음",
+        "을지 전용 메신저망과 화상회의 시스템을 구축하여 훈련 내실을 기함"
+      ],
+      "analysisPoints": [
+        "지역적 특성을 반영한 실전형 대피 및 재배치 훈련을 통해 비상대비태세의 실효성을 높인 사례임",
+        "을지 전용 메신저망과 화상회의 시스템 등 전용 소통 인프라 구축을 통해 훈련의 내실을 기할 수 있음을 보여줌",
+        "군부대 등 유관기관과의 협력을 통해 안보 체험 프로그램을 다각화하여 훈련 참여도를 높인 점이 돋보임"
+      ],
+      "applicationReviewPoints": [
+        "비상시 신속한 소통을 위한 전용 메신저망이나 화상회의 시스템 구축 방안을 검토해 볼 수 있음",
+        "지역 내 군부대 등 유관기관과 연계한 안보 체험 프로그램을 을지연습과 연계하여 운영하는 방안을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "2026년 을지연습은 8월 18일부터 21일까지 실시됨",
+        "인천시교육청은 종합 1위를 달성함",
+        "서해 5도 학교 대피, 학교 재배치, 소산지 이동 훈련을 실시함",
+        "제17사단과 협력하여 군사장비 전시 및 전투식량 체험 등 프로그램을 운영함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 1.0
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "incheon-4bb3ac5b47e6c208",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 교사가 직접 만든 ‘상호존중 그림책’ 12 종 보급",
+      "date": "2026-11-09",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3388388&bbsId=1519&mi=11620",
+      "category": "학생지원·복지",
+      "importance": 2,
+      "selectionReason": "교육활동 보호 및 상호존중 학교문화 조성을 위한 교육 자료 보급 사업으로, 교육청 차원의 정책적 지원 활동에 해당합니다.",
+      "summaryPoints": [
+        "인천광역시교육청이 교육활동 보호를 위해 교사가 직접 제작한 상호존중 그림책 12종을 보급함",
+        "언어, 경청, 양보, 기다림 등 4개 핵심 덕목을 주제로 학교급별 발달 단계에 맞춰 제작함",
+        "그림책과 함께 학습지 및 영상 3종을 포함하여 교육 현장에 제공함"
+      ],
+      "analysisPoints": [
+        "교사가 직접 제작에 참여하여 학교 현장의 실정에 맞는 교육활동 보호 콘텐츠를 개발·보급한 우수 사례임",
+        "유아부터 고등학생까지 발달 단계별 맞춤형 주제를 설정하여 교육의 실효성을 높임",
+        "그림책뿐만 아니라 학습지와 영상 등 다감각적 보조 자료를 함께 제공하여 활용도를 극대화함"
+      ],
+      "applicationReviewPoints": [
+        "교원들이 직접 참여하는 교육활동 보호 및 상호존중 교육 콘텐츠 개발 소모임이나 프로젝트 지원 방안을 검토할 수 있음",
+        "학교급별 발달 단계에 맞춘 감정 조절, 갈등 해결, SNS 관계 중심의 맞춤형 교육자료 보급 방안을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "그림책 제작 사업은 교육활동보호담당관이 추진함",
+        "유아용, 초등학생용, 중·고등학생용으로 구분하여 총 12종을 제작함",
+        "유아용은 감정 어휘, 초등학생용은 일상 갈등, 중·고등학생용은 SNS 및 친구 관계를 다룸"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 1.0
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "incheon-c53721e18ce19042",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 기초학력 교재 371 학급 지원 … 현장 교사 93.6% 만족",
+      "date": "2026-11-09",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3388388&bbsId=1519&mi=11620",
+      "category": "교육과정·수업",
+      "importance": 2,
+      "selectionReason": "기초학력 지원을 위한 교재 개발 및 보급 사업으로, 교육청 차원의 학생 지원 정책 및 교수학습 지원 체계의 변화를 담고 있습니다.",
+      "summaryPoints": [
+        "인천광역시교육청이 기초학력 교재 지원 사업을 운영하고 현장 교사 93.6%의 만족도를 기록함",
+        "초·중·고 371학급에 문해력·수리력 교재인 '알맹이', '토닥토닥', '모두의 분수'를 지원함",
+        "학년과 관계없이 학습 수준에 따라 선택 가능한 맞춤형 학습 자료를 제공함",
+        "분수 개념 학습 프로그램 등을 통해 중하위권 학생의 학습 효과를 확인함",
+        "운영 결과를 바탕으로 내년에도 교재 지원 사업 지속을 검토할 예정임"
+      ],
+      "analysisPoints": [
+        "학년과 관계없이 학습 수준에 맞춰 선택할 수 있는 맞춤형 기초학력 교재 지원을 통해 현장 교사의 높은 만족도를 도출함.",
+        "웹 기반 학습 프로그램 등 온·오프라인 연계 교재를 활용하여 중하위권 학생의 학습 효과를 높이고자 함.",
+        "기초학력 교재를 가정학습, 다문화 학급, 컨설팅 등 다양한 교육 과정 및 지원 사업과 연계하여 활용도를 극대화함."
+      ],
+      "applicationReviewPoints": [
+        "기초학력 지원을 위한 맞춤형 교재 및 웹 기반 학습 프로그램의 개발·보급 현황을 비교해 볼 수 있음.",
+        "다문화 학급이나 기초학력 컨설팅 등 기존 사업과 연계한 교재 활용 방안을 검토할 수 있음."
+      ],
+      "sourceFacts": [
+        "인천광역시교육청이 2026년 5월부터 기초학력 교재 지원 사업을 운영함",
+        "지원 대상은 초등학교 312학급, 중학교 50학급, 고등학교 9학급 등 총 371학급임",
+        "지원 교재는 '알맹이', '토닥토닥', '모두의 분수' 3종임",
+        "현장 교사 대상 설문 결과 93.6%가 만족 이상으로 응답함",
+        "'모두의 분수'는 웹 기반 학습 프로그램으로 분수 개념 학습을 지원함",
+        "교재는 가정학습 과제, 다문화 한국어학급, 기초학력 119컨설팅 등과 연계하여 활용됨"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "chungnam-ea884e6e97baf2f2",
+      "sourceId": "chungnam",
+      "source": "충청남도교육청",
+      "title": "충남교육청, 위험성평가로 찾은 위험 ‘개선까지’ 책임진다",
+      "date": "2026-11-09",
+      "url": "https://news.cne.go.kr/news/view.do?bbs_id=S2N1&bbs_seq=829015",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "교육 현장의 안전보건 점검 및 위험성 평가 결과에 따른 개선 조치는 학교 안전 대책의 일환으로 정책적 파급력이 있습니다.",
+      "summaryPoints": [
+        "충남교육청이 2026년 위험성평가 결과에 따른 팀장 회의를 개최함",
+        "올해 3월부터 10월까지 공립 학교 및 기관 735개소를 대상으로 안전보건 점검을 실시함",
+        "발굴된 유해 위험 요인 2,232건 중 2,140건을 개선하여 95.9%의 개선율을 달성함",
+        "미개선 위험 요인에 대한 부서별 역할 분담 및 연차별 개선 계획을 논의함",
+        "개선 완료 전까지 출입 통제 등 잠정조치를 철저히 이행하도록 안내함"
+      ],
+      "analysisPoints": [
+        "전문기관과의 협력을 통해 공립 학교 및 기관의 유해 위험 요인을 체계적으로 발굴하고 높은 개선율을 달성함.",
+        "미개선 위험 요인에 대해 경고 표지 부착 등 잠정조치를 선제적으로 시행하여 안전 공백을 최소화하고자 함.",
+        "본청과 교육지원청 간의 협력 회의를 통해 미개선 요인의 연차별 개선 계획을 수립하고 책임 행정을 강화함."
+      ],
+      "applicationReviewPoints": [
+        "학교 및 교육기관 대상 위험성평가의 주기적 실시 및 전문기관 협업 방식의 도입 여부를 검토할 수 있음.",
+        "발굴된 위험 요인의 개선율 향상 및 미개선 요인에 대한 잠정조치 가이드라인 마련 필요성을 확인해 볼 수 있음."
+      ],
+      "sourceFacts": [
+        "충남교육청이 2026년 11월 6일 위험성평가 결과 공유를 위한 팀장 회의를 개최함",
+        "안전보건전문기관과 협력하여 공립 학교 및 기관 735개소를 2회씩 방문 점검함",
+        "총 2,232건의 유해 위험 요인을 발굴함",
+        "발굴된 위험 요인 중 2,140건을 개선 완료함",
+        "회의에는 본청 부서 및 14개 교육지원청 팀장 등 22명이 참석함",
+        "미개선 위험 요인에 대해 개선 완료 시까지 경고 표지 부착 등 잠정조치를 시행함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    }
+  ],
+  "ownOfficeItems": [
+    {
+      "newsId": "jeonbuk-758e734abf907a93",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "천호성 교육감, 5개 시군 교육장 교육혁신선도지역 추진 전략 발표",
+      "date": "2026-11-09",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1210231",
+      "summaryPoints": [
+        "교육혁신선도지역으로 선정된 5개 시군을 시작으로 도내 14개 시군 전체로 지역교육혁신을 확대할 예정임",
+        "미선정 9개 시군에 재정 지원과 맞춤형 컨설팅을 강화해 차년도 공모 도전을 지원할 계획임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeonbuk-13c1a02d0dd6a8cc",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "전북 폐교 활용 우수사례 2건, 교육부장관상 수상",
+      "date": "2026-11-09",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1210177",
+      "summaryPoints": [
+        "부안교육지원청의 닥나무한지체험관과 임실교육지원청의 임실생태누리가 2026년 폐교 활용 우수사례 경진대회에서 교육부장관상을 수상함",
+        "폐교를 지역 특색을 살린 교육 문화 체험 공간으로 재탄생시켜 지역사회와 함께 활용하는 모델을 확산할 예정임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeonbuk-c6743946aba9ba4c",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "“우리 지역 농산물로 건강한 요리 만들어요”",
+      "date": "2026-11-09",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1210357",
+      "summaryPoints": [
+        "도내 농특산물을 활용한 저탄소 식단 주제의 제2회 학생참여 요리경연대회에서 붉은장미 삼총사 팀이 대상을 수상함",
+        "학생들이 지역 식재료의 가치를 이해하고 건강과 환경을 생각하는 지속가능한 식생활을 실천하는 계기를 마련함"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-f99a819901c8be6e",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "유·초·특수교사 임용 제1차 시험 무결점 진행",
+      "date": "2026-11-09",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1210174",
+      "summaryPoints": [
+        "2027학년도 유치원·초등·특수학교 교사 임용 제1차 시험이 응시율 87.8%를 기록하며 부정행위 없이 종료됨",
+        "제1차 시험 합격자 발표와 제2차 시험 장소 공고는 12월 9일 전북교육청 누리집을 통해 안내될 예정임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-2b586ba0a70c5b9c",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "2027학년도 학습연구년 특별연수 대상자 87명 선발",
+      "date": "2026-11-09",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1210175",
+      "summaryPoints": [
+        "전북특별자치도교육청(교육감 천호성) 은 교원의 전문성 신장과 학교 현장 중심의 연구 활동을 지원하기 위해 ‘2027학년도 학습연구년 특별연수 대상자’ 를 선발한다고 9일 밝혔다.",
+        "2027학년도 선발 예정 인원은 총 87명으로 유치원 교사 4명, 초등 교사 49명, 중등 교사 32명, 교감 2명이다."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "reviewRequired": true,
+      "reviewReason": "원문에서 확인되지 않는 수치가 있습니다: ['11']",
+      "validation": {
+        "status": "REVIEW",
+        "issues": [],
+        "confidence": 0
+      }
+    }
+  ],
+  "omittedItems": [],
+  "validation": {
+    "status": "PASS",
+    "issues": [],
+    "checks": {
+      "ownOfficeExcludedFromTrendAnalysis": true,
+      "ownOfficeAllIncluded": true,
+      "ownOfficeSummariesVerified": false,
+      "publishedItemsVerified": true,
+      "sourceWindowMatches": true
+    }
+  },
+  "providerErrors": {
+    "facts": [],
+    "ownOfficeSummaries": [],
+    "analysis": [],
+    "verification": [],
+    "repairs": [],
+    "repairVerifications": []
+  },
+  "trace": [
+    {
+      "step": "extract_facts",
+      "status": "success",
+      "startedAt": "2026-11-09T22:01:04+00:00",
+      "durationMs": 14788
+    },
+    {
+      "step": "summarize_own_office",
+      "status": "success",
+      "startedAt": "2026-11-09T22:01:19+00:00",
+      "durationMs": 3887
+    },
+    {
+      "step": "analyze_trends",
+      "status": "success",
+      "startedAt": "2026-11-09T22:01:23+00:00",
+      "durationMs": 62146
+    },
+    {
+      "step": "verify_report",
+      "status": "success",
+      "startedAt": "2026-11-09T22:02:25+00:00",
+      "durationMs": 8278
+    },
+    {
+      "step": "repair_report_1",
+      "status": "success",
+      "startedAt": "2026-11-09T22:02:34+00:00",
+      "durationMs": 15192
+    },
+    {
+      "step": "verify_repair_1",
+      "status": "success",
+      "startedAt": "2026-11-09T22:02:49+00:00",
+      "durationMs": 926
+    },
+    {
+      "step": "repair_report_2",
+      "status": "success",
+      "startedAt": "2026-11-09T22:02:50+00:00",
+      "durationMs": 14055
+    },
+    {
+      "step": "verify_repair_2",
+      "status": "success",
+      "startedAt": "2026-11-09T22:03:04+00:00",
+      "durationMs": 1165
+    }
+  ],
+  "rendering": {
+    "canonical": "json",
+    "html": "오늘의 교육동향 (20261110).html",
+    "hwpx": "오늘의 교육동향 (20261110).hwpx",
+    "hwpxValidation": {
+      "hardGates": {
+        "package_validation": "pass",
+        "document_errors": "pass",
+        "schema_lint": "pass",
+        "reopen": "pass",
+        "editor_open_safety": "pass",
+        "id_integrity": "pass"
+      },
+      "packageOk": true,
+      "documentOk": true,
+      "reopenedOk": true,
+      "visualReviewRequired": true
+    }
+  }
+}
