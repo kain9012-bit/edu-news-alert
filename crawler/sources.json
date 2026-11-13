@@ -301,7 +301,8 @@
     ],
     "detailPath": "/news/na/ntt/selectNttInfo.do",
     "seqParam": "nttSn",
-    "enabled": true
+    "enabled": true,
+    "linkSelector": "a[data-nm=\"nttSn\"][data-param], a.nttInfoBtn[data-id]"
   },
   {
     "id": "gyeongnam",

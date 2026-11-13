@@ -566,7 +566,9 @@ def strip_site_suffix(text: str) -> str:
 
 
 def clean_candidate_title(text: str) -> str:
-    text = normalize_space(text or "")
+    # 경북 목록은 제목의 따옴표를 두 번 감싸 내보내 '&apos;'가 글자로 남는다.
+    text = html_lib.unescape(html_lib.unescape(text or ""))
+    text = normalize_space(text)
     text = re.sub(r"^(닫기\s+)+", "", text)
     text = strip_site_suffix(text)
     for marker in ["작성자", "등록일", "조회수", "담당부서", "▢", "□", "○"]:
