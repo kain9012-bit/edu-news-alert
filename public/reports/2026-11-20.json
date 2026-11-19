@@ -1,0 +1,508 @@
+{
+  "metadata": {
+    "reportId": "20261119T220134Z-930ae597",
+    "title": "오늘의 교육동향",
+    "status": "completed",
+    "generatedAt": "2026-11-19T22:01:34+00:00",
+    "windowStart": "2026-11-19T06:00:00+09:00",
+    "windowEnd": "2026-11-20T06:00:00+09:00",
+    "windowHours": 24,
+    "selectionRunId": "20261119T210936Z-843f16a4",
+    "sourceCount": 11,
+    "eligibleCount": 8,
+    "publishedCount": 8,
+    "omittedCount": 0,
+    "ownOfficeEligibleCount": 3,
+    "ownOfficePublishedCount": 3,
+    "qualityExcludedCount": 0,
+    "factModel": "google/gemini-3.1-flash-lite",
+    "analysisModel": "google/gemini-3.5-flash",
+    "verifierModel": "google/gemini-3.1-flash-lite",
+    "summaryOnlyCount": 0,
+    "ownOfficeReviewCount": 0,
+    "usage": {
+      "stages": {
+        "facts": {
+          "model": "google/gemini-3.1-flash-lite",
+          "requests": 3,
+          "promptTokenCount": 9215,
+          "candidatesTokenCount": 2595,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 11810
+        },
+        "analysis": {
+          "model": "google/gemini-3.5-flash",
+          "requests": 2,
+          "promptTokenCount": 3558,
+          "candidatesTokenCount": 1223,
+          "thoughtsTokenCount": 5523,
+          "totalTokenCount": 10304
+        },
+        "verification": {
+          "model": "google/gemini-3.1-flash-lite",
+          "requests": 3,
+          "promptTokenCount": 12077,
+          "candidatesTokenCount": 629,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 12706
+        }
+      },
+      "total": {
+        "requests": 8,
+        "promptTokenCount": 24850,
+        "candidatesTokenCount": 4447,
+        "thoughtsTokenCount": 5523,
+        "totalTokenCount": 34820
+      }
+    },
+    "estimatedCostUsd": 0.07621
+  },
+  "items": [
+    {
+      "newsId": "gyeongbuk-1dfb9236c03e8043",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[행정과]경북교육청, 2027학년도 유․초․중학교 학급당 학생 수 기준 마련",
+      "date": "2026-11-19",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1665965&bbsId=4744&mi=17643&searchCate=761",
+      "category": "정책·행정",
+      "importance": 3,
+      "selectionReason": "학급당 학생 수 기준 및 학급편성 지침 변경은 교육과정 운영과 직결된 제도적 변화입니다.",
+      "summaryPoints": [
+        "2027학년도 유·초·중학교 학급편성 지침 마련 및 안내함",
+        "유치원 5세반 학급당 원아 수 기준을 23~26명으로 하향 조정함",
+        "초등학교 1·2학년 학급당 학생 수 기준을 1명씩 하향함",
+        "중학교 학급당 학생 수 기준을 학년별·지역별 동일하게 적용함",
+        "2027년 1월 예비 편성 후 3월 최종 학급편성을 확정할 예정임"
+      ],
+      "analysisPoints": [
+        "유치원 및 초등 저학년의 학급당 학생 수 기준을 하향 조정하여 교육 여건 개선을 도모함",
+        "인구 감소 지역의 소규모 유치원 유지 및 중학교 학급 편성 기준의 지역별 통일을 추진함",
+        "대규모 학교에 대한 자율 편성 권한 부여 등 유연한 학급 운영 방침을 적용함"
+      ],
+      "applicationReviewPoints": [
+        "전북 지역의 유치원 및 초등학교 저학년 학급당 학생 수 기준과 비교해 볼 수 있음",
+        "읍·면 지역 소규모 유치원의 최소 학급 편성 기준 및 대규모 학교의 자율 편성 기준 도입 여부를 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "유치원 5세반 학급당 원아 수 기준 24~26명에서 23~26명으로 변경",
+        "읍·면 지역 유치원 1개교 운영 시 원아 2명 이상이면 학급 편성 가능",
+        "초등학교 1·2학년 동 지역 25명에서 24명으로, 읍·면 지역 21명에서 20명으로 조정",
+        "중학교 학급당 학생 수 동 지역 27명, 읍·면 지역 26명으로 통일",
+        "읍·면 지역 전교생 1,000명 이상 학교는 학급당 학생 수 21~25명 자율 편성 가능"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeju-e886632f210522a0",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "새내기휴가 3일 신설, 공무원 학습휴가 확대",
+      "date": "2026-11-19",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1486550",
+      "category": "교원·인사",
+      "importance": 3,
+      "selectionReason": "지방공무원 복무 조례 개정을 통해 휴가 제도 및 인사 관련 복지 정책의 실질적인 변경이 명시되었습니다.",
+      "summaryPoints": [
+        "지방공무원 복무 조례 개정을 통해 새내기휴가 신설 및 학습휴가 확대 추진",
+        "재직기간 5년 미만 공무원 대상 3일의 새내기휴가 부여",
+        "지방공무원 학습휴가를 연간 4일에서 7일로 확대",
+        "2027년 1월 시행을 목표로 12월 도의회 제출 예정"
+      ],
+      "analysisPoints": [
+        "저경력 지방공무원의 사기 진작 및 복지 향상을 위해 특별휴가를 신설하는 추세임",
+        "지방공무원의 자기개발 및 역량 강화를 지원하기 위해 학습휴가 일수를 확대함",
+        "공무원노동조합과의 단체교섭 합의사항을 조례 개정을 통해 제도화함"
+      ],
+      "applicationReviewPoints": [
+        "전북교육청 소속 저경력 지방공무원의 복지 혜택 및 학습휴가 운영 현황과 비교해 볼 수 있음",
+        "노사 합의를 통한 지방공무원 복무 조례 개정 추진 사례를 참고할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "제주특별자치도교육감 소속 지방공무원 복무 조례 개정 추진",
+        "재직기간 5년 미만 공무원 대상 새내기휴가 3일 신설",
+        "지방공무원 학습휴가 연간 4일에서 7일로 확대",
+        "공무원노동조합과의 단체교섭 합의사항 이행",
+        "2026년 11월 18일 입법예고 완료"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongbuk-4a6a9574c24d6f27",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[재무과]경북교육청, 2025회계연도 결산기준 지방교육재정 공시",
+      "date": "2026-11-19",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1665963&bbsId=4744&mi=17643&searchCate=761",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "지방교육재정 공시는 교육청의 재정 운용 현황과 주요 사업을 투명하게 공개하는 제도적 행정 절차입니다.",
+      "summaryPoints": [
+        "2025회계연도 결산기준 지방교육재정 공시자료 누리집 공개",
+        "교육재정 운영의 투명성 강화 및 도민 알 권리 보장 목적",
+        "공통공시 15개 분야 78개 항목과 특수공시 3개 항목으로 구성"
+      ],
+      "analysisPoints": [
+        "지방교육재정의 투명성을 강화하고 주민의 알 권리를 보장하기 위해 결산 기준 재정 공시를 실시함",
+        "공통공시 외에 지역 특색 사업을 특수공시 항목으로 지정하여 홍보 효과를 도모함"
+      ],
+      "applicationReviewPoints": [
+        "전북교육청의 지방교육재정 공시 항목 구성 및 특수공시 대상 사업 선정 기준을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "2025회계연도 결산기준 지방교육재정 공시",
+        "공통공시 항목에 세입·세출 운용 현황, 재무제표, 채권 관리 등 포함",
+        "특수공시 사업으로 경북진학온 구축, AI교육센터 건립, 경북미래교육지구 선정",
+        "경북교육청 누리집을 통해 재정 운용 현황 확인 가능"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeonggi-5ea1f4fa3cd3e44b",
+      "sourceId": "gyeonggi",
+      "source": "경기도교육청",
+      "title": "경기도교육청, 제1형 당뇨병 학생 지원사업, 사회보장제도 사전협의 전국 최우수 사례 선정",
+      "date": "2026-11-19",
+      "url": "https://www.goe.go.kr/goe/na/ntt/selectNttInfo.do?nttSn=2382243&bbsId=1922&mi=10102",
+      "category": "학생지원·복지",
+      "importance": 2,
+      "selectionReason": "학생 건강권 보호를 위한 신규 지원사업의 성과 및 사회보장제도 협의 사례로 교육행정의 참고 가치가 있음.",
+      "summaryPoints": [
+        "제1형 당뇨병 학생 의료물품 구입비 지원사업이 사회보장제도 사전협의 최우수 사례로 선정됨",
+        "연속혈당측정기 등 소모품 구입비 본인부담금의 90% 이내, 1인당 연 최대 55만 원 지원",
+        "학교 행정부담 경감 및 신속한 사업 추진 체계 구축으로 높은 평가를 받음",
+        "포상금 전액을 어린이 당뇨환자 장학사업에 기부할 예정임"
+      ],
+      "analysisPoints": [
+        "난치성 질환 학생을 위한 실질적인 의료비 지원을 통해 학생 복지를 강화함",
+        "교육청 직접 접수 체계 도입 및 세목 변경을 통해 학교의 행정 부담을 경감하고 사업 추진의 신속성을 확보함",
+        "사회보장제도 사전협의 등 관계 부처와의 행정적 절차를 원활히 해결하여 우수사례로 인정받음"
+      ],
+      "applicationReviewPoints": [
+        "전북 관내 제1형 당뇨병 학생 지원 현황 및 관련 지원 체계를 확인할 필요가 있음",
+        "학교 행정 부담을 줄이기 위한 교육청 직접 접수 방식의 도입 가능성을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "2026년도 사회보장제도 사전협의 우수사례 전국 최우수 선정",
+        "제1형 당뇨병 학생 의료물품 구입비 1인당 연 최대 55만 원 지원",
+        "올해 도내 제1형 당뇨병 학생 약 55% 신청 및 지원",
+        "세출예산 세목 변경 및 도교육청 직접 접수 체계 도입",
+        "보건복지부 및 한국보건사회연구원 주관 공모"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "sejong-b7ec4cb4a156fad1",
+      "sourceId": "sejong",
+      "source": "세종특별자치시교육청",
+      "title": "세종시법 재정특례 개정안 국회 행안위 소위 통과(조직예산과)",
+      "date": "2026-11-19",
+      "url": "https://www.sje.go.kr/sje/na/ntt/selectNttInfo.do?nttSn=3075499&bbsId=1039263&mi=52234",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "교육재정 확보와 관련된 법안 개정으로 교육청의 예산 및 정책 운영에 직접적인 영향을 미치는 중요한 사안입니다.",
+      "summaryPoints": [
+        "세종시법 재정특례 보통교부금 보정기간을 2029년까지 3년 연장하는 개정안이 국회 행안위 소위를 통과함",
+        "세종시는 도시 성장과 행정수도 완성에 따른 교육수요 증가로 안정적인 재정 지원이 필요한 상황임",
+        "2013년부터 2026년까지 총 7,894억 원의 보정액을 지원받아 교육환경 개선 등에 활용하였음"
+      ],
+      "analysisPoints": [
+        "특별법에 기반한 재정 특례 연장을 통해 안정적인 교육 재정을 확보하려는 입법적 노력이 중요함을 보여줌",
+        "지역적 특수성과 교육 수요 증가를 반영한 맞춤형 재정 지원 제도의 필요성을 시사함"
+      ],
+      "applicationReviewPoints": [
+        "전북특별자치도법 등 관련 특별법상의 교육 재정 특례 조항 및 기한 연장 필요성을 검토해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "국회 행정안전위원회 법안심사소위원회에서 세종시법 일부개정법률안 통과",
+        "보통교부금 재정 특례 적용기한을 2026년에서 2029년으로 연장",
+        "2013년부터 2026년까지 연평균 564억 원의 보정액 지원",
+        "세종시의 특수한 재정여건을 고려한 입법 추진"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "moe-64ffcc6a84f1220c",
+      "sourceId": "moe",
+      "source": "교육부",
+      "title": "수능 부정행위 결코 용납하지 않겠습니다",
+      "date": "2026-11-19",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107697&lev=0&m=020402&s=moe",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "수능 부정행위 방지를 위한 필기구 휴대 금지 및 일괄 지급 등 시험 운영 규정의 실질적인 변경 사항을 포함하고 있어 정책적 중요도가 높습니다.",
+      "summaryPoints": [
+        "2027학년도 수능 부정행위 차단을 위해 범정부 역량을 총동원함",
+        "초소형 카메라 등 스마트기기 악용 방지를 위해 필기구 휴대 제한 및 일괄 지급을 실시함",
+        "부정행위 적발 시 최대 1억 원의 포상금 지급 및 향후 10년간 응시자격 제한 추진",
+        "수능 종료 후 범정부 수능 부정행위 대응 TF를 가동하여 사후 조사 및 처벌 강화 예정"
+      ],
+      "analysisPoints": [
+        "스마트 기기를 악용하는 신종 부정행위를 차단하기 위해 시험장 반입 물품 통제와 일괄 지급 기준을 강화함",
+        "부정행위자에 대한 응시자격 제한 및 형사 처벌 등 사후 제재 수위를 높여 시험의 공정성을 확보하고자 함"
+      ],
+      "applicationReviewPoints": [
+        "도내 수능 시험장 내 부정행위 방지를 위한 물품 관리 및 감독관 교육 계획을 점검해 볼 수 있음",
+        "범정부 대응 체계와 연계한 자체 수능 부정행위 예방 및 사후 대응 매뉴얼을 보완할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2027학년도 대학수학능력시험 11월 19일 실시",
+        "흑색 연필 외 모든 필기구 휴대 금지 및 샤프, 사인펜, 수정테이프, 지우개 일괄 지급",
+        "부정행위자 향후 10년간 응시자격 제한 및 형사 처벌 추진",
+        "11월 20일부터 국무총리 주재 범정부 수능 부정행위 대응 TF 가동"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "ulsan-a4ce882de104bd21",
+      "sourceId": "ulsan",
+      "source": "울산광역시교육청",
+      "title": "울산교육청, 2027년 인성 교육 추진 방향 논의",
+      "date": "2026-11-19",
+      "url": "https://use.go.kr/news/user/bbs/BD_selectBbs.do?q_bbsSn=1005&q_bbsDocNo=20261119173623212",
+      "category": "교육과정·수업",
+      "importance": 2,
+      "selectionReason": "교육청 차원의 인성교육 시행계획 수립 및 추진 과제 설정은 교육 정책 및 제도 변화에 해당함.",
+      "summaryPoints": [
+        "울산교육청이 제6기 인성교육진흥협의회를 통해 2027년 인성 교육 시행계획을 심의함",
+        "학교, 가정, 지역사회를 연계한 실천 중심의 인성 교육을 확대할 예정임",
+        "학교별 특색을 살린 온통 인성 공감 사업과 디지털 시민성 교육을 강화함"
+      ],
+      "analysisPoints": [
+        "학교, 가정, 지역사회를 연계한 실천 중심의 인성 교육과 디지털 시민성 교육의 융합을 도모함",
+        "인성교육진흥협의회 등 거버넌스를 활용하여 중장기적인 인성 교육 시행계획의 실효성을 높이고자 함"
+      ],
+      "applicationReviewPoints": [
+        "지역사회 연계형 실천 중심 인성 교육 및 디지털 시민성 교육 프로그램을 비교해 볼 수 있음",
+        "인성교육 관련 위원회 운영 현황과 연도별 시행계획 수립 과정을 점검해 볼 필요가 있음"
+      ],
+      "sourceFacts": [
+        "제6기 인성교육진흥협의회 위원 임기 2026년 11월 1일부터 2028년 10월 31일까지",
+        "2027년 울산 인성 교육 시행계획안 주요 과제 9개 구성",
+        "협의회는 부교육감을 위원장으로 총 11명으로 구성"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "chungbuk-411de9a0dcfd7d31",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "충북교육청, 수능 이후 학생 안전 위해 충북경찰청과 도내 전역 집중 교외 생활지도 실시",
+      "date": "2026-11-19",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1582532&bbsId=1158&mi=10301",
+      "category": "학생지원·복지",
+      "importance": 2,
+      "selectionReason": "교육청 차원에서 도내 전역을 대상으로 수능 이후 학생 안전 및 생활지도 특별기간을 운영하는 정책적 조치임.",
+      "summaryPoints": [
+        "충북교육청과 충북경찰청이 합동으로 수능 이후 학생 생활지도를 실시함",
+        "수능 이후부터 연말까지 학생생활지도 특별기간을 운영함",
+        "청소년 밀집지역 및 유해업소 주변을 중심으로 학교폭력, 사이버도박 예방 활동을 강화함"
+      ],
+      "analysisPoints": [
+        "수능 이후 해이해지기 쉬운 학생 안전을 위해 교육청과 경찰청 간의 긴밀한 협력 체계를 구축함",
+        "연말까지 특별기간을 설정하여 청소년 밀집지역 중심의 선제적인 예방 활동을 전개함"
+      ],
+      "applicationReviewPoints": [
+        "수능 이후 연말까지 유관기관 합동 교외 생활지도 및 청소년 유해환경 단속 협력 방안을 검토해 볼 수 있음",
+        "학교폭력 및 사이버도박 예방을 위한 지역별 집중 생활지도 계획을 수립할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2027학년도 수능 당일인 11월 19일부터 합동 생활지도 실시",
+        "도내 10개 시·군 교육지원청 및 지역 경찰서 참여",
+        "수능 이후 연말까지 학생생활지도 특별기간 운영"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    }
+  ],
+  "ownOfficeItems": [
+    {
+      "newsId": "jeonbuk-16ae0f1fad43f679",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "학생 마약 예방교육, 전문의에게 배운다",
+      "date": "2026-11-19",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1214424",
+      "summaryPoints": [
+        "20일 창의예술미래공간에서 마약 예방교육 담당교사 120명 대상 역량 강화 연수 개최 예정임",
+        "청소년 마약류 특성 이해 및 학교 현장 맞춤형 예방교육 운영 방법 등을 안내할 예정임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeonbuk-f66b6c7b8af48eb3",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "사립학교 교원 인사 공정성 높인다",
+      "date": "2026-11-19",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1214423",
+      "summaryPoints": [
+        "사립학교 교원인사위원회 운영 공정성 제고를 위해 26일까지 도내 21개교 대상 현장 컨설팅 실시함",
+        "인사위원회 구성 및 운영 절차 점검과 학교별 맞춤형 지원을 통해 인사 업무 내실화 도모함"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeonbuk-10530b9256cc4571",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "천호성 교육감 “마지막까지 최선 다해달라” 당부",
+      "date": "2026-11-19",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1214426",
+      "summaryPoints": [
+        "천호성 교육감이 19일 수능 시험장을 방문해 수험생을 격려하고 수능 종합상황실을 점검함",
+        "도내 6개 시험지구 65개 시험장에서 1만 7,473명의 수험생이 응시함"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    }
+  ],
+  "omittedItems": [],
+  "validation": {
+    "status": "PASS",
+    "issues": [],
+    "checks": {
+      "ownOfficeExcludedFromTrendAnalysis": true,
+      "ownOfficeAllIncluded": true,
+      "ownOfficeSummariesVerified": true,
+      "publishedItemsVerified": true,
+      "sourceWindowMatches": true
+    }
+  },
+  "providerErrors": {
+    "facts": [],
+    "ownOfficeSummaries": [],
+    "analysis": [],
+    "verification": [],
+    "repairs": [],
+    "repairVerifications": []
+  },
+  "trace": [
+    {
+      "step": "extract_facts",
+      "status": "success",
+      "startedAt": "2026-11-19T22:00:56+00:00",
+      "durationMs": 8439
+    },
+    {
+      "step": "summarize_own_office",
+      "status": "success",
+      "startedAt": "2026-11-19T22:01:05+00:00",
+      "durationMs": 2026
+    },
+    {
+      "step": "analyze_trends",
+      "status": "success",
+      "startedAt": "2026-11-19T22:01:07+00:00",
+      "durationMs": 23118
+    },
+    {
+      "step": "verify_report",
+      "status": "success",
+      "startedAt": "2026-11-19T22:01:30+00:00",
+      "durationMs": 4070
+    }
+  ],
+  "rendering": {
+    "canonical": "json",
+    "html": "오늘의 교육동향 (20261120).html",
+    "hwpx": "오늘의 교육동향 (20261120).hwpx",
+    "hwpxValidation": {
+      "hardGates": {
+        "package_validation": "pass",
+        "document_errors": "pass",
+        "schema_lint": "pass",
+        "reopen": "pass",
+        "editor_open_safety": "pass",
+        "id_integrity": "pass"
+      },
+      "packageOk": true,
+      "documentOk": true,
+      "reopenedOk": true,
+      "visualReviewRequired": true
+    }
+  }
+}
