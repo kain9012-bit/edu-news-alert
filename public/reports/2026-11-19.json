@@ -1,0 +1,918 @@
+{
+  "metadata": {
+    "reportId": "20261119T025528Z-c4945dff",
+    "title": "오늘의 교육동향",
+    "status": "completed",
+    "generatedAt": "2026-11-19T02:55:28+00:00",
+    "windowStart": "2026-11-18T06:00:00+09:00",
+    "windowEnd": "2026-11-19T06:00:00+09:00",
+    "windowHours": 24,
+    "selectionRunId": "20261118T211230Z-6c2d2c43",
+    "sourceCount": 23,
+    "eligibleCount": 16,
+    "publishedCount": 16,
+    "omittedCount": 0,
+    "ownOfficeEligibleCount": 7,
+    "ownOfficePublishedCount": 7,
+    "qualityExcludedCount": 0,
+    "factModel": "google/gemini-3.1-flash-lite",
+    "analysisModel": "google/gemini-3.5-flash",
+    "verifierModel": "google/gemini-3.1-flash-lite",
+    "summaryOnlyCount": 0,
+    "ownOfficeReviewCount": 0,
+    "usage": {
+      "stages": {
+        "facts": {
+          "model": "google/gemini-3.1-flash-lite",
+          "requests": 6,
+          "promptTokenCount": 19791,
+          "candidatesTokenCount": 5157,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 24948
+        },
+        "analysis": {
+          "model": "google/gemini-3.5-flash",
+          "requests": 4,
+          "promptTokenCount": 6965,
+          "candidatesTokenCount": 2978,
+          "thoughtsTokenCount": 9994,
+          "totalTokenCount": 19937
+        },
+        "verification": {
+          "model": "google/gemini-3.1-flash-lite",
+          "requests": 6,
+          "promptTokenCount": 25577,
+          "candidatesTokenCount": 1326,
+          "thoughtsTokenCount": 0,
+          "totalTokenCount": 26903
+        }
+      },
+      "total": {
+        "requests": 16,
+        "promptTokenCount": 52333,
+        "candidatesTokenCount": 9461,
+        "thoughtsTokenCount": 9994,
+        "totalTokenCount": 71788
+      }
+    },
+    "estimatedCostUsd": 0.148262
+  },
+  "items": [
+    {
+      "newsId": "moe-568383128174b22c",
+      "sourceId": "moe",
+      "source": "교육부",
+      "title": "2027 수능 강화된 부정행위 예방조치에 따른 수험생 유의사항 추가 안내",
+      "date": "2026-11-18",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107693&lev=0&m=020402&s=moe",
+      "category": "정책·행정",
+      "importance": 5,
+      "selectionReason": "수능 부정행위 예방을 위한 시험 운영 규정 및 휴대 물품 기준의 실질적인 변경 사항을 담고 있어 정책적 중요도가 높습니다.",
+      "summaryPoints": [
+        "2027학년도 수능 부정행위 예방을 위해 개인 지참 필기구 휴대 제한 강화함",
+        "검은색 컴퓨터용 사인펜, 흰색 수정테이프, 지우개, 샤프심 휴대 금지 및 시험장 일괄 지급함",
+        "시험장 내 안경, 옷깃, 소매 등 휴대물품 및 복장 점검 절차 강화함",
+        "단추 없는 복장 착용 및 불필요한 장신구 착용 자제 권장함"
+      ],
+      "analysisPoints": [
+        "수능 시험의 공정성 및 신뢰도 확보를 위해 부정행위 예방 조치가 대폭 강화되는 추세임",
+        "개인 필기구 제한 및 복장 점검 절차 강화 등 시험장 관리의 구체적이고 실질적인 통제 조치가 도입됨",
+        "금속탐지기 활용 및 전수 점검 등 현장 감독관의 역할과 책임이 더욱 커질 것으로 예상됨"
+      ],
+      "applicationReviewPoints": [
+        "강화된 수능 부정행위 예방 대책에 따른 도내 시험장 감독관 교육 및 수험생 유의사항 홍보 방안을 점검할 필요가 있음",
+        "시험장별 일괄 지급 물품 확보 및 금속탐지기 등 방지 장비 구비 현황을 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2027학년도 대학수학능력시험은 2026년 11월 19일 실시함",
+        "개인 지참 허용 필기구는 흑색 연필로 한정함",
+        "금지 물품 소지 적발 시 압수 및 부정행위 여부 조사함",
+        "1교시 및 3교시 시작 전 휴대물품 전수 점검 실시함",
+        "부정행위 의심 시 금속탐지기 활용 추가 검사함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "daejeon-25f75336b85d5044",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "오석진 교육감, 2027년도 대전교육 정책방향 발표(기획예산과)",
+      "date": "2026-11-18",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3367503&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "category": "정책·행정",
+      "importance": 4,
+      "selectionReason": "교육청의 차년도 주요 정책 방향과 교육 비전을 발표하는 중요한 행정적 사안임.",
+      "summaryPoints": [
+        "2027년 대전교육 5대 정책방향으로 오감 만족 대전교육 추진함",
+        "질문 중심 수업 확대 및 IB 교육지구 조성으로 수업 혁신 도모함",
+        "AI 기반 개별화 학습지원체계 구축 및 미래교육 인프라 확충함",
+        "고3 대상 대전 에듀카드 도입 및 고교 석식비 지원사업 추진함",
+        "교육활동 보호 체계 강화 및 학교 행정업무 경감 추진함"
+      ],
+      "analysisPoints": [
+        "수업 혁신과 AI 기반 맞춤형 학습을 결합한 미래 교육 인프라 구축이 강조됨",
+        "고교 석식비 지원 및 방과후 이용권 확대 등 학생 복지 혜택의 범위가 넓어지는 경향을 보임",
+        "병원형 Wee 센터 신설을 통해 고위기 학생에 대한 전문적인 치료 및 맞춤형 지원 체계를 강화함"
+      ],
+      "applicationReviewPoints": [
+        "타 시도의 고교 복지 지원 사업 및 초등 방과후 지원 확대 사례를 분석하여 도내 복지 정책과 비교해 볼 수 있음",
+        "고위기 학생 지원을 위한 병원형 Wee 센터 모델의 도입 타당성 및 운영 방안을 검토할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "오석진 대전광역시교육감은 2026년 11월 18일 시정연설을 통해 정책방향 발표함",
+        "5대 정책방향은 교육만족, 미래만족, 복지만족, 안전만족, 소통만족임",
+        "초등학교 방과후 프로그램 이용권 지원 대상을 4학년까지 확대함",
+        "병원형 Wee 센터 신설로 고위기 학생 치료 지원함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeju-f1757ea1c962db07",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "제주고·제주여상 일반고 전환, 제주미래고 신설‘청사진’공유",
+      "date": "2026-11-18",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1486489",
+      "category": "정책·행정",
+      "importance": 4,
+      "selectionReason": "도교육청 차원의 고교체제 개편 및 일반고 전환이라는 주요 교육 정책 변화를 다루고 있어 교육행정 담당자가 확인해야 할 사안임.",
+      "summaryPoints": [
+        "2027학년도 고교체제개편을 위해 제주고와 제주여상의 일반고 전환 추진함",
+        "첨단 미래 산업 인재 양성을 위한 제주미래고 신설 계획함",
+        "중학교 학부모 대상 설명회를 3차례 개최하여 운영 방향 안내함"
+      ],
+      "analysisPoints": [
+        "지역 내 학령인구 변화 및 미래 산업 수요에 대응하기 위해 특성화고의 일반고 전환 및 미래형 학교 신설 등 고교체제 개편이 추진됨",
+        "체제 개편 과정에서 학부모 설명회 등 사전 소통을 통해 정책 수용성을 높이고 혼란을 최소화하고자 함"
+      ],
+      "applicationReviewPoints": [
+        "지역 여건에 따른 고교체제 개편 및 미래형 학교 신설 시 학부모와 지역사회 대상 소통 및 의견 수렴 프로세스를 참고할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "제주특별자치도교육청은 2027학년도 고교체제개편을 앞두고 있음",
+        "설명회는 2026년 7월부터 11월까지 총 3회 진행됨",
+        "총 630여 명의 학부모가 설명회에 사전 신청함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "gangwon-44cc228d29650e07",
+      "sourceId": "gangwon",
+      "source": "강원특별자치도교육청",
+      "title": "AI 행정도우미 시범운영 특별팀(TF) 발족",
+      "date": "2026-11-18",
+      "url": "https://gwe.go.kr/promotion/bbs/view.do?bbsSn=57998&key=bTI2MTEwMjkzMzg2NjA%3D",
+      "category": "디지털·AI",
+      "importance": 3,
+      "selectionReason": "교육청 차원에서 교직원 행정업무 경감을 위해 AI 시스템 도입을 추진하는 정책적 변화입니다.",
+      "summaryPoints": [
+        "교육 현장 행정업무 경감을 위한 AI 행정도우미 시범운영 특별팀 발족함",
+        "AI 행정도우미는 법령·지침 분석, 공문서 요약 및 초안 작성 지원함",
+        "2027년 전체 교직원 대상 본격 보급 예정임"
+      ],
+      "analysisPoints": [
+        "교직원의 행정업무 경감을 위해 생성형 AI 기술을 활용한 맞춤형 업무 지원 시스템 도입이 시도됨",
+        "다양한 직군이 참여하는 특별팀 구성을 통해 현장 밀착형 시스템을 개발하고자 함"
+      ],
+      "applicationReviewPoints": [
+        "생성형 AI 기반의 행정업무 지원 시스템 구축 사례를 모니터링하고 도내 도입 가능성을 검토할 필요가 있음",
+        "다양한 직군이 참여하는 시범운영 특별팀 운영 방식을 벤치마킹하여 현장 맞춤형 디지털 도구 개발에 활용해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "강원특별자치도교육청은 2026년 11월 18일 특별팀 회의를 개최함",
+        "특별팀은 장학사, 교사, 교육행정직 등 10명으로 구성됨",
+        "AI 행정도우미는 생성형 AI 기반의 맞춤형 업무 지원 시스템임",
+        "지원 대상은 교직원 전체 약 20,000명임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "daejeon-592a56e7a882a495",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "대전시교육청, 2027학년도 수능 수험생 휴대 가능 물품 변경 추가 안내(중등교육과)",
+      "date": "2026-11-18",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3367533&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "category": "정책·행정",
+      "importance": 3,
+      "selectionReason": "수능 휴대 가능 물품 기준 및 평가 제도 운영 방식의 구체적인 변경 사항을 명시하고 있습니다.",
+      "summaryPoints": [
+        "2027학년도 수능 수험생 휴대 가능 물품 기준 변경함",
+        "개인 지참 필기구는 흑색 연필만 허용함",
+        "컴퓨터용 사인펜, 수정테이프, 지우개, 샤프심은 시험장에서 일괄 지급함",
+        "부득이하게 소지한 개인 물품은 시험 시작 전 감독관 안내에 따라 복도에 보관해야 함"
+      ],
+      "analysisPoints": [
+        "수능 시험의 공정성 확보를 위해 수험생 휴대 가능 물품 기준이 대폭 강화됨",
+        "개인 지참 필기구를 제한하고 시험장 일괄 지급 품목을 확대하는 방향으로 변화함",
+        "의복 및 장신구에 대한 세부적인 권고 사항이 추가되어 현장 감독의 범위가 넓어짐"
+      ],
+      "applicationReviewPoints": [
+        "2027학년도 수능 대비 수험생 휴대 물품 변경 사항에 대한 도내 홍보 및 안내 체계를 점검해 볼 수 있음",
+        "시험장 일괄 지급 물품의 안정적 수급 및 배부 계획을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "2027학년도 수능은 2026년 11월 19일 시행됨",
+        "개인 휴대 가능 물품에서 컴퓨터용 사인펜, 수정테이프, 지우개, 샤프심 제외됨",
+        "개인 지참 필기구는 흑색 연필만 허용됨",
+        "수정테이프와 지우개는 시험장에서 일괄 지급함",
+        "시험 중 단순 소지 적발 시 즉시 압수 및 부정행위 여부 점검함",
+        "단추나 옷깃이 없는 복장 착용 및 장신구 자제 권고함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "incheon-67406352a3a6f098",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "도성훈 인천광역시교육감, ‘2026 AI 교육행정혁신 소통마당’ 개최",
+      "date": "2026-11-18",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3389093&bbsId=1519&mi=11620",
+      "category": "디지털·AI",
+      "importance": 3,
+      "selectionReason": "AI 기반 교육행정 혁신을 위한 추진단의 성과 공유 및 향후 정책 과제 발굴을 다루고 있어 교육행정 체계 변화와 관련됨.",
+      "summaryPoints": [
+        "인천광역시교육청, 2026 AI 교육행정혁신 소통마당 개최함",
+        "AI 기반 교육행정혁신 방안 및 추진단 활동 성과 공유함",
+        "업무 효율화를 통해 확보한 시간을 학생과 교육에 집중하는 환경 조성 강조함"
+      ],
+      "analysisPoints": [
+        "AI 기술을 교육행정에 도입하여 교직원의 업무 부담을 경감하고 교육 본연의 활동에 집중할 수 있는 환경을 조성하고자 함",
+        "정책, 학교, 행정재정 등 다각적인 분석을 위해 전담 추진단을 구성하여 운영하는 체계적인 접근이 이루어짐"
+      ],
+      "applicationReviewPoints": [
+        "AI 기반 교육행정 혁신을 위한 전담 조직 구성 및 운영 사례를 벤치마킹하여 비교해 볼 수 있음",
+        "행정 업무 효율화를 통한 학교 근무 환경 개선 방안을 검토해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "2026년 11월 17일 오라카이송도파크호텔에서 개최됨",
+        "교원단체, 공무원노조, 학교관리자 등 80여 명 참석함",
+        "AI 교육행정혁신 추진단은 정책 행정분석, 학교업무분석, 행정 재정분석 3개 팀으로 구성됨",
+        "AI를 활용해 업무 부담을 줄이고 교육 집중도를 높이는 것이 혁신의 핵심임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "chungbuk-c55189b6bb974eda",
+      "sourceId": "chungbuk",
+      "source": "충청북도교육청",
+      "title": "윤건영 교육감, 수능 환경 변화에 철저한 대응·감독관 보호 강조",
+      "date": "2026-11-18",
+      "url": "https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1582515&bbsId=1158&mi=10301",
+      "category": "정책·행정",
+      "importance": 3,
+      "selectionReason": "수능 부정행위 방지 및 감독관 보호를 위한 교육청 차원의 긴급 대응 체계 점검 및 지침 안내로 정책적 파급력이 있음.",
+      "summaryPoints": [
+        "충북교육청, 수능 시험장 교감 대상 긴급 온라인 회의 개최함",
+        "스마트안경 등 신종 부정행위 예방 및 감독관 보호 대책 점검함",
+        "수험생 휴대 가능 물품 변경 사항 안내 및 시험장 일괄 공급 계획함",
+        "감독관 대상 배상책임보험 및 법률 지원 등 보호 조치 마련함"
+      ],
+      "analysisPoints": [
+        "스마트안경 등 신종 기기를 활용한 부정행위 예방을 위해 고도화된 점검 절차가 도입됨",
+        "단순 금지 물품 소지와 의도적 부정행위를 구분하여 현장 혼란을 최소화하고자 함",
+        "감독관의 심리적, 법적 안정을 위해 배상책임보험 및 법률 지원 등 보호 대책을 강화하는 추세임"
+      ],
+      "applicationReviewPoints": [
+        "신종 부정행위 예방을 위한 시험장 점검 절차 및 스티커 부착 등 현장 관리 방안을 비교해 볼 수 있음",
+        "수능 시험 감독관 보호를 위한 배상책임보험 가입 및 법률 지원 체계를 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2026년 11월 18일 도내 35개 시험장 교감 대상 회의 실시함",
+        "컴퓨터용 사인펜, 수정테이프, 지우개, 샤프심 휴대 금지 및 흑색 연필만 허용함",
+        "금지 물품 소지 시 압수하되 소지 자체를 부정행위로 처리하지 않음",
+        "1, 3교시 안경, 단추, 소매 등 초소형 카메라 은닉 가능 부위 점검함",
+        "단추가 있는 옷 착용 시 스티커 부착 등 현장 관리 강화함",
+        "감독관 보호를 위해 배상책임보험 및 법률 지원 제공함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "incheon-1a3cb2c16b6d62fb",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 2027학년도 수능 부정행위 예방 강화",
+      "date": "2026-11-18",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3389093&bbsId=1519&mi=11620",
+      "category": "정책·행정",
+      "importance": 3,
+      "selectionReason": "수능 부정행위 예방을 위한 감독 체계 강화 및 전담 요원 배치 등 시험 운영 방식의 실질적인 변화를 포함함.",
+      "summaryPoints": [
+        "인천교육청, 2027학년도 수능 부정행위 예방 대책 강화함",
+        "스마트안경 확인을 위한 전담요원 및 추가 복도감독관 배치함",
+        "모든 전자기기 반입 금지 및 미제출 시 부정행위 처리 방침 안내함",
+        "단추가 있는 의복 착용 시 단추마다 스티커 부착 등 점검 절차 강화함"
+      ],
+      "analysisPoints": [
+        "스마트안경, 스마트반지 등 웨어러블 기기를 활용한 부정행위를 차단하기 위해 전담 요원 및 추가 감독관을 배치하는 등 인적 자원 투입을 확대함",
+        "매 교시 및 특정 교시 시작 전 휴대물품을 재점검하는 등 다단계 검증 프로세스를 구축함"
+      ],
+      "applicationReviewPoints": [
+        "스마트 기기 부정행위 방지를 위한 전담 요원 배치 및 추가 감독관 운영 규모를 비교해 볼 수 있음",
+        "수험생 대상 전자기기 반입 금지 및 의복 착용 권고 사항에 대한 사전 교육 자료 활용을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "인천 지역 수험생 2만 9,702명, 63개 시험장 응시함",
+        "시험장별 스마트안경 확인 전담요원 63명 및 추가 복도감독관 243명 배치함",
+        "1교시 시작 전 및 매 교시 스마트안경 착용 여부 점검함",
+        "스마트안경, 스마트워치, 스마트반지, 초소형 카메라 등 전자기기 반입 금지함",
+        "3교시 시작 전 휴대물품 재점검 실시함",
+        "수험생은 모자, 장신구, 단추 있는 의복 착용 자제 권고함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "incheon-8886e6e141492ecd",
+      "sourceId": "incheon",
+      "source": "인천광역시교육청",
+      "title": "인천광역시교육청, 정신건강전문가 학교 지원 사업 성과 공유",
+      "date": "2026-11-18",
+      "url": "https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3389093&bbsId=1519&mi=11620",
+      "category": "학생지원·복지",
+      "importance": 3,
+      "selectionReason": "기존 사업의 성과를 바탕으로 2027년 신속 지원 체계(패스트트랙) 구축이라는 새로운 정책적 변화를 명시함.",
+      "summaryPoints": [
+        "정신건강전문가 학교 지원 사업 성과공유회 개최함",
+        "올해 4개 전문기관에 10억 원을 투입하여 학생 300명 이상에게 긴급지원 제공함",
+        "2027년부터 위기 학생을 위한 신속 지원 체계(패스트트랙)를 구축할 예정임"
+      ],
+      "analysisPoints": [
+        "정신의학 전문의 등 전문가가 학교를 직접 방문하여 심층 평가와 상담을 제공하는 현장 밀착형 지원 모델임",
+        "전문 의료기관과의 협업을 통해 위기 학생에 대한 긴급 지원의 실효성을 높인 사례임",
+        "사안 접수부터 치료 연계까지 일원화된 신속 지원 체계 구축을 통해 지원의 공백을 최소화하려는 방향성을 보여줌"
+      ],
+      "applicationReviewPoints": [
+        "위기 학생 지원을 위한 전문 의료기관 연계 방식 및 예산 투입 규모를 비교해 볼 수 있음",
+        "사안 접수부터 치료 연계까지 통합 지원하는 신속 지원 체계의 도입 타당성을 검토할 수 있음",
+        "정신건강 전문가의 학교 방문 상담 사업의 운영 방식과 성과를 분석하여 벤치마킹 가능성을 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "인천광역시교육청은 2026년 11월 17일 성과공유회를 개최함",
+        "정신건강전문가 학교 지원 사업은 전문의 등이 학교를 방문해 심층 평가와 상담을 지원함",
+        "올해 지원 대상 기관은 인천참사랑병원, 인천바오로의원, 새희망병원, 황원준정신건강의학과의원, 온마음정신건강지원센터임",
+        "2027년 도입 예정인 신속 지원 체계는 사안 접수부터 치료 연계까지 통합 지원함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jngj_s1n1-512e96d53271a2c6",
+      "sourceId": "jngj_s1n1",
+      "source": "전남광주통합특별시교육청",
+      "title": "전남광주특별시교육청, ‘수능 관리수당’ 합리적 개선 추진",
+      "date": "2026-11-18",
+      "url": "https://www.jngjedu.kr/news/articleView.html?idxno=203162",
+      "category": "교원·인사",
+      "importance": 3,
+      "selectionReason": "수능 관리수당 지급 대상 및 기준을 개편하는 인사·보상 제도 변경 사항을 포함하고 있습니다.",
+      "summaryPoints": [
+        "대학수학능력시험 관리수당 지급체계 개선 추진함",
+        "2026학년도부터 교육감, 2027학년도부터 부교육감을 지급 대상에서 제외함",
+        "수능 현장 교원 지원을 위해 수당 지급 일수 확대 및 기준 상향을 교육부 등에 건의할 예정임"
+      ],
+      "analysisPoints": [
+        "고위 공직자를 수당 지급 대상에서 제외하여 예산 집행의 합리성과 형평성을 제고하려는 시도임",
+        "절감된 재원을 시험 감독 등 현장 교원 지원에 우선 활용함으로써 현장 중심의 예산 재배분을 도모함",
+        "시험장학교 교원 수당 지급 일수 확대를 상급 기관에 건의하는 등 실질적인 교원 처우 개선을 도모함"
+      ],
+      "applicationReviewPoints": [
+        "수능 관리수당 지급 대상 범위 및 고위직 제외 여부를 비교해 볼 수 있음",
+        "수능 현장 교원의 처우 개선을 위한 수당 지급 기준 상향 및 일수 확대 건의안을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "전남광주통합특별시교육청은 수능 관리수당의 합리성과 형평성을 높이기 위해 제도 개선을 추진함",
+        "절감된 재원은 수능 현장 교원 지원에 우선 활용함",
+        "시험장학교 교원 수당 지급 일수를 현행 대비 2일 확대할 것을 건의할 계획임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jngj_s1n1-900e91e693dd273e",
+      "sourceId": "jngj_s1n1",
+      "source": "전남광주통합특별시교육청",
+      "title": "전남광주특별시교육청·앰코·대한상의, 반도체 인재양성 나선다",
+      "date": "2026-11-18",
+      "url": "https://www.jngjedu.kr/news/articleView.html?idxno=203129",
+      "category": "진로·직업교육",
+      "importance": 3,
+      "selectionReason": "교육청의 주요 공약인 반도체 인재 양성을 위해 기업 및 유관기관과 협력하여 교육과정을 개편하고 채용 연계 시스템을 구축하는 정책적 사업입니다.",
+      "summaryPoints": [
+        "전남광주통합특별시교육청, 앰코테크놀로지코리아, 대한상공회의소와 반도체 인재양성 업무협약 체결함",
+        "기업 수요를 반영한 맞춤형 교육과정 개발 및 직업계고 학생 채용 연계 추진함",
+        "2027학년도부터 채용연계형 직무교육과정 및 교원 연수 프로그램 운영 예정임"
+      ],
+      "analysisPoints": [
+        "교육청, 대기업, 경제단체 간의 3자 협력을 통해 지역 산업 맞춤형 인재 양성 체계를 구축함",
+        "단순 교육에 그치지 않고 채용연계형 직무교육과정을 도입하여 직업계고 학생의 취업 경로를 구체화함",
+        "교원 연수 프로그램 병행 및 실무협의체 정례화를 통해 교육과정의 지속 가능성과 전문성을 확보하고자 함"
+      ],
+      "applicationReviewPoints": [
+        "지역 내 첨단 산업 분야 기업 및 경제단체와의 3자 협력 모델 구축 가능성을 검토할 수 있음",
+        "직업계고 학생을 위한 채용연계형 직무교육과정 및 교원 연수 프로그램 도입 여부를 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "협약은 통합교육청의 반도체 분야 인재양성 1호 공약의 일환임",
+        "앰코테크놀로지코리아는 2027년 연간 2천 명 규모의 채용을 계획함",
+        "3자 실무협의체를 구성하여 정례회의를 개최할 예정임"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeju-d2bb2eec39511610",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "제주 교육의 미래를 이끌 ‘학생평가 전문가’ 키운다",
+      "date": "2026-11-18",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1486488",
+      "category": "교원·인사",
+      "importance": 3,
+      "selectionReason": "성취평가제 안착 및 서·논술형 평가 역량 강화를 위한 교원 연수 체계 구축 및 단계적 확대 계획을 포함하고 있어 교육과정 및 평가 정책의 변화로 판단됩니다.",
+      "summaryPoints": [
+        "고등학교 교사 52명 대상 학생평가 전문가 직무연수 운영함",
+        "성취평가제 안착 및 서·논술형 평가 역량 강화를 위해 실습 중심으로 구성함",
+        "2027년 5월 중학교 교사 대상 확대 및 하반기 심화과정 개설 예정임"
+      ],
+      "analysisPoints": [
+        "성취평가제 안착과 서·논술형 평가 역량 강화를 위해 실습 중심의 집중 직무연수를 설계함",
+        "중앙지원단 교사를 강사로 활용하여 연수의 전문성과 현장 적합성을 높임",
+        "고등학교 교사 대상 연수 이후 중학교 교사 확대 및 심화과정 개설 등 단계적 역량 강화 로드맵을 제시함"
+      ],
+      "applicationReviewPoints": [
+        "서·논술형 평가 및 성취평가제 대비를 위한 교사 대상 실습 중심 연수 프로그램 구성을 비교해 볼 수 있음",
+        "중앙지원단 등 전문 강사 인력을 활용한 단계별 학생평가 전문가 양성 과정 도입을 검토할 수 있음"
+      ],
+      "sourceFacts": [
+        "연수는 2026년 11월 20일부터 29일까지 총 6일간 제주제일고등학교에서 진행됨",
+        "연수 시간은 총 30시간임",
+        "중등 학생평가 중앙지원단 교사가 강사로 참여함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1.0
+      }
+    },
+    {
+      "newsId": "jeju-e079302c04fa2efe",
+      "sourceId": "jeju",
+      "source": "제주특별자치도교육청",
+      "title": "제주특별자치도교육청-지방공무원 노조, 8년 만에 단체협약 체결",
+      "date": "2026-11-18",
+      "url": "https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&menuCd=DOM_000000203000000000&paging=ok&startPage=1&dataSid=1486490",
+      "category": "정책·행정",
+      "importance": 3,
+      "selectionReason": "지방공무원 단체협약 체결을 통해 근무 여건 개선 및 인사·복지 관련 제도적 변화가 포함되어 있어 교육행정 정책 참고 자료로 적합함.",
+      "summaryPoints": [
+        "제주특별자치도교육청과 공무원노조가 8년 만에 단체협약을 체결함",
+        "총 35차례 실무교섭을 거쳐 130개 조항에 합의함",
+        "연간 7일의 학습휴가 및 저경력 공무원 대상 새내기도약휴가 도입 추진",
+        "직장 내 괴롭힘 대응 및 직렬별 근무여건 개선 사항을 포함함"
+      ],
+      "analysisPoints": [
+        "노사 간 장기 교섭을 통해 지방공무원의 복지 및 근무여건 개선을 위한 다각적인 합의를 도출함",
+        "저경력 공무원 대상 휴가 신설 및 학습휴가 확대를 통해 공직 이탈 방지와 사기 진작을 도모함",
+        "특정 직렬의 대체 인력풀 운영 등 실질적인 업무 부담 완화 방안을 마련함"
+      ],
+      "applicationReviewPoints": [
+        "저경력 지방공무원의 복지 증진을 위한 특별휴가 제도 도입 여부를 검토해 볼 수 있음",
+        "특정 직렬의 업무 공백 해소를 위한 대체 인력풀 운영 사례를 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "2026년 11월 17일 단체협약 체결",
+        "2024년 9월 교섭 요구 시작",
+        "2025년 1월 제1차 본교섭 개최",
+        "2026년 11월 2일까지 35차례 실무교섭 진행",
+        "전문, 본문 61조, 부칙 7조 등 총 130개 조항 합의",
+        "연간 7일 학습휴가 및 5년 미만 공무원 3일 새내기도약휴가 조례 개정 추진",
+        "운전직렬 대체 인력풀 운영 포함"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "gyeongbuk-05da6fa9ba162293",
+      "sourceId": "gyeongbuk",
+      "source": "경상북도교육청",
+      "title": "[유초등교육과]경북교육청, 학교도서관 현대화와 사서교사 확충으로 독서교육 강화",
+      "date": "2026-11-18",
+      "url": "https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1665600&bbsId=4744&mi=17643&searchCate=761",
+      "category": "기타",
+      "importance": 2,
+      "selectionReason": "사서교사 정원 증원이라는 교원 정책의 변화와 도 단위의 학교도서관 현대화 사업 추진 내용을 포함함.",
+      "summaryPoints": [
+        "경북교육청이 학교도서관 현대화 사업과 사서교사 확충을 추진함",
+        "올해 28개교를 대상으로 도서관 환경개선 사업을 진행 중임",
+        "2027학년도 사서교사 정원을 10명 증원할 예정임"
+      ],
+      "analysisPoints": [
+        "학교도서관의 현대화와 전문 인력 확충을 연계하여 독서교육 환경의 질적 향상을 도모함",
+        "사서교사 정원 증원을 통해 학교 현장의 전문적인 독서 지도 역량을 강화하고자 함"
+      ],
+      "applicationReviewPoints": [
+        "학교도서관 환경개선 사업과 전문 인력 배치 현황을 비교 분석해 볼 수 있음",
+        "독서교육 활성화를 위한 사서교사 확보 및 배치 계획을 검토할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2027학년도 사서교사 정원 10명 증원",
+        "올해 학교도서관 현대화 사업 대상 28개교 선정",
+        "11월 현재 15개교 환경개선 완료"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.9
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "daejeon-f0b7d2ce30c3b52e",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "대전시교육청, 2026년 겨울철 교육시설 안전점검 실시(시설과)",
+      "date": "2026-11-18",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3367501&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "category": "안전·시설",
+      "importance": 2,
+      "selectionReason": "교육청 차원에서 관내 모든 학교와 기관을 대상으로 실시하는 정기적인 안전 점검 정책임.",
+      "summaryPoints": [
+        "대전시교육청이 겨울철 교육시설 안전점검을 실시함",
+        "471개 학교 및 기관의 3,250개 시설물을 점검함",
+        "건축, 전기, 가스, 소방, 승강기 등 5개 분야를 집중 점검함",
+        "재해취약시설은 민관합동점검반을 구성하여 점검함"
+      ],
+      "analysisPoints": [
+        "겨울철 재해에 대비하여 교육시설 전반에 대한 다각적인 안전점검을 선제적으로 실시함",
+        "재해취약시설에 대해 민관합동점검반을 구성함으로써 점검의 전문성과 객관성을 확보함"
+      ],
+      "applicationReviewPoints": [
+        "겨울철 교육시설 안전점검 시 민관합동점검반 운영 방식을 참고해 볼 수 있음",
+        "취약시설에 대한 집중 점검 체계 및 분야별 점검 항목을 비교해 볼 수 있음"
+      ],
+      "sourceFacts": [
+        "점검 기간 2026년 11월부터 12월 18일까지",
+        "점검 대상 471교 3,250개 시설물",
+        "점검 분야 건축, 전기, 가스, 소방, 승강기",
+        "겨울철 재해취약시설 민관합동점검 실시"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "daejeon-f181f5138a804131",
+      "sourceId": "daejeon",
+      "source": "대전광역시교육청",
+      "title": "대전시교육청, ‘공정 수능’을 위해 총력(중등교육과)",
+      "date": "2026-11-18",
+      "url": "https://www.dje.go.kr/boardCnts/view.do?boardSeq=3367520&boardID=8&m=040201&s=dje&lev=0&searchType=null&statusYN=W&page=1&opType=N&prntBoardID=0&prntBoardSeq=0&prntLev=0",
+      "category": "정책·행정",
+      "importance": 2,
+      "selectionReason": "교육부의 수능 부정행위 방지 대책에 따라 시도교육청 차원에서 감독 체계를 강화하고 구체적인 대응 지침을 시행하는 정책적 조치이므로 KEEP합니다.",
+      "summaryPoints": [
+        "대전시교육청이 2027학년도 수능 부정행위 방지를 위해 감독을 강화함",
+        "스마트안경 및 초소형 카메라 등 첨단기기 부정행위를 원천 차단함",
+        "시험장별 추가 복도감독관 163명을 배치함",
+        "전자기기 소지 시 당해 시험 무효 및 응시자격 정지 등 제재를 강화함"
+      ],
+      "analysisPoints": [
+        "첨단 전자기기를 활용한 부정행위 가능성에 대비하여 시험장 감독 체계를 강화함",
+        "복도감독관 추가 배치 등 인적 감시망을 보강하여 시험의 공정성을 확보하고자 함"
+      ],
+      "applicationReviewPoints": [
+        "수능 등 주요 시험의 부정행위 방지를 위한 감독관 배치 기준 및 강화 방안을 검토해 볼 수 있음",
+        "신종 전자기기 반입 차단을 위한 수험생 안내 및 감독 요령을 확인할 필요가 있음"
+      ],
+      "sourceFacts": [
+        "2027학년도 수능 시행일 2026년 11월 19일",
+        "관내 35개 시험장에 추가 복도감독관 163명 배치",
+        "스마트안경, 초소형 카메라 등 전자기기 반입 금지",
+        "부정행위 적발 시 당해 시험 무효 및 1년간 응시자격 정지",
+        "수험생 입실 시간 오전 8시 10분까지",
+        "11월 18일 수험표 배부 및 예비 소집 실시"
+      ],
+      "confidence": {
+        "facts": 1,
+        "analysis": 0.95
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "ownOfficeItems": [
+    {
+      "newsId": "jeonbuk-16ae0f1fad43f679",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "학생 마약 예방교육, 전문의에게 배운다",
+      "date": "2026-11-19",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1214424",
+      "summaryPoints": [
+        "20일 창의예술미래공간에서 마약 예방교육 담당교사 120명 대상 역량 강화 연수 개최 예정임",
+        "청소년 마약류 특성 이해 및 학교 현장 맞춤형 예방교육 운영 방법 등을 교육할 예정임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-f66b6c7b8af48eb3",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "사립학교 교원 인사 공정성 높인다",
+      "date": "2026-11-19",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1214423",
+      "summaryPoints": [
+        "사립학교 교원인사위원회 운영 공정성 제고를 위해 26일까지 도내 21개교 대상 현장 컨설팅 실시함",
+        "인사위원회 구성 및 심의 절차 점검과 학교별 맞춤형 운영 개선 방안을 지원할 예정임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-10530b9256cc4571",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "천호성 교육감 “마지막까지 최선 다해달라” 당부",
+      "date": "2026-11-19",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1214426",
+      "summaryPoints": [
+        "천호성 교육감이 19일 대학수학능력시험장을 방문해 수험생을 격려하고 수능 종합상황실을 점검함",
+        "도내 6개 시험지구 65개 시험장에서 1만 7,473명의 수험생이 응시함"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-bb1f66ed95974a8b",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "학생의 질문에서 출반하는 수업평가 확산",
+      "date": "2026-11-18",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1214024",
+      "summaryPoints": [
+        "18일과 21일 초등교원 60명 대상 학생 질문 중심 수업 및 서·논술형 평가 연수 운영함",
+        "질문 중심 수업 설계와 교육과정 성취기준 기반 평가 문항 개발 실습을 진행할 예정임"
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-1105165c2b11a86e",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "“수능 공정성 확보” 부정행위 대응 강화 준비 철저히",
+      "date": "2026-11-18",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1214028",
+      "summaryPoints": [
+        "2027학년도 수능 부정행위 방지를 위해 본청 및 교육지원청 공무원 180여 명을 복도감독관으로 추가 배치함.",
+        "수험생에게 장신구 착용 자제 및 감독관의 점검에 적극 협조할 것을 당부함."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-d65fc4792b643eba",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "유아 교육·보육 정보 ‘함께누리웹진’으로 한눈에",
+      "date": "2026-11-18",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1214026",
+      "summaryPoints": [
+        "유치원과 어린이집의 교육·보육 정보를 통합 제공하는 온라인 소식지 함께누리웹진을 운영함.",
+        "체험자원 지도, 거점형 돌봄, 정서 심리 지원 등 유아 교육 관련 정보를 PC와 모바일로 제공함."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    },
+    {
+      "newsId": "jeonbuk-2b650ee12d78921e",
+      "sourceId": "jeonbuk",
+      "source": "전북특별자치도교육청",
+      "title": "전북 학생수학동아리 39팀 탐구 성과 공유",
+      "date": "2026-11-18",
+      "url": "https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&menuCd=DOM_000001201001000000&paging=ok&startPage=1&searchOperation=AND&dataSid=1214025",
+      "summaryPoints": [
+        "오는 21일 창조나래에서 일반고 학생수학동아리 39팀이 참여하는 학술제를 개최함.",
+        "학생들이 1년간 탐구한 수학적 성과를 발표하고 공유하며 학교 간 교류를 진행할 예정임."
+      ],
+      "confidence": {
+        "summary": 1
+      },
+      "validation": {
+        "status": "PASS",
+        "issues": [],
+        "confidence": 1
+      }
+    }
+  ],
+  "omittedItems": [],
+  "validation": {
+    "status": "PASS",
+    "issues": [],
+    "checks": {
+      "ownOfficeExcludedFromTrendAnalysis": true,
+      "ownOfficeAllIncluded": true,
+      "ownOfficeSummariesVerified": true,
+      "publishedItemsVerified": true,
+      "sourceWindowMatches": true
+    }
+  },
+  "providerErrors": {
+    "facts": [],
+    "ownOfficeSummaries": [],
+    "analysis": [],
+    "verification": [],
+    "repairs": [],
+    "repairVerifications": []
+  },
+  "trace": [
+    {
+      "step": "extract_facts",
+      "status": "success",
+      "startedAt": "2026-11-19T02:54:03+00:00",
+      "durationMs": 15738
+    },
+    {
+      "step": "summarize_own_office",
+      "status": "success",
+      "startedAt": "2026-11-19T02:54:19+00:00",
+      "durationMs": 4012
+    },
+    {
+      "step": "analyze_trends",
+      "status": "success",
+      "startedAt": "2026-11-19T02:54:23+00:00",
+      "durationMs": 57361
+    },
+    {
+      "step": "verify_report",
+      "status": "success",
+      "startedAt": "2026-11-19T02:55:20+00:00",
+      "durationMs": 7971
+    }
+  ],
+  "rendering": {
+    "canonical": "json",
+    "html": "오늘의 교육동향 (20261119).html",
+    "hwpx": "오늘의 교육동향 (20261119).hwpx",
+    "hwpxValidation": {
+      "hardGates": {
+        "package_validation": "pass",
+        "document_errors": "pass",
+        "schema_lint": "pass",
+        "reopen": "pass",
+        "editor_open_safety": "pass",
+        "id_integrity": "pass"
+      },
+      "packageOk": true,
+      "documentOk": true,
+      "reopenedOk": true,
+      "visualReviewRequired": true
+    }
+  }
+}

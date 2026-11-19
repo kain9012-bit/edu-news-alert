@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>오늘의 교육동향 2026. 11. 19. (목)</title>
+<style>
+:root { color-scheme: light; --ink:#17202a; --muted:#5d6875; --line:#d7dde3; --teal:#087f73; --teal-soft:#e9f6f3; --amber:#a96800; --amber-soft:#fff6df; --paper:#ffffff; --page:#eef1f3; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--page); color:var(--ink); font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif; line-height:1.72; letter-spacing:0; }
+a { color:inherit; }
+.report { width:min(960px,100%); margin:0 auto; background:var(--paper); min-height:100vh; box-shadow:0 0 28px rgba(18,31,43,.08); }
+header { padding:52px 64px 40px; border-top:7px solid var(--teal); border-bottom:1px solid var(--line); }
+.kicker { margin:0 0 8px; color:var(--teal); font-weight:700; font-size:14px; }
+h1 { margin:0; font-family:"Nanum Myeongjo","Batang",serif; font-size:42px; line-height:1.25; letter-spacing:0; }
+.report-date { margin:16px 0 0; font-size:18px; font-weight:700; }
+.period { margin:4px 0 0; color:var(--muted); font-size:13px; overflow-wrap:anywhere; }
+.summary-strip { display:flex; gap:24px; padding:18px 64px; border-bottom:1px solid var(--line); font-size:14px; color:var(--muted); }
+.summary-strip strong { color:var(--ink); margin-left:5px; }
+nav { padding:34px 64px 44px; border-bottom:1px solid var(--line); }
+nav h2 { margin:0 0 15px; font-size:18px; }
+.toc-group + .toc-group { margin-top:24px; padding-top:20px; border-top:1px solid var(--line); }
+nav h3 { margin:0 0 10px; font-size:15px; }
+nav h3 a { text-decoration:none; }
+nav ol { columns:2; column-gap:40px; margin:0; padding:0; list-style:none; }
+nav li { break-inside:avoid; margin:0 0 10px; font-size:14px; line-height:1.45; }
+nav a { text-decoration:none; }
+nav a:hover { color:var(--teal); text-decoration:underline; }
+nav li span { color:var(--teal); font-weight:800; margin-right:5px; }
+.toc-region { color:var(--muted); font-weight:700; }
+.toc-controller { display:none; }
+@media (min-width:1700px) {
+  .toc-controller { position:fixed; z-index:40; top:24px; bottom:24px; left:calc(50% - 828px); width:324px; display:flex; flex-direction:column; overflow:hidden; background:rgba(255,255,255,.98); border:1px solid var(--line); border-radius:8px; box-shadow:0 8px 24px rgba(18,31,43,.10); }
+  .toc-controller-home { display:block; flex:0 0 auto; padding:15px 16px 13px; border-bottom:1px solid var(--line); color:var(--teal); font-size:14px; font-weight:800; text-decoration:none; }
+  .toc-controller-home:hover { background:var(--teal-soft); }
+  .toc-controller-scroll { min-height:0; overflow-y:auto; padding:12px 0 16px; scrollbar-color:#aab5bd transparent; scrollbar-width:thin; }
+  .toc-controller section + section { margin-top:15px; padding-top:13px; border-top:1px solid var(--line); }
+  .toc-controller h2 { margin:0; padding:0 14px 7px; color:var(--muted); font-size:12px; line-height:1.4; }
+  .toc-controller ol { margin:0; padding:0; list-style:none; }
+  .toc-controller li { margin:0; padding:0; }
+  .toc-controller li a { display:grid; grid-template-columns:38px minmax(0,1fr); gap:6px; align-items:start; min-height:38px; padding:7px 12px 7px 11px; border-left:3px solid transparent; color:var(--ink); font-size:12px; line-height:1.35; text-decoration:none; }
+  .toc-controller li a:hover { background:#f3f7f7; color:var(--teal); }
+  .toc-controller li a.active { border-left-color:var(--teal); background:var(--teal-soft); }
+  .controller-number { color:var(--teal); font-weight:800; white-space:nowrap; }
+  .controller-label { min-width:0; overflow:hidden; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow-wrap:anywhere; }
+  .controller-label strong { color:var(--muted); font-weight:700; }
+}
+article { position:relative; padding:52px 64px 58px; border-bottom:10px solid var(--page); scroll-margin-top:12px; }
+.article-number { position:absolute; top:51px; left:19px; color:#9aa5af; font-size:13px; font-weight:800; }
+.eyebrow { margin:0 0 8px; color:var(--teal); font-size:13px; font-weight:800; }
+.article-head h2 { margin:0; font-size:25px; line-height:1.45; letter-spacing:0; overflow-wrap:anywhere; }
+.article-meta { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:14px; color:var(--muted); font-size:13px; }
+.stars { color:var(--amber); letter-spacing:0; font-size:17px; }
+.source-link { color:var(--teal); font-weight:700; text-underline-offset:3px; }
+.report-section { margin-top:34px; padding-top:22px; border-top:1px solid var(--line); }
+.report-section h3 { margin:0 0 12px; font-size:16px; }
+ul { margin:0; padding-left:1.35em; }
+li { margin:7px 0; padding-left:3px; }
+.application { border-top-color:#ead9b3; }
+.application h3 { color:#805200; }
+.review-note { border-top-color:#ead9b3; }
+.review-note h3 { color:#a13d00; }
+.review-note p { margin:0; color:#7a4a1e; }
+.review-badge { display:inline-block; padding:2px 9px; border-radius:11px; background:var(--amber-soft); color:#8a4b00; font-size:12px; font-weight:800; }
+.empty-note { margin:0; color:var(--muted); }
+.empty-report { padding:70px 64px; text-align:center; color:var(--muted); }
+.own-office-section { border-top:12px solid var(--page); scroll-margin-top:12px; }
+.own-office-heading { padding:42px 64px 30px; background:var(--teal-soft); border-bottom:1px solid #c8e5de; }
+.own-office-heading .kicker { margin-bottom:4px; }
+.own-office-heading h2 { margin:0; font-size:28px; line-height:1.4; }
+.own-office-heading p:last-child { margin:8px 0 0; color:var(--muted); font-size:14px; }
+.own-office-article { border-bottom:1px solid var(--line); }
+.own-empty { padding-top:48px; padding-bottom:48px; }
+footer { padding:34px 64px 50px; color:var(--muted); font-size:12px; }
+footer p { margin:4px 0; }
+@media (max-width:700px) {
+  header, nav, article, footer, .own-office-heading { padding-left:24px; padding-right:24px; }
+  h1 { font-size:34px; }
+  .summary-strip { padding-left:24px; padding-right:24px; gap:12px; flex-wrap:wrap; }
+  nav ol { columns:1; }
+  .article-number { position:static; margin-bottom:10px; }
+  .article-head h2 { font-size:21px; }
+}
+.toolbar { position:fixed; top:18px; right:18px; z-index:50; display:flex; gap:8px; }
+.toolbar button { display:inline-flex; align-items:center; gap:6px; padding:9px 14px; border:1px solid var(--teal); border-radius:8px; background:var(--teal); color:#fff; font:inherit; font-size:13px; font-weight:700; cursor:pointer; box-shadow:0 2px 8px rgba(18,31,43,.16); }
+.toolbar button.secondary, .toolbar .tool-link.secondary { background:#fff; color:var(--teal); }
+.toolbar button:hover, .toolbar .tool-link:hover { opacity:.92; }
+.toolbar button, .toolbar .tool-link { white-space:nowrap; }
+.toolbar .tool-link { display:inline-flex; align-items:center; gap:6px; padding:9px 14px; border:1px solid var(--teal); border-radius:8px; background:var(--teal); color:#fff; font:inherit; font-size:13px; font-weight:700; text-decoration:none; cursor:pointer; box-shadow:0 2px 8px rgba(18,31,43,.16); }
+@media (max-width:700px) {
+  .toolbar { top:10px; right:10px; }
+  .toolbar button, .toolbar .tool-link { padding:8px 11px; font-size:12px; }
+  .toolbar .print-tool { display:none !important; }
+}
+@media print {
+  @page { margin:0; }
+  .toolbar { display:none !important; }
+  body { background:#fff; } .report { width:100%; box-shadow:none; }
+  .toc-controller { display:none !important; }
+  header { padding-top:24mm; }
+  article { break-before:page; border-bottom:0; padding-top:18mm; padding-bottom:16mm; }
+  article:first-of-type { break-before:auto; } nav a { text-decoration:none; }
+  nav { break-after:page; page-break-after:always; }
+  nav.toc-compact { padding-top:26px; padding-bottom:30px; }
+  nav.toc-compact h2 { margin-bottom:11px; font-size:17px; }
+  nav.toc-compact .toc-group + .toc-group { margin-top:16px; padding-top:12px; }
+  nav.toc-compact h3 { margin-bottom:7px; font-size:14px; }
+  nav.toc-compact li { margin-bottom:7px; font-size:13px; line-height:1.38; }
+  nav.toc-tight { padding-top:20px; padding-bottom:24px; }
+  nav.toc-tight h2 { margin-bottom:8px; font-size:16px; }
+  nav.toc-tight .toc-group + .toc-group { margin-top:12px; padding-top:10px; }
+  nav.toc-tight h3 { margin-bottom:5px; font-size:13px; }
+  nav.toc-tight li { margin-bottom:5px; font-size:12px; line-height:1.35; }
+  .own-office-section { break-before:page; border-top:0; }
+  .own-office-section article { break-before:auto; }
+  .own-office-heading { break-after:avoid; page-break-after:avoid; }
+  .own-office-page { break-inside:avoid; page-break-inside:avoid; }
+  .own-office-page + .own-office-page { break-before:page; page-break-before:always; }
+  .own-office-article { break-inside:avoid; page-break-inside:avoid; padding-top:10mm; padding-bottom:10mm; }
+  footer { padding-bottom:18mm; }
+}
+</style>
+</head>
+<body>
+<div class="toolbar" role="toolbar" aria-label="문서 도구">
+  <a class="tool-link secondary" href="https://jbe-edu-trends.vercel.app/?tab=reports" target="_blank" rel="noopener noreferrer" title="지난 오늘의 교육동향을 날짜별로 봅니다">🗂 지난 호</a><a class="tool-link secondary" href="https://jbe-edu-trends.vercel.app/?tab=archive" target="_blank" rel="noopener noreferrer" title="교육동향으로 선정되지 않은 자료까지 수집한 전체 보도자료를 봅니다">📰 전체 보도자료</a>
+  <button type="button" class="secondary print-tool" onclick="window.print()" title="인쇄 대화상자를 엽니다">🖨 인쇄</button>
+  <button type="button" class="print-tool" onclick="window.print()" title="인쇄 대화상자에서 '대상'을 'PDF로 저장'으로 선택하세요">📄 PDF 저장</button>
+</div>
+<main class="report">
+<aside class="toc-controller" aria-label="빠른 목차"><a class="toc-controller-home" href="#report-toc">목차</a><div class="toc-controller-scroll"><section><h2>전국 교육동향</h2><ol><li><a href="#item-1" data-report-target="item-1"><span class="controller-number">1</span><span class="controller-label"><strong>(교육부)</strong> 2027 수능 강화된 부정행위 예방조치에 따른 수험생 유의사항 추가 안내</span></a></li><li><a href="#item-2" data-report-target="item-2"><span class="controller-number">2</span><span class="controller-label"><strong>(대전)</strong> 오석진 교육감, 2027년도 대전교육 정책방향 발표(기획예산과)</span></a></li><li><a href="#item-3" data-report-target="item-3"><span class="controller-number">3</span><span class="controller-label"><strong>(제주)</strong> 제주고·제주여상 일반고 전환, 제주미래고 신설‘청사진’공유</span></a></li><li><a href="#item-4" data-report-target="item-4"><span class="controller-number">4</span><span class="controller-label"><strong>(강원)</strong> AI 행정도우미 시범운영 특별팀(TF) 발족</span></a></li><li><a href="#item-5" data-report-target="item-5"><span class="controller-number">5</span><span class="controller-label"><strong>(대전)</strong> 대전시교육청, 2027학년도 수능 수험생 휴대 가능 물품 변경 추가 안내(중등교육과)</span></a></li><li><a href="#item-6" data-report-target="item-6"><span class="controller-number">6</span><span class="controller-label"><strong>(인천)</strong> 도성훈 인천광역시교육감, ‘2026 AI 교육행정혁신 소통마당’ 개최</span></a></li><li><a href="#item-7" data-report-target="item-7"><span class="controller-number">7</span><span class="controller-label"><strong>(충북)</strong> 윤건영 교육감, 수능 환경 변화에 철저한 대응·감독관 보호 강조</span></a></li><li><a href="#item-8" data-report-target="item-8"><span class="controller-number">8</span><span class="controller-label"><strong>(인천)</strong> 인천광역시교육청, 2027학년도 수능 부정행위 예방 강화</span></a></li><li><a href="#item-9" data-report-target="item-9"><span class="controller-number">9</span><span class="controller-label"><strong>(인천)</strong> 인천광역시교육청, 정신건강전문가 학교 지원 사업 성과 공유</span></a></li><li><a href="#item-10" data-report-target="item-10"><span class="controller-number">10</span><span class="controller-label"><strong>(전남광주)</strong> 전남광주특별시교육청, ‘수능 관리수당’ 합리적 개선 추진</span></a></li><li><a href="#item-11" data-report-target="item-11"><span class="controller-number">11</span><span class="controller-label"><strong>(전남광주)</strong> 전남광주특별시교육청·앰코·대한상의, 반도체 인재양성 나선다</span></a></li><li><a href="#item-12" data-report-target="item-12"><span class="controller-number">12</span><span class="controller-label"><strong>(제주)</strong> 제주 교육의 미래를 이끌 ‘학생평가 전문가’ 키운다</span></a></li><li><a href="#item-13" data-report-target="item-13"><span class="controller-number">13</span><span class="controller-label"><strong>(제주)</strong> 제주특별자치도교육청-지방공무원 노조, 8년 만에 단체협약 체결</span></a></li><li><a href="#item-14" data-report-target="item-14"><span class="controller-number">14</span><span class="controller-label"><strong>(경북)</strong> [유초등교육과]경북교육청, 학교도서관 현대화와 사서교사 확충으로 독서교육 강화</span></a></li><li><a href="#item-15" data-report-target="item-15"><span class="controller-number">15</span><span class="controller-label"><strong>(대전)</strong> 대전시교육청, 2026년 겨울철 교육시설 안전점검 실시(시설과)</span></a></li><li><a href="#item-16" data-report-target="item-16"><span class="controller-number">16</span><span class="controller-label"><strong>(대전)</strong> 대전시교육청, ‘공정 수능’을 위해 총력(중등교육과)</span></a></li></ol></section><section><h2>전북교육청</h2><ol><li><a href="#own-item-1" data-report-target="own-item-1"><span class="controller-number">1</span><span class="controller-label">학생 마약 예방교육, 전문의에게 배운다</span></a></li><li><a href="#own-item-2" data-report-target="own-item-2"><span class="controller-number">2</span><span class="controller-label">사립학교 교원 인사 공정성 높인다</span></a></li><li><a href="#own-item-3" data-report-target="own-item-3"><span class="controller-number">3</span><span class="controller-label">천호성 교육감 “마지막까지 최선 다해달라” 당부</span></a></li><li><a href="#own-item-4" data-report-target="own-item-4"><span class="controller-number">4</span><span class="controller-label">학생의 질문에서 출반하는 수업평가 확산</span></a></li><li><a href="#own-item-5" data-report-target="own-item-5"><span class="controller-number">5</span><span class="controller-label">“수능 공정성 확보” 부정행위 대응 강화 준비 철저히</span></a></li><li><a href="#own-item-6" data-report-target="own-item-6"><span class="controller-number">6</span><span class="controller-label">유아 교육·보육 정보 ‘함께누리웹진’으로 한눈에</span></a></li><li><a href="#own-item-7" data-report-target="own-item-7"><span class="controller-number">7</span><span class="controller-label">전북 학생수학동아리 39팀 탐구 성과 공유</span></a></li></ol></section></div></aside>
+<header>
+  <p class="kicker">전국 교육정책 및 교육행정 동향</p>
+  <h1>오늘의 교육동향</h1>
+  <p class="report-date">2026. 11. 19. (목)</p>
+  <p class="period">분석 대상: 2026. 11. 18. 06:00 ~ 2026. 11. 19. 06:00</p>
+</header>
+<div class="summary-strip">
+  <span>전국 교육동향<strong>16건</strong></span>
+  <span>전북 보도자료<strong>7건</strong></span>
+  <span>작성<strong>google/gemini-3.5-flash</strong></span>
+  <span>검증<strong>PASS</strong></span>
+</div>
+<nav id="report-toc" class="toc-compact" aria-label="목차"><h2>목차</h2><div class="toc-group"><h3>전국 교육동향</h3><ol><li><a href="#item-1"><span>1.</span> <strong class="toc-region">(교육부)</strong> 2027 수능 강화된 부정행위 예방조치에 따른 수험생 유의사항 추가 안내</a></li><li><a href="#item-2"><span>2.</span> <strong class="toc-region">(대전)</strong> 오석진 교육감, 2027년도 대전교육 정책방향 발표(기획예산과)</a></li><li><a href="#item-3"><span>3.</span> <strong class="toc-region">(제주)</strong> 제주고·제주여상 일반고 전환, 제주미래고 신설‘청사진’공유</a></li><li><a href="#item-4"><span>4.</span> <strong class="toc-region">(강원)</strong> AI 행정도우미 시범운영 특별팀(TF) 발족</a></li><li><a href="#item-5"><span>5.</span> <strong class="toc-region">(대전)</strong> 대전시교육청, 2027학년도 수능 수험생 휴대 가능 물품 변경 추가 안내(중등교육과)</a></li><li><a href="#item-6"><span>6.</span> <strong class="toc-region">(인천)</strong> 도성훈 인천광역시교육감, ‘2026 AI 교육행정혁신 소통마당’ 개최</a></li><li><a href="#item-7"><span>7.</span> <strong class="toc-region">(충북)</strong> 윤건영 교육감, 수능 환경 변화에 철저한 대응·감독관 보호 강조</a></li><li><a href="#item-8"><span>8.</span> <strong class="toc-region">(인천)</strong> 인천광역시교육청, 2027학년도 수능 부정행위 예방 강화</a></li><li><a href="#item-9"><span>9.</span> <strong class="toc-region">(인천)</strong> 인천광역시교육청, 정신건강전문가 학교 지원 사업 성과 공유</a></li><li><a href="#item-10"><span>10.</span> <strong class="toc-region">(전남광주)</strong> 전남광주특별시교육청, ‘수능 관리수당’ 합리적 개선 추진</a></li><li><a href="#item-11"><span>11.</span> <strong class="toc-region">(전남광주)</strong> 전남광주특별시교육청·앰코·대한상의, 반도체 인재양성 나선다</a></li><li><a href="#item-12"><span>12.</span> <strong class="toc-region">(제주)</strong> 제주 교육의 미래를 이끌 ‘학생평가 전문가’ 키운다</a></li><li><a href="#item-13"><span>13.</span> <strong class="toc-region">(제주)</strong> 제주특별자치도교육청-지방공무원 노조, 8년 만에 단체협약 체결</a></li><li><a href="#item-14"><span>14.</span> <strong class="toc-region">(경북)</strong> [유초등교육과]경북교육청, 학교도서관 현대화와 사서교사 확충으로 독서교육 강화</a></li><li><a href="#item-15"><span>15.</span> <strong class="toc-region">(대전)</strong> 대전시교육청, 2026년 겨울철 교육시설 안전점검 실시(시설과)</a></li><li><a href="#item-16"><span>16.</span> <strong class="toc-region">(대전)</strong> 대전시교육청, ‘공정 수능’을 위해 총력(중등교육과)</a></li></ol></div><div class="toc-group"><h3><a href="#own-office">전북교육청 보도자료</a></h3><ol><li><a href="#own-item-1"><span>1.</span> 학생 마약 예방교육, 전문의에게 배운다</a></li><li><a href="#own-item-2"><span>2.</span> 사립학교 교원 인사 공정성 높인다</a></li><li><a href="#own-item-3"><span>3.</span> 천호성 교육감 “마지막까지 최선 다해달라” 당부</a></li><li><a href="#own-item-4"><span>4.</span> 학생의 질문에서 출반하는 수업평가 확산</a></li><li><a href="#own-item-5"><span>5.</span> “수능 공정성 확보” 부정행위 대응 강화 준비 철저히</a></li><li><a href="#own-item-6"><span>6.</span> 유아 교육·보육 정보 ‘함께누리웹진’으로 한눈에</a></li><li><a href="#own-item-7"><span>7.</span> 전북 학생수학동아리 39팀 탐구 성과 공유</a></li></ol></div></nav>
+
+<article id="item-1">
+  <div class="article-number">01</div>
+  <div class="article-head">
+    <p class="eyebrow">교육부 · 정책·행정</p>
+    <h2>2027 수능 강화된 부정행위 예방조치에 따른 수험생 유의사항 추가 안내</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 5점">★★★★★</span>
+      <span>2026-11-18</span>
+      <a class="source-link" href="https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&amp;boardSeq=107693&amp;lev=0&amp;m=020402&amp;s=moe" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>2027학년도 수능 부정행위 예방을 위해 개인 지참 필기구 휴대 제한 강화함</li><li>검은색 컴퓨터용 사인펜, 흰색 수정테이프, 지우개, 샤프심 휴대 금지 및 시험장 일괄 지급함</li><li>시험장 내 안경, 옷깃, 소매 등 휴대물품 및 복장 점검 절차 강화함</li><li>단추 없는 복장 착용 및 불필요한 장신구 착용 자제 권장함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>수능 시험의 공정성 및 신뢰도 확보를 위해 부정행위 예방 조치가 대폭 강화되는 추세임</li><li>개인 필기구 제한 및 복장 점검 절차 강화 등 시험장 관리의 구체적이고 실질적인 통제 조치가 도입됨</li><li>금속탐지기 활용 및 전수 점검 등 현장 감독관의 역할과 책임이 더욱 커질 것으로 예상됨</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>강화된 수능 부정행위 예방 대책에 따른 도내 시험장 감독관 교육 및 수험생 유의사항 홍보 방안을 점검할 필요가 있음</li><li>시험장별 일괄 지급 물품 확보 및 금속탐지기 등 방지 장비 구비 현황을 확인할 필요가 있음</li></ul></section>
+</article><article id="item-2">
+  <div class="article-number">02</div>
+  <div class="article-head">
+    <p class="eyebrow">대전광역시교육청 · 정책·행정</p>
+    <h2>오석진 교육감, 2027년도 대전교육 정책방향 발표(기획예산과)</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 4점">★★★★☆</span>
+      <span>2026-11-18</span>
+      <a class="source-link" href="https://www.dje.go.kr/boardCnts/view.do?boardSeq=3367503&amp;boardID=8&amp;m=040201&amp;s=dje&amp;lev=0&amp;searchType=null&amp;statusYN=W&amp;page=1&amp;opType=N&amp;prntBoardID=0&amp;prntBoardSeq=0&amp;prntLev=0" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>2027년 대전교육 5대 정책방향으로 오감 만족 대전교육 추진함</li><li>질문 중심 수업 확대 및 IB 교육지구 조성으로 수업 혁신 도모함</li><li>AI 기반 개별화 학습지원체계 구축 및 미래교육 인프라 확충함</li><li>고3 대상 대전 에듀카드 도입 및 고교 석식비 지원사업 추진함</li><li>교육활동 보호 체계 강화 및 학교 행정업무 경감 추진함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>수업 혁신과 AI 기반 맞춤형 학습을 결합한 미래 교육 인프라 구축이 강조됨</li><li>고교 석식비 지원 및 방과후 이용권 확대 등 학생 복지 혜택의 범위가 넓어지는 경향을 보임</li><li>병원형 Wee 센터 신설을 통해 고위기 학생에 대한 전문적인 치료 및 맞춤형 지원 체계를 강화함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>타 시도의 고교 복지 지원 사업 및 초등 방과후 지원 확대 사례를 분석하여 도내 복지 정책과 비교해 볼 수 있음</li><li>고위기 학생 지원을 위한 병원형 Wee 센터 모델의 도입 타당성 및 운영 방안을 검토할 필요가 있음</li></ul></section>
+</article><article id="item-3">
+  <div class="article-number">03</div>
+  <div class="article-head">
+    <p class="eyebrow">제주특별자치도교육청 · 정책·행정</p>
+    <h2>제주고·제주여상 일반고 전환, 제주미래고 신설‘청사진’공유</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 4점">★★★★☆</span>
+      <span>2026-11-18</span>
+      <a class="source-link" href="https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&amp;menuCd=DOM_000000203000000000&amp;paging=ok&amp;startPage=1&amp;dataSid=1486489" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>2027학년도 고교체제개편을 위해 제주고와 제주여상의 일반고 전환 추진함</li><li>첨단 미래 산업 인재 양성을 위한 제주미래고 신설 계획함</li><li>중학교 학부모 대상 설명회를 3차례 개최하여 운영 방향 안내함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>지역 내 학령인구 변화 및 미래 산업 수요에 대응하기 위해 특성화고의 일반고 전환 및 미래형 학교 신설 등 고교체제 개편이 추진됨</li><li>체제 개편 과정에서 학부모 설명회 등 사전 소통을 통해 정책 수용성을 높이고 혼란을 최소화하고자 함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>지역 여건에 따른 고교체제 개편 및 미래형 학교 신설 시 학부모와 지역사회 대상 소통 및 의견 수렴 프로세스를 참고할 필요가 있음</li></ul></section>
+</article><article id="item-4">
+  <div class="article-number">04</div>
+  <div class="article-head">
+    <p class="eyebrow">강원특별자치도교육청 · 디지털·AI</p>
+    <h2>AI 행정도우미 시범운영 특별팀(TF) 발족</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-11-18</span>
+      <a class="source-link" href="https://gwe.go.kr/promotion/bbs/view.do?bbsSn=57998&amp;key=bTI2MTEwMjkzMzg2NjA%3D" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>교육 현장 행정업무 경감을 위한 AI 행정도우미 시범운영 특별팀 발족함</li><li>AI 행정도우미는 법령·지침 분석, 공문서 요약 및 초안 작성 지원함</li><li>2027년 전체 교직원 대상 본격 보급 예정임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>교직원의 행정업무 경감을 위해 생성형 AI 기술을 활용한 맞춤형 업무 지원 시스템 도입이 시도됨</li><li>다양한 직군이 참여하는 특별팀 구성을 통해 현장 밀착형 시스템을 개발하고자 함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>생성형 AI 기반의 행정업무 지원 시스템 구축 사례를 모니터링하고 도내 도입 가능성을 검토할 필요가 있음</li><li>다양한 직군이 참여하는 시범운영 특별팀 운영 방식을 벤치마킹하여 현장 맞춤형 디지털 도구 개발에 활용해 볼 수 있음</li></ul></section>
+</article><article id="item-5">
+  <div class="article-number">05</div>
+  <div class="article-head">
+    <p class="eyebrow">대전광역시교육청 · 정책·행정</p>
+    <h2>대전시교육청, 2027학년도 수능 수험생 휴대 가능 물품 변경 추가 안내(중등교육과)</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-11-18</span>
+      <a class="source-link" href="https://www.dje.go.kr/boardCnts/view.do?boardSeq=3367533&amp;boardID=8&amp;m=040201&amp;s=dje&amp;lev=0&amp;searchType=null&amp;statusYN=W&amp;page=1&amp;opType=N&amp;prntBoardID=0&amp;prntBoardSeq=0&amp;prntLev=0" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>2027학년도 수능 수험생 휴대 가능 물품 기준 변경함</li><li>개인 지참 필기구는 흑색 연필만 허용함</li><li>컴퓨터용 사인펜, 수정테이프, 지우개, 샤프심은 시험장에서 일괄 지급함</li><li>부득이하게 소지한 개인 물품은 시험 시작 전 감독관 안내에 따라 복도에 보관해야 함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>수능 시험의 공정성 확보를 위해 수험생 휴대 가능 물품 기준이 대폭 강화됨</li><li>개인 지참 필기구를 제한하고 시험장 일괄 지급 품목을 확대하는 방향으로 변화함</li><li>의복 및 장신구에 대한 세부적인 권고 사항이 추가되어 현장 감독의 범위가 넓어짐</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>2027학년도 수능 대비 수험생 휴대 물품 변경 사항에 대한 도내 홍보 및 안내 체계를 점검해 볼 수 있음</li><li>시험장 일괄 지급 물품의 안정적 수급 및 배부 계획을 비교해 볼 수 있음</li></ul></section>
+</article><article id="item-6">
+  <div class="article-number">06</div>
+  <div class="article-head">
+    <p class="eyebrow">인천광역시교육청 · 디지털·AI</p>
+    <h2>도성훈 인천광역시교육감, ‘2026 AI 교육행정혁신 소통마당’ 개최</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-11-18</span>
+      <a class="source-link" href="https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3389093&amp;bbsId=1519&amp;mi=11620" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>인천광역시교육청, 2026 AI 교육행정혁신 소통마당 개최함</li><li>AI 기반 교육행정혁신 방안 및 추진단 활동 성과 공유함</li><li>업무 효율화를 통해 확보한 시간을 학생과 교육에 집중하는 환경 조성 강조함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>AI 기술을 교육행정에 도입하여 교직원의 업무 부담을 경감하고 교육 본연의 활동에 집중할 수 있는 환경을 조성하고자 함</li><li>정책, 학교, 행정재정 등 다각적인 분석을 위해 전담 추진단을 구성하여 운영하는 체계적인 접근이 이루어짐</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>AI 기반 교육행정 혁신을 위한 전담 조직 구성 및 운영 사례를 벤치마킹하여 비교해 볼 수 있음</li><li>행정 업무 효율화를 통한 학교 근무 환경 개선 방안을 검토해 볼 수 있음</li></ul></section>
+</article><article id="item-7">
+  <div class="article-number">07</div>
+  <div class="article-head">
+    <p class="eyebrow">충청북도교육청 · 정책·행정</p>
+    <h2>윤건영 교육감, 수능 환경 변화에 철저한 대응·감독관 보호 강조</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-11-18</span>
+      <a class="source-link" href="https://www.cbe.go.kr/news/na/ntt/selectNttInfo.do?nttSn=1582515&amp;bbsId=1158&amp;mi=10301" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>충북교육청, 수능 시험장 교감 대상 긴급 온라인 회의 개최함</li><li>스마트안경 등 신종 부정행위 예방 및 감독관 보호 대책 점검함</li><li>수험생 휴대 가능 물품 변경 사항 안내 및 시험장 일괄 공급 계획함</li><li>감독관 대상 배상책임보험 및 법률 지원 등 보호 조치 마련함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>스마트안경 등 신종 기기를 활용한 부정행위 예방을 위해 고도화된 점검 절차가 도입됨</li><li>단순 금지 물품 소지와 의도적 부정행위를 구분하여 현장 혼란을 최소화하고자 함</li><li>감독관의 심리적, 법적 안정을 위해 배상책임보험 및 법률 지원 등 보호 대책을 강화하는 추세임</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>신종 부정행위 예방을 위한 시험장 점검 절차 및 스티커 부착 등 현장 관리 방안을 비교해 볼 수 있음</li><li>수능 시험 감독관 보호를 위한 배상책임보험 가입 및 법률 지원 체계를 확인할 필요가 있음</li></ul></section>
+</article><article id="item-8">
+  <div class="article-number">08</div>
+  <div class="article-head">
+    <p class="eyebrow">인천광역시교육청 · 정책·행정</p>
+    <h2>인천광역시교육청, 2027학년도 수능 부정행위 예방 강화</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-11-18</span>
+      <a class="source-link" href="https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3389093&amp;bbsId=1519&amp;mi=11620" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>인천교육청, 2027학년도 수능 부정행위 예방 대책 강화함</li><li>스마트안경 확인을 위한 전담요원 및 추가 복도감독관 배치함</li><li>모든 전자기기 반입 금지 및 미제출 시 부정행위 처리 방침 안내함</li><li>단추가 있는 의복 착용 시 단추마다 스티커 부착 등 점검 절차 강화함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>스마트안경, 스마트반지 등 웨어러블 기기를 활용한 부정행위를 차단하기 위해 전담 요원 및 추가 감독관을 배치하는 등 인적 자원 투입을 확대함</li><li>매 교시 및 특정 교시 시작 전 휴대물품을 재점검하는 등 다단계 검증 프로세스를 구축함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>스마트 기기 부정행위 방지를 위한 전담 요원 배치 및 추가 감독관 운영 규모를 비교해 볼 수 있음</li><li>수험생 대상 전자기기 반입 금지 및 의복 착용 권고 사항에 대한 사전 교육 자료 활용을 검토할 수 있음</li></ul></section>
+</article><article id="item-9">
+  <div class="article-number">09</div>
+  <div class="article-head">
+    <p class="eyebrow">인천광역시교육청 · 학생지원·복지</p>
+    <h2>인천광역시교육청, 정신건강전문가 학교 지원 사업 성과 공유</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-11-18</span>
+      <a class="source-link" href="https://www.ice.go.kr/ice/na/ntt/selectNttInfo.do?nttSn=3389093&amp;bbsId=1519&amp;mi=11620" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>정신건강전문가 학교 지원 사업 성과공유회 개최함</li><li>올해 4개 전문기관에 10억 원을 투입하여 학생 300명 이상에게 긴급지원 제공함</li><li>2027년부터 위기 학생을 위한 신속 지원 체계(패스트트랙)를 구축할 예정임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>정신의학 전문의 등 전문가가 학교를 직접 방문하여 심층 평가와 상담을 제공하는 현장 밀착형 지원 모델임</li><li>전문 의료기관과의 협업을 통해 위기 학생에 대한 긴급 지원의 실효성을 높인 사례임</li><li>사안 접수부터 치료 연계까지 일원화된 신속 지원 체계 구축을 통해 지원의 공백을 최소화하려는 방향성을 보여줌</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>위기 학생 지원을 위한 전문 의료기관 연계 방식 및 예산 투입 규모를 비교해 볼 수 있음</li><li>사안 접수부터 치료 연계까지 통합 지원하는 신속 지원 체계의 도입 타당성을 검토할 수 있음</li><li>정신건강 전문가의 학교 방문 상담 사업의 운영 방식과 성과를 분석하여 벤치마킹 가능성을 확인할 필요가 있음</li></ul></section>
+</article><article id="item-10">
+  <div class="article-number">10</div>
+  <div class="article-head">
+    <p class="eyebrow">전남광주통합특별시교육청 · 교원·인사</p>
+    <h2>전남광주특별시교육청, ‘수능 관리수당’ 합리적 개선 추진</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-11-18</span>
+      <a class="source-link" href="https://www.jngjedu.kr/news/articleView.html?idxno=203162" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>대학수학능력시험 관리수당 지급체계 개선 추진함</li><li>2026학년도부터 교육감, 2027학년도부터 부교육감을 지급 대상에서 제외함</li><li>수능 현장 교원 지원을 위해 수당 지급 일수 확대 및 기준 상향을 교육부 등에 건의할 예정임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>고위 공직자를 수당 지급 대상에서 제외하여 예산 집행의 합리성과 형평성을 제고하려는 시도임</li><li>절감된 재원을 시험 감독 등 현장 교원 지원에 우선 활용함으로써 현장 중심의 예산 재배분을 도모함</li><li>시험장학교 교원 수당 지급 일수 확대를 상급 기관에 건의하는 등 실질적인 교원 처우 개선을 도모함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>수능 관리수당 지급 대상 범위 및 고위직 제외 여부를 비교해 볼 수 있음</li><li>수능 현장 교원의 처우 개선을 위한 수당 지급 기준 상향 및 일수 확대 건의안을 검토할 수 있음</li></ul></section>
+</article><article id="item-11">
+  <div class="article-number">11</div>
+  <div class="article-head">
+    <p class="eyebrow">전남광주통합특별시교육청 · 진로·직업교육</p>
+    <h2>전남광주특별시교육청·앰코·대한상의, 반도체 인재양성 나선다</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-11-18</span>
+      <a class="source-link" href="https://www.jngjedu.kr/news/articleView.html?idxno=203129" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>전남광주통합특별시교육청, 앰코테크놀로지코리아, 대한상공회의소와 반도체 인재양성 업무협약 체결함</li><li>기업 수요를 반영한 맞춤형 교육과정 개발 및 직업계고 학생 채용 연계 추진함</li><li>2027학년도부터 채용연계형 직무교육과정 및 교원 연수 프로그램 운영 예정임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>교육청, 대기업, 경제단체 간의 3자 협력을 통해 지역 산업 맞춤형 인재 양성 체계를 구축함</li><li>단순 교육에 그치지 않고 채용연계형 직무교육과정을 도입하여 직업계고 학생의 취업 경로를 구체화함</li><li>교원 연수 프로그램 병행 및 실무협의체 정례화를 통해 교육과정의 지속 가능성과 전문성을 확보하고자 함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>지역 내 첨단 산업 분야 기업 및 경제단체와의 3자 협력 모델 구축 가능성을 검토할 수 있음</li><li>직업계고 학생을 위한 채용연계형 직무교육과정 및 교원 연수 프로그램 도입 여부를 비교해 볼 수 있음</li></ul></section>
+</article><article id="item-12">
+  <div class="article-number">12</div>
+  <div class="article-head">
+    <p class="eyebrow">제주특별자치도교육청 · 교원·인사</p>
+    <h2>제주 교육의 미래를 이끌 ‘학생평가 전문가’ 키운다</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-11-18</span>
+      <a class="source-link" href="https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&amp;menuCd=DOM_000000203000000000&amp;paging=ok&amp;startPage=1&amp;dataSid=1486488" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>고등학교 교사 52명 대상 학생평가 전문가 직무연수 운영함</li><li>성취평가제 안착 및 서·논술형 평가 역량 강화를 위해 실습 중심으로 구성함</li><li>2027년 5월 중학교 교사 대상 확대 및 하반기 심화과정 개설 예정임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>성취평가제 안착과 서·논술형 평가 역량 강화를 위해 실습 중심의 집중 직무연수를 설계함</li><li>중앙지원단 교사를 강사로 활용하여 연수의 전문성과 현장 적합성을 높임</li><li>고등학교 교사 대상 연수 이후 중학교 교사 확대 및 심화과정 개설 등 단계적 역량 강화 로드맵을 제시함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>서·논술형 평가 및 성취평가제 대비를 위한 교사 대상 실습 중심 연수 프로그램 구성을 비교해 볼 수 있음</li><li>중앙지원단 등 전문 강사 인력을 활용한 단계별 학생평가 전문가 양성 과정 도입을 검토할 수 있음</li></ul></section>
+</article><article id="item-13">
+  <div class="article-number">13</div>
+  <div class="article-head">
+    <p class="eyebrow">제주특별자치도교육청 · 정책·행정</p>
+    <h2>제주특별자치도교육청-지방공무원 노조, 8년 만에 단체협약 체결</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 3점">★★★☆☆</span>
+      <span>2026-11-18</span>
+      <a class="source-link" href="https://www.jje.go.kr/pro/board/view.jje?boardId=BBS_0000215&amp;menuCd=DOM_000000203000000000&amp;paging=ok&amp;startPage=1&amp;dataSid=1486490" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>제주특별자치도교육청과 공무원노조가 8년 만에 단체협약을 체결함</li><li>총 35차례 실무교섭을 거쳐 130개 조항에 합의함</li><li>연간 7일의 학습휴가 및 저경력 공무원 대상 새내기도약휴가 도입 추진</li><li>직장 내 괴롭힘 대응 및 직렬별 근무여건 개선 사항을 포함함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>노사 간 장기 교섭을 통해 지방공무원의 복지 및 근무여건 개선을 위한 다각적인 합의를 도출함</li><li>저경력 공무원 대상 휴가 신설 및 학습휴가 확대를 통해 공직 이탈 방지와 사기 진작을 도모함</li><li>특정 직렬의 대체 인력풀 운영 등 실질적인 업무 부담 완화 방안을 마련함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>저경력 지방공무원의 복지 증진을 위한 특별휴가 제도 도입 여부를 검토해 볼 수 있음</li><li>특정 직렬의 업무 공백 해소를 위한 대체 인력풀 운영 사례를 비교해 볼 수 있음</li></ul></section>
+</article><article id="item-14">
+  <div class="article-number">14</div>
+  <div class="article-head">
+    <p class="eyebrow">경상북도교육청 · 기타</p>
+    <h2>[유초등교육과]경북교육청, 학교도서관 현대화와 사서교사 확충으로 독서교육 강화</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-11-18</span>
+      <a class="source-link" href="https://www.gbe.kr/news/na/ntt/selectNttInfo.do?nttSn=1665600&amp;bbsId=4744&amp;mi=17643&amp;searchCate=761" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>경북교육청이 학교도서관 현대화 사업과 사서교사 확충을 추진함</li><li>올해 28개교를 대상으로 도서관 환경개선 사업을 진행 중임</li><li>2027학년도 사서교사 정원을 10명 증원할 예정임</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>학교도서관의 현대화와 전문 인력 확충을 연계하여 독서교육 환경의 질적 향상을 도모함</li><li>사서교사 정원 증원을 통해 학교 현장의 전문적인 독서 지도 역량을 강화하고자 함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>학교도서관 환경개선 사업과 전문 인력 배치 현황을 비교 분석해 볼 수 있음</li><li>독서교육 활성화를 위한 사서교사 확보 및 배치 계획을 검토할 필요가 있음</li></ul></section>
+</article><article id="item-15">
+  <div class="article-number">15</div>
+  <div class="article-head">
+    <p class="eyebrow">대전광역시교육청 · 안전·시설</p>
+    <h2>대전시교육청, 2026년 겨울철 교육시설 안전점검 실시(시설과)</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-11-18</span>
+      <a class="source-link" href="https://www.dje.go.kr/boardCnts/view.do?boardSeq=3367501&amp;boardID=8&amp;m=040201&amp;s=dje&amp;lev=0&amp;searchType=null&amp;statusYN=W&amp;page=1&amp;opType=N&amp;prntBoardID=0&amp;prntBoardSeq=0&amp;prntLev=0" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>대전시교육청이 겨울철 교육시설 안전점검을 실시함</li><li>471개 학교 및 기관의 3,250개 시설물을 점검함</li><li>건축, 전기, 가스, 소방, 승강기 등 5개 분야를 집중 점검함</li><li>재해취약시설은 민관합동점검반을 구성하여 점검함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>겨울철 재해에 대비하여 교육시설 전반에 대한 다각적인 안전점검을 선제적으로 실시함</li><li>재해취약시설에 대해 민관합동점검반을 구성함으로써 점검의 전문성과 객관성을 확보함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>겨울철 교육시설 안전점검 시 민관합동점검반 운영 방식을 참고해 볼 수 있음</li><li>취약시설에 대한 집중 점검 체계 및 분야별 점검 항목을 비교해 볼 수 있음</li></ul></section>
+</article><article id="item-16">
+  <div class="article-number">16</div>
+  <div class="article-head">
+    <p class="eyebrow">대전광역시교육청 · 정책·행정</p>
+    <h2>대전시교육청, ‘공정 수능’을 위해 총력(중등교육과)</h2>
+    <div class="article-meta">
+      <span class="stars" aria-label="중요도 2점">★★☆☆☆</span>
+      <span>2026-11-18</span>
+      <a class="source-link" href="https://www.dje.go.kr/boardCnts/view.do?boardSeq=3367520&amp;boardID=8&amp;m=040201&amp;s=dje&amp;lev=0&amp;searchType=null&amp;statusYN=W&amp;page=1&amp;opType=N&amp;prntBoardID=0&amp;prntBoardSeq=0&amp;prntLev=0" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>대전시교육청이 2027학년도 수능 부정행위 방지를 위해 감독을 강화함</li><li>스마트안경 및 초소형 카메라 등 첨단기기 부정행위를 원천 차단함</li><li>시험장별 추가 복도감독관 163명을 배치함</li><li>전자기기 소지 시 당해 시험 무효 및 응시자격 정지 등 제재를 강화함</li></ul>
+  </section>
+  <section class="report-section analysis"><h3>교육동향 분석</h3><ul><li>첨단 전자기기를 활용한 부정행위 가능성에 대비하여 시험장 감독 체계를 강화함</li><li>복도감독관 추가 배치 등 인적 감시망을 보강하여 시험의 공정성을 확보하고자 함</li></ul></section><section class="report-section application"><h3>전북교육 적용 검토</h3><ul><li>수능 등 주요 시험의 부정행위 방지를 위한 감독관 배치 기준 및 강화 방안을 검토해 볼 수 있음</li><li>신종 전자기기 반입 차단을 위한 수험생 안내 및 감독 요령을 확인할 필요가 있음</li></ul></section>
+</article>
+<section class="own-office-section" id="own-office">
+  <div class="own-office-heading">
+    <p class="kicker">우리 교육청 주요 발표</p>
+    <h2>전북교육청 보도자료</h2>
+    <p>같은 기간 전북특별자치도교육청 본청에서 발표한 보도자료 전체입니다.</p>
+  </div>
+  
+  <div class="own-office-page"><article class="own-office-article" id="own-item-1">
+  <div class="article-number">01</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>학생 마약 예방교육, 전문의에게 배운다</h2>
+    <div class="article-meta">
+      <span>2026-11-19</span>
+      <a class="source-link" href="https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1214424" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>20일 창의예술미래공간에서 마약 예방교육 담당교사 120명 대상 역량 강화 연수 개최 예정임</li><li>청소년 마약류 특성 이해 및 학교 현장 맞춤형 예방교육 운영 방법 등을 교육할 예정임</li></ul>
+  </section>
+</article><article class="own-office-article" id="own-item-2">
+  <div class="article-number">02</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>사립학교 교원 인사 공정성 높인다</h2>
+    <div class="article-meta">
+      <span>2026-11-19</span>
+      <a class="source-link" href="https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1214423" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>사립학교 교원인사위원회 운영 공정성 제고를 위해 26일까지 도내 21개교 대상 현장 컨설팅 실시함</li><li>인사위원회 구성 및 심의 절차 점검과 학교별 맞춤형 운영 개선 방안을 지원할 예정임</li></ul>
+  </section>
+</article></div><div class="own-office-page"><article class="own-office-article" id="own-item-3">
+  <div class="article-number">03</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>천호성 교육감 “마지막까지 최선 다해달라” 당부</h2>
+    <div class="article-meta">
+      <span>2026-11-19</span>
+      <a class="source-link" href="https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1214426" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>천호성 교육감이 19일 대학수학능력시험장을 방문해 수험생을 격려하고 수능 종합상황실을 점검함</li><li>도내 6개 시험지구 65개 시험장에서 1만 7,473명의 수험생이 응시함</li></ul>
+  </section>
+</article><article class="own-office-article" id="own-item-4">
+  <div class="article-number">04</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>학생의 질문에서 출반하는 수업평가 확산</h2>
+    <div class="article-meta">
+      <span>2026-11-18</span>
+      <a class="source-link" href="https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1214024" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>18일과 21일 초등교원 60명 대상 학생 질문 중심 수업 및 서·논술형 평가 연수 운영함</li><li>질문 중심 수업 설계와 교육과정 성취기준 기반 평가 문항 개발 실습을 진행할 예정임</li></ul>
+  </section>
+</article></div><div class="own-office-page"><article class="own-office-article" id="own-item-5">
+  <div class="article-number">05</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>“수능 공정성 확보” 부정행위 대응 강화 준비 철저히</h2>
+    <div class="article-meta">
+      <span>2026-11-18</span>
+      <a class="source-link" href="https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1214028" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>2027학년도 수능 부정행위 방지를 위해 본청 및 교육지원청 공무원 180여 명을 복도감독관으로 추가 배치함.</li><li>수험생에게 장신구 착용 자제 및 감독관의 점검에 적극 협조할 것을 당부함.</li></ul>
+  </section>
+</article><article class="own-office-article" id="own-item-6">
+  <div class="article-number">06</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>유아 교육·보육 정보 ‘함께누리웹진’으로 한눈에</h2>
+    <div class="article-meta">
+      <span>2026-11-18</span>
+      <a class="source-link" href="https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1214026" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>유치원과 어린이집의 교육·보육 정보를 통합 제공하는 온라인 소식지 함께누리웹진을 운영함.</li><li>체험자원 지도, 거점형 돌봄, 정서 심리 지원 등 유아 교육 관련 정보를 PC와 모바일로 제공함.</li></ul>
+  </section>
+</article></div><div class="own-office-page"><article class="own-office-article" id="own-item-7">
+  <div class="article-number">07</div>
+  <div class="article-head">
+    <p class="eyebrow">전북특별자치도교육청</p>
+    <h2>전북 학생수학동아리 39팀 탐구 성과 공유</h2>
+    <div class="article-meta">
+      <span>2026-11-18</span>
+      <a class="source-link" href="https://www.jbe.go.kr/board/view.jbe?boardId=BBS_0000222&amp;menuCd=DOM_000001201001000000&amp;paging=ok&amp;startPage=1&amp;searchOperation=AND&amp;dataSid=1214025" target="_blank" rel="noopener noreferrer">원문 보도자료</a>
+    </div>
+  </div>
+  <section class="report-section summary">
+    <h3>내용 요약</h3>
+    <ul><li>오는 21일 창조나래에서 일반고 학생수학동아리 39팀이 참여하는 학술제를 개최함.</li><li>학생들이 1년간 탐구한 수학적 성과를 발표하고 공유하며 학교 간 교류를 진행할 예정임.</li></ul>
+  </section>
+</article></div>
+</section>
+<footer>
+  <p>이 문서는 공개 보도자료를 AI로 요약·분석한 내부 검토 자료입니다.</p>
+  <p>전북교육청 보도자료는 내용 요약만 제공하며, 원문은 각 항목의 링크에서 확인할 수 있습니다.</p>
+  <p>적용 검토안은 확정된 정책이나 업무 지시가 아닙니다.</p>
+</footer>
+</main>
+<script>
+(() => {
+  const links = Array.from(document.querySelectorAll('.toc-controller [data-report-target]'));
+  const targets = links.map(link => document.getElementById(link.dataset.reportTarget)).filter(Boolean);
+  if (!links.length || !targets.length) return;
+  let ticking = false;
+  const updateActive = () => {
+    const threshold = window.innerHeight * 0.35;
+    let activeId = '';
+    for (const target of targets) {
+      if (target.getBoundingClientRect().top <= threshold) activeId = target.id;
+      else break;
+    }
+    for (const link of links) {
+      const active = link.dataset.reportTarget === activeId;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    }
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateActive);
+  }, { passive:true });
+  window.addEventListener('hashchange', updateActive);
+  updateActive();
+})();
+</script>
+</body>
+</html>
